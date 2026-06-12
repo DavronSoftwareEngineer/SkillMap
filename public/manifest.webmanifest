@@ -1,0 +1,20 @@
+{
+  "name": "MyAcademy",
+  "short_name": "MyAcademy",
+  "description": "To'rtta mustaqil kurs: Geospatial, English, Moliya, Rus tili.",
+  "lang": "uz",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1014",
+  "theme_color": "#0b1014",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

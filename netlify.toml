@@ -1,0 +1,16 @@
+# Netlify deploy sozlamasi
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA — barcha yo'llар index.html'га (klient routing uchun)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Service worker har doim yangilangan bo'lsин (keshlanмасин)
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
