@@ -1,6 +1,6 @@
 // MyAcademy service worker — oddiy runtime caching (offline ishlash uchun).
-// Vite build fayl nomларига hash qo'шгани uchun aniq fayl ro'yxати saqlanmaydi;
-// o'rнига so'ровлар paytida keshlanади (cache-first + tarmoq fallback).
+// Vite build fayl nomlariga hash qo'shgani uchun aniq fayl ro'yxati saqlanmaydi;
+// o'rniga so'rovlar paytida keshlanadi (cache-first + tarmoq fallback).
 const CACHE = "myacademy-v1";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
 
@@ -25,7 +25,7 @@ self.addEventListener("fetch", (e) => {
 
   const url = new URL(req.url);
 
-  // Sahifa navigatsiyasi — avval tarmoq, uzilса keshdагi index.html (SPA).
+  // Sahifa navigatsiyasi — avval tarmoq, uzilsa keshdagi index.html (SPA).
   if (req.mode === "navigate") {
     e.respondWith(
       fetch(req)
@@ -39,7 +39,7 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // Qolганлари (JS/CSS/shrift/rasm) — keshдан, bo'lмаса tarmoqдан olиб keshla.
+  // Qolganlari (JS/CSS/shrift/rasm) — keshdan, bo'lmasa tarmoqdan olib keshla.
   e.respondWith(
     caches.match(req).then((cached) => {
       const fetched = fetch(req)

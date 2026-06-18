@@ -42,7 +42,7 @@ export function ModuleView({
   const m = modules[index];
   const [tab, setTab] = useState("doc");
 
-  // Shu modulга biriktirilgan kitob (kurs moduleBooks[zoom] → books[] dan).
+  // Shu modulga biriktirilgan kitob (kurs moduleBooks[zoom] → books[] dan).
   const refN = course.moduleBooks?.[m.zoom];
   const refBook = refN ? course.books?.find((b) => b.n === refN) : undefined;
 
@@ -51,6 +51,7 @@ export function ModuleView({
   }, [index, course.id]);
 
   const doneCount = m.tasks.filter((t) => isDone(t.id)).length;
+  const donePct = m.tasks.length ? Math.round((doneCount / m.tasks.length) * 100) : 0;
 
   const tabs = [
     { p: "doc", label: L.doc, show: true, badge: "" },
@@ -66,10 +67,30 @@ export function ModuleView({
   const next = modules[index + 1];
 
   return (
-    <div className="module-view" key={course.id + "-" + index}>
-      <div className="eyebrow">{m.eyebrow}</div>
-      <h2 className="mtitle">{m.mtitle}</h2>
-      <p className="mlede" dangerouslySetInnerHTML={{ __html: m.lede }} />
+    <div className="module-view learning-workspace" key={course.id + "-" + index}>
+      <section className="module-hero">
+        <div className="module-hero-copy">
+          <div className="eyebrow">{m.eyebrow}</div>
+          <h2 className="mtitle">{m.mtitle}</h2>
+          <p className="mlede" dangerouslySetInnerHTML={{ __html: m.lede }} />
+        </div>
+        <aside className="module-status-card" aria-label="Modul holati">
+          <span className="msc-kicker">Learning workspace</span>
+          <b>{m.zoom}</b>
+          <span>{m.sub}</span>
+          <div className="msc-bar">
+            <i style={{ width: donePct + "%" }} />
+          </div>
+          <div className="msc-row">
+            <span>{doneCount}/{m.tasks.length} task</span>
+            <span>{donePct}%</span>
+          </div>
+          <div className="msc-mini">
+            <span>{tabs.length} bo'lim</span>
+            {m.quiz.length > 0 && <span>{m.quiz.length} test</span>}
+          </div>
+        </aside>
+      </section>
 
       {refBook && (
         <button className="modbook" style={{ ["--bc" as string]: refBook.accent }} onClick={onBooks}>
@@ -83,16 +104,17 @@ export function ModuleView({
         </button>
       )}
 
-      <div className="tabs">
-        {tabs.map((t) => (
-          <button key={t.p} className={"tab" + (tab === t.p ? " active" : "")} onClick={() => setTab(t.p)}>
-            {t.label}
-            {t.badge && <span className="cnt">{t.badge}</span>}
-          </button>
-        ))}
-      </div>
+      <section className="workspace-panel">
+        <div className="tabs">
+          {tabs.map((t) => (
+            <button key={t.p} className={"tab" + (tab === t.p ? " active" : "")} onClick={() => setTab(t.p)}>
+              {t.label}
+              {t.badge && <span className="cnt">{t.badge}</span>}
+            </button>
+          ))}
+        </div>
 
-      <div className="panel active" key={tab}>
+        <div className="panel active" key={tab}>
         {tab === "doc" && <RichHtml className="prose" html={m.doc} />}
 
         {tab === "code" && (
@@ -160,7 +182,8 @@ export function ModuleView({
             </div>
           </div>
         )}
-      </div>
+        </div>
+      </section>
 
       <div className="pager">
         {prev ? (

@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import type { ReactNode } from "react";
 import { loadJSON, saveJSON } from "./lib/storage";
 import type { QuizScore } from "./types";
-import { COURSES, COURSE_BY_ID } from "./data/courses";
+import { COURSES, COURSE_BY_ID, loadCourseModules } from "./data/courses";
 import type { Course } from "./data/courses";
 import type { SrsState, Grade } from "./lib/srs";
 import { grade as gradeCard } from "./lib/srs";
@@ -18,6 +18,7 @@ const STREAK_KEY = "myacademy_streak";
 interface StoreValue {
   courseId: string;
   course: Course;
+  courseLoading: boolean;
   setCourse: (id: string) => void;
   theme: string;
   toggleTheme: () => void;
@@ -39,7 +40,7 @@ const Ctx = createContext<StoreValue | null>(null);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [courseId, setCourseId] = useState<string>(() => {
-    // Eski/yaroqsiz active_course localStorage'да qolgan bo'lsa — birinchi kursга qaytamiz
+    // Eski/yaroqsiz active_course localStorage'da qolgan bo'lsa — birinchi kursga qaytamiz
     // (aks holda COURSE_BY_ID[courseId] undefined bo'lib, ilova ishlamay qoladi).
     const saved = loadJSON<string>("active_course", COURSES[0].id);
     return COURSE_BY_ID[saved] ? saved : COURSES[0].id;
@@ -60,6 +61,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     return o;
   });
   const [streak, setStreak] = useState<Streak>(() => loadJSON(STREAK_KEY, EMPTY_STREAK));
+  const [modulesMap, setModulesMap] = useState<Record<string, Course["modules"]>>({});
+  const [courseLoading, setCourseLoading] = useState(true);
 
   const [theme, setThemeState] = useState<string>(() => {
     const saved = loadJSON<string | null>("myacademy_theme", null);
@@ -88,9 +91,30 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => saveJSON("active_course", courseId), [courseId]);
 
+  useEffect(() => {
+    let cancelled = false;
+    if (modulesMap[courseId]) {
+      setCourseLoading(false);
+      return;
+    }
+    setCourseLoading(true);
+    loadCourseModules(courseId)
+      .then((modules) => {
+        if (cancelled) return;
+        setModulesMap((m) => ({ ...m, [courseId]: modules }));
+        setCourseLoading(false);
+      })
+      .catch(() => {
+        if (!cancelled) setCourseLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId, modulesMap]);
+
   const setCourse = useCallback((id: string) => setCourseId(id), []);
 
-  // Har qanday o'rganish harakatида kunlik odat (streak) qayd etiladi.
+  // Har qanday o'rganish harakatida kunlik odat (streak) qayd etiladi.
   const bumpStreak = useCallback(() => {
     setStreak((s) => {
       const next = registerActivity(s, dayKey(new Date()));
@@ -180,7 +204,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const value: StoreValue = {
     courseId,
-    course: COURSE_BY_ID[courseId] || COURSES[0],
+    course: { ...(COURSE_BY_ID[courseId] || COURSES[0]), modules: modulesMap[courseId] || [] },
+    courseLoading,
     setCourse,
     theme,
     toggleTheme,

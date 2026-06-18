@@ -4,14 +4,14 @@ type Provider = "anthropic" | "openai";
 
 function lsGet(k: string): string {
   try {
-    return localStorage.getItem(k) || "";
+    return sessionStorage.getItem(k) || "";
   } catch {
     return "";
   }
 }
 function lsSet(k: string, v: string) {
   try {
-    localStorage.setItem(k, v);
+    sessionStorage.setItem(k, v);
   } catch {
     /* ignore */
   }
@@ -138,15 +138,14 @@ export function Playground() {
       <div className="eyebrow">Playground · Jonli AI</div>
       <h2 className="mtitle">Prompt Playground</h2>
       <p className="mlede">
-        Promptни shu yerda yozib, <strong>haqiqiy AI</strong>'ga yubor va javobni ko'r. Darslardagi
+        Promptni shu yerda yozib, <strong>haqiqiy AI</strong>'ga yubor va javobni ko'r. Darslardagi
         texnikalarni amalda sina.
       </p>
 
       <div className="pg-warn">
-        <b>Maxfiylik:</b> API kalit faqat <b>shu brauzeringizda</b> (localStorage) saqlanadi, hech
-        qayerga yuborilmaydi (faqat tanlangan AI provayderiga). Ommaviy kompyuterда ishlatmang.
-        Kalitни{" "}
-        {provider === "anthropic" ? "console.anthropic.com" : "platform.openai.com"} dан olasiz.
+        <b>Maxfiylik:</b> API kalit faqat joriy brauzer sessiyasida turadi va sahifa yopilganda
+        o'chadi. Prompt va kalit faqat tanlangan AI provayderiga yuboriladi. Ommaviy kompyuterda
+        ishlatmang. Kalitni {provider === "anthropic" ? "console.anthropic.com" : "platform.openai.com"} dan olasiz.
       </div>
 
       <div className="pg-row">

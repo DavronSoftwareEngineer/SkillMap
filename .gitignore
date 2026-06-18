@@ -4,7 +4,8 @@ dist
 .DS_Store
 .claude/settings.local.json
 
-# TypeScript build artefaktlари (tsc -b chiqаради)
+# TypeScript build artefaktlari (tsc -b chiqaradi)
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+.codex-vite-*.log

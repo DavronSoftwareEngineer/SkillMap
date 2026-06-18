@@ -26,7 +26,7 @@ export function Reference() {
       <div className="dash">
         <div className="eyebrow">Ma'lumotnoma · Reference</div>
         <h2 className="mtitle">Ma'lumotnoma</h2>
-        <p className="mlede">Bu kursда grammatika ma'lumotnomasi hozircha yo'q.</p>
+        <p className="mlede">Bu kursda grammatika ma'lumotnomasi hozircha yo'q.</p>
       </div>
     );
   }
@@ -35,7 +35,7 @@ export function Reference() {
     <div className="dash">
       <div className="eyebrow">Ma'lumotnoma · Reference</div>
       <h2 className="mtitle">Grammatika ma'lumotnomasi</h2>
-      <p className="mlede">Barcha qoidalar bitta joyда — qidirib, tez eslab ol.</p>
+      <p className="mlede">Barcha qoidalar bitta joyda — qidirib, tez eslab ol.</p>
 
       <input
         className="ref-search"

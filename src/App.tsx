@@ -14,13 +14,26 @@ import { Books } from "./components/Books";
 type View = number | "dash" | "flash" | "ref" | "search" | "play" | "books";
 
 export default function App() {
-  const { progress, course, courseId } = useStore();
+  const { progress, course, courseId, courseLoading } = useStore();
   const [view, setView] = useState<View>(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setView(0);
   }, [courseId]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   const modules = course.modules;
   const totalTasks = modules.reduce((a, m) => a + m.tasks.length, 0);
@@ -38,7 +51,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const safeIndex = typeof view === "number" ? Math.min(view, modules.length - 1) : -1;
+  const safeIndex = typeof view === "number" && modules.length > 0 ? Math.min(view, modules.length - 1) : -1;
   const coord =
     view === "dash"
       ? "Tayyorlik paneli"
@@ -79,13 +92,20 @@ export default function App() {
             onClose={() => setMenuOpen(false)}
           />
           <main className="main" key={courseId}>
-            {view === "dash" && <Dashboard onGo={goModule} />}
-            {view === "flash" && <Flashcards />}
-            {view === "ref" && <Reference />}
-            {view === "search" && <Search onGo={goModule} />}
-            {view === "play" && <Playground />}
-            {view === "books" && <Books />}
-            {typeof view === "number" && (
+            {courseLoading && (
+              <div className="dash">
+                <div className="eyebrow">{course.name}</div>
+                <h2 className="mtitle">Kurs yuklanmoqda</h2>
+                <p className="mlede">Darslar tayyorlanmoqda. Bir lahza...</p>
+              </div>
+            )}
+            {!courseLoading && view === "dash" && <Dashboard onGo={goModule} />}
+            {!courseLoading && view === "flash" && <Flashcards />}
+            {!courseLoading && view === "ref" && <Reference />}
+            {!courseLoading && view === "search" && <Search onGo={goModule} />}
+            {!courseLoading && view === "play" && <Playground />}
+            {!courseLoading && view === "books" && <Books />}
+            {!courseLoading && typeof view === "number" && modules.length > 0 && (
               <ModuleView index={safeIndex} onGo={goModule} onBooks={() => goView("books")} />
             )}
           </main>

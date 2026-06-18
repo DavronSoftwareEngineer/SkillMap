@@ -1,23 +1,35 @@
-import webgis from "./webgis.json";
-import frontend from "./frontend.json";
-import backend from "./backend.json";
-import english from "./english.json";
-import finance from "./finance.json";
-import russian from "./russian.json";
-import prompting from "./prompting.json";
 import type { Module, Book } from "../types";
 
-export interface Course {
+export interface CourseMeta {
   id: string;
   name: string;
   brandTitle: string;
   brandSub: string;
   labels: Record<string, string>;
-  modules: Module[];
   playground?: boolean;
   books?: Book[];
-  // Modul (zoom) → kitob n: shu modulга oid kitob eslatmasi uchun.
+  // Modul (zoom) → kitob n: shu modulga oid kitob eslatmasi uchun.
   moduleBooks?: Record<string, number>;
+}
+
+export type Course = CourseMeta & { modules: Module[] };
+
+type CourseModuleImport = { default: unknown };
+
+const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
+  webgis: () => import("./webgis.json"),
+  frontend: () => import("./frontend.json"),
+  backend: () => import("./backend.json"),
+  english: () => import("./english.json"),
+  finance: () => import("./finance.json"),
+  russian: () => import("./russian.json"),
+  prompting: () => import("./prompting.json"),
+};
+
+export async function loadCourseModules(id: string): Promise<Module[]> {
+  const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
+  const data = await loader();
+  return data.default as Module[];
 }
 
 // Urg'u ranglari (kartalar uchun) — aylanib ishlatiladi.
@@ -28,7 +40,7 @@ const A = "#34d6c0",
   E = "#ff7a9c",
   F = "#6ee7a8";
 
-export const COURSES: Course[] = [
+export const COURSES: CourseMeta[] = [
   {
     id: "webgis",
     name: "Geospatial",
@@ -43,7 +55,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Loyiha",
     },
-    modules: webgis as Module[],
     books: [
       { n: 1, accent: A, title: "Eloquent JavaScript", author: "Marijn Haverbeke", isbn: "9781593279509", note: "Frontend poydevori — JS tilini chuqur tushunish. Kurs React qismidan oldin o'qib qo'y." },
       { n: 2, accent: B, title: "Programming TypeScript", author: "Boris Cherny", isbn: "9781492037651", note: "TypeScript noldan: tiplar, generiklar, xavfsiz kod. JS'dan keyin — kurs React TS qismidan oldin o'qib qo'y." },
@@ -68,7 +79,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Loyiha",
     },
-    modules: frontend as Module[],
     books: [
       { n: 1, accent: A, title: "Eloquent JavaScript", author: "Marijn Haverbeke", isbn: "9781593279509", note: "JS poydevori — tilni chuqur tushunish. FE4 (JS asoslari) bilan birga o'qi." },
       { n: 2, accent: B, title: "You Don't Know JS Yet", author: "Kyle Simpson", isbn: "9781091210099", note: "JS'ning ichki mexanikasi: scope, closure, this. Modern JS modulida foydali." },
@@ -93,11 +103,10 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Loyiha",
     },
-    modules: backend as Module[],
     books: [
       { n: 1, accent: A, title: "Node.js Design Patterns", author: "Mario Casciaro, Luciano Mammino", isbn: "9781839214110", note: "Node arxitektura va patternlar — BE8 (arxitektura) bilan birga, o'rta darajada." },
       { n: 2, accent: B, title: "Designing Data-Intensive Applications", author: "Martin Kleppmann", isbn: "9781449373320", note: "Ma'lumot tizimlari bibliyasi — masshtab, izchillik, replikatsiya. Senior tomon." },
-      { n: 3, accent: C, title: "Programming TypeScript", author: "Boris Cherny", isbn: "9781492037651", note: "Backend ham TS — tiplar, generiklar. Boshида o'qib qo'y." },
+      { n: 3, accent: C, title: "Programming TypeScript", author: "Boris Cherny", isbn: "9781492037651", note: "Backend ham TS — tiplar, generiklar. Boshida o'qib qo'y." },
       { n: 4, accent: D, title: "Database Internals", author: "Alex Petrov", isbn: "9781492040347", note: "Ma'lumotlar bazasi ichkarisi: index, storage engine. BE4 (SQL) bilan chuqurlashuv." },
       { n: 5, accent: E, title: "System Design Interview", author: "Alex Xu", isbn: "9798664653403", note: "Tizim dizayni — masshtablash, trade-off. BE11 (senior) va suhbatlar uchun." },
       { n: 6, accent: F, title: "Web Scalability for Startup Engineers", author: "Artur Ejsmont", isbn: "9780071843652", note: "Amaliy masshtablash: kesh, navbat, load balancer." },
@@ -118,7 +127,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Amaliyot",
     },
-    modules: english as Module[],
     books: [
       { n: 1, accent: A, title: "English Grammar in Use", author: "Raymond Murphy", isbn: "9781108457651", note: "Grammatika uchun eng mashhur kitob. Har bir mavzu — bir sahifa tushuntirish + mashq. A1'dan boshla." },
       { n: 2, accent: B, title: "English Vocabulary in Use", author: "Stuart Redman", isbn: "9780521136204", note: "Lug'atni mavzular bo'yicha o'rgatadi. Kursdagi flashcardlar bilan birga ishlat." },
@@ -142,7 +150,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Amaliyot",
     },
-    modules: finance as Module[],
     books: [
       { n: 1, accent: A, title: "Atom odatlar", author: "Jeyms Klir · Atomic Habits", isbn: "9780735211292", note: "Shu yerdan boshla. Pulni boshqarish — odat: xarajat yozish, tejash, ortiqcha sarflamaslik. Intizom shu yerda shakllanadi." },
       { n: 2, accent: B, title: "Pul oqimining kvadranti", author: "R. Kiyosaki · Cashflow Quadrant", isbn: "9781612680057", note: "Pul topishning yo'llari: ishchi, mutaxassis, biznes egasi, investor fikrlashi. 100% qoida emas — fikrni kengaytiruvchi kitob." },
@@ -167,7 +174,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Amaliyot",
     },
-    modules: russian as Module[],
     books: [
       { n: 1, accent: A, title: "Поехали!", author: "С. Чернышов", note: "Noldan boshlovchilar uchun mashhur darslik. Talaffuz, alifbo, oddiy suhbat — kursning birinchi modullariga mos." },
       { n: 2, accent: B, title: "Русский язык в упражнениях", author: "Хавронина, Широченская", note: "Grammatika + mashqlar. Kelishiklar va fe'l aspekti modullari uchun amaliyot manbasi." },
@@ -189,7 +195,6 @@ export const COURSES: Course[] = [
       vid: "Manbalar",
       proj: "Amaliyot",
     },
-    modules: prompting as Module[],
     playground: true,
     books: [
       { n: 1, accent: A, title: "Co-Intelligence", author: "Ethan Mollick", isbn: "9780593716717", note: "AI bilan birga ishlash falsafasi va amaliyoti. Promptingga to'g'ri munosabat shu yerdan boshlanadi." },
@@ -200,6 +205,6 @@ export const COURSES: Course[] = [
   },
 ];
 
-export const COURSE_BY_ID: Record<string, Course> = Object.fromEntries(
+export const COURSE_BY_ID: Record<string, CourseMeta> = Object.fromEntries(
   COURSES.map((c) => [c.id, c])
 );

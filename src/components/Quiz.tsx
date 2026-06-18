@@ -6,7 +6,7 @@ export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestio
   const { recordQuiz } = useStore();
   const [picks, setPicks] = useState<Record<number, number>>({});
 
-  // Yangi modul testiga o'tilganда tanlovlar tozalanadi.
+  // Yangi modul testiga o'tilganda tanlovlar tozalanadi.
   useEffect(() => setPicks({}), [zoom]);
 
   const answered = Object.keys(picks).length;
@@ -25,8 +25,8 @@ export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestio
     [questions]
   );
 
-  // Test natijasini render paytida emas, javoblar to'liq bo'lgach effektда yozamiz
-  // (recordQuiz ota store'ни yangilaydi — render ichida chaqirib bo'lmaydi).
+  // Test natijasini render paytida emas, javoblar to'liq bo'lgach effektda yozamiz
+  // (recordQuiz ota store'ni yangilaydi — render ichida chaqirib bo'lmaydi).
   useEffect(() => {
     if (questions.length > 0 && answered === questions.length) {
       recordQuiz(zoom, right, questions.length);

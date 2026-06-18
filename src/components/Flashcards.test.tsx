@@ -4,8 +4,8 @@ import userEvent from "@testing-library/user-event";
 import { Flashcards } from "./Flashcards";
 import { StoreProvider } from "../store";
 
-// Flashcards faol kursning lug'atini ko'rsatadi — English'да vocab bor.
-// active_course localStorage'дан o'qiladi (saveJSON формати = JSON.stringify).
+// Flashcards faol kursning lug'atini ko'rsatadi — English'da vocab bor.
+// active_course localStorage'dan o'qiladi (saveJSON формати = JSON.stringify).
 beforeEach(() => {
   localStorage.setItem("active_course", JSON.stringify("english"));
 });
@@ -19,24 +19,26 @@ function renderFlashcards() {
 }
 
 describe("Flashcards — SRS oqimi", () => {
-  it("birinchi karta va o'zlashtirilgan hisobi ko'rinadi", () => {
+  it("birinchi karta va o'zlashtirilgan hisobi ko'rinadi", async () => {
     renderFlashcards();
-    // SRS bo'sh — barcha so'z navbatда, birinchisi 'hello'.
-    expect(screen.getByText("hello")).toBeInTheDocument();
+    // SRS bo'sh — barcha so'z navbatda, birinchisi 'hello'.
+    expect(await screen.findByText("hello")).toBeInTheDocument();
     expect(screen.getByText(/O'zlashtirilgan: 0 \//)).toBeInTheDocument();
   });
 
-  it("kartani bosish ma'noни ko'rsatadi (ag'darish)", async () => {
+  it("kartani bosish ma'noni ko'rsatadi (ag'darish)", async () => {
     const user = userEvent.setup();
     const { container } = renderFlashcards();
+    await screen.findByText("hello");
     const card = container.querySelector<HTMLButtonElement>(".flashcard")!;
     await user.click(card);
     expect(screen.getByText("salom")).toBeInTheDocument(); // hello → salom
   });
 
-  it("'Bilaman' baholanса keyingi kartaga o'tadi va SRS saqlanadi", async () => {
+  it("'Bilaman' baholansa keyingi kartaga o'tadi va SRS saqlanadi", async () => {
     const user = userEvent.setup();
     renderFlashcards();
+    await screen.findByText("hello");
 
     await user.click(screen.getByRole("button", { name: /Bilaman/ }));
 
@@ -44,14 +46,15 @@ describe("Flashcards — SRS oqimi", () => {
     expect(screen.getByText("please")).toBeInTheDocument();
     expect(screen.queryByText("hello")).not.toBeInTheDocument();
 
-    // SRS holati localStorage'га yozildi: 'hello' box 1 ('good').
+    // SRS holati localStorage'ga yozildi: 'hello' box 1 ('good').
     const srs = JSON.parse(localStorage.getItem("english_srs") || "{}");
     expect(srs.hello?.box).toBe(1);
   });
 
-  it("navbatdagi so'zlar soni baholashдан keyin kamayadi", async () => {
+  it("navbatdagi so'zlar soni baholashdan keyin kamayadi", async () => {
     const user = userEvent.setup();
     const { container } = renderFlashcards();
+    await screen.findByText("hello");
 
     const queueCount = () => {
       const m = container.querySelector(".qscore")!.textContent!.match(/navbat\S*:\s*(\d+)/);

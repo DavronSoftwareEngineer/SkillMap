@@ -10,7 +10,7 @@ const QUESTIONS: QuizQuestion[] = [
   { q: "Osmon rangi?", a: ["yashil", "ko'k"], c: 1, w: "Ko'k." },
 ];
 
-// Quiz recordQuiz orqali store'га yozadi — natijani o'qish uchun probe.
+// Quiz recordQuiz orqali store'ga yozadi — natijani o'qish uchun probe.
 function ScoreProbe() {
   const { quizScores } = useStore();
   const s = quizScores.z1;
@@ -37,14 +37,14 @@ describe("Quiz komponenti", () => {
     expect(screen.getByText(/Osmon rangi/)).toBeInTheDocument();
   });
 
-  it("to'g'ri variant tanlanса natija oshadi", async () => {
+  it("to'g'ri variant tanlansa natija oshadi", async () => {
     const user = userEvent.setup();
     const { opts } = renderQuiz();
     await user.click(opts()[1]); // Q1 to'g'ri javob ("4")
     expect(screen.getByText(/Natija: 1 \/ 2/)).toBeInTheDocument();
   });
 
-  it("hammasiga javob berilganда eng yaxshi natija store'га yoziladi", async () => {
+  it("hammasiga javob berilganda eng yaxshi natija store'ga yoziladi", async () => {
     const user = userEvent.setup();
     const { opts } = renderQuiz();
     expect(screen.getByTestId("score")).toHaveTextContent("yo'q");

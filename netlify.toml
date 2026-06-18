@@ -3,13 +3,13 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA — barcha yo'llар index.html'га (klient routing uchun)
+# SPA — barcha yo'llar index.html'ga (klient routing uchun)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Service worker har doim yangilangan bo'lsин (keshlanмасин)
+# Service worker har doim yangilangan bo'lsin (keshlanmasin)
 [[headers]]
   for = "/sw.js"
   [headers.values]

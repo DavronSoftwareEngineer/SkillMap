@@ -7,7 +7,7 @@
   "eyebrow": "00 · Backend nima",
   "mtitle": "0 dan Senior Backend developergacha (JS/TS)",
   "lede": "Backend — foydalanuvchi <strong>ko'rmaydigan</strong>, lekin hamma narsani ishlatadigan qism: server, ma'lumotlar bazasi, API, xavfsizlik. Bu yo'lda sen <strong>Node.js + TypeScript</strong> bilan junior'dan senior darajaga chiqasan.",
-  "doc": "<div class='prose'><h3>Backend nima qiladi?</h3><p>Frontend ko'rsatadi — backend <strong>ishlaydi</strong>: ma'lumotni saqlaydi (DB), mantiqni bajaradi, autentifikatsiya qiladi, API orqali frontendga javob beradi. Brauzerда emas — <strong>serverда</strong> ishlaydi.</p><div class='chips'><span class='chip t'>HTTP server</span><span class='chip t'>Ma'lumotlar bazasi</span><span class='chip t'>API</span><span class='chip t'>Auth & xavfsizlik</span></div><h3>So'rov — javob (request/response)</h3><p>Frontend <code>fetch('/api/users')</code> yuboradi → server so'rovni qabul qiladi → DB'dan o'qiydi → <strong>JSON javob</strong> qaytaradi. Asosiy metodlar: <code>GET</code> (o'qish), <code>POST</code> (yaratish), <code>PUT/PATCH</code> (yangilash), <code>DELETE</code> (o'chirish).</p><h3>Runtime — 2026 holati</h3><div class='exlist'><div class='ex'><b>Node.js (v24 LTS)</b><span>hukmron, eng katta ekotizim, korxona tanlovi — barqarorlik</span></div><div class='ex'><b>Bun</b><span>eng tez (HTTP + paket o'rnatish); 2025-da Anthropic sotib oldi</span></div><div class='ex'><b>Deno 2</b><span>xavfsizlik-birinchi, npm bilan mos</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>2026 yangiligi</p><p>Endi <strong>native TypeScript</strong> barcha runtime'larда standart — TS faylni to'g'ridan-to'g'ri ishga tushirasan (alohida build shart emas). O'rganishni <strong>Node.js</strong>дан boshla.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior</b><span>Node · REST API · validation · SQL</span></div><div class='ex'><b>O'rta</b><span>ORM · auth · arxitektura · API uslublari</span></div><div class='ex'><b>Senior</b><span>test · observability · Docker · masshtablash · system design</span></div></div></div>",
+  "doc": "<div class='prose'><h3>Backend nima qiladi?</h3><p>Frontend ko'rsatadi — backend <strong>ishlaydi</strong>: ma'lumotni saqlaydi (DB), mantiqni bajaradi, autentifikatsiya qiladi, API orqali frontendga javob beradi. Brauzerda emas — <strong>serverda</strong> ishlaydi.</p><div class='chips'><span class='chip t'>HTTP server</span><span class='chip t'>Ma'lumotlar bazasi</span><span class='chip t'>API</span><span class='chip t'>Auth & xavfsizlik</span></div><h3>So'rov — javob (request/response)</h3><p>Frontend <code>fetch('/api/users')</code> yuboradi → server so'rovni qabul qiladi → DB'dan o'qiydi → <strong>JSON javob</strong> qaytaradi. Asosiy metodlar: <code>GET</code> (o'qish), <code>POST</code> (yaratish), <code>PUT/PATCH</code> (yangilash), <code>DELETE</code> (o'chirish).</p><h3>Runtime — 2026 holati</h3><div class='exlist'><div class='ex'><b>Node.js (v24 LTS)</b><span>hukmron, eng katta ekotizim, korxona tanlovi — barqarorlik</span></div><div class='ex'><b>Bun</b><span>eng tez (HTTP + paket o'rnatish); 2025-da Anthropic sotib oldi</span></div><div class='ex'><b>Deno 2</b><span>xavfsizlik-birinchi, npm bilan mos</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>2026 yangiligi</p><p>Endi <strong>native TypeScript</strong> barcha runtime'larda standart — TS faylni to'g'ridan-to'g'ri ishga tushirasan (alohida build shart emas). O'rganishni <strong>Node.js</strong>дан boshla.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior</b><span>Node · REST API · validation · SQL</span></div><div class='ex'><b>O'rta</b><span>ORM · auth · arxitektura · API uslublari</span></div><div class='ex'><b>Senior</b><span>test · observability · Docker · masshtablash · system design</span></div></div></div>",
   "code": [
    {
     "heading": { "h": "Birinchi server (runtime ichida)", "p": "Node native HTTP — kutubxonasiz." },
@@ -38,7 +38,7 @@
    "features": ["Node + npm", "TS sozlash", "HTTP server", "JSON javob"]
   },
   "quiz": [
-   { "q": "Backend asosan qayerda ishlaydi?", "a": ["brauzerда", "serverда", "DB ichida", "CSS'да"], "c": 1, "w": "Backend kodi serverда ishlaydi; frontend brauzerда." },
+   { "q": "Backend asosan qayerda ishlaydi?", "a": ["brauzerda", "serverda", "DB ichida", "CSS'da"], "c": 1, "w": "Backend kodi serverda ishlaydi; frontend brauzerda." },
    { "q": "Yangi resurs yaratish uchun HTTP metod?", "a": ["GET", "POST", "DELETE", "HEAD"], "c": 1, "w": "POST — yangi ma'lumot yaratadi; GET — o'qiydi." },
    { "q": "2026 da eng tez runtime sifatida tanilgan?", "a": ["Deno", "Bun", "PHP", "Ruby"], "c": 1, "w": "Bun eng tez HTTP/paket runtime; Node hukmron va barqaror." }
   ]
@@ -48,10 +48,10 @@
   "title": "Node.js asoslari",
   "sub": "Runtime",
   "coord": "Node · BE1",
-  "eyebrow": "01 · Tilning serverдаги hayoti",
+  "eyebrow": "01 · Tilning serverdagi hayoti",
   "mtitle": "Node.js: modullar, event loop, async",
-  "lede": "Node — JavaScript'ni server'да ishlatadi. <strong>Bitta oqim + event loop</strong> bilan minglab so'rovni boshqaradi. Modullar, fayl tizimi va asinxron kod — kundalik quroling.",
-  "doc": "<div class='prose'><h3>Modullar (ESM)</h3><p>Zamonaviy Node <code>import</code>/<code>export</code> (ESM) ishlatadi. Har fayl — bitta mas'uliyat. <code>package.json</code> da <code>\"type\": \"module\"</code>.</p><h3>Event loop — bitta oqim sehri</h3><p>Node <strong>bloklamaydi</strong>: fayl/tarmoq kutilganда boshqa ishni bajaradi. Shuning uchun <strong>async</strong> kod muhim — <code>async/await</code> bilan toza yoz.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Event loop'ni <strong>bloklash</strong> (og'ir sinxron hisob, katta JSON sinxron o'qish). Bu butun serverни to'xtatadi — asinxron variant ishlat.</p></div></div><h3>Asosiy modullar</h3><div class='chips'><span class='chip t'>node:fs</span><span class='chip t'>node:path</span><span class='chip t'>node:http</span><span class='chip'>node:crypto</span></div></div>",
+  "lede": "Node — JavaScript'ni server'da ishlatadi. <strong>Bitta oqim + event loop</strong> bilan minglab so'rovni boshqaradi. Modullar, fayl tizimi va asinxron kod — kundalik quroling.",
+  "doc": "<div class='prose'><h3>Modullar (ESM)</h3><p>Zamonaviy Node <code>import</code>/<code>export</code> (ESM) ishlatadi. Har fayl — bitta mas'uliyat. <code>package.json</code> da <code>\"type\": \"module\"</code>.</p><h3>Event loop — bitta oqim sehri</h3><p>Node <strong>bloklamaydi</strong>: fayl/tarmoq kutilganda boshqa ishni bajaradi. Shuning uchun <strong>async</strong> kod muhim — <code>async/await</code> bilan toza yoz.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Event loop'ni <strong>bloklash</strong> (og'ir sinxron hisob, katta JSON sinxron o'qish). Bu butun serverni to'xtatadi — asinxron variant ishlat.</p></div></div><h3>Asosiy modullar</h3><div class='chips'><span class='chip t'>node:fs</span><span class='chip t'>node:path</span><span class='chip t'>node:http</span><span class='chip'>node:crypto</span></div></div>",
   "code": [
    {
     "heading": { "h": "Faylni asinxron o'qish", "p": "Promise asosli fs." },
@@ -76,9 +76,9 @@
   ],
   "project": null,
   "quiz": [
-   { "q": "Node nechta asosiy oqimда JS bajaradi?", "a": ["bitta (event loop)", "har so'rovga bitta", "cheksiz", "ikkita"], "c": 0, "w": "Node bitta oqim + event loop bilan asinxron ishlaydi." },
+   { "q": "Node nechta asosiy oqimda JS bajaradi?", "a": ["bitta (event loop)", "har so'rovga bitta", "cheksiz", "ikkita"], "c": 0, "w": "Node bitta oqim + event loop bilan asinxron ishlaydi." },
    { "q": "Zamonaviy Node modul tizimi?", "a": ["CommonJS only", "ESM (import/export)", "AMD", "global"], "c": 1, "w": "ESM (import/export) zamonaviy standart; package.json type:module." },
-   { "q": "Serverни sekinlаshtiradigan narsa?", "a": ["async/await", "event loop'ni bloklash", "kichik JSON", "import"], "c": 1, "w": "Og'ir sinxron ish event loop'ni bloklaydi — barcha so'rov kutadi." }
+   { "q": "Serverni sekinlashtiradigan narsa?", "a": ["async/await", "event loop'ni bloklash", "kichik JSON", "import"], "c": 1, "w": "Og'ir sinxron ish event loop'ni bloklaydi — barcha so'rov kutadi." }
   ]
  },
  {
@@ -89,7 +89,7 @@
   "eyebrow": "02 · HTTP server qurish",
   "mtitle": "REST API: Express va Fastify",
   "lede": "API — frontend bilan backend o'rtasidagi <strong>shartnoma</strong>. REST tamoyillari bilan toza endpoint'lar qurasan. <strong>Express</strong> (klassik) yoki <strong>Fastify</strong> (tezroq) bilan.",
-  "doc": "<div class='prose'><h3>REST tamoyillari</h3><p>Resurslar URL bilan ifodalanadi (<code>/users</code>, <code>/users/:id</code>), amal — HTTP metod bilan. To'g'ri <strong>status kod</strong> qaytar: 200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Server Error.</p><h3>Express vs Fastify</h3><div class='exlist'><div class='ex'><b>Express</b><span>eng mashhur, sodda, ulkan ekotizim — o'rganishni shundan boshla</span></div><div class='ex'><b>Fastify</b><span>tezroq, sxema-asosli validatsiya, TS bilan yaxshi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>API'ни <strong>versiyala</strong> (<code>/api/v1/...</code>), izchil javob shakli ber, xatoни doim to'g'ri status bilan qaytar. Frontend shunga ishonadi.</p></div></div></div>",
+  "doc": "<div class='prose'><h3>REST tamoyillari</h3><p>Resurslar URL bilan ifodalanadi (<code>/users</code>, <code>/users/:id</code>), amal — HTTP metod bilan. To'g'ri <strong>status kod</strong> qaytar: 200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Server Error.</p><h3>Express vs Fastify</h3><div class='exlist'><div class='ex'><b>Express</b><span>eng mashhur, sodda, ulkan ekotizim — o'rganishni shundan boshla</span></div><div class='ex'><b>Fastify</b><span>tezroq, sxema-asosli validatsiya, TS bilan yaxshi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>API'ni <strong>versiyala</strong> (<code>/api/v1/...</code>), izchil javob shakli ber, xatoni doim to'g'ri status bilan qaytar. Frontend shunga ishonadi.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "REST endpoint (Express)", "p": "GET + POST + status kod." },
@@ -120,8 +120,8 @@
   },
   "quiz": [
    { "q": "Resurs topilmasa qaysi status?", "a": ["200", "404", "201", "500"], "c": 1, "w": "404 Not Found — resurs yo'q. 201 — yaratildi, 400 — noto'g'ri so'rov." },
-   { "q": "req.body o'qish uchun Express'да nima kerak?", "a": ["hech narsa", "express.json() middleware", "fs", "cors"], "c": 1, "w": "express.json() kelgan JSON tanasini parse qiladi." },
-   { "q": "Yangi resurs yaratilganда qaytariladigan status?", "a": ["200", "201", "204", "301"], "c": 1, "w": "201 Created — yangi resurs muvaffaqiyatli yaratildi." }
+   { "q": "req.body o'qish uchun Express'da nima kerak?", "a": ["hech narsa", "express.json() middleware", "fs", "cors"], "c": 1, "w": "express.json() kelgan JSON tanasini parse qiladi." },
+   { "q": "Yangi resurs yaratilganda qaytariladigan status?", "a": ["200", "201", "204", "301"], "c": 1, "w": "201 Created — yangi resurs muvaffaqiyatli yaratildi." }
   ]
  },
  {
@@ -131,8 +131,8 @@
   "coord": "Oqim · BE3",
   "eyebrow": "03 · So'rov quvuri",
   "mtitle": "Middleware, xato boshqaruvi va Zod",
-  "lede": "Middleware — so'rov serverга <strong>yetib borguncha</strong> o'tadigan bosqichlar (log, auth, validation). Kiruvchi ma'lumotni <strong>Zod</strong> bilan tekshir — bu 2026 standarti.",
-  "doc": "<div class='prose'><h3>Middleware nima?</h3><p>Har so'rov funksiyalar zanjiridan o'tadi: <code>log → auth → validate → handler</code>. Har biri <code>next()</code> bilan keyingisiga uzatadi yoki javob qaytaradi.</p><h3>Validatsiya — Zod (2026 standart)</h3><p>Tashqi ma'lumotга <strong>hech qachon ishonma</strong>. Zod sxema bilan tekshir — va sxemadan <strong>TypeScript tipi avtomatik</strong> chiqadi (<code>z.infer</code>). Bitta manba — ham validatsiya, ham tip.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Xato boshqaruvini <strong>markazlashtir</strong> (bitta error-handling middleware). Har joyda try/catch takrorlama — xatoni <code>next(err)</code> bilan uzat.</p></div></div></div>",
+  "lede": "Middleware — so'rov serverga <strong>yetib borguncha</strong> o'tadigan bosqichlar (log, auth, validation). Kiruvchi ma'lumotni <strong>Zod</strong> bilan tekshir — bu 2026 standarti.",
+  "doc": "<div class='prose'><h3>Middleware nima?</h3><p>Har so'rov funksiyalar zanjiridan o'tadi: <code>log → auth → validate → handler</code>. Har biri <code>next()</code> bilan keyingisiga uzatadi yoki javob qaytaradi.</p><h3>Validatsiya — Zod (2026 standart)</h3><p>Tashqi ma'lumotga <strong>hech qachon ishonma</strong>. Zod sxema bilan tekshir — va sxemadan <strong>TypeScript tipi avtomatik</strong> chiqadi (<code>z.infer</code>). Bitta manba — ham validatsiya, ham tip.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Xato boshqaruvini <strong>markazlashtir</strong> (bitta error-handling middleware). Har joyda try/catch takrorlama — xatoni <code>next(err)</code> bilan uzat.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Zod bilan validatsiya", "p": "Sxema → tip + tekshiruv." },
@@ -144,8 +144,8 @@
   "tasks": [
    { "id": "be3-1", "html": "Middleware zanjirini tushundim (next())", "crit": "log/auth/validate ketma-ketligi" },
    { "id": "be3-2", "html": "Zod sxema yozib kiruvchi ma'lumotni tekshirdim", "crit": "noto'g'ri so'rov 400 qaytaradi" },
-   { "id": "be3-3", "html": "z.infer bilan tipni sxemadan oldim", "crit": "qo'lда tip yozmading" },
-   { "id": "be3-4", "html": "Markaziy error-handling middleware qildim", "crit": "xato bitta joyда boshqariladi" }
+   { "id": "be3-3", "html": "z.infer bilan tipni sxemadan oldim", "crit": "qo'lda tip yozmading" },
+   { "id": "be3-4", "html": "Markaziy error-handling middleware qildim", "crit": "xato bitta joyda boshqariladi" }
   ],
   "resources": [
    { "type": "doc", "url": "https://zod.dev/", "title": "Zod", "desc": "TS-first validatsiya (2026 standart)", "host": "zod.dev" },
@@ -153,9 +153,9 @@
   ],
   "project": null,
   "quiz": [
-   { "q": "Middleware keyingi bosqichга qanday o'tadi?", "a": ["return", "next()", "throw", "exit()"], "c": 1, "w": "next() chaqirilsa zanjir davom etadi." },
+   { "q": "Middleware keyingi bosqichga qanday o'tadi?", "a": ["return", "next()", "throw", "exit()"], "c": 1, "w": "next() chaqirilsa zanjir davom etadi." },
    { "q": "Zod nima beradi?", "a": ["faqat tip", "validatsiya + tip (z.infer)", "DB", "log"], "c": 1, "w": "Zod ham runtime validatsiya, ham TS tipini bitta sxemadan beradi." },
-   { "q": "Tashqi (foydalanuvchi) ma'lumotга munosabat?", "a": ["ishonamiz", "hech qachon ishonmaymiz — tekshiramiz", "faqat frontend tekshiradi", "DB tekshiradi"], "c": 1, "w": "Backend kiruvchi ma'lumotni doim validatsiya qilishi shart (xavfsizlik)." }
+   { "q": "Tashqi (foydalanuvchi) ma'lumotga munosabat?", "a": ["ishonamiz", "hech qachon ishonmaymiz — tekshiramiz", "faqat frontend tekshiradi", "DB tekshiradi"], "c": 1, "w": "Backend kiruvchi ma'lumotni doim validatsiya qilishi shart (xavfsizlik)." }
   ]
  },
  {
@@ -166,7 +166,7 @@
   "eyebrow": "04 · Ma'lumotni saqlash",
   "mtitle": "Relyatsion bazalar va SQL",
   "lede": "Ma'lumot — backend'ning yuragi. <strong>PostgreSQL</strong> — eng kuchli ochiq relyatsion baza. SQL bilan ma'lumotni saqlash, o'qish, bog'lash va indekslashni o'rganasan.",
-  "doc": "<div class='prose'><h3>Jadval, qator, ustun</h3><p>Relyatsion baza — bog'langan jadvallar. Har jadval ustun (maydon) va qatordан (yozuv) iborat. <strong>Primary key</strong> — noyob identifikator; <strong>foreign key</strong> — jadvallarni bog'laydi.</p><h3>Asosiy SQL</h3><div class='chips'><span class='chip t'>SELECT</span><span class='chip t'>INSERT</span><span class='chip'>UPDATE</span><span class='chip'>DELETE</span><span class='chip t'>JOIN</span><span class='chip'>WHERE</span></div><h3>Index — tezlik</h3><p>Tez-tez qidiriladigan ustunга <strong>index</strong> qo'y — so'rov yuz barobar tezlashadi. Lekin keragidan ko'p index yozishni sekinlаshtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><strong>SQL injection</strong>: so'rovga foydalanuvchi matnini to'g'ridan-to'g'ri qo'shish. Doim <strong>parametrlangan so'rov</strong> ishlat (<code>$1, $2</code>).</p></div></div></div>",
+  "doc": "<div class='prose'><h3>Jadval, qator, ustun</h3><p>Relyatsion baza — bog'langan jadvallar. Har jadval ustun (maydon) va qatordan (yozuv) iborat. <strong>Primary key</strong> — noyob identifikator; <strong>foreign key</strong> — jadvallarni bog'laydi.</p><h3>Asosiy SQL</h3><div class='chips'><span class='chip t'>SELECT</span><span class='chip t'>INSERT</span><span class='chip'>UPDATE</span><span class='chip'>DELETE</span><span class='chip t'>JOIN</span><span class='chip'>WHERE</span></div><h3>Index — tezlik</h3><p>Tez-tez qidiriladigan ustunga <strong>index</strong> qo'y — so'rov yuz barobar tezlashadi. Lekin keragidan ko'p index yozishni sekinlashtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><strong>SQL injection</strong>: so'rovga foydalanuvchi matnini to'g'ridan-to'g'ri qo'shish. Doim <strong>parametrlangan so'rov</strong> ishlat (<code>$1, $2</code>).</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Jadval + so'rov", "p": "DDL va parametrlangan SELECT." },
@@ -179,7 +179,7 @@
    { "id": "be4-1", "html": "PostgreSQL o'rnatib, baza yaratdim", "crit": "psql yoki GUI ishladi" },
    { "id": "be4-2", "html": "CREATE TABLE bilan jadval qildim (PK bilan)", "crit": "primary key bor" },
    { "id": "be4-3", "html": "SELECT/INSERT/UPDATE/DELETE yozdim", "crit": "4 amal ishladi" },
-   { "id": "be4-4", "html": "JOIN bilan ikki jadvalни bog'ladim", "crit": "foreign key + JOIN" },
+   { "id": "be4-4", "html": "JOIN bilan ikki jadvalni bog'ladim", "crit": "foreign key + JOIN" },
    { "id": "be4-5", "html": "Parametrlangan so'rov ishlatdim", "crit": "$1 bilan, matn ulanmagan" }
   ],
   "resources": [
@@ -190,7 +190,7 @@
   "quiz": [
    { "q": "Jadvaldagi noyob identifikator?", "a": ["foreign key", "primary key", "index", "join"], "c": 1, "w": "Primary key — har qatorni noyob aniqlaydi." },
    { "q": "SQL injection'dan himoya?", "a": ["matnni qo'shish", "parametrlangan so'rov ($1)", "katta harf", "izoh"], "c": 1, "w": "Parametrlangan so'rov foydalanuvchi matnini xavfsiz uzatadi." },
-   { "q": "Qidiruvni tezlashtiradigan narsa?", "a": ["index", "JOIN", "DELETE", "izoh"], "c": 0, "w": "Index tez-tez qidiriladigan ustunда so'rovni tezlashtiradi." }
+   { "q": "Qidiruvni tezlashtiradigan narsa?", "a": ["index", "JOIN", "DELETE", "izoh"], "c": 0, "w": "Index tez-tez qidiriladigan ustunda so'rovni tezlashtiradi." }
   ]
  },
  {
@@ -200,8 +200,8 @@
   "coord": "ORM · BE5",
   "eyebrow": "05 · Tip-xavfsiz baza",
   "mtitle": "ORM — TypeScript bilan ma'lumotlar bazasi",
-  "lede": "ORM bazani <strong>TypeScript obyektlari</strong> sifatida ko'rsatadi — qo'lда SQL yozish o'rniga tip-xavfsiz so'rov. 2026 da ikki yetakchi: <strong>Prisma</strong> va <strong>Drizzle</strong>.",
-  "doc": "<div class='prose'><h3>Nega ORM?</h3><p>SQL qatorlari o'rniga tiplangan funksiya: <code>db.user.findMany()</code>. Avtotўldirish, xatoни kompilyatsiyaда tutish, migratsiya boshqaruvi.</p><h3>Prisma vs Drizzle (2026)</h3><div class='exlist'><div class='ex'><b>Prisma</b><span>\"sen uchun o'ylaydi\": qulay sxema tili, kuchli vositalar — kattaroq hajm</span></div><div class='ex'><b>Drizzle</b><span>\"sen bilan o'ylaydi\": SQL'ga yaqin, juda yengil (~280KB), serverless uchun zo'r — tez o'smoqda</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>SQL'ни tushunganингдан keyin ORM ishlat — ORM SQL'ni yashiradi, lekin yo'qotmaydi. <code>drizzle-zod</code> bilan bitta sxemadan ham DB, ham validatsiya chiqadi.</p></div></div></div>",
+  "lede": "ORM bazani <strong>TypeScript obyektlari</strong> sifatida ko'rsatadi — qo'lda SQL yozish o'rniga tip-xavfsiz so'rov. 2026 da ikki yetakchi: <strong>Prisma</strong> va <strong>Drizzle</strong>.",
+  "doc": "<div class='prose'><h3>Nega ORM?</h3><p>SQL qatorlari o'rniga tiplangan funksiya: <code>db.user.findMany()</code>. Avtoto'ldirish, xatoni kompilyatsiyada tutish, migratsiya boshqaruvi.</p><h3>Prisma vs Drizzle (2026)</h3><div class='exlist'><div class='ex'><b>Prisma</b><span>\"sen uchun o'ylaydi\": qulay sxema tili, kuchli vositalar — kattaroq hajm</span></div><div class='ex'><b>Drizzle</b><span>\"sen bilan o'ylaydi\": SQL'ga yaqin, juda yengil (~280KB), serverless uchun zo'r — tez o'smoqda</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>SQL'ni tushunganingdan keyin ORM ishlat — ORM SQL'ni yashiradi, lekin yo'qotmaydi. <code>drizzle-zod</code> bilan bitta sxemadan ham DB, ham validatsiya chiqadi.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Drizzle — sxema + so'rov", "p": "TS-first, SQL'ga yaqin." },
@@ -246,7 +246,7 @@
   "eyebrow": "06 · Boshqa saqlash turlari",
   "mtitle": "MongoDB hujjatlari va Redis kesh",
   "lede": "Hamma narsa SQL emas. <strong>MongoDB</strong> — moslashuvchan hujjat bazasi; <strong>Redis</strong> — o'ta tez xotira keshi (cache, sessiya, navbat). Qachon qaysini ishlatishni bilish — senior ko'nikma.",
-  "doc": "<div class='prose'><h3>SQL vs NoSQL</h3><div class='exlist'><div class='ex'><b>SQL (Postgres)</b><span>qat'iy sxema, bog'lanishlar, tranzaksiya — ko'p hollarда default</span></div><div class='ex'><b>MongoDB</b><span>hujjat (JSON), moslashuvchan sxema — tez o'zgaruvchi struktura uchun</span></div></div><h3>Redis — tezlik</h3><p>Xotirада ishlaydi → mikrosoniya tezlik. Ishlatilishi: <strong>kesh</strong> (DB yukini kamaytirish), <strong>sessiya</strong>, <strong>rate limiting</strong>, <strong>navbat</strong> (BullMQ).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval to'g'ri DB (ko'pincha PostgreSQL) tanla. Redis'ни <strong>tezlik muammosi paydo bo'lganда</strong> kesh sifatida qo'sh — erta optimallashtirma.</p></div></div></div>",
+  "doc": "<div class='prose'><h3>SQL vs NoSQL</h3><div class='exlist'><div class='ex'><b>SQL (Postgres)</b><span>qat'iy sxema, bog'lanishlar, tranzaksiya — ko'p hollarda default</span></div><div class='ex'><b>MongoDB</b><span>hujjat (JSON), moslashuvchan sxema — tez o'zgaruvchi struktura uchun</span></div></div><h3>Redis — tezlik</h3><p>Xotirada ishlaydi → mikrosoniya tezlik. Ishlatilishi: <strong>kesh</strong> (DB yukini kamaytirish), <strong>sessiya</strong>, <strong>rate limiting</strong>, <strong>navbat</strong> (BullMQ).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval to'g'ri DB (ko'pincha PostgreSQL) tanla. Redis'ni <strong>tezlik muammosi paydo bo'lganda</strong> kesh sifatida qo'sh — erta optimallashtirma.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Redis kesh namunasi", "p": "Avval keshdan, bo'lmasa DB'dan." },
@@ -257,8 +257,8 @@
   ],
   "tasks": [
    { "id": "be6-1", "html": "SQL va NoSQL farqini tushundim", "crit": "qachon qaysi" },
-   { "id": "be6-2", "html": "MongoDB'да hujjat saqlab o'qidim", "crit": "insert + find" },
-   { "id": "be6-3", "html": "Redis'да qiymat saqlab oldim (TTL bilan)", "crit": "set/get + muddat" },
+   { "id": "be6-2", "html": "MongoDB'da hujjat saqlab o'qidim", "crit": "insert + find" },
+   { "id": "be6-3", "html": "Redis'da qiymat saqlab oldim (TTL bilan)", "crit": "set/get + muddat" },
    { "id": "be6-4", "html": "Kesh namunasini (cache-aside) qo'lladim", "crit": "avval kesh, keyin DB" }
   ],
   "resources": [
@@ -267,9 +267,9 @@
   ],
   "project": null,
   "quiz": [
-   { "q": "Redis asosan nima uchun?", "a": ["asosiy saqlash", "tez kesh / sessiya / navbat", "frontend", "CSS"], "c": 1, "w": "Redis xotirада — kesh, sessiya, rate limit, navbat uchun." },
+   { "q": "Redis asosan nima uchun?", "a": ["asosiy saqlash", "tez kesh / sessiya / navbat", "frontend", "CSS"], "c": 1, "w": "Redis xotirada — kesh, sessiya, rate limit, navbat uchun." },
    { "q": "Moslashuvchan, sxemasiz hujjat bazasi?", "a": ["PostgreSQL", "MongoDB", "Redis", "MySQL"], "c": 1, "w": "MongoDB — JSON hujjatlar, moslashuvchan sxema." },
-   { "q": "Redis'ни qachon qo'shish kerak?", "a": ["doim birinchi", "tezlik muammosi paydo bo'lganда", "hech qachon", "frontend uchun"], "c": 1, "w": "Erta optimallashtirma — real ehtiyoj bo'lganда kesh qo'sh." }
+   { "q": "Redis'ni qachon qo'shish kerak?", "a": ["doim birinchi", "tezlik muammosi paydo bo'lganda", "hech qachon", "frontend uchun"], "c": 1, "w": "Erta optimallashtirma — real ehtiyoj bo'lganda kesh qo'sh." }
   ]
  },
  {
@@ -280,7 +280,7 @@
   "eyebrow": "07 · Kim va nima qila oladi",
   "mtitle": "Autentifikatsiya, JWT va OWASP",
   "lede": "Auth — eng muhim backend mas'uliyati. <strong>Authentication</strong> (kim?) va <strong>authorization</strong> (nima qila oladi?). Parolni hash qil, JWT bilan sessiya, OWASP xavflaridan himoyalan.",
-  "doc": "<div class='prose'><h3>Authentication vs Authorization</h3><div class='exlist'><div class='ex'><b>Authentication</b><span>kimligini tasdiqlash (login)</span></div><div class='ex'><b>Authorization</b><span>nimaga ruxsati borligi (rol/huquq)</span></div></div><h3>Parol va token</h3><p>Parolни <strong>hech qachon ochiq saqlama</strong> — <code>bcrypt</code>/<code>argon2</code> bilan hash qil. Login muvaffaqiyatли bo'lsa <strong>JWT</strong> token ber; har so'rovда tekshir.</p><h3>OWASP — asosiy xavflar</h3><div class='chips'><span class='chip'>SQL injection</span><span class='chip'>XSS</span><span class='chip'>CSRF</span><span class='chip'>Broken auth</span><span class='chip'>Secrets ochiq</span></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Maxfiy kalitlarни <strong>kodга yozma</strong> — <code>.env</code> va secret-manager ishlat. <code>.env</code> ni git'ga qo'shma. 2026: passkeys/OAuth ham keng tarqalmoqda.</p></div></div></div>",
+  "doc": "<div class='prose'><h3>Authentication vs Authorization</h3><div class='exlist'><div class='ex'><b>Authentication</b><span>kimligini tasdiqlash (login)</span></div><div class='ex'><b>Authorization</b><span>nimaga ruxsati borligi (rol/huquq)</span></div></div><h3>Parol va token</h3><p>Parolni <strong>hech qachon ochiq saqlama</strong> — <code>bcrypt</code>/<code>argon2</code> bilan hash qil. Login muvaffaqiyatli bo'lsa <strong>JWT</strong> token ber; har so'rovda tekshir.</p><h3>OWASP — asosiy xavflar</h3><div class='chips'><span class='chip'>SQL injection</span><span class='chip'>XSS</span><span class='chip'>CSRF</span><span class='chip'>Broken auth</span><span class='chip'>Secrets ochiq</span></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Maxfiy kalitlarni <strong>kodga yozma</strong> — <code>.env</code> va secret-manager ishlat. <code>.env</code> ni git'ga qo'shma. 2026: passkeys/OAuth ham keng tarqalmoqda.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Parol hash + JWT", "p": "bcrypt + token berish." },
@@ -296,8 +296,8 @@
   "tasks": [
    { "id": "be7-1", "html": "Authentication va authorization farqini bilaman", "crit": "kim vs nima qila oladi" },
    { "id": "be7-2", "html": "Parolni bcrypt bilan hash qildim", "crit": "ochiq parol saqlanmaydi" },
-   { "id": "be7-3", "html": "JWT token berib, middleware'да tekshirdim", "crit": "himoyalangan endpoint" },
-   { "id": "be7-4", "html": "Maxfiy kalitlarni .env ga ko'chirdim", "crit": ".env gitignore'да" },
+   { "id": "be7-3", "html": "JWT token berib, middleware'da tekshirdim", "crit": "himoyalangan endpoint" },
+   { "id": "be7-4", "html": "Maxfiy kalitlarni .env ga ko'chirdim", "crit": ".env gitignore'da" },
    { "id": "be7-5", "html": "Kamida 3 ta OWASP xavfini bilaman", "crit": "injection/XSS/auth" }
   ],
   "resources": [
@@ -311,9 +311,9 @@
    "features": ["Parol hash", "JWT token", "Auth middleware", "Rol bilan himoya"]
   },
   "quiz": [
-   { "q": "Parolni qanday saqlash kerak?", "a": ["ochiq matnда", "bcrypt/argon2 hash bilan", "base64", "cookie'да"], "c": 1, "w": "Parol doim hash qilinadi (bcrypt/argon2) — ochiq saqlanmaydi." },
+   { "q": "Parolni qanday saqlash kerak?", "a": ["ochiq matnda", "bcrypt/argon2 hash bilan", "base64", "cookie'da"], "c": 1, "w": "Parol doim hash qilinadi (bcrypt/argon2) — ochiq saqlanmaydi." },
    { "q": "\"Nimaga ruxsati bor?\" — bu nima?", "a": ["authentication", "authorization", "encryption", "validation"], "c": 1, "w": "Authorization — huquq/rol; authentication — kimligi." },
-   { "q": "Maxfiy kalit qayerда?", "a": ["kodда", ".env / secret manager", "frontend'да", "README'да"], "c": 1, "w": ".env va secret-manager; kodga yozilmaydi, git'ga qo'shilmaydi." }
+   { "q": "Maxfiy kalit qayerda?", "a": ["kodda", ".env / secret manager", "frontend'da", "README'da"], "c": 1, "w": ".env va secret-manager; kodga yozilmaydi, git'ga qo'shilmaydi." }
   ]
  },
  {
@@ -323,8 +323,8 @@
   "coord": "Arch · BE8",
   "eyebrow": "08 · Katta loyiha tuzilmasi",
   "mtitle": "Toza arxitektura va NestJS",
-  "lede": "Kod o'sganда tuzilma kerak. <strong>Qatlamli arxitektura</strong> (controller → service → repository) va <strong>NestJS</strong> (TS-first, DI) bilan kengaytiriladigan, sinaladigan backend quriladi.",
-  "doc": "<div class='prose'><h3>Qatlamlar (separation of concerns)</h3><div class='exlist'><div class='ex'><b>Controller</b><span>HTTP — so'rov/javob, validatsiya</span></div><div class='ex'><b>Service</b><span>biznes mantiq — asosiy qoidalar</span></div><div class='ex'><b>Repository</b><span>ma'lumotlar bazasi bilan ishlash</span></div></div><h3>NestJS — DI va modullik</h3><p>NestJS dekoratorlar va <strong>Dependency Injection</strong> bilan kodни modullarга ajratadi. Sinash oson, jamoa uchun izchil tuzilma. Backend uchun \"Angular\".</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Biznes mantiqни HTTP'дан ajrat — service framework'ни bilmasin. Shunda test oson, framework almashса ham mantiq qoladi.</p></div></div></div>",
+  "lede": "Kod o'sganda tuzilma kerak. <strong>Qatlamli arxitektura</strong> (controller → service → repository) va <strong>NestJS</strong> (TS-first, DI) bilan kengaytiriladigan, sinaladigan backend quriladi.",
+  "doc": "<div class='prose'><h3>Qatlamlar (separation of concerns)</h3><div class='exlist'><div class='ex'><b>Controller</b><span>HTTP — so'rov/javob, validatsiya</span></div><div class='ex'><b>Service</b><span>biznes mantiq — asosiy qoidalar</span></div><div class='ex'><b>Repository</b><span>ma'lumotlar bazasi bilan ishlash</span></div></div><h3>NestJS — DI va modullik</h3><p>NestJS dekoratorlar va <strong>Dependency Injection</strong> bilan kodni modullarga ajratadi. Sinash oson, jamoa uchun izchil tuzilma. Backend uchun \"Angular\".</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Biznes mantiqni HTTP'dan ajrat — service framework'ni bilmasin. Shunda test oson, framework almashsa ham mantiq qoladi.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "NestJS controller + service", "p": "DI bilan qatlamli." },
@@ -337,7 +337,7 @@
    { "id": "be8-1", "html": "Controller/service/repository qatlamlarini ajratdim", "crit": "mas'uliyatlar bo'lingan" },
    { "id": "be8-2", "html": "NestJS loyiha yaratdim", "crit": "nest new ishladi" },
    { "id": "be8-3", "html": "Dependency Injection ishlatdim", "crit": "service controller'ga inject" },
-   { "id": "be8-4", "html": "Biznes mantiqni HTTP'дан ajratdim", "crit": "service framework'siz" }
+   { "id": "be8-4", "html": "Biznes mantiqni HTTP'dan ajratdim", "crit": "service framework'siz" }
   ],
   "resources": [
    { "type": "doc", "url": "https://docs.nestjs.com/", "title": "NestJS — docs", "desc": "TS-first backend framework", "host": "docs.nestjs.com" },
@@ -345,9 +345,9 @@
   ],
   "project": null,
   "quiz": [
-   { "q": "Biznes mantiq qaysi qatlamда?", "a": ["controller", "service", "repository", "middleware"], "c": 1, "w": "Service — biznes mantiq; controller — HTTP; repository — DB." },
+   { "q": "Biznes mantiq qaysi qatlamda?", "a": ["controller", "service", "repository", "middleware"], "c": 1, "w": "Service — biznes mantiq; controller — HTTP; repository — DB." },
    { "q": "NestJS asosiy g'oyasi?", "a": ["CSS", "DI + modullik (dekoratorlar)", "faqat frontend", "DB"], "c": 1, "w": "NestJS Dependency Injection va modullik bilan tuzilma beradi." },
-   { "q": "Nega mantiqни HTTP'дан ajratamiz?", "a": ["chiroyli ko'rinadi", "test oson + framework'ga bog'liq emas", "tezroq", "shart emas"], "c": 1, "w": "Ajratilgan mantiq sinaladi va framework almashса ham qoladi." }
+   { "q": "Nega mantiqni HTTP'dan ajratamiz?", "a": ["chiroyli ko'rinadi", "test oson + framework'ga bog'liq emas", "tezroq", "shart emas"], "c": 1, "w": "Ajratilgan mantiq sinaladi va framework almashsa ham qoladi." }
   ]
  },
  {
@@ -355,10 +355,10 @@
   "title": "API uslublari",
   "sub": "API+",
   "coord": "API+ · BE9",
-  "eyebrow": "09 · REST'дан tashqari",
+  "eyebrow": "09 · REST'dan tashqari",
   "mtitle": "GraphQL, tRPC va WebSockets",
   "lede": "REST yagona yo'l emas. <strong>GraphQL</strong> — mijoz kerakli maydonni so'raydi; <strong>tRPC</strong> — TS uchun end-to-end tip-xavfsizlik; <strong>WebSockets</strong> — real-time aloqa.",
-  "doc": "<div class='prose'><h3>Uslublarni taqqoslash</h3><div class='exlist'><div class='ex'><b>REST</b><span>oddiy, universal, keng tarqalgan — default</span></div><div class='ex'><b>GraphQL</b><span>bitta endpoint, mijoz kerakli maydonni so'raydi — over-fetching yo'q</span></div><div class='ex'><b>tRPC</b><span>full-stack TS: server funksiyasini frontend tip bilan chaqiradi (kod-generatsiyasiz)</span></div><div class='ex'><b>WebSockets</b><span>ikki tomonlama real-time (chat, jonli yangilanish)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Ko'p holatда <strong>REST</strong> yetadi. Frontend ham TS bo'lsa va bitta jamoa bo'lsa → <strong>tRPC</strong> ajoyib. Murakkab, ko'p-mijozli data → <strong>GraphQL</strong>. Real-time → <strong>WebSockets</strong>.</p></div></div></div>",
+  "doc": "<div class='prose'><h3>Uslublarni taqqoslash</h3><div class='exlist'><div class='ex'><b>REST</b><span>oddiy, universal, keng tarqalgan — default</span></div><div class='ex'><b>GraphQL</b><span>bitta endpoint, mijoz kerakli maydonni so'raydi — over-fetching yo'q</span></div><div class='ex'><b>tRPC</b><span>full-stack TS: server funksiyasini frontend tip bilan chaqiradi (kod-generatsiyasiz)</span></div><div class='ex'><b>WebSockets</b><span>ikki tomonlama real-time (chat, jonli yangilanish)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Ko'p holatda <strong>REST</strong> yetadi. Frontend ham TS bo'lsa va bitta jamoa bo'lsa → <strong>tRPC</strong> ajoyib. Murakkab, ko'p-mijozli data → <strong>GraphQL</strong>. Real-time → <strong>WebSockets</strong>.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "tRPC — end-to-end tip-xavfsiz", "p": "Server procedure, frontend tip bilan chaqiradi." },
@@ -379,8 +379,8 @@
   ],
   "project": null,
   "quiz": [
-   { "q": "Over-fetching'ni kamaytiradigan uslub?", "a": ["REST", "GraphQL", "SOAP", "FTP"], "c": 1, "w": "GraphQL'да mijoz aynan kerakli maydonni so'raydi." },
-   { "q": "Full-stack TS uchun tip-xavfsiz API?", "a": ["tRPC", "REST", "SOAP", "RPC over XML"], "c": 0, "w": "tRPC server va frontend o'rtasида tiplarни ulashadi — kod-generatsiyasiz." },
+   { "q": "Over-fetching'ni kamaytiradigan uslub?", "a": ["REST", "GraphQL", "SOAP", "FTP"], "c": 1, "w": "GraphQL'da mijoz aynan kerakli maydonni so'raydi." },
+   { "q": "Full-stack TS uchun tip-xavfsiz API?", "a": ["tRPC", "REST", "SOAP", "RPC over XML"], "c": 0, "w": "tRPC server va frontend o'rtasida tiplarni ulashadi — kod-generatsiyasiz." },
    { "q": "Real-time ikki tomonlama aloqa?", "a": ["GET polling", "WebSockets", "POST", "GraphQL query"], "c": 1, "w": "WebSockets — doimiy ikki tomonlama kanal (chat, jonli)." }
   ]
  },
@@ -391,8 +391,8 @@
   "coord": "Sifat · BE10",
   "eyebrow": "10 · Ishonchli backend",
   "mtitle": "Testlar, loglar va kuzatuv",
-  "lede": "Production'да nima sodir bo'layotganини <strong>ko'ra olishing</strong> kerak. Testlar (ishonch), strukturali loglar va <strong>observability</strong> (OpenTelemetry) — senior backend belgilari.",
-  "doc": "<div class='prose'><h3>Test piramidasi</h3><div class='exlist'><div class='ex'><b>Unit</b><span>alohida funksiya/service — ko'p va tez</span></div><div class='ex'><b>Integration</b><span>DB + API birga — o'rtacha</span></div><div class='ex'><b>E2E</b><span>to'liq oqim — kam, lekin muhim</span></div></div><h3>Strukturali log</h3><p>Matn emas — <strong>JSON log</strong> (pino/winston) yoz: vaqt, daraja, so'rov id. Shunda qidirish va tahlil oson.</p><h3>Observability (2026)</h3><p><strong>OpenTelemetry</strong> — metrikalar, loglar, trace'ni bir standartда yig'adi. So'rov tizimда qayerда sekinlashganини ko'rasan.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Xatoни <strong>yutib yuborma</strong> (bo'sh catch). Logla, kuzatuvга yubor (Sentry), to'g'ri status qaytar. Ko'rinmaydigan xato — eng yomon xato.</p></div></div></div>",
+  "lede": "Production'da nima sodir bo'layotganini <strong>ko'ra olishing</strong> kerak. Testlar (ishonch), strukturali loglar va <strong>observability</strong> (OpenTelemetry) — senior backend belgilari.",
+  "doc": "<div class='prose'><h3>Test piramidasi</h3><div class='exlist'><div class='ex'><b>Unit</b><span>alohida funksiya/service — ko'p va tez</span></div><div class='ex'><b>Integration</b><span>DB + API birga — o'rtacha</span></div><div class='ex'><b>E2E</b><span>to'liq oqim — kam, lekin muhim</span></div></div><h3>Strukturali log</h3><p>Matn emas — <strong>JSON log</strong> (pino/winston) yoz: vaqt, daraja, so'rov id. Shunda qidirish va tahlil oson.</p><h3>Observability (2026)</h3><p><strong>OpenTelemetry</strong> — metrikalar, loglar, trace'ni bir standartda yig'adi. So'rov tizimda qayerda sekinlashganini ko'rasan.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Xatoni <strong>yutib yuborma</strong> (bo'sh catch). Logla, kuzatuvga yubor (Sentry), to'g'ri status qaytar. Ko'rinmaydigan xato — eng yomon xato.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Service testi (Vitest)", "p": "Biznes mantiqni sinash." },
@@ -405,7 +405,7 @@
    { "id": "be10-1", "html": "Test piramidasini tushundim", "crit": "unit/integration/e2e" },
    { "id": "be10-2", "html": "Service'ga unit test yozdim (Vitest/Jest)", "crit": "o'tadigan test" },
    { "id": "be10-3", "html": "Strukturali (JSON) log qo'shdim", "crit": "pino/winston" },
-   { "id": "be10-4", "html": "Xatoni kuzatuvga (Sentry) yoki logга yubordim", "crit": "bo'sh catch yo'q" }
+   { "id": "be10-4", "html": "Xatoni kuzatuvga (Sentry) yoki logga yubordim", "crit": "bo'sh catch yo'q" }
   ],
   "resources": [
    { "type": "doc", "url": "https://vitest.dev/", "title": "Vitest", "desc": "Tez test runner", "host": "vitest.dev" },
@@ -425,8 +425,8 @@
   "coord": "Senior · BE11",
   "eyebrow": "11 · Production va miqyos",
   "mtitle": "Docker, CI/CD, masshtablash va system design",
-  "lede": "Senior — koddan <strong>tizimга</strong> o'tish: konteyner, avtomatik deploy, masshtablash, navbatlar va arxitektura qarorlari. Bu modul koddan <strong>muhandislikка</strong> ko'prik.",
-  "doc": "<div class='prose'><h3>Docker & CI/CD</h3><p><strong>Docker</strong> ilovani konteyner qiladi — \"mening kompyuterimда ishlaydi\" muammosi yo'qoladi. <strong>CI/CD</strong>: push → test → build → deploy avtomatik.</p><h3>Masshtablash</h3><div class='exlist'><div class='ex'><b>Vertical</b><span>kuchliroq server — oddiy, lekin chegarali</span></div><div class='ex'><b>Horizontal</b><span>ko'p nusxa + load balancer — stateless dizayn talab qiladi</span></div><div class='ex'><b>Navbat (queue)</b><span>og'ir ishni keyinga (BullMQ/Kafka) — javob tez qoladi</span></div></div><h3>System design fikrlash</h3><p>Senior <strong>trade-off</strong>ни ko'radi: kesh vs tezlik, izchillik vs mavjudlik, monolit vs microservices. To'g'ri javob — kontekstga bog'liq.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Microservices'ни <strong>erta</strong> tanlama — monolit ko'p loyihaga yetadi va sodda. Murakkablikни faqat <strong>haqiqiy ehtiyoj</strong> bo'lганда qo'sh.</p></div></div><h3>🧭 Senior keyingi qadamlar (xabardorlik)</h3><p>Quyidagilar — <strong>ishда, kerak bo'lganда</strong> o'rganadigan ixtisoslashган mavzular. Hozir chuqur shart emas; nima ekanini va qachon kerakligini bilsang yetadi:</p><div class='exlist'><div class='ex'><b>Microservices</b><span>monolitni mustaqil xizmatlarga bo'lish — faqat jamoa/miqyos talab qilganда</span></div><div class='ex'><b>Kafka</b><span>event streaming — katta hajmli oqim, loglar, real-time pipeline</span></div><div class='ex'><b>RabbitMQ</b><span>message broker — vazifalarni xizmatlar orasida ishonchli uzatish</span></div><div class='ex'><b>Kubernetes</b><span>konteyner orkestratsiyasi — ko'p konteynerni avtomatik boshqarish (ko'pincha managed platform yetadi)</span></div><div class='ex'><b>GraphQL advanced</b><span>federation, DataLoader (N+1), subscriptions — GraphQL'ни miqyosда ishlatсang</span></div><div class='ex'><b>AWS advanced</b><span>ECS/EKS, Lambda, RDS, S3, SQS — cloud/DevOps yo'nalishi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>Bularning hammasini birdan o'rganma. Bittasini — loyihang yoki ishing talab qilganда — chuqur o'rgan. <strong>Xabardorlik + kerakда chuqurlashish</strong> = senior yondashuv.</p></div></div></div>",
+  "lede": "Senior — koddan <strong>tizimga</strong> o'tish: konteyner, avtomatik deploy, masshtablash, navbatlar va arxitektura qarorlari. Bu modul koddan <strong>muhandislikka</strong> ko'prik.",
+  "doc": "<div class='prose'><h3>Docker & CI/CD</h3><p><strong>Docker</strong> ilovani konteyner qiladi — \"mening kompyuterimda ishlaydi\" muammosi yo'qoladi. <strong>CI/CD</strong>: push → test → build → deploy avtomatik.</p><h3>Masshtablash</h3><div class='exlist'><div class='ex'><b>Vertical</b><span>kuchliroq server — oddiy, lekin chegarali</span></div><div class='ex'><b>Horizontal</b><span>ko'p nusxa + load balancer — stateless dizayn talab qiladi</span></div><div class='ex'><b>Navbat (queue)</b><span>og'ir ishni keyinga (BullMQ/Kafka) — javob tez qoladi</span></div></div><h3>System design fikrlash</h3><p>Senior <strong>trade-off</strong>ни ko'radi: kesh vs tezlik, izchillik vs mavjudlik, monolit vs microservices. To'g'ri javob — kontekstga bog'liq.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Microservices'ni <strong>erta</strong> tanlama — monolit ko'p loyihaga yetadi va sodda. Murakkablikni faqat <strong>haqiqiy ehtiyoj</strong> bo'lganda qo'sh.</p></div></div><h3>🧭 Senior keyingi qadamlar (xabardorlik)</h3><p>Quyidagilar — <strong>ishda, kerak bo'lganda</strong> o'rganadigan ixtisoslashgan mavzular. Hozir chuqur shart emas; nima ekanini va qachon kerakligini bilsang yetadi:</p><div class='exlist'><div class='ex'><b>Microservices</b><span>monolitni mustaqil xizmatlarga bo'lish — faqat jamoa/miqyos talab qilganda</span></div><div class='ex'><b>Kafka</b><span>event streaming — katta hajmli oqim, loglar, real-time pipeline</span></div><div class='ex'><b>RabbitMQ</b><span>message broker — vazifalarni xizmatlar orasida ishonchli uzatish</span></div><div class='ex'><b>Kubernetes</b><span>konteyner orkestratsiyasi — ko'p konteynerni avtomatik boshqarish (ko'pincha managed platform yetadi)</span></div><div class='ex'><b>GraphQL advanced</b><span>federation, DataLoader (N+1), subscriptions — GraphQL'ni miqyosda ishlatsang</span></div><div class='ex'><b>AWS advanced</b><span>ECS/EKS, Lambda, RDS, S3, SQS — cloud/DevOps yo'nalishi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>Bularning hammasini birdan o'rganma. Bittasini — loyihang yoki ishing talab qilganda — chuqur o'rgan. <strong>Xabardorlik + kerakda chuqurlashish</strong> = senior yondashuv.</p></div></div></div>",
   "code": [
    {
     "heading": { "h": "Dockerfile (Node)", "p": "Ilovani konteynerlash." },
@@ -444,15 +444,15 @@
   "tasks": [
    { "id": "be11-1", "html": "Ilovani Dockerfile bilan konteyner qildim", "crit": "docker build/run ishladi" },
    { "id": "be11-2", "html": "GitHub Actions CI sozladim", "crit": "push'da test+build" },
-   { "id": "be11-3", "html": "Serverга deploy qildim (Railway/Render/VPS)", "crit": "jonli URL" },
-   { "id": "be11-4", "html": "Og'ir ishni navbatga (queue) ko'chirdim", "crit": "BullMQ yoki shunга o'xshash" },
+   { "id": "be11-3", "html": "Serverga deploy qildim (Railway/Render/VPS)", "crit": "jonli URL" },
+   { "id": "be11-4", "html": "Og'ir ishni navbatga (queue) ko'chirdim", "crit": "BullMQ yoki shunga o'xshash" },
    { "id": "be11-5", "html": "Bitta system design savolini tahlil qildim", "crit": "trade-off'larni yozding" }
   ],
   "resources": [
    { "type": "doc", "url": "https://docs.docker.com/get-started/", "title": "Docker — Get started", "desc": "Konteyner asoslari", "host": "docs.docker.com" },
    { "type": "doc", "url": "https://github.com/donnemartin/system-design-primer", "title": "System Design Primer", "desc": "Masshtablash va dizayn", "host": "github.com" },
    { "type": "doc", "url": "https://docs.bullmq.io/", "title": "BullMQ", "desc": "Redis asosli navbat", "host": "docs.bullmq.io" },
-   { "type": "doc", "url": "https://kubernetes.io/docs/concepts/", "title": "Kubernetes — concepts", "desc": "Konteyner orkestratsiyasi (kerak bo'lganда)", "host": "kubernetes.io" },
+   { "type": "doc", "url": "https://kubernetes.io/docs/concepts/", "title": "Kubernetes — concepts", "desc": "Konteyner orkestratsiyasi (kerak bo'lganda)", "host": "kubernetes.io" },
    { "type": "doc", "url": "https://kafka.apache.org/documentation/", "title": "Apache Kafka", "desc": "Event streaming platformasi", "host": "kafka.apache.org" }
   ],
   "project": {
@@ -462,9 +462,9 @@
    "features": ["TS + ORM + auth", "Testlar + CI", "Docker + deploy", "Strukturali log", "README + arxitektura"]
   },
   "quiz": [
-   { "q": "Docker nimani hal qiladi?", "a": ["dizayn", "'mening kompyuterimда ishlaydi' muammosi", "internet", "CSS"], "c": 1, "w": "Docker muhitni konteynerга solib, hamma joyда bir xil ishlatadi." },
+   { "q": "Docker nimani hal qiladi?", "a": ["dizayn", "'mening kompyuterimda ishlaydi' muammosi", "internet", "CSS"], "c": 1, "w": "Docker muhitni konteynerga solib, hamma joyda bir xil ishlatadi." },
    { "q": "Horizontal masshtablash nimani talab qiladi?", "a": ["kuchliroq CPU", "stateless dizayn + load balancer", "katta disk", "ko'proq RAM"], "c": 1, "w": "Ko'p nusxa ishlashi uchun ilova stateless bo'lishi kerak." },
-   { "q": "Microservices'ni qachon tanlash kerak?", "a": ["doim, boshidan", "haqiqiy ehtiyoj bo'lganда", "hech qachon", "kichik loyihaда"], "c": 1, "w": "Monolit ko'p loyihaga yetadi; murakkablikни ehtiyojga qarab qo'sh." }
+   { "q": "Microservices'ni qachon tanlash kerak?", "a": ["doim, boshidan", "haqiqiy ehtiyoj bo'lganda", "hech qachon", "kichik loyihada"], "c": 1, "w": "Monolit ko'p loyihaga yetadi; murakkablikni ehtiyojga qarab qo'sh." }
   ]
  }
 ]

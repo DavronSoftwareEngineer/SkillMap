@@ -106,7 +106,7 @@ function ListenItem({ ex, idx }: { ex: Exercise; idx: number }) {
       <div className="exc">
         <div className="exc-q">
           <span className="exc-n">{idx + 1}.</span>
-          <span>Tinglash mashqi — brauzeringiz ovozни qo'llab-quvvatlamaydi.</span>
+          <span>Tinglash mashqi — brauzeringiz ovozni qo'llab-quvvatlamaydi.</span>
         </div>
       </div>
     );

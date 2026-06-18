@@ -46,8 +46,8 @@ export function Flashcards() {
   }, [course, courseId]);
 
   const words = useMemo(() => allVocab.map((v) => v.w), [allVocab]);
-  // Takror navbati — bir marta hisoblanadi (har baholashда qayta tartiblanib
-  // sakrab ketmasligi uchun). Baholangan so'z navbatdан olib tashlanadi.
+  // Takror navbati — bir marta hisoblanadi (har baholashda qayta tartiblanib
+  // sakrab ketmasligi uchun). Baholangan so'z navbatdan olib tashlanadi.
   const initialQueue = useMemo(
     () => dueWords(words, srs, Date.now()),
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,7 +56,7 @@ export function Flashcards() {
   const [queue, setQueue] = useState<string[]>(initialQueue);
   const [flipped, setFlipped] = useState(false);
 
-  // Kurs almashganda navbatни yangilaymiz.
+  // Kurs almashganda navbatni yangilaymiz.
   useEffect(() => {
     setQueue(dueWords(words, srs, Date.now()));
     setFlipped(false);
@@ -112,7 +112,7 @@ export function Flashcards() {
       <div className="dash">
         <div className="eyebrow">Lug'at · Flashcards</div>
         <h2 className="mtitle">Lug'at</h2>
-        <p className="mlede">Bu kursда flashcard lug'at hozircha yo'q.</p>
+        <p className="mlede">Bu kursda flashcard lug'at hozircha yo'q.</p>
       </div>
     );
   }
@@ -126,7 +126,7 @@ export function Flashcards() {
       <p className="mlede">
         Kartani ag'darib ma'noni ko'r, keyin o'zingni bahola:{" "}
         <strong>Qiyin</strong> tez qaytadi, <strong>Bilaman</strong> kechroq, <strong>Oson</strong> eng
-        kech. So'z {MAX_BOX}-darajaga yetса — o'zlashtirilgan hisoblanadi.
+        kech. So'z {MAX_BOX}-darajaga yetsa — o'zlashtirilgan hisoblanadi.
         {isLang && canSpeak() && " Talaffuz uchun 🔊."}
         <br />
         <small style={{ opacity: 0.7 }}>Klaviatura: Space — ag'dar · 1 Qiyin · 2 Bilaman · 3 Oson · → keyingisi</small>
@@ -134,10 +134,10 @@ export function Flashcards() {
 
       <div className="fc-head">
         <span className="qscore">
-          O'zlashtirilgan: {mastered} / {words.length} &nbsp;·&nbsp; navbatда: {queue.length}
+          O'zlashtirilgan: {mastered} / {words.length} &nbsp;·&nbsp; navbatda: {queue.length}
         </span>
         <button className="qreset" onClick={resetSrs}>
-          Progressни tozalash
+          Progressni tozalash
         </button>
       </div>
 

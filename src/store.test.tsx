@@ -31,16 +31,16 @@ describe("store — progress kurslar bo'yicha alohida", () => {
     act(() => result.current.toggleTask("t1"));
     expect(result.current.isDone("t1")).toBe(true);
 
-    // Boshqa kursга o'tganда o'sha topshiriq belgilanmagan bo'lishi kerak.
+    // Boshqa kursga o'tganda o'sha topshiriq belgilanmagan bo'lishi kerak.
     act(() => result.current.setCourse("english"));
     expect(result.current.isDone("t1")).toBe(false);
 
-    // Birinchi kursга qaytsak — belgi saqlangan.
+    // Birinchi kursga qaytsak — belgi saqlangan.
     act(() => result.current.setCourse(COURSES[0].id));
     expect(result.current.isDone("t1")).toBe(true);
   });
 
-  it("toggleTask ikki marta bosilса belgini olib tashlaydi", () => {
+  it("toggleTask ikki marta bosilsa belgini olib tashlaydi", () => {
     const { result } = render();
     act(() => result.current.toggleTask("t1"));
     act(() => result.current.toggleTask("t1"));

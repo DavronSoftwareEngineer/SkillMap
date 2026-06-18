@@ -18,7 +18,7 @@ export function RichHtml({ html, className }: { html: string; className?: string
       code.innerHTML = highlight(code.textContent || "", lang);
     });
 
-    // Kodга "Nusxa" tugmasi
+    // Kodga "Nusxa" tugmasi
     root.querySelectorAll<HTMLElement>(".codehead").forEach((head) => {
       if (head.querySelector(".copybtn")) return;
       const btn = document.createElement("button");
@@ -34,7 +34,7 @@ export function RichHtml({ html, className }: { html: string; className?: string
       head.appendChild(btn);
     });
 
-    // English darsларидаги misol gaplarga talaffuz tugmasi
+    // English darslaridagi misol gaplarga talaffuz tugmasi
     if ((courseId === "english" || courseId === "russian") && canSpeak()) {
       const sLang = courseId === "russian" ? "ru-RU" : "en-US";
       root.querySelectorAll<HTMLElement>(".ex b").forEach((b) => {

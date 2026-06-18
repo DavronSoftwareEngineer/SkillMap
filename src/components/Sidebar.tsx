@@ -44,17 +44,31 @@ export function Sidebar({
   const hasBooks = (course.books?.length || 0) > 0;
   const hasVocab = modules.some((m) => (m.vocab?.length || 0) > 0);
   const hasGrammar = modules.some((m) => (m.grammar?.length || 0) > 0);
+  const chooseCourse = (id: string) => {
+    setCourse(id);
+    onClose();
+  };
 
   return (
     <>
       <div className={"scrim" + (open ? " show" : "")} onClick={onClose} />
       <aside className={"side" + (open ? " open" : "")}>
+        <div className="side-head">
+          <span>Kurslar</span>
+          <button className="side-close" type="button" onClick={onClose} aria-label="Sidebarni yopish" title="Yopish">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2}>
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
         <div className="course-switch">
           {COURSES.map((c) => (
             <button
               key={c.id}
               className={c.id === courseId ? "active" : ""}
-              onClick={() => setCourse(c.id)}
+              onClick={() => chooseCourse(c.id)}
             >
               {c.name}
             </button>

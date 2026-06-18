@@ -12,7 +12,7 @@ export interface CodeBlock {
   title: string;
   lang: string;
   code: string;
-  // Agar bor bo'lsa — blokда til almashtirgich (JS/TS) chiqadi.
+  // Agar bor bo'lsa — blokda til almashtirgich (JS/TS) chiqadi.
   variants?: CodeVariant[];
 }
 export interface Task {

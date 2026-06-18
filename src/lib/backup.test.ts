@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { buildBackup, applyBackup } from "./backup";
 
-// Oddiy in-memory localStorage (node muhitида yo'q).
+// Oddiy in-memory localStorage (node muhitida yo'q).
 class MemStorage {
   private m = new Map<string, string>();
   getItem(k: string) {
@@ -23,7 +23,7 @@ beforeEach(() => {
 });
 
 describe("backup", () => {
-  it("buildBackup mavjud kalitlarni yig'ади", () => {
+  it("buildBackup mavjud kalitlarni yig'adi", () => {
     localStorage.setItem("webgis_progress", JSON.stringify({ "z0-1": true }));
     localStorage.setItem("active_course", JSON.stringify("english"));
     const b = buildBackup(new Date(2026, 0, 1));
@@ -32,12 +32,12 @@ describe("backup", () => {
     expect(b.data["active_course"]).toBe("english");
   });
 
-  it("applyBackup yaroqсиз faylда xato beради", () => {
+  it("applyBackup yaroqsiz faylda xato beradi", () => {
     expect(() => applyBackup("{}")).toThrow();
     expect(() => applyBackup('{"app":"Other","data":{}}')).toThrow();
   });
 
-  it("applyBackup faqat ma'lум kalitlarни tiklайди", () => {
+  it("applyBackup faqat ma'lum kalitlarni tiklaydi", () => {
     const payload = JSON.stringify({
       app: "MyAcademy",
       version: 1,
@@ -45,10 +45,10 @@ describe("backup", () => {
     });
     applyBackup(payload);
     expect(JSON.parse(localStorage.getItem("english_quiz")!)).toEqual({ A0: { best: 3, total: 3 } });
-    expect(localStorage.getItem("evil_key")).toBeNull(); // noma'lum kalit o'tказилмайди
+    expect(localStorage.getItem("evil_key")).toBeNull(); // noma'lum kalit o'tkazilmaydi
   });
 
-  it("buildBackup → applyBackup aylanмаси ma'lумотни saqлайди", () => {
+  it("buildBackup → applyBackup aylanmasi ma'lumotni saqlaydi", () => {
     localStorage.setItem("finance_srs", JSON.stringify({ word: { box: 2, due: 123 } }));
     const text = JSON.stringify(buildBackup(new Date(2026, 0, 1)));
     localStorage.clear();

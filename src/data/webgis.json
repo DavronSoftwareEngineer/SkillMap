@@ -133,7 +133,7 @@
   "exercises": [
    {
     "type": "choice",
-    "q": "WebGIS stack'ida xaritani brauzerда ko'rsatadigan qatlam:",
+    "q": "WebGIS stack'ida xaritani brauzerda ko'rsatadigan qatlam:",
     "options": [
      "Ma'lumotlar bazasi",
      "Frontend (MapLibre/React)",
@@ -182,7 +182,7 @@
    {
     "w": "WebGIS",
     "uz": "web orqali ishlaydigan geo-axborot tizimi",
-    "ex": "WebGIS xaritani brauzerда ko'rsatadi."
+    "ex": "WebGIS xaritani brauzerda ko'rsatadi."
    },
    {
     "w": "stack",
@@ -213,7 +213,7 @@
    },
    {
     "topic": "WebGIS oqimi",
-    "rule": "DB'dаги geo-ma'lumot → tile → xaritada.",
+    "rule": "DB'dagi geo-ma'lumot → tile → xaritada.",
     "ex": "PostGIS → Tegola → MapLibre"
    }
   ]
@@ -226,7 +226,7 @@
   "eyebrow": "GIS data · QGIS · OSM · Linux",
   "mtitle": "Real data va server asoslari",
   "lede": "Soxta massiv emas — <strong>haqiqiy O'zbekiston ma'lumoti</strong> bilan ishlaysan. Bu bo'limda OSM datasini yuklab olib, QGIS'da tayyorlab, PostGIS'ga import qilasan, va loyihani joylaydigan Linux serverning asoslarini o'rganasan.",
-  "doc": "<p>Ko'p WebGIS dev faqat kod yozadi, lekin data qayerdan kelishini bilmaydi. Sen bu yerda kuchli bo'lsang — ajralib turasan. Bu bo'lim ikki qismdan: <strong>GIS data tayyorlash</strong> va <strong>Linux server asoslari</strong>.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">OSM data (Geofabrik / Overpass)</span><span class=\"chip\">QGIS layerlar</span>\n<span class=\"chip\">atribut / geometry fix</span><span class=\"chip t\">CRS / EPSG (4326 ↔ 3857)</span>\n<span class=\"chip t\">osm2pgsql / ogr2ogr</span><span class=\"chip\">QGIS → PostGIS</span>\n</div>\n<div class=\"chips\">\n<span class=\"chip t\">SSH</span><span class=\"chip\">apt / paketlar</span><span class=\"chip\">fayl tizimi</span>\n<span class=\"chip t\">ufw firewall</span><span class=\"chip\">systemd / journalctl</span><span class=\"chip\">cron</span>\n</div>\n<h3>OSM data qayerdan olinadi?</h3>\n<p><strong>Geofabrik</strong> — butun davlat/viloyat ekstrakti (<code class=\"inline\">.osm.pbf</code>). Katta hajmli umumiy data uchun. <strong>Overpass API / Turbo</strong> — aniq obyektlar uchun (\"Toshkentdagi barcha kasalxonalar\"). Aniq, kichik so'rovlar uchun.</p>\n<h3>QGIS ish jarayoni</h3>\n<p>QGIS — GIS'ning \"Swiss army knife\"i. Tipik oqim: <strong>1)</strong> OSM/shapefile layerini och → <strong>2)</strong> atributlar va geometryni ko'r → <strong>3)</strong> kerakmas qismlarni filtrlab, buzuq geometryни tuzat → <strong>4)</strong> kerakli CRS'ga (4326) reproyeksiya qil → <strong>5)</strong> DB Manager yoki \"Export → PostGIS\" orqali to'g'ridan-to'g'ri bazaga yoz.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg></span>\n<div><p>CRS — eng ko'p uchraydigan tuzoq</p><p>Data noto'g'ri joyda chiqsa, deyarli har doim CRS sababli. PostGIS ichida hamma narsani <code class=\"inline\">4326</code>'da saqla, faqat tile uchun <code class=\"inline\">3857</code>'ga o'tkaz.</p></div>\n</div>\n<h3>Linux — loyihang yashaydigan joy</h3>\n<p>Production server deyarli har doim Linux (Ubuntu). SSH bilan ulanish, paket o'rnatish, fayl tizimida harakatlanish, firewall (ufw) sozlash va service/log'larni boshqarish — bularsiz deploy bo'lmaydi. Chuqur Linux admin shart emas, lekin bu asoslar majburiy.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Haqiqiy O'zbekiston OSM datasi tozalangan holda PostGIS'da, Tegola'ga tayyor, va sen uni Linux serverga joylay oladigan darajadasan.</p>",
+  "doc": "<p>Ko'p WebGIS dev faqat kod yozadi, lekin data qayerdan kelishini bilmaydi. Sen bu yerda kuchli bo'lsang — ajralib turasan. Bu bo'lim ikki qismdan: <strong>GIS data tayyorlash</strong> va <strong>Linux server asoslari</strong>.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">OSM data (Geofabrik / Overpass)</span><span class=\"chip\">QGIS layerlar</span>\n<span class=\"chip\">atribut / geometry fix</span><span class=\"chip t\">CRS / EPSG (4326 ↔ 3857)</span>\n<span class=\"chip t\">osm2pgsql / ogr2ogr</span><span class=\"chip\">QGIS → PostGIS</span>\n</div>\n<div class=\"chips\">\n<span class=\"chip t\">SSH</span><span class=\"chip\">apt / paketlar</span><span class=\"chip\">fayl tizimi</span>\n<span class=\"chip t\">ufw firewall</span><span class=\"chip\">systemd / journalctl</span><span class=\"chip\">cron</span>\n</div>\n<h3>OSM data qayerdan olinadi?</h3>\n<p><strong>Geofabrik</strong> — butun davlat/viloyat ekstrakti (<code class=\"inline\">.osm.pbf</code>). Katta hajmli umumiy data uchun. <strong>Overpass API / Turbo</strong> — aniq obyektlar uchun (\"Toshkentdagi barcha kasalxonalar\"). Aniq, kichik so'rovlar uchun.</p>\n<h3>QGIS ish jarayoni</h3>\n<p>QGIS — GIS'ning \"Swiss army knife\"i. Tipik oqim: <strong>1)</strong> OSM/shapefile layerini och → <strong>2)</strong> atributlar va geometryni ko'r → <strong>3)</strong> kerakmas qismlarni filtrlab, buzuq geometryni tuzat → <strong>4)</strong> kerakli CRS'ga (4326) reproyeksiya qil → <strong>5)</strong> DB Manager yoki \"Export → PostGIS\" orqali to'g'ridan-to'g'ri bazaga yoz.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg></span>\n<div><p>CRS — eng ko'p uchraydigan tuzoq</p><p>Data noto'g'ri joyda chiqsa, deyarli har doim CRS sababli. PostGIS ichida hamma narsani <code class=\"inline\">4326</code>'da saqla, faqat tile uchun <code class=\"inline\">3857</code>'ga o'tkaz.</p></div>\n</div>\n<h3>Linux — loyihang yashaydigan joy</h3>\n<p>Production server deyarli har doim Linux (Ubuntu). SSH bilan ulanish, paket o'rnatish, fayl tizimida harakatlanish, firewall (ufw) sozlash va service/log'larni boshqarish — bularsiz deploy bo'lmaydi. Chuqur Linux admin shart emas, lekin bu asoslar majburiy.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Haqiqiy O'zbekiston OSM datasi tozalangan holda PostGIS'da, Tegola'ga tayyor, va sen uni Linux serverga joylay oladigan darajadasan.</p>",
   "code": [
    {
     "heading": {
@@ -296,7 +296,7 @@
    },
    {
     "id": "mg-3",
-    "html": "QGIS'da atributlarни ko'rdim, buzuq geometryni tuzatdim",
+    "html": "QGIS'da atributlarni ko'rdim, buzuq geometryni tuzatdim",
     "crit": "Attribute Table ochiladi, ST_IsValid xato bermaydi"
    },
    {
@@ -524,7 +524,7 @@
    {
     "topic": "EPSG:4326",
     "rule": "WGS84 — kenglik/uzunlik (lat/lng).",
-    "ex": "GPS koordinatalari shu tizimда"
+    "ex": "GPS koordinatalari shu tizimda"
    },
    {
     "topic": "EPSG:3857",
@@ -545,8 +545,8 @@
   "coord": "Frontend · z3",
   "eyebrow": "Frontend · React TS · Vite",
   "mtitle": "Frontend — foydalanuvchi ko'radigan tomon",
-  "lede": "Backend data beradi, lekin foydalanuvchi <strong>xaritani</strong> ko'radi. Bu bo'limda React + TypeScript + Vite asosida MapLibre xaritasini qurib, uni o'z API'ingga ulaysan va xarita harakatlanганда datani jonli yangilaysan.",
-  "doc": "<p>Nega Vite? — u juda tez dev server beradi va React + TypeScript shablonini bir buyruq bilan tayyorlaydi. Sening React TS tajribang bu yerda to'g'ridan-to'g'ri ishlaydi.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">Vite + React + TS</span><span class=\"chip\">komponentlar</span>\n<span class=\"chip\">useRef / useEffect</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip\">map lifecycle</span><span class=\"chip\">vector + geojson source</span>\n<span class=\"chip\">bbox refresh</span><span class=\"chip\">search + flyTo</span><span class=\"chip\">popup</span>\n</div>\n<h3>MapLibre vs Leaflet — qachon qaysi biri?</h3>\n<p><strong>MapLibre GL JS</strong> — vector tiles, WebGL/GPU, 3D, silliq uzluksiz zoom. Sening Tegola pipeline'ing uchun aynan shu kerak — million obyektni GPU'da render qiladi. <strong>Leaflet</strong> — raster tiles, oddiyroq API, ulkan plugin ekotizimi, lekin native vector tile va WebGL yo'q. Tez prototip yoki oddiy marker xaritasi uchun yaxshi.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg></span>\n<div><p>Diqqat: koordinata tartibi</p><p>MapLibre <code class=\"inline\">[lng, lat]</code> tartibini kutadi, Leaflet esa <code class=\"inline\">[lat, lng]</code>. Eng ko'p uchraydigan xato shu — marker noto'g'ri joyda chiqsa, avval shuni tekshir.</p></div>\n</div>\n<h3>Map komponenti tuzilishi</h3>\n<p>Xarita DOM'ga bir marta yaratiladi va React qayta render qilganda <strong>qayta yaratilmasligi</strong> kerak. Shuning uchun <code class=\"inline\">useRef</code> (DOM va map obyekti uchun) + <code class=\"inline\">useEffect</code> (yaratish va tozalash uchun) ishlatiladi.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Vector tile (Tegola) + API GeoJSON (NestJS) ikkalasini ko'rsatadigan, xarita harakatlanganда bbox bo'yicha yangilanadigan, qidiruv va popup'li interaktiv WebGIS frontend.</p>\n<h3>deck.gl va Three.js — katta hajmli va 3D vizualizatsiya</h3>\n<p>MapLibre va Leaflet oddiy xarita uchun yetadi. Lekin <strong>millionlab nuqta</strong> yoki <strong>3D</strong> kerak bo'lsa — WebGL kutubxonalari ishga tushadi (bular asosan <strong>frontend</strong> qismi):</p>\n<div class=\"exlist\"><div class=\"ex\"><b>deck.gl</b><span>Uber'ning WebGL data-viz qatlamlari: millionlab nuqta/yo'l, heatmap, hexagon — MapLibre ustiga qo'yiladi</span></div><div class=\"ex\"><b>Three.js</b><span>umumiy 3D dvigatel (WebGL): 3D bino, sahna, model. React'da <code class=\"inline\">react-three-fiber</code> (R3F) bilan</span></div></div>\n<div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qaysi birini?</p><p>Oddiy xarita → <strong>MapLibre/Leaflet</strong>. Katta hajmli geodata qatlamlari → <strong>deck.gl</strong>. Umumiy 3D (xaritasiz model/sahna) → <strong>Three.js</strong>. deck.gl ko'pincha MapLibre bilan birga ishlaydi.</p></div></div>",
+  "lede": "Backend data beradi, lekin foydalanuvchi <strong>xaritani</strong> ko'radi. Bu bo'limda React + TypeScript + Vite asosida MapLibre xaritasini qurib, uni o'z API'ingga ulaysan va xarita harakatlanganda datani jonli yangilaysan.",
+  "doc": "<p>Nega Vite? — u juda tez dev server beradi va React + TypeScript shablonini bir buyruq bilan tayyorlaydi. Sening React TS tajribang bu yerda to'g'ridan-to'g'ri ishlaydi.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">Vite + React + TS</span><span class=\"chip\">komponentlar</span>\n<span class=\"chip\">useRef / useEffect</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip\">map lifecycle</span><span class=\"chip\">vector + geojson source</span>\n<span class=\"chip\">bbox refresh</span><span class=\"chip\">search + flyTo</span><span class=\"chip\">popup</span>\n</div>\n<h3>MapLibre vs Leaflet — qachon qaysi biri?</h3>\n<p><strong>MapLibre GL JS</strong> — vector tiles, WebGL/GPU, 3D, silliq uzluksiz zoom. Sening Tegola pipeline'ing uchun aynan shu kerak — million obyektni GPU'da render qiladi. <strong>Leaflet</strong> — raster tiles, oddiyroq API, ulkan plugin ekotizimi, lekin native vector tile va WebGL yo'q. Tez prototip yoki oddiy marker xaritasi uchun yaxshi.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg></span>\n<div><p>Diqqat: koordinata tartibi</p><p>MapLibre <code class=\"inline\">[lng, lat]</code> tartibini kutadi, Leaflet esa <code class=\"inline\">[lat, lng]</code>. Eng ko'p uchraydigan xato shu — marker noto'g'ri joyda chiqsa, avval shuni tekshir.</p></div>\n</div>\n<h3>Map komponenti tuzilishi</h3>\n<p>Xarita DOM'ga bir marta yaratiladi va React qayta render qilganda <strong>qayta yaratilmasligi</strong> kerak. Shuning uchun <code class=\"inline\">useRef</code> (DOM va map obyekti uchun) + <code class=\"inline\">useEffect</code> (yaratish va tozalash uchun) ishlatiladi.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Vector tile (Tegola) + API GeoJSON (NestJS) ikkalasini ko'rsatadigan, xarita harakatlanganda bbox bo'yicha yangilanadigan, qidiruv va popup'li interaktiv WebGIS frontend.</p>\n<h3>deck.gl va Three.js — katta hajmli va 3D vizualizatsiya</h3>\n<p>MapLibre va Leaflet oddiy xarita uchun yetadi. Lekin <strong>millionlab nuqta</strong> yoki <strong>3D</strong> kerak bo'lsa — WebGL kutubxonalari ishga tushadi (bular asosan <strong>frontend</strong> qismi):</p>\n<div class=\"exlist\"><div class=\"ex\"><b>deck.gl</b><span>Uber'ning WebGL data-viz qatlamlari: millionlab nuqta/yo'l, heatmap, hexagon — MapLibre ustiga qo'yiladi</span></div><div class=\"ex\"><b>Three.js</b><span>umumiy 3D dvigatel (WebGL): 3D bino, sahna, model. React'da <code class=\"inline\">react-three-fiber</code> (R3F) bilan</span></div></div>\n<div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qaysi birini?</p><p>Oddiy xarita → <strong>MapLibre/Leaflet</strong>. Katta hajmli geodata qatlamlari → <strong>deck.gl</strong>. Umumiy 3D (xaritasiz model/sahna) → <strong>Three.js</strong>. deck.gl ko'pincha MapLibre bilan birga ishlaydi.</p></div></div>",
   "code": [
    {
     "heading": {
@@ -584,7 +584,7 @@
      "h": "4. API'dan GeoJSON + bbox bo'yicha yangilash",
      "p": null
     },
-    "title": "xarita harakatlanganда data yangilanadi",
+    "title": "xarita harakatlanganda data yangilanadi",
     "lang": "tsx",
     "code": "map.on(\"load\", () => {\n  map.addSource(\"api-buildings\", {\n    type: \"geojson\",\n    data: { type: \"FeatureCollection\", features: [] },\n  });\n  map.addLayer({\n    id: \"api-fill\", type: \"fill\", source: \"api-buildings\",\n    paint: { \"fill-color\": \"#F4A23C\", \"fill-opacity\": 0.4 },\n  });\n\n  const refresh = async () => {\n    const b = map.getBounds();\n    const bbox = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()].join(\",\");\n    const res = await fetch(`/api/buildings?bbox=${bbox}`);\n    const geojson = await res.json();\n    (map.getSource(\"api-buildings\") as maplibregl.GeoJSONSource).setData(geojson);\n  };\n\n  map.on(\"moveend\", refresh);   // har harakatdan keyin\n  refresh();                     // boshlang'ich yuk\n});"
    },
@@ -641,7 +641,7 @@
    },
    {
     "id": "mf-4",
-    "html": "Tegola vector tile source + layer'ni frontendга uladim",
+    "html": "Tegola vector tile source + layer'ni frontendga uladim",
     "crit": "tile'lar xaritada rang bilan chiqadi"
    },
    {
@@ -733,7 +733,7 @@
   "project": {
    "tag": "Frontend loyihasi",
    "title": "Interaktiv WebGIS frontend",
-   "desc": "Backend API va Tegola tile'larни bitta silliq xaritada birlashtiradigan React ilova.",
+   "desc": "Backend API va Tegola tile'larni bitta silliq xaritada birlashtiradigan React ilova.",
    "features": [
     "Vite + React + TypeScript",
     "MapLibre — vector + GeoJSON layer",
@@ -814,7 +814,7 @@
   "exercises": [
    {
     "type": "gap",
-    "q": "React'da holatни boshqaradigan hook: use___()",
+    "q": "React'da holatni boshqaradigan hook: use___()",
     "answers": [
      "state",
      "State"
@@ -824,7 +824,7 @@
    },
    {
     "type": "choice",
-    "q": "Komponentга tashqaridan beriladigan ma'lumot:",
+    "q": "Komponentga tashqaridan beriladigan ma'lumot:",
     "options": [
      "state",
      "props",
@@ -836,7 +836,7 @@
    },
    {
     "type": "choice",
-    "q": "Brauzerда vektor xaritani chizadigan kutubxona:",
+    "q": "Brauzerda vektor xaritani chizadigan kutubxona:",
     "options": [
      "jQuery",
      "MapLibre GL",
@@ -867,7 +867,7 @@
    },
    {
     "w": "props",
-    "uz": "komponentга kiruvchi ma'lumot",
+    "uz": "komponentga kiruvchi ma'lumot",
     "ex": "Props orqali markazni berdim."
    },
    {
@@ -1091,7 +1091,7 @@
     "w": "POST tanada (body) ma'lumot yuboradi; GET faqat o'qish uchun."
    },
    {
-    "q": "Biznes logika qayerда yoziladi?",
+    "q": "Biznes logika qayerda yoziladi?",
     "a": [
      "Controller",
      "Service",
@@ -1110,7 +1110,7 @@
      "Loglarni yozadi"
     ],
     "c": 1,
-    "w": "DTO + validatsiya kiruvchi datani belgilangan shaklга moslashtiradi."
+    "w": "DTO + validatsiya kiruvchi datani belgilangan shaklga moslashtiradi."
    }
   ],
   "exercises": [
@@ -1149,7 +1149,7 @@
    },
    {
     "type": "choice",
-    "q": "API odatda qaysi formatда javob qaytaradi?",
+    "q": "API odatda qaysi formatda javob qaytaradi?",
     "options": [
      "XML",
      "JSON",
@@ -1485,7 +1485,7 @@
    {
     "topic": "Fazoviy indeks",
     "rule": "CREATE INDEX ... USING GIST (geom);",
-    "ex": "Katta jadvalда shart"
+    "ex": "Katta jadvalda shart"
    }
   ]
  },
@@ -1711,10 +1711,10 @@
    },
    {
     "type": "choice",
-    "q": "Vektor plitka rasterдан afzalligi:",
+    "q": "Vektor plitka rasterdan afzalligi:",
     "options": [
      "kattaroq hajm",
-     "brauzerда qayta stillanadi va aniq",
+     "brauzerda qayta stillanadi va aniq",
      "faqat rang",
      "sekinroq"
     ],
@@ -1725,7 +1725,7 @@
   "vocab": [
    {
     "w": "vector tile",
-    "uz": "vektor ko'rinishдаги xarita plitkasi",
+    "uz": "vektor ko'rinishdagi xarita plitkasi",
     "ex": "Vektor plitka yengil va aniq."
    },
    {
@@ -1962,14 +1962,14 @@
      "docker-compose",
      "Dockerfile orqali",
      "Nginx",
-     "qo'lда"
+     "qo'lda"
     ],
     "correct": 1,
     "why": "Dockerfile image retseptini beradi."
    },
    {
     "type": "choice",
-    "q": "Nginx ko'pincha qaysi rolда ishlatiladi?",
+    "q": "Nginx ko'pincha qaysi rolda ishlatiladi?",
     "options": [
      "ma'lumotlar bazasi",
      "reverse proxy / statik server",
@@ -1992,7 +1992,7 @@
   "vocab": [
    {
     "w": "Docker",
-    "uz": "ilovani konteynerда paketlash",
+    "uz": "ilovani konteynerda paketlash",
     "ex": "Docker bilan deploy qildim."
    },
    {
@@ -2167,7 +2167,7 @@
     "w": "AuthGuard JWT token'ni tekshiradi — token'siz so'rov 401 oladi."
    },
    {
-    "q": "Endpoint'ni faqat adminга ochish uchun?",
+    "q": "Endpoint'ni faqat adminga ochish uchun?",
     "a": [
      "@Get",
      "Roles + RolesGuard",
@@ -2227,7 +2227,7 @@
    },
    {
     "type": "choice",
-    "q": "Tokenli autentifikatsiyaда ishlatiladigan token turi:",
+    "q": "Tokenli autentifikatsiyada ishlatiladigan token turi:",
     "options": [
      "JWT",
      "PNG",
@@ -2258,18 +2258,18 @@
    },
    {
     "w": "authorization",
-    "uz": "ruxsatlarни tekshirish",
+    "uz": "ruxsatlarni tekshirish",
     "ex": "Admin authorization tekshiruvi."
    },
    {
     "w": "JWT",
     "uz": "JSON Web Token (imzolangan token)",
-    "ex": "JWT'ni headerда yuboraman."
+    "ex": "JWT'ni headerda yuboraman."
    },
    {
     "w": "hashing",
     "uz": "parolni qaytarilmas shifrlash",
-    "ex": "Parolни bcrypt bilan hashladim."
+    "ex": "Parolni bcrypt bilan hashladim."
    },
    {
     "w": "RBAC",
@@ -2285,7 +2285,7 @@
    },
    {
     "topic": "JWT oqimi",
-    "rule": "Login → token → har so'rovда header.",
+    "rule": "Login → token → har so'rovda header.",
     "ex": "Authorization: Bearer <token>"
    },
    {
@@ -2589,7 +2589,7 @@
    },
    {
     "w": "testing",
-    "uz": "kodни avtomatik tekshirish",
+    "uz": "kodni avtomatik tekshirish",
     "ex": "Unit testlar yozdim."
    },
    {
@@ -2629,7 +2629,7 @@
   "eyebrow": "Karyera · Strategiya · GitHub · CV · Interview",
   "mtitle": "Mahoratdan ish o'rniga — to'liq qo'llanma",
   "lede": "Texnik bilim — yarmi. Ikkinchi yarmi: seni <strong>topishlari</strong>, mahoratingni <strong>isbotlashing</strong> va suhbatda <strong>sotishing</strong>. Bu bo'lim ish izlashning har bosqichini — strategiyadan maosh kelishuviga qadar — professional darajada ochadi.",
-  "doc": "<p>Tartibni yodda tut: <strong>strategiya → isbot (GitHub/portfolio) → taqdimot (CV/LinkedIn) → ariza → suhbat → kelishuv</strong>. Hammasi bitta jonli loyiha atrofida quriladi — shu loyiha sening butun karyera hikoyangning markazi.</p>\n<h3>1 · Ish izlash strategiyasi</h3>\n<p>Ish izlash — bu ham loyiha. 100 ta arzon ariza emas, <strong>sifatli ozchilik</strong> ishlaydi. Avval segmentingni tanla:</p>\n<div class=\"chips\">\n<span class=\"chip\">Mahalliy kompaniyalar</span><span class=\"chip\">Masofaviy (remote)</span>\n<span class=\"chip t\">Xalqaro / freelance</span><span class=\"chip\">Davlat / GIS tashkilotlari</span>\n</div>\n<p>Masofaviy va xalqaro ish ko'proq to'laydi, lekin <strong>English</strong> va yozma muloqot talab qiladi. Mahalliy ish portfolio va aloqa orqali tezroq keladi. Ko'pchilik uchun to'g'ri yo'l: mahalliy/remote'dan boshlab, portfolio kuchayganda xalqaroga o'tish.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M3 3v18h18\"></path><path d=\"M7 14l4-4 4 4 5-5\"></path></svg></span>\n<div><p>Voronka mantig'i</p><p>Har 100 ariza → ~10 javob → ~4 suhbat → ~1 taklif. Shuning uchun rad javob normal. Muhimi — har bosqichdagi konversiyani oshirish: kuchli CV javobni, kuchli portfolio suhbatni, kuchli pitch taklifni oshiradi.</p></div>\n</div>\n<h3>2 · GitHub — recruiter birinchi ko'radigan joy</h3>\n<p><strong>Profil README</strong>: o'z username'ing bilan bir xil nomli repo (masalan <code class=\"inline\">aliyev/aliyev</code>) ochsang, ichidagi README profil sahifangda chiqadi. Bu sening \"bosh sahifang\".</p>\n<p><strong>Pinned loyihalar</strong>: eng yaxshi 3–6 ta. Birinchi o'rinda — flagship WebGIS loyihang. Har repo'da tushunarli README bo'lsin (demo havolasi, arxitektura, ishga tushirish, screenshot).</p>\n<p><strong>Repo gigienasi</strong>: <code class=\"inline\">.gitignore</code> (node_modules, .env tushmaydi), <code class=\"inline\">LICENSE</code>, va <strong>semantik versiya teglari</strong> (v1.0.0) — bular seni tartibli muhandis qilib ko'rsatadi.</p>\n<p><strong>Contribution grafigi</strong> haqida haqiqat: yashil kvadratlar yoqimli, lekin asosiy emas. Sifatli bitta loyiha 365 ta bo'sh commit'dan kuchli. Soxta commit qilma.</p>\n<p><strong>Open-source hissa</strong>: bitta haqiqiy PR (fork → branch → o'zgartirish → Pull Request) — MapLibre, Tegola yoki QGIS plugin'iga kichik tuzatish ham bo'ladi. Bu jamoaviy ish qila olishingni isbotlaydi.</p>\n<h3>3 · GitLab — ko'pchilik chetda qoldiradi</h3>\n<p>Ko'p Yevropa, davlat va OSGeo ekotizimidagi GIS kompaniyalari <strong>GitLab</strong> ishlatadi. Asosiy loyihangni GitLab'ga <strong>mirror</strong> qilsang va u yerda ham CI/CD ko'rsatsang, o'sha bozorga ham ochilasan. <strong>GitLab Pages</strong> bilan portfolio sahifa ham joylash mumkin.</p>\n<h3>4 · LinkedIn — recruiterlar shu yerda qidiradi</h3>\n<p>Ko'p ish LinkedIn'da, e'lon chiqmasdan topiladi. Profiling <strong>kalit so'zlar</strong> bilan to'la bo'lsa, recruiter o'zi seni topadi.</p>\n<p><strong>Headline</strong>: rol + asosiy texnologiyalar (masalan \"Geospatial Full-Stack Engineer · WebGIS · React/TS · PostGIS · Tegola\"). <strong>About</strong>: 3–4 jumlada kimligingni va nima qila olishingni ayt. <strong>Featured</strong>: flagship loyiha + case study post. <strong>Skills</strong> to'ldir, <strong>recommendations</strong> so'ra. \"Open to work\" ni yoq.</p>\n<h3>5 · CV — 1 sahifa, natijaga yo'naltirilgan</h3>\n<p>Struktura: <strong>Header</strong> (ism, rol, aloqa, GitHub/LinkedIn havola) → <strong>Summary</strong> (2 jumla) → <strong>Skills</strong> (texnologiyalar) → <strong>Projects</strong> (flagship birinchi) → <strong>Experience</strong> → <strong>Education</strong>.</p>\n<p>Eng muhim qoida — <strong>XYZ formulasi</strong>: \"Natijaga [X] erishdim, [Z] qilish orqali, [Y] bilan o'lchanган\". Ya'ni har bullet: nima qilding + qanday + o'lchanadigan natija. Vazifa ro'yxati emas, ta'sir (impact).</p>\n<p><strong>ATS</strong> (avtomatik filtr): ko'p kompaniya CV'ni avval robot o'qiydi. Oddiy matnli, jadvalsiz/ustun-siz format ishlat, va e'londagi kalit so'zlarni (PostGIS, vector tiles, MapLibre, Docker) tabiiy joylashtir. <strong>Tailoring</strong>: har vakansiyaga CV'ni ozgina moslab tahrirla.</p>\n<h3>6 · Cover letter — qachon va qanday</h3>\n<p>Har doim shart emas, lekin so'ralsa yoki motivatsiyangni ko'rsatmoqchi bo'lsang — qisqa, 3 abzas: (1) nega aynan shu kompaniya, (2) nima qila olishing + bitta aniq dalil (loyihang), (3) qisqa yakun. Generic xat yuborma — har biri aniq kompaniyaga moslangan bo'lsin.</p>\n<h3>7 · Portfolio va case study</h3>\n<p>Eng kuchli isbot — <strong>bitta jonli, deploy qilingan loyiha</strong> + uning <strong>case study</strong>'si. Case study struktura: <strong>muammo → yondashuv → arxitektura → qiyinchiliklar → natija → saboq</strong>. Bunga <strong>demo video</strong> (Loom/YouTube, 2–3 daq) qo'sh. Alohida portfolio sayti shart emas — GitHub README + jonli demo + texnik post yetarli.</p>\n<h3>8 · Interview voronkasi — bosqichma-bosqich</h3>\n<p><strong>1) Recruiter screen</strong> — qisqa, motivatsiya va maosh kutilmasi. <strong>2) Texnik suhbat</strong> — PostGIS/tile/Docker savollar. <strong>3) Take-home</strong> — kichik vazifa: toza, ishlaydigan kod + README muhim (over-engineering emas). <strong>4) Live coding</strong> — fikrlashni ovoz chiqarib ayt. <strong>5) System design</strong> — kattaroq tizimni loyihalash. <strong>6) Behavioral</strong> — <strong>STAR</strong> usuli (Situation, Task, Action, Result). Oxirida <strong>sen ularga savol ber</strong> (jamoa, texnologiya, o'sish) — bu qiziqishingni ko'rsatadi.</p>\n<p>Har texnik suhbatда eng kuchli quroling — <strong>o'z loyihang</strong>. Uni <strong>muammo → yechim → natija</strong> shaklida 2 daqiqada tushuntirib bera olsang, suhbatning yarmi yutilgan.</p>\n<h3>9 · Maosh kelishuvi (negotiation)</h3>\n<p>Avval <strong>bozor narxini o'rgan</strong> (levels.fyi, mahalliy ma'lumot, hamjamiyat). Maosh kutilmasini so'rashsa, <strong>diapazon</strong> ber, yagona raqam emas. Taklif kelganda <strong>kelishuv normal</strong> — ko'pchilik birinchi taklifni qabul qiladi va pul yo'qotadi. Faqat asosiy maosh emas, <strong>umumiy paketni</strong> (bonus, ta'til, remote, o'sish) ko'r.</p>\n<h3>10 · Masofaviy va xalqaro ish</h3>\n<p>Remote uchun: <strong>English</strong> (ayniqsa yozma), aniq muloqot, vaqt mintaqasi moslashuvi. Platformalar: LinkedIn, remote ish doskalari, Upwork (boshlash uchun). <strong>English README</strong> va jonli demo bu yerda majburiy — chunki ko'pincha portfolio'ng birinchi (va yagona) taassurot bo'ladi.</p>",
+  "doc": "<p>Tartibni yodda tut: <strong>strategiya → isbot (GitHub/portfolio) → taqdimot (CV/LinkedIn) → ariza → suhbat → kelishuv</strong>. Hammasi bitta jonli loyiha atrofida quriladi — shu loyiha sening butun karyera hikoyangning markazi.</p>\n<h3>1 · Ish izlash strategiyasi</h3>\n<p>Ish izlash — bu ham loyiha. 100 ta arzon ariza emas, <strong>sifatli ozchilik</strong> ishlaydi. Avval segmentingni tanla:</p>\n<div class=\"chips\">\n<span class=\"chip\">Mahalliy kompaniyalar</span><span class=\"chip\">Masofaviy (remote)</span>\n<span class=\"chip t\">Xalqaro / freelance</span><span class=\"chip\">Davlat / GIS tashkilotlari</span>\n</div>\n<p>Masofaviy va xalqaro ish ko'proq to'laydi, lekin <strong>English</strong> va yozma muloqot talab qiladi. Mahalliy ish portfolio va aloqa orqali tezroq keladi. Ko'pchilik uchun to'g'ri yo'l: mahalliy/remote'dan boshlab, portfolio kuchayganda xalqaroga o'tish.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M3 3v18h18\"></path><path d=\"M7 14l4-4 4 4 5-5\"></path></svg></span>\n<div><p>Voronka mantig'i</p><p>Har 100 ariza → ~10 javob → ~4 suhbat → ~1 taklif. Shuning uchun rad javob normal. Muhimi — har bosqichdagi konversiyani oshirish: kuchli CV javobni, kuchli portfolio suhbatni, kuchli pitch taklifni oshiradi.</p></div>\n</div>\n<h3>2 · GitHub — recruiter birinchi ko'radigan joy</h3>\n<p><strong>Profil README</strong>: o'z username'ing bilan bir xil nomli repo (masalan <code class=\"inline\">aliyev/aliyev</code>) ochsang, ichidagi README profil sahifangda chiqadi. Bu sening \"bosh sahifang\".</p>\n<p><strong>Pinned loyihalar</strong>: eng yaxshi 3–6 ta. Birinchi o'rinda — flagship WebGIS loyihang. Har repo'da tushunarli README bo'lsin (demo havolasi, arxitektura, ishga tushirish, screenshot).</p>\n<p><strong>Repo gigienasi</strong>: <code class=\"inline\">.gitignore</code> (node_modules, .env tushmaydi), <code class=\"inline\">LICENSE</code>, va <strong>semantik versiya teglari</strong> (v1.0.0) — bular seni tartibli muhandis qilib ko'rsatadi.</p>\n<p><strong>Contribution grafigi</strong> haqida haqiqat: yashil kvadratlar yoqimli, lekin asosiy emas. Sifatli bitta loyiha 365 ta bo'sh commit'dan kuchli. Soxta commit qilma.</p>\n<p><strong>Open-source hissa</strong>: bitta haqiqiy PR (fork → branch → o'zgartirish → Pull Request) — MapLibre, Tegola yoki QGIS plugin'iga kichik tuzatish ham bo'ladi. Bu jamoaviy ish qila olishingni isbotlaydi.</p>\n<h3>3 · GitLab — ko'pchilik chetda qoldiradi</h3>\n<p>Ko'p Yevropa, davlat va OSGeo ekotizimidagi GIS kompaniyalari <strong>GitLab</strong> ishlatadi. Asosiy loyihangni GitLab'ga <strong>mirror</strong> qilsang va u yerda ham CI/CD ko'rsatsang, o'sha bozorga ham ochilasan. <strong>GitLab Pages</strong> bilan portfolio sahifa ham joylash mumkin.</p>\n<h3>4 · LinkedIn — recruiterlar shu yerda qidiradi</h3>\n<p>Ko'p ish LinkedIn'da, e'lon chiqmasdan topiladi. Profiling <strong>kalit so'zlar</strong> bilan to'la bo'lsa, recruiter o'zi seni topadi.</p>\n<p><strong>Headline</strong>: rol + asosiy texnologiyalar (masalan \"Geospatial Full-Stack Engineer · WebGIS · React/TS · PostGIS · Tegola\"). <strong>About</strong>: 3–4 jumlada kimligingni va nima qila olishingni ayt. <strong>Featured</strong>: flagship loyiha + case study post. <strong>Skills</strong> to'ldir, <strong>recommendations</strong> so'ra. \"Open to work\" ni yoq.</p>\n<h3>5 · CV — 1 sahifa, natijaga yo'naltirilgan</h3>\n<p>Struktura: <strong>Header</strong> (ism, rol, aloqa, GitHub/LinkedIn havola) → <strong>Summary</strong> (2 jumla) → <strong>Skills</strong> (texnologiyalar) → <strong>Projects</strong> (flagship birinchi) → <strong>Experience</strong> → <strong>Education</strong>.</p>\n<p>Eng muhim qoida — <strong>XYZ formulasi</strong>: \"Natijaga [X] erishdim, [Z] qilish orqali, [Y] bilan o'lchangan\". Ya'ni har bullet: nima qilding + qanday + o'lchanadigan natija. Vazifa ro'yxati emas, ta'sir (impact).</p>\n<p><strong>ATS</strong> (avtomatik filtr): ko'p kompaniya CV'ni avval robot o'qiydi. Oddiy matnli, jadvalsiz/ustun-siz format ishlat, va e'londagi kalit so'zlarni (PostGIS, vector tiles, MapLibre, Docker) tabiiy joylashtir. <strong>Tailoring</strong>: har vakansiyaga CV'ni ozgina moslab tahrirla.</p>\n<h3>6 · Cover letter — qachon va qanday</h3>\n<p>Har doim shart emas, lekin so'ralsa yoki motivatsiyangni ko'rsatmoqchi bo'lsang — qisqa, 3 abzas: (1) nega aynan shu kompaniya, (2) nima qila olishing + bitta aniq dalil (loyihang), (3) qisqa yakun. Generic xat yuborma — har biri aniq kompaniyaga moslangan bo'lsin.</p>\n<h3>7 · Portfolio va case study</h3>\n<p>Eng kuchli isbot — <strong>bitta jonli, deploy qilingan loyiha</strong> + uning <strong>case study</strong>'si. Case study struktura: <strong>muammo → yondashuv → arxitektura → qiyinchiliklar → natija → saboq</strong>. Bunga <strong>demo video</strong> (Loom/YouTube, 2–3 daq) qo'sh. Alohida portfolio sayti shart emas — GitHub README + jonli demo + texnik post yetarli.</p>\n<h3>8 · Interview voronkasi — bosqichma-bosqich</h3>\n<p><strong>1) Recruiter screen</strong> — qisqa, motivatsiya va maosh kutilmasi. <strong>2) Texnik suhbat</strong> — PostGIS/tile/Docker savollar. <strong>3) Take-home</strong> — kichik vazifa: toza, ishlaydigan kod + README muhim (over-engineering emas). <strong>4) Live coding</strong> — fikrlashni ovoz chiqarib ayt. <strong>5) System design</strong> — kattaroq tizimni loyihalash. <strong>6) Behavioral</strong> — <strong>STAR</strong> usuli (Situation, Task, Action, Result). Oxirida <strong>sen ularga savol ber</strong> (jamoa, texnologiya, o'sish) — bu qiziqishingni ko'rsatadi.</p>\n<p>Har texnik suhbatda eng kuchli quroling — <strong>o'z loyihang</strong>. Uni <strong>muammo → yechim → natija</strong> shaklida 2 daqiqada tushuntirib bera olsang, suhbatning yarmi yutilgan.</p>\n<h3>9 · Maosh kelishuvi (negotiation)</h3>\n<p>Avval <strong>bozor narxini o'rgan</strong> (levels.fyi, mahalliy ma'lumot, hamjamiyat). Maosh kutilmasini so'rashsa, <strong>diapazon</strong> ber, yagona raqam emas. Taklif kelganda <strong>kelishuv normal</strong> — ko'pchilik birinchi taklifni qabul qiladi va pul yo'qotadi. Faqat asosiy maosh emas, <strong>umumiy paketni</strong> (bonus, ta'til, remote, o'sish) ko'r.</p>\n<h3>10 · Masofaviy va xalqaro ish</h3>\n<p>Remote uchun: <strong>English</strong> (ayniqsa yozma), aniq muloqot, vaqt mintaqasi moslashuvi. Platformalar: LinkedIn, remote ish doskalari, Upwork (boshlash uchun). <strong>English README</strong> va jonli demo bu yerda majburiy — chunki ko'pincha portfolio'ng birinchi (va yagona) taassurot bo'ladi.</p>",
   "code": [
    {
     "heading": {
@@ -3017,9 +3017,9 @@
   "exercises": [
    {
     "type": "choice",
-    "q": "Kod va loyihalarни qayerda ko'rsatasan?",
+    "q": "Kod va loyihalarni qayerda ko'rsatasan?",
     "options": [
-     "faqat kompyuterда",
+     "faqat kompyuterda",
      "GitHub",
      "Telegram",
      "hech qayerda"
@@ -3029,7 +3029,7 @@
    },
    {
     "type": "choice",
-    "q": "Ko'nikmangни isbotlaydigan eng kuchli narsa:",
+    "q": "Ko'nikmangni isbotlaydigan eng kuchli narsa:",
     "options": [
      "faqat so'z",
      "real loyihalar (portfolio)",
@@ -3044,16 +3044,16 @@
     "q": "Suhbatga (interview) tayyorgarlik:",
     "options": [
      "tasodifga tashlab qo'yish",
-     "loyihalarни tushuntirishga tayyorlanish",
+     "loyihalarni tushuntirishga tayyorlanish",
      "yodlash",
      "kechikish"
     ],
     "correct": 1,
-    "why": "Loyihalaringни aniq tushuntir."
+    "why": "Loyihalaringni aniq tushuntir."
    },
    {
     "type": "choice",
-    "q": "Mijoz/ish topishда foydali:",
+    "q": "Mijoz/ish topishda foydali:",
     "options": [
      "networking (tanishlar)",
      "yakkalanish",
@@ -3104,7 +3104,7 @@
    },
    {
     "topic": "Suhbat",
-    "rule": "Loyihaни 'nima/nega/qanday' bilan tushuntir.",
+    "rule": "Loyihani 'nima/nega/qanday' bilan tushuntir.",
     "ex": "STAR usuli"
    }
   ]
@@ -3115,43 +3115,43 @@
   "sub": "Observability",
   "coord": "Monitoring · z24",
   "eyebrow": "11 · Production observability",
-  "mtitle": "Productionда tizimni kuzatish",
-  "lede": "Ishlab chiqarishга qo'yilgan WebGIS — <strong>jim qolmasligi</strong> kerak. Bu modulда healthcheck, log, metrika va xato kuzatuvini sozlaymiz: nosozlikни foydalanuvchidan oldin sen bilasan.",
-  "doc": "<div class='prose'><p>Observability — tizimning ichида nima bo'layotганини tashqaridan ko'ra olish. Uch ustun bor: <strong>loglar</strong> (nima bo'ldi), <strong>metrikалар</strong> (qancha/qachon), <strong>traces</strong> (so'rов qayerда sekinlashди).</p><h3>Healthcheck — eng birinchи qadam</h3><p>Har servisда <code>/health</code> endpoint bo'lсин: DB ulanиши, disk, navbат holати. Docker va orkestratор shu orqали servis tirикми-yo'qми biladи.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg></span><div><p>Liveness ≠ Readiness</p><p><strong>Liveness</strong> — servis qotган emасми (qайта ishга tushir). <strong>Readiness</strong> — trafik qabul qилишга tayyorми (DB ulангач). Ikkаласини alohida endpoint qil.</p></div></div><h3>Metrika va dashboard</h3><p>Prometheus metrikани yig'ади, Grafana ko'рсатади. Asosий: so'ров soni, p95 javob vaqти, xato foизи (RED metodи — Rate, Errors, Duration).</p><h3>Loglar — structured JSON</h3><p>Matn emas, JSON log yoz: <code>{level, msg, traceId, userId}</code>. Keyин Loki/Elasticsearch'да maydon bo'yича qidirса bo'лади.</p></div>",
+  "mtitle": "Productionda tizimni kuzatish",
+  "lede": "Ishlab chiqarishga qo'yilgan WebGIS — <strong>jim qolmasligi</strong> kerak. Bu modulda healthcheck, log, metrika va xato kuzatuvini sozlaymiz: nosozlikni foydalanuvchidan oldin sen bilasan.",
+  "doc": "<div class='prose'><p>Observability — tizimning ichida nima bo'layotganini tashqaridan ko'ra olish. Uch ustun bor: <strong>loglar</strong> (nima bo'ldi), <strong>metrikalar</strong> (qancha/qachon), <strong>traces</strong> (so'rov qayerda sekinlashdi).</p><h3>Healthcheck — eng birinchi qadam</h3><p>Har servisda <code>/health</code> endpoint bo'lsin: DB ulanishi, disk, navbat holati. Docker va orkestrator shu orqali servis tirikmi-yo'qmi biladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg></span><div><p>Liveness ≠ Readiness</p><p><strong>Liveness</strong> — servis qotgan emasmi (qayta ishga tushir). <strong>Readiness</strong> — trafik qabul qilishga tayyormi (DB ulangach). Ikkalasini alohida endpoint qil.</p></div></div><h3>Metrika va dashboard</h3><p>Prometheus metrikani yig'adi, Grafana ko'rsatadi. Asosiy: so'rov soni, p95 javob vaqti, xato foizi (RED metodi — Rate, Errors, Duration).</p><h3>Loglar — structured JSON</h3><p>Matn emas, JSON log yoz: <code>{level, msg, traceId, userId}</code>. Keyin Loki/Elasticsearch'da maydon bo'yicha qidirsa bo'ladi.</p></div>",
   "code": [
    {
-    "heading": { "h": "Healthcheck endpoint (NestJS)", "p": "DB ulанишини tekшириб, holат qайтаради." },
+    "heading": { "h": "Healthcheck endpoint (NestJS)", "p": "DB ulanishini tekshirib, holat qaytaradi." },
     "title": "health.controller.ts",
     "lang": "ts",
     "code": "@Controller('health')\nexport class HealthController {\n  constructor(private readonly db: DataSource) {}\n\n  @Get()\n  async check() {\n    try {\n      await this.db.query('SELECT 1');\n      return { status: 'ok', db: 'up' };\n    } catch {\n      throw new ServiceUnavailableException({ status: 'down', db: 'down' });\n    }\n  }\n}"
    },
    {
-    "heading": { "h": "docker-compose healthcheck", "p": "Konteyner sog'лигини avtomatик kuzатади." },
+    "heading": { "h": "docker-compose healthcheck", "p": "Konteyner sog'ligini avtomatik kuzatadi." },
     "title": "docker-compose.yml",
     "lang": "yaml",
     "code": "services:\n  api:\n    build: ./api\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/health\"]\n      interval: 30s\n      timeout: 5s\n      retries: 3\n      start_period: 10s"
    }
   ],
   "tasks": [
-   { "id": "gis11-1", "html": "API'га <code>/health</code> (readiness) va <code>/health/live</code> (liveness) endpointlари qo'шдим", "crit": "ikkаласи alohida, DB tushса readiness 503 qайтаради" },
-   { "id": "gis11-2", "html": "docker-compose'га healthcheck qo'шиб, konteyner 'unhealthy' holатини ko'рдим", "crit": "docker ps STATUSда healthy/unhealthy ko'ринади" },
-   { "id": "gis11-3", "html": "Structured (JSON) loglарни yoqдим — har logда traceId bor", "crit": "log JSON forматда, qidirса bo'лади" },
-   { "id": "gis11-4", "html": "Prometheus + Grafana'ни ko'тариб, p95 javob vaqти dashboardини tuzдим", "crit": "Grafanaда RED metrikалар ko'ринади" }
+   { "id": "gis11-1", "html": "API'ga <code>/health</code> (readiness) va <code>/health/live</code> (liveness) endpointlari qo'shdim", "crit": "ikkalasi alohida, DB tushsa readiness 503 qaytaradi" },
+   { "id": "gis11-2", "html": "docker-compose'ga healthcheck qo'shib, konteyner 'unhealthy' holatini ko'rdim", "crit": "docker ps STATUSda healthy/unhealthy ko'rinadi" },
+   { "id": "gis11-3", "html": "Structured (JSON) loglarni yoqdim — har logda traceId bor", "crit": "log JSON formatda, qidirsa bo'ladi" },
+   { "id": "gis11-4", "html": "Prometheus + Grafana'ni ko'tarib, p95 javob vaqti dashboardini tuzdim", "crit": "Grafanada RED metrikalar ko'rinadi" }
   ],
   "resources": [
-   { "type": "doc", "url": "https://prometheus.io/docs/introduction/overview/", "title": "Prometheus hujjатлари", "desc": "Metrika yig'иш asoслари", "host": "prometheus.io" },
-   { "type": "doc", "url": "https://grafana.com/docs/grafana/latest/", "title": "Grafana hujjатлари", "desc": "Dashboard qуриш", "host": "grafana.com" }
+   { "type": "doc", "url": "https://prometheus.io/docs/introduction/overview/", "title": "Prometheus hujjatlari", "desc": "Metrika yig'ish asoslari", "host": "prometheus.io" },
+   { "type": "doc", "url": "https://grafana.com/docs/grafana/latest/", "title": "Grafana hujjatlari", "desc": "Dashboard qurish", "host": "grafana.com" }
   ],
   "project": {
    "tag": "Capstone+",
-   "title": "Kuzатиладиган WebGIS",
-   "desc": "Avvalги loyihангга to'liq observability qatlами qo'ш.",
-   "features": ["Health/readiness endpointlар", "Structured JSON loglар + traceId", "Prometheus metrika (RED)", "Grafana dashboard + alert"]
+   "title": "Kuzatiladigan WebGIS",
+   "desc": "Avvalgi loyihangga to'liq observability qatlami qo'sh.",
+   "features": ["Health/readiness endpointlar", "Structured JSON loglar + traceId", "Prometheus metrika (RED)", "Grafana dashboard + alert"]
   },
   "quiz": [
-   { "q": "Liveness probe nima uchun?", "a": ["Servis qотган-qотмаганини aniqлаш (kerак bo'лса qайта ishга tushir)", "Foydаланувчи parолини tekшириш", "Xaritani render qилиш", "Ma'lumotни zaxiralаш"], "c": 0, "w": "Liveness — servis tирикми; muаммо bo'лса orkestratор restart qилади." },
-   { "q": "RED metodидаги uchта metrika qайси?", "a": ["Red, Edit, Delete", "Rate, Errors, Duration", "Read, Encode, Decode", "Route, Endpoint, Data"], "c": 1, "w": "Rate (so'ров soni), Errors (xато foизи), Duration (javob vaqти)." },
-   { "q": "Nega structured (JSON) log afzал?", "a": ["Faylни kichrаytиради", "Mашинада qidирилади va filtrlанади", "Internet tezлаштиради", "Kodни yashиради"], "c": 1, "w": "JSON loglар dashboard/qidируvда maydon bo'yича filtrlanади." }
+   { "q": "Liveness probe nima uchun?", "a": ["Servis qotgan-qotmaganini aniqlash (kerak bo'lsa qayta ishga tushir)", "Foydalanuvchi parolini tekshirish", "Xaritani render qilish", "Ma'lumotni zaxiralash"], "c": 0, "w": "Liveness — servis tirikmi; muammo bo'lsa orkestrator restart qiladi." },
+   { "q": "RED metodidagi uchta metrika qaysi?", "a": ["Red, Edit, Delete", "Rate, Errors, Duration", "Read, Encode, Decode", "Route, Endpoint, Data"], "c": 1, "w": "Rate (so'rov soni), Errors (xato foizi), Duration (javob vaqti)." },
+   { "q": "Nega structured (JSON) log afzal?", "a": ["Faylni kichraytiradi", "Mashinada qidiriladi va filtrlanadi", "Internet tezlashtiradi", "Kodni yashiradi"], "c": 1, "w": "JSON loglar dashboard/qidiruvda maydon bo'yicha filtrlanadi." }
   ]
  }
 ]

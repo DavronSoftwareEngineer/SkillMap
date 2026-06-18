@@ -3,8 +3,8 @@ export function canSpeak(): boolean {
   return typeof window !== "undefined" && "speechSynthesis" in window;
 }
 
-// Ovozlar asinxron yuklanadi — birinchi chaqiriqда bo'sh bo'lishi mumkin,
-// shuning uchun modul yuklanganда oldindan "isitib" qo'yamiz.
+// Ovozlar asinxron yuklanadi — birinchi chaqiriqda bo'sh bo'lishi mumkin,
+// shuning uchun modul yuklanganda oldindan "isitib" qo'yamiz.
 if (canSpeak()) {
   try {
     window.speechSynthesis.getVoices();
@@ -31,7 +31,7 @@ export function speak(text: string, lang = "en-US"): void {
     const match =
       voices.find((v) => (v.lang || "").toLowerCase().replace("_", "-").startsWith(prefix));
     if (match) u.voice = match;
-    // Mos ovoz topilmasa — u.lang bo'yicha brauzer o'zи tanlaydi.
+    // Mos ovoz topilmasa — u.lang bo'yicha brauzer o'zi tanlaydi.
     window.speechSynthesis.speak(u);
   } catch {
     /* ovoz mavjud emas — jim qolamiz */

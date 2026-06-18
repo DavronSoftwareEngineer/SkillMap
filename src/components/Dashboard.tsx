@@ -1,4 +1,5 @@
 import { useMemo, useRef } from "react";
+import type { ChangeEvent } from "react";
 import { useStore } from "../store";
 import { dayKey, isAlive } from "../lib/streak";
 
@@ -8,13 +9,13 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const streakAlive = isAlive(streak, dayKey(new Date()));
 
-  const onImportFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onImportFile = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
     reader.onload = () => importBackup(String(reader.result || ""));
     reader.readAsText(file);
-    e.target.value = ""; // bir faylни qayta tanlash mumkin bo'lsin
+    e.target.value = "";
   };
 
   const d = useMemo(() => {
@@ -53,33 +54,39 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
   let msg: string;
   if (d.overall < 25) {
     level = "Boshlang'ich";
-    msg = "Asoslarni qo'yyapsan — davom et.";
+    msg = "Asoslarni qo'yyapsan - davom et.";
   } else if (d.overall < 55) {
     level = "Asoslar shakllanmoqda";
     msg = "Yaxshi ketyapsan, sur'atni saqla.";
   } else if (d.overall < 80) {
     level = "O'rta daraja";
-    msg = "Yarmidan oshding — chuqurlash.";
+    msg = "Yarmidan oshding - chuqurlash.";
   } else if (d.overall < 95) {
     level = "Yuqori daraja";
-    msg = "Deyarli tayyor — amaliyotни kuchaytir.";
+    msg = "Deyarli tayyor - amaliyotni kuchaytir.";
   } else {
     level = "Tayyor";
-    msg = "Barchasini o'zlashtirding — endi qo'llab mustahkamla.";
+    msg = "Barchasini o'zlashtirding - endi qo'llab mustahkamla.";
   }
 
   const C = 2 * Math.PI * 52;
 
   return (
-    <div className="dash">
-      <div className="eyebrow">Tayyorlik paneli · {course.name}</div>
-      <h2 className="mtitle">Sen hozir qayerdasan</h2>
-      <p className="mlede">
-        Bu panel amaliyot va test natijalaringdan tayyorlik darajangni hisoblab, keyingi qadamni
-        ko'rsatadi. Har kurs uchun alohida hisoblanadi.
-      </p>
-
-      <div className="dash-top">
+    <div className="dash command-center">
+      <section className="cc-hero">
+        <div className="cc-copy">
+          <div className="eyebrow">Tayyorlik paneli · {course.name}</div>
+          <h2 className="mtitle">Bugungi yo'l xaritang</h2>
+          <p className="mlede">
+            Kursni oddiy ro'yxat emas, bosqichma-bosqich yo'l sifatida kuzat. Keyingi qadam,
+            zaif joylar va umumiy tayyorlik shu yerda jamlangan.
+          </p>
+          {d.next && (
+            <button className="cc-primary" onClick={() => onGo(d.next!.i)}>
+              {d.next.zoom} modulni davom ettirish
+            </button>
+          )}
+        </div>
         <div className="dash-ring">
           <svg width="150" height="150">
             <circle cx="75" cy="75" r="52" fill="none" stroke="#263340" strokeWidth="10" />
@@ -100,24 +107,23 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
             <span>tayyorlik</span>
           </div>
         </div>
-        <div>
+      </section>
+
+      <div className="dash-top">
+        <div className="dash-summary">
           <div className="dash-level">{level}</div>
           <p className="dash-levelmsg">{msg}</p>
           <div className="dash-stats">
             <div className="dstat">
-              <b>
-                {d.doneTasks}/{d.totalTasks}
-              </b>
+              <b>{d.doneTasks}/{d.totalTasks}</b>
               <span>topshiriq</span>
             </div>
             <div className="dstat">
-              <b>{d.quizAvg !== null ? d.quizAvg + "%" : "—"}</b>
+              <b>{d.quizAvg !== null ? d.quizAvg + "%" : "-"}</b>
               <span>test o'rtachasi</span>
             </div>
             <div className="dstat">
-              <b>
-                {d.fullMods}/{d.mods.length}
-              </b>
+              <b>{d.fullMods}/{d.mods.length}</b>
               <span>tugatilgan modul</span>
             </div>
           </div>
@@ -127,7 +133,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
       <div className="dash-next">
         {d.next ? (
           <>
-            <b>Keyingi qadam:</b> {d.next.zoom} · {d.next.title} — amaliyot {d.next.tpct}% bajarilgan.{" "}
+            <b>Keyingi qadam:</b> {d.next.zoom} · {d.next.title} - amaliyot {d.next.tpct}% bajarilgan.{" "}
             <button className="dgo" onClick={() => onGo(d.next!.i)}>
               O'tish →
             </button>
@@ -142,7 +148,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
 
       {d.quizAvg !== null && d.quizAvg < 70 && (
         <p className="dnote">
-          Test o'rtachang {d.quizAvg}% — zaif modullar testini qayta ishlab mustahkamla.
+          Test o'rtachang {d.quizAvg}% - zaif modullar testini qayta ishlab mustahkamla.
         </p>
       )}
 
@@ -151,7 +157,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           <span className="streak-fire" aria-hidden="true">🔥</span>
           <div>
             <b>{streak.current} kun</b>
-            <span>{streakAlive ? "joriy seriya" : "seriya uzildi — bugun davom ettir"}</span>
+            <span>{streakAlive ? "joriy seriya" : "seriya uzildi - bugun davom ettir"}</span>
           </div>
           <div className="streak-best">
             <b>{streak.best}</b>
@@ -160,10 +166,10 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         </div>
         <div className="backup-row">
           <button className="backup-btn" onClick={exportBackup}>
-            ⬇ Zaxira (eksport)
+            Zaxira eksport
           </button>
           <button className="backup-btn" onClick={() => fileRef.current?.click()}>
-            ⬆ Tiklash (import)
+            Tiklash import
           </button>
           <input
             ref={fileRef}
@@ -175,14 +181,30 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         </div>
       </div>
 
+      <h3 className="dash-h">Learning journey</h3>
+      <div className="journey-map">
+        {d.mods.map((m, order) => (
+          <button
+            className={"journey-node" + (m.tpct === 100 ? " done" : d.next?.i === m.i ? " current" : "")}
+            key={m.zoom}
+            onClick={() => onGo(m.i)}
+          >
+            <span className="jn-step">{String(order + 1).padStart(2, "0")}</span>
+            <span className="jn-main">
+              <b>{m.title}</b>
+              <small>{m.zoom} · {m.sub}</small>
+            </span>
+            <span className="jn-pct">{m.tpct}%</span>
+          </button>
+        ))}
+      </div>
+
       <h3 className="dash-h">Modullar bo'yicha</h3>
       <div className="dash-mods">
         {d.mods.map((m) => (
           <div className="dash-modrow" key={m.zoom} onClick={() => onGo(m.i)}>
             <div className="dmod-info">
-              <b>
-                {m.zoom} · {m.title}
-              </b>
+              <b>{m.zoom} · {m.title}</b>
               <span>{m.sub}</span>
             </div>
             <div className="dmod-metrics">
@@ -191,7 +213,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
               </div>
               <span className="dmod-pct">{m.tpct}%</span>
               <span className={"dquiz " + (m.quiz === null ? "none" : m.quiz >= 70 ? "good" : "low")}>
-                {m.quiz === null ? "test —" : "test " + m.quiz + "%"}
+                {m.quiz === null ? "test -" : "test " + m.quiz + "%"}
               </span>
             </div>
           </div>
