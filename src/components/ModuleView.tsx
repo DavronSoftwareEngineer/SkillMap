@@ -179,6 +179,34 @@ export function ModuleView({
                   </div>
                 ))}
               </div>
+              {m.project.rubric && (
+                <div className="rubric">
+                  <h4>Yakuniy loyiha rubrikasi</h4>
+                  <ul>
+                    {m.project.rubric.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {m.project.variants && (
+                <div className="project-variants">
+                  <h4>Tanlov variantlari</h4>
+                  <div className="variant-grid">
+                    {m.project.variants.map((variant, i) => (
+                      <article className="variant-card" key={i}>
+                        <b>{variant.title}</b>
+                        <p>{variant.desc}</p>
+                        <ul>
+                          {variant.deliverables.map((item, j) => (
+                            <li key={j}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

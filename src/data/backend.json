@@ -1,470 +1,2283 @@
 [
- {
-  "zoom": "BE0",
-  "title": "Kirish & Runtime",
-  "sub": "Boshlash",
-  "coord": "Boshlash · BE0",
-  "eyebrow": "00 · Backend nima",
-  "mtitle": "0 dan Senior Backend developergacha (JS/TS)",
-  "lede": "Backend — foydalanuvchi <strong>ko'rmaydigan</strong>, lekin hamma narsani ishlatadigan qism: server, ma'lumotlar bazasi, API, xavfsizlik. Bu yo'lda sen <strong>Node.js + TypeScript</strong> bilan junior'dan senior darajaga chiqasan.",
-  "doc": "<div class='prose'><h3>Backend nima qiladi?</h3><p>Frontend ko'rsatadi — backend <strong>ishlaydi</strong>: ma'lumotni saqlaydi (DB), mantiqni bajaradi, autentifikatsiya qiladi, API orqali frontendga javob beradi. Brauzerda emas — <strong>serverda</strong> ishlaydi.</p><div class='chips'><span class='chip t'>HTTP server</span><span class='chip t'>Ma'lumotlar bazasi</span><span class='chip t'>API</span><span class='chip t'>Auth & xavfsizlik</span></div><h3>So'rov — javob (request/response)</h3><p>Frontend <code>fetch('/api/users')</code> yuboradi → server so'rovni qabul qiladi → DB'dan o'qiydi → <strong>JSON javob</strong> qaytaradi. Asosiy metodlar: <code>GET</code> (o'qish), <code>POST</code> (yaratish), <code>PUT/PATCH</code> (yangilash), <code>DELETE</code> (o'chirish).</p><h3>Runtime — 2026 holati</h3><div class='exlist'><div class='ex'><b>Node.js (v24 LTS)</b><span>hukmron, eng katta ekotizim, korxona tanlovi — barqarorlik</span></div><div class='ex'><b>Bun</b><span>eng tez (HTTP + paket o'rnatish); 2025-da Anthropic sotib oldi</span></div><div class='ex'><b>Deno 2</b><span>xavfsizlik-birinchi, npm bilan mos</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>2026 yangiligi</p><p>Endi <strong>native TypeScript</strong> barcha runtime'larda standart — TS faylni to'g'ridan-to'g'ri ishga tushirasan (alohida build shart emas). O'rganishni <strong>Node.js</strong>дан boshla.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior</b><span>Node · REST API · validation · SQL</span></div><div class='ex'><b>O'rta</b><span>ORM · auth · arxitektura · API uslublari</span></div><div class='ex'><b>Senior</b><span>test · observability · Docker · masshtablash · system design</span></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Birinchi server (runtime ichida)", "p": "Node native HTTP — kutubxonasiz." },
-    "title": "server",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import { createServer } from 'node:http';\n\nconst server = createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'application/json' });\n  res.end(JSON.stringify({ status: 'ok' }));\n});\n\nserver.listen(3000, () => console.log('http://localhost:3000'));" },
-     { "label": "JS", "lang": "javascript", "code": "const { createServer } = require('node:http');\n\nconst server = createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'application/json' });\n  res.end(JSON.stringify({ status: 'ok' }));\n});\n\nserver.listen(3000, () => console.log('http://localhost:3000'));" }
+  {
+    "zoom": "BE0",
+    "title": "Kirish & Runtime",
+    "sub": "Boshlash",
+    "coord": "Boshlash · BE0",
+    "eyebrow": "00 · Backend nima",
+    "mtitle": "0 dan Senior Backend developergacha (JS/TS)",
+    "lede": "Backend — foydalanuvchi <strong>ko'rmaydigan</strong>, lekin hamma narsani ishlatadigan qism: server, ma'lumotlar bazasi, API, xavfsizlik. Bu yo'lda sen <strong>Node.js + TypeScript</strong> bilan junior'dan senior darajaga chiqasan.",
+    "doc": "<div class='prose'><h3>Backend nima qiladi?</h3><p>Frontend ko'rsatadi — backend <strong>ishlaydi</strong>: ma'lumotni saqlaydi (DB), mantiqni bajaradi, autentifikatsiya qiladi, API orqali frontendga javob beradi. Brauzerda emas — <strong>serverda</strong> ishlaydi.</p><div class='chips'><span class='chip t'>HTTP server</span><span class='chip t'>Ma'lumotlar bazasi</span><span class='chip t'>API</span><span class='chip t'>Auth & xavfsizlik</span></div><h3>So'rov — javob (request/response)</h3><p>Frontend <code>fetch('/api/users')</code> yuboradi → server so'rovni qabul qiladi → DB'dan o'qiydi → <strong>JSON javob</strong> qaytaradi. Asosiy metodlar: <code>GET</code> (o'qish), <code>POST</code> (yaratish), <code>PUT/PATCH</code> (yangilash), <code>DELETE</code> (o'chirish).</p><h3>Runtime — 2026 holati</h3><div class='exlist'><div class='ex'><b>Node.js (v24 LTS)</b><span>hukmron, eng katta ekotizim, korxona tanlovi — barqarorlik</span></div><div class='ex'><b>Bun</b><span>eng tez (HTTP + paket o'rnatish); 2025-da Anthropic sotib oldi</span></div><div class='ex'><b>Deno 2</b><span>xavfsizlik-birinchi, npm bilan mos</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>2026 yangiligi</p><p>Endi <strong>native TypeScript</strong> barcha runtime'larda standart — TS faylni to'g'ridan-to'g'ri ishga tushirasan (alohida build shart emas). O'rganishni <strong>Node.js</strong>дан boshla.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior</b><span>Node · REST API · validation · SQL</span></div><div class='ex'><b>O'rta</b><span>ORM · auth · arxitektura · API uslublari</span></div><div class='ex'><b>Senior</b><span>test · observability · Docker · masshtablash · system design</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Birinchi server (runtime ichida)",
+          "p": "Node native HTTP — kutubxonasiz."
+        },
+        "title": "server",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import { createServer } from 'node:http';\n\nconst server = createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'application/json' });\n  res.end(JSON.stringify({ status: 'ok' }));\n});\n\nserver.listen(3000, () => console.log('http://localhost:3000'));"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "const { createServer } = require('node:http');\n\nconst server = createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'application/json' });\n  res.end(JSON.stringify({ status: 'ok' }));\n});\n\nserver.listen(3000, () => console.log('http://localhost:3000'));"
+          }
+        ],
+        "lang": "typescript",
+        "code": ""
+      }
     ],
-    "lang": "typescript",
-    "code": ""
-   }
-  ],
-  "tasks": [
-   { "id": "be0-1", "html": "Frontend va backend farqini tushundim", "crit": "kim nima qilishini ayta olasan" },
-   { "id": "be0-2", "html": "HTTP metodlari (GET/POST/PUT/DELETE) ma'nosini bilaman", "crit": "har birini misol bilan" },
-   { "id": "be0-3", "html": "Node.js o'rnatib, versiyani tekshirdim (node -v)", "crit": "v20+ o'rnatilgan" },
-   { "id": "be0-4", "html": "Birinchi HTTP serverni ishga tushirdim", "crit": "localhost:3000 javob berdi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://nodejs.org/en/learn", "title": "Node.js — rasmiy o'quv", "desc": "Node asoslari (rasmiy)", "host": "nodejs.org" },
-   { "type": "doc", "url": "https://roadmap.sh/backend", "title": "roadmap.sh — Backend", "desc": "0 → senior yo'l xaritasi", "host": "roadmap.sh" },
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP", "title": "MDN — HTTP", "desc": "HTTP protokoli asoslari", "host": "developer.mozilla.org" }
-  ],
-  "project": {
-   "tag": "Birinchi qadam",
-   "title": "Muhit + birinchi server",
-   "desc": "Node.js o'rnatib, TS bilan oddiy HTTP server yoz va JSON qaytar.",
-   "features": ["Node + npm", "TS sozlash", "HTTP server", "JSON javob"]
-  },
-  "quiz": [
-   { "q": "Backend asosan qayerda ishlaydi?", "a": ["brauzerda", "serverda", "DB ichida", "CSS'da"], "c": 1, "w": "Backend kodi serverda ishlaydi; frontend brauzerda." },
-   { "q": "Yangi resurs yaratish uchun HTTP metod?", "a": ["GET", "POST", "DELETE", "HEAD"], "c": 1, "w": "POST — yangi ma'lumot yaratadi; GET — o'qiydi." },
-   { "q": "2026 da eng tez runtime sifatida tanilgan?", "a": ["Deno", "Bun", "PHP", "Ruby"], "c": 1, "w": "Bun eng tez HTTP/paket runtime; Node hukmron va barqaror." }
-  ]
- },
- {
-  "zoom": "BE1",
-  "title": "Node.js asoslari",
-  "sub": "Runtime",
-  "coord": "Node · BE1",
-  "eyebrow": "01 · Tilning serverdagi hayoti",
-  "mtitle": "Node.js: modullar, event loop, async",
-  "lede": "Node — JavaScript'ni server'da ishlatadi. <strong>Bitta oqim + event loop</strong> bilan minglab so'rovni boshqaradi. Modullar, fayl tizimi va asinxron kod — kundalik quroling.",
-  "doc": "<div class='prose'><h3>Modullar (ESM)</h3><p>Zamonaviy Node <code>import</code>/<code>export</code> (ESM) ishlatadi. Har fayl — bitta mas'uliyat. <code>package.json</code> da <code>\"type\": \"module\"</code>.</p><h3>Event loop — bitta oqim sehri</h3><p>Node <strong>bloklamaydi</strong>: fayl/tarmoq kutilganda boshqa ishni bajaradi. Shuning uchun <strong>async</strong> kod muhim — <code>async/await</code> bilan toza yoz.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Event loop'ni <strong>bloklash</strong> (og'ir sinxron hisob, katta JSON sinxron o'qish). Bu butun serverni to'xtatadi — asinxron variant ishlat.</p></div></div><h3>Asosiy modullar</h3><div class='chips'><span class='chip t'>node:fs</span><span class='chip t'>node:path</span><span class='chip t'>node:http</span><span class='chip'>node:crypto</span></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Faylni asinxron o'qish", "p": "Promise asosli fs." },
-    "title": "readConfig",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import { readFile } from 'node:fs/promises';\n\nasync function readConfig(path: string): Promise<unknown> {\n  const raw = await readFile(path, 'utf8');\n  return JSON.parse(raw);\n}" },
-     { "label": "JS", "lang": "javascript", "code": "import { readFile } from 'node:fs/promises';\n\nasync function readConfig(path) {\n  const raw = await readFile(path, 'utf8');\n  return JSON.parse(raw);\n}" }
+    "tasks": [
+      {
+        "id": "be0-1",
+        "html": "Frontend va backend farqini tushundim",
+        "crit": "kim nima qilishini ayta olasan"
+      },
+      {
+        "id": "be0-2",
+        "html": "HTTP metodlari (GET/POST/PUT/DELETE) ma'nosini bilaman",
+        "crit": "har birini misol bilan"
+      },
+      {
+        "id": "be0-3",
+        "html": "Node.js o'rnatib, versiyani tekshirdim (node -v)",
+        "crit": "v20+ o'rnatilgan"
+      },
+      {
+        "id": "be0-4",
+        "html": "Birinchi HTTP serverni ishga tushirdim",
+        "crit": "localhost:3000 javob berdi"
+      }
     ],
-    "lang": "typescript",
-    "code": ""
-   }
-  ],
-  "tasks": [
-   { "id": "be1-1", "html": "ESM import/export bilan kodni modullarga bo'ldim", "crit": "2+ fayl" },
-   { "id": "be1-2", "html": "Event loop nega bloklanmasligi kerakligini tushundim", "crit": "o'z so'zing bilan" },
-   { "id": "be1-3", "html": "fs/promises bilan fayl o'qidim", "crit": "async/await ishlatilgan" },
-   { "id": "be1-4", "html": "npm bilan paket o'rnatib ishlatdim", "crit": "package.json da bog'liqlik bor" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://nodejs.org/api/", "title": "Node.js API", "desc": "Barcha modullar ma'lumotnomasi", "host": "nodejs.org" },
-   { "type": "doc", "url": "https://nodejs.dev/en/learn/the-nodejs-event-loop/", "title": "Event loop tushuntirish", "desc": "Node event loop", "host": "nodejs.dev" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Node nechta asosiy oqimda JS bajaradi?", "a": ["bitta (event loop)", "har so'rovga bitta", "cheksiz", "ikkita"], "c": 0, "w": "Node bitta oqim + event loop bilan asinxron ishlaydi." },
-   { "q": "Zamonaviy Node modul tizimi?", "a": ["CommonJS only", "ESM (import/export)", "AMD", "global"], "c": 1, "w": "ESM (import/export) zamonaviy standart; package.json type:module." },
-   { "q": "Serverni sekinlashtiradigan narsa?", "a": ["async/await", "event loop'ni bloklash", "kichik JSON", "import"], "c": 1, "w": "Og'ir sinxron ish event loop'ni bloklaydi — barcha so'rov kutadi." }
-  ]
- },
- {
-  "zoom": "BE2",
-  "title": "REST API",
-  "sub": "Server",
-  "coord": "API · BE2",
-  "eyebrow": "02 · HTTP server qurish",
-  "mtitle": "REST API: Express va Fastify",
-  "lede": "API — frontend bilan backend o'rtasidagi <strong>shartnoma</strong>. REST tamoyillari bilan toza endpoint'lar qurasan. <strong>Express</strong> (klassik) yoki <strong>Fastify</strong> (tezroq) bilan.",
-  "doc": "<div class='prose'><h3>REST tamoyillari</h3><p>Resurslar URL bilan ifodalanadi (<code>/users</code>, <code>/users/:id</code>), amal — HTTP metod bilan. To'g'ri <strong>status kod</strong> qaytar: 200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Server Error.</p><h3>Express vs Fastify</h3><div class='exlist'><div class='ex'><b>Express</b><span>eng mashhur, sodda, ulkan ekotizim — o'rganishni shundan boshla</span></div><div class='ex'><b>Fastify</b><span>tezroq, sxema-asosli validatsiya, TS bilan yaxshi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>API'ni <strong>versiyala</strong> (<code>/api/v1/...</code>), izchil javob shakli ber, xatoni doim to'g'ri status bilan qaytar. Frontend shunga ishonadi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "REST endpoint (Express)", "p": "GET + POST + status kod." },
-    "title": "users.route",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import express, { Request, Response } from 'express';\n\nconst app = express();\napp.use(express.json());\n\nconst users: { id: number; name: string }[] = [];\n\napp.get('/api/users', (req: Request, res: Response) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req: Request, res: Response) => {\n  const { name } = req.body;\n  if (!name) return res.status(400).json({ error: 'name kerak' });\n  const user = { id: users.length + 1, name };\n  users.push(user);\n  res.status(201).json(user);\n});\n\napp.listen(3000);" },
-     { "label": "JS", "lang": "javascript", "code": "import express from 'express';\n\nconst app = express();\napp.use(express.json());\n\nconst users = [];\n\napp.get('/api/users', (req, res) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req, res) => {\n  const { name } = req.body;\n  if (!name) return res.status(400).json({ error: 'name kerak' });\n  const user = { id: users.length + 1, name };\n  users.push(user);\n  res.status(201).json(user);\n});\n\napp.listen(3000);" }
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://nodejs.org/en/learn",
+        "title": "Node.js — rasmiy o'quv",
+        "desc": "Node asoslari (rasmiy)",
+        "host": "nodejs.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://roadmap.sh/backend",
+        "title": "roadmap.sh — Backend",
+        "desc": "0 → senior yo'l xaritasi",
+        "host": "roadmap.sh"
+      },
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+        "title": "MDN — HTTP",
+        "desc": "HTTP protokoli asoslari",
+        "host": "developer.mozilla.org"
+      }
     ],
-    "lang": "typescript",
-    "code": ""
-   }
-  ],
-  "tasks": [
-   { "id": "be2-1", "html": "REST tamoyillarini tushundim (resurs + metod + status)", "crit": "to'g'ri status kodlar" },
-   { "id": "be2-2", "html": "Express bilan GET va POST endpoint yozdim", "crit": "ikkalasi ishlaydi" },
-   { "id": "be2-3", "html": "express.json() middleware ishlatdim", "crit": "req.body o'qiladi" },
-   { "id": "be2-4", "html": "Postman/curl bilan API'ni sinadim", "crit": "javob va status ko'rding" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://expressjs.com/", "title": "Express", "desc": "Klassik Node web framework", "host": "expressjs.com" },
-   { "type": "doc", "url": "https://fastify.dev/", "title": "Fastify", "desc": "Tez, sxema-asosli framework", "host": "fastify.dev" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "CRUD REST API",
-   "desc": "Bitta resurs (masalan vazifalar) uchun to'liq CRUD API: GET/POST/PUT/DELETE + to'g'ri status.",
-   "features": ["4 ta endpoint", "To'g'ri status kod", "JSON javob", "curl/Postman test"]
-  },
-  "quiz": [
-   { "q": "Resurs topilmasa qaysi status?", "a": ["200", "404", "201", "500"], "c": 1, "w": "404 Not Found — resurs yo'q. 201 — yaratildi, 400 — noto'g'ri so'rov." },
-   { "q": "req.body o'qish uchun Express'da nima kerak?", "a": ["hech narsa", "express.json() middleware", "fs", "cors"], "c": 1, "w": "express.json() kelgan JSON tanasini parse qiladi." },
-   { "q": "Yangi resurs yaratilganda qaytariladigan status?", "a": ["200", "201", "204", "301"], "c": 1, "w": "201 Created — yangi resurs muvaffaqiyatli yaratildi." }
-  ]
- },
- {
-  "zoom": "BE3",
-  "title": "Middleware & Validation",
-  "sub": "Oqim",
-  "coord": "Oqim · BE3",
-  "eyebrow": "03 · So'rov quvuri",
-  "mtitle": "Middleware, xato boshqaruvi va Zod",
-  "lede": "Middleware — so'rov serverga <strong>yetib borguncha</strong> o'tadigan bosqichlar (log, auth, validation). Kiruvchi ma'lumotni <strong>Zod</strong> bilan tekshir — bu 2026 standarti.",
-  "doc": "<div class='prose'><h3>Middleware nima?</h3><p>Har so'rov funksiyalar zanjiridan o'tadi: <code>log → auth → validate → handler</code>. Har biri <code>next()</code> bilan keyingisiga uzatadi yoki javob qaytaradi.</p><h3>Validatsiya — Zod (2026 standart)</h3><p>Tashqi ma'lumotga <strong>hech qachon ishonma</strong>. Zod sxema bilan tekshir — va sxemadan <strong>TypeScript tipi avtomatik</strong> chiqadi (<code>z.infer</code>). Bitta manba — ham validatsiya, ham tip.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Xato boshqaruvini <strong>markazlashtir</strong> (bitta error-handling middleware). Har joyda try/catch takrorlama — xatoni <code>next(err)</code> bilan uzat.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Zod bilan validatsiya", "p": "Sxema → tip + tekshiruv." },
-    "title": "validate",
-    "lang": "typescript",
-    "code": "import { z } from 'zod';\n\nconst CreateUser = z.object({\n  name: z.string().min(2),\n  email: z.string().email(),\n  age: z.number().int().positive().optional(),\n});\n\n// Sxemadan TS tipi avtomatik:\ntype CreateUser = z.infer<typeof CreateUser>;\n\nfunction handler(body: unknown) {\n  const data = CreateUser.parse(body); // noto'g'ri bo'lsa xato tashlaydi\n  return data; // data endi to'liq tiplangan\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "be3-1", "html": "Middleware zanjirini tushundim (next())", "crit": "log/auth/validate ketma-ketligi" },
-   { "id": "be3-2", "html": "Zod sxema yozib kiruvchi ma'lumotni tekshirdim", "crit": "noto'g'ri so'rov 400 qaytaradi" },
-   { "id": "be3-3", "html": "z.infer bilan tipni sxemadan oldim", "crit": "qo'lda tip yozmading" },
-   { "id": "be3-4", "html": "Markaziy error-handling middleware qildim", "crit": "xato bitta joyda boshqariladi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://zod.dev/", "title": "Zod", "desc": "TS-first validatsiya (2026 standart)", "host": "zod.dev" },
-   { "type": "doc", "url": "https://expressjs.com/en/guide/error-handling.html", "title": "Express — Error handling", "desc": "Xato boshqaruvi", "host": "expressjs.com" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Middleware keyingi bosqichga qanday o'tadi?", "a": ["return", "next()", "throw", "exit()"], "c": 1, "w": "next() chaqirilsa zanjir davom etadi." },
-   { "q": "Zod nima beradi?", "a": ["faqat tip", "validatsiya + tip (z.infer)", "DB", "log"], "c": 1, "w": "Zod ham runtime validatsiya, ham TS tipini bitta sxemadan beradi." },
-   { "q": "Tashqi (foydalanuvchi) ma'lumotga munosabat?", "a": ["ishonamiz", "hech qachon ishonmaymiz — tekshiramiz", "faqat frontend tekshiradi", "DB tekshiradi"], "c": 1, "w": "Backend kiruvchi ma'lumotni doim validatsiya qilishi shart (xavfsizlik)." }
-  ]
- },
- {
-  "zoom": "BE4",
-  "title": "SQL & PostgreSQL",
-  "sub": "Ma'lumot",
-  "coord": "DB · BE4",
-  "eyebrow": "04 · Ma'lumotni saqlash",
-  "mtitle": "Relyatsion bazalar va SQL",
-  "lede": "Ma'lumot — backend'ning yuragi. <strong>PostgreSQL</strong> — eng kuchli ochiq relyatsion baza. SQL bilan ma'lumotni saqlash, o'qish, bog'lash va indekslashni o'rganasan.",
-  "doc": "<div class='prose'><h3>Jadval, qator, ustun</h3><p>Relyatsion baza — bog'langan jadvallar. Har jadval ustun (maydon) va qatordan (yozuv) iborat. <strong>Primary key</strong> — noyob identifikator; <strong>foreign key</strong> — jadvallarni bog'laydi.</p><h3>Asosiy SQL</h3><div class='chips'><span class='chip t'>SELECT</span><span class='chip t'>INSERT</span><span class='chip'>UPDATE</span><span class='chip'>DELETE</span><span class='chip t'>JOIN</span><span class='chip'>WHERE</span></div><h3>Index — tezlik</h3><p>Tez-tez qidiriladigan ustunga <strong>index</strong> qo'y — so'rov yuz barobar tezlashadi. Lekin keragidan ko'p index yozishni sekinlashtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><strong>SQL injection</strong>: so'rovga foydalanuvchi matnini to'g'ridan-to'g'ri qo'shish. Doim <strong>parametrlangan so'rov</strong> ishlat (<code>$1, $2</code>).</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Jadval + so'rov", "p": "DDL va parametrlangan SELECT." },
-    "title": "schema.sql",
-    "lang": "sql",
-    "code": "CREATE TABLE users (\n  id     SERIAL PRIMARY KEY,\n  name   TEXT NOT NULL,\n  email  TEXT UNIQUE NOT NULL,\n  created_at TIMESTAMPTZ DEFAULT now()\n);\n\nCREATE INDEX idx_users_email ON users(email);\n\n-- Parametrlangan so'rov (SQL injection'dan himoya)\nSELECT id, name FROM users WHERE email = $1;"
-   }
-  ],
-  "tasks": [
-   { "id": "be4-1", "html": "PostgreSQL o'rnatib, baza yaratdim", "crit": "psql yoki GUI ishladi" },
-   { "id": "be4-2", "html": "CREATE TABLE bilan jadval qildim (PK bilan)", "crit": "primary key bor" },
-   { "id": "be4-3", "html": "SELECT/INSERT/UPDATE/DELETE yozdim", "crit": "4 amal ishladi" },
-   { "id": "be4-4", "html": "JOIN bilan ikki jadvalni bog'ladim", "crit": "foreign key + JOIN" },
-   { "id": "be4-5", "html": "Parametrlangan so'rov ishlatdim", "crit": "$1 bilan, matn ulanmagan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://www.postgresql.org/docs/", "title": "PostgreSQL — docs", "desc": "Rasmiy hujjat", "host": "postgresql.org" },
-   { "type": "doc", "url": "https://www.sqltutorial.org/", "title": "SQL Tutorial", "desc": "SQL noldan", "host": "sqltutorial.org" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Jadvaldagi noyob identifikator?", "a": ["foreign key", "primary key", "index", "join"], "c": 1, "w": "Primary key — har qatorni noyob aniqlaydi." },
-   { "q": "SQL injection'dan himoya?", "a": ["matnni qo'shish", "parametrlangan so'rov ($1)", "katta harf", "izoh"], "c": 1, "w": "Parametrlangan so'rov foydalanuvchi matnini xavfsiz uzatadi." },
-   { "q": "Qidiruvni tezlashtiradigan narsa?", "a": ["index", "JOIN", "DELETE", "izoh"], "c": 0, "w": "Index tez-tez qidiriladigan ustunda so'rovni tezlashtiradi." }
-  ]
- },
- {
-  "zoom": "BE5",
-  "title": "ORM: Prisma & Drizzle",
-  "sub": "Ma'lumot+",
-  "coord": "ORM · BE5",
-  "eyebrow": "05 · Tip-xavfsiz baza",
-  "mtitle": "ORM — TypeScript bilan ma'lumotlar bazasi",
-  "lede": "ORM bazani <strong>TypeScript obyektlari</strong> sifatida ko'rsatadi — qo'lda SQL yozish o'rniga tip-xavfsiz so'rov. 2026 da ikki yetakchi: <strong>Prisma</strong> va <strong>Drizzle</strong>.",
-  "doc": "<div class='prose'><h3>Nega ORM?</h3><p>SQL qatorlari o'rniga tiplangan funksiya: <code>db.user.findMany()</code>. Avtoto'ldirish, xatoni kompilyatsiyada tutish, migratsiya boshqaruvi.</p><h3>Prisma vs Drizzle (2026)</h3><div class='exlist'><div class='ex'><b>Prisma</b><span>\"sen uchun o'ylaydi\": qulay sxema tili, kuchli vositalar — kattaroq hajm</span></div><div class='ex'><b>Drizzle</b><span>\"sen bilan o'ylaydi\": SQL'ga yaqin, juda yengil (~280KB), serverless uchun zo'r — tez o'smoqda</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>SQL'ni tushunganingdan keyin ORM ishlat — ORM SQL'ni yashiradi, lekin yo'qotmaydi. <code>drizzle-zod</code> bilan bitta sxemadan ham DB, ham validatsiya chiqadi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Drizzle — sxema + so'rov", "p": "TS-first, SQL'ga yaqin." },
-    "title": "db (Drizzle)",
-    "lang": "typescript",
-    "code": "import { pgTable, serial, text } from 'drizzle-orm/pg-core';\nimport { eq } from 'drizzle-orm';\n\nexport const users = pgTable('users', {\n  id: serial('id').primaryKey(),\n  name: text('name').notNull(),\n  email: text('email').notNull().unique(),\n});\n\n// Tip-xavfsiz so'rov:\nconst found = await db.select().from(users).where(eq(users.email, email));"
-   },
-   {
-    "heading": { "h": "Prisma — sxema + so'rov", "p": "Sxema tili + generatsiya." },
-    "title": "Prisma",
-    "lang": "typescript",
-    "code": "// schema.prisma:\n// model User {\n//   id    Int    @id @default(autoincrement())\n//   name  String\n//   email String @unique\n// }\n\nconst user = await prisma.user.create({\n  data: { name: 'Ali', email: 'ali@mail.uz' },\n});\n\nconst all = await prisma.user.findMany();"
-   }
-  ],
-  "tasks": [
-   { "id": "be5-1", "html": "ORM nega kerakligini tushundim", "crit": "tip-xavfsizlik + migratsiya" },
-   { "id": "be5-2", "html": "Prisma yoki Drizzle bilan sxema yozdim", "crit": "jadval modeli bor" },
-   { "id": "be5-3", "html": "Migratsiya yuritib jadval yaratdim", "crit": "DB'da jadval paydo bo'ldi" },
-   { "id": "be5-4", "html": "CRUD so'rovlarini ORM bilan yozdim", "crit": "create/find/update/delete" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://orm.drizzle.team/", "title": "Drizzle ORM", "desc": "Yengil, TS-first ORM (2026 yuksalishda)", "host": "orm.drizzle.team" },
-   { "type": "doc", "url": "https://www.prisma.io/docs", "title": "Prisma — docs", "desc": "Mashhur ORM, kuchli vositalar", "host": "prisma.io" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "API + ORM + PostgreSQL",
-   "desc": "BE2 dagi CRUD API'ni haqiqiy PostgreSQL'ga ORM (Drizzle/Prisma) orqali ula.",
-   "features": ["ORM sxema", "Migratsiya", "Tip-xavfsiz CRUD", "Haqiqiy DB"]
-  },
-  "quiz": [
-   { "q": "ORM nima beradi?", "a": ["faqat CSS", "tip-xavfsiz DB so'rovlari + migratsiya", "tezroq internet", "log"], "c": 1, "w": "ORM bazani tiplangan obyekt sifatida ko'rsatadi va migratsiyani boshqaradi." },
-   { "q": "Serverless uchun yengilligi bilan ajralib turadigan ORM?", "a": ["Prisma", "Drizzle", "TypeORM", "Sequelize"], "c": 1, "w": "Drizzle juda yengil (~280KB) — serverless/edge uchun mos." },
-   { "q": "ORM o'rganishdan oldin nimani bilish kerak?", "a": ["SQL asoslarini", "CSS", "Docker", "GraphQL"], "c": 0, "w": "ORM SQL'ni yashiradi; asosini bilsang muammoni tushunasan." }
-  ]
- },
- {
-  "zoom": "BE6",
-  "title": "NoSQL & Redis",
-  "sub": "Ma'lumot+",
-  "coord": "NoSQL · BE6",
-  "eyebrow": "06 · Boshqa saqlash turlari",
-  "mtitle": "MongoDB hujjatlari va Redis kesh",
-  "lede": "Hamma narsa SQL emas. <strong>MongoDB</strong> — moslashuvchan hujjat bazasi; <strong>Redis</strong> — o'ta tez xotira keshi (cache, sessiya, navbat). Qachon qaysini ishlatishni bilish — senior ko'nikma.",
-  "doc": "<div class='prose'><h3>SQL vs NoSQL</h3><div class='exlist'><div class='ex'><b>SQL (Postgres)</b><span>qat'iy sxema, bog'lanishlar, tranzaksiya — ko'p hollarda default</span></div><div class='ex'><b>MongoDB</b><span>hujjat (JSON), moslashuvchan sxema — tez o'zgaruvchi struktura uchun</span></div></div><h3>Redis — tezlik</h3><p>Xotirada ishlaydi → mikrosoniya tezlik. Ishlatilishi: <strong>kesh</strong> (DB yukini kamaytirish), <strong>sessiya</strong>, <strong>rate limiting</strong>, <strong>navbat</strong> (BullMQ).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval to'g'ri DB (ko'pincha PostgreSQL) tanla. Redis'ni <strong>tezlik muammosi paydo bo'lganda</strong> kesh sifatida qo'sh — erta optimallashtirma.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Redis kesh namunasi", "p": "Avval keshdan, bo'lmasa DB'dan." },
-    "title": "getUserCached",
-    "lang": "typescript",
-    "code": "async function getUser(id: string) {\n  const cached = await redis.get(`user:${id}`);\n  if (cached) return JSON.parse(cached);\n\n  const user = await db.user.findById(id);\n  await redis.set(`user:${id}`, JSON.stringify(user), 'EX', 60); // 60s\n  return user;\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "be6-1", "html": "SQL va NoSQL farqini tushundim", "crit": "qachon qaysi" },
-   { "id": "be6-2", "html": "MongoDB'da hujjat saqlab o'qidim", "crit": "insert + find" },
-   { "id": "be6-3", "html": "Redis'da qiymat saqlab oldim (TTL bilan)", "crit": "set/get + muddat" },
-   { "id": "be6-4", "html": "Kesh namunasini (cache-aside) qo'lladim", "crit": "avval kesh, keyin DB" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://www.mongodb.com/docs/", "title": "MongoDB — docs", "desc": "Hujjat bazasi", "host": "mongodb.com" },
-   { "type": "doc", "url": "https://redis.io/docs/latest/", "title": "Redis — docs", "desc": "Xotira keshi va navbat", "host": "redis.io" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Redis asosan nima uchun?", "a": ["asosiy saqlash", "tez kesh / sessiya / navbat", "frontend", "CSS"], "c": 1, "w": "Redis xotirada — kesh, sessiya, rate limit, navbat uchun." },
-   { "q": "Moslashuvchan, sxemasiz hujjat bazasi?", "a": ["PostgreSQL", "MongoDB", "Redis", "MySQL"], "c": 1, "w": "MongoDB — JSON hujjatlar, moslashuvchan sxema." },
-   { "q": "Redis'ni qachon qo'shish kerak?", "a": ["doim birinchi", "tezlik muammosi paydo bo'lganda", "hech qachon", "frontend uchun"], "c": 1, "w": "Erta optimallashtirma — real ehtiyoj bo'lganda kesh qo'sh." }
-  ]
- },
- {
-  "zoom": "BE7",
-  "title": "Auth & Xavfsizlik",
-  "sub": "Himoya",
-  "coord": "Auth · BE7",
-  "eyebrow": "07 · Kim va nima qila oladi",
-  "mtitle": "Autentifikatsiya, JWT va OWASP",
-  "lede": "Auth — eng muhim backend mas'uliyati. <strong>Authentication</strong> (kim?) va <strong>authorization</strong> (nima qila oladi?). Parolni hash qil, JWT bilan sessiya, OWASP xavflaridan himoyalan.",
-  "doc": "<div class='prose'><h3>Authentication vs Authorization</h3><div class='exlist'><div class='ex'><b>Authentication</b><span>kimligini tasdiqlash (login)</span></div><div class='ex'><b>Authorization</b><span>nimaga ruxsati borligi (rol/huquq)</span></div></div><h3>Parol va token</h3><p>Parolni <strong>hech qachon ochiq saqlama</strong> — <code>bcrypt</code>/<code>argon2</code> bilan hash qil. Login muvaffaqiyatli bo'lsa <strong>JWT</strong> token ber; har so'rovda tekshir.</p><h3>OWASP — asosiy xavflar</h3><div class='chips'><span class='chip'>SQL injection</span><span class='chip'>XSS</span><span class='chip'>CSRF</span><span class='chip'>Broken auth</span><span class='chip'>Secrets ochiq</span></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Maxfiy kalitlarni <strong>kodga yozma</strong> — <code>.env</code> va secret-manager ishlat. <code>.env</code> ni git'ga qo'shma. 2026: passkeys/OAuth ham keng tarqalmoqda.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Parol hash + JWT", "p": "bcrypt + token berish." },
-    "title": "auth",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import bcrypt from 'bcrypt';\nimport jwt from 'jsonwebtoken';\n\nasync function register(password: string): Promise<string> {\n  return bcrypt.hash(password, 12);\n}\n\nasync function login(password: string, hash: string): Promise<string | null> {\n  const ok = await bcrypt.compare(password, hash);\n  if (!ok) return null;\n  return jwt.sign({ sub: 'userId' }, process.env.JWT_SECRET!, { expiresIn: '1h' });\n}" },
-     { "label": "JS", "lang": "javascript", "code": "import bcrypt from 'bcrypt';\nimport jwt from 'jsonwebtoken';\n\nasync function register(password) {\n  return bcrypt.hash(password, 12);\n}\n\nasync function login(password, hash) {\n  const ok = await bcrypt.compare(password, hash);\n  if (!ok) return null;\n  return jwt.sign({ sub: 'userId' }, process.env.JWT_SECRET, { expiresIn: '1h' });\n}" }
+    "project": {
+      "tag": "Mini loyiha ? Runtime",
+      "title": "Health Check Server",
+      "desc": "Node.js runtime bilan birinchi HTTP server. Maqsad: server, port va JSON response tushunchasini mustahkamlash.",
+      "features": [
+        "`GET /health` JSON qaytaradi",
+        "`GET /` qisqa service info qaytaradi",
+        "Port `.env` orqali o?qiladi",
+        "README?da curl bilan tekshirish bor",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Health Check Server mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Server qayta ishga tushganda ham config `.env.example` orqali tushunarli bo?ladi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Health Check Server - Service API",
+          "desc": "Kirish & Runtime mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Health Check Server - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Backend asosan qayerda ishlaydi?",
+        "a": [
+          "brauzerda",
+          "serverda",
+          "DB ichida",
+          "CSS'da"
+        ],
+        "c": 1,
+        "w": "Backend kodi serverda ishlaydi; frontend brauzerda.",
+        "level": "easy"
+      },
+      {
+        "q": "Yangi resurs yaratish uchun HTTP metod?",
+        "a": [
+          "GET",
+          "POST",
+          "DELETE",
+          "HEAD"
+        ],
+        "c": 1,
+        "w": "POST — yangi ma'lumot yaratadi; GET — o'qiydi.",
+        "level": "practical"
+      },
+      {
+        "q": "2026 da eng tez runtime sifatida tanilgan?",
+        "a": [
+          "Deno",
+          "Bun",
+          "PHP",
+          "Ruby"
+        ],
+        "c": 1,
+        "w": "Bun eng tez HTTP/paket runtime; Node hukmron va barqaror.",
+        "level": "scenario"
+      }
     ],
-    "lang": "typescript",
-    "code": ""
-   }
-  ],
-  "tasks": [
-   { "id": "be7-1", "html": "Authentication va authorization farqini bilaman", "crit": "kim vs nima qila oladi" },
-   { "id": "be7-2", "html": "Parolni bcrypt bilan hash qildim", "crit": "ochiq parol saqlanmaydi" },
-   { "id": "be7-3", "html": "JWT token berib, middleware'da tekshirdim", "crit": "himoyalangan endpoint" },
-   { "id": "be7-4", "html": "Maxfiy kalitlarni .env ga ko'chirdim", "crit": ".env gitignore'da" },
-   { "id": "be7-5", "html": "Kamida 3 ta OWASP xavfini bilaman", "crit": "injection/XSS/auth" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://owasp.org/www-project-top-ten/", "title": "OWASP Top 10", "desc": "Asosiy web xavfsizlik xavflari", "host": "owasp.org" },
-   { "type": "doc", "url": "https://jwt.io/introduction", "title": "JWT — kirish", "desc": "Token asoslari", "host": "jwt.io" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "Auth tizimi",
-   "desc": "Register/login (bcrypt) + JWT + himoyalangan endpoint + rol tekshiruvi.",
-   "features": ["Parol hash", "JWT token", "Auth middleware", "Rol bilan himoya"]
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE0: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "runtime",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "runtime - Kirish & Runtime modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida HTTP server ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo HTTP server qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "request/response bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "request/response mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "Parolni qanday saqlash kerak?", "a": ["ochiq matnda", "bcrypt/argon2 hash bilan", "base64", "cookie'da"], "c": 1, "w": "Parol doim hash qilinadi (bcrypt/argon2) — ochiq saqlanmaydi." },
-   { "q": "\"Nimaga ruxsati bor?\" — bu nima?", "a": ["authentication", "authorization", "encryption", "validation"], "c": 1, "w": "Authorization — huquq/rol; authentication — kimligi." },
-   { "q": "Maxfiy kalit qayerda?", "a": ["kodda", ".env / secret manager", "frontend'da", "README'da"], "c": 1, "w": ".env va secret-manager; kodga yozilmaydi, git'ga qo'shilmaydi." }
-  ]
- },
- {
-  "zoom": "BE8",
-  "title": "Arxitektura: NestJS",
-  "sub": "Tuzilma",
-  "coord": "Arch · BE8",
-  "eyebrow": "08 · Katta loyiha tuzilmasi",
-  "mtitle": "Toza arxitektura va NestJS",
-  "lede": "Kod o'sganda tuzilma kerak. <strong>Qatlamli arxitektura</strong> (controller → service → repository) va <strong>NestJS</strong> (TS-first, DI) bilan kengaytiriladigan, sinaladigan backend quriladi.",
-  "doc": "<div class='prose'><h3>Qatlamlar (separation of concerns)</h3><div class='exlist'><div class='ex'><b>Controller</b><span>HTTP — so'rov/javob, validatsiya</span></div><div class='ex'><b>Service</b><span>biznes mantiq — asosiy qoidalar</span></div><div class='ex'><b>Repository</b><span>ma'lumotlar bazasi bilan ishlash</span></div></div><h3>NestJS — DI va modullik</h3><p>NestJS dekoratorlar va <strong>Dependency Injection</strong> bilan kodni modullarga ajratadi. Sinash oson, jamoa uchun izchil tuzilma. Backend uchun \"Angular\".</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Biznes mantiqni HTTP'dan ajrat — service framework'ni bilmasin. Shunda test oson, framework almashsa ham mantiq qoladi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "NestJS controller + service", "p": "DI bilan qatlamli." },
-    "title": "users.controller.ts",
-    "lang": "typescript",
-    "code": "import { Controller, Get, Param } from '@nestjs/common';\nimport { UsersService } from './users.service';\n\n@Controller('users')\nexport class UsersController {\n  constructor(private readonly users: UsersService) {}\n\n  @Get(':id')\n  findOne(@Param('id') id: string) {\n    return this.users.findOne(id);\n  }\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "be8-1", "html": "Controller/service/repository qatlamlarini ajratdim", "crit": "mas'uliyatlar bo'lingan" },
-   { "id": "be8-2", "html": "NestJS loyiha yaratdim", "crit": "nest new ishladi" },
-   { "id": "be8-3", "html": "Dependency Injection ishlatdim", "crit": "service controller'ga inject" },
-   { "id": "be8-4", "html": "Biznes mantiqni HTTP'dan ajratdim", "crit": "service framework'siz" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://docs.nestjs.com/", "title": "NestJS — docs", "desc": "TS-first backend framework", "host": "docs.nestjs.com" },
-   { "type": "doc", "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html", "title": "Clean Architecture", "desc": "Qatlamli arxitektura tamoyili", "host": "blog.cleancoder.com" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Biznes mantiq qaysi qatlamda?", "a": ["controller", "service", "repository", "middleware"], "c": 1, "w": "Service — biznes mantiq; controller — HTTP; repository — DB." },
-   { "q": "NestJS asosiy g'oyasi?", "a": ["CSS", "DI + modullik (dekoratorlar)", "faqat frontend", "DB"], "c": 1, "w": "NestJS Dependency Injection va modullik bilan tuzilma beradi." },
-   { "q": "Nega mantiqni HTTP'dan ajratamiz?", "a": ["chiroyli ko'rinadi", "test oson + framework'ga bog'liq emas", "tezroq", "shart emas"], "c": 1, "w": "Ajratilgan mantiq sinaladi va framework almashsa ham qoladi." }
-  ]
- },
- {
-  "zoom": "BE9",
-  "title": "API uslublari",
-  "sub": "API+",
-  "coord": "API+ · BE9",
-  "eyebrow": "09 · REST'dan tashqari",
-  "mtitle": "GraphQL, tRPC va WebSockets",
-  "lede": "REST yagona yo'l emas. <strong>GraphQL</strong> — mijoz kerakli maydonni so'raydi; <strong>tRPC</strong> — TS uchun end-to-end tip-xavfsizlik; <strong>WebSockets</strong> — real-time aloqa.",
-  "doc": "<div class='prose'><h3>Uslublarni taqqoslash</h3><div class='exlist'><div class='ex'><b>REST</b><span>oddiy, universal, keng tarqalgan — default</span></div><div class='ex'><b>GraphQL</b><span>bitta endpoint, mijoz kerakli maydonni so'raydi — over-fetching yo'q</span></div><div class='ex'><b>tRPC</b><span>full-stack TS: server funksiyasini frontend tip bilan chaqiradi (kod-generatsiyasiz)</span></div><div class='ex'><b>WebSockets</b><span>ikki tomonlama real-time (chat, jonli yangilanish)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Ko'p holatda <strong>REST</strong> yetadi. Frontend ham TS bo'lsa va bitta jamoa bo'lsa → <strong>tRPC</strong> ajoyib. Murakkab, ko'p-mijozli data → <strong>GraphQL</strong>. Real-time → <strong>WebSockets</strong>.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "tRPC — end-to-end tip-xavfsiz", "p": "Server procedure, frontend tip bilan chaqiradi." },
-    "title": "trpc router",
-    "lang": "typescript",
-    "code": "import { initTRPC } from '@trpc/server';\nimport { z } from 'zod';\n\nconst t = initTRPC.create();\n\nexport const appRouter = t.router({\n  getUser: t.procedure\n    .input(z.object({ id: z.string() }))\n    .query(({ input }) => db.user.findById(input.id)),\n});\n\n// Frontend: trpc.getUser.query({ id }) — to'liq tiplangan\nexport type AppRouter = typeof appRouter;"
-   }
-  ],
-  "tasks": [
-   { "id": "be9-1", "html": "REST/GraphQL/tRPC/WS farqini bilaman", "crit": "qachon qaysi" },
-   { "id": "be9-2", "html": "GraphQL yoki tRPC bilan endpoint yozdim", "crit": "so'rov ishladi" },
-   { "id": "be9-3", "html": "WebSocket bilan real-time xabar yubordim", "crit": "ikki tomon aloqa" },
-   { "id": "be9-4", "html": "Loyiham uchun mos uslubni tanladim", "crit": "sababini ayta olasan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://trpc.io/docs", "title": "tRPC", "desc": "End-to-end tip-xavfsiz API (TS)", "host": "trpc.io" },
-   { "type": "doc", "url": "https://graphql.org/learn/", "title": "GraphQL — learn", "desc": "So'rov tili asoslari", "host": "graphql.org" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Over-fetching'ni kamaytiradigan uslub?", "a": ["REST", "GraphQL", "SOAP", "FTP"], "c": 1, "w": "GraphQL'da mijoz aynan kerakli maydonni so'raydi." },
-   { "q": "Full-stack TS uchun tip-xavfsiz API?", "a": ["tRPC", "REST", "SOAP", "RPC over XML"], "c": 0, "w": "tRPC server va frontend o'rtasida tiplarni ulashadi — kod-generatsiyasiz." },
-   { "q": "Real-time ikki tomonlama aloqa?", "a": ["GET polling", "WebSockets", "POST", "GraphQL query"], "c": 1, "w": "WebSockets — doimiy ikki tomonlama kanal (chat, jonli)." }
-  ]
- },
- {
-  "zoom": "BE10",
-  "title": "Test, Log & Observability",
-  "sub": "Sifat",
-  "coord": "Sifat · BE10",
-  "eyebrow": "10 · Ishonchli backend",
-  "mtitle": "Testlar, loglar va kuzatuv",
-  "lede": "Production'da nima sodir bo'layotganini <strong>ko'ra olishing</strong> kerak. Testlar (ishonch), strukturali loglar va <strong>observability</strong> (OpenTelemetry) — senior backend belgilari.",
-  "doc": "<div class='prose'><h3>Test piramidasi</h3><div class='exlist'><div class='ex'><b>Unit</b><span>alohida funksiya/service — ko'p va tez</span></div><div class='ex'><b>Integration</b><span>DB + API birga — o'rtacha</span></div><div class='ex'><b>E2E</b><span>to'liq oqim — kam, lekin muhim</span></div></div><h3>Strukturali log</h3><p>Matn emas — <strong>JSON log</strong> (pino/winston) yoz: vaqt, daraja, so'rov id. Shunda qidirish va tahlil oson.</p><h3>Observability (2026)</h3><p><strong>OpenTelemetry</strong> — metrikalar, loglar, trace'ni bir standartda yig'adi. So'rov tizimda qayerda sekinlashganini ko'rasan.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Xatoni <strong>yutib yuborma</strong> (bo'sh catch). Logla, kuzatuvga yubor (Sentry), to'g'ri status qaytar. Ko'rinmaydigan xato — eng yomon xato.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Service testi (Vitest)", "p": "Biznes mantiqni sinash." },
-    "title": "users.service.test.ts",
-    "lang": "typescript",
-    "code": "import { describe, it, expect } from 'vitest';\nimport { UsersService } from './users.service';\n\ndescribe('UsersService', () => {\n  it('email bo\\u2019sh bo\\u2019lsa xato', () => {\n    const svc = new UsersService();\n    expect(() => svc.create({ email: '' })).toThrow();\n  });\n});"
-   }
-  ],
-  "tasks": [
-   { "id": "be10-1", "html": "Test piramidasini tushundim", "crit": "unit/integration/e2e" },
-   { "id": "be10-2", "html": "Service'ga unit test yozdim (Vitest/Jest)", "crit": "o'tadigan test" },
-   { "id": "be10-3", "html": "Strukturali (JSON) log qo'shdim", "crit": "pino/winston" },
-   { "id": "be10-4", "html": "Xatoni kuzatuvga (Sentry) yoki logga yubordim", "crit": "bo'sh catch yo'q" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://vitest.dev/", "title": "Vitest", "desc": "Tez test runner", "host": "vitest.dev" },
-   { "type": "doc", "url": "https://opentelemetry.io/docs/", "title": "OpenTelemetry", "desc": "Observability standarti (2026)", "host": "opentelemetry.io" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Eng ko'p qaysi test bo'lishi kerak?", "a": ["E2E", "unit", "manual", "hech qanday"], "c": 1, "w": "Test piramidasi: ko'p unit, kamroq integration, eng kam E2E." },
-   { "q": "Strukturali log nima?", "a": ["console.log matn", "JSON (vaqt, daraja, id)", "rasm", "CSS"], "c": 1, "w": "JSON log qidirish/tahlil uchun qulay (pino/winston)." },
-   { "q": "Bo'sh catch (xatoni yutish) nega yomon?", "a": ["tez", "muammo ko'rinmay qoladi", "xavfsiz", "yaxshi amaliyot"], "c": 1, "w": "Ko'rinmaydigan xato eng xavfli — logla va kuzat." }
-  ]
- },
- {
-  "zoom": "BE11",
-  "title": "Senior: Deploy & Masshtab",
-  "sub": "Senior",
-  "coord": "Senior · BE11",
-  "eyebrow": "11 · Production va miqyos",
-  "mtitle": "Docker, CI/CD, masshtablash va system design",
-  "lede": "Senior — koddan <strong>tizimga</strong> o'tish: konteyner, avtomatik deploy, masshtablash, navbatlar va arxitektura qarorlari. Bu modul koddan <strong>muhandislikka</strong> ko'prik.",
-  "doc": "<div class='prose'><h3>Docker & CI/CD</h3><p><strong>Docker</strong> ilovani konteyner qiladi — \"mening kompyuterimda ishlaydi\" muammosi yo'qoladi. <strong>CI/CD</strong>: push → test → build → deploy avtomatik.</p><h3>Masshtablash</h3><div class='exlist'><div class='ex'><b>Vertical</b><span>kuchliroq server — oddiy, lekin chegarali</span></div><div class='ex'><b>Horizontal</b><span>ko'p nusxa + load balancer — stateless dizayn talab qiladi</span></div><div class='ex'><b>Navbat (queue)</b><span>og'ir ishni keyinga (BullMQ/Kafka) — javob tez qoladi</span></div></div><h3>System design fikrlash</h3><p>Senior <strong>trade-off</strong>ни ko'radi: kesh vs tezlik, izchillik vs mavjudlik, monolit vs microservices. To'g'ri javob — kontekstga bog'liq.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Microservices'ni <strong>erta</strong> tanlama — monolit ko'p loyihaga yetadi va sodda. Murakkablikni faqat <strong>haqiqiy ehtiyoj</strong> bo'lganda qo'sh.</p></div></div><h3>🧭 Senior keyingi qadamlar (xabardorlik)</h3><p>Quyidagilar — <strong>ishda, kerak bo'lganda</strong> o'rganadigan ixtisoslashgan mavzular. Hozir chuqur shart emas; nima ekanini va qachon kerakligini bilsang yetadi:</p><div class='exlist'><div class='ex'><b>Microservices</b><span>monolitni mustaqil xizmatlarga bo'lish — faqat jamoa/miqyos talab qilganda</span></div><div class='ex'><b>Kafka</b><span>event streaming — katta hajmli oqim, loglar, real-time pipeline</span></div><div class='ex'><b>RabbitMQ</b><span>message broker — vazifalarni xizmatlar orasida ishonchli uzatish</span></div><div class='ex'><b>Kubernetes</b><span>konteyner orkestratsiyasi — ko'p konteynerni avtomatik boshqarish (ko'pincha managed platform yetadi)</span></div><div class='ex'><b>GraphQL advanced</b><span>federation, DataLoader (N+1), subscriptions — GraphQL'ni miqyosda ishlatsang</span></div><div class='ex'><b>AWS advanced</b><span>ECS/EKS, Lambda, RDS, S3, SQS — cloud/DevOps yo'nalishi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>Bularning hammasini birdan o'rganma. Bittasini — loyihang yoki ishing talab qilganda — chuqur o'rgan. <strong>Xabardorlik + kerakda chuqurlashish</strong> = senior yondashuv.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Dockerfile (Node)", "p": "Ilovani konteynerlash." },
-    "title": "Dockerfile",
-    "lang": "dockerfile",
-    "code": "FROM node:24-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"dist/main.js\"]"
-   },
-   {
-    "heading": { "h": "CI quvuri", "p": "Push'da test + build + deploy." },
-    "title": ".github/workflows/ci.yml",
-    "lang": "yaml",
-    "code": "name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with: { node-version: 24 }\n      - run: npm ci\n      - run: npm test\n      - run: npm run build"
-   }
-  ],
-  "tasks": [
-   { "id": "be11-1", "html": "Ilovani Dockerfile bilan konteyner qildim", "crit": "docker build/run ishladi" },
-   { "id": "be11-2", "html": "GitHub Actions CI sozladim", "crit": "push'da test+build" },
-   { "id": "be11-3", "html": "Serverga deploy qildim (Railway/Render/VPS)", "crit": "jonli URL" },
-   { "id": "be11-4", "html": "Og'ir ishni navbatga (queue) ko'chirdim", "crit": "BullMQ yoki shunga o'xshash" },
-   { "id": "be11-5", "html": "Bitta system design savolini tahlil qildim", "crit": "trade-off'larni yozding" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://docs.docker.com/get-started/", "title": "Docker — Get started", "desc": "Konteyner asoslari", "host": "docs.docker.com" },
-   { "type": "doc", "url": "https://github.com/donnemartin/system-design-primer", "title": "System Design Primer", "desc": "Masshtablash va dizayn", "host": "github.com" },
-   { "type": "doc", "url": "https://docs.bullmq.io/", "title": "BullMQ", "desc": "Redis asosli navbat", "host": "docs.bullmq.io" },
-   { "type": "doc", "url": "https://kubernetes.io/docs/concepts/", "title": "Kubernetes — concepts", "desc": "Konteyner orkestratsiyasi (kerak bo'lganda)", "host": "kubernetes.io" },
-   { "type": "doc", "url": "https://kafka.apache.org/documentation/", "title": "Apache Kafka", "desc": "Event streaming platformasi", "host": "kafka.apache.org" }
-  ],
-  "project": {
-   "tag": "Yakuniy loyiha",
-   "title": "To'liq production backend",
-   "desc": "TS + REST/tRPC + PostgreSQL(ORM) + auth + test + Docker + CI/CD bilan deploy qilingan API. Portfolio bosh asari.",
-   "features": ["TS + ORM + auth", "Testlar + CI", "Docker + deploy", "Strukturali log", "README + arxitektura"]
+  {
+    "zoom": "BE1",
+    "title": "Node.js asoslari",
+    "sub": "Runtime",
+    "coord": "Node · BE1",
+    "eyebrow": "01 · Tilning serverdagi hayoti",
+    "mtitle": "Node.js: modullar, event loop, async",
+    "lede": "Node — JavaScript'ni server'da ishlatadi. <strong>Bitta oqim + event loop</strong> bilan minglab so'rovni boshqaradi. Modullar, fayl tizimi va asinxron kod — kundalik quroling.",
+    "doc": "<div class='prose'><h3>Modullar (ESM)</h3><p>Zamonaviy Node <code>import</code>/<code>export</code> (ESM) ishlatadi. Har fayl — bitta mas'uliyat. <code>package.json</code> da <code>\"type\": \"module\"</code>.</p><h3>Event loop — bitta oqim sehri</h3><p>Node <strong>bloklamaydi</strong>: fayl/tarmoq kutilganda boshqa ishni bajaradi. Shuning uchun <strong>async</strong> kod muhim — <code>async/await</code> bilan toza yoz.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Event loop'ni <strong>bloklash</strong> (og'ir sinxron hisob, katta JSON sinxron o'qish). Bu butun serverni to'xtatadi — asinxron variant ishlat.</p></div></div><h3>Asosiy modullar</h3><div class='chips'><span class='chip t'>node:fs</span><span class='chip t'>node:path</span><span class='chip t'>node:http</span><span class='chip'>node:crypto</span></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Faylni asinxron o'qish",
+          "p": "Promise asosli fs."
+        },
+        "title": "readConfig",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import { readFile } from 'node:fs/promises';\n\nasync function readConfig(path: string): Promise<unknown> {\n  const raw = await readFile(path, 'utf8');\n  return JSON.parse(raw);\n}"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "import { readFile } from 'node:fs/promises';\n\nasync function readConfig(path) {\n  const raw = await readFile(path, 'utf8');\n  return JSON.parse(raw);\n}"
+          }
+        ],
+        "lang": "typescript",
+        "code": ""
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be1-1",
+        "html": "ESM import/export bilan kodni modullarga bo'ldim",
+        "crit": "2+ fayl"
+      },
+      {
+        "id": "be1-2",
+        "html": "Event loop nega bloklanmasligi kerakligini tushundim",
+        "crit": "o'z so'zing bilan"
+      },
+      {
+        "id": "be1-3",
+        "html": "fs/promises bilan fayl o'qidim",
+        "crit": "async/await ishlatilgan"
+      },
+      {
+        "id": "be1-4",
+        "html": "npm bilan paket o'rnatib ishlatdim",
+        "crit": "package.json da bog'liqlik bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://nodejs.org/api/",
+        "title": "Node.js API",
+        "desc": "Barcha modullar ma'lumotnomasi",
+        "host": "nodejs.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://nodejs.dev/en/learn/the-nodejs-event-loop/",
+        "title": "Event loop tushuntirish",
+        "desc": "Node event loop",
+        "host": "nodejs.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Node Core",
+      "title": "CLI File Notes",
+      "desc": "Node core modullari bilan faylga note yozadigan CLI app.",
+      "features": [
+        "`add`, `list`, `remove` komandalar",
+        "JSON file storage",
+        "Xato komandaga help chiqadi",
+        "Path va fs/promises ishlatiladi",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "CLI File Notes mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "CLI komandalarini kamida 4 ta qo?l testi bilan tekshir.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "CLI File Notes - Service API",
+          "desc": "Node.js asoslari mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "CLI File Notes - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Node nechta asosiy oqimda JS bajaradi?",
+        "a": [
+          "bitta (event loop)",
+          "har so'rovga bitta",
+          "cheksiz",
+          "ikkita"
+        ],
+        "c": 0,
+        "w": "Node bitta oqim + event loop bilan asinxron ishlaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Zamonaviy Node modul tizimi?",
+        "a": [
+          "CommonJS only",
+          "ESM (import/export)",
+          "AMD",
+          "global"
+        ],
+        "c": 1,
+        "w": "ESM (import/export) zamonaviy standart; package.json type:module.",
+        "level": "practical"
+      },
+      {
+        "q": "Serverni sekinlashtiradigan narsa?",
+        "a": [
+          "async/await",
+          "event loop'ni bloklash",
+          "kichik JSON",
+          "import"
+        ],
+        "c": 1,
+        "w": "Og'ir sinxron ish event loop'ni bloklaydi — barcha so'rov kutadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE1: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "Node module",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "Node module - Node.js asoslari modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida environment variable ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo environment variable qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "process bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "process mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "Docker nimani hal qiladi?", "a": ["dizayn", "'mening kompyuterimda ishlaydi' muammosi", "internet", "CSS"], "c": 1, "w": "Docker muhitni konteynerga solib, hamma joyda bir xil ishlatadi." },
-   { "q": "Horizontal masshtablash nimani talab qiladi?", "a": ["kuchliroq CPU", "stateless dizayn + load balancer", "katta disk", "ko'proq RAM"], "c": 1, "w": "Ko'p nusxa ishlashi uchun ilova stateless bo'lishi kerak." },
-   { "q": "Microservices'ni qachon tanlash kerak?", "a": ["doim, boshidan", "haqiqiy ehtiyoj bo'lganda", "hech qachon", "kichik loyihada"], "c": 1, "w": "Monolit ko'p loyihaga yetadi; murakkablikni ehtiyojga qarab qo'sh." }
-  ]
- }
+  {
+    "zoom": "BE2",
+    "title": "REST API",
+    "sub": "Server",
+    "coord": "API · BE2",
+    "eyebrow": "02 · HTTP server qurish",
+    "mtitle": "REST API: Express va Fastify",
+    "lede": "API — frontend bilan backend o'rtasidagi <strong>shartnoma</strong>. REST tamoyillari bilan toza endpoint'lar qurasan. <strong>Express</strong> (klassik) yoki <strong>Fastify</strong> (tezroq) bilan.",
+    "doc": "<div class='prose'><h3>REST tamoyillari</h3><p>Resurslar URL bilan ifodalanadi (<code>/users</code>, <code>/users/:id</code>), amal — HTTP metod bilan. To'g'ri <strong>status kod</strong> qaytar: 200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Server Error.</p><h3>Express vs Fastify</h3><div class='exlist'><div class='ex'><b>Express</b><span>eng mashhur, sodda, ulkan ekotizim — o'rganishni shundan boshla</span></div><div class='ex'><b>Fastify</b><span>tezroq, sxema-asosli validatsiya, TS bilan yaxshi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>API'ni <strong>versiyala</strong> (<code>/api/v1/...</code>), izchil javob shakli ber, xatoni doim to'g'ri status bilan qaytar. Frontend shunga ishonadi.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "REST endpoint (Express)",
+          "p": "GET + POST + status kod."
+        },
+        "title": "users.route",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import express, { Request, Response } from 'express';\n\nconst app = express();\napp.use(express.json());\n\nconst users: { id: number; name: string }[] = [];\n\napp.get('/api/users', (req: Request, res: Response) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req: Request, res: Response) => {\n  const { name } = req.body;\n  if (!name) return res.status(400).json({ error: 'name kerak' });\n  const user = { id: users.length + 1, name };\n  users.push(user);\n  res.status(201).json(user);\n});\n\napp.listen(3000);"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "import express from 'express';\n\nconst app = express();\napp.use(express.json());\n\nconst users = [];\n\napp.get('/api/users', (req, res) => {\n  res.json(users);\n});\n\napp.post('/api/users', (req, res) => {\n  const { name } = req.body;\n  if (!name) return res.status(400).json({ error: 'name kerak' });\n  const user = { id: users.length + 1, name };\n  users.push(user);\n  res.status(201).json(user);\n});\n\napp.listen(3000);"
+          }
+        ],
+        "lang": "typescript",
+        "code": ""
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be2-1",
+        "html": "REST tamoyillarini tushundim (resurs + metod + status)",
+        "crit": "to'g'ri status kodlar"
+      },
+      {
+        "id": "be2-2",
+        "html": "Express bilan GET va POST endpoint yozdim",
+        "crit": "ikkalasi ishlaydi"
+      },
+      {
+        "id": "be2-3",
+        "html": "express.json() middleware ishlatdim",
+        "crit": "req.body o'qiladi"
+      },
+      {
+        "id": "be2-4",
+        "html": "Postman/curl bilan API'ni sinadim",
+        "crit": "javob va status ko'rding"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://expressjs.com/",
+        "title": "Express",
+        "desc": "Klassik Node web framework",
+        "host": "expressjs.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://fastify.dev/",
+        "title": "Fastify",
+        "desc": "Tez, sxema-asosli framework",
+        "host": "fastify.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? REST",
+      "title": "Tasks REST API",
+      "desc": "Express/Fastify bilan CRUD REST API quriladi.",
+      "features": [
+        "`GET/POST/PATCH/DELETE /tasks`",
+        "Status code to?g?ri ishlatiladi",
+        "Validation va not found response bor",
+        "Postman/Thunder Client collection yoki curl namunalar bor",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Tasks REST API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Har endpoint uchun success va error holat tekshiriladi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Tasks REST API - Service API",
+          "desc": "REST API mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Tasks REST API - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Resurs topilmasa qaysi status?",
+        "a": [
+          "200",
+          "404",
+          "201",
+          "500"
+        ],
+        "c": 1,
+        "w": "404 Not Found — resurs yo'q. 201 — yaratildi, 400 — noto'g'ri so'rov.",
+        "level": "easy"
+      },
+      {
+        "q": "req.body o'qish uchun Express'da nima kerak?",
+        "a": [
+          "hech narsa",
+          "express.json() middleware",
+          "fs",
+          "cors"
+        ],
+        "c": 1,
+        "w": "express.json() kelgan JSON tanasini parse qiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Yangi resurs yaratilganda qaytariladigan status?",
+        "a": [
+          "200",
+          "201",
+          "204",
+          "301"
+        ],
+        "c": 1,
+        "w": "201 Created — yangi resurs muvaffaqiyatli yaratildi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE2: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "REST route",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "REST route - REST API modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida status code ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo status code qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "JSON response bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "JSON response mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE3",
+    "title": "Middleware & Validation",
+    "sub": "Oqim",
+    "coord": "Oqim · BE3",
+    "eyebrow": "03 · So'rov quvuri",
+    "mtitle": "Middleware, xato boshqaruvi va Zod",
+    "lede": "Middleware — so'rov serverga <strong>yetib borguncha</strong> o'tadigan bosqichlar (log, auth, validation). Kiruvchi ma'lumotni <strong>Zod</strong> bilan tekshir — bu 2026 standarti.",
+    "doc": "<div class='prose'><h3>Middleware nima?</h3><p>Har so'rov funksiyalar zanjiridan o'tadi: <code>log → auth → validate → handler</code>. Har biri <code>next()</code> bilan keyingisiga uzatadi yoki javob qaytaradi.</p><h3>Validatsiya — Zod (2026 standart)</h3><p>Tashqi ma'lumotga <strong>hech qachon ishonma</strong>. Zod sxema bilan tekshir — va sxemadan <strong>TypeScript tipi avtomatik</strong> chiqadi (<code>z.infer</code>). Bitta manba — ham validatsiya, ham tip.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Xato boshqaruvini <strong>markazlashtir</strong> (bitta error-handling middleware). Har joyda try/catch takrorlama — xatoni <code>next(err)</code> bilan uzat.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Zod bilan validatsiya",
+          "p": "Sxema → tip + tekshiruv."
+        },
+        "title": "validate",
+        "lang": "typescript",
+        "code": "import { z } from 'zod';\n\nconst CreateUser = z.object({\n  name: z.string().min(2),\n  email: z.string().email(),\n  age: z.number().int().positive().optional(),\n});\n\n// Sxemadan TS tipi avtomatik:\ntype CreateUser = z.infer<typeof CreateUser>;\n\nfunction handler(body: unknown) {\n  const data = CreateUser.parse(body); // noto'g'ri bo'lsa xato tashlaydi\n  return data; // data endi to'liq tiplangan\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be3-1",
+        "html": "Middleware zanjirini tushundim (next())",
+        "crit": "log/auth/validate ketma-ketligi"
+      },
+      {
+        "id": "be3-2",
+        "html": "Zod sxema yozib kiruvchi ma'lumotni tekshirdim",
+        "crit": "noto'g'ri so'rov 400 qaytaradi"
+      },
+      {
+        "id": "be3-3",
+        "html": "z.infer bilan tipni sxemadan oldim",
+        "crit": "qo'lda tip yozmading"
+      },
+      {
+        "id": "be3-4",
+        "html": "Markaziy error-handling middleware qildim",
+        "crit": "xato bitta joyda boshqariladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://zod.dev/",
+        "title": "Zod",
+        "desc": "TS-first validatsiya (2026 standart)",
+        "host": "zod.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://expressjs.com/en/guide/error-handling.html",
+        "title": "Express — Error handling",
+        "desc": "Xato boshqaruvi",
+        "host": "expressjs.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Middleware",
+      "title": "Validated API Gateway",
+      "desc": "Middleware zanjiri bilan validation, auth mock va centralized error handling qo?shiladi.",
+      "features": [
+        "Request logger middleware",
+        "Validation middleware",
+        "Mock API key guard",
+        "Central error response shape",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Validated API Gateway mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Har xato bir xil JSON formatda qaytishi kerak.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Validated API Gateway - Service API",
+          "desc": "Middleware & Validation mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Validated API Gateway - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Middleware keyingi bosqichga qanday o'tadi?",
+        "a": [
+          "return",
+          "next()",
+          "throw",
+          "exit()"
+        ],
+        "c": 1,
+        "w": "next() chaqirilsa zanjir davom etadi.",
+        "level": "easy"
+      },
+      {
+        "q": "Zod nima beradi?",
+        "a": [
+          "faqat tip",
+          "validatsiya + tip (z.infer)",
+          "DB",
+          "log"
+        ],
+        "c": 1,
+        "w": "Zod ham runtime validatsiya, ham TS tipini bitta sxemadan beradi.",
+        "level": "practical"
+      },
+      {
+        "q": "Tashqi (foydalanuvchi) ma'lumotga munosabat?",
+        "a": [
+          "ishonamiz",
+          "hech qachon ishonmaymiz — tekshiramiz",
+          "faqat frontend tekshiradi",
+          "DB tekshiradi"
+        ],
+        "c": 1,
+        "w": "Backend kiruvchi ma'lumotni doim validatsiya qilishi shart (xavfsizlik).",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE3: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "middleware",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "middleware - Middleware & Validation modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida validation ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo validation qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "error flow bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "error flow mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE4",
+    "title": "SQL & PostgreSQL",
+    "sub": "Ma'lumot",
+    "coord": "DB · BE4",
+    "eyebrow": "04 · Ma'lumotni saqlash",
+    "mtitle": "Relyatsion bazalar va SQL",
+    "lede": "Ma'lumot — backend'ning yuragi. <strong>PostgreSQL</strong> — eng kuchli ochiq relyatsion baza. SQL bilan ma'lumotni saqlash, o'qish, bog'lash va indekslashni o'rganasan.",
+    "doc": "<div class='prose'><h3>Jadval, qator, ustun</h3><p>Relyatsion baza — bog'langan jadvallar. Har jadval ustun (maydon) va qatordan (yozuv) iborat. <strong>Primary key</strong> — noyob identifikator; <strong>foreign key</strong> — jadvallarni bog'laydi.</p><h3>Asosiy SQL</h3><div class='chips'><span class='chip t'>SELECT</span><span class='chip t'>INSERT</span><span class='chip'>UPDATE</span><span class='chip'>DELETE</span><span class='chip t'>JOIN</span><span class='chip'>WHERE</span></div><h3>Index — tezlik</h3><p>Tez-tez qidiriladigan ustunga <strong>index</strong> qo'y — so'rov yuz barobar tezlashadi. Lekin keragidan ko'p index yozishni sekinlashtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><strong>SQL injection</strong>: so'rovga foydalanuvchi matnini to'g'ridan-to'g'ri qo'shish. Doim <strong>parametrlangan so'rov</strong> ishlat (<code>$1, $2</code>).</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Jadval + so'rov",
+          "p": "DDL va parametrlangan SELECT."
+        },
+        "title": "schema.sql",
+        "lang": "sql",
+        "code": "CREATE TABLE users (\n  id     SERIAL PRIMARY KEY,\n  name   TEXT NOT NULL,\n  email  TEXT UNIQUE NOT NULL,\n  created_at TIMESTAMPTZ DEFAULT now()\n);\n\nCREATE INDEX idx_users_email ON users(email);\n\n-- Parametrlangan so'rov (SQL injection'dan himoya)\nSELECT id, name FROM users WHERE email = $1;"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be4-1",
+        "html": "PostgreSQL o'rnatib, baza yaratdim",
+        "crit": "psql yoki GUI ishladi"
+      },
+      {
+        "id": "be4-2",
+        "html": "CREATE TABLE bilan jadval qildim (PK bilan)",
+        "crit": "primary key bor"
+      },
+      {
+        "id": "be4-3",
+        "html": "SELECT/INSERT/UPDATE/DELETE yozdim",
+        "crit": "4 amal ishladi"
+      },
+      {
+        "id": "be4-4",
+        "html": "JOIN bilan ikki jadvalni bog'ladim",
+        "crit": "foreign key + JOIN"
+      },
+      {
+        "id": "be4-5",
+        "html": "Parametrlangan so'rov ishlatdim",
+        "crit": "$1 bilan, matn ulanmagan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://www.postgresql.org/docs/",
+        "title": "PostgreSQL — docs",
+        "desc": "Rasmiy hujjat",
+        "host": "postgresql.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.sqltutorial.org/",
+        "title": "SQL Tutorial",
+        "desc": "SQL noldan",
+        "host": "sqltutorial.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? SQL",
+      "title": "Library SQL Schema",
+      "desc": "PostgreSQL uchun kutubxona schema va querylar yoziladi.",
+      "features": [
+        "users/books/loans jadvallari",
+        "Primary/foreign keylar",
+        "Index qo?shilgan query",
+        "Transaction bilan borrow/return flow",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Library SQL Schema mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Schema migration yoki SQL fayl boshidan ishga tushganda natija beradi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Library SQL Schema - Service API",
+          "desc": "SQL & PostgreSQL mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Library SQL Schema - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jadvaldagi noyob identifikator?",
+        "a": [
+          "foreign key",
+          "primary key",
+          "index",
+          "join"
+        ],
+        "c": 1,
+        "w": "Primary key — har qatorni noyob aniqlaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "SQL injection'dan himoya?",
+        "a": [
+          "matnni qo'shish",
+          "parametrlangan so'rov ($1)",
+          "katta harf",
+          "izoh"
+        ],
+        "c": 1,
+        "w": "Parametrlangan so'rov foydalanuvchi matnini xavfsiz uzatadi.",
+        "level": "practical"
+      },
+      {
+        "q": "Qidiruvni tezlashtiradigan narsa?",
+        "a": [
+          "index",
+          "JOIN",
+          "DELETE",
+          "izoh"
+        ],
+        "c": 0,
+        "w": "Index tez-tez qidiriladigan ustunda so'rovni tezlashtiradi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE4: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "SQL query",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "SQL query - SQL & PostgreSQL modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida index ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo index qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "transaction bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "transaction mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE5",
+    "title": "ORM: Prisma & Drizzle",
+    "sub": "Ma'lumot+",
+    "coord": "ORM · BE5",
+    "eyebrow": "05 · Tip-xavfsiz baza",
+    "mtitle": "ORM — TypeScript bilan ma'lumotlar bazasi",
+    "lede": "ORM bazani <strong>TypeScript obyektlari</strong> sifatida ko'rsatadi — qo'lda SQL yozish o'rniga tip-xavfsiz so'rov. 2026 da ikki yetakchi: <strong>Prisma</strong> va <strong>Drizzle</strong>.",
+    "doc": "<div class='prose'><h3>Nega ORM?</h3><p>SQL qatorlari o'rniga tiplangan funksiya: <code>db.user.findMany()</code>. Avtoto'ldirish, xatoni kompilyatsiyada tutish, migratsiya boshqaruvi.</p><h3>Prisma vs Drizzle (2026)</h3><div class='exlist'><div class='ex'><b>Prisma</b><span>\"sen uchun o'ylaydi\": qulay sxema tili, kuchli vositalar — kattaroq hajm</span></div><div class='ex'><b>Drizzle</b><span>\"sen bilan o'ylaydi\": SQL'ga yaqin, juda yengil (~280KB), serverless uchun zo'r — tez o'smoqda</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>SQL'ni tushunganingdan keyin ORM ishlat — ORM SQL'ni yashiradi, lekin yo'qotmaydi. <code>drizzle-zod</code> bilan bitta sxemadan ham DB, ham validatsiya chiqadi.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Drizzle — sxema + so'rov",
+          "p": "TS-first, SQL'ga yaqin."
+        },
+        "title": "db (Drizzle)",
+        "lang": "typescript",
+        "code": "import { pgTable, serial, text } from 'drizzle-orm/pg-core';\nimport { eq } from 'drizzle-orm';\n\nexport const users = pgTable('users', {\n  id: serial('id').primaryKey(),\n  name: text('name').notNull(),\n  email: text('email').notNull().unique(),\n});\n\n// Tip-xavfsiz so'rov:\nconst found = await db.select().from(users).where(eq(users.email, email));"
+      },
+      {
+        "heading": {
+          "h": "Prisma — sxema + so'rov",
+          "p": "Sxema tili + generatsiya."
+        },
+        "title": "Prisma",
+        "lang": "typescript",
+        "code": "// schema.prisma:\n// model User {\n//   id    Int    @id @default(autoincrement())\n//   name  String\n//   email String @unique\n// }\n\nconst user = await prisma.user.create({\n  data: { name: 'Ali', email: 'ali@mail.uz' },\n});\n\nconst all = await prisma.user.findMany();"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be5-1",
+        "html": "ORM nega kerakligini tushundim",
+        "crit": "tip-xavfsizlik + migratsiya"
+      },
+      {
+        "id": "be5-2",
+        "html": "Prisma yoki Drizzle bilan sxema yozdim",
+        "crit": "jadval modeli bor"
+      },
+      {
+        "id": "be5-3",
+        "html": "Migratsiya yuritib jadval yaratdim",
+        "crit": "DB'da jadval paydo bo'ldi"
+      },
+      {
+        "id": "be5-4",
+        "html": "CRUD so'rovlarini ORM bilan yozdim",
+        "crit": "create/find/update/delete"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://orm.drizzle.team/",
+        "title": "Drizzle ORM",
+        "desc": "Yengil, TS-first ORM (2026 yuksalishda)",
+        "host": "orm.drizzle.team"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.prisma.io/docs",
+        "title": "Prisma — docs",
+        "desc": "Mashhur ORM, kuchli vositalar",
+        "host": "prisma.io"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? ORM",
+      "title": "Inventory API with ORM",
+      "desc": "Prisma yoki Drizzle bilan inventory API.",
+      "features": [
+        "Product model va migration",
+        "CRUD endpointlar",
+        "Pagination yoki search",
+        "DB seed script",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Inventory API with ORM mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "ORM querylari validation va error handling bilan himoyalangan.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Inventory API with ORM - Service API",
+          "desc": "ORM: Prisma & Drizzle mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Inventory API with ORM - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "ORM nima beradi?",
+        "a": [
+          "faqat CSS",
+          "tip-xavfsiz DB so'rovlari + migratsiya",
+          "tezroq internet",
+          "log"
+        ],
+        "c": 1,
+        "w": "ORM bazani tiplangan obyekt sifatida ko'rsatadi va migratsiyani boshqaradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Serverless uchun yengilligi bilan ajralib turadigan ORM?",
+        "a": [
+          "Prisma",
+          "Drizzle",
+          "TypeORM",
+          "Sequelize"
+        ],
+        "c": 1,
+        "w": "Drizzle juda yengil (~280KB) — serverless/edge uchun mos.",
+        "level": "practical"
+      },
+      {
+        "q": "ORM o'rganishdan oldin nimani bilish kerak?",
+        "a": [
+          "SQL asoslarini",
+          "CSS",
+          "Docker",
+          "GraphQL"
+        ],
+        "c": 0,
+        "w": "ORM SQL'ni yashiradi; asosini bilsang muammoni tushunasan.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE5: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "ORM model",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "ORM model - ORM: Prisma & Drizzle modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida migration ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo migration qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "repository bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "repository mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE6",
+    "title": "NoSQL & Redis",
+    "sub": "Ma'lumot+",
+    "coord": "NoSQL · BE6",
+    "eyebrow": "06 · Boshqa saqlash turlari",
+    "mtitle": "MongoDB hujjatlari va Redis kesh",
+    "lede": "Hamma narsa SQL emas. <strong>MongoDB</strong> — moslashuvchan hujjat bazasi; <strong>Redis</strong> — o'ta tez xotira keshi (cache, sessiya, navbat). Qachon qaysini ishlatishni bilish — senior ko'nikma.",
+    "doc": "<div class='prose'><h3>SQL vs NoSQL</h3><div class='exlist'><div class='ex'><b>SQL (Postgres)</b><span>qat'iy sxema, bog'lanishlar, tranzaksiya — ko'p hollarda default</span></div><div class='ex'><b>MongoDB</b><span>hujjat (JSON), moslashuvchan sxema — tez o'zgaruvchi struktura uchun</span></div></div><h3>Redis — tezlik</h3><p>Xotirada ishlaydi → mikrosoniya tezlik. Ishlatilishi: <strong>kesh</strong> (DB yukini kamaytirish), <strong>sessiya</strong>, <strong>rate limiting</strong>, <strong>navbat</strong> (BullMQ).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval to'g'ri DB (ko'pincha PostgreSQL) tanla. Redis'ni <strong>tezlik muammosi paydo bo'lganda</strong> kesh sifatida qo'sh — erta optimallashtirma.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Redis kesh namunasi",
+          "p": "Avval keshdan, bo'lmasa DB'dan."
+        },
+        "title": "getUserCached",
+        "lang": "typescript",
+        "code": "async function getUser(id: string) {\n  const cached = await redis.get(`user:${id}`);\n  if (cached) return JSON.parse(cached);\n\n  const user = await db.user.findById(id);\n  await redis.set(`user:${id}`, JSON.stringify(user), 'EX', 60); // 60s\n  return user;\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be6-1",
+        "html": "SQL va NoSQL farqini tushundim",
+        "crit": "qachon qaysi"
+      },
+      {
+        "id": "be6-2",
+        "html": "MongoDB'da hujjat saqlab o'qidim",
+        "crit": "insert + find"
+      },
+      {
+        "id": "be6-3",
+        "html": "Redis'da qiymat saqlab oldim (TTL bilan)",
+        "crit": "set/get + muddat"
+      },
+      {
+        "id": "be6-4",
+        "html": "Kesh namunasini (cache-aside) qo'lladim",
+        "crit": "avval kesh, keyin DB"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://www.mongodb.com/docs/",
+        "title": "MongoDB — docs",
+        "desc": "Hujjat bazasi",
+        "host": "mongodb.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://redis.io/docs/latest/",
+        "title": "Redis — docs",
+        "desc": "Xotira keshi va navbat",
+        "host": "redis.io"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Cache",
+      "title": "Cached Products API",
+      "desc": "Redis yoki in-memory cache bilan response tezlatish.",
+      "features": [
+        "Cache key strategy",
+        "TTL qo?llanadi",
+        "Cache hit/miss log qilinadi",
+        "Invalidate flow bor",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Cached Products API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Cache eski data muammosi qanday hal qilingani README?da yoziladi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Cached Products API - Service API",
+          "desc": "NoSQL & Redis mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Cached Products API - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Redis asosan nima uchun?",
+        "a": [
+          "asosiy saqlash",
+          "tez kesh / sessiya / navbat",
+          "frontend",
+          "CSS"
+        ],
+        "c": 1,
+        "w": "Redis xotirada — kesh, sessiya, rate limit, navbat uchun.",
+        "level": "easy"
+      },
+      {
+        "q": "Moslashuvchan, sxemasiz hujjat bazasi?",
+        "a": [
+          "PostgreSQL",
+          "MongoDB",
+          "Redis",
+          "MySQL"
+        ],
+        "c": 1,
+        "w": "MongoDB — JSON hujjatlar, moslashuvchan sxema.",
+        "level": "practical"
+      },
+      {
+        "q": "Redis'ni qachon qo'shish kerak?",
+        "a": [
+          "doim birinchi",
+          "tezlik muammosi paydo bo'lganda",
+          "hech qachon",
+          "frontend uchun"
+        ],
+        "c": 1,
+        "w": "Erta optimallashtirma — real ehtiyoj bo'lganda kesh qo'sh.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE6: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "cache",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "cache - NoSQL & Redis modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida Redis key ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo Redis key qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "NoSQL document bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "NoSQL document mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE7",
+    "title": "Auth & Xavfsizlik",
+    "sub": "Himoya",
+    "coord": "Auth · BE7",
+    "eyebrow": "07 · Kim va nima qila oladi",
+    "mtitle": "Autentifikatsiya, JWT va OWASP",
+    "lede": "Auth — eng muhim backend mas'uliyati. <strong>Authentication</strong> (kim?) va <strong>authorization</strong> (nima qila oladi?). Parolni hash qil, JWT bilan sessiya, OWASP xavflaridan himoyalan.",
+    "doc": "<div class='prose'><h3>Authentication vs Authorization</h3><div class='exlist'><div class='ex'><b>Authentication</b><span>kimligini tasdiqlash (login)</span></div><div class='ex'><b>Authorization</b><span>nimaga ruxsati borligi (rol/huquq)</span></div></div><h3>Parol va token</h3><p>Parolni <strong>hech qachon ochiq saqlama</strong> — <code>bcrypt</code>/<code>argon2</code> bilan hash qil. Login muvaffaqiyatli bo'lsa <strong>JWT</strong> token ber; har so'rovda tekshir.</p><h3>OWASP — asosiy xavflar</h3><div class='chips'><span class='chip'>SQL injection</span><span class='chip'>XSS</span><span class='chip'>CSRF</span><span class='chip'>Broken auth</span><span class='chip'>Secrets ochiq</span></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Maxfiy kalitlarni <strong>kodga yozma</strong> — <code>.env</code> va secret-manager ishlat. <code>.env</code> ni git'ga qo'shma. 2026: passkeys/OAuth ham keng tarqalmoqda.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Parol hash + JWT",
+          "p": "bcrypt + token berish."
+        },
+        "title": "auth",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import bcrypt from 'bcrypt';\nimport jwt from 'jsonwebtoken';\n\nasync function register(password: string): Promise<string> {\n  return bcrypt.hash(password, 12);\n}\n\nasync function login(password: string, hash: string): Promise<string | null> {\n  const ok = await bcrypt.compare(password, hash);\n  if (!ok) return null;\n  return jwt.sign({ sub: 'userId' }, process.env.JWT_SECRET!, { expiresIn: '1h' });\n}"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "import bcrypt from 'bcrypt';\nimport jwt from 'jsonwebtoken';\n\nasync function register(password) {\n  return bcrypt.hash(password, 12);\n}\n\nasync function login(password, hash) {\n  const ok = await bcrypt.compare(password, hash);\n  if (!ok) return null;\n  return jwt.sign({ sub: 'userId' }, process.env.JWT_SECRET, { expiresIn: '1h' });\n}"
+          }
+        ],
+        "lang": "typescript",
+        "code": ""
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be7-1",
+        "html": "Authentication va authorization farqini bilaman",
+        "crit": "kim vs nima qila oladi"
+      },
+      {
+        "id": "be7-2",
+        "html": "Parolni bcrypt bilan hash qildim",
+        "crit": "ochiq parol saqlanmaydi"
+      },
+      {
+        "id": "be7-3",
+        "html": "JWT token berib, middleware'da tekshirdim",
+        "crit": "himoyalangan endpoint"
+      },
+      {
+        "id": "be7-4",
+        "html": "Maxfiy kalitlarni .env ga ko'chirdim",
+        "crit": ".env gitignore'da"
+      },
+      {
+        "id": "be7-5",
+        "html": "Kamida 3 ta OWASP xavfini bilaman",
+        "crit": "injection/XSS/auth"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://owasp.org/www-project-top-ten/",
+        "title": "OWASP Top 10",
+        "desc": "Asosiy web xavfsizlik xavflari",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://jwt.io/introduction",
+        "title": "JWT — kirish",
+        "desc": "Token asoslari",
+        "host": "jwt.io"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Auth",
+      "title": "Secure Auth API",
+      "desc": "Register/login/profile flow bilan xavfsiz auth API.",
+      "features": [
+        "Password hash",
+        "JWT yoki session",
+        "Protected route",
+        "Role yoki ownership check",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Secure Auth API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Token/password secret repo ichiga yozilmaydi, `.env.example` bilan beriladi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Secure Auth API - Service API",
+          "desc": "Auth & Xavfsizlik mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Secure Auth API - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Parolni qanday saqlash kerak?",
+        "a": [
+          "ochiq matnda",
+          "bcrypt/argon2 hash bilan",
+          "base64",
+          "cookie'da"
+        ],
+        "c": 1,
+        "w": "Parol doim hash qilinadi (bcrypt/argon2) — ochiq saqlanmaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "\"Nimaga ruxsati bor?\" — bu nima?",
+        "a": [
+          "authentication",
+          "authorization",
+          "encryption",
+          "validation"
+        ],
+        "c": 1,
+        "w": "Authorization — huquq/rol; authentication — kimligi.",
+        "level": "practical"
+      },
+      {
+        "q": "Maxfiy kalit qayerda?",
+        "a": [
+          "kodda",
+          ".env / secret manager",
+          "frontend'da",
+          "README'da"
+        ],
+        "c": 1,
+        "w": ".env va secret-manager; kodga yozilmaydi, git'ga qo'shilmaydi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE7: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "JWT",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "JWT - Auth & Xavfsizlik modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida password hash ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo password hash qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "authorization bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "authorization mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE8",
+    "title": "Arxitektura: NestJS",
+    "sub": "Tuzilma",
+    "coord": "Arch · BE8",
+    "eyebrow": "08 · Katta loyiha tuzilmasi",
+    "mtitle": "Toza arxitektura va NestJS",
+    "lede": "Kod o'sganda tuzilma kerak. <strong>Qatlamli arxitektura</strong> (controller → service → repository) va <strong>NestJS</strong> (TS-first, DI) bilan kengaytiriladigan, sinaladigan backend quriladi.",
+    "doc": "<div class='prose'><h3>Qatlamlar (separation of concerns)</h3><div class='exlist'><div class='ex'><b>Controller</b><span>HTTP — so'rov/javob, validatsiya</span></div><div class='ex'><b>Service</b><span>biznes mantiq — asosiy qoidalar</span></div><div class='ex'><b>Repository</b><span>ma'lumotlar bazasi bilan ishlash</span></div></div><h3>NestJS — DI va modullik</h3><p>NestJS dekoratorlar va <strong>Dependency Injection</strong> bilan kodni modullarga ajratadi. Sinash oson, jamoa uchun izchil tuzilma. Backend uchun \"Angular\".</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Biznes mantiqni HTTP'dan ajrat — service framework'ni bilmasin. Shunda test oson, framework almashsa ham mantiq qoladi.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "NestJS controller + service",
+          "p": "DI bilan qatlamli."
+        },
+        "title": "users.controller.ts",
+        "lang": "typescript",
+        "code": "import { Controller, Get, Param } from '@nestjs/common';\nimport { UsersService } from './users.service';\n\n@Controller('users')\nexport class UsersController {\n  constructor(private readonly users: UsersService) {}\n\n  @Get(':id')\n  findOne(@Param('id') id: string) {\n    return this.users.findOne(id);\n  }\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be8-1",
+        "html": "Controller/service/repository qatlamlarini ajratdim",
+        "crit": "mas'uliyatlar bo'lingan"
+      },
+      {
+        "id": "be8-2",
+        "html": "NestJS loyiha yaratdim",
+        "crit": "nest new ishladi"
+      },
+      {
+        "id": "be8-3",
+        "html": "Dependency Injection ishlatdim",
+        "crit": "service controller'ga inject"
+      },
+      {
+        "id": "be8-4",
+        "html": "Biznes mantiqni HTTP'dan ajratdim",
+        "crit": "service framework'siz"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.nestjs.com/",
+        "title": "NestJS — docs",
+        "desc": "TS-first backend framework",
+        "host": "docs.nestjs.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html",
+        "title": "Clean Architecture",
+        "desc": "Qatlamli arxitektura tamoyili",
+        "host": "blog.cleancoder.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Architecture",
+      "title": "Modular NestJS Service",
+      "desc": "NestJS yoki modular Express arxitektura bilan service layer qurish.",
+      "features": [
+        "Controller/service/repository ajratilgan",
+        "DTO yoki validation class",
+        "Dependency injection yoki factory pattern",
+        "Module boundary aniq",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Modular NestJS Service mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Business logic controller ichiga tiqilmaydi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Modular NestJS Service - Service API",
+          "desc": "Arxitektura: NestJS mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Modular NestJS Service - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Biznes mantiq qaysi qatlamda?",
+        "a": [
+          "controller",
+          "service",
+          "repository",
+          "middleware"
+        ],
+        "c": 1,
+        "w": "Service — biznes mantiq; controller — HTTP; repository — DB.",
+        "level": "easy"
+      },
+      {
+        "q": "NestJS asosiy g'oyasi?",
+        "a": [
+          "CSS",
+          "DI + modullik (dekoratorlar)",
+          "faqat frontend",
+          "DB"
+        ],
+        "c": 1,
+        "w": "NestJS Dependency Injection va modullik bilan tuzilma beradi.",
+        "level": "practical"
+      },
+      {
+        "q": "Nega mantiqni HTTP'dan ajratamiz?",
+        "a": [
+          "chiroyli ko'rinadi",
+          "test oson + framework'ga bog'liq emas",
+          "tezroq",
+          "shart emas"
+        ],
+        "c": 1,
+        "w": "Ajratilgan mantiq sinaladi va framework almashsa ham qoladi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE8: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "module boundary",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "module boundary - Arxitektura: NestJS modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida service layer ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo service layer qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "dependency injection bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "dependency injection mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE9",
+    "title": "API uslublari",
+    "sub": "API+",
+    "coord": "API+ · BE9",
+    "eyebrow": "09 · REST'dan tashqari",
+    "mtitle": "GraphQL, tRPC va WebSockets",
+    "lede": "REST yagona yo'l emas. <strong>GraphQL</strong> — mijoz kerakli maydonni so'raydi; <strong>tRPC</strong> — TS uchun end-to-end tip-xavfsizlik; <strong>WebSockets</strong> — real-time aloqa.",
+    "doc": "<div class='prose'><h3>Uslublarni taqqoslash</h3><div class='exlist'><div class='ex'><b>REST</b><span>oddiy, universal, keng tarqalgan — default</span></div><div class='ex'><b>GraphQL</b><span>bitta endpoint, mijoz kerakli maydonni so'raydi — over-fetching yo'q</span></div><div class='ex'><b>tRPC</b><span>full-stack TS: server funksiyasini frontend tip bilan chaqiradi (kod-generatsiyasiz)</span></div><div class='ex'><b>WebSockets</b><span>ikki tomonlama real-time (chat, jonli yangilanish)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Ko'p holatda <strong>REST</strong> yetadi. Frontend ham TS bo'lsa va bitta jamoa bo'lsa → <strong>tRPC</strong> ajoyib. Murakkab, ko'p-mijozli data → <strong>GraphQL</strong>. Real-time → <strong>WebSockets</strong>.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "tRPC — end-to-end tip-xavfsiz",
+          "p": "Server procedure, frontend tip bilan chaqiradi."
+        },
+        "title": "trpc router",
+        "lang": "typescript",
+        "code": "import { initTRPC } from '@trpc/server';\nimport { z } from 'zod';\n\nconst t = initTRPC.create();\n\nexport const appRouter = t.router({\n  getUser: t.procedure\n    .input(z.object({ id: z.string() }))\n    .query(({ input }) => db.user.findById(input.id)),\n});\n\n// Frontend: trpc.getUser.query({ id }) — to'liq tiplangan\nexport type AppRouter = typeof appRouter;"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be9-1",
+        "html": "REST/GraphQL/tRPC/WS farqini bilaman",
+        "crit": "qachon qaysi"
+      },
+      {
+        "id": "be9-2",
+        "html": "GraphQL yoki tRPC bilan endpoint yozdim",
+        "crit": "so'rov ishladi"
+      },
+      {
+        "id": "be9-3",
+        "html": "WebSocket bilan real-time xabar yubordim",
+        "crit": "ikki tomon aloqa"
+      },
+      {
+        "id": "be9-4",
+        "html": "Loyiham uchun mos uslubni tanladim",
+        "crit": "sababini ayta olasan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://trpc.io/docs",
+        "title": "tRPC",
+        "desc": "End-to-end tip-xavfsiz API (TS)",
+        "host": "trpc.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://graphql.org/learn/",
+        "title": "GraphQL — learn",
+        "desc": "So'rov tili asoslari",
+        "host": "graphql.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? API Design",
+      "title": "Public API Contract",
+      "desc": "REST API uchun contract, versioning va optional GraphQL/gRPC taqqoslash.",
+      "features": [
+        "OpenAPI yoki markdown contract",
+        "Versioned route: `/v1`",
+        "Error schema standart",
+        "Breaking change misoli yoziladi",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Public API Contract mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Frontend developer contractga qarab request/response tushuna olishi kerak.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Public API Contract - Service API",
+          "desc": "API uslublari mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Public API Contract - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Over-fetching'ni kamaytiradigan uslub?",
+        "a": [
+          "REST",
+          "GraphQL",
+          "SOAP",
+          "FTP"
+        ],
+        "c": 1,
+        "w": "GraphQL'da mijoz aynan kerakli maydonni so'raydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Full-stack TS uchun tip-xavfsiz API?",
+        "a": [
+          "tRPC",
+          "REST",
+          "SOAP",
+          "RPC over XML"
+        ],
+        "c": 0,
+        "w": "tRPC server va frontend o'rtasida tiplarni ulashadi — kod-generatsiyasiz.",
+        "level": "practical"
+      },
+      {
+        "q": "Real-time ikki tomonlama aloqa?",
+        "a": [
+          "GET polling",
+          "WebSockets",
+          "POST",
+          "GraphQL query"
+        ],
+        "c": 1,
+        "w": "WebSockets — doimiy ikki tomonlama kanal (chat, jonli).",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE9: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "GraphQL/gRPC",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "GraphQL/gRPC - API uslublari modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida API contract ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo API contract qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "versioning bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "versioning mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE10",
+    "title": "Test, Log & Observability",
+    "sub": "Sifat",
+    "coord": "Sifat · BE10",
+    "eyebrow": "10 · Ishonchli backend",
+    "mtitle": "Testlar, loglar va kuzatuv",
+    "lede": "Production'da nima sodir bo'layotganini <strong>ko'ra olishing</strong> kerak. Testlar (ishonch), strukturali loglar va <strong>observability</strong> (OpenTelemetry) — senior backend belgilari.",
+    "doc": "<div class='prose'><h3>Test piramidasi</h3><div class='exlist'><div class='ex'><b>Unit</b><span>alohida funksiya/service — ko'p va tez</span></div><div class='ex'><b>Integration</b><span>DB + API birga — o'rtacha</span></div><div class='ex'><b>E2E</b><span>to'liq oqim — kam, lekin muhim</span></div></div><h3>Strukturali log</h3><p>Matn emas — <strong>JSON log</strong> (pino/winston) yoz: vaqt, daraja, so'rov id. Shunda qidirish va tahlil oson.</p><h3>Observability (2026)</h3><p><strong>OpenTelemetry</strong> — metrikalar, loglar, trace'ni bir standartda yig'adi. So'rov tizimda qayerda sekinlashganini ko'rasan.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Senior odat</p><p>Xatoni <strong>yutib yuborma</strong> (bo'sh catch). Logla, kuzatuvga yubor (Sentry), to'g'ri status qaytar. Ko'rinmaydigan xato — eng yomon xato.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Service testi (Vitest)",
+          "p": "Biznes mantiqni sinash."
+        },
+        "title": "users.service.test.ts",
+        "lang": "typescript",
+        "code": "import { describe, it, expect } from 'vitest';\nimport { UsersService } from './users.service';\n\ndescribe('UsersService', () => {\n  it('email bo\\u2019sh bo\\u2019lsa xato', () => {\n    const svc = new UsersService();\n    expect(() => svc.create({ email: '' })).toThrow();\n  });\n});"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be10-1",
+        "html": "Test piramidasini tushundim",
+        "crit": "unit/integration/e2e"
+      },
+      {
+        "id": "be10-2",
+        "html": "Service'ga unit test yozdim (Vitest/Jest)",
+        "crit": "o'tadigan test"
+      },
+      {
+        "id": "be10-3",
+        "html": "Strukturali (JSON) log qo'shdim",
+        "crit": "pino/winston"
+      },
+      {
+        "id": "be10-4",
+        "html": "Xatoni kuzatuvga (Sentry) yoki logga yubordim",
+        "crit": "bo'sh catch yo'q"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://vitest.dev/",
+        "title": "Vitest",
+        "desc": "Tez test runner",
+        "host": "vitest.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://opentelemetry.io/docs/",
+        "title": "OpenTelemetry",
+        "desc": "Observability standarti (2026)",
+        "host": "opentelemetry.io"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Quality",
+      "title": "Observable API",
+      "desc": "Test, logging va metrics bilan kuzatiladigan API.",
+      "features": [
+        "Kamida 5 test",
+        "Structured logger",
+        "Request id",
+        "Health/readiness endpoint",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script",
+        "READMEda env va run flow"
+      ],
+      "rubric": [
+        "Observable API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Production xato bo?lsa logdan request yo?lini topish mumkin bo?lishi kerak.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Observable API - Service API",
+          "desc": "Test, Log & Observability mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Observable API - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Eng ko'p qaysi test bo'lishi kerak?",
+        "a": [
+          "E2E",
+          "unit",
+          "manual",
+          "hech qanday"
+        ],
+        "c": 1,
+        "w": "Test piramidasi: ko'p unit, kamroq integration, eng kam E2E.",
+        "level": "easy"
+      },
+      {
+        "q": "Strukturali log nima?",
+        "a": [
+          "console.log matn",
+          "JSON (vaqt, daraja, id)",
+          "rasm",
+          "CSS"
+        ],
+        "c": 1,
+        "w": "JSON log qidirish/tahlil uchun qulay (pino/winston).",
+        "level": "practical"
+      },
+      {
+        "q": "Bo'sh catch (xatoni yutish) nega yomon?",
+        "a": [
+          "tez",
+          "muammo ko'rinmay qoladi",
+          "xavfsiz",
+          "yaxshi amaliyot"
+        ],
+        "c": 1,
+        "w": "Ko'rinmaydigan xato eng xavfli — logla va kuzat.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE10: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "unit test",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "unit test - Test, Log & Observability modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida log ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo log qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "metric bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "metric mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "BE11",
+    "title": "Senior: Deploy & Masshtab",
+    "sub": "Senior",
+    "coord": "Senior · BE11",
+    "eyebrow": "11 · Production va miqyos",
+    "mtitle": "Docker, CI/CD, masshtablash va system design",
+    "lede": "Senior — koddan <strong>tizimga</strong> o'tish: konteyner, avtomatik deploy, masshtablash, navbatlar va arxitektura qarorlari. Bu modul koddan <strong>muhandislikka</strong> ko'prik.",
+    "doc": "<div class='prose'><h3>Docker & CI/CD</h3><p><strong>Docker</strong> ilovani konteyner qiladi — \"mening kompyuterimda ishlaydi\" muammosi yo'qoladi. <strong>CI/CD</strong>: push → test → build → deploy avtomatik.</p><h3>Masshtablash</h3><div class='exlist'><div class='ex'><b>Vertical</b><span>kuchliroq server — oddiy, lekin chegarali</span></div><div class='ex'><b>Horizontal</b><span>ko'p nusxa + load balancer — stateless dizayn talab qiladi</span></div><div class='ex'><b>Navbat (queue)</b><span>og'ir ishni keyinga (BullMQ/Kafka) — javob tez qoladi</span></div></div><h3>System design fikrlash</h3><p>Senior <strong>trade-off</strong>ни ko'radi: kesh vs tezlik, izchillik vs mavjudlik, monolit vs microservices. To'g'ri javob — kontekstga bog'liq.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Microservices'ni <strong>erta</strong> tanlama — monolit ko'p loyihaga yetadi va sodda. Murakkablikni faqat <strong>haqiqiy ehtiyoj</strong> bo'lganda qo'sh.</p></div></div><h3>🧭 Senior keyingi qadamlar (xabardorlik)</h3><p>Quyidagilar — <strong>ishda, kerak bo'lganda</strong> o'rganadigan ixtisoslashgan mavzular. Hozir chuqur shart emas; nima ekanini va qachon kerakligini bilsang yetadi:</p><div class='exlist'><div class='ex'><b>Microservices</b><span>monolitni mustaqil xizmatlarga bo'lish — faqat jamoa/miqyos talab qilganda</span></div><div class='ex'><b>Kafka</b><span>event streaming — katta hajmli oqim, loglar, real-time pipeline</span></div><div class='ex'><b>RabbitMQ</b><span>message broker — vazifalarni xizmatlar orasida ishonchli uzatish</span></div><div class='ex'><b>Kubernetes</b><span>konteyner orkestratsiyasi — ko'p konteynerni avtomatik boshqarish (ko'pincha managed platform yetadi)</span></div><div class='ex'><b>GraphQL advanced</b><span>federation, DataLoader (N+1), subscriptions — GraphQL'ni miqyosda ishlatsang</span></div><div class='ex'><b>AWS advanced</b><span>ECS/EKS, Lambda, RDS, S3, SQS — cloud/DevOps yo'nalishi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Maslahat</p><p>Bularning hammasini birdan o'rganma. Bittasini — loyihang yoki ishing talab qilganda — chuqur o'rgan. <strong>Xabardorlik + kerakda chuqurlashish</strong> = senior yondashuv.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Dockerfile (Node)",
+          "p": "Ilovani konteynerlash."
+        },
+        "title": "Dockerfile",
+        "lang": "dockerfile",
+        "code": "FROM node:24-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"dist/main.js\"]"
+      },
+      {
+        "heading": {
+          "h": "CI quvuri",
+          "p": "Push'da test + build + deploy."
+        },
+        "title": ".github/workflows/ci.yml",
+        "lang": "yaml",
+        "code": "name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with: { node-version: 24 }\n      - run: npm ci\n      - run: npm test\n      - run: npm run build"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "be11-1",
+        "html": "Ilovani Dockerfile bilan konteyner qildim",
+        "crit": "docker build/run ishladi"
+      },
+      {
+        "id": "be11-2",
+        "html": "GitHub Actions CI sozladim",
+        "crit": "push'da test+build"
+      },
+      {
+        "id": "be11-3",
+        "html": "Serverga deploy qildim (Railway/Render/VPS)",
+        "crit": "jonli URL"
+      },
+      {
+        "id": "be11-4",
+        "html": "Og'ir ishni navbatga (queue) ko'chirdim",
+        "crit": "BullMQ yoki shunga o'xshash"
+      },
+      {
+        "id": "be11-5",
+        "html": "Bitta system design savolini tahlil qildim",
+        "crit": "trade-off'larni yozding"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.docker.com/get-started/",
+        "title": "Docker — Get started",
+        "desc": "Konteyner asoslari",
+        "host": "docs.docker.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://github.com/donnemartin/system-design-primer",
+        "title": "System Design Primer",
+        "desc": "Masshtablash va dizayn",
+        "host": "github.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.bullmq.io/",
+        "title": "BullMQ",
+        "desc": "Redis asosli navbat",
+        "host": "docs.bullmq.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://kubernetes.io/docs/concepts/",
+        "title": "Kubernetes — concepts",
+        "desc": "Konteyner orkestratsiyasi (kerak bo'lganda)",
+        "host": "kubernetes.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://kafka.apache.org/documentation/",
+        "title": "Apache Kafka",
+        "desc": "Event streaming platformasi",
+        "host": "kafka.apache.org"
+      }
+    ],
+    "project": {
+      "tag": "Final loyiha ? Production",
+      "title": "Production Backend Platform",
+      "desc": "Backend kurs finalida auth, DB, cache, test va deployga tayyor API.",
+      "features": [
+        "Auth + CRUD + PostgreSQL",
+        "Validation/error/logging/test",
+        "Dockerfile yoki compose",
+        "OpenAPI/curl documentation",
+        "Deploy yoki lokal production run yo?riqnomasi",
+        "API contract yoki schema",
+        "Validation va error handling",
+        "Kamida bitta test yoki manual test script"
+      ],
+      "rubric": [
+        "Production Backend Platform mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Fresh clone + README bo?yicha API ishga tushadi va smoke testdan o?tadi.",
+        "Endpointlar aniq contract bo'yicha ishlaydi.",
+        "Xato holatlari secret chiqarmasdan qaytadi.",
+        "DB/env sozlamalari READMEda tushunarli.",
+        "Kamida bitta happy path va bitta error path test qilingan."
+      ],
+      "variants": [
+        {
+          "title": "Production Backend Platform - Service API",
+          "desc": "Senior: Deploy & Masshtab mavzusidan mustaqil ishlaydigan REST/service endpointlar to'plamini chiqaring.",
+          "deliverables": [
+            "CRUD yoki business endpoint",
+            "Validation + typed response",
+            "Postman/curl test namunasi"
+          ]
+        },
+        {
+          "title": "Production Backend Platform - Production Pass",
+          "desc": "Loyihani productionga yaqin talablar bilan mustahkamla.",
+          "deliverables": [
+            "Structured logs",
+            "Healthcheck yoki metrics",
+            "Failure/edge-case handling"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Docker nimani hal qiladi?",
+        "a": [
+          "dizayn",
+          "'mening kompyuterimda ishlaydi' muammosi",
+          "internet",
+          "CSS"
+        ],
+        "c": 1,
+        "w": "Docker muhitni konteynerga solib, hamma joyda bir xil ishlatadi.",
+        "level": "easy"
+      },
+      {
+        "q": "Horizontal masshtablash nimani talab qiladi?",
+        "a": [
+          "kuchliroq CPU",
+          "stateless dizayn + load balancer",
+          "katta disk",
+          "ko'proq RAM"
+        ],
+        "c": 1,
+        "w": "Ko'p nusxa ishlashi uchun ilova stateless bo'lishi kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Microservices'ni qachon tanlash kerak?",
+        "a": [
+          "doim, boshidan",
+          "haqiqiy ehtiyoj bo'lganda",
+          "hech qachon",
+          "kichik loyihada"
+        ],
+        "c": 1,
+        "w": "Monolit ko'p loyihaga yetadi; murakkablikni ehtiyojga qarab qo'sh.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "BE11: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "Docker deploy",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "Docker deploy - Senior: Deploy & Masshtab modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Backend amaliyotida load balancer ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo load balancer qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "scaling bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "scaling mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  }
 ]

@@ -32,12 +32,19 @@ export interface Project {
   title: string;
   desc: string;
   features: string[];
+  rubric?: string[];
+  variants?: {
+    title: string;
+    desc: string;
+    deliverables: string[];
+  }[];
 }
 export interface QuizQuestion {
   q: string;
   a: string[];
   c: number;
   w: string;
+  level?: "easy" | "practical" | "scenario";
 }
 export interface Exercise {
   type: "gap" | "choice" | "listen";

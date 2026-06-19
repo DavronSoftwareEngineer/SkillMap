@@ -1,513 +1,2412 @@
 [
- {
-  "zoom": "FE0",
-  "title": "Kirish & Web qanday ishlaydi",
-  "sub": "Boshlash",
-  "coord": "Boshlash · FE0",
-  "eyebrow": "00 · Frontend nima",
-  "mtitle": "0 dan Senior Frontend developergacha",
-  "lede": "Frontend — foydalanuvchi <strong>ko'radigan va bosadigan</strong> hamma narsa. Bu yo'lda sen <strong>HTML → CSS → JavaScript → TypeScript → React</strong> orqali junior'dan senior darajaga chiqasan. Avval poydevor: web qanday ishlaydi.",
-  "doc": "<div class='prose'><h3>Frontend nima?</h3><p>Sayt yoki ilovaning <strong>brauzerda ko'rinadigan qismi</strong> — tugmalar, matn, rasm, animatsiya, formalar. Backend ma'lumotni beradi, frontend uni <strong>odam tushunadigan, bosiladigan ko'rinishga</strong> aylantiradi.</p><div class='chips'><span class='chip t'>HTML — tuzilma</span><span class='chip t'>CSS — ko'rinish</span><span class='chip t'>JS — mantiq/jonlilik</span></div><h3>Web qanday ishlaydi (sodda)</h3><p>Brauzerga manzil yozasan → brauzer serverga <strong>HTTP so'rov</strong> yuboradi → server <strong>HTML/CSS/JS fayllarini</strong> qaytaradi → brauzer ularni o'qib, sahifani <strong>render</strong> qiladi (chizadi). DOM — brauzer HTML'dan tuzgan daraxt; JS shu daraxtni o'zgartiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Brauzer — sening dasturing ishlaydigan platforma. Uning 3 ta tilini (HTML/CSS/JS) chuqur bilsang, hamma framework oson bo'ladi.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior poydevor</b><span>HTML · CSS · Layout · JS asoslari</span></div><div class='ex'><b>O'rta</b><span>Modern JS · Git · TypeScript · React</span></div><div class='ex'><b>Senior</b><span>Arxitektura · test · performance · a11y · deploy</span></div></div><h3>Qanday o'rganasan</h3><p>Har modulda: o'qi → kod yoz → topshiriqni bajar → test ishla → mini-loyiha qil. <strong>Kuniga 1-2 soat amaliyot</strong> — eng muhimi har dars kodini o'z qo'ling bilan yozish.</p></div>",
-  "code": [
-   {
-    "heading": { "h": "Birinchi sahifa", "p": "Eng minimal HTML hujjat." },
-    "title": "index.html",
-    "lang": "html",
-    "code": "<!doctype html>\n<html lang=\"uz\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>Salom dunyo</title>\n  </head>\n  <body>\n    <h1>Salom, men frontend o'rganyapman!</h1>\n  </body>\n</html>"
-   }
-  ],
-  "tasks": [
-   { "id": "fe0-1", "html": "Frontend va backend farqini tushundim", "crit": "o'z so'zing bilan ayta olasan" },
-   { "id": "fe0-2", "html": "HTTP so'rov → javob → render zanjirini bilaman", "crit": "brauzer nima qilishini tasvirlay olasan" },
-   { "id": "fe0-3", "html": "VS Code + brauzer o'rnatdim, ish muhitini sozladim", "crit": "muharrir va brauzer tayyor" },
-   { "id": "fe0-4", "html": "Birinchi index.html faylini yozib brauzerda ochdim", "crit": "sahifada matn ko'rindi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Learn", "title": "MDN — Learn Web Development", "desc": "Eng ishonchli bepul manba (HTML/CSS/JS)", "host": "developer.mozilla.org" },
-   { "type": "doc", "url": "https://roadmap.sh/frontend", "title": "roadmap.sh — Frontend", "desc": "0 → senior vizual yo'l xaritasi", "host": "roadmap.sh" },
-   { "type": "doc", "url": "https://web.dev/learn/", "title": "web.dev Learn", "desc": "Google: zamonaviy web amaliyotlari", "host": "web.dev" }
-  ],
-  "project": {
-   "tag": "Birinchi qadam",
-   "title": "Ish muhitini sozla + birinchi sahifa",
-   "desc": "VS Code, brauzer va Live Server o'rnatib, o'zing haqingda bitta HTML sahifa yoz.",
-   "features": ["VS Code + kengaytmalar", "index.html yaratish", "Brauzerda ochish", "Matn + sarlavha"]
-  },
-  "quiz": [
-   { "q": "DOM nima?", "a": ["server fayli", "brauzer HTML'dan tuzgan daraxt (obyektlar)", "CSS turi", "ma'lumotlar bazasi"], "c": 1, "w": "DOM — brauzer HTML hujjatdan tuzgan obyektlar daraxti; JS uni o'zgartiradi." },
-   { "q": "Frontend asosan qaysi yerda ishlaydi?", "a": ["serverda", "brauzerda (mijoz)", "ma'lumotlar bazasida", "terminalda"], "c": 1, "w": "Frontend kodi foydalanuvchining brauzerida ishlaydi." },
-   { "q": "Web sahifa tuzilmasi uchun qaysi til?", "a": ["CSS", "JavaScript", "HTML", "SQL"], "c": 2, "w": "HTML — kontent va tuzilma; CSS — ko'rinish; JS — mantiq." }
-  ]
- },
- {
-  "zoom": "FE1",
-  "title": "HTML & Semantika",
-  "sub": "Tuzilma",
-  "coord": "Tuzilma · FE1",
-  "eyebrow": "01 · Kontent va ma'no",
-  "mtitle": "Semantik HTML va foydalanish qulayligi",
-  "lede": "HTML faqat \"ko'rinish\" emas — u sahifaga <strong>ma'no</strong> beradi. To'g'ri teglar SEO, ekran o'quvchilari (a11y) va kodning tozaligi uchun muhim.",
-  "doc": "<div class='prose'><h3>Semantik teglar</h3><p>Hamma narsa <code>div</code> emas. Ma'noli teglar ishlat: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>. Brauzer va ekran o'quvchi shunda sahifani <strong>tushunadi</strong>.</p><div class='exlist'><div class='ex'><b>&lt;div class=\"header\"&gt;</b><span>ma'nosiz — faqat quti</span></div><div class='ex'><b>&lt;header&gt;</b><span>ma'noli — \"bu sahifa boshi\"</span></div></div><h3>Forma va kirish</h3><p>Formalar — foydalanuvchidan ma'lumot olish. <code>label</code> ni <code>input</code> bilan bog'la, to'g'ri <code>type</code> ishlat (email, password, number). Bu mobil klaviatura va validatsiyani yaxshilaydi.</p><h3>Foydalanish qulayligi (a11y)</h3><p>Rasmga <code>alt</code> yoz, tugmaga <code>button</code> ishlat (div emas), sarlavhalarni tartibli (h1→h2→h3) joylashtir. Bu — <strong>hamma uchun</strong> ishlaydigan web.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval semantik HTML yoz, keyin stil ber. To'g'ri tuzilma — arzon a11y va SEO.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Semantik skelet", "p": "Tipik sahifa tuzilmasi." },
-    "title": "page.html",
-    "lang": "html",
-    "code": "<header>\n  <nav><a href=\"/\">Bosh sahifa</a></nav>\n</header>\n<main>\n  <article>\n    <h1>Maqola sarlavhasi</h1>\n    <p>Matn...</p>\n  </article>\n  <aside>Yon panel</aside>\n</main>\n<footer>© 2026</footer>"
-   }
-  ],
-  "tasks": [
-   { "id": "fe1-1", "html": "5 ta semantik tegni ma'nosi bilan bilaman", "crit": "header/nav/main/article/footer" },
-   { "id": "fe1-2", "html": "label + input bog'langan forma yozdim", "crit": "for/id yoki o'rab bog'langan" },
-   { "id": "fe1-3", "html": "Har rasmga ma'noli alt qo'shdim", "crit": "alt bo'sh emas (bezak bo'lsa alt='')" },
-   { "id": "fe1-4", "html": "Sarlavhalarni tartibli ishlatdim (h1→h2→h3)", "crit": "daraja sakramaydi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element", "title": "MDN — HTML elementlar", "desc": "Barcha teglar ma'lumotnomasi", "host": "developer.mozilla.org" },
-   { "type": "doc", "url": "https://www.w3.org/WAI/test-evaluate/preliminary/", "title": "W3C — A11y tekshiruv", "desc": "Foydalanish qulayligi asoslari", "host": "w3.org" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "Semantik portfolio sahifasi",
-   "desc": "O'zing haqingda semantik HTML bilan sahifa: header/nav, main, kontakt formasi, footer.",
-   "features": ["Semantik teglar", "Kontakt formasi", "Ma'noli alt", "To'g'ri sarlavha tartibi"]
-  },
-  "quiz": [
-   { "q": "Bosiladigan amal uchun to'g'ri teg?", "a": ["<div onclick>", "<button>", "<span>", "<p>"], "c": 1, "w": "<button> — klaviatura va a11y bilan ishlaydi; div emas." },
-   { "q": "Rasmga alt nega kerak?", "a": ["SEO va ekran o'quvchilar uchun", "rangini o'zgartiradi", "tezlikni oshiradi", "kerak emas"], "c": 0, "w": "alt — rasm yuklanmasa va ekran o'quvchi uchun matn muqobili." },
-   { "q": "main tegi sahifada nechta bo'lishi kerak?", "a": ["xohlagancha", "bitta", "kamida 3", "0"], "c": 1, "w": "Har sahifada bitta asosiy <main> bo'lgani ma'qul." }
-  ]
- },
- {
-  "zoom": "FE2",
-  "title": "CSS asoslari",
-  "sub": "Ko'rinish",
-  "coord": "Ko'rinish · FE2",
-  "eyebrow": "02 · Stil berish",
-  "mtitle": "CSS: selektor, box model, specificity",
-  "lede": "CSS sahifaga <strong>ko'rinish</strong> beradi: rang, o'lcham, bo'shliq, shrift. Asosini tushunmasang — \"nega ishlamayapti\" deb azoblanasan. Box model va specificity — eng muhim ikki tushuncha.",
-  "doc": "<div class='prose'><h3>Selektorlar</h3><p>Element (<code>p</code>), klass (<code>.card</code>), id (<code>#main</code>). Amaliyotda asosan <strong>klass</strong> ishlat. Selektorni qanchalik aniq yozsang, <strong>specificity</strong> shuncha yuqori.</p><h3>Box model</h3><p>Har element — quti: <strong>content → padding → border → margin</strong>. <code>box-sizing: border-box</code> qo'ysang, padding/border kenglik ichida hisoblanadi — hayot osonlashadi.</p><div class='chips'><span class='chip t'>content</span><span class='chip'>padding</span><span class='chip'>border</span><span class='chip'>margin</span></div><h3>Birliklar va ranglar</h3><p><code>px</code> — qat'iy; <code>rem</code> — ildiz shriftga nisbatan (moslashuvchan); <code>%</code>, <code>vw/vh</code> — nisbiy. Ranglar: <code>#hex</code>, <code>rgb()</code>, <code>hsl()</code>. CSS o'zgaruvchilari (<code>--var</code>) bilan mavzu/qayta ishlatish oson.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><code>!important</code> bilan kurashish. Sababi odatda specificity. Avval selektorni soddalashtir, keyin important'ga murojaat qil (kamdan-kam).</p></div></div><h3>📦 Zamonaviy CSS (2026)</h3><p>Bugungi CSS — to'liq <strong>arxitektura quroli</strong>. Quyidagilar 2026 da barcha brauzerda ishlaydi (production-ready):</p><div class='exlist'><div class='ex'><b>:has()</b><span>\"ota\" selektor — ichida nima borligiga qarab stil beradi</span></div><div class='ex'><b>Container queries</b><span>ekran emas, element konteyneri kengligiga moslash</span></div><div class='ex'><b>Native nesting</b><span>SCSS'siz, sof CSS'da ichma-ich selektor</span></div><div class='ex'><b>@layer (cascade layers)</b><span>specificity'ni qatlamlarga bo'lib boshqarish</span></div><div class='ex'><b>color-mix()</b><span>ranglarni to'g'ridan-to'g'ri CSS'da aralashtirish</span></div></div><h3>🎨 CSS ekotizimi: Sass, Tailwind, Bootstrap, MUI</h3><p>Sof CSS poydevor, lekin amaliyotda quyidagilar tez-tez ishlatiladi:</p><div class='exlist'><div class='ex'><b>Sass / SCSS</b><span>CSS+: o'zgaruvchi, nesting, mixin, partial — keyin CSS'ga kompilyatsiya bo'ladi</span></div><div class='ex'><b>Tailwind CSS</b><span>utility-first: HTML ichida <code>flex p-4 text-lg</code> klasslari bilan tez stil. Bugun eng mashhur</span></div><div class='ex'><b>Bootstrap</b><span>tayyor komponent + grid — tez prototip, lekin moslash cheklangan</span></div><div class='ex'><b>MUI (Material UI)</b><span>React uchun tayyor komponentlar kutubxonasi (Material Design)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Avval <strong>sof CSS</strong>ни puxta egalla — qolgani ustiga quriladi. Keyin: <strong>Tailwind</strong> (zamonaviy, tez), <strong>Sass</strong> (katta sof-CSS loyihalar), <strong>MUI/Bootstrap</strong> (tayyor komponent kerak bo'lganda).</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Reset + o'zgaruvchi", "p": "Har loyihada yaxshi boshlash." },
-    "title": "styles.css",
-    "lang": "css",
-    "code": "*, *::before, *::after { box-sizing: border-box; }\nbody { margin: 0; font-family: system-ui, sans-serif; }\n\n:root { --brand: #2563eb; --gap: 16px; }\n.card {\n  padding: var(--gap);\n  border: 1px solid #e5e7eb;\n  border-radius: 10px;\n  color: var(--brand);\n}"
-   },
-   {
-    "heading": { "h": "Zamonaviy CSS (2026)", "p": ":has() va container query." },
-    "title": "modern.css",
-    "lang": "css",
-    "code": "/* :has() — ichida .badge bo'lgan kartani ajrat */\n.card:has(.badge) { border-color: gold; }\n\n/* Container query — konteyner kengligiga moslash */\n.panel { container-type: inline-size; }\n@container (min-width: 400px) {\n  .panel .title { font-size: 1.5rem; }\n}"
-   },
-   {
-    "heading": { "h": "Sass (SCSS) va Tailwind", "p": "Ikki mashhur yondashuv." },
-    "title": "styling misol",
-    "lang": "scss",
-    "code": "// SCSS — nesting, o'zgaruvchi, mixin\n$brand: #2563eb;\n.card {\n  color: $brand;\n  padding: 16px;\n  &:hover { opacity: 0.85; }\n}\n\n/* Tailwind (utility) — HTML ichida:\n<button class=\"px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700\">\n  Saqlash\n</button> */"
-   }
-  ],
-  "tasks": [
-   { "id": "fe2-1", "html": "Box model 4 qatlamini bilaman", "crit": "content/padding/border/margin" },
-   { "id": "fe2-2", "html": "box-sizing: border-box ni global qo'ydim", "crit": "* selektorda" },
-   { "id": "fe2-3", "html": "px vs rem farqini tushundim", "crit": "qachon qaysini ishlatishni bilasan" },
-   { "id": "fe2-4", "html": "CSS o'zgaruvchisi bilan rang/bo'shliq berdim", "crit": "--var ishlatilgan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS", "title": "MDN — CSS", "desc": "To'liq CSS ma'lumotnomasi", "host": "developer.mozilla.org" },
-   { "type": "doc", "url": "https://css-tricks.com/", "title": "CSS-Tricks", "desc": "Amaliy maqolalar va hiylalar", "host": "css-tricks.com" },
-   { "type": "doc", "url": "https://web.dev/learn/css/", "title": "web.dev — Learn CSS", "desc": "Zamonaviy CSS (2026): nesting, @layer, container queries", "host": "web.dev" },
-   { "type": "doc", "url": "https://tailwindcss.com/docs", "title": "Tailwind CSS", "desc": "Utility-first CSS framework (rasmiy)", "host": "tailwindcss.com" },
-   { "type": "doc", "url": "https://sass-lang.com/guide/", "title": "Sass qo'llanma", "desc": "SCSS: nesting, mixin, o'zgaruvchi", "host": "sass-lang.com" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "box-sizing: border-box nima qiladi?", "a": ["paddingni kenglik ichida hisoblaydi", "marginni o'chiradi", "rangni o'zgartiradi", "elementni yashiradi"], "c": 0, "w": "border-box: padding va border element kengligi ichida hisoblanadi." },
-   { "q": "Moslashuvchan o'lcham uchun qaysi birlik?", "a": ["px", "rem", "pt", "cm"], "c": 1, "w": "rem ildiz shriftga nisbatan masshtablanadi — responsive uchun yaxshi." },
-   { "q": "!important ko'p ishlatish belgisi nima?", "a": ["yaxshi amaliyot", "specificity muammosi", "tezlik", "xavfsizlik"], "c": 1, "w": "Ko'p !important odatda selektor tuzilishida muammo borligini bildiradi." },
-   { "q": "2026 da element o'z konteyneri kengligiga moslashishi uchun?", "a": ["media query", "container query", "float", "table"], "c": 1, "w": "Container queries — komponent ekran emas, o'rab turgan konteyner kengligiga qaraydi." },
-   { "q": "Qaysi biri \"utility-first\" CSS framework?", "a": ["Bootstrap", "Tailwind CSS", "Sass", "MUI"], "c": 1, "w": "Tailwind — HTML ichida utility klasslar bilan stil beradi; Sass — preprotsessor, MUI/Bootstrap — komponent kutubxonalari." }
-  ]
- },
- {
-  "zoom": "FE3",
-  "title": "Layout: Flexbox & Grid",
-  "sub": "Joylashuv",
-  "coord": "Joylashuv · FE3",
-  "eyebrow": "03 · Responsive dizayn",
-  "mtitle": "Flexbox, Grid va moslashuvchan layout",
-  "lede": "Elementlarni joylashtirish — frontend'ning yarmi. <strong>Flexbox</strong> (bir o'lcham) va <strong>Grid</strong> (ikki o'lcham) bilan istalgan layoutni qurasan. Media query bilan ekranga moslaysan.",
-  "doc": "<div class='prose'><h3>Flexbox — bir o'lchamli</h3><p>Qator yoki ustun bo'ylab joylash. <code>display: flex</code> + <code>justify-content</code> (asosiy o'q) + <code>align-items</code> (ko'ndalang) + <code>gap</code>. Navbar, tugmalar qatori, kartalar uchun ideal.</p><h3>Grid — ikki o'lchamli</h3><p>Qator <strong>va</strong> ustun. <code>display: grid</code> + <code>grid-template-columns</code>. <code>repeat(auto-fill, minmax(220px, 1fr))</code> — sehrli responsive kartalar.</p><h3>Responsive</h3><p><strong>Mobile-first</strong>: avval kichik ekranga yoz, keyin <code>@media (min-width: ...)</code> bilan kattalashtir. Qat'iy px o'rniga nisbiy o'lcham va <code>gap</code>.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qachon qaysi?</p><p>Bir yo'nalish (qator yoki ustun) → Flexbox. Tor va keng (jadval kabi) → Grid. Ko'pincha ikkalasi birga ishlatiladi.</p></div></div><h3>🆕 Container queries (2026)</h3><p>Media query <strong>ekran</strong> kengligiga qaraydi. <strong>Container query</strong> esa komponentning <strong>o'rab turgan konteyneri</strong> kengligiga qaraydi — shu bois bitta komponent yon panelda tor, asosiy joyda keng ko'rinishni o'zi tanlaydi. 2026 da barcha brauzer qo'llaydi.</p><div class='exlist'><div class='ex'><b>@container</b><span>konteyner kengligiga qarab stil</span></div><div class='ex'><b>container-type: inline-size</b><span>elementni \"konteyner\" deb belgilash</span></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Responsive kartalar", "p": "Grid bilan avtomatik moslashuv." },
-    "title": "layout.css",
-    "lang": "css",
-    "code": ".bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }\n\n.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));\n  gap: 16px;\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "fe3-1", "html": "Flexbox bilan navbar qurdim", "crit": "logo chapda, menyu o'ngda" },
-   { "id": "fe3-2", "html": "Grid bilan responsive karta to'ri yasadim", "crit": "auto-fill + minmax" },
-   { "id": "fe3-3", "html": "Mobile-first media query yozdim", "crit": "min-width bilan kattalashtirildi" },
-   { "id": "fe3-4", "html": "justify-content vs align-items farqini bilaman", "crit": "asosiy/ko'ndalang o'q" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/", "title": "Flexbox qo'llanma", "desc": "Vizual to'liq qo'llanma", "host": "css-tricks.com" },
-   { "type": "doc", "url": "https://css-tricks.com/snippets/css/complete-guide-grid/", "title": "Grid qo'llanma", "desc": "CSS Grid to'liq qo'llanma", "host": "css-tricks.com" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "Responsive landing sahifa",
-   "desc": "Navbar + hero + kartalar to'ri + footer — telefon va kompyuterda chiroyli ko'rinadigan sahifa.",
-   "features": ["Flex navbar", "Grid kartalar", "Mobile-first", "Hech qaysi ekranda buzilmaydi"]
-  },
-  "quiz": [
-   { "q": "Ikki o'lchamli (qator+ustun) layout uchun?", "a": ["Flexbox", "Grid", "float", "table"], "c": 1, "w": "Grid — qator va ustunni birga boshqaradi." },
-   { "q": "Mobile-first nimani bildiradi?", "a": ["avval kompyuter", "avval mobil, keyin kattalashtirish", "faqat mobil", "media query yo'q"], "c": 1, "w": "Avval kichik ekran uslubi, keyin min-width bilan kattalashtiriladi." },
-   { "q": "Flexbox'da elementlar orasi bo'shliq uchun?", "a": ["margin har biriga", "gap", "padding", "space"], "c": 1, "w": "gap — zamonaviy va toza usul." }
-  ]
- },
- {
-  "zoom": "FE4",
-  "title": "JavaScript asoslari",
-  "sub": "Mantiq",
-  "coord": "Mantiq · FE4",
-  "eyebrow": "04 · Tilning yadrosi",
-  "mtitle": "JavaScript: o'zgaruvchi, funksiya, DOM",
-  "lede": "JavaScript — sahifaga <strong>jonlilik</strong> beradi: bosishga javob, ma'lumotni o'zgartirish, hisob-kitob. Bu kursning yuragi — framework'lar shu tilning ustiga quriladi.",
-  "doc": "<div class='prose'><h3>O'zgaruvchi va tip</h3><p><code>const</code> (o'zgarmas) va <code>let</code> (o'zgaruvchi) ishlat, <code>var</code> dan voz kech. Tiplar: string, number, boolean, array, object, null, undefined.</p><h3>Funksiya</h3><p>Kodni qayta ishlatish bloki. Arrow funksiya zamonaviy: <code>const sum = (a, b) =&gt; a + b</code>. Massiv metodlari — <code>map</code>, <code>filter</code>, <code>reduce</code> — kundalik quroling.</p><h3>DOM bilan ishlash</h3><p><code>document.querySelector</code> bilan elementni top, <code>addEventListener</code> bilan hodisaga (click, input) javob ber, <code>textContent</code>/<code>classList</code> bilan o'zgartir.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Framework o'rganishdan oldin <strong>sof JS</strong> ni mustahkamla. map/filter/reduce va DOM — React'da ham aynan shu mantiq ishlaydi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Hisoblagich", "p": "DOM + hodisa + holat." },
-    "title": "counter",
-    "variants": [
-     { "label": "JS", "lang": "javascript", "code": "const btn = document.querySelector('#inc');\nconst out = document.querySelector('#out');\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = count;\n});" },
-     { "label": "TS", "lang": "typescript", "code": "const btn = document.querySelector<HTMLButtonElement>('#inc')!;\nconst out = document.querySelector<HTMLElement>('#out')!;\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = String(count);\n});" }
+  {
+    "zoom": "FE0",
+    "title": "Kirish & Web qanday ishlaydi",
+    "sub": "Boshlash",
+    "coord": "Boshlash · FE0",
+    "eyebrow": "00 · Frontend nima",
+    "mtitle": "0 dan Senior Frontend developergacha",
+    "lede": "Frontend — foydalanuvchi <strong>ko'radigan va bosadigan</strong> hamma narsa. Bu yo'lda sen <strong>HTML → CSS → JavaScript → TypeScript → React</strong> orqali junior'dan senior darajaga chiqasan. Avval poydevor: web qanday ishlaydi.",
+    "doc": "<div class='prose'><h3>Frontend nima?</h3><p>Sayt yoki ilovaning <strong>brauzerda ko'rinadigan qismi</strong> — tugmalar, matn, rasm, animatsiya, formalar. Backend ma'lumotni beradi, frontend uni <strong>odam tushunadigan, bosiladigan ko'rinishga</strong> aylantiradi.</p><div class='chips'><span class='chip t'>HTML — tuzilma</span><span class='chip t'>CSS — ko'rinish</span><span class='chip t'>JS — mantiq/jonlilik</span></div><h3>Web qanday ishlaydi (sodda)</h3><p>Brauzerga manzil yozasan → brauzer serverga <strong>HTTP so'rov</strong> yuboradi → server <strong>HTML/CSS/JS fayllarini</strong> qaytaradi → brauzer ularni o'qib, sahifani <strong>render</strong> qiladi (chizadi). DOM — brauzer HTML'dan tuzgan daraxt; JS shu daraxtni o'zgartiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Brauzer — sening dasturing ishlaydigan platforma. Uning 3 ta tilini (HTML/CSS/JS) chuqur bilsang, hamma framework oson bo'ladi.</p></div></div><h3>Yo'l xaritasi (0 → Senior)</h3><div class='exlist'><div class='ex'><b>Junior poydevor</b><span>HTML · CSS · Layout · JS asoslari</span></div><div class='ex'><b>O'rta</b><span>Modern JS · Git · TypeScript · React</span></div><div class='ex'><b>Senior</b><span>Arxitektura · test · performance · a11y · deploy</span></div></div><h3>Qanday o'rganasan</h3><p>Har modulda: o'qi → kod yoz → topshiriqni bajar → test ishla → mini-loyiha qil. <strong>Kuniga 1-2 soat amaliyot</strong> — eng muhimi har dars kodini o'z qo'ling bilan yozish.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Birinchi sahifa",
+          "p": "Eng minimal HTML hujjat."
+        },
+        "title": "index.html",
+        "lang": "html",
+        "code": "<!doctype html>\n<html lang=\"uz\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>Salom dunyo</title>\n  </head>\n  <body>\n    <h1>Salom, men frontend o'rganyapman!</h1>\n  </body>\n</html>"
+      }
     ],
-    "lang": "javascript",
-    "code": "const btn = document.querySelector('#inc');\nconst out = document.querySelector('#out');\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = count;\n});"
-   }
-  ],
-  "tasks": [
-   { "id": "fe4-1", "html": "const/let/var farqini bilaman", "crit": "const standart, var ishlatmayman" },
-   { "id": "fe4-2", "html": "map/filter/reduce bilan massivni qayta ishladim", "crit": "uchalasiga misol yozding" },
-   { "id": "fe4-3", "html": "querySelector + addEventListener bilan tugma ishladim", "crit": "bosishga javob beradi" },
-   { "id": "fe4-4", "html": "Arrow funksiya yozdim", "crit": "() => ... sintaksisi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://javascript.info/", "title": "javascript.info", "desc": "Eng yaxshi bepul JS kursi", "host": "javascript.info" },
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript", "title": "MDN — JavaScript", "desc": "To'liq til ma'lumotnomasi", "host": "developer.mozilla.org" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "To-do ilova (sof JS)",
-   "desc": "Vazifa qo'shish, o'chirish, bajarilgan deb belgilash — faqat HTML/CSS/JS bilan.",
-   "features": ["Qo'shish/o'chirish", "Bajarildi holati", "DOM yangilash", "localStorage (ixtiyoriy)"]
+    "tasks": [
+      {
+        "id": "fe0-1",
+        "html": "Frontend va backend farqini tushundim",
+        "crit": "o'z so'zing bilan ayta olasan"
+      },
+      {
+        "id": "fe0-2",
+        "html": "HTTP so'rov → javob → render zanjirini bilaman",
+        "crit": "brauzer nima qilishini tasvirlay olasan"
+      },
+      {
+        "id": "fe0-3",
+        "html": "VS Code + brauzer o'rnatdim, ish muhitini sozladim",
+        "crit": "muharrir va brauzer tayyor"
+      },
+      {
+        "id": "fe0-4",
+        "html": "Birinchi index.html faylini yozib brauzerda ochdim",
+        "crit": "sahifada matn ko'rindi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn",
+        "title": "MDN — Learn Web Development",
+        "desc": "Eng ishonchli bepul manba (HTML/CSS/JS)",
+        "host": "developer.mozilla.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://roadmap.sh/frontend",
+        "title": "roadmap.sh — Frontend",
+        "desc": "0 → senior vizual yo'l xaritasi",
+        "host": "roadmap.sh"
+      },
+      {
+        "type": "doc",
+        "url": "https://web.dev/learn/",
+        "title": "web.dev Learn",
+        "desc": "Google: zamonaviy web amaliyotlari",
+        "host": "web.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Setup",
+      "title": "Hello Web Workspace",
+      "desc": "VS Code, brauzer va oddiy HTML fayl bilan birinchi ish muhitini tayyorla. Maqsad: frontend ish jarayoni qanday boshlanishini amalda ko?rish.",
+      "features": [
+        "`index.html` yaratiladi",
+        "Sahifada sarlavha, qisqa bio va 3 ta o?rganish maqsadi bo?ladi",
+        "Brauzerda ochib screenshot yoki qisqa izoh bilan tasdiqlanadi",
+        "Frontend/backend farqi 3 gap bilan yoziladi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Hello Web Workspace mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "HTML valid bo?lishi va matnlar o?quvchining o?z maqsadiga mos yozilishi kerak.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Hello Web Workspace - Client UI",
+          "desc": "Kirish & Web qanday ishlaydi mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Hello Web Workspace - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "DOM nima?",
+        "a": [
+          "server fayli",
+          "brauzer HTML'dan tuzgan daraxt (obyektlar)",
+          "CSS turi",
+          "ma'lumotlar bazasi"
+        ],
+        "c": 1,
+        "w": "DOM — brauzer HTML hujjatdan tuzgan obyektlar daraxti; JS uni o'zgartiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Frontend asosan qaysi yerda ishlaydi?",
+        "a": [
+          "serverda",
+          "brauzerda (mijoz)",
+          "ma'lumotlar bazasida",
+          "terminalda"
+        ],
+        "c": 1,
+        "w": "Frontend kodi foydalanuvchining brauzerida ishlaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "Web sahifa tuzilmasi uchun qaysi til?",
+        "a": [
+          "CSS",
+          "JavaScript",
+          "HTML",
+          "SQL"
+        ],
+        "c": 2,
+        "w": "HTML — kontent va tuzilma; CSS — ko'rinish; JS — mantiq.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE0: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "HTTP so?rov",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "HTTP so?rov - Kirish & Web qanday ishlaydi modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida browser render ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo browser render qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "frontend/backend farqi bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "frontend/backend farqi mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "Massivning har elementini o'zgartirib yangi massiv qaytaradi?", "a": ["filter", "map", "forEach", "find"], "c": 1, "w": "map — har element ustida o'zgartirib yangi massiv qaytaradi." },
-   { "q": "Standart o'zgaruvchi e'loni?", "a": ["var", "const (kerak bo'lsa let)", "global", "def"], "c": 1, "w": "const ni standart qil; o'zgarsa let. var dan qoching." },
-   { "q": "Hodisaga javob berish uchun?", "a": ["addEventListener", "querySelector", "getElement", "fetch"], "c": 0, "w": "addEventListener('click', fn) — hodisani tinglaydi." }
-  ]
- },
- {
-  "zoom": "FE5",
-  "title": "Modern JS & Async",
-  "sub": "ES6+ · async",
-  "coord": "Async · FE5",
-  "eyebrow": "05 · Zamonaviy JavaScript",
-  "mtitle": "ES6+, modullar va asinxron kod",
-  "lede": "Zamonaviy JS: destructuring, spread, modullar va eng muhimi — <strong>asinxron kod</strong>. Serverdan ma'lumot olish (fetch) <code>async/await</code> bilan toza yoziladi.",
-  "doc": "<div class='prose'><h3>ES6+ qulayliklari</h3><p>Destructuring (<code>const {x} = obj</code>), spread (<code>[...arr]</code>), template literals (<code>`Salom ${ism}`</code>), ixtiyoriy zanjir (<code>a?.b</code>). Kod qisqa va o'qiladigan bo'ladi.</p><h3>Modullar</h3><p><code>export</code> / <code>import</code> bilan kodni fayllarga bo'l. Har fayl — bitta mas'uliyat. Bu — katta loyihaning asosi.</p><h3>Asinxron: Promise va async/await</h3><p>Tarmoq so'rovi <strong>vaqt oladi</strong> — JS kutib qolmaydi. <code>fetch()</code> Promise qaytaradi; <code>await</code> bilan natijani \"kutib\" olasan. Xatoni <code>try/catch</code> bilan ushla.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><code>await</code> ni <code>try/catch</code> siz ishlatish. Tarmoq xatosi har doim bo'lishi mumkin — uni ushlash kerak.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Ma'lumot olish", "p": "async/await + xato boshqaruvi." },
-    "title": "api",
-    "variants": [
-     { "label": "JS", "lang": "javascript", "code": "async function getUser(id) {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    const user = await res.json();\n    return user;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}" },
-     { "label": "TS", "lang": "typescript", "code": "interface User { id: number; name: string; }\n\nasync function getUser(id: number): Promise<User | null> {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    return (await res.json()) as User;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}" }
+  {
+    "zoom": "FE1",
+    "title": "HTML & Semantika",
+    "sub": "Tuzilma",
+    "coord": "Tuzilma · FE1",
+    "eyebrow": "01 · Kontent va ma'no",
+    "mtitle": "Semantik HTML va foydalanish qulayligi",
+    "lede": "HTML faqat \"ko'rinish\" emas — u sahifaga <strong>ma'no</strong> beradi. To'g'ri teglar SEO, ekran o'quvchilari (a11y) va kodning tozaligi uchun muhim.",
+    "doc": "<div class='prose'><h3>Semantik teglar</h3><p>Hamma narsa <code>div</code> emas. Ma'noli teglar ishlat: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>. Brauzer va ekran o'quvchi shunda sahifani <strong>tushunadi</strong>.</p><div class='exlist'><div class='ex'><b>&lt;div class=\"header\"&gt;</b><span>ma'nosiz — faqat quti</span></div><div class='ex'><b>&lt;header&gt;</b><span>ma'noli — \"bu sahifa boshi\"</span></div></div><h3>Forma va kirish</h3><p>Formalar — foydalanuvchidan ma'lumot olish. <code>label</code> ni <code>input</code> bilan bog'la, to'g'ri <code>type</code> ishlat (email, password, number). Bu mobil klaviatura va validatsiyani yaxshilaydi.</p><h3>Foydalanish qulayligi (a11y)</h3><p>Rasmga <code>alt</code> yoz, tugmaga <code>button</code> ishlat (div emas), sarlavhalarni tartibli (h1→h2→h3) joylashtir. Bu — <strong>hamma uchun</strong> ishlaydigan web.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Avval semantik HTML yoz, keyin stil ber. To'g'ri tuzilma — arzon a11y va SEO.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Semantik skelet",
+          "p": "Tipik sahifa tuzilmasi."
+        },
+        "title": "page.html",
+        "lang": "html",
+        "code": "<header>\n  <nav><a href=\"/\">Bosh sahifa</a></nav>\n</header>\n<main>\n  <article>\n    <h1>Maqola sarlavhasi</h1>\n    <p>Matn...</p>\n  </article>\n  <aside>Yon panel</aside>\n</main>\n<footer>© 2026</footer>"
+      }
     ],
-    "lang": "javascript",
-    "code": "async function getUser(id) {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    const user = await res.json();\n    return user;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "fe5-1", "html": "Destructuring va spread ishlatdim", "crit": "ikkalasiga misol" },
-   { "id": "fe5-2", "html": "export/import bilan kodni modullarga bo'ldim", "crit": "2+ fayl" },
-   { "id": "fe5-3", "html": "fetch + async/await bilan API'dan ma'lumot oldim", "crit": "real yoki mock API" },
-   { "id": "fe5-4", "html": "try/catch bilan xatoni ushladim", "crit": "xato holati boshqarilgan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://javascript.info/async", "title": "javascript.info — Async", "desc": "Promise, async/await chuqur", "host": "javascript.info" },
-   { "type": "doc", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API", "title": "MDN — Fetch API", "desc": "Tarmoq so'rovlari", "host": "developer.mozilla.org" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "fetch() nima qaytaradi?", "a": ["matn", "Promise", "massiv", "DOM"], "c": 1, "w": "fetch Promise qaytaradi; natijani await yoki .then bilan olasan." },
-   { "q": "Asinxron xatoni qanday ushlaysan?", "a": ["if", "try/catch", "switch", "hech qanday"], "c": 1, "w": "async/await bilan try/catch ishlatiladi." },
-   { "q": "`Salom ${ism}` nima?", "a": ["template literal", "massiv", "regex", "obyekt"], "c": 0, "w": "Template literal — ichida o'zgaruvchi joylab matn yasaydi." }
-  ]
- },
- {
-  "zoom": "FE6",
-  "title": "Git, npm & Vite",
-  "sub": "Tooling",
-  "coord": "Tooling · FE6",
-  "eyebrow": "06 · Professional ish oqimi",
-  "mtitle": "Versiya nazorati va loyiha vositalari",
-  "lede": "Professional developer <strong>Git</strong> bilan kodni saqlaydi, <strong>npm</strong> bilan paket o'rnatadi va <strong>Vite</strong> bilan zamonaviy loyiha quradi. Bu — har kunlik qurollar.",
-  "doc": "<div class='prose'><h3>Git — versiya nazorati</h3><p>Kod tarixini saqlaydi, jamoa bilan ishlashni imkon beradi. Asosiy: <code>git add</code> → <code>git commit</code> → <code>git push</code>. Tarmoqlar (<code>branch</code>) bilan xavfsiz tajriba qil.</p><h3>npm — paketlar</h3><p><code>npm init</code> loyiha boshlaydi, <code>npm install</code> kutubxona qo'shadi. <code>package.json</code> — loyihaning pasporti (bog'liqliklar + skriptlar).</p><h3>Vite — zamonaviy bundler</h3><p><code>npm create vite@latest</code> — soniyalarda React/TS loyiha. Tez dev-server, HMR (avtomatik yangilanish), optimallashgan build (<code>npm run build</code>).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Tez-tez, kichik commit qil — har biri bitta mantiqiy o'zgarish. Aniq commit xabari — kelajakdagi o'zingga sovg'a.</p></div></div><h3>🤖 AI-yordamli ish oqimi (2026)</h3><p>Bugun professional developerlar <strong>AI yordamchilar</strong> bilan ishlaydi: <strong>GitHub Copilot</strong>, <strong>Cursor</strong> (kod yozish/tushuntirish), <strong>v0</strong> (UI komponent generatsiya). Ular tezlashtiradi — lekin <strong>kodni o'zing tushunishing shart</strong>, ko'r-ko'rona qabul qilma.</p><h3>🆕 Zamonaviy tooling</h3><div class='exlist'><div class='ex'><b>Vite / Turbopack</b><span>tez dev-server va build</span></div><div class='ex'><b>Bun</b><span>tez runtime + paket menejeri (npm muqobili)</span></div><div class='ex'><b>Biome</b><span>tez lint + format (ESLint+Prettier o'rniga)</span></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Git oqimi", "p": "Kundalik buyruqlar." },
-    "title": "terminal",
-    "lang": "bash",
-    "code": "npm create vite@latest my-app -- --template react-ts\ncd my-app && npm install\nnpm run dev\n\n# o'zgarishni saqlash\ngit add .\ngit commit -m \"feat: navbar qo'shildi\"\ngit push"
-   }
-  ],
-  "tasks": [
-   { "id": "fe6-1", "html": "Git bilan repo yaratib commit qildim", "crit": "add/commit ishlatilgan" },
-   { "id": "fe6-2", "html": "Branch yaratib, merge qildim", "crit": "tarmoqda ishlading" },
-   { "id": "fe6-3", "html": "Vite bilan React+TS loyiha ochdim", "crit": "npm run dev ishladi" },
-   { "id": "fe6-4", "html": "Kodni GitHub'ga push qildim", "crit": "remote repo bor" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://git-scm.com/book/uz/v2", "title": "Pro Git (kitob)", "desc": "Git bo'yicha to'liq qo'llanma", "host": "git-scm.com" },
-   { "type": "doc", "url": "https://vitejs.dev/guide/", "title": "Vite qo'llanma", "desc": "Rasmiy hujjat", "host": "vitejs.dev" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "package.json nima?", "a": ["CSS fayl", "loyiha bog'liqlik+skript pasporti", "rasm", "ma'lumotlar bazasi"], "c": 1, "w": "package.json — bog'liqliklar va skriptlarni saqlaydi." },
-   { "q": "O'zgarishni saqlash buyrug'i?", "a": ["git save", "git commit", "git store", "git keep"], "c": 1, "w": "git add bilan tayyorlab, git commit bilan saqlanadi." },
-   { "q": "HMR nima?", "a": ["xato turi", "kod o'zgarsa sahifa avtomatik yangilanishi", "test", "deploy"], "c": 1, "w": "Hot Module Replacement — saqlasang brauzer darhol yangilanadi." }
-  ]
- },
- {
-  "zoom": "FE7",
-  "title": "TypeScript",
-  "sub": "Tiplar",
-  "coord": "Tiplar · FE7",
-  "eyebrow": "07 · Xavfsiz kod",
-  "mtitle": "TypeScript: tiplar bilan ishonchli kod",
-  "lede": "TypeScript — JS ustiga <strong>tip tizimi</strong>. Xatolarni <strong>yozish paytida</strong> tutadi, kod o'qishni va refactorni osonlashtiradi. Zamonaviy frontend'da deyarli standart.",
-  "doc": "<div class='prose'><h3>Nega TypeScript?</h3><p>JS xatoni faqat ishga tushganda ko'rsatadi; TS — <strong>yozayotganda</strong>. Avtoto'ldirish (IntelliSense) kuchayadi, jamoa kodni ishonchli o'zgartiradi.</p><h3>Asosiy tiplar</h3><p><code>string</code>, <code>number</code>, <code>boolean</code>, massiv (<code>string[]</code>), obyekt shakli uchun <code>interface</code> yoki <code>type</code>. Funksiya argument va natijasini tiplaydi.</p><h3>Generiklar va union</h3><p><code>Array&lt;T&gt;</code>, <code>useState&lt;number&gt;</code> kabi generiklar moslashuvchanlik beradi. Union (<code>'sm' | 'md' | 'lg'</code>) — aniq variantlar.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p><code>any</code> dan qoch — u tip tekshiruvini o'chiradi. Aniq tip yoz yoki <code>unknown</code> ishlat.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Interface + funksiya", "p": "Tiplangan ma'lumot." },
-    "title": "user",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "interface User {\n  id: number;\n  name: string;\n  role: 'admin' | 'user';\n}\n\nfunction greet(u: User): string {\n  return `Salom, ${u.name}`;\n}\n\nconst u: User = { id: 1, name: 'Ali', role: 'user' };" },
-     { "label": "JS", "lang": "javascript", "code": "// JS'da tip yo'q — obyekt shakli faqat kelishuv\nfunction greet(u) {\n  return `Salom, ${u.name}`;\n}\n\nconst u = { id: 1, name: 'Ali', role: 'user' };" }
+    "tasks": [
+      {
+        "id": "fe1-1",
+        "html": "5 ta semantik tegni ma'nosi bilan bilaman",
+        "crit": "header/nav/main/article/footer"
+      },
+      {
+        "id": "fe1-2",
+        "html": "label + input bog'langan forma yozdim",
+        "crit": "for/id yoki o'rab bog'langan"
+      },
+      {
+        "id": "fe1-3",
+        "html": "Har rasmga ma'noli alt qo'shdim",
+        "crit": "alt bo'sh emas (bezak bo'lsa alt='')"
+      },
+      {
+        "id": "fe1-4",
+        "html": "Sarlavhalarni tartibli ishlatdim (h1→h2→h3)",
+        "crit": "daraja sakramaydi"
+      }
     ],
-    "lang": "typescript",
-    "code": "interface User {\n  id: number;\n  name: string;\n  role: 'admin' | 'user';\n}\n\nfunction greet(u: User): string {\n  return `Salom, ${u.name}`;\n}\n\nconst u: User = { id: 1, name: 'Ali', role: 'user' };"
-   }
-  ],
-  "tasks": [
-   { "id": "fe7-1", "html": "interface bilan obyekt shaklini tipladim", "crit": "interface yozilgan" },
-   { "id": "fe7-2", "html": "Funksiya argument va natijasini tipladim", "crit": "kirish/chiqish tipi bor" },
-   { "id": "fe7-3", "html": "Union tip ishlatdim", "crit": "'a' | 'b' ko'rinishda" },
-   { "id": "fe7-4", "html": "any o'rniga aniq tip qo'ydim", "crit": "any ishlatilmagan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://www.typescriptlang.org/docs/handbook/intro.html", "title": "TS Handbook", "desc": "Rasmiy qo'llanma", "host": "typescriptlang.org" },
-   { "type": "doc", "url": "https://www.totaltypescript.com/", "title": "Total TypeScript", "desc": "Amaliy darslar", "host": "totaltypescript.com" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "TS xatolarni qachon tutadi?", "a": ["ishga tushganda", "yozish/kompilyatsiya paytida", "hech qachon", "deploy'da"], "c": 1, "w": "TS xatolarni yozish paytida (kompilyatsiyada) ko'rsatadi." },
-   { "q": "Obyekt shakli uchun?", "a": ["interface yoki type", "var", "class only", "json"], "c": 0, "w": "interface yoki type bilan obyekt shaklini tasvirlaysan." },
-   { "q": "Nimadan qochish kerak?", "a": ["string", "any", "number", "interface"], "c": 1, "w": "any tip tekshiruvini o'chiradi — qoching." }
-  ]
- },
- {
-  "zoom": "FE8",
-  "title": "React asoslari",
-  "sub": "Komponentlar",
-  "coord": "React · FE8",
-  "eyebrow": "08 · Komponentli UI",
-  "mtitle": "React: komponent, props, state, hooks",
-  "lede": "React — UI'ni <strong>qayta ishlatiladigan komponentlar</strong>dan quradi. State o'zgarsa — UI avtomatik yangilanadi. Zamonaviy frontend'ning eng mashhur kutubxonasi.",
-  "doc": "<div class='prose'><h3>Komponent va JSX</h3><p>Komponent — UI bo'lagini qaytaradigan funksiya. JSX — JS ichida HTML kabi yoziladigan sintaksis. Komponentlar bir-biriga joylashadi.</p><h3>Props va state</h3><p><strong>Props</strong> — ota komponentdan kelgan ma'lumot (faqat o'qish). <strong>State</strong> (<code>useState</code>) — komponentning ichki, o'zgaruvchi holati. State o'zgarsa React qayta render qiladi.</p><h3>useEffect</h3><p>Yon ta'sirlar uchun: ma'lumot olish, obuna, timer. Bog'liqlik massivi (<code>[dep]</code>) qachon ishga tushishini belgilaydi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>State'ni <strong>to'g'ridan-to'g'ri o'zgartirma</strong> (<code>count++</code> emas). Doim setter ishlat: <code>setCount(c =&gt; c + 1)</code>.</p></div></div><h3>⚛️ React 19 (2026)</h3><p>Eng so'nggi React quyidagilarni keltirdi:</p><div class='exlist'><div class='ex'><b>React Compiler</b><span>memoizatsiyani o'zi qiladi — <code>useMemo</code>/<code>useCallback</code> kamroq kerak</span></div><div class='ex'><b>Actions + useActionState</b><span>forma yuborish va kutilayotgan holatni soddalashtirdi</span></div><div class='ex'><b>use()</b><span>Promise/Context'ni to'g'ridan-to'g'ri \"o'qish\"</span></div><div class='ex'><b>ref propsda</b><span><code>forwardRef</code> ko'p hollarda kerak emas</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eslatma</p><p>React Compiler bo'lsa ham, <strong>nega render bo'layotganini</strong> tushunish muhim. Kompilyator vositadir, tushuncha o'rnini bosmaydi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Hisoblagich (React)", "p": "useState bilan holat." },
-    "title": "Counter",
-    "variants": [
-     { "label": "TS", "lang": "tsx", "code": "import { useState } from 'react';\n\nexport function Counter({ step }: { step: number }) {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + step)}>\n      Bosildi: {count}\n    </button>\n  );\n}" },
-     { "label": "JS", "lang": "jsx", "code": "import { useState } from 'react';\n\nexport function Counter({ step }) {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + step)}>\n      Bosildi: {count}\n    </button>\n  );\n}" }
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+        "title": "MDN — HTML elementlar",
+        "desc": "Barcha teglar ma'lumotnomasi",
+        "host": "developer.mozilla.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
+        "title": "W3C — A11y tekshiruv",
+        "desc": "Foydalanish qulayligi asoslari",
+        "host": "w3.org"
+      }
     ],
-    "lang": "tsx",
-    "code": "import { useState } from 'react';\n\nexport function Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + 1)}>\n      Bosildi: {count}\n    </button>\n  );\n}"
-   },
-   {
-    "heading": { "h": "React 19 Actions (2026)", "p": "Forma + useActionState bilan kutilayotgan holat." },
-    "title": "Form.tsx",
-    "lang": "tsx",
-    "code": "import { useActionState } from 'react';\n\nfunction Form() {\n  const [error, submit, pending] = useActionState(\n    async (prev, formData) => {\n      await save(formData.get('name'));\n      return null;\n    }, null);\n  return (\n    <form action={submit}>\n      <input name='name' />\n      <button disabled={pending}>Saqlash</button>\n      {error && <p>{error}</p>}\n    </form>\n  );\n}"
-   }
-  ],
-  "tasks": [
-   { "id": "fe8-1", "html": "Props qabul qiluvchi komponent yozdim", "crit": "props ishlatilgan" },
-   { "id": "fe8-2", "html": "useState bilan holat boshqardim", "crit": "setter orqali yangilanadi" },
-   { "id": "fe8-3", "html": "Ro'yxatni map bilan render qildim (key bilan)", "crit": "key prop bor" },
-   { "id": "fe8-4", "html": "useEffect bilan ma'lumot oldim", "crit": "bog'liqlik massivi to'g'ri" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://react.dev/learn", "title": "React — rasmiy o'quv", "desc": "Eng yaxshi React manbasi", "host": "react.dev" },
-   { "type": "doc", "url": "https://react.dev/reference/react", "title": "React API ma'lumotnoma", "desc": "Hooks va API", "host": "react.dev" },
-   { "type": "doc", "url": "https://react.dev/blog/2024/12/05/react-19", "title": "React 19 — yangiliklar", "desc": "Actions, use(), Compiler (2026 standart)", "host": "react.dev" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "Ob-havo yoki film qidiruv ilovasi",
-   "desc": "API'dan ma'lumot olib, komponentlarda ko'rsatadigan React ilova (useState + useEffect + fetch).",
-   "features": ["Komponentlarga bo'lish", "API'dan ma'lumot", "Yuklanmoqda/xato holati", "Ro'yxat render"]
+    "project": {
+      "tag": "Mini loyiha ? HTML",
+      "title": "Semantic Portfolio Page",
+      "desc": "Semantik HTML orqali bir sahifalik portfolio skeleti quriladi. Maqsad: divga yopishmasdan, ma?noli teglar bilan sahifa tuzish.",
+      "features": [
+        "`header`, `main`, `section`, `article`, `footer` ishlatiladi",
+        "Kontakt formasi `label` bilan bog?lanadi",
+        "Navigatsiya linklari sahifa bo?limlariga olib boradi",
+        "Rasm uchun `alt`, forma uchun required maydonlar bor",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Semantic Portfolio Page mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Accessibility: keyboard bilan formaga o?tish va label bosilganda input focus bo?lishi tekshiriladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Semantic Portfolio Page - Client UI",
+          "desc": "HTML & Semantika mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Semantic Portfolio Page - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Bosiladigan amal uchun to'g'ri teg?",
+        "a": [
+          "<div onclick>",
+          "<button>",
+          "<span>",
+          "<p>"
+        ],
+        "c": 1,
+        "w": "<button> — klaviatura va a11y bilan ishlaydi; div emas.",
+        "level": "easy"
+      },
+      {
+        "q": "Rasmga alt nega kerak?",
+        "a": [
+          "SEO va ekran o'quvchilar uchun",
+          "rangini o'zgartiradi",
+          "tezlikni oshiradi",
+          "kerak emas"
+        ],
+        "c": 0,
+        "w": "alt — rasm yuklanmasa va ekran o'quvchi uchun matn muqobili.",
+        "level": "practical"
+      },
+      {
+        "q": "main tegi sahifada nechta bo'lishi kerak?",
+        "a": [
+          "xohlagancha",
+          "bitta",
+          "kamida 3",
+          "0"
+        ],
+        "c": 1,
+        "w": "Har sahifada bitta asosiy <main> bo'lgani ma'qul.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE1: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "semantic HTML",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "semantic HTML - HTML & Semantika modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida form label ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo form label qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "accessibility bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "accessibility mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "Props qanaqa?", "a": ["o'zgaruvchan ichki holat", "otadan kelgan, o'qish uchun ma'lumot", "CSS", "global"], "c": 1, "w": "Props — ota komponentdan keladi va faqat o'qiladi." },
-   { "q": "State'ni qanday o'zgartirasan?", "a": ["to'g'ridan-to'g'ri", "setter funksiya bilan (setState)", "DOM orqali", "umuman o'zgarmaydi"], "c": 1, "w": "Doim setter (setCount) ishlat — React shunda qayta render qiladi." },
-   { "q": "Ro'yxat render'da nima kerak?", "a": ["id", "key prop", "class", "style"], "c": 1, "w": "Har elementga barqaror key — React'ga elementlarni farqlash uchun." },
-   { "q": "React 19 Compiler nimani avtomatlashtiradi?", "a": ["deploy", "memoizatsiya (useMemo/useCallback)", "test", "routing"], "c": 1, "w": "React Compiler memoizatsiyani o'zi qiladi — qo'lda useMemo/useCallback kamroq kerak." }
-  ]
- },
- {
-  "zoom": "FE9",
-  "title": "React chuqur",
-  "sub": "Router · data · hooks",
-  "coord": "React+ · FE9",
-  "eyebrow": "09 · Real ilovalar",
-  "mtitle": "Router, kontekst, custom hooks, formalar",
-  "lede": "Haqiqiy ilova ko'p sahifa, umumiy holat va ma'lumot bilan ishlaydi. <strong>Router</strong>, <strong>Context</strong>, <strong>custom hooks</strong> va forma boshqaruvi — o'rta darajaning kaliti.",
-  "doc": "<div class='prose'><h3>Routing</h3><p>React Router bilan ko'p sahifa (URL → komponent). <code>/</code>, <code>/about</code>, <code>/users/:id</code> kabi yo'llar.</p><h3>Umumiy holat: Context</h3><p>Mavzu, foydalanuvchi, til kabi <strong>ko'p joyda kerak</strong> ma'lumotni Context bilan ulashasan — props'ni har qavatdan o'tkazmasdan.</p><h3>Custom hooks</h3><p>Takrorlanuvchi mantiqni <code>useXuz()</code> hookga ajrat (masalan <code>useFetch</code>, <code>useLocalStorage</code>). Toza, qayta ishlatiladigan kod.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Server ma'lumoti uchun TanStack Query kabi vosita ishlat — kesh, qayta urinish, holatni o'zi boshqaradi.</p></div></div><h3>🆕 Server Components & Signals (2026)</h3><p><strong>React Server Components (RSC)</strong> — komponentni serverda render qilib, brauzerga kamroq JS yuboradi (tezroq yuklanish). Next.js App Router shu asosda ishlaydi.</p><p><strong>Signals</strong> — \"nozik donali\" reaktivlik: faqat o'zgargan qiymatga bog'liq joy yangilanadi (Solid, Preact, Angular). React ham shu yo'nalishda rivojlanyapti.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>RSC va signals — arxitektura tanlovi. Avval mijoz-tomon (client) React'ni puxta egalla, keyin server-tomon render va RSC mantiqini o'rgan.</p></div></div><h3>🗂️ Global holat: Redux & Zustand</h3><p>Context kichik holatga yaxshi, lekin katta ilovada maxsus holat-boshqaruv vositalari qulayroq:</p><div class='exlist'><div class='ex'><b>Redux Toolkit (RTK)</b><span>katta jamoa, bashoratli oqim, kuchli DevTools — biroz ko'proq qoida (boilerplate)</span></div><div class='ex'><b>Zustand</b><span>juda sodda, kichik, hook asosida — bugun mashhur tanlov</span></div><div class='ex'><b>Jotai</b><span>atom asosli, nozik donali holat</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Muhim ajratma</p><p><strong>Server</strong> ma'lumotini (API) Redux/Zustand'da saqlama — buni TanStack Query qiladi. Redux/Zustand — <strong>global UI holati</strong> uchun (mavzu, modal, savatcha, auth).</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Custom hook", "p": "localStorage bilan sinxron holat." },
-    "title": "useLocalStorage",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage<T>(key: string, init: T) {\n  const [val, setVal] = useState<T>(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal] as const;\n}" },
-     { "label": "JS", "lang": "javascript", "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage(key, init) {\n  const [val, setVal] = useState(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal];\n}" }
+  {
+    "zoom": "FE2",
+    "title": "CSS asoslari",
+    "sub": "Ko'rinish",
+    "coord": "Ko'rinish · FE2",
+    "eyebrow": "02 · Stil berish",
+    "mtitle": "CSS: selektor, box model, specificity",
+    "lede": "CSS sahifaga <strong>ko'rinish</strong> beradi: rang, o'lcham, bo'shliq, shrift. Asosini tushunmasang — \"nega ishlamayapti\" deb azoblanasan. Box model va specificity — eng muhim ikki tushuncha.",
+    "doc": "<div class='prose'><h3>Selektorlar</h3><p>Element (<code>p</code>), klass (<code>.card</code>), id (<code>#main</code>). Amaliyotda asosan <strong>klass</strong> ishlat. Selektorni qanchalik aniq yozsang, <strong>specificity</strong> shuncha yuqori.</p><h3>Box model</h3><p>Har element — quti: <strong>content → padding → border → margin</strong>. <code>box-sizing: border-box</code> qo'ysang, padding/border kenglik ichida hisoblanadi — hayot osonlashadi.</p><div class='chips'><span class='chip t'>content</span><span class='chip'>padding</span><span class='chip'>border</span><span class='chip'>margin</span></div><h3>Birliklar va ranglar</h3><p><code>px</code> — qat'iy; <code>rem</code> — ildiz shriftga nisbatan (moslashuvchan); <code>%</code>, <code>vw/vh</code> — nisbiy. Ranglar: <code>#hex</code>, <code>rgb()</code>, <code>hsl()</code>. CSS o'zgaruvchilari (<code>--var</code>) bilan mavzu/qayta ishlatish oson.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><code>!important</code> bilan kurashish. Sababi odatda specificity. Avval selektorni soddalashtir, keyin important'ga murojaat qil (kamdan-kam).</p></div></div><h3>📦 Zamonaviy CSS (2026)</h3><p>Bugungi CSS — to'liq <strong>arxitektura quroli</strong>. Quyidagilar 2026 da barcha brauzerda ishlaydi (production-ready):</p><div class='exlist'><div class='ex'><b>:has()</b><span>\"ota\" selektor — ichida nima borligiga qarab stil beradi</span></div><div class='ex'><b>Container queries</b><span>ekran emas, element konteyneri kengligiga moslash</span></div><div class='ex'><b>Native nesting</b><span>SCSS'siz, sof CSS'da ichma-ich selektor</span></div><div class='ex'><b>@layer (cascade layers)</b><span>specificity'ni qatlamlarga bo'lib boshqarish</span></div><div class='ex'><b>color-mix()</b><span>ranglarni to'g'ridan-to'g'ri CSS'da aralashtirish</span></div></div><h3>🎨 CSS ekotizimi: Sass, Tailwind, Bootstrap, MUI</h3><p>Sof CSS poydevor, lekin amaliyotda quyidagilar tez-tez ishlatiladi:</p><div class='exlist'><div class='ex'><b>Sass / SCSS</b><span>CSS+: o'zgaruvchi, nesting, mixin, partial — keyin CSS'ga kompilyatsiya bo'ladi</span></div><div class='ex'><b>Tailwind CSS</b><span>utility-first: HTML ichida <code>flex p-4 text-lg</code> klasslari bilan tez stil. Bugun eng mashhur</span></div><div class='ex'><b>Bootstrap</b><span>tayyor komponent + grid — tez prototip, lekin moslash cheklangan</span></div><div class='ex'><b>MUI (Material UI)</b><span>React uchun tayyor komponentlar kutubxonasi (Material Design)</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini?</p><p>Avval <strong>sof CSS</strong>ни puxta egalla — qolgani ustiga quriladi. Keyin: <strong>Tailwind</strong> (zamonaviy, tez), <strong>Sass</strong> (katta sof-CSS loyihalar), <strong>MUI/Bootstrap</strong> (tayyor komponent kerak bo'lganda).</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Reset + o'zgaruvchi",
+          "p": "Har loyihada yaxshi boshlash."
+        },
+        "title": "styles.css",
+        "lang": "css",
+        "code": "*, *::before, *::after { box-sizing: border-box; }\nbody { margin: 0; font-family: system-ui, sans-serif; }\n\n:root { --brand: #2563eb; --gap: 16px; }\n.card {\n  padding: var(--gap);\n  border: 1px solid #e5e7eb;\n  border-radius: 10px;\n  color: var(--brand);\n}"
+      },
+      {
+        "heading": {
+          "h": "Zamonaviy CSS (2026)",
+          "p": ":has() va container query."
+        },
+        "title": "modern.css",
+        "lang": "css",
+        "code": "/* :has() — ichida .badge bo'lgan kartani ajrat */\n.card:has(.badge) { border-color: gold; }\n\n/* Container query — konteyner kengligiga moslash */\n.panel { container-type: inline-size; }\n@container (min-width: 400px) {\n  .panel .title { font-size: 1.5rem; }\n}"
+      },
+      {
+        "heading": {
+          "h": "Sass (SCSS) va Tailwind",
+          "p": "Ikki mashhur yondashuv."
+        },
+        "title": "styling misol",
+        "lang": "scss",
+        "code": "// SCSS — nesting, o'zgaruvchi, mixin\n$brand: #2563eb;\n.card {\n  color: $brand;\n  padding: 16px;\n  &:hover { opacity: 0.85; }\n}\n\n/* Tailwind (utility) — HTML ichida:\n<button class=\"px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700\">\n  Saqlash\n</button> */"
+      }
     ],
-    "lang": "typescript",
-    "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage<T>(key: string, init: T) {\n  const [val, setVal] = useState<T>(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal] as const;\n}"
-   },
-   {
-    "heading": { "h": "Server Component (2026)", "p": "Serverda render — brauzerga kamroq JS." },
-    "title": "Page.tsx (server)",
-    "lang": "tsx",
-    "code": "// Server Component — serverda render (RSC), brauzerga JS yo'q\nasync function Page() {\n  const posts = await db.getPosts(); // to'g'ridan-to'g'ri server\n  return (\n    <ul>\n      {posts.map(p => <li key={p.id}>{p.title}</li>)}\n    </ul>\n  );\n}"
-   },
-   {
-    "heading": { "h": "Zustand store", "p": "Sodda global holat (savatcha misoli)." },
-    "title": "useCart",
-    "variants": [
-     { "label": "TS", "lang": "typescript", "code": "import { create } from 'zustand';\n\ninterface CartState {\n  items: string[];\n  add: (x: string) => void;\n  clear: () => void;\n}\n\nexport const useCart = create<CartState>((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));" },
-     { "label": "JS", "lang": "javascript", "code": "import { create } from 'zustand';\n\nexport const useCart = create((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));" }
+    "tasks": [
+      {
+        "id": "fe2-1",
+        "html": "Box model 4 qatlamini bilaman",
+        "crit": "content/padding/border/margin"
+      },
+      {
+        "id": "fe2-2",
+        "html": "box-sizing: border-box ni global qo'ydim",
+        "crit": "* selektorda"
+      },
+      {
+        "id": "fe2-3",
+        "html": "px vs rem farqini tushundim",
+        "crit": "qachon qaysini ishlatishni bilasan"
+      },
+      {
+        "id": "fe2-4",
+        "html": "CSS o'zgaruvchisi bilan rang/bo'shliq berdim",
+        "crit": "--var ishlatilgan"
+      }
     ],
-    "lang": "typescript",
-    "code": "import { create } from 'zustand';\n\ninterface CartState {\n  items: string[];\n  add: (x: string) => void;\n  clear: () => void;\n}\n\nexport const useCart = create<CartState>((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));\n\n// Komponentda:\n// const items = useCart((s) => s.items);\n// const add = useCart((s) => s.add);"
-   }
-  ],
-  "tasks": [
-   { "id": "fe9-1", "html": "React Router bilan 3+ sahifa qildim", "crit": "URL almashadi" },
-   { "id": "fe9-2", "html": "Context bilan mavzu/foydalanuvchi ulashtirdim", "crit": "props drilling yo'q" },
-   { "id": "fe9-3", "html": "Custom hook yozdim", "crit": "qayta ishlatiladigan mantiq" },
-   { "id": "fe9-4", "html": "Boshqariladigan forma + validatsiya yozdim", "crit": "input state'ga bog'langan" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://reactrouter.com/", "title": "React Router", "desc": "Routing rasmiy hujjat", "host": "reactrouter.com" },
-   { "type": "doc", "url": "https://tanstack.com/query/latest", "title": "TanStack Query", "desc": "Server holati boshqaruvi", "host": "tanstack.com" },
-   { "type": "doc", "url": "https://redux-toolkit.js.org/", "title": "Redux Toolkit", "desc": "Zamonaviy Redux (rasmiy)", "host": "redux-toolkit.js.org" },
-   { "type": "doc", "url": "https://zustand.docs.pmnd.rs/", "title": "Zustand", "desc": "Sodda global holat boshqaruvi", "host": "zustand.docs.pmnd.rs" }
-  ],
-  "project": {
-   "tag": "Amaliyot",
-   "title": "Ko'p sahifali CRUD ilova",
-   "desc": "Router + Context + custom hook bilan ro'yxat: ko'rish, qo'shish, tahrirlash, o'chirish.",
-   "features": ["Bir nechta sahifa", "Context bilan holat", "API CRUD", "Forma + validatsiya"]
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "title": "MDN — CSS",
+        "desc": "To'liq CSS ma'lumotnomasi",
+        "host": "developer.mozilla.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://css-tricks.com/",
+        "title": "CSS-Tricks",
+        "desc": "Amaliy maqolalar va hiylalar",
+        "host": "css-tricks.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://web.dev/learn/css/",
+        "title": "web.dev — Learn CSS",
+        "desc": "Zamonaviy CSS (2026): nesting, @layer, container queries",
+        "host": "web.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://tailwindcss.com/docs",
+        "title": "Tailwind CSS",
+        "desc": "Utility-first CSS framework (rasmiy)",
+        "host": "tailwindcss.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://sass-lang.com/guide/",
+        "title": "Sass qo'llanma",
+        "desc": "SCSS: nesting, mixin, o'zgaruvchi",
+        "host": "sass-lang.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? CSS",
+      "title": "Pricing Cards UI",
+      "desc": "3 ta tarif kartasidan iborat pricing blokini CSS bilan chiroyli va responsive qilib yasash.",
+      "features": [
+        "3 ta karta: Basic, Pro, Team",
+        "Active/recommended karta ajralib turadi",
+        "Mobile?da kartalar 1 ustun, desktopda 3 ustun",
+        "Button hover/focus holatlari bor",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Pricing Cards UI mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "CSS selectorlar tartibli, ranglar token yoki custom property orqali boshqariladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Pricing Cards UI - Client UI",
+          "desc": "CSS asoslari mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Pricing Cards UI - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "box-sizing: border-box nima qiladi?",
+        "a": [
+          "paddingni kenglik ichida hisoblaydi",
+          "marginni o'chiradi",
+          "rangni o'zgartiradi",
+          "elementni yashiradi"
+        ],
+        "c": 0,
+        "w": "border-box: padding va border element kengligi ichida hisoblanadi.",
+        "level": "easy"
+      },
+      {
+        "q": "Moslashuvchan o'lcham uchun qaysi birlik?",
+        "a": [
+          "px",
+          "rem",
+          "pt",
+          "cm"
+        ],
+        "c": 1,
+        "w": "rem ildiz shriftga nisbatan masshtablanadi — responsive uchun yaxshi.",
+        "level": "practical"
+      },
+      {
+        "q": "!important ko'p ishlatish belgisi nima?",
+        "a": [
+          "yaxshi amaliyot",
+          "specificity muammosi",
+          "tezlik",
+          "xavfsizlik"
+        ],
+        "c": 1,
+        "w": "Ko'p !important odatda selektor tuzilishida muammo borligini bildiradi.",
+        "level": "practical"
+      },
+      {
+        "q": "2026 da element o'z konteyneri kengligiga moslashishi uchun?",
+        "a": [
+          "media query",
+          "container query",
+          "float",
+          "table"
+        ],
+        "c": 1,
+        "w": "Container queries — komponent ekran emas, o'rab turgan konteyner kengligiga qaraydi.",
+        "level": "practical"
+      },
+      {
+        "q": "Qaysi biri \"utility-first\" CSS framework?",
+        "a": [
+          "Bootstrap",
+          "Tailwind CSS",
+          "Sass",
+          "MUI"
+        ],
+        "c": 1,
+        "w": "Tailwind — HTML ichida utility klasslar bilan stil beradi; Sass — preprotsessor, MUI/Bootstrap — komponent kutubxonalari.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE2: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "CSS selector",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "CSS selector - CSS asoslari modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida box model ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo box model qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "responsive style bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "responsive style mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "Props drilling muammosiga yechim?", "a": ["ko'proq props", "Context", "global var", "CSS"], "c": 1, "w": "Context — ma'lumotni har qavatdan o'tkazmasdan ulashadi." },
-   { "q": "Custom hook nima beradi?", "a": ["CSS", "qayta ishlatiladigan mantiq", "tezroq build", "yangi til"], "c": 1, "w": "Takrorlanuvchi logikani ajratib, qayta ishlatadi." },
-   { "q": "Server ma'lumoti (kesh, qayta urinish) uchun yaxshi vosita?", "a": ["useState", "TanStack Query", "localStorage", "alert"], "c": 1, "w": "TanStack Query server holatini professional boshqaradi." },
-   { "q": "Sodda, kichik global holat uchun bugun mashhur tanlov?", "a": ["Redux (klassik)", "Zustand", "jQuery", "localStorage"], "c": 1, "w": "Zustand — minimal boilerplate, hook asosida; Redux Toolkit katta loyihalarda yaxshi." },
-   { "q": "Global UI holat (mavzu, savatcha) qayerda saqlanadi?", "a": ["TanStack Query", "Redux/Zustand", "CSS", "URL"], "c": 1, "w": "Server ma'lumoti — Query; global UI holati — Redux/Zustand/Context." }
-  ]
- },
- {
-  "zoom": "FE10",
-  "title": "Sifat: test, performance, a11y",
-  "sub": "Ishonchlilik",
-  "coord": "Sifat · FE10",
-  "eyebrow": "10 · Professional sifat",
-  "mtitle": "Testlar, tezlik va foydalanish qulayligi",
-  "lede": "Junior \"ishlasa bo'ldi\" deydi; senior <strong>ishonchli, tez va hamma uchun qulay</strong> qiladi. Test, performance va a11y — sifatning uch ustuni.",
-  "doc": "<div class='prose'><h3>Testlash</h3><p><strong>Vitest + Testing Library</strong> bilan komponent xatti-harakatini sina — foydalanuvchi nuqtai nazaridan (matnni ko'radi, tugmani bosadi). E2E uchun Playwright.</p><h3>Performance</h3><p>Keraksiz render'ni kamaytir (<code>memo</code>, <code>useMemo</code>), katta bundle'ni bo'l (code splitting / lazy), rasmlarni optimallashtir. Lighthouse bilan o'lcha.</p><h3>Accessibility (a11y)</h3><p>Klaviatura bilan harakat, fokus ko'rinishi, ARIA kerakli joyda, rang kontrasti. <strong>a11y = ko'proq foydalanuvchi + yaxshi SEO</strong>.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Erta optimallashtirish. Avval o'lcha (Lighthouse/Profiler), keyin haqiqiy muammoni tuzat.</p></div></div><h3>📊 Core Web Vitals & INP (2026)</h3><p>Google asosiy ko'rsatkichlari bilan o'lcha: <strong>LCP</strong> (eng katta kontent qachon ko'rinadi), <strong>CLS</strong> (layout sakrashi) va yangi <strong>INP</strong> (Interaction to Next Paint) — bosishga javob qanchalik tez. 2026 da INP — interaktivlik sifatining asosiy o'lchovi.</p><div class='exlist'><div class='ex'><b>LCP</b><span>&lt; 2.5s — tez ko'rinish</span></div><div class='ex'><b>INP</b><span>&lt; 200ms — tez javob</span></div><div class='ex'><b>CLS</b><span>&lt; 0.1 — barqaror layout</span></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "Komponent testi", "p": "Foydalanuvchi nuqtai nazaridan." },
-    "title": "Counter.test.tsx",
-    "lang": "tsx",
-    "code": "import { render, screen } from '@testing-library/react';\nimport userEvent from '@testing-library/user-event';\nimport { Counter } from './Counter';\n\nit('bosilganda oshadi', async () => {\n  render(<Counter />);\n  await userEvent.click(screen.getByRole('button'));\n  expect(screen.getByText(/Bosildi: 1/)).toBeInTheDocument();\n});"
-   }
-  ],
-  "tasks": [
-   { "id": "fe10-1", "html": "Vitest + Testing Library bilan test yozdim", "crit": "kamida 1 ta o'tadigan test" },
-   { "id": "fe10-2", "html": "Lighthouse bilan sahifani o'lchadim", "crit": "ball oldim va kamchilik topdim" },
-   { "id": "fe10-3", "html": "Klaviatura bilan butun sahifani aylanib chiqdim", "crit": "fokus ko'rinadi, hammasi yetiladi" },
-   { "id": "fe10-4", "html": "React.lazy bilan komponentni bo'lib yukladim", "crit": "code splitting ishladi" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://testing-library.com/docs/", "title": "Testing Library", "desc": "Komponent testlash", "host": "testing-library.com" },
-   { "type": "doc", "url": "https://web.dev/explore/learn-core-web-vitals", "title": "Core Web Vitals", "desc": "Performance ko'rsatkichlari", "host": "web.dev" }
-  ],
-  "project": null,
-  "quiz": [
-   { "q": "Testing Library qaysi nuqtai nazardan sinaydi?", "a": ["ichki kod", "foydalanuvchi (matn/rol/bosish)", "CSS", "server"], "c": 1, "w": "Foydalanuvchi qanday ishlatsa shunday — getByRole/getByText." },
-   { "q": "Keraksiz render kamaytirish uchun?", "a": ["memo/useMemo", "ko'proq state", "any", "inline style"], "c": 0, "w": "memo/useMemo — qayta hisoblash va render'ni kamaytiradi." },
-   { "q": "a11y nega muhim?", "a": ["faqat dizayn", "ko'proq foydalanuvchi + SEO + qonun", "tezlik", "kerak emas"], "c": 1, "w": "Hamma foydalana oladi, SEO yaxshilanadi, ko'p joyda talab." }
-  ]
- },
- {
-  "zoom": "FE11",
-  "title": "Senior: arxitektura & karyera",
-  "sub": "Senior",
-  "coord": "Senior · FE11",
-  "eyebrow": "11 · Senior daraja",
-  "mtitle": "Arxitektura, deploy, CI/CD va karyera",
-  "lede": "Senior — faqat kod emas: <strong>arxitektura qaror</strong>, jamoa, deploy va o'zini-o'zi rivojlantirish. Bu modul — koddan <strong>muhandislikka</strong> o'tish.",
-  "doc": "<div class='prose'><h3>Arxitektura va toza kod</h3><p>Papka tuzilmasi (feature-based), komponentlarni bo'lish, design system / komponent kutubxonasi, holat strategiyasi. <strong>Kod o'qish uchun yoziladi</strong> — kelajakdagi jamoa uchun.</p><h3>Deploy va CI/CD</h3><p>Statik saytni Vercel/Netlify'ga joylash. <strong>CI/CD</strong>: push qilsang — avtomatik test + build + deploy (GitHub Actions). Xato production'ga chiqmaydi.</p><h3>Senior ko'nikmalari</h3><div class='exlist'><div class='ex'><b>Texnik</b><span>arxitektura, performance, a11y, xavfsizlik</span></div><div class='ex'><b>Jamoaviy</b><span>code review, mentorlik, aniq muloqot</span></div><div class='ex'><b>Mahsulot</b><span>nima muhimligini tushunish, trade-off</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Senior = mas'uliyat. Eng yaxshi kod — eng aqlli emas, jamoa <strong>oson tushunadigan va o'zgartiradigan</strong> kod. Portfolio va ochiq kod bilan o'zingni ko'rsat.</p></div></div></div>",
-  "code": [
-   {
-    "heading": { "h": "CI quvuri", "p": "Push'da avtomatik test + build." },
-    "title": ".github/workflows/ci.yml",
-    "lang": "yaml",
-    "code": "name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with: { node-version: 20 }\n      - run: npm ci\n      - run: npm test\n      - run: npm run build"
-   }
-  ],
-  "tasks": [
-   { "id": "fe11-1", "html": "Loyihani feature-based tuzilmaga keltirdim", "crit": "papkalar mantiqiy" },
-   { "id": "fe11-2", "html": "Saytni Vercel/Netlify'ga deploy qildim", "crit": "jonli URL bor" },
-   { "id": "fe11-3", "html": "GitHub Actions CI sozladim", "crit": "push'da test+build ishlaydi" },
-   { "id": "fe11-4", "html": "Portfolio + 2-3 loyiha tayyorladim", "crit": "GitHub + jonli demo" },
-   { "id": "fe11-5", "html": "Code review berdim/oldim", "crit": "konstruktiv izoh" }
-  ],
-  "resources": [
-   { "type": "doc", "url": "https://vercel.com/docs", "title": "Vercel — Deploy", "desc": "Frontend deploy", "host": "vercel.com" },
-   { "type": "doc", "url": "https://docs.github.com/en/actions", "title": "GitHub Actions", "desc": "CI/CD avtomatlashtirish", "host": "docs.github.com" },
-   { "type": "doc", "url": "https://roadmap.sh/frontend", "title": "Frontend Roadmap", "desc": "Senior tomon keyingi qadamlar", "host": "roadmap.sh" }
-  ],
-  "project": {
-   "tag": "Yakuniy loyiha",
-   "title": "To'liq production ilova",
-   "desc": "Router + TS + test + CI/CD + deploy bilan haqiqiy ilova. Portfolio'ngning bosh asari.",
-   "features": ["TypeScript + React", "Testlar + CI", "Vercel deploy", "README + toza arxitektura", "Lighthouse 90+"]
+  {
+    "zoom": "FE3",
+    "title": "Layout: Flexbox & Grid",
+    "sub": "Joylashuv",
+    "coord": "Joylashuv · FE3",
+    "eyebrow": "03 · Responsive dizayn",
+    "mtitle": "Flexbox, Grid va moslashuvchan layout",
+    "lede": "Elementlarni joylashtirish — frontend'ning yarmi. <strong>Flexbox</strong> (bir o'lcham) va <strong>Grid</strong> (ikki o'lcham) bilan istalgan layoutni qurasan. Media query bilan ekranga moslaysan.",
+    "doc": "<div class='prose'><h3>Flexbox — bir o'lchamli</h3><p>Qator yoki ustun bo'ylab joylash. <code>display: flex</code> + <code>justify-content</code> (asosiy o'q) + <code>align-items</code> (ko'ndalang) + <code>gap</code>. Navbar, tugmalar qatori, kartalar uchun ideal.</p><h3>Grid — ikki o'lchamli</h3><p>Qator <strong>va</strong> ustun. <code>display: grid</code> + <code>grid-template-columns</code>. <code>repeat(auto-fill, minmax(220px, 1fr))</code> — sehrli responsive kartalar.</p><h3>Responsive</h3><p><strong>Mobile-first</strong>: avval kichik ekranga yoz, keyin <code>@media (min-width: ...)</code> bilan kattalashtir. Qat'iy px o'rniga nisbiy o'lcham va <code>gap</code>.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qachon qaysi?</p><p>Bir yo'nalish (qator yoki ustun) → Flexbox. Tor va keng (jadval kabi) → Grid. Ko'pincha ikkalasi birga ishlatiladi.</p></div></div><h3>🆕 Container queries (2026)</h3><p>Media query <strong>ekran</strong> kengligiga qaraydi. <strong>Container query</strong> esa komponentning <strong>o'rab turgan konteyneri</strong> kengligiga qaraydi — shu bois bitta komponent yon panelda tor, asosiy joyda keng ko'rinishni o'zi tanlaydi. 2026 da barcha brauzer qo'llaydi.</p><div class='exlist'><div class='ex'><b>@container</b><span>konteyner kengligiga qarab stil</span></div><div class='ex'><b>container-type: inline-size</b><span>elementni \"konteyner\" deb belgilash</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Responsive kartalar",
+          "p": "Grid bilan avtomatik moslashuv."
+        },
+        "title": "layout.css",
+        "lang": "css",
+        "code": ".bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }\n\n.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));\n  gap: 16px;\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe3-1",
+        "html": "Flexbox bilan navbar qurdim",
+        "crit": "logo chapda, menyu o'ngda"
+      },
+      {
+        "id": "fe3-2",
+        "html": "Grid bilan responsive karta to'ri yasadim",
+        "crit": "auto-fill + minmax"
+      },
+      {
+        "id": "fe3-3",
+        "html": "Mobile-first media query yozdim",
+        "crit": "min-width bilan kattalashtirildi"
+      },
+      {
+        "id": "fe3-4",
+        "html": "justify-content vs align-items farqini bilaman",
+        "crit": "asosiy/ko'ndalang o'q"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+        "title": "Flexbox qo'llanma",
+        "desc": "Vizual to'liq qo'llanma",
+        "host": "css-tricks.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+        "title": "Grid qo'llanma",
+        "desc": "CSS Grid to'liq qo'llanma",
+        "host": "css-tricks.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Layout",
+      "title": "Responsive Course Landing",
+      "desc": "Kurs yoki mahsulot uchun responsive landing sahifa quriladi. Maqsad: Flexbox/Grid bilan real layout qilish.",
+      "features": [
+        "Hero section, feature grid, testimonial yoki stats bo?limi bor",
+        "Desktopda grid, mobile?da tabiiy stack ishlaydi",
+        "Navbar kichik ekranda siqilib qolmaydi",
+        "Matn hech bir card/button ichidan chiqib ketmaydi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Responsive Course Landing mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "320px, 768px va 1280px kengliklarda layout tekshiriladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Responsive Course Landing - Client UI",
+          "desc": "Layout: Flexbox & Grid mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Responsive Course Landing - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Ikki o'lchamli (qator+ustun) layout uchun?",
+        "a": [
+          "Flexbox",
+          "Grid",
+          "float",
+          "table"
+        ],
+        "c": 1,
+        "w": "Grid — qator va ustunni birga boshqaradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Mobile-first nimani bildiradi?",
+        "a": [
+          "avval kompyuter",
+          "avval mobil, keyin kattalashtirish",
+          "faqat mobil",
+          "media query yo'q"
+        ],
+        "c": 1,
+        "w": "Avval kichik ekran uslubi, keyin min-width bilan kattalashtiriladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Flexbox'da elementlar orasi bo'shliq uchun?",
+        "a": [
+          "margin har biriga",
+          "gap",
+          "padding",
+          "space"
+        ],
+        "c": 1,
+        "w": "gap — zamonaviy va toza usul.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE3: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "flex/grid layout",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "flex/grid layout - Layout: Flexbox & Grid modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida responsive grid ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo responsive grid qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "alignment bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "alignment mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
   },
-  "quiz": [
-   { "q": "CI/CD nima beradi?", "a": ["dizayn", "push'da avtomatik test+build+deploy", "tezroq internet", "yangi til"], "c": 1, "w": "CI/CD — avtomatik tekshiruv va yetkazib berish; xato production'ga o'tmaydi." },
-   { "q": "Senior kodning asosiy belgisi?", "a": ["eng aqlli/qisqa", "jamoa oson tushunadigan va o'zgartiradigan", "eng ko'p qator", "framework'siz"], "c": 1, "w": "O'qiladigan, qo'llab-quvvatlanadigan kod — senior belgisi." },
-   { "q": "Statik frontend deploy uchun?", "a": ["Vercel/Netlify", "MySQL", "Photoshop", "Excel"], "c": 0, "w": "Vercel/Netlify — statik/SPA deploy uchun mashhur platformalar." }
-  ]
- }
+  {
+    "zoom": "FE4",
+    "title": "JavaScript asoslari",
+    "sub": "Mantiq",
+    "coord": "Mantiq · FE4",
+    "eyebrow": "04 · Tilning yadrosi",
+    "mtitle": "JavaScript: o'zgaruvchi, funksiya, DOM",
+    "lede": "JavaScript — sahifaga <strong>jonlilik</strong> beradi: bosishga javob, ma'lumotni o'zgartirish, hisob-kitob. Bu kursning yuragi — framework'lar shu tilning ustiga quriladi.",
+    "doc": "<div class='prose'><h3>O'zgaruvchi va tip</h3><p><code>const</code> (o'zgarmas) va <code>let</code> (o'zgaruvchi) ishlat, <code>var</code> dan voz kech. Tiplar: string, number, boolean, array, object, null, undefined.</p><h3>Funksiya</h3><p>Kodni qayta ishlatish bloki. Arrow funksiya zamonaviy: <code>const sum = (a, b) =&gt; a + b</code>. Massiv metodlari — <code>map</code>, <code>filter</code>, <code>reduce</code> — kundalik quroling.</p><h3>DOM bilan ishlash</h3><p><code>document.querySelector</code> bilan elementni top, <code>addEventListener</code> bilan hodisaga (click, input) javob ber, <code>textContent</code>/<code>classList</code> bilan o'zgartir.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Framework o'rganishdan oldin <strong>sof JS</strong> ni mustahkamla. map/filter/reduce va DOM — React'da ham aynan shu mantiq ishlaydi.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Hisoblagich",
+          "p": "DOM + hodisa + holat."
+        },
+        "title": "counter",
+        "variants": [
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "const btn = document.querySelector('#inc');\nconst out = document.querySelector('#out');\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = count;\n});"
+          },
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "const btn = document.querySelector<HTMLButtonElement>('#inc')!;\nconst out = document.querySelector<HTMLElement>('#out')!;\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = String(count);\n});"
+          }
+        ],
+        "lang": "javascript",
+        "code": "const btn = document.querySelector('#inc');\nconst out = document.querySelector('#out');\nlet count = 0;\n\nbtn.addEventListener('click', () => {\n  count += 1;\n  out.textContent = count;\n});"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe4-1",
+        "html": "const/let/var farqini bilaman",
+        "crit": "const standart, var ishlatmayman"
+      },
+      {
+        "id": "fe4-2",
+        "html": "map/filter/reduce bilan massivni qayta ishladim",
+        "crit": "uchalasiga misol yozding"
+      },
+      {
+        "id": "fe4-3",
+        "html": "querySelector + addEventListener bilan tugma ishladim",
+        "crit": "bosishga javob beradi"
+      },
+      {
+        "id": "fe4-4",
+        "html": "Arrow funksiya yozdim",
+        "crit": "() => ... sintaksisi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://javascript.info/",
+        "title": "javascript.info",
+        "desc": "Eng yaxshi bepul JS kursi",
+        "host": "javascript.info"
+      },
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "title": "MDN — JavaScript",
+        "desc": "To'liq til ma'lumotnomasi",
+        "host": "developer.mozilla.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? JavaScript",
+      "title": "Task Tracker Vanilla JS",
+      "desc": "Sof JavaScript bilan task tracker quriladi. Maqsad: DOM, event va state tushunchasini amalda ko?rish.",
+      "features": [
+        "Task qo?shish, bajarildi qilish, o?chirish",
+        "Bo?sh input yuborilganda xato ko?rsatish",
+        "Tasklar localStorage?da saqlanadi",
+        "Filter: all/active/done",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Task Tracker Vanilla JS mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "State DOMdan alohida array sifatida yuritiladi, render funksiyasi qayta ishlatiladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Task Tracker Vanilla JS - Client UI",
+          "desc": "JavaScript asoslari mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Task Tracker Vanilla JS - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Massivning har elementini o'zgartirib yangi massiv qaytaradi?",
+        "a": [
+          "filter",
+          "map",
+          "forEach",
+          "find"
+        ],
+        "c": 1,
+        "w": "map — har element ustida o'zgartirib yangi massiv qaytaradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Standart o'zgaruvchi e'loni?",
+        "a": [
+          "var",
+          "const (kerak bo'lsa let)",
+          "global",
+          "def"
+        ],
+        "c": 1,
+        "w": "const ni standart qil; o'zgarsa let. var dan qoching.",
+        "level": "practical"
+      },
+      {
+        "q": "Hodisaga javob berish uchun?",
+        "a": [
+          "addEventListener",
+          "querySelector",
+          "getElement",
+          "fetch"
+        ],
+        "c": 0,
+        "w": "addEventListener('click', fn) — hodisani tinglaydi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE4: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "function",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "function - JavaScript asoslari modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida array method ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo array method qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "DOM event bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "DOM event mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE5",
+    "title": "Modern JS & Async",
+    "sub": "ES6+ · async",
+    "coord": "Async · FE5",
+    "eyebrow": "05 · Zamonaviy JavaScript",
+    "mtitle": "ES6+, modullar va asinxron kod",
+    "lede": "Zamonaviy JS: destructuring, spread, modullar va eng muhimi — <strong>asinxron kod</strong>. Serverdan ma'lumot olish (fetch) <code>async/await</code> bilan toza yoziladi.",
+    "doc": "<div class='prose'><h3>ES6+ qulayliklari</h3><p>Destructuring (<code>const {x} = obj</code>), spread (<code>[...arr]</code>), template literals (<code>`Salom ${ism}`</code>), ixtiyoriy zanjir (<code>a?.b</code>). Kod qisqa va o'qiladigan bo'ladi.</p><h3>Modullar</h3><p><code>export</code> / <code>import</code> bilan kodni fayllarga bo'l. Har fayl — bitta mas'uliyat. Bu — katta loyihaning asosi.</p><h3>Asinxron: Promise va async/await</h3><p>Tarmoq so'rovi <strong>vaqt oladi</strong> — JS kutib qolmaydi. <code>fetch()</code> Promise qaytaradi; <code>await</code> bilan natijani \"kutib\" olasan. Xatoni <code>try/catch</code> bilan ushla.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p><code>await</code> ni <code>try/catch</code> siz ishlatish. Tarmoq xatosi har doim bo'lishi mumkin — uni ushlash kerak.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Ma'lumot olish",
+          "p": "async/await + xato boshqaruvi."
+        },
+        "title": "api",
+        "variants": [
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "async function getUser(id) {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    const user = await res.json();\n    return user;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}"
+          },
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "interface User { id: number; name: string; }\n\nasync function getUser(id: number): Promise<User | null> {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    return (await res.json()) as User;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}"
+          }
+        ],
+        "lang": "javascript",
+        "code": "async function getUser(id) {\n  try {\n    const res = await fetch(`/api/users/${id}`);\n    if (!res.ok) throw new Error('Tarmoq xatosi');\n    const user = await res.json();\n    return user;\n  } catch (e) {\n    console.error(e);\n    return null;\n  }\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe5-1",
+        "html": "Destructuring va spread ishlatdim",
+        "crit": "ikkalasiga misol"
+      },
+      {
+        "id": "fe5-2",
+        "html": "export/import bilan kodni modullarga bo'ldim",
+        "crit": "2+ fayl"
+      },
+      {
+        "id": "fe5-3",
+        "html": "fetch + async/await bilan API'dan ma'lumot oldim",
+        "crit": "real yoki mock API"
+      },
+      {
+        "id": "fe5-4",
+        "html": "try/catch bilan xatoni ushladim",
+        "crit": "xato holati boshqarilgan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://javascript.info/async",
+        "title": "javascript.info — Async",
+        "desc": "Promise, async/await chuqur",
+        "host": "javascript.info"
+      },
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API",
+        "title": "MDN — Fetch API",
+        "desc": "Tarmoq so'rovlari",
+        "host": "developer.mozilla.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Async",
+      "title": "API Search App",
+      "desc": "Public API bilan qidiruv ilovasi quriladi. Maqsad: fetch, loading, error va empty state bilan ishlash.",
+      "features": [
+        "Qidiruv input va submit bor",
+        "Loading holati ko?rinadi",
+        "404/xato va empty state alohida chiqadi",
+        "Natijalar card ko?rinishida render qilinadi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "API Search App mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Network xatolari try/catch bilan ushlanadi va foydalanuvchiga tushunarli matn chiqadi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "API Search App - Client UI",
+          "desc": "Modern JS & Async mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "API Search App - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "fetch() nima qaytaradi?",
+        "a": [
+          "matn",
+          "Promise",
+          "massiv",
+          "DOM"
+        ],
+        "c": 1,
+        "w": "fetch Promise qaytaradi; natijani await yoki .then bilan olasan.",
+        "level": "easy"
+      },
+      {
+        "q": "Asinxron xatoni qanday ushlaysan?",
+        "a": [
+          "if",
+          "try/catch",
+          "switch",
+          "hech qanday"
+        ],
+        "c": 1,
+        "w": "async/await bilan try/catch ishlatiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "`Salom ${ism}` nima?",
+        "a": [
+          "template literal",
+          "massiv",
+          "regex",
+          "obyekt"
+        ],
+        "c": 0,
+        "w": "Template literal — ichida o'zgaruvchi joylab matn yasaydi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE5: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "async/await",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "async/await - Modern JS & Async modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida fetch ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo fetch qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "error handling bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "error handling mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE6",
+    "title": "Git, npm & Vite",
+    "sub": "Tooling",
+    "coord": "Tooling · FE6",
+    "eyebrow": "06 · Professional ish oqimi",
+    "mtitle": "Versiya nazorati va loyiha vositalari",
+    "lede": "Professional developer <strong>Git</strong> bilan kodni saqlaydi, <strong>npm</strong> bilan paket o'rnatadi va <strong>Vite</strong> bilan zamonaviy loyiha quradi. Bu — har kunlik qurollar.",
+    "doc": "<div class='prose'><h3>Git — versiya nazorati</h3><p>Kod tarixini saqlaydi, jamoa bilan ishlashni imkon beradi. Asosiy: <code>git add</code> → <code>git commit</code> → <code>git push</code>. Tarmoqlar (<code>branch</code>) bilan xavfsiz tajriba qil.</p><h3>npm — paketlar</h3><p><code>npm init</code> loyiha boshlaydi, <code>npm install</code> kutubxona qo'shadi. <code>package.json</code> — loyihaning pasporti (bog'liqliklar + skriptlar).</p><h3>Vite — zamonaviy bundler</h3><p><code>npm create vite@latest</code> — soniyalarda React/TS loyiha. Tez dev-server, HMR (avtomatik yangilanish), optimallashgan build (<code>npm run build</code>).</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Tez-tez, kichik commit qil — har biri bitta mantiqiy o'zgarish. Aniq commit xabari — kelajakdagi o'zingga sovg'a.</p></div></div><h3>🤖 AI-yordamli ish oqimi (2026)</h3><p>Bugun professional developerlar <strong>AI yordamchilar</strong> bilan ishlaydi: <strong>GitHub Copilot</strong>, <strong>Cursor</strong> (kod yozish/tushuntirish), <strong>v0</strong> (UI komponent generatsiya). Ular tezlashtiradi — lekin <strong>kodni o'zing tushunishing shart</strong>, ko'r-ko'rona qabul qilma.</p><h3>🆕 Zamonaviy tooling</h3><div class='exlist'><div class='ex'><b>Vite / Turbopack</b><span>tez dev-server va build</span></div><div class='ex'><b>Bun</b><span>tez runtime + paket menejeri (npm muqobili)</span></div><div class='ex'><b>Biome</b><span>tez lint + format (ESLint+Prettier o'rniga)</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Git oqimi",
+          "p": "Kundalik buyruqlar."
+        },
+        "title": "terminal",
+        "lang": "bash",
+        "code": "npm create vite@latest my-app -- --template react-ts\ncd my-app && npm install\nnpm run dev\n\n# o'zgarishni saqlash\ngit add .\ngit commit -m \"feat: navbar qo'shildi\"\ngit push"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe6-1",
+        "html": "Git bilan repo yaratib commit qildim",
+        "crit": "add/commit ishlatilgan"
+      },
+      {
+        "id": "fe6-2",
+        "html": "Branch yaratib, merge qildim",
+        "crit": "tarmoqda ishlading"
+      },
+      {
+        "id": "fe6-3",
+        "html": "Vite bilan React+TS loyiha ochdim",
+        "crit": "npm run dev ishladi"
+      },
+      {
+        "id": "fe6-4",
+        "html": "Kodni GitHub'ga push qildim",
+        "crit": "remote repo bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://git-scm.com/book/uz/v2",
+        "title": "Pro Git (kitob)",
+        "desc": "Git bo'yicha to'liq qo'llanma",
+        "host": "git-scm.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://vitejs.dev/guide/",
+        "title": "Vite qo'llanma",
+        "desc": "Rasmiy hujjat",
+        "host": "vitejs.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Tooling",
+      "title": "Vite Starter Template",
+      "desc": "Vite asosida kichik starter template tayyorlanadi. Maqsad: npm script, git va loyiha strukturasi bilan ishlash.",
+      "features": [
+        "`npm run dev`, `build`, `preview` scriptlari ishlaydi",
+        "`src`, `assets`, `styles` papkalari tartibli",
+        "Git commitlar ma?noli nomlangan",
+        "README?da start/build yo?riqnomasi bor",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Vite Starter Template mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Repo fresh clone qilinganda README bo?yicha ishga tushishi kerak.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Vite Starter Template - Client UI",
+          "desc": "Git, npm & Vite mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Vite Starter Template - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "package.json nima?",
+        "a": [
+          "CSS fayl",
+          "loyiha bog'liqlik+skript pasporti",
+          "rasm",
+          "ma'lumotlar bazasi"
+        ],
+        "c": 1,
+        "w": "package.json — bog'liqliklar va skriptlarni saqlaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "O'zgarishni saqlash buyrug'i?",
+        "a": [
+          "git save",
+          "git commit",
+          "git store",
+          "git keep"
+        ],
+        "c": 1,
+        "w": "git add bilan tayyorlab, git commit bilan saqlanadi.",
+        "level": "practical"
+      },
+      {
+        "q": "HMR nima?",
+        "a": [
+          "xato turi",
+          "kod o'zgarsa sahifa avtomatik yangilanishi",
+          "test",
+          "deploy"
+        ],
+        "c": 1,
+        "w": "Hot Module Replacement — saqlasang brauzer darhol yangilanadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE6: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "git commit",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "git commit - Git, npm & Vite modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida npm script ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo npm script qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "Vite dev server bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "Vite dev server mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE7",
+    "title": "TypeScript",
+    "sub": "Tiplar",
+    "coord": "Tiplar · FE7",
+    "eyebrow": "07 · Xavfsiz kod",
+    "mtitle": "TypeScript: tiplar bilan ishonchli kod",
+    "lede": "TypeScript — JS ustiga <strong>tip tizimi</strong>. Xatolarni <strong>yozish paytida</strong> tutadi, kod o'qishni va refactorni osonlashtiradi. Zamonaviy frontend'da deyarli standart.",
+    "doc": "<div class='prose'><h3>Nega TypeScript?</h3><p>JS xatoni faqat ishga tushganda ko'rsatadi; TS — <strong>yozayotganda</strong>. Avtoto'ldirish (IntelliSense) kuchayadi, jamoa kodni ishonchli o'zgartiradi.</p><h3>Asosiy tiplar</h3><p><code>string</code>, <code>number</code>, <code>boolean</code>, massiv (<code>string[]</code>), obyekt shakli uchun <code>interface</code> yoki <code>type</code>. Funksiya argument va natijasini tiplaydi.</p><h3>Generiklar va union</h3><p><code>Array&lt;T&gt;</code>, <code>useState&lt;number&gt;</code> kabi generiklar moslashuvchanlik beradi. Union (<code>'sm' | 'md' | 'lg'</code>) — aniq variantlar.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p><code>any</code> dan qoch — u tip tekshiruvini o'chiradi. Aniq tip yoz yoki <code>unknown</code> ishlat.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Interface + funksiya",
+          "p": "Tiplangan ma'lumot."
+        },
+        "title": "user",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "interface User {\n  id: number;\n  name: string;\n  role: 'admin' | 'user';\n}\n\nfunction greet(u: User): string {\n  return `Salom, ${u.name}`;\n}\n\nconst u: User = { id: 1, name: 'Ali', role: 'user' };"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "// JS'da tip yo'q — obyekt shakli faqat kelishuv\nfunction greet(u) {\n  return `Salom, ${u.name}`;\n}\n\nconst u = { id: 1, name: 'Ali', role: 'user' };"
+          }
+        ],
+        "lang": "typescript",
+        "code": "interface User {\n  id: number;\n  name: string;\n  role: 'admin' | 'user';\n}\n\nfunction greet(u: User): string {\n  return `Salom, ${u.name}`;\n}\n\nconst u: User = { id: 1, name: 'Ali', role: 'user' };"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe7-1",
+        "html": "interface bilan obyekt shaklini tipladim",
+        "crit": "interface yozilgan"
+      },
+      {
+        "id": "fe7-2",
+        "html": "Funksiya argument va natijasini tipladim",
+        "crit": "kirish/chiqish tipi bor"
+      },
+      {
+        "id": "fe7-3",
+        "html": "Union tip ishlatdim",
+        "crit": "'a' | 'b' ko'rinishda"
+      },
+      {
+        "id": "fe7-4",
+        "html": "any o'rniga aniq tip qo'ydim",
+        "crit": "any ishlatilmagan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+        "title": "TS Handbook",
+        "desc": "Rasmiy qo'llanma",
+        "host": "typescriptlang.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.totaltypescript.com/",
+        "title": "Total TypeScript",
+        "desc": "Amaliy darslar",
+        "host": "totaltypescript.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? TypeScript",
+      "title": "Typed Expense List",
+      "desc": "TypeScript bilan xarajatlar ro?yxati modelini va UI logikasini yozish. Maqsad: interface, union type va typed function ishlatish.",
+      "features": [
+        "`Expense` interface bor",
+        "Kategoriya union type bilan cheklanadi",
+        "Total hisoblash typed function orqali qilinadi",
+        "Noto?g?ri qiymatlar TypeScriptda xato beradi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Typed Expense List mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "`any` ishlatilmaydi yoki juda asosli joydagina ishlatiladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Typed Expense List - Client UI",
+          "desc": "TypeScript mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Typed Expense List - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "TS xatolarni qachon tutadi?",
+        "a": [
+          "ishga tushganda",
+          "yozish/kompilyatsiya paytida",
+          "hech qachon",
+          "deploy'da"
+        ],
+        "c": 1,
+        "w": "TS xatolarni yozish paytida (kompilyatsiyada) ko'rsatadi.",
+        "level": "easy"
+      },
+      {
+        "q": "Obyekt shakli uchun?",
+        "a": [
+          "interface yoki type",
+          "var",
+          "class only",
+          "json"
+        ],
+        "c": 0,
+        "w": "interface yoki type bilan obyekt shaklini tasvirlaysan.",
+        "level": "practical"
+      },
+      {
+        "q": "Nimadan qochish kerak?",
+        "a": [
+          "string",
+          "any",
+          "number",
+          "interface"
+        ],
+        "c": 1,
+        "w": "any tip tekshiruvini o'chiradi — qoching.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE7: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "type annotation",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "type annotation - TypeScript modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida interface ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo interface qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "generic bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "generic mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE8",
+    "title": "React asoslari",
+    "sub": "Komponentlar",
+    "coord": "React · FE8",
+    "eyebrow": "08 · Komponentli UI",
+    "mtitle": "React: komponent, props, state, hooks",
+    "lede": "React — UI'ni <strong>qayta ishlatiladigan komponentlar</strong>dan quradi. State o'zgarsa — UI avtomatik yangilanadi. Zamonaviy frontend'ning eng mashhur kutubxonasi.",
+    "doc": "<div class='prose'><h3>Komponent va JSX</h3><p>Komponent — UI bo'lagini qaytaradigan funksiya. JSX — JS ichida HTML kabi yoziladigan sintaksis. Komponentlar bir-biriga joylashadi.</p><h3>Props va state</h3><p><strong>Props</strong> — ota komponentdan kelgan ma'lumot (faqat o'qish). <strong>State</strong> (<code>useState</code>) — komponentning ichki, o'zgaruvchi holati. State o'zgarsa React qayta render qiladi.</p><h3>useEffect</h3><p>Yon ta'sirlar uchun: ma'lumot olish, obuna, timer. Bog'liqlik massivi (<code>[dep]</code>) qachon ishga tushishini belgilaydi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>State'ni <strong>to'g'ridan-to'g'ri o'zgartirma</strong> (<code>count++</code> emas). Doim setter ishlat: <code>setCount(c =&gt; c + 1)</code>.</p></div></div><h3>⚛️ React 19 (2026)</h3><p>Eng so'nggi React quyidagilarni keltirdi:</p><div class='exlist'><div class='ex'><b>React Compiler</b><span>memoizatsiyani o'zi qiladi — <code>useMemo</code>/<code>useCallback</code> kamroq kerak</span></div><div class='ex'><b>Actions + useActionState</b><span>forma yuborish va kutilayotgan holatni soddalashtirdi</span></div><div class='ex'><b>use()</b><span>Promise/Context'ni to'g'ridan-to'g'ri \"o'qish\"</span></div><div class='ex'><b>ref propsda</b><span><code>forwardRef</code> ko'p hollarda kerak emas</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eslatma</p><p>React Compiler bo'lsa ham, <strong>nega render bo'layotganini</strong> tushunish muhim. Kompilyator vositadir, tushuncha o'rnini bosmaydi.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Hisoblagich (React)",
+          "p": "useState bilan holat."
+        },
+        "title": "Counter",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "tsx",
+            "code": "import { useState } from 'react';\n\nexport function Counter({ step }: { step: number }) {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + step)}>\n      Bosildi: {count}\n    </button>\n  );\n}"
+          },
+          {
+            "label": "JS",
+            "lang": "jsx",
+            "code": "import { useState } from 'react';\n\nexport function Counter({ step }) {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + step)}>\n      Bosildi: {count}\n    </button>\n  );\n}"
+          }
+        ],
+        "lang": "tsx",
+        "code": "import { useState } from 'react';\n\nexport function Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <button onClick={() => setCount(c => c + 1)}>\n      Bosildi: {count}\n    </button>\n  );\n}"
+      },
+      {
+        "heading": {
+          "h": "React 19 Actions (2026)",
+          "p": "Forma + useActionState bilan kutilayotgan holat."
+        },
+        "title": "Form.tsx",
+        "lang": "tsx",
+        "code": "import { useActionState } from 'react';\n\nfunction Form() {\n  const [error, submit, pending] = useActionState(\n    async (prev, formData) => {\n      await save(formData.get('name'));\n      return null;\n    }, null);\n  return (\n    <form action={submit}>\n      <input name='name' />\n      <button disabled={pending}>Saqlash</button>\n      {error && <p>{error}</p>}\n    </form>\n  );\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe8-1",
+        "html": "Props qabul qiluvchi komponent yozdim",
+        "crit": "props ishlatilgan"
+      },
+      {
+        "id": "fe8-2",
+        "html": "useState bilan holat boshqardim",
+        "crit": "setter orqali yangilanadi"
+      },
+      {
+        "id": "fe8-3",
+        "html": "Ro'yxatni map bilan render qildim (key bilan)",
+        "crit": "key prop bor"
+      },
+      {
+        "id": "fe8-4",
+        "html": "useEffect bilan ma'lumot oldim",
+        "crit": "bog'liqlik massivi to'g'ri"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://react.dev/learn",
+        "title": "React — rasmiy o'quv",
+        "desc": "Eng yaxshi React manbasi",
+        "host": "react.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://react.dev/reference/react",
+        "title": "React API ma'lumotnoma",
+        "desc": "Hooks va API",
+        "host": "react.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://react.dev/blog/2024/12/05/react-19",
+        "title": "React 19 — yangiliklar",
+        "desc": "Actions, use(), Compiler (2026 standart)",
+        "host": "react.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? React",
+      "title": "React Weather Cards",
+      "desc": "React komponentlari bilan ob-havo yoki shahar kartalari ilovasi quriladi. Maqsad: props, state, conditional rendering.",
+      "features": [
+        "Kamida 3 ta qayta ishlatiladigan komponent",
+        "Search yoki filter state bilan ishlaydi",
+        "Empty/loading/error holatlari bor",
+        "Cardlar responsive ko?rinadi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "React Weather Cards mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Komponentlar bitta faylga tiqilmaydi, props nomlari ma?noli bo?ladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "React Weather Cards - Client UI",
+          "desc": "React asoslari mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "React Weather Cards - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Props qanaqa?",
+        "a": [
+          "o'zgaruvchan ichki holat",
+          "otadan kelgan, o'qish uchun ma'lumot",
+          "CSS",
+          "global"
+        ],
+        "c": 1,
+        "w": "Props — ota komponentdan keladi va faqat o'qiladi.",
+        "level": "easy"
+      },
+      {
+        "q": "State'ni qanday o'zgartirasan?",
+        "a": [
+          "to'g'ridan-to'g'ri",
+          "setter funksiya bilan (setState)",
+          "DOM orqali",
+          "umuman o'zgarmaydi"
+        ],
+        "c": 1,
+        "w": "Doim setter (setCount) ishlat — React shunda qayta render qiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Ro'yxat render'da nima kerak?",
+        "a": [
+          "id",
+          "key prop",
+          "class",
+          "style"
+        ],
+        "c": 1,
+        "w": "Har elementga barqaror key — React'ga elementlarni farqlash uchun.",
+        "level": "practical"
+      },
+      {
+        "q": "React 19 Compiler nimani avtomatlashtiradi?",
+        "a": [
+          "deploy",
+          "memoizatsiya (useMemo/useCallback)",
+          "test",
+          "routing"
+        ],
+        "c": 1,
+        "w": "React Compiler memoizatsiyani o'zi qiladi — qo'lda useMemo/useCallback kamroq kerak.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE8: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "component",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "component - React asoslari modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida props ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo props qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "state bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "state mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE9",
+    "title": "React chuqur",
+    "sub": "Router · data · hooks",
+    "coord": "React+ · FE9",
+    "eyebrow": "09 · Real ilovalar",
+    "mtitle": "Router, kontekst, custom hooks, formalar",
+    "lede": "Haqiqiy ilova ko'p sahifa, umumiy holat va ma'lumot bilan ishlaydi. <strong>Router</strong>, <strong>Context</strong>, <strong>custom hooks</strong> va forma boshqaruvi — o'rta darajaning kaliti.",
+    "doc": "<div class='prose'><h3>Routing</h3><p>React Router bilan ko'p sahifa (URL → komponent). <code>/</code>, <code>/about</code>, <code>/users/:id</code> kabi yo'llar.</p><h3>Umumiy holat: Context</h3><p>Mavzu, foydalanuvchi, til kabi <strong>ko'p joyda kerak</strong> ma'lumotni Context bilan ulashasan — props'ni har qavatdan o'tkazmasdan.</p><h3>Custom hooks</h3><p>Takrorlanuvchi mantiqni <code>useXuz()</code> hookga ajrat (masalan <code>useFetch</code>, <code>useLocalStorage</code>). Toza, qayta ishlatiladigan kod.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>Server ma'lumoti uchun TanStack Query kabi vosita ishlat — kesh, qayta urinish, holatni o'zi boshqaradi.</p></div></div><h3>🆕 Server Components & Signals (2026)</h3><p><strong>React Server Components (RSC)</strong> — komponentni serverda render qilib, brauzerga kamroq JS yuboradi (tezroq yuklanish). Next.js App Router shu asosda ishlaydi.</p><p><strong>Signals</strong> — \"nozik donali\" reaktivlik: faqat o'zgargan qiymatga bog'liq joy yangilanadi (Solid, Preact, Angular). React ham shu yo'nalishda rivojlanyapti.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Senior odat</p><p>RSC va signals — arxitektura tanlovi. Avval mijoz-tomon (client) React'ni puxta egalla, keyin server-tomon render va RSC mantiqini o'rgan.</p></div></div><h3>🗂️ Global holat: Redux & Zustand</h3><p>Context kichik holatga yaxshi, lekin katta ilovada maxsus holat-boshqaruv vositalari qulayroq:</p><div class='exlist'><div class='ex'><b>Redux Toolkit (RTK)</b><span>katta jamoa, bashoratli oqim, kuchli DevTools — biroz ko'proq qoida (boilerplate)</span></div><div class='ex'><b>Zustand</b><span>juda sodda, kichik, hook asosida — bugun mashhur tanlov</span></div><div class='ex'><b>Jotai</b><span>atom asosli, nozik donali holat</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Muhim ajratma</p><p><strong>Server</strong> ma'lumotini (API) Redux/Zustand'da saqlama — buni TanStack Query qiladi. Redux/Zustand — <strong>global UI holati</strong> uchun (mavzu, modal, savatcha, auth).</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Custom hook",
+          "p": "localStorage bilan sinxron holat."
+        },
+        "title": "useLocalStorage",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage<T>(key: string, init: T) {\n  const [val, setVal] = useState<T>(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal] as const;\n}"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage(key, init) {\n  const [val, setVal] = useState(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal];\n}"
+          }
+        ],
+        "lang": "typescript",
+        "code": "import { useState, useEffect } from 'react';\n\nexport function useLocalStorage<T>(key: string, init: T) {\n  const [val, setVal] = useState<T>(() => {\n    const raw = localStorage.getItem(key);\n    return raw ? JSON.parse(raw) : init;\n  });\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(val));\n  }, [key, val]);\n  return [val, setVal] as const;\n}"
+      },
+      {
+        "heading": {
+          "h": "Server Component (2026)",
+          "p": "Serverda render — brauzerga kamroq JS."
+        },
+        "title": "Page.tsx (server)",
+        "lang": "tsx",
+        "code": "// Server Component — serverda render (RSC), brauzerga JS yo'q\nasync function Page() {\n  const posts = await db.getPosts(); // to'g'ridan-to'g'ri server\n  return (\n    <ul>\n      {posts.map(p => <li key={p.id}>{p.title}</li>)}\n    </ul>\n  );\n}"
+      },
+      {
+        "heading": {
+          "h": "Zustand store",
+          "p": "Sodda global holat (savatcha misoli)."
+        },
+        "title": "useCart",
+        "variants": [
+          {
+            "label": "TS",
+            "lang": "typescript",
+            "code": "import { create } from 'zustand';\n\ninterface CartState {\n  items: string[];\n  add: (x: string) => void;\n  clear: () => void;\n}\n\nexport const useCart = create<CartState>((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));"
+          },
+          {
+            "label": "JS",
+            "lang": "javascript",
+            "code": "import { create } from 'zustand';\n\nexport const useCart = create((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));"
+          }
+        ],
+        "lang": "typescript",
+        "code": "import { create } from 'zustand';\n\ninterface CartState {\n  items: string[];\n  add: (x: string) => void;\n  clear: () => void;\n}\n\nexport const useCart = create<CartState>((set) => ({\n  items: [],\n  add: (x) => set((s) => ({ items: [...s.items, x] })),\n  clear: () => set({ items: [] }),\n}));\n\n// Komponentda:\n// const items = useCart((s) => s.items);\n// const add = useCart((s) => s.add);"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe9-1",
+        "html": "React Router bilan 3+ sahifa qildim",
+        "crit": "URL almashadi"
+      },
+      {
+        "id": "fe9-2",
+        "html": "Context bilan mavzu/foydalanuvchi ulashtirdim",
+        "crit": "props drilling yo'q"
+      },
+      {
+        "id": "fe9-3",
+        "html": "Custom hook yozdim",
+        "crit": "qayta ishlatiladigan mantiq"
+      },
+      {
+        "id": "fe9-4",
+        "html": "Boshqariladigan forma + validatsiya yozdim",
+        "crit": "input state'ga bog'langan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://reactrouter.com/",
+        "title": "React Router",
+        "desc": "Routing rasmiy hujjat",
+        "host": "reactrouter.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://tanstack.com/query/latest",
+        "title": "TanStack Query",
+        "desc": "Server holati boshqaruvi",
+        "host": "tanstack.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://redux-toolkit.js.org/",
+        "title": "Redux Toolkit",
+        "desc": "Zamonaviy Redux (rasmiy)",
+        "host": "redux-toolkit.js.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://zustand.docs.pmnd.rs/",
+        "title": "Zustand",
+        "desc": "Sodda global holat boshqaruvi",
+        "host": "zustand.docs.pmnd.rs"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? React Advanced",
+      "title": "Mini CRM Dashboard",
+      "desc": "Router, data loading va custom hook ishlatib mini CRM dashboard quriladi.",
+      "features": [
+        "Kamida 3 sahifa: dashboard, ro?yxat, detail",
+        "URL route orqali detail ochiladi",
+        "Custom hook data/loading/error qaytaradi",
+        "CRUD yoki mock CRUD flow bor",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Mini CRM Dashboard mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Route refresh qilinganda ham sahifa ishlashi va fallback holat ko?rinishi kerak.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Mini CRM Dashboard - Client UI",
+          "desc": "React chuqur mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Mini CRM Dashboard - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Props drilling muammosiga yechim?",
+        "a": [
+          "ko'proq props",
+          "Context",
+          "global var",
+          "CSS"
+        ],
+        "c": 1,
+        "w": "Context — ma'lumotni har qavatdan o'tkazmasdan ulashadi.",
+        "level": "easy"
+      },
+      {
+        "q": "Custom hook nima beradi?",
+        "a": [
+          "CSS",
+          "qayta ishlatiladigan mantiq",
+          "tezroq build",
+          "yangi til"
+        ],
+        "c": 1,
+        "w": "Takrorlanuvchi logikani ajratib, qayta ishlatadi.",
+        "level": "practical"
+      },
+      {
+        "q": "Server ma'lumoti (kesh, qayta urinish) uchun yaxshi vosita?",
+        "a": [
+          "useState",
+          "TanStack Query",
+          "localStorage",
+          "alert"
+        ],
+        "c": 1,
+        "w": "TanStack Query server holatini professional boshqaradi.",
+        "level": "practical"
+      },
+      {
+        "q": "Sodda, kichik global holat uchun bugun mashhur tanlov?",
+        "a": [
+          "Redux (klassik)",
+          "Zustand",
+          "jQuery",
+          "localStorage"
+        ],
+        "c": 1,
+        "w": "Zustand — minimal boilerplate, hook asosida; Redux Toolkit katta loyihalarda yaxshi.",
+        "level": "practical"
+      },
+      {
+        "q": "Global UI holat (mavzu, savatcha) qayerda saqlanadi?",
+        "a": [
+          "TanStack Query",
+          "Redux/Zustand",
+          "CSS",
+          "URL"
+        ],
+        "c": 1,
+        "w": "Server ma'lumoti — Query; global UI holati — Redux/Zustand/Context.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE9: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "router",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "router - React chuqur modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida data loading ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo data loading qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "custom hook bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "custom hook mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE10",
+    "title": "Sifat: test, performance, a11y",
+    "sub": "Ishonchlilik",
+    "coord": "Sifat · FE10",
+    "eyebrow": "10 · Professional sifat",
+    "mtitle": "Testlar, tezlik va foydalanish qulayligi",
+    "lede": "Junior \"ishlasa bo'ldi\" deydi; senior <strong>ishonchli, tez va hamma uchun qulay</strong> qiladi. Test, performance va a11y — sifatning uch ustuni.",
+    "doc": "<div class='prose'><h3>Testlash</h3><p><strong>Vitest + Testing Library</strong> bilan komponent xatti-harakatini sina — foydalanuvchi nuqtai nazaridan (matnni ko'radi, tugmani bosadi). E2E uchun Playwright.</p><h3>Performance</h3><p>Keraksiz render'ni kamaytir (<code>memo</code>, <code>useMemo</code>), katta bundle'ni bo'l (code splitting / lazy), rasmlarni optimallashtir. Lighthouse bilan o'lcha.</p><h3>Accessibility (a11y)</h3><p>Klaviatura bilan harakat, fokus ko'rinishi, ARIA kerakli joyda, rang kontrasti. <strong>a11y = ko'proq foydalanuvchi + yaxshi SEO</strong>.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Erta optimallashtirish. Avval o'lcha (Lighthouse/Profiler), keyin haqiqiy muammoni tuzat.</p></div></div><h3>📊 Core Web Vitals & INP (2026)</h3><p>Google asosiy ko'rsatkichlari bilan o'lcha: <strong>LCP</strong> (eng katta kontent qachon ko'rinadi), <strong>CLS</strong> (layout sakrashi) va yangi <strong>INP</strong> (Interaction to Next Paint) — bosishga javob qanchalik tez. 2026 da INP — interaktivlik sifatining asosiy o'lchovi.</p><div class='exlist'><div class='ex'><b>LCP</b><span>&lt; 2.5s — tez ko'rinish</span></div><div class='ex'><b>INP</b><span>&lt; 200ms — tez javob</span></div><div class='ex'><b>CLS</b><span>&lt; 0.1 — barqaror layout</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Komponent testi",
+          "p": "Foydalanuvchi nuqtai nazaridan."
+        },
+        "title": "Counter.test.tsx",
+        "lang": "tsx",
+        "code": "import { render, screen } from '@testing-library/react';\nimport userEvent from '@testing-library/user-event';\nimport { Counter } from './Counter';\n\nit('bosilganda oshadi', async () => {\n  render(<Counter />);\n  await userEvent.click(screen.getByRole('button'));\n  expect(screen.getByText(/Bosildi: 1/)).toBeInTheDocument();\n});"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe10-1",
+        "html": "Vitest + Testing Library bilan test yozdim",
+        "crit": "kamida 1 ta o'tadigan test"
+      },
+      {
+        "id": "fe10-2",
+        "html": "Lighthouse bilan sahifani o'lchadim",
+        "crit": "ball oldim va kamchilik topdim"
+      },
+      {
+        "id": "fe10-3",
+        "html": "Klaviatura bilan butun sahifani aylanib chiqdim",
+        "crit": "fokus ko'rinadi, hammasi yetiladi"
+      },
+      {
+        "id": "fe10-4",
+        "html": "React.lazy bilan komponentni bo'lib yukladim",
+        "crit": "code splitting ishladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://testing-library.com/docs/",
+        "title": "Testing Library",
+        "desc": "Komponent testlash",
+        "host": "testing-library.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://web.dev/explore/learn-core-web-vitals",
+        "title": "Core Web Vitals",
+        "desc": "Performance ko'rsatkichlari",
+        "host": "web.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha ? Quality",
+      "title": "Quality Pass Audit",
+      "desc": "Oldingi React loyihani test, performance va accessibility tekshiruvidan o?tkazish.",
+      "features": [
+        "Kamida 3 unit/component test",
+        "Keyboard focus va aria label tekshiriladi",
+        "Bundle/performance bo?yicha 3 ta yaxshilash yoziladi",
+        "Regression checklist tuziladi",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state",
+        "READMEda demo va komponentlar izohi"
+      ],
+      "rubric": [
+        "Quality Pass Audit mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Testlar real foydalanuvchi flowini tekshiradi, faqat snapshot bilan cheklanmaydi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Quality Pass Audit - Client UI",
+          "desc": "Sifat: test, performance, a11y mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Quality Pass Audit - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Testing Library qaysi nuqtai nazardan sinaydi?",
+        "a": [
+          "ichki kod",
+          "foydalanuvchi (matn/rol/bosish)",
+          "CSS",
+          "server"
+        ],
+        "c": 1,
+        "w": "Foydalanuvchi qanday ishlatsa shunday — getByRole/getByText.",
+        "level": "easy"
+      },
+      {
+        "q": "Keraksiz render kamaytirish uchun?",
+        "a": [
+          "memo/useMemo",
+          "ko'proq state",
+          "any",
+          "inline style"
+        ],
+        "c": 0,
+        "w": "memo/useMemo — qayta hisoblash va render'ni kamaytiradi.",
+        "level": "practical"
+      },
+      {
+        "q": "a11y nega muhim?",
+        "a": [
+          "faqat dizayn",
+          "ko'proq foydalanuvchi + SEO + qonun",
+          "tezlik",
+          "kerak emas"
+        ],
+        "c": 1,
+        "w": "Hamma foydalana oladi, SEO yaxshilanadi, ko'p joyda talab.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE10: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "test",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "test - Sifat: test, performance, a11y modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida performance ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo performance qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "a11y bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "a11y mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  },
+  {
+    "zoom": "FE11",
+    "title": "Senior: arxitektura & karyera",
+    "sub": "Senior",
+    "coord": "Senior · FE11",
+    "eyebrow": "11 · Senior daraja",
+    "mtitle": "Arxitektura, deploy, CI/CD va karyera",
+    "lede": "Senior — faqat kod emas: <strong>arxitektura qaror</strong>, jamoa, deploy va o'zini-o'zi rivojlantirish. Bu modul — koddan <strong>muhandislikka</strong> o'tish.",
+    "doc": "<div class='prose'><h3>Arxitektura va toza kod</h3><p>Papka tuzilmasi (feature-based), komponentlarni bo'lish, design system / komponent kutubxonasi, holat strategiyasi. <strong>Kod o'qish uchun yoziladi</strong> — kelajakdagi jamoa uchun.</p><h3>Deploy va CI/CD</h3><p>Statik saytni Vercel/Netlify'ga joylash. <strong>CI/CD</strong>: push qilsang — avtomatik test + build + deploy (GitHub Actions). Xato production'ga chiqmaydi.</p><h3>Senior ko'nikmalari</h3><div class='exlist'><div class='ex'><b>Texnik</b><span>arxitektura, performance, a11y, xavfsizlik</span></div><div class='ex'><b>Jamoaviy</b><span>code review, mentorlik, aniq muloqot</span></div><div class='ex'><b>Mahsulot</b><span>nima muhimligini tushunish, trade-off</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy fikr</p><p>Senior = mas'uliyat. Eng yaxshi kod — eng aqlli emas, jamoa <strong>oson tushunadigan va o'zgartiradigan</strong> kod. Portfolio va ochiq kod bilan o'zingni ko'rsat.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "CI quvuri",
+          "p": "Push'da avtomatik test + build."
+        },
+        "title": ".github/workflows/ci.yml",
+        "lang": "yaml",
+        "code": "name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with: { node-version: 20 }\n      - run: npm ci\n      - run: npm test\n      - run: npm run build"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "fe11-1",
+        "html": "Loyihani feature-based tuzilmaga keltirdim",
+        "crit": "papkalar mantiqiy"
+      },
+      {
+        "id": "fe11-2",
+        "html": "Saytni Vercel/Netlify'ga deploy qildim",
+        "crit": "jonli URL bor"
+      },
+      {
+        "id": "fe11-3",
+        "html": "GitHub Actions CI sozladim",
+        "crit": "push'da test+build ishlaydi"
+      },
+      {
+        "id": "fe11-4",
+        "html": "Portfolio + 2-3 loyiha tayyorladim",
+        "crit": "GitHub + jonli demo"
+      },
+      {
+        "id": "fe11-5",
+        "html": "Code review berdim/oldim",
+        "crit": "konstruktiv izoh"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://vercel.com/docs",
+        "title": "Vercel — Deploy",
+        "desc": "Frontend deploy",
+        "host": "vercel.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.github.com/en/actions",
+        "title": "GitHub Actions",
+        "desc": "CI/CD avtomatlashtirish",
+        "host": "docs.github.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://roadmap.sh/frontend",
+        "title": "Frontend Roadmap",
+        "desc": "Senior tomon keyingi qadamlar",
+        "host": "roadmap.sh"
+      }
+    ],
+    "project": {
+      "tag": "Final loyiha ? Portfolio",
+      "title": "Production Learning App",
+      "desc": "Frontend kurs yakunida productionga yaqin learning yoki dashboard app quriladi. Bu portfolio uchun asosiy loyiha bo?ladi.",
+      "features": [
+        "Authsiz demo yoki mock auth flow",
+        "Dashboard + list + detail + settings sahifalari",
+        "Responsive, dark/light yoki design tokens",
+        "Kamida 5 test va error/loading/empty holatlar",
+        "README, screenshot va deploy link tayyor",
+        "Responsive desktop/mobile holat",
+        "Keyboard va focus holatlari",
+        "Bo'sh/loading/error state"
+      ],
+      "rubric": [
+        "Production Learning App mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
+        "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
+        "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
+        "Deploy qilingan link bor va loyiha portfolio izohi bilan topshiriladi.",
+        "UI barcha asosiy breakpointlarda buzilmaydi.",
+        "Loading, empty va error holatlari ko'rsatilgan.",
+        "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
+        "READMEda demo flow va ishga tushirish bor."
+      ],
+      "variants": [
+        {
+          "title": "Production Learning App - Client UI",
+          "desc": "Senior: arxitektura & karyera mavzusini real mijozga ko'rsatiladigan polished interfacega aylantir.",
+          "deliverables": [
+            "Mobile va desktop layout",
+            "Kamida 3 ta UI state",
+            "Deploy preview yoki screenshot"
+          ]
+        },
+        {
+          "title": "Production Learning App - Product Flow",
+          "desc": "Bitta foydalanuvchi flowini boshidan oxirigacha ishlaydigan qilib qur.",
+          "deliverables": [
+            "Form/filter/action flow",
+            "Validation va empty state",
+            "A11y checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "CI/CD nima beradi?",
+        "a": [
+          "dizayn",
+          "push'da avtomatik test+build+deploy",
+          "tezroq internet",
+          "yangi til"
+        ],
+        "c": 1,
+        "w": "CI/CD — avtomatik tekshiruv va yetkazib berish; xato production'ga o'tmaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Senior kodning asosiy belgisi?",
+        "a": [
+          "eng aqlli/qisqa",
+          "jamoa oson tushunadigan va o'zgartiradigan",
+          "eng ko'p qator",
+          "framework'siz"
+        ],
+        "c": 1,
+        "w": "O'qiladigan, qo'llab-quvvatlanadigan kod — senior belgisi.",
+        "level": "practical"
+      },
+      {
+        "q": "Statik frontend deploy uchun?",
+        "a": [
+          "Vercel/Netlify",
+          "MySQL",
+          "Photoshop",
+          "Excel"
+        ],
+        "c": 0,
+        "w": "Vercel/Netlify — statik/SPA deploy uchun mashhur platformalar.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "FE11: bu modulda eng asosiy tushuncha qaysi?",
+        "options": [
+          "architecture",
+          "tasodifiy dizayn bezagi",
+          "faqat nazariy ta?rif",
+          "keraksiz konfiguratsiya"
+        ],
+        "correct": 0,
+        "why": "architecture - Senior: arxitektura & karyera modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Frontend amaliyotida design system ni tekshirish uchun avval ___ yoziladi.",
+        "answers": [
+          "kichik demo",
+          "demo",
+          "minimal misol",
+          "test"
+        ],
+        "hint": "Katta loyiha emas, eng kichik ishlaydigan namuna.",
+        "why": "Kichik demo design system qanday ishlashini tez ko'rsatadi va xatoni erta ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "code review bilan ishlaganda eng sog'lom yondashuv qaysi?",
+        "options": [
+          "Avval talabni aniqlab, kichik test yoki misol bilan tekshirish",
+          "Birdan katta refactor qilish",
+          "Faqat ko'rinishga qarab baholash",
+          "Xatoni yashirib ketish"
+        ],
+        "correct": 0,
+        "why": "code review mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
+      }
+    ]
+  }
 ]

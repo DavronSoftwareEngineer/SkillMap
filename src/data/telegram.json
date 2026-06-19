@@ -1,0 +1,1773 @@
+[
+  {
+    "zoom": "TG0",
+    "title": "Bot platforma & setup",
+    "sub": "Boshlash",
+    "coord": "Boshlash · TG0",
+    "eyebrow": "00 · Telegram bot nima",
+    "mtitle": "Professional Telegram bot yaratish yo'li",
+    "lede": "Telegram bot — chat ichida ishlaydigan servis. Bu kursda sen <strong>Node.js + TypeScript</strong> bilan bot yaratish, webhook, database, admin, payment, Mini App va production deploygacha borasan.",
+    "doc": "<div class='prose'><h3>Bot nima qiladi?</h3><p>Bot foydalanuvchidan update oladi, business logic ishlaydi va javob qaytaradi. Professional bot shunchaki <code>/start</code> emas: u <strong>state, database, admin, xavfsizlik, log, deploy</strong> bilan ishlaydi.</p><div class='chips'><span class='chip t'>BotFather</span><span class='chip t'>Bot API</span><span class='chip t'>grammY / Telegraf</span><span class='chip t'>Webhook</span></div><h3>Stack tanlovi</h3><p>O'rganish uchun TypeScript + grammY qulay: tiplar yaxshi, middleware va plugin ekotizimi bor. Telegraf ham productionda ko'p ishlatiladi. Bu kurs prinsiplarni frameworkdan mustaqil o'rgatadi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Xavfsizlik</p><p>Bot token parolga teng. Uni GitHubga yozma, <code>.env</code>da saqla va leak bo'lsa BotFather orqali darhol revoke qil.</p></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Birinchi bot",
+          "p": "grammY bilan minimal TypeScript bot."
+        },
+        "title": "src/bot.ts",
+        "lang": "typescript",
+        "code": "import { Bot } from 'grammy';\n\nconst token = process.env.BOT_TOKEN;\nif (!token) throw new Error('BOT_TOKEN missing');\n\nconst bot = new Bot(token);\n\nbot.command('start', (ctx) => ctx.reply('Salom! Bot ishga tushdi.'));\nbot.on('message:text', (ctx) => ctx.reply(`Siz yozdingiz: ${ctx.message.text}`));\n\nbot.start();"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg0-1",
+        "html": "BotFather orqali bot yaratdim va token oldim",
+        "crit": "tokenni repo ichiga yozmading"
+      },
+      {
+        "id": "tg0-2",
+        "html": "TypeScript loyiha ochdim va env sozladim",
+        "crit": ".env.example bor"
+      },
+      {
+        "id": "tg0-3",
+        "html": "/start komandasi ishladi",
+        "crit": "Telegramda javob olding"
+      },
+      {
+        "id": "tg0-4",
+        "html": "Token xavfsizligini tushundim",
+        "crit": "leak bo'lsa revoke qilishni bilasan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api",
+        "title": "Telegram Bot API",
+        "desc": "Rasmiy Bot API hujjatlari",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://grammy.dev/",
+        "title": "grammY docs",
+        "desc": "TypeScript uchun zamonaviy bot framework",
+        "host": "grammy.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://telegraf.js.org/",
+        "title": "Telegraf docs",
+        "desc": "Telegram bot framework hujjatlari",
+        "host": "telegraf.js.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Setup",
+      "title": "Echo Starter Bot",
+      "desc": "Token, env va minimal bot lifecycle bilan birinchi ishchi botni tayyorla.",
+      "features": [
+        "BotFather orqali bot ochilgan",
+        "/start va text echo ishlaydi",
+        ".env.example bor",
+        "READMEda ishga tushirish yozilgan"
+      ],
+      "rubric": [
+        "Bot token repo ichida yo'q.",
+        "Fresh clone + README orqali bot ishga tushadi.",
+        "Kamida 2 komanda test qilingan.",
+        "Xato token bo'lsa tushunarli error chiqadi.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Support Starter Bot",
+          "desc": "Kichik biznes uchun /start, /help, contact va support request qabul qiladigan starter bot.",
+          "deliverables": [
+            "/support komandasi",
+            "Admin chatga forward yoki notification",
+            "README + .env.example"
+          ]
+        },
+        {
+          "title": "Course Enrollment Bot",
+          "desc": "O'quv markazi uchun kurs tanlash va telefon raqam qoldirish oqimini tayyorla.",
+          "deliverables": [
+            "Kurslar menyusi",
+            "Contact request flow",
+            "Leadlarni JSON/DBga yozish"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Bot token qayerda saqlanishi kerak?",
+        "a": [
+          "GitHub READMEda",
+          ".env faylda",
+          "frontend bundle ichida",
+          "kommentda"
+        ],
+        "c": 1,
+        "w": "Token maxfiy credential. Uni .env yoki secret managerda saqlash kerak.",
+        "level": "easy"
+      },
+      {
+        "q": "BotFather nima uchun kerak?",
+        "a": [
+          "Database yaratish",
+          "Bot yaratish va sozlash",
+          "Server deploy qilish",
+          "React build qilish"
+        ],
+        "c": 1,
+        "w": "BotFather orqali bot username, token, description va commandlar boshqariladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Token GitHubga chiqib ketdi. Nima qilasan?",
+        "a": [
+          "Kutaman",
+          "Faqat commitni o'chiraman",
+          "BotFather orqali tokenni revoke/regenerate qilaman",
+          "Botni qayta nomlayman"
+        ],
+        "c": 2,
+        "w": "Secret leak bo'lsa tarixda qoladi; tokenni almashtirish shart.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Professional botning birinchi production talabi qaysi?",
+        "options": [
+          "Token xavfsizligi",
+          "Ko'p emoji",
+          "Uzun logo",
+          "Faqat /start"
+        ],
+        "correct": 0,
+        "why": "Token himoyasi bo'lmasa bot egallab olinishi mumkin."
+      },
+      {
+        "type": "gap",
+        "q": "Telegram bot tokenini kodga yozmasdan ___ orqali o'qiymiz.",
+        "answers": [
+          "env",
+          ".env",
+          "environment variable"
+        ],
+        "hint": "Secret runtime konfiguratsiyadan keladi.",
+        "why": "Env fayl va secret manager credentialni koddan ajratadi."
+      },
+      {
+        "type": "choice",
+        "q": "Echo botdan keyingi eng yaxshi qadam nima?",
+        "options": [
+          "Commandlarni route qilish",
+          "Tokenni commit qilish",
+          "Barcha xabarni bitta handlerga tiqish",
+          "Loglarni o'chirish"
+        ],
+        "correct": 0,
+        "why": "Command routing botni kengaytirish va test qilishni osonlashtiradi."
+      },
+      {
+        "type": "choice",
+        "q": "Starter bot repoida professional README nimani ko'rsatishi kerak?",
+        "options": [
+          "Setup, env, run, commands va test flow",
+          "Faqat loyiha nomi",
+          "Faqat token",
+          "Faqat screenshot"
+        ],
+        "correct": 0,
+        "why": "Fresh clone qilgan odam botni tokenni oshkor qilmasdan ishga tushira olishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Bot token leak bo'lsa BotFather orqali tokenni ___ qilish kerak.",
+        "answers": [
+          "revoke",
+          "regenerate",
+          "almashtirish"
+        ],
+        "hint": "Eski token ishlamasligi kerak.",
+        "why": "Secret tarixda qolgan bo'lsa commitni o'chirish yetarli emas, token yangilanadi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG1",
+    "title": "Updates, commands & middleware",
+    "sub": "Core",
+    "coord": "Core · TG1",
+    "eyebrow": "01 · Update oqimi",
+    "mtitle": "Update oqimini professional boshqarish",
+    "lede": "Bot har bir xabarni update sifatida oladi. Professional bot update turini ajratadi, command routing qiladi, middleware orqali logging, auth va error handlingni markazlashtiradi.",
+    "doc": "<div class='prose'><h3>Update nima?</h3><p>Telegram botga xabar, callback, inline query, join request yoki payment holatlari update bo'lib keladi. Kodda avval update turini ajratish, keyin handlerga yuborish kerak.</p><h3>Middleware nima beradi?</h3><p>Middleware har update oldidan/yakunida ishlaydi: request id, logging, user context, rate limit, auth va error handling uchun juda qulay.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Middleware",
+          "p": "Logging va error handling."
+        },
+        "title": "middleware.ts",
+        "lang": "typescript",
+        "code": "bot.use(async (ctx, next) => {\n  const started = Date.now();\n  try {\n    await next();\n  } catch (err) {\n    console.error('bot_error', err);\n    await ctx.reply('Kutilmagan xato. Keyinroq urinib ko‘ring.');\n  } finally {\n    console.log({ update: ctx.update.update_id, ms: Date.now() - started });\n  }\n});\n\nbot.command('help', (ctx) => ctx.reply('/start, /help, /profile'));"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg1-1",
+        "html": "Commandlar alohida handlerlarga ajratildi",
+        "crit": "/start va /help alohida ishlaydi"
+      },
+      {
+        "id": "tg1-2",
+        "html": "Logging middleware qo'shildi",
+        "crit": "update id va vaqt log bo'ladi"
+      },
+      {
+        "id": "tg1-3",
+        "html": "Global error handler bor",
+        "crit": "xato foydalanuvchiga chiroyli javob beradi"
+      },
+      {
+        "id": "tg1-4",
+        "html": "Unknown command holati yopildi",
+        "crit": "noto'g'ri komanda tushunarli javob oladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api#getting-updates",
+        "title": "Getting updates",
+        "desc": "Update obyektlari va olish usullari",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://grammy.dev/guide/middleware",
+        "title": "grammY middleware",
+        "desc": "Middleware konsepti",
+        "host": "grammy.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Core",
+      "title": "Command Router Bot",
+      "desc": "Command, text va unknown holatlarni tartibli route qiladigan bot yadrosi.",
+      "features": [
+        "/start, /help, /profile commandlari",
+        "Logging middleware",
+        "Global error handler",
+        "Unknown command fallback"
+      ],
+      "rubric": [
+        "Handlerlar bitta faylga tiqilmagan.",
+        "Error handler foydalanuvchiga secret chiqarmaydi.",
+        "Loglar debug uchun yetarli.",
+        "Har command qo'lda test qilingan.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Role Based Command Bot",
+          "desc": "User va admin commandlarini middleware orqali ajratadigan bot.",
+          "deliverables": [
+            "adminOnly middleware",
+            "/admin command",
+            "Unauthorized fallback"
+          ]
+        },
+        {
+          "title": "Support Ticket Router",
+          "desc": "Text, photo va commandlarni turiga qarab ticket flowga route qiladigan bot.",
+          "deliverables": [
+            "message type routing",
+            "global error handler",
+            "structured logs"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Middleware qachon ishlaydi?",
+        "a": [
+          "Faqat deployda",
+          "Update handlerlardan oldin/yoki keyin",
+          "Faqat testda",
+          "Faqat database bilan"
+        ],
+        "c": 1,
+        "w": "Middleware update oqimini kesib o'tadi va umumiy logicni markazlashtiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Nega global error handler kerak?",
+        "a": [
+          "Botni sekinlatish uchun",
+          "Crash va secret leakni kamaytirish uchun",
+          "Command nomini yashirish uchun",
+          "CSS uchun"
+        ],
+        "c": 1,
+        "w": "Xatoni ushlab, log qilish va foydalanuvchiga xavfsiz javob berish production talabidir.",
+        "level": "practical"
+      },
+      {
+        "q": "Foydalanuvchi noma'lum command yubordi. Professional javob?",
+        "a": [
+          "Hech narsa qilmaslik",
+          "Stack trace yuborish",
+          "Help/fallback ko'rsatish",
+          "Tokenni qaytarish"
+        ],
+        "c": 2,
+        "w": "Fallback UXni yaxshilaydi va userni keyingi qadamga yo'naltiradi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Log middlewareda qaysi signal foydali?",
+        "options": [
+          "update_id va duration",
+          "faqat emoji",
+          "token",
+          "foydalanuvchi paroli"
+        ],
+        "correct": 0,
+        "why": "update_id va duration xatoni kuzatish uchun kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Noma'lum commandga javob beradigan handler ___ deyiladi.",
+        "answers": [
+          "fallback",
+          "default",
+          "unknown"
+        ],
+        "hint": "Oxirgi tutuvchi javob.",
+        "why": "Fallback UXni buzmasdan noto'g'ri inputni yopadi."
+      },
+      {
+        "type": "choice",
+        "q": "Error handlerda nima qilinmaydi?",
+        "options": [
+          "Stack trace foydalanuvchiga yuborilmaydi",
+          "Log yoziladi",
+          "Xavfsiz javob qaytariladi",
+          "Admin alert yuborilishi mumkin"
+        ],
+        "correct": 0,
+        "why": "Stack trace ichida secret yoki ichki arxitektura chiqib ketishi mumkin."
+      },
+      {
+        "type": "choice",
+        "q": "Middleware tartibida auth qayerda turishi kerak?",
+        "options": [
+          "Handlerlardan oldin",
+          "Handlerlardan keyin faqat logda",
+          "Faqat deploy scriptda",
+          "CSS ichida"
+        ],
+        "correct": 0,
+        "why": "Auth handlerga yetmasdan user huquqini tekshiradi."
+      },
+      {
+        "type": "gap",
+        "q": "Har update uchun kuzatuv id sifatida ___ log qilish foydali.",
+        "answers": [
+          "update_id",
+          "update id"
+        ],
+        "hint": "Telegram update identifikatori.",
+        "why": "update_id muammo qaysi xabarda bo'lganini topishga yordam beradi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG2",
+    "title": "State, scenes & database",
+    "sub": "Ma'lumot",
+    "coord": "Ma'lumot · TG2",
+    "eyebrow": "02 · State va DB",
+    "mtitle": "Bot xotirasi: state, session va database",
+    "lede": "Professional bot suhbatni eslab qoladi: user profili, order holati, admin sozlamasi, payment tarixi. Buning uchun session va database modelini to'g'ri qurish kerak.",
+    "doc": "<div class='prose'><h3>State turlari</h3><p><strong>Temporary state</strong> — suhbat bosqichi, form wizard. <strong>Persistent state</strong> — user, order, subscription, permission. Temporary state sessionda, muhim state databaseda saqlanadi.</p><h3>DB model</h3><p>Minimal production botda <code>User</code>, <code>Session</code>, <code>Order</code>, <code>AuditLog</code> kabi model kerak bo'ladi. Bot logic databasedan ajratilgan service qatlam orqali ishlasa, keyin kengaytirish oson bo'ladi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "User modeli",
+          "p": "Prisma schema namunasi."
+        },
+        "title": "schema.prisma",
+        "lang": "prisma",
+        "code": "model User {\n  id          String   @id @default(cuid())\n  telegramId BigInt   @unique\n  username    String?\n  firstName   String?\n  role        String   @default(\"user\")\n  createdAt   DateTime @default(now())\n  updatedAt   DateTime @updatedAt\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg2-1",
+        "html": "User model yaratildi",
+        "crit": "telegramId unique"
+      },
+      {
+        "id": "tg2-2",
+        "html": "User birinchi /startda DBga yoziladi",
+        "crit": "takror start duplicate yaratmaydi"
+      },
+      {
+        "id": "tg2-3",
+        "html": "Session yoki wizard state ajratildi",
+        "crit": "form bosqichi yo'qolmaydi"
+      },
+      {
+        "id": "tg2-4",
+        "html": "DB xatolari try/catch bilan yopildi",
+        "crit": "bot crash qilmaydi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://grammy.dev/plugins/session",
+        "title": "grammY session",
+        "desc": "Session state plugin",
+        "host": "grammy.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.prisma.io/docs",
+        "title": "Prisma docs",
+        "desc": "ORM va database modeling",
+        "host": "prisma.io"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Database",
+      "title": "User Profile Bot",
+      "desc": "Telegram userni DBga yozadigan, profil ko'rsatadigan va role saqlaydigan bot.",
+      "features": [
+        "User model",
+        "/profile command",
+        "Upsert logic",
+        "Session yoki wizard bilan profil to'ldirish"
+      ],
+      "rubric": [
+        "Duplicate user yaratilmaydi.",
+        "telegramId unique ishlaydi.",
+        "DB error xavfsiz ko'rsatiladi.",
+        "Migration/seed yo'riqnomasi bor.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Booking Wizard Bot",
+          "desc": "Sana, vaqt va xizmat turini bosqichma-bosqich yig'adigan booking bot.",
+          "deliverables": [
+            "session wizard",
+            "Booking modeli",
+            "cancel/back command"
+          ]
+        },
+        {
+          "title": "CRM Profile Bot",
+          "desc": "Telegram user profilini DBda saqlab, segment va role bo'yicha ajratadigan bot.",
+          "deliverables": [
+            "User/Profile schema",
+            "/profile edit flow",
+            "audit log"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Qaysi state databaseda saqlanishi kerak?",
+        "a": [
+          "Order/payment holati",
+          "Hozirgi typing animatsiya",
+          "Bir martalik console log",
+          "CSS rang"
+        ],
+        "c": 0,
+        "w": "Muhim biznes state restartdan keyin ham saqlanishi kerak.",
+        "level": "easy"
+      },
+      {
+        "q": "telegramId uchun eng muhim talab?",
+        "a": [
+          "unique bo'lishi",
+          "har safar random bo'lishi",
+          "string bo'lmasligi",
+          "o'chirilishi"
+        ],
+        "c": 0,
+        "w": "Bir Telegram user bitta DB userga mos kelishi kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Bot restart bo'ldi. Order yo'qolmasligi uchun nima qilasan?",
+        "a": [
+          "Orderni memoryda saqlayman",
+          "Orderni DBga yozaman",
+          "Userdan qayta so'rayman",
+          "Logni o'chiraman"
+        ],
+        "c": 1,
+        "w": "Persistent biznes holat DBda saqlanadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "User yaratishda qaysi operatsiya duplicate oldini oladi?",
+        "options": [
+          "upsert",
+          "console.log",
+          "setTimeout",
+          "deleteMany"
+        ],
+        "correct": 0,
+        "why": "Upsert mavjud userni yangilaydi yoki yo'q bo'lsa yaratadi."
+      },
+      {
+        "type": "gap",
+        "q": "Telegram userni DBda ajratish uchun odatda ___ unique qilinadi.",
+        "answers": [
+          "telegramId",
+          "telegram id",
+          "id"
+        ],
+        "hint": "Telegramdan keladigan user id.",
+        "why": "telegramId user mapping uchun asosiy kalit."
+      },
+      {
+        "type": "choice",
+        "q": "Sessionga nima qo'yish xavfli?",
+        "options": [
+          "Karta paroli yoki secret",
+          "Form bosqichi",
+          "Tanlangan til",
+          "Oxirgi menu"
+        ],
+        "correct": 0,
+        "why": "Secret yoki sezgir ma'lumotni sessionda nazoratsiz saqlash xavfli."
+      },
+      {
+        "type": "choice",
+        "q": "Order yaratishda restartdan keyin ham saqlanishi kerak bo'lgan narsa?",
+        "options": [
+          "Order status",
+          "Inline spinner",
+          "console.log rangi",
+          "temporary typing"
+        ],
+        "correct": 0,
+        "why": "Order status biznes state, DBda turishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "User birinchi marta kelsa yaratib, keyin qayta kelsa yangilash operatsiyasi ___.",
+        "answers": [
+          "upsert"
+        ],
+        "hint": "create yoki update birga.",
+        "why": "Upsert duplicate user muammosini kamaytiradi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG3",
+    "title": "Inline keyboard & UX",
+    "sub": "Interaktiv",
+    "coord": "Interaktiv · TG3",
+    "eyebrow": "03 · Bot UX",
+    "mtitle": "Button, callback va menu bilan qulay bot yaratish",
+    "lede": "Foydalanuvchi botda kamroq yozib, ko'proq tanlashi kerak. Inline keyboard, reply keyboard, command menu va callback querylar professional bot UXining asosidir.",
+    "doc": "<div class='prose'><h3>Bot UX qoidasi</h3><p>Chat interfeysida foydalanuvchi yo'qolib qolmasligi kerak. Har javob keyingi qadamni ko'rsatadi: button, menu yoki qisqa command.</p><h3>Callback data</h3><p>Callback data qisqa va xavfsiz bo'lishi kerak. Unda secret yoki uzun JSON saqlama; kerak bo'lsa ID yuborib, detallarni DBdan o'qi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Inline keyboard",
+          "p": "Callback query bilan menyu."
+        },
+        "title": "menu.ts",
+        "lang": "typescript",
+        "code": "bot.command('menu', async (ctx) => {\n  await ctx.reply('Bo‘limni tanlang:', {\n    reply_markup: {\n      inline_keyboard: [\n        [{ text: 'Profil', callback_data: 'menu:profile' }],\n        [{ text: 'Buyurtma', callback_data: 'menu:order' }],\n      ],\n    },\n  });\n});\n\nbot.callbackQuery('menu:profile', (ctx) => ctx.answerCallbackQuery({ text: 'Profil ochildi' }));"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg3-1",
+        "html": "Inline keyboard menyu qo'shildi",
+        "crit": "buttonlar bosilganda javob bor"
+      },
+      {
+        "id": "tg3-2",
+        "html": "Callback data naming tartibi tanlandi",
+        "crit": "prefix:action format bor"
+      },
+      {
+        "id": "tg3-3",
+        "html": "answerCallbackQuery ishlatildi",
+        "crit": "loading spinner qolib ketmaydi"
+      },
+      {
+        "id": "tg3-4",
+        "html": "Menu fallback qo'shildi",
+        "crit": "eskirgan callback ham crash qilmaydi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/features#keyboards",
+        "title": "Telegram keyboards",
+        "desc": "Keyboard va interaction konseptlari",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api#callbackquery",
+        "title": "CallbackQuery",
+        "desc": "Callback query obyektlari",
+        "host": "core.telegram.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · UX",
+      "title": "Service Menu Bot",
+      "desc": "Buttonlar orqali profil, buyurtma va yordam menyularini boshqaradigan bot.",
+      "features": [
+        "Inline menu",
+        "Callback handlerlar",
+        "Back button",
+        "Eskirgan callback fallback"
+      ],
+      "rubric": [
+        "Har button aniq natija beradi.",
+        "Callback data qisqa va tartibli.",
+        "answerCallbackQuery ishlatilgan.",
+        "User har doim menyuga qayta oladi.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Catalog Menu Bot",
+          "desc": "Kategoriya, mahsulot va savatga o'tadigan inline keyboard katalog.",
+          "deliverables": [
+            "nested inline menu",
+            "back navigation",
+            "expired callback fallback"
+          ]
+        },
+        {
+          "title": "FAQ Navigator Bot",
+          "desc": "Ko'p savollarni buttonli daraxt orqali tez topadigan yordamchi bot.",
+          "deliverables": [
+            "FAQ categories",
+            "search fallback",
+            "answerCallbackQuery ishlatilgan"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Inline keyboard qayerda ko'rinadi?",
+        "a": [
+          "Xabar ostida",
+          "Faqat terminalda",
+          "Server logda",
+          "DB ichida"
+        ],
+        "c": 0,
+        "w": "Inline keyboard xabar ostidagi interaktiv buttonlar to'plami.",
+        "level": "easy"
+      },
+      {
+        "q": "Callback data ichiga nima yozmaslik kerak?",
+        "a": [
+          "secret/token",
+          "qisqa action id",
+          "menu prefix",
+          "item id"
+        ],
+        "c": 0,
+        "w": "Callback data foydalanuvchi tomonida ko'rinishi va uzatilishi mumkin, secret saqlanmaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "Button bosilganda spinner qolib ketdi. Nima yetishmayapti?",
+        "a": [
+          "answerCallbackQuery",
+          "sendPhoto",
+          "getMe",
+          "deleteWebhook"
+        ],
+        "c": 0,
+        "w": "Callback queryga javob berish Telegram clientdagi loading holatini yopadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Bot menu UXida eng yaxshi javob qaysi?",
+        "options": [
+          "Har xabarda keyingi qadam aniq",
+          "Foydalanuvchi taxmin qiladi",
+          "Faqat uzun matn",
+          "Buttonlar ishlamaydi"
+        ],
+        "correct": 0,
+        "why": "Chat UXda keyingi qadam ko'rinishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Callback spinnerni yopish uchun ___ chaqiriladi.",
+        "answers": [
+          "answerCallbackQuery",
+          "answer callback query"
+        ],
+        "hint": "Callback queryga javob.",
+        "why": "Aks holda Telegram client loading ko'rsatib turishi mumkin."
+      },
+      {
+        "type": "choice",
+        "q": "Callback data uchun yaxshi format?",
+        "options": [
+          "menu:profile",
+          "butun user token",
+          "katta JSON",
+          "parol"
+        ],
+        "correct": 0,
+        "why": "Prefix/action format routingni osonlashtiradi."
+      },
+      {
+        "type": "choice",
+        "q": "Callback data ichida katta JSON o'rniga nima yuborish yaxshi?",
+        "options": [
+          "Qisqa id yoki action key",
+          "Bot token",
+          "Butun user obyekti",
+          "Parol"
+        ],
+        "correct": 0,
+        "why": "Detallar server/DBdan olinadi, callback data qisqa qoladi."
+      },
+      {
+        "type": "gap",
+        "q": "User menyuda adashmasligi uchun har ekranda ___ tugmasi bo'lishi foydali.",
+        "answers": [
+          "back",
+          "orqaga",
+          "menu"
+        ],
+        "hint": "Oldingi joyga qaytish.",
+        "why": "Chat UXda qaytish yo'li bo'lsa, foydalanuvchi kamroq charchaydi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG4",
+    "title": "Webhook, deploy & scaling",
+    "sub": "Production",
+    "coord": "Production · TG4",
+    "eyebrow": "04 · Webhook",
+    "mtitle": "Pollingdan webhook va production deployga",
+    "lede": "Developmentda polling qulay, productionda webhook ko'proq nazorat beradi. Deployda HTTPS, secret path, retry, idempotency va monitoring muhim.",
+    "doc": "<div class='prose'><h3>Polling vs webhook</h3><p><strong>Polling</strong> — bot server Telegramdan update so'rab turadi. <strong>Webhook</strong> — Telegram update kelganda sening HTTPS endpointingga POST qiladi. Productionda webhook cloud deploy bilan yaxshi ishlaydi.</p><h3>Production xavflar</h3><p>Telegram retry qilishi mumkin; update qayta kelishi ehtimoli bor. Shuning uchun muhim actionlar idempotent bo'lishi, update_id yoki business id bo'yicha takror bajarilmasligi kerak.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Webhook endpoint",
+          "p": "Express bilan grammY webhook."
+        },
+        "title": "server.ts",
+        "lang": "typescript",
+        "code": "import express from 'express';\nimport { webhookCallback } from 'grammy';\nimport { bot } from './bot';\n\nconst app = express();\napp.use(express.json());\n\napp.get('/health', (_req, res) => res.json({ ok: true }));\napp.post(`/webhook/${process.env.WEBHOOK_SECRET}`, webhookCallback(bot, 'express'));\n\napp.listen(process.env.PORT || 3000);"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg4-1",
+        "html": "Webhook endpoint yaratildi",
+        "crit": "secret path ishlatiladi"
+      },
+      {
+        "id": "tg4-2",
+        "html": "Health endpoint bor",
+        "crit": "deploy monitoring tekshiradi"
+      },
+      {
+        "id": "tg4-3",
+        "html": "setWebhook script yozildi",
+        "crit": "deploydan keyin webhook o'rnatiladi"
+      },
+      {
+        "id": "tg4-4",
+        "html": "Duplicate update xavfi yopildi",
+        "crit": "muhim action idempotent"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api#setwebhook",
+        "title": "setWebhook",
+        "desc": "Webhook sozlash metodi",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://grammy.dev/guide/deployment-types",
+        "title": "grammY deployment",
+        "desc": "Polling, webhook va serverless deploy",
+        "host": "grammy.dev"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Deploy",
+      "title": "Webhook Production Bot",
+      "desc": "Express/Nest server ichida webhook endpoint, healthcheck va deploy script bilan production bot.",
+      "features": [
+        "Webhook endpoint",
+        "Health/readiness endpoint",
+        "setWebhook script",
+        "Idempotent update handling"
+      ],
+      "rubric": [
+        "Webhook URL secret path bilan himoyalangan.",
+        "Health endpoint deployda ishlaydi.",
+        "Polling productionda parallel qolmagan.",
+        "Retry/duplicate update haqida READMEda izoh bor.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Deployable Webhook Bot",
+          "desc": "Render/Fly/VPSga deploy qilinadigan webhook bot skeletoni.",
+          "deliverables": [
+            "/health endpoint",
+            "setWebhook script",
+            "production env guide"
+          ]
+        },
+        {
+          "title": "Idempotent Order Bot",
+          "desc": "Retry bo'lsa ham orderni bir marta yaratadigan bot.",
+          "deliverables": [
+            "processed update table",
+            "order idempotency key",
+            "duplicate test scenario"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Webhook qanday ishlaydi?",
+        "a": [
+          "Telegram update kelganda HTTPS endpointga POST qiladi",
+          "Bot Telegramdan doim so'raydi",
+          "Faqat local ishlaydi",
+          "DB migration qiladi"
+        ],
+        "c": 0,
+        "w": "Webhook push model: Telegram update yuboradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Webhook uchun nima shart?",
+        "a": [
+          "HTTPS endpoint",
+          "CSS file",
+          "Browser tab",
+          "SQLite faqat"
+        ],
+        "c": 0,
+        "w": "Telegram webhook URL HTTPS bo'lishi kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Telegram retry sabab bir order ikki marta bajarildi. Yechim?",
+        "a": [
+          "Idempotency",
+          "Ko'proq emoji",
+          "Tokenni loglash",
+          "Health endpointni o'chirish"
+        ],
+        "c": 0,
+        "w": "Muhim action business id bo'yicha faqat bir marta bajarilishi kerak.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Production webhook URLda nima bo'lishi foydali?",
+        "options": [
+          "secret path",
+          "tokenning o'zi",
+          "bo'sh path",
+          "admin parol"
+        ],
+        "correct": 0,
+        "why": "Secret path begona POSTlarni kamaytiradi."
+      },
+      {
+        "type": "gap",
+        "q": "Duplicate update zarar bermasligi uchun action ___ bo'lishi kerak.",
+        "answers": [
+          "idempotent",
+          "idempotency"
+        ],
+        "hint": "Bir necha marta chaqirilsa ham natija bir xil.",
+        "why": "Webhook retry holatida idempotency biznes xatolarni kamaytiradi."
+      },
+      {
+        "type": "choice",
+        "q": "Health endpoint nimaga kerak?",
+        "options": [
+          "Deploy monitoring",
+          "Token chiqarish",
+          "User parolini ko'rish",
+          "CSS render"
+        ],
+        "correct": 0,
+        "why": "Platforma server tirikligini tekshiradi."
+      },
+      {
+        "type": "choice",
+        "q": "Webhook deployda polling bilan birga ishlab qolsa nima xavf tug'iladi?",
+        "options": [
+          "Update ikki joyda qayta ishlanishi mumkin",
+          "CSS buziladi",
+          "BotFather o'chadi",
+          "DB schema avtomatik tuzaladi"
+        ],
+        "correct": 0,
+        "why": "Bir bot token uchun update oqimini bitta strategiya boshqarishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Telegram retry qilganda muhim action takrorlanmasligi uchun ___ kerak.",
+        "answers": [
+          "idempotency",
+          "idempotentlik"
+        ],
+        "hint": "Bir amal bir marta bajarilishi.",
+        "why": "Payment/order kabi actionlar duplicate bo'lmasligi shart."
+      }
+    ]
+  },
+  {
+    "zoom": "TG5",
+    "title": "Admin, roles & moderation",
+    "sub": "Boshqaruv",
+    "coord": "Boshqaruv · TG5",
+    "eyebrow": "05 · Admin panel",
+    "mtitle": "Admin va role-based bot boshqaruvi",
+    "lede": "Professional botda oddiy user va admin huquqlari ajraladi. Adminlar userni ko'radi, broadcast qiladi, orderni boshqaradi, lekin hamma action audit logga yoziladi.",
+    "doc": "<div class='prose'><h3>Role model</h3><p>Minimal role: <code>user</code>, <code>admin</code>, <code>owner</code>. Har admin command role checkdan o'tadi. Owner-only actionlar alohida himoyalanadi.</p><h3>Audit log</h3><p>Admin actionlar keyin tekshirilishi kerak: kim, qachon, qaysi user/order ustida nima qildi. Bu production botda muhim.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Role guard",
+          "p": "Admin commandni himoyalash."
+        },
+        "title": "guards.ts",
+        "lang": "typescript",
+        "code": "async function requireAdmin(ctx: MyContext, next: NextFunction) {\n  const user = await users.findByTelegramId(ctx.from!.id);\n  if (!user || user.role !== 'admin') {\n    return ctx.reply('Bu bo‘lim faqat adminlar uchun.');\n  }\n  await next();\n}\n\nbot.command('broadcast', requireAdmin, broadcastHandler);"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg5-1",
+        "html": "Role field DBga qo'shildi",
+        "crit": "user/admin ajraladi"
+      },
+      {
+        "id": "tg5-2",
+        "html": "Admin guard yozildi",
+        "crit": "oddiy user admin commandni ishlata olmaydi"
+      },
+      {
+        "id": "tg5-3",
+        "html": "Audit log modeli bor",
+        "crit": "admin action yoziladi"
+      },
+      {
+        "id": "tg5-4",
+        "html": "Broadcast xavfsiz qilindi",
+        "crit": "rate limit va preview bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api#getchatmember",
+        "title": "getChatMember",
+        "desc": "Chat member va permission tekshirish",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/features#botfather",
+        "title": "BotFather settings",
+        "desc": "Bot command/menu sozlamalari",
+        "host": "core.telegram.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Admin",
+      "title": "Admin Control Bot",
+      "desc": "Role guard, broadcast preview va audit log bilan admin boshqaruv botini qurish.",
+      "features": [
+        "user/admin/owner role",
+        "Admin-only command",
+        "Broadcast preview + confirm",
+        "Audit log"
+      ],
+      "rubric": [
+        "Oddiy user admin action bajara olmaydi.",
+        "Broadcast tasdiqsiz ketmaydi.",
+        "Admin action audit logga yoziladi.",
+        "Rate limit yoki batch yuborish bor.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Moderation Admin Bot",
+          "desc": "Userlarni ko'rish, ban/unban va ogohlantirish yuborish admin boti.",
+          "deliverables": [
+            "role middleware",
+            "ban/unban flow",
+            "audit log"
+          ]
+        },
+        {
+          "title": "Content Approval Bot",
+          "desc": "Post yoki arizalarni admin tasdiqlaydigan review bot.",
+          "deliverables": [
+            "pending queue",
+            "approve/reject buttons",
+            "admin notifications"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Admin commanddan oldin nima tekshiriladi?",
+        "a": [
+          "role/permission",
+          "bot avatar",
+          "CSS",
+          "username uzunligi"
+        ],
+        "c": 0,
+        "w": "Role check admin actionlarni himoya qiladi.",
+        "level": "easy"
+      },
+      {
+        "q": "Broadcast professional bo'lishi uchun nima kerak?",
+        "a": [
+          "preview + confirm + rate limit",
+          "birdan hammaga spam",
+          "token log",
+          "no audit"
+        ],
+        "c": 0,
+        "w": "Broadcast xato yuborilsa katta zarar. Preview, confirm va limit kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Admin order statusini o'zgartirdi. Keyin nizo chiqdi. Nima yordam beradi?",
+        "a": [
+          "audit log",
+          "emoji",
+          "bot nomi",
+          "CSS"
+        ],
+        "c": 0,
+        "w": "Audit log kim nima qilganini ko'rsatadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Owner-only command uchun eng kerakli narsa?",
+        "options": [
+          "role guard",
+          "kattaroq logo",
+          "random callback",
+          "tokenni xabarda yuborish"
+        ],
+        "correct": 0,
+        "why": "Role guard permissionni enforce qiladi."
+      },
+      {
+        "type": "gap",
+        "q": "Admin actionlar keyin tekshirish uchun ___ logga yoziladi.",
+        "answers": [
+          "audit",
+          "audit log"
+        ],
+        "hint": "Kim nima qildi?",
+        "why": "Audit log accountability beradi."
+      },
+      {
+        "type": "choice",
+        "q": "Broadcast yuborishdan oldin nima qilinadi?",
+        "options": [
+          "Preview va confirm",
+          "Token yuborish",
+          "DB o'chirish",
+          "Loglarni o'chirish"
+        ],
+        "correct": 0,
+        "why": "Preview xato matn yoki noto'g'ri segmentni oldindan ushlaydi."
+      },
+      {
+        "type": "choice",
+        "q": "Admin panelda xavfli actiondan oldin nima bo'lishi kerak?",
+        "options": [
+          "Confirmation",
+          "Tokenni ko'rsatish",
+          "Silent delete",
+          "Stack trace"
+        ],
+        "correct": 0,
+        "why": "Ban/delete/refund kabi actionlar tasodifan bosilmasligi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Admin actionlar tarixi uchun ___ jadvali foydali.",
+        "answers": [
+          "AuditLog",
+          "audit log",
+          "audit"
+        ],
+        "hint": "Kim nima qildi degan yozuv.",
+        "why": "Moderation va xavfsizlikda action izlari kerak bo'ladi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG6",
+    "title": "Payments, subscriptions & orders",
+    "sub": "Monetizatsiya",
+    "coord": "Monetizatsiya · TG6",
+    "eyebrow": "06 · To'lov",
+    "mtitle": "Bot orqali buyurtma, to'lov va obuna oqimlari",
+    "lede": "Telegram bot biznes jarayonni avtomatlashtira oladi: katalog, order, invoice, payment status, subscription va refund flow. Bunda xavfsizlik va idempotency juda muhim.",
+    "doc": "<div class='prose'><h3>Payment flow</h3><p>Bot mahsulotni tanlatadi, order yaratadi, invoice yuboradi, payment update kelgach order statusini yangilaydi. Hech qachon karta ma'lumotini o'zing saqlama.</p><h3>Idempotency</h3><p>Payment update qayta kelishi mumkin. Order statusini <code>paid</code> qilish operatsiyasi idempotent bo'lishi shart.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Order status",
+          "p": "Payment update uchun xavfsiz flow."
+        },
+        "title": "payment.ts",
+        "lang": "typescript",
+        "code": "async function markPaid(orderId: string, chargeId: string) {\n  return db.order.updateMany({\n    where: { id: orderId, status: 'pending' },\n    data: { status: 'paid', providerChargeId: chargeId, paidAt: new Date() },\n  });\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg6-1",
+        "html": "Order model yaratildi",
+        "crit": "pending/paid/canceled status bor"
+      },
+      {
+        "id": "tg6-2",
+        "html": "Invoice yoki checkout flow chizildi",
+        "crit": "user qadamlarni tushunadi"
+      },
+      {
+        "id": "tg6-3",
+        "html": "Payment update idempotent ishlaydi",
+        "crit": "takror update duplicate bermaydi"
+      },
+      {
+        "id": "tg6-4",
+        "html": "Refund/cancel holati yozildi",
+        "crit": "support flow bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/payments",
+        "title": "Telegram Payments",
+        "desc": "Rasmiy payment konsepti",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/api#payments",
+        "title": "Bot API Payments",
+        "desc": "Payment API obyektlari",
+        "host": "core.telegram.org"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Commerce",
+      "title": "Paid Course Bot",
+      "desc": "Kurs yoki raqamli mahsulot uchun order, invoice va paid access flow.",
+      "features": [
+        "Product catalog",
+        "Order model",
+        "Payment status update",
+        "Paid-only content guard"
+      ],
+      "rubric": [
+        "Payment update idempotent.",
+        "Karta ma'lumoti saqlanmaydi.",
+        "Paid access role/status orqali tekshiriladi.",
+        "Cancel/refund holati dokumentatsiya qilingan.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Digital Product Sales Bot",
+          "desc": "PDF/kurs/servis sotadigan order va payment flow boti.",
+          "deliverables": [
+            "invoice flow",
+            "order status model",
+            "success/failure handling"
+          ]
+        },
+        {
+          "title": "Subscription Access Bot",
+          "desc": "Pullik kanal yoki premium materialga obuna boshqaradigan bot.",
+          "deliverables": [
+            "subscription table",
+            "expiry scheduler",
+            "access revoke flow"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Karta ma'lumotini bot DBsida saqlash kerakmi?",
+        "a": [
+          "Yo'q",
+          "Ha, doim",
+          "Faqat logda",
+          "READMEda"
+        ],
+        "c": 0,
+        "w": "Payment provider karta ma'lumotini qayta ishlaydi; botda sezgir karta data saqlanmaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Order statuslari nima uchun kerak?",
+        "a": [
+          "Payment flowni boshqarish",
+          "CSS rang",
+          "Bot avatar",
+          "Token uzunligi"
+        ],
+        "c": 0,
+        "w": "pending/paid/canceled statuslar biznes jarayonni aniq qiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Payment update ikki marta keldi. Nima himoya qiladi?",
+        "a": [
+          "idempotent update",
+          "ko'proq button",
+          "token log",
+          "random status"
+        ],
+        "c": 0,
+        "w": "Idempotent update duplicate paid actionni oldini oladi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Paid content ochish uchun nimani tekshirasan?",
+        "options": [
+          "order/subscription status",
+          "user ismi uzunligi",
+          "xabar emoji",
+          "bot avatar"
+        ],
+        "correct": 0,
+        "why": "Access biznes status orqali boshqariladi."
+      },
+      {
+        "type": "gap",
+        "q": "Takror payment update zarar bermasligi uchun status update ___ bo'lishi kerak.",
+        "answers": [
+          "idempotent",
+          "idempotency"
+        ],
+        "hint": "Bir necha marta chaqirilsa ham bitta natija.",
+        "why": "Payment tizimida retry normal holat."
+      },
+      {
+        "type": "choice",
+        "q": "Paymentda eng xavfli xato?",
+        "options": [
+          "Sezgir karta ma'lumotini saqlash",
+          "Order id ishlatish",
+          "Status saqlash",
+          "Receipt yuborish"
+        ],
+        "correct": 0,
+        "why": "Sezgir payment ma'lumotlarini noto'g'ri saqlash xavfsizlik va compliance muammosi."
+      },
+      {
+        "type": "choice",
+        "q": "Payment success kelganda eng muhim tekshiruv?",
+        "options": [
+          "Provider payload/order mosligi",
+          "Button rangi",
+          "User ismi uzunligi",
+          "Emoji soni"
+        ],
+        "correct": 0,
+        "why": "Payment callback real order bilan mos kelishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Subscription muddati tugaganda user huquqini yangilash uchun ___ job kerak bo'lishi mumkin.",
+        "answers": [
+          "cron",
+          "scheduled",
+          "scheduler"
+        ],
+        "hint": "Vaqt bo'yicha ishlaydi.",
+        "why": "Obuna muddati chat xabaridan mustaqil tekshiriladi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG7",
+    "title": "Mini Apps & WebApp",
+    "sub": "Full-stack",
+    "coord": "Full-stack · TG7",
+    "eyebrow": "07 · Mini App",
+    "mtitle": "Telegram Mini App bilan botni full-stack mahsulotga aylantirish",
+    "lede": "Murakkab UI chat ichida noqulay bo'lsa, Telegram Mini App ochiladi. Bot login/context beradi, web app esa form, dashboard, payment yoki katalogni chiroyli ko'rsatadi.",
+    "doc": "<div class='prose'><h3>Qachon Mini App?</h3><p>Katalog, form, dashboard, booking, analytics, complex checkout kabi UIlar chat xabariga sig'maydi. Mini App React/Vite bilan qurilib, bot orqali ochiladi.</p><h3>Init data tekshirish</h3><p>Mini App Telegramdan init data oladi. Backend uni tekshirishi kerak; aks holda user spoofing xavfi bor.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "WebApp button",
+          "p": "Botdan mini app ochish."
+        },
+        "title": "webapp-button.ts",
+        "lang": "typescript",
+        "code": "bot.command('app', (ctx) => ctx.reply('Mini App ochish:', {\n  reply_markup: {\n    inline_keyboard: [[{ text: 'Dashboard', web_app: { url: process.env.WEBAPP_URL! } }]],\n  },\n}));"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg7-1",
+        "html": "Mini App URL sozlandi",
+        "crit": "button appni ochadi"
+      },
+      {
+        "id": "tg7-2",
+        "html": "initData backendda tekshirildi",
+        "crit": "fake user o'tmaydi"
+      },
+      {
+        "id": "tg7-3",
+        "html": "React UI bot flow bilan bog'landi",
+        "crit": "botdan appga context o'tadi"
+      },
+      {
+        "id": "tg7-4",
+        "html": "Mobile UX sinovdan o'tdi",
+        "crit": "Telegram ichida ishlaydi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/webapps",
+        "title": "Telegram Mini Apps",
+        "desc": "Rasmiy Mini App hujjatlari",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.telegram-mini-apps.com/",
+        "title": "Telegram Mini Apps docs",
+        "desc": "Community documentation va SDKlar",
+        "host": "docs.telegram-mini-apps.com"
+      }
+    ],
+    "project": {
+      "tag": "Mini loyiha · Mini App",
+      "title": "Telegram CRM Mini App",
+      "desc": "Botdan ochiladigan React Mini App: user dashboard, order list va profile.",
+      "features": [
+        "Botdan WebApp button",
+        "React Mini App",
+        "initData verification",
+        "Backend API bilan bog'lanish"
+      ],
+      "rubric": [
+        "Mini App Telegram ichida ochiladi.",
+        "initData backendda tekshiriladi.",
+        "Mobile layout sinmaydi.",
+        "Bot va web app state mos ishlaydi.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Mini CRM WebApp Bot",
+          "desc": "Telegram ichida lead va tasklarni boshqaradigan Mini App.",
+          "deliverables": [
+            "WebApp launch button",
+            "initData validation",
+            "API auth binding"
+          ]
+        },
+        {
+          "title": "Restaurant Order Mini App",
+          "desc": "Menu, savat va buyurtma confirmation oqimini Mini App orqali qurish.",
+          "deliverables": [
+            "cart UI",
+            "sendData/order submit",
+            "bot confirmation message"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Mini App qachon kerak?",
+        "a": [
+          "Murakkab UI chatga sig'maganda",
+          "Har doim",
+          "Faqat token saqlash uchun",
+          "Log o'chirish uchun"
+        ],
+        "c": 0,
+        "w": "Dashboard, katalog, form kabi UIlar Mini Appga mos.",
+        "level": "easy"
+      },
+      {
+        "q": "Mini Appda user identity qanday himoyalanadi?",
+        "a": [
+          "initData verification",
+          "CSS class",
+          "Random username",
+          "LocalStoragega ishonish"
+        ],
+        "c": 0,
+        "w": "Backend Telegram initData imzosini tekshirishi kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Frontend userId yubordi, backend tekshirmay ishondi. Xavf?",
+        "a": [
+          "User spoofing",
+          "Tezroq ishlash",
+          "Yaxshi UX",
+          "Hech narsa"
+        ],
+        "c": 0,
+        "w": "Clientdan kelgan identityga tekshiruvsiz ishonish mumkin emas.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Mini App backendida birinchi xavfsizlik tekshiruvi?",
+        "options": [
+          "initData verification",
+          "button rangi",
+          "font",
+          "logo"
+        ],
+        "correct": 0,
+        "why": "Identity va auth Telegram imzosi bilan tekshiriladi."
+      },
+      {
+        "type": "gap",
+        "q": "Botdan web UI ochish uchun inline button ichida ___ field ishlatiladi.",
+        "answers": [
+          "web_app",
+          "web app"
+        ],
+        "hint": "Telegram WebApp button field.",
+        "why": "web_app URL Telegram client ichida mini app ochadi."
+      },
+      {
+        "type": "choice",
+        "q": "Mini App uchun yaxshi use-case?",
+        "options": [
+          "Order dashboard",
+          "Bitta /start javobi",
+          "Token loglash",
+          "Server restart"
+        ],
+        "correct": 0,
+        "why": "Dashboard murakkab UI, Mini Appga mos."
+      },
+      {
+        "type": "choice",
+        "q": "Mini App botga qaytaradigan data qayerda tekshirilishi kerak?",
+        "options": [
+          "Serverda initData validation bilan",
+          "Faqat frontendda",
+          "Faqat CSSda",
+          "Tekshirilmaydi"
+        ],
+        "correct": 0,
+        "why": "Mini App initData serverda tekshirilmasa soxta user yuborilishi mumkin."
+      },
+      {
+        "type": "gap",
+        "q": "Mini App Telegram ichida ochiladigan web interfeys bo'lib, bot bilan ___ orqali ulanadi.",
+        "answers": [
+          "WebApp",
+          "Telegram WebApp",
+          "web app"
+        ],
+        "hint": "Telegramning web integratsiyasi.",
+        "why": "WebApp chat ichidagi boy interfeys uchun ishlatiladi."
+      }
+    ]
+  },
+  {
+    "zoom": "TG8",
+    "title": "Observability, security & final",
+    "sub": "Senior",
+    "coord": "Senior · TG8",
+    "eyebrow": "08 · Production bot",
+    "mtitle": "Production Telegram botni yakunlash",
+    "lede": "Senior darajadagi bot monitoring, alert, rate limit, backup, security checklist va deployment runbook bilan yashaydi. Final loyiha portfolio uchun tayyor bo'lishi kerak.",
+    "doc": "<div class='prose'><h3>Production checklist</h3><p>Bot ishlashi yetmaydi; uni kuzatish, tiklash va himoya qilish kerak. Log, metric, alert, backup va incident runbook bo'lmasa, kichik xato ham biznesga zarar beradi.</p><h3>Security baseline</h3><p>Token secret managerda, webhook secret path bilan, admin command role guard bilan, payment/order idempotent, rate limit va audit log bor.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Structured log",
+          "p": "Minimal log obyekt."
+        },
+        "title": "logger.ts",
+        "lang": "typescript",
+        "code": "logger.info({\n  event: 'update_handled',\n  updateId: ctx.update.update_id,\n  userId: ctx.from?.id,\n  durationMs,\n});"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tg8-1",
+        "html": "Structured logging bor",
+        "crit": "updateId/userId/duration log qilinadi"
+      },
+      {
+        "id": "tg8-2",
+        "html": "Rate limit qo'shildi",
+        "crit": "spam botni yiqitmaydi"
+      },
+      {
+        "id": "tg8-3",
+        "html": "Backup va restore rejasi yozildi",
+        "crit": "DB yo'qolsa tiklash yo'li bor"
+      },
+      {
+        "id": "tg8-4",
+        "html": "Final bot deploy qilindi",
+        "crit": "README, env example, smoke test bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://core.telegram.org/bots/faq",
+        "title": "Telegram Bot FAQ",
+        "desc": "Botlar bo'yicha rasmiy savol-javob",
+        "host": "core.telegram.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://grammy.dev/plugins/ratelimiter",
+        "title": "grammY ratelimiter",
+        "desc": "Rate limiting plugin",
+        "host": "grammy.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://12factor.net/config",
+        "title": "12-Factor Config",
+        "desc": "Secret va config boshqaruvi",
+        "host": "12factor.net"
+      }
+    ],
+    "project": {
+      "tag": "Final loyiha · Portfolio",
+      "title": "Production Telegram Business Bot",
+      "desc": "Real biznes uchun bot: onboarding, menu, DB, admin, payment yoki order, webhook deploy va monitoring bilan.",
+      "features": [
+        "User onboarding + profile",
+        "Database + admin panel",
+        "Order/payment yoki booking flow",
+        "Webhook deploy + healthcheck",
+        "Logging, rate limit, audit log, README"
+      ],
+      "rubric": [
+        "Fresh clone + README bo'yicha ishga tushadi.",
+        "Bot token va secretlar repo ichida yo'q.",
+        "Webhook production URLda ishlaydi yoki deploy yo'riqnomasi bor.",
+        "Admin/payment/order flow idempotent va audit logli.",
+        "Portfolio uchun screenshot, demo flow va technical write-up tayyor.",
+        "Tanlangan variant uchun real foydalanuvchi oqimi oxirigacha ishlaydi.",
+        "READMEda demo flow, env va deploy cheklovlari aniq yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "SaaS Notification Bot",
+          "desc": "User, plan, notification preference va admin monitoringga ega production bot.",
+          "deliverables": [
+            "multi-user DB model",
+            "rate limit + logs",
+            "deploy checklist"
+          ]
+        },
+        {
+          "title": "Marketplace Assistant Bot",
+          "desc": "Seller/buyer flow, order status, admin dispute va alert bilan yakuniy bot.",
+          "deliverables": [
+            "role-based flows",
+            "order lifecycle",
+            "observability dashboard notes"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Production botda log nimaga kerak?",
+        "a": [
+          "Xatoni topish va kuzatish",
+          "Faylni kattalashtirish",
+          "CSS",
+          "Token tarqatish"
+        ],
+        "c": 0,
+        "w": "Log incident vaqtida nima bo'lganini tushunishga yordam beradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Rate limit nimani kamaytiradi?",
+        "a": [
+          "Spam va overload",
+          "DB schema",
+          "bot username",
+          "deploy URL"
+        ],
+        "c": 0,
+        "w": "Rate limit ko'p so'rovdan botni himoya qiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Bot ishlamay qoldi. Senior runbookda nima bo'ladi?",
+        "a": [
+          "Tekshiruv va tiklash qadamlar ro'yxati",
+          "Faqat emoji",
+          "Tokenni public qilish",
+          "DBni o'chirish"
+        ],
+        "c": 0,
+        "w": "Runbook incidentda vahimasiz tiklash uchun kerak.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Production checklistdagi eng muhim narsa?",
+        "options": [
+          "Secret, logging, backup, rate limit",
+          "Faqat chiroyli nom",
+          "Tokenni kodga yozish",
+          "Errorlarni yutib yuborish"
+        ],
+        "correct": 0,
+        "why": "Professional bot kuzatiladigan va tiklanadigan bo'lishi kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Spamdan himoya qilish uchun botga ___ qo'shiladi.",
+        "answers": [
+          "rate limit",
+          "ratelimit",
+          "rate limiter"
+        ],
+        "hint": "Bir user/time window cheklovi.",
+        "why": "Rate limit abuse va overloadni kamaytiradi."
+      },
+      {
+        "type": "choice",
+        "q": "Final bot portfolio uchun qanday topshiriladi?",
+        "options": [
+          "Demo flow, README, screenshot, deploy/run yo'riqnomasi bilan",
+          "Faqat token bilan",
+          "Faqat bitta screenshot",
+          "README yo'q"
+        ],
+        "correct": 0,
+        "why": "Portfolio ish beruvchi yoki clientga tushunarli bo'lishi kerak."
+      },
+      {
+        "type": "choice",
+        "q": "Production botda alert qaysi holatda kerak?",
+        "options": [
+          "Error spike yoki webhook failure",
+          "Har emoji bosilganda",
+          "README ochilganda",
+          "CSS hoverda"
+        ],
+        "correct": 0,
+        "why": "Alert faqat operatsion xavfli signallarda foydali."
+      },
+      {
+        "type": "gap",
+        "q": "Final loyiha topshirishda README, env, deploy va test bilan birga ___ loglar ham ko'rsatiladi.",
+        "answers": [
+          "structured",
+          "strukturali",
+          "structured logs"
+        ],
+        "hint": "Qidirish oson log format.",
+        "why": "Structured log monitoring va debuggingni osonlashtiradi."
+      }
+    ]
+  }
+]

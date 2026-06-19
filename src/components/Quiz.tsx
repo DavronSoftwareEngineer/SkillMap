@@ -2,6 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { QuizQuestion } from "../types";
 import { useStore } from "../store";
 
+const LEVEL_LABEL: Record<NonNullable<QuizQuestion["level"]>, string> = {
+  easy: "Oson",
+  practical: "Amaliy",
+  scenario: "Scenario",
+};
+
 export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestion[] }) {
   const { recordQuiz } = useStore();
   const [picks, setPicks] = useState<Record<number, number>>({});
@@ -64,7 +70,8 @@ export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestio
         return (
           <div className="qcard" key={qi}>
             <div className="qq">
-              {qi + 1}. {item.q}
+              <span>{qi + 1}. {item.q}</span>
+              {item.level && <span className={"qlevel " + item.level}>{LEVEL_LABEL[item.level]}</span>}
             </div>
             <div className="qopts">
               {item.a.map((txt, oi) => {
