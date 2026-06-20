@@ -1,5 +1,9 @@
 # MyAcademy
 
+## Qo'shimcha yo'l xaritasi
+
+- [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
+
 Bitta ilova, **beshta mustaqil kurs**:
 - **Geospatial** — WebGIS Full-Stack (React, NestJS, PostGIS, Tegola, Docker)
 - **English** — 0 dan IELTS gacha (A1→B2 + Listening/Reading/Writing/Speaking)

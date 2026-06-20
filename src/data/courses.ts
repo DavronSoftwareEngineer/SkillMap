@@ -1,4 +1,5 @@
 import type { Module, Book } from "../types";
+import { WEBGIS_FLAGSHIP_MODULE } from "./webgis-flagship";
 
 export interface CourseMeta {
   id: string;
@@ -30,7 +31,8 @@ const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
 export async function loadCourseModules(id: string): Promise<Module[]> {
   const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
   const data = await loader();
-  return data.default as Module[];
+  const modules = data.default as Module[];
+  return id === "webgis" ? [...modules, WEBGIS_FLAGSHIP_MODULE] : modules;
 }
 
 // Urg'u ranglari (kartalar uchun) — aylanib ishlatiladi.
