@@ -114,15 +114,15 @@
         "level": "easy"
       },
       {
-        "q": "\"Привет\" nima degani?",
+        "q": "Это ... nima degani?",
         "a": [
           "Xayr",
-          "Salom (do'stona)",
+          "Bu ...",
           "Rahmat",
           "Kechirasiz"
         ],
         "c": 1,
-        "w": "Привет — do'stona salom.",
+        "w": "Это - bu degani. Rus tilida predmet yoki holatni ko'rsatishda ishlatiladi: Это книга - Bu kitob. Javobda ko'rsatish ma'nosi bor.",
         "level": "practical"
       },
       {
@@ -423,19 +423,19 @@
           "ko'plik"
         ],
         "c": 2,
-        "w": "-о → neytral rod.",
+        "w": "-о -> neytral rod.",
         "level": "practical"
       },
       {
-        "q": "\"Это …\" nima degani?",
+        "q": "Это ... nima degani?",
         "a": [
           "U yerda",
-          "Bu …",
+          "Bu ...",
           "Kim",
           "Qachon"
         ],
         "c": 1,
-        "w": "??? ? ?bu? degani. Rus tilida predmet yoki holatni ko?rsatishda ishlatiladi: ???? ?????? ? ?Bu kitob?. Javobda ko?rsatish ma?nosi bor.",
+        "w": "Это - bu degani. Rus tilida predmet yoki holatni ko'rsatishda ishlatiladi: Это книга - Bu kitob. Javobda ko'rsatish ma'nosi bor.",
         "level": "scenario"
       }
     ],
@@ -447,7 +447,7 @@
           "Я есть врач",
           "Я врач",
           "Я быть врач",
-          "Врач есть"
+          "врач есть"
         ],
         "correct": 1,
         "why": "\"to be\" yo'q: Я врач."

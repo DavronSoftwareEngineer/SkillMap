@@ -83,19 +83,19 @@
       "features": [
         "`GET /health` JSON qaytaradi",
         "`GET /` qisqa service info qaytaradi",
-        "Port `.env` orqali o?qiladi",
-        "README?da curl bilan tekshirish bor",
+        "Port `.env` orqali o'qiladi",
+        "README'da curl bilan tekshirish bor",
         "API contract yoki schema",
         "Validation va error handling",
         "Kamida bitta test yoki manual test script",
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Health Check Server mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Health Check Server mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Server qayta ishga tushganda ham config `.env.example` orqali tushunarli bo?ladi.",
+        "Server qayta ishga tushganda ham config `.env.example` orqali tushunarli bo'ladi.",
         "Endpointlar aniq contract bo'yicha ishlaydi.",
         "Xato holatlari secret chiqarmasdan qaytadi.",
         "DB/env sozlamalari READMEda tushunarli.",
@@ -167,7 +167,7 @@
         "options": [
           "runtime",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -284,11 +284,11 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "CLI File Notes mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "CLI File Notes mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "CLI komandalarini kamida 4 ta qo?l testi bilan tekshir.",
+        "CLI komandalarini kamida 4 ta qo'l testi bilan tekshir.",
         "Endpointlar aniq contract bo'yicha ishlaydi.",
         "Xato holatlari secret chiqarmasdan qaytadi.",
         "DB/env sozlamalari READMEda tushunarli.",
@@ -360,7 +360,7 @@
         "options": [
           "Node module",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -468,7 +468,7 @@
       "desc": "Express/Fastify bilan CRUD REST API quriladi.",
       "features": [
         "`GET/POST/PATCH/DELETE /tasks`",
-        "Status code to?g?ri ishlatiladi",
+        "Status code to'g'ri ishlatiladi",
         "Validation va not found response bor",
         "Postman/Thunder Client collection yoki curl namunalar bor",
         "API contract yoki schema",
@@ -477,7 +477,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Tasks REST API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Tasks REST API mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -553,7 +553,7 @@
         "options": [
           "REST route",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -646,7 +646,7 @@
     "project": {
       "tag": "Mini loyiha ? Middleware",
       "title": "Validated API Gateway",
-      "desc": "Middleware zanjiri bilan validation, auth mock va centralized error handling qo?shiladi.",
+      "desc": "Middleware zanjiri bilan validation, auth mock va centralized error handling qo'shiladi.",
       "features": [
         "Request logger middleware",
         "Validation middleware",
@@ -658,7 +658,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Validated API Gateway mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Validated API Gateway mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -734,7 +734,7 @@
         "options": [
           "middleware",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -836,7 +836,7 @@
       "features": [
         "users/books/loans jadvallari",
         "Primary/foreign keylar",
-        "Index qo?shilgan query",
+        "Index qo'shilgan query",
         "Transaction bilan borrow/return flow",
         "API contract yoki schema",
         "Validation va error handling",
@@ -844,7 +844,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Library SQL Schema mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Library SQL Schema mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -920,7 +920,7 @@
         "options": [
           "SQL query",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1034,7 +1034,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Inventory API with ORM mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Inventory API with ORM mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1110,7 +1110,7 @@
         "options": [
           "ORM model",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1206,7 +1206,7 @@
       "desc": "Redis yoki in-memory cache bilan response tezlatish.",
       "features": [
         "Cache key strategy",
-        "TTL qo?llanadi",
+        "TTL qo'llanadi",
         "Cache hit/miss log qilinadi",
         "Invalidate flow bor",
         "API contract yoki schema",
@@ -1215,11 +1215,11 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Cached Products API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Cached Products API mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Cache eski data muammosi qanday hal qilingani README?da yoziladi.",
+        "Cache eski data muammosi qanday hal qilingani README'da yoziladi.",
         "Endpointlar aniq contract bo'yicha ishlaydi.",
         "Xato holatlari secret chiqarmasdan qaytadi.",
         "DB/env sozlamalari READMEda tushunarli.",
@@ -1291,7 +1291,7 @@
         "options": [
           "cache",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1413,7 +1413,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Secure Auth API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Secure Auth API mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1489,7 +1489,7 @@
         "options": [
           "JWT",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1594,7 +1594,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Modular NestJS Service mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Modular NestJS Service mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1670,7 +1670,7 @@
         "options": [
           "module boundary",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1775,7 +1775,7 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Public API Contract mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Public API Contract mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1851,7 +1851,7 @@
         "options": [
           "GraphQL/gRPC",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1956,11 +1956,11 @@
         "READMEda env va run flow"
       ],
       "rubric": [
-        "Observable API mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Observable API mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Production xato bo?lsa logdan request yo?lini topish mumkin bo?lishi kerak.",
+        "Production xato bo'lsa logdan request yo'lini topish mumkin bo'lishi kerak.",
         "Endpointlar aniq contract bo'yicha ishlaydi.",
         "Xato holatlari secret chiqarmasdan qaytadi.",
         "DB/env sozlamalari READMEda tushunarli.",
@@ -2032,7 +2032,7 @@
         "options": [
           "unit test",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -2166,17 +2166,17 @@
         "Validation/error/logging/test",
         "Dockerfile yoki compose",
         "OpenAPI/curl documentation",
-        "Deploy yoki lokal production run yo?riqnomasi",
+        "Deploy yoki lokal production run yo'riqnomasi",
         "API contract yoki schema",
         "Validation va error handling",
         "Kamida bitta test yoki manual test script"
       ],
       "rubric": [
-        "Production Backend Platform mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Production Backend Platform mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Fresh clone + README bo?yicha API ishga tushadi va smoke testdan o?tadi.",
+        "Fresh clone + README bo'yicha API ishga tushadi va smoke testdan o'tadi.",
         "Endpointlar aniq contract bo'yicha ishlaydi.",
         "Xato holatlari secret chiqarmasdan qaytadi.",
         "DB/env sozlamalari READMEda tushunarli.",
@@ -2248,7 +2248,7 @@
         "options": [
           "Docker deploy",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,

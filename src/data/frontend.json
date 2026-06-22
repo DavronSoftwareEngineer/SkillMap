@@ -67,10 +67,10 @@
     "project": {
       "tag": "Mini loyiha ? Setup",
       "title": "Hello Web Workspace",
-      "desc": "VS Code, brauzer va oddiy HTML fayl bilan birinchi ish muhitini tayyorla. Maqsad: frontend ish jarayoni qanday boshlanishini amalda ko?rish.",
+      "desc": "VS Code, brauzer va oddiy HTML fayl bilan birinchi ish muhitini tayyorla. Maqsad: frontend ish jarayoni qanday boshlanishini amalda ko'rish.",
       "features": [
         "`index.html` yaratiladi",
-        "Sahifada sarlavha, qisqa bio va 3 ta o?rganish maqsadi bo?ladi",
+        "Sahifada sarlavha, qisqa bio va 3 ta o'rganish maqsadi bo'ladi",
         "Brauzerda ochib screenshot yoki qisqa izoh bilan tasdiqlanadi",
         "Frontend/backend farqi 3 gap bilan yoziladi",
         "Responsive desktop/mobile holat",
@@ -79,11 +79,11 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Hello Web Workspace mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Hello Web Workspace mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "HTML valid bo?lishi va matnlar o?quvchining o?z maqsadiga mos yozilishi kerak.",
+        "HTML valid bo'lishi va matnlar o'quvchining o'z maqsadiga mos yozilishi kerak.",
         "UI barcha asosiy breakpointlarda buzilmaydi.",
         "Loading, empty va error holatlari ko'rsatilgan.",
         "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
@@ -153,13 +153,13 @@
         "type": "choice",
         "q": "FE0: bu modulda eng asosiy tushuncha qaysi?",
         "options": [
-          "HTTP so?rov",
+          "HTTP so'rov",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
-        "why": "HTTP so?rov - Kirish & Web qanday ishlaydi modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
+        "why": "HTTP so'rov - Kirish & Web qanday ishlaydi modulidagi amaliy poydevor. Uni kichik misolda sinab ko'rish kerak."
       },
       {
         "type": "gap",
@@ -248,11 +248,11 @@
     "project": {
       "tag": "Mini loyiha ? HTML",
       "title": "Semantic Portfolio Page",
-      "desc": "Semantik HTML orqali bir sahifalik portfolio skeleti quriladi. Maqsad: divga yopishmasdan, ma?noli teglar bilan sahifa tuzish.",
+      "desc": "Semantik HTML orqali bir sahifalik portfolio skeleti quriladi. Maqsad: divga yopishmasdan, ma'noli teglar bilan sahifa tuzish.",
       "features": [
         "`header`, `main`, `section`, `article`, `footer` ishlatiladi",
-        "Kontakt formasi `label` bilan bog?lanadi",
-        "Navigatsiya linklari sahifa bo?limlariga olib boradi",
+        "Kontakt formasi `label` bilan bog'lanadi",
+        "Navigatsiya linklari sahifa bo'limlariga olib boradi",
         "Rasm uchun `alt`, forma uchun required maydonlar bor",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
@@ -260,11 +260,11 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Semantic Portfolio Page mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Semantic Portfolio Page mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Accessibility: keyboard bilan formaga o?tish va label bosilganda input focus bo?lishi tekshiriladi.",
+        "Accessibility: keyboard bilan formaga o'tish va label bosilganda input focus bo'lishi tekshiriladi.",
         "UI barcha asosiy breakpointlarda buzilmaydi.",
         "Loading, empty va error holatlari ko'rsatilgan.",
         "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
@@ -336,7 +336,7 @@
         "options": [
           "semantic HTML",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -472,7 +472,7 @@
       "features": [
         "3 ta karta: Basic, Pro, Team",
         "Active/recommended karta ajralib turadi",
-        "Mobile?da kartalar 1 ustun, desktopda 3 ustun",
+        "Mobile'da kartalar 1 ustun, desktopda 3 ustun",
         "Button hover/focus holatlari bor",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
@@ -480,7 +480,7 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Pricing Cards UI mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Pricing Cards UI mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -580,7 +580,7 @@
         "options": [
           "CSS selector",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -675,8 +675,8 @@
       "title": "Responsive Course Landing",
       "desc": "Kurs yoki mahsulot uchun responsive landing sahifa quriladi. Maqsad: Flexbox/Grid bilan real layout qilish.",
       "features": [
-        "Hero section, feature grid, testimonial yoki stats bo?limi bor",
-        "Desktopda grid, mobile?da tabiiy stack ishlaydi",
+        "Hero section, feature grid, testimonial yoki stats bo'limi bor",
+        "Desktopda grid, mobile'da tabiiy stack ishlaydi",
         "Navbar kichik ekranda siqilib qolmaydi",
         "Matn hech bir card/button ichidan chiqib ketmaydi",
         "Responsive desktop/mobile holat",
@@ -685,7 +685,7 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Responsive Course Landing mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Responsive Course Landing mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -761,7 +761,7 @@
         "options": [
           "flex/grid layout",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -866,11 +866,11 @@
     "project": {
       "tag": "Mini loyiha ? JavaScript",
       "title": "Task Tracker Vanilla JS",
-      "desc": "Sof JavaScript bilan task tracker quriladi. Maqsad: DOM, event va state tushunchasini amalda ko?rish.",
+      "desc": "Sof JavaScript bilan task tracker quriladi. Maqsad: DOM, event va state tushunchasini amalda ko'rish.",
       "features": [
-        "Task qo?shish, bajarildi qilish, o?chirish",
-        "Bo?sh input yuborilganda xato ko?rsatish",
-        "Tasklar localStorage?da saqlanadi",
+        "Task qo'shish, bajarildi qilish, o'chirish",
+        "Bo'sh input yuborilganda xato ko'rsatish",
+        "Tasklar localStorage'da saqlanadi",
         "Filter: all/active/done",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
@@ -878,7 +878,7 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Task Tracker Vanilla JS mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Task Tracker Vanilla JS mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -954,7 +954,7 @@
         "options": [
           "function",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1062,16 +1062,16 @@
       "desc": "Public API bilan qidiruv ilovasi quriladi. Maqsad: fetch, loading, error va empty state bilan ishlash.",
       "features": [
         "Qidiruv input va submit bor",
-        "Loading holati ko?rinadi",
+        "Loading holati ko'rinadi",
         "404/xato va empty state alohida chiqadi",
-        "Natijalar card ko?rinishida render qilinadi",
+        "Natijalar card ko'rinishida render qilinadi",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
         "Bo'sh/loading/error state",
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "API Search App mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "API Search App mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1147,7 +1147,7 @@
         "options": [
           "async/await",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1244,19 +1244,19 @@
       "features": [
         "`npm run dev`, `build`, `preview` scriptlari ishlaydi",
         "`src`, `assets`, `styles` papkalari tartibli",
-        "Git commitlar ma?noli nomlangan",
-        "README?da start/build yo?riqnomasi bor",
+        "Git commitlar ma'noli nomlangan",
+        "README'da start/build yo'riqnomasi bor",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
         "Bo'sh/loading/error state",
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Vite Starter Template mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Vite Starter Template mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Repo fresh clone qilinganda README bo?yicha ishga tushishi kerak.",
+        "Repo fresh clone qilinganda README bo'yicha ishga tushishi kerak.",
         "UI barcha asosiy breakpointlarda buzilmaydi.",
         "Loading, empty va error holatlari ko'rsatilgan.",
         "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
@@ -1328,7 +1328,7 @@
         "options": [
           "git commit",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1433,19 +1433,19 @@
     "project": {
       "tag": "Mini loyiha ? TypeScript",
       "title": "Typed Expense List",
-      "desc": "TypeScript bilan xarajatlar ro?yxati modelini va UI logikasini yozish. Maqsad: interface, union type va typed function ishlatish.",
+      "desc": "TypeScript bilan xarajatlar ro'yxati modelini va UI logikasini yozish. Maqsad: interface, union type va typed function ishlatish.",
       "features": [
         "`Expense` interface bor",
         "Kategoriya union type bilan cheklanadi",
         "Total hisoblash typed function orqali qilinadi",
-        "Noto?g?ri qiymatlar TypeScriptda xato beradi",
+        "Noto'g'ri qiymatlar TypeScriptda xato beradi",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
         "Bo'sh/loading/error state",
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Typed Expense List mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Typed Expense List mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -1521,7 +1521,7 @@
         "options": [
           "type annotation",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1647,18 +1647,18 @@
         "Kamida 3 ta qayta ishlatiladigan komponent",
         "Search yoki filter state bilan ishlaydi",
         "Empty/loading/error holatlari bor",
-        "Cardlar responsive ko?rinadi",
+        "Cardlar responsive ko'rinadi",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
         "Bo'sh/loading/error state",
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "React Weather Cards mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "React Weather Cards mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Komponentlar bitta faylga tiqilmaydi, props nomlari ma?noli bo?ladi.",
+        "Komponentlar bitta faylga tiqilmaydi, props nomlari ma'noli bo'ladi.",
         "UI barcha asosiy breakpointlarda buzilmaydi.",
         "Loading, empty va error holatlari ko'rsatilgan.",
         "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
@@ -1742,7 +1742,7 @@
         "options": [
           "component",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -1893,7 +1893,7 @@
       "title": "Mini CRM Dashboard",
       "desc": "Router, data loading va custom hook ishlatib mini CRM dashboard quriladi.",
       "features": [
-        "Kamida 3 sahifa: dashboard, ro?yxat, detail",
+        "Kamida 3 sahifa: dashboard, ro'yxat, detail",
         "URL route orqali detail ochiladi",
         "Custom hook data/loading/error qaytaradi",
         "CRUD yoki mock CRUD flow bor",
@@ -1903,11 +1903,11 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Mini CRM Dashboard mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Mini CRM Dashboard mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
-        "Route refresh qilinganda ham sahifa ishlashi va fallback holat ko?rinishi kerak.",
+        "Route refresh qilinganda ham sahifa ishlashi va fallback holat ko'rinishi kerak.",
         "UI barcha asosiy breakpointlarda buzilmaydi.",
         "Loading, empty va error holatlari ko'rsatilgan.",
         "Komponentlar qayta ishlatiladigan qilib ajratilgan.",
@@ -2003,7 +2003,7 @@
         "options": [
           "router",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -2096,11 +2096,11 @@
     "project": {
       "tag": "Mini loyiha ? Quality",
       "title": "Quality Pass Audit",
-      "desc": "Oldingi React loyihani test, performance va accessibility tekshiruvidan o?tkazish.",
+      "desc": "Oldingi React loyihani test, performance va accessibility tekshiruvidan o'tkazish.",
       "features": [
         "Kamida 3 unit/component test",
         "Keyboard focus va aria label tekshiriladi",
-        "Bundle/performance bo?yicha 3 ta yaxshilash yoziladi",
+        "Bundle/performance bo'yicha 3 ta yaxshilash yoziladi",
         "Regression checklist tuziladi",
         "Responsive desktop/mobile holat",
         "Keyboard va focus holatlari",
@@ -2108,7 +2108,7 @@
         "READMEda demo va komponentlar izohi"
       ],
       "rubric": [
-        "Quality Pass Audit mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Quality Pass Audit mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -2184,7 +2184,7 @@
         "options": [
           "test",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
@@ -2289,7 +2289,7 @@
     "project": {
       "tag": "Final loyiha ? Portfolio",
       "title": "Production Learning App",
-      "desc": "Frontend kurs yakunida productionga yaqin learning yoki dashboard app quriladi. Bu portfolio uchun asosiy loyiha bo?ladi.",
+      "desc": "Frontend kurs yakunida productionga yaqin learning yoki dashboard app quriladi. Bu portfolio uchun asosiy loyiha bo'ladi.",
       "features": [
         "Authsiz demo yoki mock auth flow",
         "Dashboard + list + detail + settings sahifalari",
@@ -2301,7 +2301,7 @@
         "Bo'sh/loading/error state"
       ],
       "rubric": [
-        "Production Learning App mustaqil ishga tushishi yoki brauzerda ko?rinadigan natija berishi kerak.",
+        "Production Learning App mustaqil ishga tushishi yoki brauzerda ko'rinadigan natija berishi kerak.",
         "Asosiy funksiyalar demo orqali tekshiriladi: happy path va kamida bitta xato holati bor.",
         "Kod tartibli: nomlash tushunarli, kichik funksiyalar/komponentlar ajratilgan, keraksiz takror kamaytirilgan.",
         "README yoki qisqa izohda nima qurilgani, qanday ishga tushirilishi va qanday tekshirilgani yoziladi.",
@@ -2377,7 +2377,7 @@
         "options": [
           "architecture",
           "tasodifiy dizayn bezagi",
-          "faqat nazariy ta?rif",
+          "faqat nazariy ta'rif",
           "keraksiz konfiguratsiya"
         ],
         "correct": 0,
