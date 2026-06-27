@@ -18,7 +18,7 @@ export function BookCover({ book }: { book: Book }) {
       {src && !failed && (
         <img
           src={src}
-          alt={`${book.title} — ${book.author}`}
+          alt={`${book.title} - ${book.author}`}
           loading="lazy"
           referrerPolicy="no-referrer"
           onError={() => setFailed(true)}
@@ -44,10 +44,10 @@ export function Books() {
 
   return (
     <div className="dash">
-      <div className="eyebrow">Kitoblar · O'qish ro'yxati</div>
-      <h2 className="mtitle">{course.name} — tavsiya etilgan kitoblar</h2>
+      <div className="eyebrow">Kitoblar / O'qish ro'yxati</div>
+      <h2 className="mtitle">{course.name} - tavsiya etilgan kitoblar</h2>
       <p className="mlede">
-        Quyidagi tartibda o'qish tavsiya etiladi — har biri oldingisining ustiga quriladi. Kitob
+        Quyidagi tartibda o'qish tavsiya etiladi - har biri oldingisining ustiga quriladi. Kitob
         o'qish bilan birga kursdagi amaliy mashqlarni ham bajar.
       </p>
       <div className="booklist">

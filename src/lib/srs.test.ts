@@ -31,7 +31,7 @@ describe("srs.isDue / isMastered", () => {
     expect(isDue({ box: 1, due: T0 + DAY }, T0)).toBe(false);
     expect(isDue({ box: 1, due: T0 - 1 }, T0)).toBe(true);
   });
-  it("oxirgi box — o'zlashtirilgan", () => {
+  it("oxirgi box - o'zlashtirilgan", () => {
     expect(isMastered({ box: MAX_BOX, due: 0 })).toBe(true);
     expect(isMastered({ box: 1, due: 0 })).toBe(false);
   });
@@ -42,7 +42,7 @@ describe("srs.dueWords / masteredCount", () => {
   const state = {
     a: { box: 1, due: T0 + DAY }, // hali kelmagan
     b: { box: 2, due: T0 - DAY }, // due
-    // c — ko'rilmagan → due
+    // c - ko'rilmagan -> due
   };
   it("faqat due so'zlarni qaytaradi", () => {
     const due = dueWords(words, state, T0);

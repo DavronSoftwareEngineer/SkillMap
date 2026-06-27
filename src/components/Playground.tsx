@@ -73,7 +73,7 @@ export function Playground() {
       return;
     }
     if (!prompt.trim()) {
-      setError("Prompt bo'sh — biror narsa yozing.");
+      setError("Prompt bo'sh - biror narsa yozing.");
       return;
     }
     setLoading(true);
@@ -126,7 +126,7 @@ export function Playground() {
       setError(
         "Xatolik: " +
           msg +
-          "  —  Kalit, model nomi yoki internet aloqasini tekshiring. (CORS/401 bo'lsa kalit noto'g'ri bo'lishi mumkin.)"
+          "  -  Kalit, model nomi yoki internet aloqasini tekshiring. (CORS/401 bo'lsa kalit noto'g'ri bo'lishi mumkin.)"
       );
     } finally {
       setLoading(false);
@@ -135,7 +135,7 @@ export function Playground() {
 
   return (
     <div className="dash">
-      <div className="eyebrow">Playground · Jonli AI</div>
+      <div className="eyebrow">Playground / Jonli AI</div>
       <h2 className="mtitle">Prompt Playground</h2>
       <p className="mlede">
         Promptni shu yerda yozib, <strong>haqiqiy AI</strong>'ga yubor va javobni ko'r. Darslardagi
@@ -176,7 +176,7 @@ export function Playground() {
       </div>
 
       <label className="pg-field">
-        <span>System prompt (ixtiyoriy — rol/yo'riqnoma)</span>
+        <span>System prompt (ixtiyoriy - rol/yo'riqnoma)</span>
         <textarea
           rows={2}
           placeholder="You are a helpful, concise assistant."
@@ -212,7 +212,7 @@ export function Playground() {
       </div>
 
       <button className="pg-send" onClick={send} disabled={loading}>
-        {loading ? "Yuborilmoqda…" : "Yubor →"}
+        {loading ? "Yuborilmoqda..." : "Yubor ->"}
       </button>
 
       {error && <div className="pg-error">{error}</div>}

@@ -1,4 +1,4 @@
-// Kunlik odat (streak) hisoblagichi — barcha kurslar uchun umumiy.
+// Kunlik odat (streak) hisoblagichi - barcha kurslar uchun umumiy.
 export interface Streak {
   last: string; // oxirgi faol kun "YYYY-MM-DD"
   current: number;
@@ -30,8 +30,8 @@ export function registerActivity(s: Streak, today: string): Streak {
   else {
     const gap = diffDays(s.last, today);
     if (gap === 1) current = s.current + 1; // ketma-ket kun
-    else if (gap <= 0) return s; // kelajak/o'tmish anomaliyasi — tegmaymiz
-    else current = 1; // uzilish — qaytadan
+    else if (gap <= 0) return s; // kelajak/o'tmish anomaliyasi - tegmaymiz
+    else current = 1; // uzilish - qaytadan
   }
   return { last: today, current, best: Math.max(s.best, current) };
 }

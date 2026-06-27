@@ -12,7 +12,7 @@ export interface CodeBlock {
   title: string;
   lang: string;
   code: string;
-  // Agar bor bo'lsa — blokda til almashtirgich (JS/TS) chiqadi.
+  // Agar bor bo'lsa - blokda til almashtirgich (JS/TS) chiqadi.
   variants?: CodeVariant[];
 }
 export interface Task {
@@ -93,6 +93,6 @@ export interface Book {
   author: string; // muallif (+ original nom, ixtiyoriy)
   isbn?: string; // Open Library muqovasi uchun (yo'q bo'lsa dizayn-karta)
   accent: string; // karta urg'u rangi
-  note: string; // qisqa izoh — nega/qachon o'qish
+  note: string; // qisqa izoh - nega/qachon o'qish
 }
 export type QuizScore = { best: number; total: number };

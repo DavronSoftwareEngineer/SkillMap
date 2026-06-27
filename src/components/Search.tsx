@@ -19,7 +19,7 @@ function snippet(text: string, q: string): string {
   if (at < 0) return text.slice(0, 120);
   const start = Math.max(0, at - 40);
   const end = Math.min(text.length, at + q.length + 60);
-  return (start > 0 ? "…" : "") + text.slice(start, end) + (end < text.length ? "…" : "");
+  return (start > 0 ? "..." : "") + text.slice(start, end) + (end < text.length ? "..." : "");
 }
 
 export function Search({ onGo }: { onGo: (i: number) => void }) {
@@ -34,10 +34,10 @@ export function Search({ onGo }: { onGo: (i: number) => void }) {
       fields: [
         { kind: "Dars", text: stripHtml(m.doc) },
         { kind: "Sarlavha", text: m.title + " " + m.sub + " " + m.mtitle },
-        { kind: "Topshiriq", text: m.tasks.map((t) => stripHtml(t.html)).join(" · ") },
-        { kind: "Lug'at", text: (m.vocab || []).map((v) => `${v.w} ${v.uz} ${v.ex}`).join(" · ") },
-        { kind: "Grammatika", text: (m.grammar || []).map((g) => `${g.topic} ${g.rule} ${g.ex}`).join(" · ") },
-        { kind: "Test", text: m.quiz.map((qq) => qq.q).join(" · ") },
+        { kind: "Topshiriq", text: m.tasks.map((t) => stripHtml(t.html)).join(" / ") },
+        { kind: "Lug'at", text: (m.vocab || []).map((v) => `${v.w} ${v.uz} ${v.ex}`).join(" / ") },
+        { kind: "Grammatika", text: (m.grammar || []).map((g) => `${g.topic} ${g.rule} ${g.ex}`).join(" / ") },
+        { kind: "Test", text: m.quiz.map((qq) => qq.q).join(" / ") },
       ].filter((f) => f.text.trim().length > 0),
     }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -59,10 +59,10 @@ export function Search({ onGo }: { onGo: (i: number) => void }) {
 
   return (
     <div className="dash">
-      <div className="eyebrow">Qidiruv · {course.name}</div>
+      <div className="eyebrow">Qidiruv / {course.name}</div>
       <h2 className="mtitle">Kurs bo'ylab qidirish</h2>
       <p className="mlede">
-        Darslar, topshiriqlar, lug'at, grammatika va testlar ichidan qidir — to'g'ridan-to'g'ri kerakli
+        Darslar, topshiriqlar, lug'at, grammatika va testlar ichidan qidir - to'g'ridan-to'g'ri kerakli
         modulga o't.
       </p>
 
@@ -85,7 +85,7 @@ export function Search({ onGo }: { onGo: (i: number) => void }) {
           <button className="dash-modrow" key={k} onClick={() => onGo(h.i)}>
             <div className="dmod-info">
               <b>
-                {h.zoom} · {h.title}
+                {h.zoom} / {h.title}
               </b>
               <span>{h.snippet}</span>
             </div>

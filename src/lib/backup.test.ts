@@ -53,7 +53,7 @@ describe("backup", () => {
     expect(JSON.parse(localStorage.getItem("webgis_progress")!)).toEqual({ "z0-1": true });
   });
 
-  it("buildBackup → applyBackup aylanmasi ma'lumotni saqlaydi", () => {
+  it("buildBackup -> applyBackup aylanmasi ma'lumotni saqlaydi", () => {
     localStorage.setItem("finance_srs", JSON.stringify({ word: { box: 2, due: 123 } }));
     const text = JSON.stringify(buildBackup(new Date(2026, 0, 1)));
     localStorage.clear();

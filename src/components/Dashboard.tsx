@@ -75,7 +75,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
     <div className="dash command-center">
       <section className="cc-hero">
         <div className="cc-copy">
-          <div className="eyebrow">Tayyorlik paneli · {course.name}</div>
+          <div className="eyebrow">Tayyorlik paneli / {course.name}</div>
           <h2 className="mtitle">Bugungi yo'l xaritang</h2>
           <p className="mlede">
             Kursni oddiy ro'yxat emas, bosqichma-bosqich yo'l sifatida kuzat. Keyingi qadam,
@@ -133,9 +133,9 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
       <div className="dash-next">
         {d.next ? (
           <>
-            <b>Keyingi qadam:</b> {d.next.zoom} · {d.next.title} - amaliyot {d.next.tpct}% bajarilgan.{" "}
+            <b>Keyingi qadam:</b> {d.next.zoom} / {d.next.title} - amaliyot {d.next.tpct}% bajarilgan.{" "}
             <button className="dgo" onClick={() => onGo(d.next!.i)}>
-              O'tish →
+              O'tish -&gt;
             </button>
           </>
         ) : (
@@ -154,7 +154,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
 
       <div className="dash-streak">
         <div className={"streak-chip" + (streakAlive ? " alive" : "")}>
-          <span className="streak-fire" aria-hidden="true">🔥</span>
+          <span className="streak-fire" aria-hidden="true">Streak</span>
           <div>
             <b>{streak.current} kun</b>
             <span>{streakAlive ? "joriy seriya" : "seriya uzildi - bugun davom ettir"}</span>
@@ -192,7 +192,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
             <span className="jn-step">{String(order + 1).padStart(2, "0")}</span>
             <span className="jn-main">
               <b>{m.title}</b>
-              <small>{m.zoom} · {m.sub}</small>
+              <small>{m.zoom} / {m.sub}</small>
             </span>
             <span className="jn-pct">{m.tpct}%</span>
           </button>
@@ -204,7 +204,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         {d.mods.map((m) => (
           <div className="dash-modrow" key={m.zoom} onClick={() => onGo(m.i)}>
             <div className="dmod-info">
-              <b>{m.zoom} · {m.title}</b>
+              <b>{m.zoom} / {m.title}</b>
               <span>{m.sub}</span>
             </div>
             <div className="dmod-metrics">
@@ -226,7 +226,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           <div className="dash-weak">
             {d.weak.map((m) => (
               <button className="weakchip" key={m.zoom} onClick={() => onGo(m.i)}>
-                {m.zoom} · {m.title} ({m.tpct}%)
+                {m.zoom} / {m.title} ({m.tpct}%)
               </button>
             ))}
           </div>

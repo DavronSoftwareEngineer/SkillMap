@@ -20,7 +20,7 @@ export function isMastered(card: SrsCard | undefined): boolean {
 
 // Takror vaqti kelganmi?
 export function isDue(card: SrsCard | undefined, now: number): boolean {
-  if (!card) return true; // hali ko'rilmagan — darhol o'rganishga tayyor
+  if (!card) return true; // hali ko'rilmagan - darhol o'rganishga tayyor
   return card.due <= now;
 }
 
@@ -35,7 +35,7 @@ export function grade(card: SrsCard | undefined, g: Grade, now: number): SrsCard
 }
 
 // Hozir takror qilinishi kerak bo'lgan so'zlar ro'yxati (tartib: eng eskisi oldinda,
-// ko'rilmaganlar oxirida — avval bilganini mustahkamlaymiz).
+// ko'rilmaganlar oxirida - avval bilganini mustahkamlaymiz).
 export function dueWords(words: string[], state: SrsState, now: number): string[] {
   return words
     .filter((w) => isDue(state[w], now))

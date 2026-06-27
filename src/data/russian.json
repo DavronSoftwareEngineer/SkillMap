@@ -3,11 +3,11 @@
     "zoom": "Алф",
     "title": "Alifbo & Boshlash",
     "sub": "Boshlash",
-    "coord": "Boshlash · Алф",
-    "eyebrow": "00 · Kirill alifbosi & metod",
+    "coord": "Boshlash / Алф",
+    "eyebrow": "00 / Kirill alifbosi & metod",
     "mtitle": "Rus tili: kirill alifbosidan boshlaymiz",
-    "lede": "Rus tili — <strong>kirill alifbosi</strong> (33 harf), urg'u va kelishiklar tili. Bu yerda alifbo, tovushlar, birinchi iboralar va o'rganish usulini o'rganasan.",
-    "doc": "<div class='prose'><h3>Kirill alifbosi (33 harf)</h3><p>Ba'zi harflar lotincha/o'zbekchaga o'xshaydi, lekin boshqa o'qiladi. Eng muhimi — tovushni to'g'ri eshitib, takrorlash.</p><table class=\"gtable\"><thead><tr><th>Harf</th><th>Tovush</th><th>Misol</th></tr></thead><tbody><tr><td>А а</td><td>a</td><td>мама (mama)</td></tr><tr><td>Б б</td><td>b</td><td>брат (brat) — aka</td></tr><tr><td>В в</td><td>v</td><td>вода (voda) — suv</td></tr><tr><td>Е е</td><td>ye</td><td>нет (net) — yo'q</td></tr><tr><td>И и</td><td>i</td><td>имя (imya) — ism</td></tr><tr><td>Р р</td><td>r</td><td>рука (ruka) — qo'l</td></tr><tr><td>С с</td><td>s</td><td>стол (stol)</td></tr><tr><td>У у</td><td>u</td><td>утро (utro) — ertalab</td></tr></tbody></table><h3>Birinchi iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Привет / Здравствуйте</b><span>Salom (do'stona / rasmiy)</span></div><div class=\"ex\"><b>Как дела?</b><span>Qalaysiz?</span></div><div class=\"ex\"><b>Меня зовут …</b><span>Mening ismim …</span></div><div class=\"ex\"><b>Спасибо</b><span>Rahmat</span></div><div class=\"ex\"><b>Извините</b><span>Kechirasiz</span></div><div class=\"ex\"><b>Я не понимаю</b><span>Men tushunmayapman</span></div><div class=\"ex\"><b>Повторите, пожалуйста</b><span>Iltimos, takrorlang</span></div></div><h3>Urg'u juda muhim</h3><p>Rus tilida urg'u so'z ma'nosini o'zgartirishi mumkin va urg'usiz unlilar boshqa eshitiladi (о → 'a' kabi). Har so'zni <strong>urg'usi bilan</strong> yodla.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Metod</p><p>Kuniga: alifbo tovushlarini tinglash + 10 yangi so'z (urg'u bilan) + qisqa dialog. 🔊 tugmasi bilan talaffuzni eshit va takrorla (shadowing).</p></div></div></div>",
+    "lede": "Rus tili - <strong>kirill alifbosi</strong> (33 harf), urg'u va kelishiklar tili. Bu yerda alifbo, tovushlar, birinchi iboralar va o'rganish usulini o'rganasan.",
+    "doc": "<div class='prose'><h3>Kirill alifbosi (33 harf)</h3><p>Ba'zi harflar lotincha/o'zbekchaga o'xshaydi, lekin boshqa o'qiladi. Eng muhimi - tovushni to'g'ri eshitib, takrorlash.</p><table class=\"gtable\"><thead><tr><th>Harf</th><th>Tovush</th><th>Misol</th></tr></thead><tbody><tr><td>А а</td><td>a</td><td>мама (mama)</td></tr><tr><td>Б б</td><td>b</td><td>брат (brat) - aka</td></tr><tr><td>В в</td><td>v</td><td>вода (voda) - suv</td></tr><tr><td>Е е</td><td>ye</td><td>нет (net) - yo'q</td></tr><tr><td>И и</td><td>i</td><td>имя (imya) - ism</td></tr><tr><td>Р р</td><td>r</td><td>рука (ruka) - qo'l</td></tr><tr><td>С с</td><td>s</td><td>стол (stol)</td></tr><tr><td>У у</td><td>u</td><td>утро (utro) - ertalab</td></tr></tbody></table><h3>Birinchi iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Привет / Здравствуйте</b><span>Salom (do'stona / rasmiy)</span></div><div class=\"ex\"><b>Как дела?</b><span>Qalaysiz?</span></div><div class=\"ex\"><b>Меня зовут ...</b><span>Mening ismim ...</span></div><div class=\"ex\"><b>Спасибо</b><span>Rahmat</span></div><div class=\"ex\"><b>Извините</b><span>Kechirasiz</span></div><div class=\"ex\"><b>Я не понимаю</b><span>Men tushunmayapman</span></div><div class=\"ex\"><b>Повторите, пожалуйста</b><span>Iltimos, takrorlang</span></div></div><h3>Urg'u juda muhim</h3><p>Rus tilida urg'u so'z ma'nosini o'zgartirishi mumkin va urg'usiz unlilar boshqa eshitiladi (о -> 'a' kabi). Har so'zni <strong>urg'usi bilan</strong> yodla.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Metod</p><p>Kuniga: alifbo tovushlarini tinglash + 10 yangi so'z (urg'u bilan) + qisqa dialog. Audio tugmasi bilan talaffuzni eshit va takrorla (shadowing).</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -22,7 +22,7 @@
       },
       {
         "id": "ru0-3",
-        "html": "O'z ismimni rus tilida ayta oldim (Меня зовут …)",
+        "html": "O'z ismimni rus tilida ayta oldim (Меня зовут ...)",
         "crit": "to'g'ri talaffuzda"
       },
       {
@@ -134,7 +134,7 @@
           "Ha"
         ],
         "c": 1,
-        "w": "Спасибо — rahmat.",
+        "w": "Спасибо - rahmat.",
         "level": "practical"
       },
       {
@@ -153,7 +153,7 @@
     "exercises": [
       {
         "type": "choice",
-        "q": "\"Меня зовут …\" nima uchun?",
+        "q": "\"Меня зовут ...\" nima uchun?",
         "options": [
           "yoshni aytish",
           "ismni aytish",
@@ -161,7 +161,7 @@
           "xayrlashish"
         ],
         "correct": 1,
-        "why": "Меня зовут … — ismni aytish."
+        "why": "Меня зовут ... - ismni aytish."
       },
       {
         "type": "choice",
@@ -173,7 +173,7 @@
           "Спасибо"
         ],
         "correct": 2,
-        "why": "Здравствуйте — rasmiy salom."
+        "why": "Здравствуйте - rasmiy salom."
       },
       {
         "type": "choice",
@@ -185,7 +185,7 @@
           "Ha"
         ],
         "correct": 1,
-        "why": "Не понимаю — tushunmayapman."
+        "why": "Не понимаю - tushunmayapman."
       },
       {
         "type": "choice",
@@ -197,7 +197,7 @@
           "Извините"
         ],
         "correct": 1,
-        "why": "Хорошо, спасибо — yaxshi, rahmat."
+        "why": "Хорошо, спасибо - yaxshi, rahmat."
       },
       {
         "type": "choice",
@@ -209,7 +209,7 @@
           "rangni"
         ],
         "correct": 1,
-        "why": "Urg'u muhim — so'zni urg'u bilan yodla."
+        "why": "Urg'u muhim - so'zni urg'u bilan yodla."
       }
     ],
     "vocab": [
@@ -284,19 +284,19 @@
       {
         "topic": "Salomlashuv",
         "rule": "Привет (do'stona) / Здравствуйте (rasmiy).",
-        "ex": "Пока — xayr (do'stona)"
+        "ex": "Пока - xayr (do'stona)"
       }
     ]
   },
   {
     "zoom": "А1",
-    "title": "А1 · Asoslar",
+    "title": "А1 / Asoslar",
     "sub": "Asoslar",
-    "coord": "Beginner · А1",
-    "eyebrow": "01 · Olmosh, rod va \"это\"",
+    "coord": "Beginner / А1",
+    "eyebrow": "01 / Olmosh, rod va \"это\"",
     "mtitle": "Birinchi gaplar: olmosh va rod",
     "lede": "Rus tilida hozirgi zamonda <strong>\"to be\" yo'q</strong>. Otlarning <strong>rodi</strong> (jinsi) bor. <strong>это</strong> bilan narsalarni ko'rsatasan.",
-    "doc": "<div class='prose'><h3>Shaxs olmoshlari</h3><table class=\"gtable\"><thead><tr><th>Rus</th><th>Tarjima</th></tr></thead><tbody><tr><td>я</td><td>men</td></tr><tr><td>ты / вы</td><td>sen / siz</td></tr><tr><td>он / она / оно</td><td>u (m/f/neytral)</td></tr><tr><td>мы</td><td>biz</td></tr><tr><td>они</td><td>ular</td></tr></tbody></table><h3>Hozirgi zamonda \"to be\" yo'q</h3><div class=\"exlist\"><div class=\"ex\"><b>Я студент.</b><span>Men talabaman. (\"am\" yo'q)</span></div><div class=\"ex\"><b>Она врач.</b><span>U (ayol) shifokor.</span></div><div class=\"ex\"><b>Это книга.</b><span>Bu kitob.</span></div></div><h3>Otlarning rodi (jinsi)</h3><table class=\"gtable\"><thead><tr><th>Rod</th><th>Belgi (oxiri)</th><th>Misol</th></tr></thead><tbody><tr><td>Erkak (м)</td><td>undosh</td><td>стол (stol), брат</td></tr><tr><td>Ayol (ж)</td><td>-а / -я</td><td>книга (kitob), мама</td></tr><tr><td>Neytral (с)</td><td>-о / -е</td><td>окно (deraza), море</td></tr></tbody></table><h3>это — \"bu\"</h3><div class=\"exlist\"><div class=\"ex\"><b>Что это? — Это стол.</b><span>Bu nima? — Bu stol.</span></div><div class=\"ex\"><b>Кто это? — Это мой брат.</b><span>Bu kim? — Bu mening akam.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Hozirgi zamonda \"is/am/are\" ni qo'shma: \"Я <s>есть</s> студент\" emas — <strong>Я студент</strong>.</p></div></div></div>",
+    "doc": "<div class='prose'><h3>Shaxs olmoshlari</h3><table class=\"gtable\"><thead><tr><th>Rus</th><th>Tarjima</th></tr></thead><tbody><tr><td>я</td><td>men</td></tr><tr><td>ты / вы</td><td>sen / siz</td></tr><tr><td>он / она / оно</td><td>u (m/f/neytral)</td></tr><tr><td>мы</td><td>biz</td></tr><tr><td>они</td><td>ular</td></tr></tbody></table><h3>Hozirgi zamonda \"to be\" yo'q</h3><div class=\"exlist\"><div class=\"ex\"><b>Я студент.</b><span>Men talabaman. (\"am\" yo'q)</span></div><div class=\"ex\"><b>Она врач.</b><span>U (ayol) shifokor.</span></div><div class=\"ex\"><b>Это книга.</b><span>Bu kitob.</span></div></div><h3>Otlarning rodi (jinsi)</h3><table class=\"gtable\"><thead><tr><th>Rod</th><th>Belgi (oxiri)</th><th>Misol</th></tr></thead><tbody><tr><td>Erkak (м)</td><td>undosh</td><td>стол (stol), брат</td></tr><tr><td>Ayol (ж)</td><td>-а / -я</td><td>книга (kitob), мама</td></tr><tr><td>Neytral (с)</td><td>-о / -е</td><td>окно (deraza), море</td></tr></tbody></table><h3>это - \"bu\"</h3><div class=\"exlist\"><div class=\"ex\"><b>Что это? - Это стол.</b><span>Bu nima? - Bu stol.</span></div><div class=\"ex\"><b>Кто это? - Это мой брат.</b><span>Bu kim? - Bu mening akam.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Hozirgi zamonda \"is/am/are\" ni qo'shma: \"Я <s>есть</s> студент\" emas - <strong>Я студент</strong>.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -317,7 +317,7 @@
       {
         "id": "ru1-4",
         "html": "это bilan 5 ta gap qildim",
-        "crit": "Это … to'g'ri"
+        "crit": "Это ... to'g'ri"
       },
       {
         "id": "ru1-5",
@@ -329,7 +329,7 @@
       {
         "type": "doc",
         "url": "https://masterrussian.com/aa/grammar.shtml",
-        "title": "Master Russian — Grammar",
+        "title": "Master Russian - Grammar",
         "desc": "Rod, olmosh, asoslar",
         "host": "masterrussian.com"
       },
@@ -353,7 +353,7 @@
       "title": "Atrofingni tasvirla",
       "desc": "это bilan xonangdagi 5 narsani ayt va rodini belgila.",
       "features": [
-        "Это … 5 gap",
+        "Это ... 5 gap",
         "Har otning rodi",
         "Olmosh bilan o'zing haqingda",
         "Ovozda o'qish",
@@ -371,7 +371,7 @@
       "variants": [
         {
           "title": "Atrofingni tasvirla - Travel Dialogue",
-          "desc": "А1 · Asoslar mavzusini safar/do'kon/yo'l so'rash dialogiga aylantir.",
+          "desc": "А1 / Asoslar mavzusini safar/do'kon/yo'l so'rash dialogiga aylantir.",
           "deliverables": [
             "8-10 replikali dialog",
             "10 ta yangi so'z",
@@ -411,7 +411,7 @@
           "ko'plik"
         ],
         "c": 1,
-        "w": "-а bilan tugaydi → ayol rod.",
+        "w": "-а bilan tugaydi -> ayol rod.",
         "level": "practical"
       },
       {
@@ -462,7 +462,7 @@
           "ko'plik"
         ],
         "correct": 1,
-        "why": "Undosh bilan tugaydi → erkak."
+        "why": "Undosh bilan tugaydi -> erkak."
       },
       {
         "type": "choice",
@@ -471,10 +471,10 @@
           "erkak",
           "ayol (-а)",
           "neytral",
-          "—"
+          "-"
         ],
         "correct": 1,
-        "why": "-а → ayol."
+        "why": "-а -> ayol."
       },
       {
         "type": "choice",
@@ -498,7 +498,7 @@
           "она"
         ],
         "correct": 2,
-        "why": "они — ular."
+        "why": "они - ular."
       }
     ],
     "vocab": [
@@ -556,7 +556,7 @@
         "ipa": "górad",
         "pos": "n.",
         "uz": "shahar",
-        "ex": "Ташкент — большой город."
+        "ex": "Ташкент - большой город."
       }
     ],
     "grammar": [
@@ -567,7 +567,7 @@
       },
       {
         "topic": "Rod (jins)",
-        "rule": "undosh→м, -а/-я→ж, -о/-е→с.",
+        "rule": "undosh->м, -а/-я->ж, -о/-е->с.",
         "ex": "стол(м), книга(ж), окно(с)"
       },
       {
@@ -581,11 +581,11 @@
     "zoom": "А1+",
     "title": "Hozirgi zamon",
     "sub": "Fe'l",
-    "coord": "Present · А1+",
-    "eyebrow": "02 · Fe'l tuslanishi (hozirgi zamon)",
+    "coord": "Present / А1+",
+    "eyebrow": "02 / Fe'l tuslanishi (hozirgi zamon)",
     "mtitle": "Fe'llar: hozirgi zamon tuslanishi",
     "lede": "Ruscha fe'l <strong>shaxsga qarab o'zgaradi</strong> (tuslanadi). Ko'p fe'l -ть bilan tugaydi. Ikki asosiy guruh bor.",
-    "doc": "<div class='prose'><h3>1-guruh: -ать (работать — ishlamoq)</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>работаю</td></tr><tr><td>ты</td><td>работаешь</td></tr><tr><td>он/она</td><td>работает</td></tr><tr><td>мы</td><td>работаем</td></tr><tr><td>вы</td><td>работаете</td></tr><tr><td>они</td><td>работают</td></tr></tbody></table><h3>Ko'p ishlatiladigan fe'llar</h3><div class=\"exlist\"><div class=\"ex\"><b>знать</b><span>bilmoq</span></div><div class=\"ex\"><b>читать</b><span>o'qimoq</span></div><div class=\"ex\"><b>делать</b><span>qilmoq</span></div><div class=\"ex\"><b>жить (живу, живёшь)</b><span>yashamoq</span></div><div class=\"ex\"><b>говорить (говорю, говоришь)</b><span>gapirmoq</span></div></div><h3>Misollar</h3><div class=\"exlist\"><div class=\"ex\"><b>Я работаю в офисе.</b><span>Men ofisda ishlayman.</span></div><div class=\"ex\"><b>Ты говоришь по-русски?</b><span>Sen ruscha gapirasanmi?</span></div><div class=\"ex\"><b>Они живут в Ташкенте.</b><span>Ular Toshkentda yashaydi.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Fe'lni doim <strong>я</strong> va <strong>ты</strong> shakli bilan yodla — qolgani shu naqshga tushadi.</p></div></div></div>",
+    "doc": "<div class='prose'><h3>1-guruh: -ать (работать - ishlamoq)</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>работаю</td></tr><tr><td>ты</td><td>работаешь</td></tr><tr><td>он/она</td><td>работает</td></tr><tr><td>мы</td><td>работаем</td></tr><tr><td>вы</td><td>работаете</td></tr><tr><td>они</td><td>работают</td></tr></tbody></table><h3>Ko'p ishlatiladigan fe'llar</h3><div class=\"exlist\"><div class=\"ex\"><b>знать</b><span>bilmoq</span></div><div class=\"ex\"><b>читать</b><span>o'qimoq</span></div><div class=\"ex\"><b>делать</b><span>qilmoq</span></div><div class=\"ex\"><b>жить (живу, живёшь)</b><span>yashamoq</span></div><div class=\"ex\"><b>говорить (говорю, говоришь)</b><span>gapirmoq</span></div></div><h3>Misollar</h3><div class=\"exlist\"><div class=\"ex\"><b>Я работаю в офисе.</b><span>Men ofisda ishlayman.</span></div><div class=\"ex\"><b>Ты говоришь по-русски?</b><span>Sen ruscha gapirasanmi?</span></div><div class=\"ex\"><b>Они живут в Ташкенте.</b><span>Ular Toshkentda yashaydi.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Fe'lni doim <strong>я</strong> va <strong>ты</strong> shakli bilan yodla - qolgani shu naqshga tushadi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -600,7 +600,7 @@
       },
       {
         "id": "ru2-3",
-        "html": "\"Men … qilaman\" turida 5 gap yozdim",
+        "html": "\"Men ... qilaman\" turida 5 gap yozdim",
         "crit": "я shakli to'g'ri"
       },
       {
@@ -618,7 +618,7 @@
       {
         "type": "doc",
         "url": "https://masterrussian.com/verbs/conjugations.htm",
-        "title": "Master Russian — Verbs",
+        "title": "Master Russian - Verbs",
         "desc": "Fe'l tuslanishi",
         "host": "masterrussian.com"
       },
@@ -688,7 +688,7 @@
           "работают"
         ],
         "c": 1,
-        "w": "я → работаю.",
+        "w": "я -> работаю.",
         "level": "easy"
       },
       {
@@ -700,7 +700,7 @@
           "говорим"
         ],
         "c": 1,
-        "w": "ты → говоришь.",
+        "w": "ты -> говоришь.",
         "level": "practical"
       },
       {
@@ -712,7 +712,7 @@
           "живу"
         ],
         "c": 2,
-        "w": "они → живут.",
+        "w": "они -> живут.",
         "level": "practical"
       },
       {
@@ -739,7 +739,7 @@
           "знают"
         ],
         "correct": 1,
-        "why": "я → знаю."
+        "why": "я -> знаю."
       },
       {
         "type": "choice",
@@ -751,7 +751,7 @@
           "делают"
         ],
         "correct": 2,
-        "why": "мы → делаем."
+        "why": "мы -> делаем."
       },
       {
         "type": "choice",
@@ -763,7 +763,7 @@
           "читают"
         ],
         "correct": 2,
-        "why": "вы → читаете."
+        "why": "вы -> читаете."
       },
       {
         "type": "choice",
@@ -775,7 +775,7 @@
           "Вы говорю?"
         ],
         "correct": 1,
-        "why": "ты → говоришь."
+        "why": "ты -> говоришь."
       },
       {
         "type": "choice",
@@ -787,7 +787,7 @@
           "-ем"
         ],
         "correct": 1,
-        "why": "работать, читать — -ть."
+        "why": "работать, читать - -ть."
       }
     ],
     "vocab": [
@@ -851,7 +851,7 @@
     "grammar": [
       {
         "topic": "Hozirgi zamon (1-guruh)",
-        "rule": "-ать → -аю,-аешь,-ает,-аем,-аете,-ают.",
+        "rule": "-ать -> -аю,-аешь,-ает,-аем,-аете,-ают.",
         "ex": "работаю, работаешь..."
       },
       {
@@ -861,7 +861,7 @@
       },
       {
         "topic": "ты vs вы",
-        "rule": "ты — do'stona; вы — rasmiy/ko'plik.",
+        "rule": "ты - do'stona; вы - rasmiy/ko'plik.",
         "ex": "Ты знаешь? Вы знаете?"
       }
     ]
@@ -870,11 +870,11 @@
     "zoom": "А2",
     "title": "Kelishiklar (kirish)",
     "sub": "Падежи",
-    "coord": "Cases · А2",
-    "eyebrow": "03 · Kelishiklar (kirish)",
+    "coord": "Cases / А2",
+    "eyebrow": "03 / Kelishiklar (kirish)",
     "mtitle": "Kelishiklar: rus tilining yuragi",
-    "lede": "Rus tilida ot <strong>gapdagi vazifasiga qarab oxiri o'zgaradi</strong> — bu kelishik (падеж). 6 ta bor; bu yerda eng kerakli 3 tasini boshlaymiz.",
-    "doc": "<div class='prose'><h3>6 kelishik — umumiy</h3><table class=\"gtable\"><thead><tr><th>Kelishik</th><th>Savol</th><th>Vazifa</th></tr></thead><tbody><tr><td>Именительный</td><td>кто? что?</td><td>ega</td></tr><tr><td>Винительный</td><td>кого? что?</td><td>to'ldiruvchi (obyekt)</td></tr><tr><td>Предложный</td><td>о ком? где?</td><td>joy / mavzu (о, в, на bilan)</td></tr></tbody></table><h3>Vinitelniy (obyekt) — ayol -а → -у</h3><div class=\"exlist\"><div class=\"ex\"><b>Я читаю книгу.</b><span>Men kitobni o'qiyapman. (книга → книгу)</span></div><div class=\"ex\"><b>Я люблю Москву.</b><span>Men Moskvani yaxshi ko'raman. (Москва → Москву)</span></div></div><h3>Predlojniy (joy) — \"в / на\" + oxiri -е</h3><div class=\"exlist\"><div class=\"ex\"><b>Я живу в Москве.</b><span>Men Moskvada yashayman. (Москва → Москве)</span></div><div class=\"ex\"><b>Книга на столе.</b><span>Kitob stol ustida. (стол → столе)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Nega muhim</p><p>Kelishiksiz ruscha gap noto'g'ri eshitiladi. Avval <strong>vinitelniy</strong> (obyekt) va <strong>predlojniy</strong> (joy) ni mustahkamla — ular eng ko'p uchraydi.</p></div></div></div>",
+    "lede": "Rus tilida ot <strong>gapdagi vazifasiga qarab oxiri o'zgaradi</strong> - bu kelishik (падеж). 6 ta bor; bu yerda eng kerakli 3 tasini boshlaymiz.",
+    "doc": "<div class='prose'><h3>6 kelishik - umumiy</h3><table class=\"gtable\"><thead><tr><th>Kelishik</th><th>Savol</th><th>Vazifa</th></tr></thead><tbody><tr><td>Именительный</td><td>кто? что?</td><td>ega</td></tr><tr><td>Винительный</td><td>кого? что?</td><td>to'ldiruvchi (obyekt)</td></tr><tr><td>Предложный</td><td>о ком? где?</td><td>joy / mavzu (о, в, на bilan)</td></tr></tbody></table><h3>Vinitelniy (obyekt) - ayol -а -> -у</h3><div class=\"exlist\"><div class=\"ex\"><b>Я читаю книгу.</b><span>Men kitobni o'qiyapman. (книга -> книгу)</span></div><div class=\"ex\"><b>Я люблю Москву.</b><span>Men Moskvani yaxshi ko'raman. (Москва -> Москву)</span></div></div><h3>Predlojniy (joy) - \"в / на\" + oxiri -е</h3><div class=\"exlist\"><div class=\"ex\"><b>Я живу в Москве.</b><span>Men Moskvada yashayman. (Москва -> Москве)</span></div><div class=\"ex\"><b>Книга на столе.</b><span>Kitob stol ustida. (стол -> столе)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Nega muhim</p><p>Kelishiksiz ruscha gap noto'g'ri eshitiladi. Avval <strong>vinitelniy</strong> (obyekt) va <strong>predlojniy</strong> (joy) ni mustahkamla - ular eng ko'p uchraydi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -884,7 +884,7 @@
       },
       {
         "id": "ru3-2",
-        "html": "Vinitelniy: ayol ot -а→-у o'zgarishini o'rgandim",
+        "html": "Vinitelniy: ayol ot -а->-у o'zgarishini o'rgandim",
         "crit": "книгу/Москву to'g'ri"
       },
       {
@@ -894,12 +894,12 @@
       },
       {
         "id": "ru3-4",
-        "html": "\"Men …ни o'qiyapman/yaxshi ko'raman\" gaplar qildim",
+        "html": "\"Men ...ни o'qiyapman/yaxshi ko'raman\" gaplar qildim",
         "crit": "obyekt to'g'ri shaklda"
       },
       {
         "id": "ru3-5",
-        "html": "\"Men …да yashayman\" gaplar qildim",
+        "html": "\"Men ...да yashayman\" gaplar qildim",
         "crit": "predlojniy to'g'ri"
       }
     ],
@@ -907,7 +907,7 @@
       {
         "type": "doc",
         "url": "https://masterrussian.com/aa/grammar_cases.shtml",
-        "title": "Master Russian — Cases",
+        "title": "Master Russian - Cases",
         "desc": "Kelishiklar to'liq",
         "host": "masterrussian.com"
       },
@@ -933,7 +933,7 @@
       "features": [
         "3 ta obyekt (вин.)",
         "3 ta joy (предл.)",
-        "Ayol -а→-у",
+        "Ayol -а->-у",
         "в/на + -е",
         "Dialog yoki mini matn",
         "Lug'at ro'yxati",
@@ -989,7 +989,7 @@
           "книгой"
         ],
         "c": 1,
-        "w": "Vinitelniy: книга → книгу.",
+        "w": "Vinitelniy: книга -> книгу.",
         "level": "practical"
       },
       {
@@ -1013,7 +1013,7 @@
           "кому?"
         ],
         "c": 1,
-        "w": "Им. — кто? что? (ega).",
+        "w": "Им. - кто? что? (ega).",
         "level": "scenario"
       }
     ],
@@ -1049,10 +1049,10 @@
           "Именительный",
           "Винительный",
           "Предложный",
-          "—"
+          "-"
         ],
         "correct": 1,
-        "why": "Винительный — obyekt (кого? что?)."
+        "why": "Винительный - obyekt (кого? что?)."
       },
       {
         "type": "choice",
@@ -1073,10 +1073,10 @@
           "Винительный",
           "Именительный",
           "Предложный",
-          "—"
+          "-"
         ],
         "correct": 1,
-        "why": "Ega — Именительный."
+        "why": "Ega - Именительный."
       }
     ],
     "vocab": [
@@ -1141,11 +1141,11 @@
       {
         "topic": "Kelishiklar",
         "rule": "Ot vazifasiga qarab oxiri o'zgaradi (6 ta).",
-        "ex": "книга → книгу → книге"
+        "ex": "книга -> книгу -> книге"
       },
       {
         "topic": "Винительный (obyekt)",
-        "rule": "Ayol -а → -у.",
+        "rule": "Ayol -а -> -у.",
         "ex": "Я читаю книгу."
       },
       {
@@ -1159,11 +1159,11 @@
     "zoom": "Время",
     "title": "O'tgan & kelasi",
     "sub": "Zamonlar",
-    "coord": "Tenses · Время",
-    "eyebrow": "04 · O'tgan va kelasi zamon",
+    "coord": "Tenses / Время",
+    "eyebrow": "04 / O'tgan va kelasi zamon",
     "mtitle": "O'tgan va kelasi zamon",
-    "lede": "O'tgan zamon <strong>rodga qarab</strong> o'zgaradi (-л/-ла/-ло). Kelasi zamon — <strong>быть</strong> + infinitiv yoki perfektiv shakl.",
-    "doc": "<div class='prose'><h3>O'tgan zamon (прошедшее) — -л</h3><table class=\"gtable\"><thead><tr><th>Kim</th><th>Shakl (работать)</th></tr></thead><tbody><tr><td>он (erkak)</td><td>работал</td></tr><tr><td>она (ayol)</td><td>работала</td></tr><tr><td>оно (neytral)</td><td>работало</td></tr><tr><td>они (ko'plik)</td><td>работали</td></tr></tbody></table><p>Ya'ni o'tgan zamon <strong>kim</strong> bajarganiga (rod/son) qarab o'zgaradi, shaxsga emas.</p><div class=\"exlist\"><div class=\"ex\"><b>Я (м) был дома.</b><span>Men (erkak) uyda edim.</span></div><div class=\"ex\"><b>Я (ж) была дома.</b><span>Men (ayol) uyda edim.</span></div><div class=\"ex\"><b>Они читали книгу.</b><span>Ular kitob o'qishdi.</span></div></div><h3>Kelasi zamon (будущее)</h3><div class=\"exlist\"><div class=\"ex\"><b>Я буду работать.</b><span>Men ishlayman (kelasi).</span></div><div class=\"ex\"><b>Завтра я буду дома.</b><span>Ertaga uyda bo'laman.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Diqqat</p><p>O'tgan zamonda <strong>был/была</strong> ishlatiladi (hozirgi zamondan farqli — o'sha yerda \"to be\" yo'q edi). Ayol bo'lsang — <strong>была</strong>.</p></div></div></div>",
+    "lede": "O'tgan zamon <strong>rodga qarab</strong> o'zgaradi (-л/-ла/-ло). Kelasi zamon - <strong>быть</strong> + infinitiv yoki perfektiv shakl.",
+    "doc": "<div class='prose'><h3>O'tgan zamon (прошедшее) - -л</h3><table class=\"gtable\"><thead><tr><th>Kim</th><th>Shakl (работать)</th></tr></thead><tbody><tr><td>он (erkak)</td><td>работал</td></tr><tr><td>она (ayol)</td><td>работала</td></tr><tr><td>оно (neytral)</td><td>работало</td></tr><tr><td>они (ko'plik)</td><td>работали</td></tr></tbody></table><p>Ya'ni o'tgan zamon <strong>kim</strong> bajarganiga (rod/son) qarab o'zgaradi, shaxsga emas.</p><div class=\"exlist\"><div class=\"ex\"><b>Я (м) был дома.</b><span>Men (erkak) uyda edim.</span></div><div class=\"ex\"><b>Я (ж) была дома.</b><span>Men (ayol) uyda edim.</span></div><div class=\"ex\"><b>Они читали книгу.</b><span>Ular kitob o'qishdi.</span></div></div><h3>Kelasi zamon (будущее)</h3><div class=\"exlist\"><div class=\"ex\"><b>Я буду работать.</b><span>Men ishlayman (kelasi).</span></div><div class=\"ex\"><b>Завтра я буду дома.</b><span>Ertaga uyda bo'laman.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Diqqat</p><p>O'tgan zamonda <strong>был/была</strong> ishlatiladi (hozirgi zamondan farqli - o'sha yerda \"to be\" yo'q edi). Ayol bo'lsang - <strong>была</strong>.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1179,7 +1179,7 @@
       {
         "id": "ru4-3",
         "html": "Kelasi zamon (буду + infinitiv) ni mashq qildim",
-        "crit": "Я буду …"
+        "crit": "Я буду ..."
       },
       {
         "id": "ru4-4",
@@ -1196,7 +1196,7 @@
       {
         "type": "doc",
         "url": "https://masterrussian.com/verbs/past_tense.htm",
-        "title": "Master Russian — Past Tense",
+        "title": "Master Russian - Past Tense",
         "desc": "O'tgan zamon",
         "host": "masterrussian.com"
       },
@@ -1222,7 +1222,7 @@
       "features": [
         "O'tgan zamon -л/-ла",
         "был/была to'g'ri",
-        "Kelasi: буду …",
+        "Kelasi: буду ...",
         "Ovozda o'qish",
         "Dialog yoki mini matn",
         "Lug'at ro'yxati",
@@ -1278,7 +1278,7 @@
           "Я дома"
         ],
         "c": 1,
-        "w": "Ayol → была.",
+        "w": "Ayol -> была.",
         "level": "practical"
       },
       {
@@ -1302,7 +1302,7 @@
           "работаю"
         ],
         "c": 2,
-        "w": "Ko'plik → работали.",
+        "w": "Ko'plik -> работали.",
         "level": "scenario"
       }
     ],
@@ -1317,7 +1317,7 @@
           "Я буду читать"
         ],
         "correct": 1,
-        "why": "Erkak → читал."
+        "why": "Erkak -> читал."
       },
       {
         "type": "choice",
@@ -1341,7 +1341,7 @@
           "работало"
         ],
         "correct": 1,
-        "why": "Ayol → работала."
+        "why": "Ayol -> работала."
       },
       {
         "type": "choice",
@@ -1353,7 +1353,7 @@
           "-ет"
         ],
         "correct": 1,
-        "why": "O'tgan zamon — -л qo'shimchasi."
+        "why": "O'tgan zamon - -л qo'shimchasi."
       },
       {
         "type": "choice",
@@ -1365,7 +1365,7 @@
           "Я дома есть"
         ],
         "correct": 1,
-        "why": "Erkak → был."
+        "why": "Erkak -> был."
       }
     ],
     "vocab": [
@@ -1434,12 +1434,12 @@
       },
       {
         "topic": "был / была",
-        "rule": "\"edi\" — rodga qarab.",
+        "rule": "\"edi\" - rodga qarab.",
         "ex": "Я был / Я была дома."
       },
       {
         "topic": "Kelasi zamon",
-        "rule": "быть (буду…) + infinitiv.",
+        "rule": "быть (буду...) + infinitiv.",
         "ex": "Я буду работать."
       }
     ]
@@ -1448,22 +1448,22 @@
     "zoom": "Б1",
     "title": "Kelishiklar (to'liq)",
     "sub": "Падежи",
-    "coord": "Cases+ · Б1",
-    "eyebrow": "05 · Qolgan kelishiklar",
+    "coord": "Cases+ / Б1",
+    "eyebrow": "05 / Qolgan kelishiklar",
     "mtitle": "Qolgan kelishiklar: родительный, дательный, творительный",
     "lede": "Endi qolgan 3 kelishik: <strong>родительный</strong> (egalik/yo'qlik), <strong>дательный</strong> (kimga), <strong>творительный</strong> (kim bilan).",
-    "doc": "<div class='prose'><h3>Родительный (кого? чего?) — egalik, yo'qlik</h3><div class=\"exlist\"><div class=\"ex\"><b>книга брата</b><span>akaning kitobi</span></div><div class=\"ex\"><b>У меня нет времени.</b><span>Mening vaqtim yo'q.</span></div><div class=\"ex\"><b>чашка чая</b><span>bir piyola choy</span></div></div><h3>Дательный (кому?) — kimga</h3><div class=\"exlist\"><div class=\"ex\"><b>Я звоню другу.</b><span>Men do'stga qo'ng'iroq qilyapman.</span></div><div class=\"ex\"><b>Мне нравится музыка.</b><span>Menga musiqa yoqadi.</span></div></div><h3>Творительный (кем? чем?) — kim/nima bilan</h3><div class=\"exlist\"><div class=\"ex\"><b>Я пишу ручкой.</b><span>Men ruchka bilan yozaman.</span></div><div class=\"ex\"><b>Я говорю с другом.</b><span>Men do'stim bilan gaplashyapman.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Har kelishikni <strong>tipik so'z bilan</strong> yodla: нет + родительный, нравится + дательный, с + творительный. Naqshni ushlasang, oxirlari o'z-o'zidan keladi.</p></div></div></div>",
+    "doc": "<div class='prose'><h3>Родительный (кого? чего?) - egalik, yo'qlik</h3><div class=\"exlist\"><div class=\"ex\"><b>книга брата</b><span>akaning kitobi</span></div><div class=\"ex\"><b>У меня нет времени.</b><span>Mening vaqtim yo'q.</span></div><div class=\"ex\"><b>чашка чая</b><span>bir piyola choy</span></div></div><h3>Дательный (кому?) - kimga</h3><div class=\"exlist\"><div class=\"ex\"><b>Я звоню другу.</b><span>Men do'stga qo'ng'iroq qilyapman.</span></div><div class=\"ex\"><b>Мне нравится музыка.</b><span>Menga musiqa yoqadi.</span></div></div><h3>Творительный (кем? чем?) - kim/nima bilan</h3><div class=\"exlist\"><div class=\"ex\"><b>Я пишу ручкой.</b><span>Men ruchka bilan yozaman.</span></div><div class=\"ex\"><b>Я говорю с другом.</b><span>Men do'stim bilan gaplashyapman.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Har kelishikni <strong>tipik so'z bilan</strong> yodla: нет + родительный, нравится + дательный, с + творительный. Naqshni ushlasang, oxirlari o'z-o'zidan keladi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
         "id": "ru5-1",
         "html": "Родительный (egalik/нет) ni o'rgandim",
-        "crit": "У меня нет … to'g'ri"
+        "crit": "У меня нет ... to'g'ri"
       },
       {
         "id": "ru5-2",
         "html": "Дательный (кому / нравится) ni o'rgandim",
-        "crit": "Мне нравится … to'g'ri"
+        "crit": "Мне нравится ... to'g'ri"
       },
       {
         "id": "ru5-3",
@@ -1477,15 +1477,15 @@
       },
       {
         "id": "ru5-5",
-        "html": "\"Menga … yoqadi\" turida 3 gap qildim",
-        "crit": "Мне нравится …"
+        "html": "\"Menga ... yoqadi\" turida 3 gap qildim",
+        "crit": "Мне нравится ..."
       }
     ],
     "resources": [
       {
         "type": "doc",
         "url": "https://masterrussian.com/aa/grammar_cases.shtml",
-        "title": "Master Russian — Cases",
+        "title": "Master Russian - Cases",
         "desc": "Barcha kelishiklar",
         "host": "masterrussian.com"
       },
@@ -1591,7 +1591,7 @@
           "винительный"
         ],
         "c": 1,
-        "w": "кому? — дательный.",
+        "w": "кому? - дательный.",
         "level": "scenario"
       }
     ],
@@ -1662,7 +1662,7 @@
         "w": "у меня нет",
         "ipa": "u menyá net",
         "pos": "phr.",
-        "uz": "menda … yo'q",
+        "uz": "menda ... yo'q",
         "ex": "У меня нет времени."
       },
       {
@@ -1673,8 +1673,8 @@
         "ex": "Мне нравится этот город."
       },
       {
-        "w": "друг → другу",
-        "ipa": "drug → drúgu",
+        "w": "друг -> другу",
+        "ipa": "drug -> drúgu",
         "pos": "n.",
         "uz": "do'stga",
         "ex": "Я звоню другу."
@@ -1737,11 +1737,11 @@
     "zoom": "Вид",
     "title": "Fe'l aspekti",
     "sub": "Вид глагола",
-    "coord": "Aspect · Вид",
-    "eyebrow": "06 · Fe'l aspekti (несов./сов.)",
-    "mtitle": "Fe'l aspekti — rus tilining o'ziga xosligi",
-    "lede": "Har ruscha fe'lning <strong>2 ko'rinishi</strong> bor: <strong>tugallanmagan</strong> (jarayon/odat) va <strong>tugallangan</strong> (natija/bir marta). Bu — eng muhim B1 mavzusi.",
-    "doc": "<div class='prose'><h3>Ikki aspekt</h3><table class=\"gtable\"><thead><tr><th>Aspekt</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>Несовершенный (НСВ)</td><td>jarayon, odat, takror</td><td>читать, делать, писать</td></tr><tr><td>Совершенный (СВ)</td><td>natija, bir marta, tugagan</td><td>прочитать, сделать, написать</td></tr></tbody></table><h3>Misol — farqni his qil</h3><div class=\"exlist\"><div class=\"ex\"><b>Я читал книгу. (НСВ)</b><span>Men kitob o'qidim (jarayon edi).</span></div><div class=\"ex\"><b>Я прочитал книгу. (СВ)</b><span>Men kitobni o'qib tugatdim (natija).</span></div></div><h3>Qachon qaysi?</h3><div class=\"chips\"><span class=\"chip\">odat/jarayon → НСВ</span><span class=\"chip\">bir marta/natija → СВ</span><span class=\"chip\">kelasi: буду читать (НСВ) / прочитаю (СВ)</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Yangi fe'lni <strong>juft bo'lib</strong> yodla: делать/сделать, писать/написать. Aspekt — rus tilining eng katta o'ziga xosligi, sabr bilan o'rgan.</p></div></div></div>",
+    "coord": "Aspect / Вид",
+    "eyebrow": "06 / Fe'l aspekti (несов./сов.)",
+    "mtitle": "Fe'l aspekti - rus tilining o'ziga xosligi",
+    "lede": "Har ruscha fe'lning <strong>2 ko'rinishi</strong> bor: <strong>tugallanmagan</strong> (jarayon/odat) va <strong>tugallangan</strong> (natija/bir marta). Bu - eng muhim B1 mavzusi.",
+    "doc": "<div class='prose'><h3>Ikki aspekt</h3><table class=\"gtable\"><thead><tr><th>Aspekt</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>Несовершенный (НСВ)</td><td>jarayon, odat, takror</td><td>читать, делать, писать</td></tr><tr><td>Совершенный (СВ)</td><td>natija, bir marta, tugagan</td><td>прочитать, сделать, написать</td></tr></tbody></table><h3>Misol - farqni his qil</h3><div class=\"exlist\"><div class=\"ex\"><b>Я читал книгу. (НСВ)</b><span>Men kitob o'qidim (jarayon edi).</span></div><div class=\"ex\"><b>Я прочитал книгу. (СВ)</b><span>Men kitobni o'qib tugatdim (natija).</span></div></div><h3>Qachon qaysi?</h3><div class=\"chips\"><span class=\"chip\">odat/jarayon -> НСВ</span><span class=\"chip\">bir marta/natija -> СВ</span><span class=\"chip\">kelasi: буду читать (НСВ) / прочитаю (СВ)</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Yangi fe'lni <strong>juft bo'lib</strong> yodla: делать/сделать, писать/написать. Aspekt - rus tilining eng katta o'ziga xosligi, sabr bilan o'rgan.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1774,7 +1774,7 @@
       {
         "type": "doc",
         "url": "https://masterrussian.com/aa/verbs_aspect.shtml",
-        "title": "Master Russian — Aspect",
+        "title": "Master Russian - Aspect",
         "desc": "Fe'l aspekti",
         "host": "masterrussian.com"
       },
@@ -1844,7 +1844,7 @@
           "Я буду читать"
         ],
         "c": 1,
-        "w": "Natija → совершенный: прочитал.",
+        "w": "Natija -> совершенный: прочитал.",
         "level": "easy"
       },
       {
@@ -1856,7 +1856,7 @@
           "o'tgan"
         ],
         "c": 1,
-        "w": "Jarayon/odat → несовершенный.",
+        "w": "Jarayon/odat -> несовершенный.",
         "level": "practical"
       },
       {
@@ -1865,10 +1865,10 @@
           "несовершенный",
           "совершенный (natija)",
           "kelasi",
-          "—"
+          "-"
         ],
         "c": 1,
-        "w": "сделать — совершенный (tugagan).",
+        "w": "сделать - совершенный (tugagan).",
         "level": "practical"
       },
       {
@@ -1880,7 +1880,7 @@
           "делает"
         ],
         "c": 1,
-        "w": "делать/сделать — aspekt jufti.",
+        "w": "делать/сделать - aspekt jufti.",
         "level": "scenario"
       }
     ],
@@ -1892,10 +1892,10 @@
           "прочитал",
           "читал",
           "прочитаю",
-          "—"
+          "-"
         ],
         "correct": 1,
-        "why": "Jarayon → несовершенный: читал."
+        "why": "Jarayon -> несовершенный: читал."
       },
       {
         "type": "choice",
@@ -1907,7 +1907,7 @@
           "буду писать"
         ],
         "correct": 1,
-        "why": "Natija → совершенный: написал."
+        "why": "Natija -> совершенный: написал."
       },
       {
         "type": "choice",
@@ -1927,15 +1927,15 @@
         "options": [
           "несовершенный",
           "совершенный",
-          "—",
+          "-",
           "kelasi"
         ],
         "correct": 0,
-        "why": "Takror/odat → несовершенный."
+        "why": "Takror/odat -> несовершенный."
       },
       {
         "type": "choice",
-        "q": "\"Я прочитаю книгу\" — qaysi?",
+        "q": "\"Я прочитаю книгу\" - qaysi?",
         "options": [
           "o'tgan",
           "kelasi, natija (СВ)",
@@ -1943,7 +1943,7 @@
           "odat"
         ],
         "correct": 1,
-        "why": "прочитаю — kelasi, tugallangan."
+        "why": "прочитаю - kelasi, tugallangan."
       }
     ],
     "vocab": [
@@ -1994,7 +1994,7 @@
         "ipa": "vid glagóla",
         "pos": "n.",
         "uz": "fe'l aspekti",
-        "ex": "Вид глагола — важная тема."
+        "ex": "Вид глагола - важная тема."
       },
       {
         "w": "письмо",
@@ -2026,11 +2026,11 @@
     "zoom": "Лекс",
     "title": "Lug'at & Talaffuz",
     "sub": "Лексика",
-    "coord": "Lug'at · Лекс",
-    "eyebrow": "07 · So'z boyligi va talaffuz",
+    "coord": "Lug'at / Лекс",
+    "eyebrow": "07 / So'z boyligi va talaffuz",
     "mtitle": "So'z boyligi va aniq talaffuz",
-    "lede": "Foydali so'z guruhlari, urg'u qoidalari va <strong>yumshoq/qattiq</strong> tovushlar. So'zni <strong>urg'usi bilan</strong> yodlash — talaffuzning kaliti.",
-    "doc": "<div class='prose'><h3>Foydali mavzu lug'ati</h3><div class=\"chips\"><span class=\"chip\">семья (oila)</span><span class=\"chip\">работа (ish)</span><span class=\"chip\">еда (ovqat)</span><span class=\"chip\">время (vaqt)</span><span class=\"chip\">город (shahar)</span><span class=\"chip\">транспорт</span></div><h3>Urg'usiz unlilar (редукция)</h3><div class=\"exlist\"><div class=\"ex\"><b>молоко → 'malakó'</b><span>urg'usiz о → 'a'</span></div><div class=\"ex\"><b>хорошо → 'kharashó'</b><span>oxirgi о urg'uli</span></div></div><h3>Yumshoq belgi (ь) va yumshoq tovush</h3><div class=\"exlist\"><div class=\"ex\"><b>мать (ona)</b><span>ь — oldingi undoshni yumshatadi</span></div><div class=\"ex\"><b>день (kun)</b><span>yumshoq н</span></div></div><h3>Talaffuz mashqi</h3><p>🔊 tugmasi bilan so'zni eshit, keyin <strong>baravar takrorla</strong> (shadowing). Urg'uni kuchli ayt — bu rus talaffuzini tabiiy qiladi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yakka so'z yodlama</p><p>So'zni misol gap va urg'u bilan o'rgan. \"делать\" emas, \"Я <strong>де</strong>лаю работу\" kabi — kontekst eslab qolishni osonlashtiradi.</p></div></div></div>",
+    "lede": "Foydali so'z guruhlari, urg'u qoidalari va <strong>yumshoq/qattiq</strong> tovushlar. So'zni <strong>urg'usi bilan</strong> yodlash - talaffuzning kaliti.",
+    "doc": "<div class='prose'><h3>Foydali mavzu lug'ati</h3><div class=\"chips\"><span class=\"chip\">семья (oila)</span><span class=\"chip\">работа (ish)</span><span class=\"chip\">еда (ovqat)</span><span class=\"chip\">время (vaqt)</span><span class=\"chip\">город (shahar)</span><span class=\"chip\">транспорт</span></div><h3>Urg'usiz unlilar (редукция)</h3><div class=\"exlist\"><div class=\"ex\"><b>молоко -> 'malakó'</b><span>urg'usiz о -> 'a'</span></div><div class=\"ex\"><b>хорошо -> 'kharashó'</b><span>oxirgi о urg'uli</span></div></div><h3>Yumshoq belgi (ь) va yumshoq tovush</h3><div class=\"exlist\"><div class=\"ex\"><b>мать (ona)</b><span>ь - oldingi undoshni yumshatadi</span></div><div class=\"ex\"><b>день (kun)</b><span>yumshoq н</span></div></div><h3>Talaffuz mashqi</h3><p>Audio tugmasi bilan so'zni eshit, keyin <strong>baravar takrorla</strong> (shadowing). Urg'uni kuchli ayt - bu rus talaffuzini tabiiy qiladi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yakka so'z yodlama</p><p>So'zni misol gap va urg'u bilan o'rgan. \"делать\" emas, \"Я <strong>де</strong>лаю работу\" kabi - kontekst eslab qolishni osonlashtiradi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2040,7 +2040,7 @@
       },
       {
         "id": "ru7-2",
-        "html": "Urg'usiz о → 'a' qoidasini misolda eshitdim",
+        "html": "Urg'usiz о -> 'a' qoidasini misolda eshitdim",
         "crit": "молоко talaffuzi"
       },
       {
@@ -2050,7 +2050,7 @@
       },
       {
         "id": "ru7-4",
-        "html": "5 so'zni 🔊 bilan eshitib, shadowing qildim",
+        "html": "5 so'zni Audio bilan eshitib, shadowing qildim",
         "crit": "talaffuzni nusxa qilasan"
       },
       {
@@ -2089,7 +2089,7 @@
       "features": [
         "20 so'z, urg'u bilan",
         "Misol gaplar",
-        "🔊 bilan talaffuz mashqi",
+        "Audio bilan talaffuz mashqi",
         "Anki'ga kiritish",
         "Dialog yoki mini matn",
         "Lug'at ro'yxati",
@@ -2133,7 +2133,7 @@
           "e"
         ],
         "c": 1,
-        "w": "Reduksiya: urg'usiz о → 'a'.",
+        "w": "Reduksiya: urg'usiz о -> 'a'.",
         "level": "easy"
       },
       {
@@ -2145,7 +2145,7 @@
           "hech narsa"
         ],
         "c": 1,
-        "w": "ь — undoshni yumshatadi.",
+        "w": "ь - undoshni yumshatadi.",
         "level": "practical"
       },
       {
@@ -2184,7 +2184,7 @@
           "urg'u yo'q"
         ],
         "correct": 2,
-        "why": "молокó — urg'u oxirgi bo'g'inda."
+        "why": "молокó - urg'u oxirgi bo'g'inda."
       },
       {
         "type": "choice",
@@ -2196,7 +2196,7 @@
           "город"
         ],
         "correct": 1,
-        "why": "мать — ь bilan."
+        "why": "мать - ь bilan."
       },
       {
         "type": "choice",
@@ -2220,7 +2220,7 @@
           "imlo"
         ],
         "correct": 1,
-        "why": "Forvo — real talaffuz namunalari."
+        "why": "Forvo - real talaffuz namunalari."
       }
     ],
     "vocab": [
@@ -2298,7 +2298,7 @@
     "grammar": [
       {
         "topic": "Reduksiya",
-        "rule": "Urg'usiz о/а → 'a' kabi eshitiladi.",
+        "rule": "Urg'usiz о/а -> 'a' kabi eshitiladi.",
         "ex": "молоко ≈ 'malakó'"
       },
       {
@@ -2317,11 +2317,11 @@
     "zoom": "Речь",
     "title": "Suhbat & Amaliyot",
     "sub": "Amaliyot",
-    "coord": "Suhbat · Речь",
-    "eyebrow": "08 · Kundalik suhbat",
+    "coord": "Suhbat / Речь",
+    "eyebrow": "08 / Kundalik suhbat",
     "mtitle": "Kundalik vaziyatlarda gapirish",
     "lede": "O'rganganlarni <strong>real suhbatda</strong> ishlatamiz: tanishish, do'konda, kafeda, yo'l so'rash. Tayyor iboralar + o'z gaping.",
-    "doc": "<div class='prose'><h3>Tanishish</h3><div class=\"exlist\"><div class=\"ex\"><b>Как вас зовут? — Меня зовут …</b><span>Ismingiz nima? — Ismim …</span></div><div class=\"ex\"><b>Откуда вы? — Я из Узбекистана.</b><span>Qayerdansiz? — O'zbekistondanman.</span></div><div class=\"ex\"><b>Очень приятно!</b><span>Tanishganimdan xursandman!</span></div></div><h3>Do'kon / kafeda</h3><div class=\"exlist\"><div class=\"ex\"><b>Сколько это стоит?</b><span>Bu qancha turadi?</span></div><div class=\"ex\"><b>Я хочу чай, пожалуйста.</b><span>Choy istayman, iltimos.</span></div><div class=\"ex\"><b>Можно меню?</b><span>Menyu mumkinmi?</span></div></div><h3>Yo'l so'rash</h3><div class=\"exlist\"><div class=\"ex\"><b>Где метро?</b><span>Metro qayerda?</span></div><div class=\"ex\"><b>Как пройти к вокзалу?</b><span>Vokzalga qanday borish mumkin?</span></div></div><h3>Foydali \"vaqt yutadigan\" iboralar</h3><div class=\"chips\"><span class=\"chip t\">Минуточку…</span><span class=\"chip t\">Как сказать…</span><span class=\"chip t\">Я думаю…</span><span class=\"chip t\">Честно говоря…</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Suhbatda mukammallik emas, <strong>ravonlik</strong> muhim. Kichik xato bo'lsa ham gapir — to'xtama. Tayyor iboralar (chunk) suhbatni tezlashtiradi.</p></div></div></div>",
+    "doc": "<div class='prose'><h3>Tanishish</h3><div class=\"exlist\"><div class=\"ex\"><b>Как вас зовут? - Меня зовут ...</b><span>Ismingiz nima? - Ismim ...</span></div><div class=\"ex\"><b>Откуда вы? - Я из Узбекистана.</b><span>Qayerdansiz? - O'zbekistondanman.</span></div><div class=\"ex\"><b>Очень приятно!</b><span>Tanishganimdan xursandman!</span></div></div><h3>Do'kon / kafeda</h3><div class=\"exlist\"><div class=\"ex\"><b>Сколько это стоит?</b><span>Bu qancha turadi?</span></div><div class=\"ex\"><b>Я хочу чай, пожалуйста.</b><span>Choy istayman, iltimos.</span></div><div class=\"ex\"><b>Можно меню?</b><span>Menyu mumkinmi?</span></div></div><h3>Yo'l so'rash</h3><div class=\"exlist\"><div class=\"ex\"><b>Где метро?</b><span>Metro qayerda?</span></div><div class=\"ex\"><b>Как пройти к вокзалу?</b><span>Vokzalga qanday borish mumkin?</span></div></div><h3>Foydali \"vaqt yutadigan\" iboralar</h3><div class=\"chips\"><span class=\"chip t\">Минуточку...</span><span class=\"chip t\">Как сказать...</span><span class=\"chip t\">Я думаю...</span><span class=\"chip t\">Честно говоря...</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Suhbatda mukammallik emas, <strong>ravonlik</strong> muhim. Kichik xato bo'lsa ham gapir - to'xtama. Tayyor iboralar (chunk) suhbatni tezlashtiradi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2337,7 +2337,7 @@
       {
         "id": "ru8-3",
         "html": "Yo'l so'rash iboralarini mashq qildim",
-        "crit": "Где …? Как пройти …?"
+        "crit": "Где ...? Как пройти ...?"
       },
       {
         "id": "ru8-4",
@@ -2346,7 +2346,7 @@
       },
       {
         "id": "ru8-5",
-        "html": "🔊 bilan dialogni eshitib, ovozimni yozdim",
+        "html": "Audio bilan dialogni eshitib, ovozimni yozdim",
         "crit": "talaffuz + ravonlik"
       }
     ],
@@ -2381,7 +2381,7 @@
         "Savol-javob",
         "Tayyor iboralar ishlatilgan",
         "Kamida 8 gap",
-        "🔊 bilan talaffuz tekshirilgan",
+        "Audio bilan talaffuz tekshirilgan",
         "Dialog yoki mini matn",
         "Lug'at ro'yxati",
         "Grammatika self-check",
@@ -2421,7 +2421,7 @@
     },
     "quiz": [
       {
-        "q": "\"Как вас зовут?\" — bu:",
+        "q": "\"Как вас зовут?\" - bu:",
         "a": [
           "Qayerdansiz?",
           "Ismingiz nima?",
@@ -2453,7 +2453,7 @@
           "Metro kim?"
         ],
         "c": 1,
-        "w": "Где — qayerda.",
+        "w": "Где - qayerda.",
         "level": "practical"
       },
       {
@@ -2465,7 +2465,7 @@
           "uzun gaplar"
         ],
         "c": 1,
-        "w": "Ravonlik — kichik xato uchun to'xtama.",
+        "w": "Ravonlik - kichik xato uchun to'xtama.",
         "level": "scenario"
       }
     ],
@@ -2492,7 +2492,7 @@
           "Сколько чай?"
         ],
         "correct": 1,
-        "why": "Я хочу … — istayman."
+        "why": "Я хочу ... - istayman."
       },
       {
         "type": "choice",
@@ -2504,7 +2504,7 @@
           "Метро есть"
         ],
         "correct": 1,
-        "why": "Где …? — qayerda."
+        "why": "Где ...? - qayerda."
       },
       {
         "type": "choice",
@@ -2516,19 +2516,19 @@
           "uxlashda"
         ],
         "correct": 1,
-        "why": "Tanishganda — \"juda yoqimli\"."
+        "why": "Tanishganda - \"juda yoqimli\"."
       },
       {
         "type": "choice",
         "q": "Vaqt yutadigan ibora:",
         "options": [
           "Спасибо",
-          "Минуточку…",
+          "Минуточку...",
           "Пока",
           "Да"
         ],
         "correct": 1,
-        "why": "Минуточку — \"bir daqiqa\"."
+        "why": "Минуточку - \"bir daqiqa\"."
       }
     ],
     "vocab": [
@@ -2544,7 +2544,7 @@
         "ipa": "atkúda vy",
         "pos": "phr.",
         "uz": "Qayerdansiz?",
-        "ex": "Откуда вы? — Я из Ташкента."
+        "ex": "Откуда вы? - Я из Ташкента."
       },
       {
         "w": "Сколько стоит?",
@@ -2554,17 +2554,17 @@
         "ex": "Сколько это стоит?"
       },
       {
-        "w": "Я хочу…",
+        "w": "Я хочу...",
         "ipa": "ya khachú",
         "pos": "phr.",
-        "uz": "Istayman…",
+        "uz": "Istayman...",
         "ex": "Я хочу кофе."
       },
       {
-        "w": "Где…?",
+        "w": "Где...?",
         "ipa": "gde",
         "pos": "adv.",
-        "uz": "Qayerda…?",
+        "uz": "Qayerda...?",
         "ex": "Где вокзал?"
       },
       {
@@ -2603,24 +2603,24 @@
       {
         "topic": "Где / Как пройти",
         "rule": "Joy va yo'l so'rash.",
-        "ex": "Где метро? Как пройти к…?"
+        "ex": "Где метро? Как пройти к...?"
       }
     ]
   },
   {
     "zoom": "Падежи",
-    "title": "Kelishiklar — umumiy",
+    "title": "Kelishiklar - umumiy",
     "sub": "6 ta kelishik",
-    "coord": "Grammatika · Падежи",
-    "eyebrow": "10 · Падежи (kelishiklar)",
-    "mtitle": "Rus tilidagi 6 kelishik — bir joyda",
-    "lede": "Rus tilida so'z gapdagi vazifasiga qarab <strong>oxiri o'zgaradi</strong> — bu kelishiklar (падежи). 6 tasi bor. Bu modulda hammani savol va misol bilan jamlaymiz.",
-    "doc": "<div class='prose'><p>Kelishik — so'zning gapdagi rolini ko'rsatuvchi shakl. Har kelishikning o'z <strong>savoli</strong> bor — savolni berib, qaysi kelishik kerakligini topasan.</p><h3>6 kelishik jadvali</h3><table class='gtable'><thead><tr><th>Kelishik</th><th>Savol</th><th>Misol (книга)</th></tr></thead><tbody><tr><td>Именительный (bosh)</td><td>кто? что?</td><td>книга</td></tr><tr><td>Родительный (qaratqich)</td><td>кого? чего?</td><td>книги</td></tr><tr><td>Дательный (jo'nalish)</td><td>кому? чему?</td><td>книге</td></tr><tr><td>Винительный (tushum)</td><td>кого? что?</td><td>книгу</td></tr><tr><td>Творительный (vosita)</td><td>кем? чем?</td><td>книгой</td></tr><tr><td>Предложный (o'rin)</td><td>о ком? о чём?</td><td>о книге</td></tr></tbody></table><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Avval savolni ber</p><p>\"Men kitob o'qiyman\" — nimani? (что?) → винительный → <strong>книгу</strong>. Savol kelishikni o'zi ko'rsatadi.</p></div></div><h3>Eng ko'p ishlatiladi</h3><p>Boshlang'ich darajada <strong>именительный</strong> (kim/nima), <strong>винительный</strong> (kimni/nimani) va <strong>предложный</strong> (qayerda — в/на bilan) eng kerak.</p></div>",
+    "coord": "Grammatika / Падежи",
+    "eyebrow": "10 / Падежи (kelishiklar)",
+    "mtitle": "Rus tilidagi 6 kelishik - bir joyda",
+    "lede": "Rus tilida so'z gapdagi vazifasiga qarab <strong>oxiri o'zgaradi</strong> - bu kelishiklar (падежи). 6 tasi bor. Bu modulda hammani savol va misol bilan jamlaymiz.",
+    "doc": "<div class='prose'><p>Kelishik - so'zning gapdagi rolini ko'rsatuvchi shakl. Har kelishikning o'z <strong>savoli</strong> bor - savolni berib, qaysi kelishik kerakligini topasan.</p><h3>6 kelishik jadvali</h3><table class='gtable'><thead><tr><th>Kelishik</th><th>Savol</th><th>Misol (книга)</th></tr></thead><tbody><tr><td>Именительный (bosh)</td><td>кто? что?</td><td>книга</td></tr><tr><td>Родительный (qaratqich)</td><td>кого? чего?</td><td>книги</td></tr><tr><td>Дательный (jo'nalish)</td><td>кому? чему?</td><td>книге</td></tr><tr><td>Винительный (tushum)</td><td>кого? что?</td><td>книгу</td></tr><tr><td>Творительный (vosita)</td><td>кем? чем?</td><td>книгой</td></tr><tr><td>Предложный (o'rin)</td><td>о ком? о чём?</td><td>о книге</td></tr></tbody></table><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Avval savolni ber</p><p>\"Men kitob o'qiyman\" - nimani? (что?) -> винительный -> <strong>книгу</strong>. Savol kelishikni o'zi ko'rsatadi.</p></div></div><h3>Eng ko'p ishlatiladi</h3><p>Boshlang'ich darajada <strong>именительный</strong> (kim/nima), <strong>винительный</strong> (kimni/nimani) va <strong>предложный</strong> (qayerda - в/на bilan) eng kerak.</p></div>",
     "code": [],
     "exercises": [
       {
         "type": "choice",
-        "q": "\"Я читаю ___\" (kitob — что?) qaysi shakl?",
+        "q": "\"Я читаю ___\" (kitob - что?) qaysi shakl?",
         "options": [
           "книга",
           "книгу",
@@ -2628,11 +2628,11 @@
           "книгой"
         ],
         "correct": 1,
-        "why": "что? (nimani?) → винительный → книгу."
+        "why": "что? (nimani?) -> винительный -> книгу."
       },
       {
         "type": "choice",
-        "q": "\"о ком? о чём?\" — qaysi kelishik?",
+        "q": "\"о ком? о чём?\" - qaysi kelishik?",
         "options": [
           "Родительный",
           "Дательный",
@@ -2640,7 +2640,7 @@
           "Творительный"
         ],
         "correct": 2,
-        "why": "о ком/о чём — предложный (o'rin/mavzu), в/на bilan ishlatiladi."
+        "why": "о ком/о чём - предложный (o'rin/mavzu), в/на bilan ishlatiladi."
       },
       {
         "type": "listen",
@@ -2650,7 +2650,7 @@
         "answers": [
           "я читаю книгу"
         ],
-        "why": "книгу — винительный (что?). Men kitobni o'qiyman."
+        "why": "книгу - винительный (что?). Men kitobni o'qiyman."
       },
       {
         "type": "listen",
@@ -2660,7 +2660,7 @@
         "answers": [
           "я живу в ташкенте"
         ],
-        "why": "в Ташкенте — предложный (где?). Men Toshkentda yashayman."
+        "why": "в Ташкенте - предложный (где?). Men Toshkentda yashayman."
       }
     ],
     "tasks": [
@@ -2697,9 +2697,9 @@
       }
     ],
     "project": {
-      "tag": "Rus tili amaliyot · Yakuniy",
-      "title": "Kelishiklar — umumiy Portfolio Task",
-      "desc": "Kelishiklar — umumiy modulini real natijaga aylantiradigan yakuniy amaliy ish.",
+      "tag": "Rus tili amaliyot / Yakuniy",
+      "title": "Kelishiklar - umumiy Portfolio Task",
+      "desc": "Kelishiklar - umumiy modulini real natijaga aylantiradigan yakuniy amaliy ish.",
       "features": [
         "Dialog yoki mini matn",
         "Lug'at ro'yxati",
@@ -2714,8 +2714,8 @@
       ],
       "variants": [
         {
-          "title": "Kelishiklar — umumiy Portfolio Task - Travel Dialogue",
-          "desc": "Kelishiklar — umumiy mavzusini safar/do'kon/yo'l so'rash dialogiga aylantir.",
+          "title": "Kelishiklar - umumiy Portfolio Task - Travel Dialogue",
+          "desc": "Kelishiklar - umumiy mavzusini safar/do'kon/yo'l so'rash dialogiga aylantir.",
           "deliverables": [
             "8-10 replikali dialog",
             "10 ta yangi so'z",
@@ -2723,7 +2723,7 @@
           ]
         },
         {
-          "title": "Kelishiklar — umumiy Portfolio Task - Work Dialogue",
+          "title": "Kelishiklar - umumiy Portfolio Task - Work Dialogue",
           "desc": "Ish, o'qish yoki xizmat ko'rsatish holatiga mos ruscha suhbat.",
           "deliverables": [
             "Formal/informal variant",
@@ -2755,11 +2755,11 @@
           "Творительный"
         ],
         "c": 1,
-        "w": "кого/что (tushum) — винительный, harakat obyekti.",
+        "w": "кого/что (tushum) - винительный, harakat obyekti.",
         "level": "practical"
       },
       {
-        "q": "\"в Ташкенте\" — qaysi kelishik?",
+        "q": "\"в Ташкенте\" - qaysi kelishik?",
         "a": [
           "Предложный",
           "Родительный",
@@ -2767,7 +2767,7 @@
           "Именительный"
         ],
         "c": 0,
-        "w": "в/на + где? → предложный (o'rin).",
+        "w": "в/на + где? -> предложный (o'rin).",
         "level": "scenario"
       }
     ],
@@ -2801,17 +2801,17 @@
     "grammar": [
       {
         "topic": "Именительный",
-        "rule": "Bosh kelishik — kim/nima (ega). Savol: кто? что?",
+        "rule": "Bosh kelishik - kim/nima (ega). Savol: кто? что?",
         "ex": "Это книга. Студент читает."
       },
       {
         "topic": "Винительный",
-        "rule": "Tushum — harakat obyekti. Savol: кого? что?",
+        "rule": "Tushum - harakat obyekti. Savol: кого? что?",
         "ex": "Я вижу студента. Я читаю книгу."
       },
       {
         "topic": "Предложный",
-        "rule": "O'rin/mavzu — doim predlog bilan (в, на, о). Savol: о ком? о чём? где?",
+        "rule": "O'rin/mavzu - doim predlog bilan (в, на, о). Savol: о ком? о чём? где?",
         "ex": "Я думаю о работе. Книга на столе."
       }
     ]

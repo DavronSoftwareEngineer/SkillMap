@@ -1,0 +1,1918 @@
+[
+  {
+    "zoom": "CY0",
+    "title": "Security mindset",
+    "sub": "Etika va risk",
+    "coord": "Foundation / CY0",
+    "eyebrow": "00 / Professional xavfsizlik fikrlashi",
+    "mtitle": "Cybersecurity nima: riskni kamaytirish san'ati",
+    "lede": "Cybersecurity - bu faqat hack emas. Professional darajada u <strong>aktivlarni aniqlash</strong>, <strong>riskni baholash</strong>, <strong>nazorat qo'yish</strong> va <strong>hodisaga tayyor turish</strong> jarayonidir.",
+    "doc": "<div class='prose'><h3>Asosiy maqsad</h3><p>Xavfsizlikning vazifasi biznesni to'xtatish emas, uni xavfsiz ishlatish. Shuning uchun savol doim shunday: nimani himoya qilamiz, kimdan, qanday ehtimol bilan va qanday zarar bo'ladi?</p><div class='chips'><span class='chip t'>Asset</span><span class='chip t'>Threat</span><span class='chip'>Vulnerability</span><span class='chip'>Risk</span><span class='chip t'>Control</span></div><h3>CIA triad</h3><table class='gtable'><thead><tr><th>Tamoyil</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>Confidentiality</td><td>maxfiylik</td><td>parol hash, access control</td></tr><tr><td>Integrity</td><td>butunlik</td><td>audit log, checksum, review</td></tr><tr><td>Availability</td><td>mavjudlik</td><td>backup, monitoring, DDoS himoya</td></tr></tbody></table><h3>Etika</h3><p>Professional kiberxavfsizlikda ruxsat, scope va yozma kelishuv majburiy. Real tizimni tekshirish faqat egasining aniq ruxsati bilan qilinadi. Kursdagi amaliyotlar lokal lab, CTF yoki o'zingga tegishli demo muhitda bajariladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 8v5'/><path d='M12 16h.01'/></svg></span><div><p>Professional qoida</p><p>Qila olamanmi degan savoldan oldin: ruxsat bormi, scope qayergacha, zararni qanday oldini olaman va natijani qanday hujjatlashtiraman?</p></div></div><h3>W3Schools mapping</h3><p>W3Schools kursi cyber crime, money-making threats, dark web, networking, attacks, security operations va incident response kabi 16 ta asosiy sahifani ketma-ket beradi. Bu modul osha roadmapni professional risk tili bilan boglaydi: threat, vulnerability, impact, likelihood va control.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Risk register",
+          "p": "Har bir topilmani oddiy jadvalga tushir."
+        },
+        "title": "Risk baholash shabloni",
+        "lang": "text",
+        "code": "Asset: customer database\nThreat: stolen credentials\nVulnerability: no MFA for admin users\nImpact: high\nLikelihood: medium\nRisk: high\nControl: require MFA, rotate sessions, alert on new device login\nOwner: platform team\nDue date: 14 days"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy0-1",
+        "html": "CIA triadni o'z so'zim bilan tushuntirdim",
+        "crit": "har biri uchun real misol bor"
+      },
+      {
+        "id": "cy0-2",
+        "html": "Asset/threat/vulnerability/risk/control farqini ajratdim",
+        "crit": "kamida 5 ta misol yozilgan"
+      },
+      {
+        "id": "cy0-3",
+        "html": "Ruxsatli lab qoidalarini yozib chiqdim",
+        "crit": "scope, ruxsat, zarar oldini olish bor"
+      },
+      {
+        "id": "cy0-4",
+        "html": "Bitta risk register yozdim",
+        "crit": "impact, likelihood, owner va control bor"
+      },
+      {
+        "id": "cy0-5",
+        "html": "W3Schools Cyber Security Tutorial roadmapini ko rib chiqdim",
+        "crit": "16 sahifa qaysi modulga tushishini belgilading"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://www.nist.gov/cyberframework",
+        "title": "NIST Cybersecurity Framework",
+        "desc": "Risk va xavfsizlik boshqaruvi uchun framework",
+        "host": "nist.gov"
+      },
+      {
+        "type": "doc",
+        "url": "https://owasp.org/www-project-top-ten/",
+        "title": "OWASP Top 10",
+        "desc": "Web xavfsizlikdagi eng muhim risklar",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://attack.mitre.org/",
+        "title": "MITRE ATT&CK",
+        "desc": "Taktika, texnika va detection xaritasi",
+        "host": "attack.mitre.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/index.php",
+        "title": "W3Schools Cyber Security Tutorial",
+        "desc": "Intro course map: cyber crime, networking, attacks, defence, quiz and study plan",
+        "host": "w3schools.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_cyber_crime.php",
+        "title": "W3Schools - Cyber Crime",
+        "desc": "Basic cyber crime concepts for beginner context",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "Foundation portfolio",
+      "title": "Mini risk assessment",
+      "desc": "Oddiy web ilova yoki shaxsiy loyiha uchun aktivlar, risklar va nazoratlar jadvalini tuz.",
+      "features": [
+        "asset inventory",
+        "risk register",
+        "top 5 controls",
+        "owner va muddat",
+        "1 sahifalik executive summary"
+      ],
+      "rubric": [
+        "Risklar aniq asset bilan bog'langan.",
+        "Har risk uchun amaliy control bor.",
+        "Texnik va biznes ta'sir alohida yozilgan."
+      ],
+      "variants": [
+        {
+          "title": "Startup app risk review",
+          "desc": "Login, database, payment va admin panel risklarini bahola.",
+          "deliverables": [
+            "risk register",
+            "control plan",
+            "priority list"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Confidentiality nimani himoya qiladi?",
+        "a": [
+          "mavjudlikni",
+          "maxfiy ma'lumotni",
+          "tezlikni",
+          "dizaynni"
+        ],
+        "c": 1,
+        "w": "Confidentiality - ma'lumotni ruxsatsiz ko'rishdan himoya qiladi.",
+        "level": "easy"
+      },
+      {
+        "q": "Risk formulasi amalda nimaga qaraydi?",
+        "a": [
+          "rang va dizayn",
+          "impact va likelihood",
+          "faqat parol uzunligi",
+          "server narxi"
+        ],
+        "c": 1,
+        "w": "Risk odatda ta'sir va ehtimollik bilan baholanadi.",
+        "level": "practical"
+      },
+      {
+        "q": "Professional test uchun birinchi shart nima?",
+        "a": [
+          "tez internet",
+          "yozma ruxsat va scope",
+          "ko'p tool",
+          "anonim bo'lish"
+        ],
+        "c": 1,
+        "w": "Ruxsat va scope bo'lmasa test qilinmaydi.",
+        "level": "scenario"
+      },
+      {
+        "q": "Control nima?",
+        "a": [
+          "xavfni kamaytiruvchi chora",
+          "faqat hujum nomi",
+          "terminal oynasi",
+          "random parol"
+        ],
+        "c": 0,
+        "w": "Control - riskni kamaytirish yoki aniqlash chorasi.",
+        "level": "easy"
+      },
+      {
+        "q": "W3Schools intro kursi nimaga yaxshi primer bo ladi?",
+        "a": [
+          "faqat dizayn uchun",
+          "cybersecurity domenlarini umumiy ko rish uchun",
+          "faqat CSS uchun",
+          "server sotib olish uchun"
+        ],
+        "c": 1,
+        "w": "W3Schools intro sahifasi turli cyber security domenlariga kirish beradi.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Admin panelga MFA qo'shish qaysi control turiga yaqin?",
+        "options": [
+          "preventive",
+          "decorative",
+          "irrelevant",
+          "marketing"
+        ],
+        "correct": 0,
+        "why": "MFA ruxsatsiz kirishni oldini olishga yordam beradi."
+      },
+      {
+        "type": "gap",
+        "q": "CIA triadda A = ____.",
+        "answers": [
+          "availability"
+        ],
+        "hint": "xizmat ishlashi",
+        "why": "Availability - tizim kerak paytda ishlashi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "asset",
+        "uz": "himoya qilinadigan qiymatli narsa",
+        "ex": "A customer database is a critical asset."
+      },
+      {
+        "w": "control",
+        "uz": "riskni kamaytiruvchi chora",
+        "ex": "MFA is a preventive control."
+      },
+      {
+        "w": "scope",
+        "uz": "ruxsat berilgan chegara",
+        "ex": "The test scope includes only the staging API."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "CIA triad",
+        "rule": "Confidentiality, Integrity, Availability xavfsizlikning uch poydevori.",
+        "ex": "Backup availability uchun, hashing integrity uchun."
+      },
+      {
+        "topic": "Risk register",
+        "rule": "Asset + threat + vulnerability + impact + likelihood + control.",
+        "ex": "Admin account + stolen password + no MFA = high risk."
+      }
+    ]
+  },
+  {
+    "zoom": "CY1",
+    "title": "Network basics",
+    "sub": "TCP/IP, DNS, TLS",
+    "coord": "Network / CY1",
+    "eyebrow": "01 / Trafikni tushunish",
+    "mtitle": "Tarmoqni bilmasdan security kuchli bo'lmaydi",
+    "lede": "Hujum ham, himoya ham trafikdan boshlanadi. TCP/IP, DNS, HTTP va TLS'ni tushunsang, log, firewall, proxy va detection ancha ravshan bo'ladi.",
+    "doc": "<div class='prose'><h3>Minimal tarmoq xaritasi</h3><p>Brauzer URL ochganda odatda DNS so'rovi, TCP handshake, TLS handshake va HTTP request ketadi. Security engineer shu bosqichlarning qaysisida muammo bo'lishini ko'ra olishi kerak.</p><table class='gtable'><thead><tr><th>Qatlam</th><th>Bilish kerak</th><th>Security savol</th></tr></thead><tbody><tr><td>DNS</td><td>domain -> IP</td><td>domain spoofing yoki sinkhole bormi?</td></tr><tr><td>TCP</td><td>port, session, handshake</td><td>qaysi port ochiq va keraklimi?</td></tr><tr><td>TLS</td><td>sertifikat, encryption</td><td>sertifikat to'g'rimi, zaif protokol yo'qmi?</td></tr><tr><td>HTTP</td><td>method, header, status</td><td>auth, cookie, CORS, caching xavfsizmi?</td></tr></tbody></table><h3>Packet va log</h3><p>Professional ishda har doim packet capture kerak bo'lmaydi, lekin Wireshark yoki tcpdump bilan trafikni o'qiy olish detection va troubleshootingni tezlashtiradi.</p><h3>W3Schools mapping</h3><p>W3Schools networking sahifasi OSI modelni 7 qatlamga ajratadi: application, presentation, session, transport, network, data link va physical. Firewalls sahifasi ingress/egress trafik, Layer 4 firewall, NGFW va segmentationni alohida tushuntiradi. Shu sababli bu modulda trafik baseline bilan birga firewall zone va allowed flow jadvali ham tuziladi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Network triage",
+          "p": "Faqat o'zingga tegishli hostlarda ishlat."
+        },
+        "title": "Asosiy tekshiruv buyruqlari",
+        "lang": "bash",
+        "code": "dig example.com\ncurl -I https://example.com\nopenssl s_client -connect example.com:443 -servername example.com\nss -tulpn\n# Lab muhitida packet ko'rish:\ntcpdump -i lo port 3000"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy1-1",
+        "html": "DNS -> TCP -> TLS -> HTTP oqimini chizdim",
+        "crit": "har bosqichda security savol bor"
+      },
+      {
+        "id": "cy1-2",
+        "html": "curl -I bilan security headerlarni ko'rdim",
+        "crit": "faqat ruxsatli sayt yoki lokal app"
+      },
+      {
+        "id": "cy1-3",
+        "html": "Wireshark/tcpdumpda oddiy HTTP requestni kuzatdim",
+        "crit": "lokal labda bajarilgan"
+      },
+      {
+        "id": "cy1-4",
+        "html": "Ochiq portlar inventarini tuzdim",
+        "crit": "kerakli/keraksiz portlar ajratilgan"
+      },
+      {
+        "id": "cy1-5",
+        "html": "OSI 7 qatlamini security misollar bilan yozdim",
+        "crit": "har qatlamga kamida bitta protocol yoki control bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+        "title": "MDN HTTP",
+        "desc": "HTTP asoslari va headerlar",
+        "host": "developer.mozilla.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.cloudflare.com/learning/ssl/what-is-ssl/",
+        "title": "Cloudflare TLS primer",
+        "desc": "TLS tushunchasi",
+        "host": "cloudflare.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.wireshark.org/docs/",
+        "title": "Wireshark Docs",
+        "desc": "Packet tahlil hujjatlari",
+        "host": "wireshark.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_networking.php",
+        "title": "W3Schools - Networking Basics",
+        "desc": "OSI model, layers, TCP/UDP, IP, Ethernet and Wi-Fi overview",
+        "host": "w3schools.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_firewalls.php",
+        "title": "W3Schools - Firewalls",
+        "desc": "Layer 4 firewall, NGFW, ingress/egress and segmentation",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "Network lab",
+      "title": "Traffic baseline",
+      "desc": "Lokal web app uchun normal trafik baseline tuz: DNS kerakmi, portlar, headerlar, TLS holati.",
+      "features": [
+        "port inventory",
+        "HTTP headers",
+        "sample packet capture",
+        "normal vs suspicious notes"
+      ],
+      "rubric": [
+        "Ruxsatli muhit ishlatilgan.",
+        "Natijalar screenshot emas, tushuntirish bilan yozilgan.",
+        "Kamida 3 ta xavfsizlik xulosasi bor."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "DNS nima qiladi?",
+        "a": [
+          "parol hash qiladi",
+          "domainni IPga bog'laydi",
+          "fayl siqadi",
+          "UI chizadi"
+        ],
+        "c": 1,
+        "w": "DNS domain nomini IP manzilga yechadi.",
+        "level": "easy"
+      },
+      {
+        "q": "TLS asosiy vazifasi?",
+        "a": [
+          "rang berish",
+          "trafikni shifrlash va serverni tekshirish",
+          "disk tozalash",
+          "port yopish"
+        ],
+        "c": 1,
+        "w": "TLS maxfiylik va server autentifikatsiyasi beradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Keraksiz ochiq port nima?",
+        "a": [
+          "attack surface",
+          "backup",
+          "hash",
+          "cookie"
+        ],
+        "c": 0,
+        "w": "Ochiq portlar attack surface bo'lishi mumkin.",
+        "level": "practical"
+      },
+      {
+        "q": "curl -I nimani ko'rsatadi?",
+        "a": [
+          "faqat body",
+          "HTTP headerlarni",
+          "Wi-Fi parolni",
+          "kernel logni"
+        ],
+        "c": 1,
+        "w": "curl -I HEAD so'rov qilib headerlarni ko'rsatadi.",
+        "level": "practical"
+      },
+      {
+        "q": "NGFW Layer 4 firewalldan nimasi bilan kengroq?",
+        "a": [
+          "faqat kabel almashtiradi",
+          "application, user, session kabi kontekstni ham ko ra oladi",
+          "faqat HTML tekshiradi",
+          "faqat backup qiladi"
+        ],
+        "c": 1,
+        "w": "NGFW ko proq qatlam va kontekst bo yicha nazorat beradi.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Security header qaysi javobda?",
+        "options": [
+          "Content-Security-Policy",
+          "background-color",
+          "console.log",
+          "SELECT *"
+        ],
+        "correct": 0,
+        "why": "CSP brauzerda zararli script riskini kamaytiradi."
+      },
+      {
+        "type": "gap",
+        "q": "HTTPS odatda ____ portda ishlaydi.",
+        "answers": [
+          "443"
+        ],
+        "hint": "standart TLS port",
+        "why": "HTTPS uchun standart port 443."
+      },
+      {
+        "type": "choice",
+        "q": "Firewall segmentation nimaga xizmat qiladi?",
+        "options": [
+          "ruxsatsiz aloqani cheklashga",
+          "font tanlashga",
+          "parolni bezashga",
+          "loglarni o chirishga"
+        ],
+        "correct": 0,
+        "why": "Segmentation zonalar orasidagi trafikni nazorat qiladi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "port",
+        "uz": "xizmat eshigi",
+        "ex": "HTTPS usually listens on port 443."
+      },
+      {
+        "w": "handshake",
+        "uz": "ulanish kelishuvi",
+        "ex": "TLS handshake negotiates encryption."
+      },
+      {
+        "w": "baseline",
+        "uz": "normal holat o'lchovi",
+        "ex": "A baseline helps detect anomalies."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "TCP/IP triage",
+        "rule": "Avval nom yechimi, keyin port, keyin TLS, keyin HTTP tekshiriladi.",
+        "ex": "dig -> curl -> openssl -> log."
+      }
+    ]
+  },
+  {
+    "zoom": "CY2",
+    "title": "Linux lab",
+    "sub": "Shell va hardening",
+    "coord": "Linux / CY2",
+    "eyebrow": "02 / Ish muhitini boshqarish",
+    "mtitle": "Linux: security engineerning kundalik terminali",
+    "lede": "Linuxni bilish - log o'qish, ruxsatlarni tushunish, servislarni boshqarish, container va cloud muhitida o'zini yo'qotmaslik degani.",
+    "doc": "<div class='prose'><h3>Asosiy yo'nalishlar</h3><div class='chips'><span class='chip t'>users/groups</span><span class='chip'>permissions</span><span class='chip t'>systemd</span><span class='chip'>logs</span><span class='chip t'>firewall</span></div><h3>Least privilege</h3><p>Har servis va foydalanuvchi faqat kerakli huquqqa ega bo'lishi kerak. Root bilan doimiy ishlash professional amaliyot emas.</p><h3>Loglarni o'qish</h3><p>Auth log, web server log, application log va system journal - incident paytida birinchi qaraladigan manbalar. Vaqt zonasi, user, IP, process va exit code kabi maydonlarga e'tibor ber.</p><h3>W3Schools mapping</h3><p>W3Schools mapping va port scanning mavzusi asset discovery fikrini beradi. Bu kursda u faqat ruxsatli lab inventari sifatida ishlatiladi: qaysi host bor, qaysi port ochiq, qaysi servis kerakli va qaysi biri yopilishi kerak.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Linux hardening checklist",
+          "p": "Demo server uchun boshlang'ich xavfsizlik."
+        },
+        "title": "Asosiy buyruqlar",
+        "lang": "bash",
+        "code": "id\nsudo adduser appuser\nsudo usermod -aG sudo appuser\nchmod 640 /etc/myapp/config.env\nsystemctl status ssh\njournalctl -u ssh --since \"1 hour ago\"\nsudo ufw status verbose"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy2-1",
+        "html": "Linux permission modelini tushuntirdim",
+        "crit": "owner/group/other va rwx bor"
+      },
+      {
+        "id": "cy2-2",
+        "html": "Demo servis uchun least privilege user reja yozdim",
+        "crit": "root ishlatilmaydi"
+      },
+      {
+        "id": "cy2-3",
+        "html": "journalctl bilan servis logini o'qidim",
+        "crit": "xato va normal event ajratilgan"
+      },
+      {
+        "id": "cy2-4",
+        "html": "Firewall qoidalarini inventar qildim",
+        "crit": "faqat kerakli portlar ochiq"
+      },
+      {
+        "id": "cy2-5",
+        "html": "Ruxsatli lab uchun port inventory jadvali tuzdim",
+        "crit": "host, port, service, owner, kerakmi/yo qmi ustunlari bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://linuxjourney.com/",
+        "title": "Linux Journey",
+        "desc": "Linux asoslari",
+        "host": "linuxjourney.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.freedesktop.org/software/systemd/man/latest/journalctl.html",
+        "title": "journalctl manual",
+        "desc": "Systemd log o'qish",
+        "host": "freedesktop.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_mapping_port_scanning.php",
+        "title": "W3Schools - Mapping and Port Scanning",
+        "desc": "Network mapping and port scanning concepts for authorized lab use",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "Linux portfolio",
+      "title": "Secure demo server checklist",
+      "desc": "Demo server uchun user, permission, firewall, log va backup bo'yicha hardening checklist tuz.",
+      "features": [
+        "least privilege user",
+        "secret permission",
+        "firewall rules",
+        "log locations",
+        "rollback note"
+      ],
+      "rubric": [
+        "Checklist amaliy va tekshiriladigan.",
+        "Har band uchun buyruq yoki dalil bor.",
+        "Root va secret risklari kamaytirilgan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Least privilege nima?",
+        "a": [
+          "hamma root bo'lishi",
+          "faqat kerakli huquq berish",
+          "parolni o'chirish",
+          "logni yashirish"
+        ],
+        "c": 1,
+        "w": "Least privilege - minimal kerakli huquq.",
+        "level": "easy"
+      },
+      {
+        "q": "journalctl nimaga kerak?",
+        "a": [
+          "rasm ko'rish",
+          "systemd loglarini o'qish",
+          "DNS sotib olish",
+          "CSS yozish"
+        ],
+        "c": 1,
+        "w": "journalctl systemd journal loglarini ko'rsatadi.",
+        "level": "easy"
+      },
+      {
+        "q": "chmod 777 config fayl uchun nega xavfli?",
+        "a": [
+          "hamma o'qishi/yozishi mumkin",
+          "fayl kichrayadi",
+          "TLS o'chadi",
+          "DNS buziladi"
+        ],
+        "c": 0,
+        "w": "777 maxfiy config uchun juda keng huquq.",
+        "level": "scenario"
+      },
+      {
+        "q": "Firewall asosiy vazifasi?",
+        "a": [
+          "keraksiz trafikni cheklash",
+          "HTML render",
+          "parol yaratish",
+          "backup siqish"
+        ],
+        "c": 0,
+        "w": "Firewall trafikni qoida asosida ruxsatlaydi yoki bloklaydi.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Secret fayl uchun yaxshiroq permission?",
+        "options": [
+          "777",
+          "640",
+          "000 har doim",
+          "123"
+        ],
+        "correct": 1,
+        "why": "640 owner/group bilan cheklash uchun yaxshiroq boshlang'ich tanlov."
+      },
+      {
+        "type": "gap",
+        "q": "Linuxda servis loglarini o'qish uchun ko'p ishlatiladigan command: ____.",
+        "answers": [
+          "journalctl"
+        ],
+        "hint": "systemd journal",
+        "why": "journalctl systemd loglarini o'qiydi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "permission",
+        "uz": "fayl yoki amal huquqi",
+        "ex": "Permissions control who can read a file."
+      },
+      {
+        "w": "service",
+        "uz": "fon jarayon yoki xizmat",
+        "ex": "The ssh service runs in the background."
+      },
+      {
+        "w": "hardening",
+        "uz": "xavfsizroq sozlash",
+        "ex": "Hardening reduces attack surface."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "Linux permissions",
+        "rule": "r = read, w = write, x = execute; owner/group/other alohida baholanadi.",
+        "ex": "640: owner rw, group r, other none."
+      }
+    ]
+  },
+  {
+    "zoom": "CY3",
+    "title": "Web AppSec",
+    "sub": "OWASP va himoya",
+    "coord": "Web / CY3",
+    "eyebrow": "03 / Web xavfsizlik",
+    "mtitle": "Web ilovani zaiflikdan himoyalash",
+    "lede": "Web security professional uchun OWASP Top 10, auth, session, input validation, output encoding, CORS, CSRF va security headerlar kundalik mavzu.",
+    "doc": "<div class='prose'><h3>Himoya nuqtai nazari</h3><p>Zaifliklarni bilishdan maqsad real tizimga zarar yetkazish emas, ilovani xavfsiz loyihalash va tekshirish. Har amaliyot lokal demo, CTF yoki ruxsatli staging muhitda bajariladi.</p><h3>Eng ko'p uchraydigan risklar</h3><table class='gtable'><thead><tr><th>Risk</th><th>Sabab</th><th>Himoya</th></tr></thead><tbody><tr><td>Injection</td><td>input queryga qo'shiladi</td><td>parameterized query, validation</td></tr><tr><td>XSS</td><td>ishonilmagan HTML chiqadi</td><td>escaping, CSP, sanitization</td></tr><tr><td>Broken access control</td><td>serverda tekshiruv yo'q</td><td>deny by default, policy test</td></tr><tr><td>CSRF</td><td>cookie avtomatik yuboriladi</td><td>SameSite, token, origin check</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Web Application Attacks sahifasi IDOR, magic numbers, GUID/UUID va SQL injection kabi mavzularni sodda ko rsatadi. Bu modul ularni professional AppSec checklistga aylantiradi: object-level authorization, unguessable identifiers, parameterized queries va regression test.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Secure coding",
+          "p": "Injectionga qarshi parameter ishlatish."
+        },
+        "title": "Node/Postgres misoli",
+        "lang": "ts",
+        "code": "const userId = req.params.id;\nconst result = await db.query(\n  \"select id, email from users where id = $1\",\n  [userId]\n);\n\n// Access control server tomonda bo'lishi kerak.\nif (result.rows[0]?.id !== req.user.id && !req.user.isAdmin) {\n  return res.status(403).json({ error: \"forbidden\" });\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy3-1",
+        "html": "OWASP Top 10 risklarini o'qib chiqdim",
+        "crit": "kamida 5 riskga himoya yozilgan"
+      },
+      {
+        "id": "cy3-2",
+        "html": "Demo app uchun auth va access control checklist yozdim",
+        "crit": "server-side tekshiruv bor"
+      },
+      {
+        "id": "cy3-3",
+        "html": "Security headerlar ro'yxatini tekshirdim",
+        "crit": "CSP, HSTS, X-Content-Type-Options ko'rilgan"
+      },
+      {
+        "id": "cy3-4",
+        "html": "Input validation va output encoding farqini tushuntirdim",
+        "crit": "ikkalasiga misol bor"
+      },
+      {
+        "id": "cy3-5",
+        "html": "IDOR uchun object-level authorization test yozdim",
+        "crit": "user A user B obyektini ko ra olmasligi tekshirilgan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://cheatsheetseries.owasp.org/",
+        "title": "OWASP Cheat Sheet Series",
+        "desc": "Amaliy himoya qo'llanmalari",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://portswigger.net/web-security",
+        "title": "PortSwigger Web Security Academy",
+        "desc": "Ruxsatli lablar va tushuntirishlar",
+        "host": "portswigger.net"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_web_applications.php",
+        "title": "W3Schools - Web Applications",
+        "desc": "Web application basics before attack and defence review",
+        "host": "w3schools.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_web_applications_attacks.php",
+        "title": "W3Schools - Web Application Attacks",
+        "desc": "IDOR, magic numbers, SQL injection and web attack concepts",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "AppSec portfolio",
+      "title": "Secure login review",
+      "desc": "Demo login tizimini auth, session, rate limit, reset flow va access control bo'yicha review qil.",
+      "features": [
+        "threat model",
+        "auth checklist",
+        "session checklist",
+        "security headers",
+        "fix priority"
+      ],
+      "rubric": [
+        "Topilmalar severity bilan berilgan.",
+        "Har topilma uchun fix bor.",
+        "Scope ruxsatli lab bilan cheklangan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "SQL injectionga asosiy himoya?",
+        "a": [
+          "string concat",
+          "parameterized query",
+          "CSS",
+          "random sleep"
+        ],
+        "c": 1,
+        "w": "Parameterized query inputni query kodidan ajratadi.",
+        "level": "practical"
+      },
+      {
+        "q": "Access control qayerda majburiy tekshiriladi?",
+        "a": [
+          "faqat frontendda",
+          "serverda",
+          "READMEda",
+          "ranglarda"
+        ],
+        "c": 1,
+        "w": "Frontend yordamchi, server tekshiruvi majburiy.",
+        "level": "scenario"
+      },
+      {
+        "q": "XSS riskini kamaytiradigan header?",
+        "a": [
+          "Content-Security-Policy",
+          "Content-Length",
+          "Date",
+          "Server"
+        ],
+        "c": 0,
+        "w": "CSP script manbalarini cheklaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "CSRF qachon dolzarb?",
+        "a": [
+          "cookie-based authda",
+          "faqat CLI appda",
+          "offline faylda",
+          "rasm ko'rishda"
+        ],
+        "c": 0,
+        "w": "Cookie avtomatik yuborilgani uchun CSRF cookie authda muhim.",
+        "level": "scenario"
+      },
+      {
+        "q": "Magic number riskini kamaytirish uchun nima foydali, lekin yetarli emas?",
+        "a": [
+          "UUID/GUID",
+          "CSS",
+          "favicon",
+          "console.log"
+        ],
+        "c": 0,
+        "w": "UUID enumerationni qiyinlashtiradi, lekin authorization baribir majburiy.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "User faqat o'z invoice'ini ko'rishi kerak. Qaysi himoya?",
+        "options": [
+          "object-level authorization",
+          "font-size",
+          "gzip",
+          "favicon"
+        ],
+        "correct": 0,
+        "why": "Har obyektga kirishda foydalanuvchi huquqi tekshiriladi."
+      },
+      {
+        "type": "gap",
+        "q": "Brauzer script manbalarini cheklovchi header: ____.",
+        "answers": [
+          "content-security-policy",
+          "csp"
+        ],
+        "hint": "CSP",
+        "why": "Content-Security-Policy XSS ta'sirini kamaytiradi."
+      },
+      {
+        "type": "choice",
+        "q": "IDORni eng yaxshi kamaytiradigan server-side nazorat?",
+        "options": [
+          "object ownership check",
+          "faqat UUID ishlatish",
+          "buttonni yashirish",
+          "rangni o zgartirish"
+        ],
+        "correct": 0,
+        "why": "UUID yordam beradi, lekin asosiy himoya serverdagi ownership/access check."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "injection",
+        "uz": "ishonilmagan input kodga aralashishi",
+        "ex": "Parameterized queries reduce injection risk."
+      },
+      {
+        "w": "authorization",
+        "uz": "kim nima qila olishini tekshirish",
+        "ex": "Authorization must happen on the server."
+      },
+      {
+        "w": "CSP",
+        "uz": "Content Security Policy",
+        "ex": "CSP limits where scripts can load from."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "AppSec checklist",
+        "rule": "Input validate, output encode, server authorize, secrets protect, logs monitor.",
+        "ex": "Every admin endpoint checks role on the server."
+      }
+    ]
+  },
+  {
+    "zoom": "CY4",
+    "title": "Identity & crypto",
+    "sub": "Auth, MFA, hashing",
+    "coord": "Identity / CY4",
+    "eyebrow": "04 / Kimlik va maxfiylik",
+    "mtitle": "Parol, token va crypto xatolarini kamaytirish",
+    "lede": "Ko'p breachlar credential bilan boshlanadi. Identity security - MFA, session, password hashing, secret management va audit demak.",
+    "doc": "<div class='prose'><h3>Auth vs authorization</h3><p>Authentication - kim ekaningni tasdiqlash. Authorization - nima qilishga huquqing borligini tekshirish. Ikkalasi aralashsa, broken access control paydo bo'ladi.</p><h3>Crypto qoidasi</h3><p>O'zing crypto algoritm yaratma. Standart, tekshirilgan kutubxona va konfiguratsiyadan foydalan. Parollar encryption qilinmaydi, sekin password hash bilan saqlanadi.</p><div class='chips'><span class='chip t'>MFA</span><span class='chip'>bcrypt/argon2</span><span class='chip t'>short-lived token</span><span class='chip'>secret rotation</span></div><h3>W3Schools mapping</h3><p>W3Schools passwords mavzusi credential xavfini beginner darajada ochadi. Bu modulda u MFA, password hashing, session expiry, reset flow va secret rotation bilan professional identity hardening rejasiga kengaytiriladi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Password hashing",
+          "p": "Parolni plain text saqlama."
+        },
+        "title": "Node misoli",
+        "lang": "ts",
+        "code": "import bcrypt from \"bcryptjs\";\n\nconst hash = await bcrypt.hash(password, 12);\nconst ok = await bcrypt.compare(password, hash);\n\n// Tokenlar qisqa muddatli, refresh flow alohida nazoratli bo'lsin."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy4-1",
+        "html": "Authentication va authorization farqini tushuntirdim",
+        "crit": "misollar bor"
+      },
+      {
+        "id": "cy4-2",
+        "html": "Parol hashing talablarini yozdim",
+        "crit": "salt, cost, plain text yo'q"
+      },
+      {
+        "id": "cy4-3",
+        "html": "MFA rollout reja tuzdim",
+        "crit": "adminlardan boshlash, recovery flow bor"
+      },
+      {
+        "id": "cy4-4",
+        "html": "Secret management checklist yozdim",
+        "crit": ".env leak, rotation, access log bor"
+      },
+      {
+        "id": "cy4-5",
+        "html": "W3Schools password mavzusidan credential risk checklist chiqardim",
+        "crit": "password reuse, brute force, reset, MFA bandlari bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+        "title": "OWASP Authentication Cheat Sheet",
+        "desc": "Auth himoya amaliyotlari",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+        "title": "OWASP Password Storage",
+        "desc": "Parol hash saqlash",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_passwords.php",
+        "title": "W3Schools - Passwords",
+        "desc": "Password threats and safe password handling basics",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "Identity review",
+      "title": "Auth hardening plan",
+      "desc": "Demo ilova uchun login, reset password, session, MFA va secret management bo'yicha hardening plan tuz.",
+      "features": [
+        "password policy",
+        "MFA rollout",
+        "session expiry",
+        "secret rotation",
+        "audit events"
+      ],
+      "rubric": [
+        "User experience va security muvozanatlangan.",
+        "Admin risklari alohida prioritet qilingan.",
+        "Recovery flow xavfsiz yozilgan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Parol qanday saqlanadi?",
+        "a": [
+          "plain text",
+          "sekin password hash bilan",
+          "base64",
+          "URLda"
+        ],
+        "c": 1,
+        "w": "Parollar bcrypt/argon2 kabi sekin hash bilan saqlanadi.",
+        "level": "easy"
+      },
+      {
+        "q": "MFA eng avval kimlarga majburiy?",
+        "a": [
+          "admin va yuqori risk userlar",
+          "faqat mehmonlar",
+          "hech kimga",
+          "botlarga"
+        ],
+        "c": 0,
+        "w": "Adminlar yuqori riskli hisoblar.",
+        "level": "practical"
+      },
+      {
+        "q": "Authorization nima?",
+        "a": [
+          "kim ekaning",
+          "nima qilishga huquqing borligi",
+          "parol uzunligi",
+          "TLS turi"
+        ],
+        "c": 1,
+        "w": "Authorization ruxsatni tekshiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Secret leak bo'lsa birinchi amaliy choralar?",
+        "a": [
+          "rotate va audit",
+          "CSS o'zgartirish",
+          "logni o'chirish",
+          "kutish"
+        ],
+        "c": 0,
+        "w": "Secret rotate qilinadi va foydalanish izlari tekshiriladi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Base64 parol saqlash uchun yetarlimi?",
+        "options": [
+          "ha",
+          "yo'q, bu encoding xolos",
+          "faqat admin uchun",
+          "faqat mobil uchun"
+        ],
+        "correct": 1,
+        "why": "Base64 shifrlash ham, hash ham emas."
+      },
+      {
+        "type": "gap",
+        "q": "Kimligini tasdiqlash = ____.",
+        "answers": [
+          "authentication"
+        ],
+        "hint": "authN",
+        "why": "Authentication - identity tasdiqlash."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "MFA",
+        "uz": "ko'p faktorli autentifikatsiya",
+        "ex": "MFA reduces account takeover risk."
+      },
+      {
+        "w": "hash",
+        "uz": "bir tomonlama digest",
+        "ex": "Passwords should be hashed, not encrypted."
+      },
+      {
+        "w": "secret rotation",
+        "uz": "kalitni yangilash",
+        "ex": "Rotate secrets after exposure."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "AuthN vs AuthZ",
+        "rule": "AuthN = kimligini bilish; AuthZ = ruxsatini tekshirish.",
+        "ex": "Logged in user still may not access admin panel."
+      }
+    ]
+  },
+  {
+    "zoom": "CY5",
+    "title": "Cloud & DevSecOps",
+    "sub": "Container, IAM, CI",
+    "coord": "Cloud / CY5",
+    "eyebrow": "05 / Cloud va ishlab chiqish xavfsizligi",
+    "mtitle": "Securityni deploy jarayoniga qo'shish",
+    "lede": "Cloud securityda eng ko'p xato IAM, public bucket, secret, network exposure va noto'g'ri container image sozlamalarida bo'ladi. DevSecOps bu nazoratlarni jarayonga qo'shadi.",
+    "doc": "<div class='prose'><h3>Shared responsibility</h3><p>Cloud provider datacenter va managed service poydevorini beradi. Lekin identity, config, data access, network exposure va app security ko'pincha sening javobgarliging.</p><h3>SDLC nazoratlari</h3><div class='exlist'><div class='ex'><b>Design</b><span>threat model, data flow</span></div><div class='ex'><b>Code</b><span>secure review, secret scan</span></div><div class='ex'><b>Build</b><span>SCA, SAST, dependency pin</span></div><div class='ex'><b>Deploy</b><span>config review, rollback</span></div></div><h3>Container hardening</h3><div class='chips'><span class='chip t'>non-root user</span><span class='chip'>minimal image</span><span class='chip t'>pinned version</span><span class='chip'>secret outside image</span></div><h3>W3Schools mapping</h3><p>Cloud va DevSecOps modulida W3Schools firewall segmentation g oyasi cloud security group, subnet, admin access va container exposurega ko chirildi. Har public endpoint intentional bo lishi va egasi aniq yozilishi kerak.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Safer Dockerfile",
+          "p": "Boshlang'ich container gigienasi."
+        },
+        "title": "Node container",
+        "lang": "dockerfile",
+        "code": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nRUN addgroup -S app && adduser -S app -G app\nUSER app\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]"
+      },
+      {
+        "heading": {
+          "h": "CI security gates",
+          "p": "Muhim xatolarni PRda ushlash."
+        },
+        "title": "GitHub Actions skeleton",
+        "lang": "yaml",
+        "code": "name: security-checks\non: [pull_request]\njobs:\n  checks:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci\n      - run: npm audit --audit-level=high\n      - run: npm test\n      - run: npm run build"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy5-1",
+        "html": "Shared responsibility modelni tushuntirdim",
+        "crit": "provider vs customer farqi bor"
+      },
+      {
+        "id": "cy5-2",
+        "html": "Container image checklist tuzdim",
+        "crit": "non-root, minimal image, secret yo'q"
+      },
+      {
+        "id": "cy5-3",
+        "html": "Dependency risk checklist yozdim",
+        "crit": "owner, severity, update path bor"
+      },
+      {
+        "id": "cy5-4",
+        "html": "Pull request security review savollarini yozdim",
+        "crit": "auth, input, log, secret, dependency bor"
+      },
+      {
+        "id": "cy5-5",
+        "html": "Cloud exposure jadvali tuzdim",
+        "crit": "public port, owner, reason, control ustunlari bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.docker.com/build/building/best-practices/",
+        "title": "Dockerfile best practices",
+        "desc": "Container build tavsiyalari",
+        "host": "docs.docker.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://owasp.org/www-project-samm/",
+        "title": "OWASP SAMM",
+        "desc": "Software assurance maturity model",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://slsa.dev/",
+        "title": "SLSA",
+        "desc": "Supply chain security framework",
+        "host": "slsa.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_firewalls.php",
+        "title": "W3Schools - Firewalls",
+        "desc": "Segmentation and firewall administration ideas for cloud network design",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "DevSecOps portfolio",
+      "title": "Secure PR and container review",
+      "desc": "Demo Dockerfile, CI pipeline va PR checklistni security nazoratlari bilan boyit.",
+      "features": [
+        "Dockerfile review",
+        "secret check",
+        "CI checks",
+        "dependency policy",
+        "exception process"
+      ],
+      "rubric": [
+        "Checklist qisqa va amaliy.",
+        "Har topilma config qatori bilan bog'langan.",
+        "Severity bo'yicha qaror qoidasi bor."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Container ichida root user nima uchun xavf?",
+        "a": [
+          "privilege impact oshadi",
+          "rang buziladi",
+          "DNS tezlashadi",
+          "log kamayadi"
+        ],
+        "c": 0,
+        "w": "Root container escape yoki noto'g'ri mountda riskni oshiradi.",
+        "level": "scenario"
+      },
+      {
+        "q": "Secret image ichiga qo'yiladimi?",
+        "a": [
+          "ha, qulay",
+          "yo'q, tashqi secret manager/env orqali",
+          "faqat READMEga",
+          "faqat CSSga"
+        ],
+        "c": 1,
+        "w": "Image qatlamlarida secret qolib ketishi mumkin.",
+        "level": "practical"
+      },
+      {
+        "q": "SCA nimani tekshiradi?",
+        "a": [
+          "dependency risklarini",
+          "fontlarni",
+          "ranglarni",
+          "monitor brightness"
+        ],
+        "c": 0,
+        "w": "Software Composition Analysis dependency va license risklarini ko'radi.",
+        "level": "practical"
+      },
+      {
+        "q": "IAM least privilege nimani anglatadi?",
+        "a": [
+          "*:* berish",
+          "faqat kerakli action/resource",
+          "parolsiz kirish",
+          "barcha admin"
+        ],
+        "c": 1,
+        "w": "IAM policy minimal action va resource bilan yoziladi.",
+        "level": "easy"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Dockerfileda USER app nima uchun kerak?",
+        "options": [
+          "non-root ishlash uchun",
+          "rang uchun",
+          "DNS uchun",
+          "HTML uchun"
+        ],
+        "correct": 0,
+        "why": "Servis minimal huquqli user bilan ishlaydi."
+      },
+      {
+        "type": "gap",
+        "q": "Dependency zaifliklarini tekshirish qisqartmasi: ____.",
+        "answers": [
+          "sca"
+        ],
+        "hint": "Software Composition Analysis",
+        "why": "SCA dependency risklarini tekshiradi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "IAM",
+        "uz": "identity and access management",
+        "ex": "IAM policies define access."
+      },
+      {
+        "w": "SCA",
+        "uz": "dependency tahlili",
+        "ex": "SCA flags vulnerable packages."
+      },
+      {
+        "w": "hardening",
+        "uz": "xavfsizroq sozlash",
+        "ex": "Container hardening reduces attack surface."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "Container hardening",
+        "rule": "Minimal image, non-root user, pinned deps, secret outside image.",
+        "ex": "Use USER app and do not COPY .env."
+      },
+      {
+        "topic": "Secure SDLC",
+        "rule": "Design, code, build, deploy bosqichlarida alohida security control bo'ladi.",
+        "ex": "Design: threat model; build: SCA; deploy: config review."
+      }
+    ]
+  },
+  {
+    "zoom": "CY6",
+    "title": "Blue team & SOC",
+    "sub": "Logs, SIEM, detection",
+    "coord": "SOC / CY6",
+    "eyebrow": "06 / Detection engineering",
+    "mtitle": "Hodisani ko'rish: logdan alertgacha",
+    "lede": "Blue teamning kuchi - tizimda nima normal, nima shubhali ekanini bilish. Log, SIEM, alert, triage va threat hunting shu yerda birlashadi.",
+    "doc": "<div class='prose'><h3>Detection pipeline</h3><p>Log yig'iladi, normalizatsiya qilinadi, qoida yoki analytics ishlaydi, alert chiqadi, analyst triage qiladi. Yaxshi detection aniq, tushunarli va false positive past bo'ladi.</p><table class='gtable'><thead><tr><th>Log</th><th>Qimmat maydon</th><th>Shubhali signal</th></tr></thead><tbody><tr><td>auth</td><td>user, IP, result</td><td>ko'p failed login</td></tr><tr><td>web</td><td>path, status, user-agent</td><td>admin endpointga g'alati urinish</td></tr><tr><td>cloud</td><td>principal, action, resource</td><td>yangi admin policy</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Security Operations sahifasi SOC vazifasi threatlarni aniqlash va qimmat muammoga aylanishidan oldin to xtatish ekanini tushuntiradi. SIEM loglardan event va alert chiqaradi; network, host va application eventlari turli darajada kontekst beradi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Simple detection logic",
+          "p": "Log fikrlashni o'rganish uchun."
+        },
+        "title": "Failed login signal",
+        "lang": "text",
+        "code": "Rule: Possible brute force\nData source: authentication logs\nCondition: same IP has >= 10 failed logins in 5 minutes\nTriage: check target user, source IP reputation, successful login after failures\nResponse: lock account if needed, require MFA, block IP if confirmed"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy6-1",
+        "html": "3 xil log manbasi va maydonlarini yozdim",
+        "crit": "auth, web, cloud yoki endpoint bor"
+      },
+      {
+        "id": "cy6-2",
+        "html": "Bitta detection rule yozdim",
+        "crit": "data source, condition, triage bor"
+      },
+      {
+        "id": "cy6-3",
+        "html": "False positive sabablarini tahlil qildim",
+        "crit": "kamida 3 sabab"
+      },
+      {
+        "id": "cy6-4",
+        "html": "MITRE ATT&CK bilan bitta signalni xaritaladim",
+        "crit": "taktika va texnika ko'rsatilgan"
+      },
+      {
+        "id": "cy6-5",
+        "html": "Network, host va application eventlarini taqqosladim",
+        "crit": "har biri uchun signal va cheklov yozilgan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://attack.mitre.org/",
+        "title": "MITRE ATT&CK",
+        "desc": "Detection va threat hunting xaritasi",
+        "host": "attack.mitre.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://sigmahq.io/",
+        "title": "Sigma",
+        "desc": "SIEM-independent detection rules",
+        "host": "sigmahq.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_security_operations.php",
+        "title": "W3Schools - Security Operations",
+        "desc": "SOC, SIEM, events, incidents and security operations roles",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "SOC portfolio",
+      "title": "Mini detection pack",
+      "desc": "Login, admin change va suspicious web path uchun 3 ta detection rule va triage playbook yoz.",
+      "features": [
+        "3 detection rules",
+        "log source mapping",
+        "triage steps",
+        "false positive notes",
+        "MITRE mapping"
+      ],
+      "rubric": [
+        "Rule shartlari aniq.",
+        "Analyst nima qilishini biladi.",
+        "False positive kamaytirish yo'li bor."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "SIEM nima qiladi?",
+        "a": [
+          "loglarni yig'ib tahlil qiladi",
+          "CSS yozadi",
+          "parol hash qiladi",
+          "rasm optimizatsiya qiladi"
+        ],
+        "c": 0,
+        "w": "SIEM loglarni markazlashgan tahlil qiladi.",
+        "level": "easy"
+      },
+      {
+        "q": "False positive nima?",
+        "a": [
+          "xavf yo'q lekin alert chiqqan holat",
+          "aniq breach",
+          "backup",
+          "TLS"
+        ],
+        "c": 0,
+        "w": "False positive analyst vaqtini oladi.",
+        "level": "easy"
+      },
+      {
+        "q": "Detection rule uchun eng muhim narsa?",
+        "a": [
+          "data source mavjudligi",
+          "logo",
+          "font",
+          "random delay"
+        ],
+        "c": 0,
+        "w": "Log manbasi bo'lmasa rule ishlamaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "Triage nimani anglatadi?",
+        "a": [
+          "alertni tekshirib ustuvorlik berish",
+          "server bezash",
+          "port sotish",
+          "HTML formatlash"
+        ],
+        "c": 0,
+        "w": "Triage alert haqiqiymi va qanchalik jiddiyligini aniqlaydi.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "10 failed login va keyin success nimaga signal bo'lishi mumkin?",
+        "options": [
+          "credential attack",
+          "normal CSS",
+          "backup rotate",
+          "image cache"
+        ],
+        "correct": 0,
+        "why": "Failedlardan keyin success account compromise bo'lishi mumkin."
+      },
+      {
+        "type": "gap",
+        "q": "SIEMdagi alertni tekshirish jarayoni: ____.",
+        "answers": [
+          "triage"
+        ],
+        "hint": "ustuvorlik va tekshiruv",
+        "why": "Triage alertni baholash jarayoni."
+      },
+      {
+        "type": "choice",
+        "q": "Application log SOC uchun nega qimmat?",
+        "options": [
+          "user action va auth kontekstini beradi",
+          "faqat rang beradi",
+          "diskni tezlatadi",
+          "DNS sotadi"
+        ],
+        "correct": 0,
+        "why": "Application log foydalanuvchi harakati va auth kontekstini beradi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "SIEM",
+        "uz": "log va alert tahlil platformasi",
+        "ex": "A SIEM correlates security events."
+      },
+      {
+        "w": "triage",
+        "uz": "alertni birlamchi tekshirish",
+        "ex": "Triage decides severity."
+      },
+      {
+        "w": "false positive",
+        "uz": "noto'g'ri signal",
+        "ex": "Reduce false positives with context."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "Detection rule",
+        "rule": "Data source + condition + threshold + triage + response.",
+        "ex": "Auth logs + 10 failures/5m + check success after failures."
+      }
+    ]
+  },
+  {
+    "zoom": "CY7",
+    "title": "IR & capstone",
+    "sub": "Incident response",
+    "coord": "IR / CY7",
+    "eyebrow": "07 / Hodisaga javob va yakuniy loyiha",
+    "mtitle": "Incident response: vahima emas, playbook",
+    "lede": "Breach bo'lganda eng muhim narsa - tartib. Prepare, detect, contain, eradicate, recover va lessons learned jarayoni oldindan tayyor bo'lishi kerak.",
+    "doc": "<div class='prose'><h3>IR lifecycle</h3><table class='gtable'><thead><tr><th>Bosqich</th><th>Maqsad</th><th>Misol</th></tr></thead><tbody><tr><td>Prepare</td><td>oldindan tayyorgarlik</td><td>contacts, logs, backup</td></tr><tr><td>Detect</td><td>hodisani ko'rish</td><td>alert, report, anomaly</td></tr><tr><td>Contain</td><td>zararni cheklash</td><td>token revoke, isolate host</td></tr><tr><td>Eradicate</td><td>sababni yo'qotish</td><td>patch, remove persistence</td></tr><tr><td>Recover</td><td>xizmatni tiklash</td><td>restore, monitor</td></tr></tbody></table><h3>Evidence</h3><p>Log va dalillarni saqlashda vaqt, manba, kim olgani va o'zgarmaganini qayd et. IRda shoshilib log o'chirish eng yomon odatlardan biri.</p><h3>Capstone</h3><p>Kurs oxirida professional portfolio uchun defensiv security pack tayyorlaysan: risk assessment, secure config review, detection rules va IR playbook.</p><h3>W3Schools mapping</h3><p>W3Schools Incident Response sahifasi incidentni adverse threat sifatida ta riflaydi va IRT tarkibida security, IT operations, network, development, legal va HR kabi rollar bo lishi mumkinligini ko rsatadi. PICERL/NIST-SP 800-61 yondashuvi preparationdan lessons learnedgacha tartibli javob beradi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Playbook",
+          "p": "Credential leak uchun ixcham javob."
+        },
+        "title": "Credential incident",
+        "lang": "text",
+        "code": "Trigger: token or API key exposed\n1. Validate exposure and scope\n2. Revoke or rotate affected secret\n3. Search logs for use of the secret\n4. Identify affected systems and data\n5. Patch root cause (pipeline, repo, access)\n6. Monitor for repeated attempts\n7. Write lessons learned"
+      },
+      {
+        "heading": {
+          "h": "Finding template",
+          "p": "Professional hisobot formati."
+        },
+        "title": "Topilma shabloni",
+        "lang": "text",
+        "code": "Title: Missing authorization on invoice endpoint\nSeverity: High\nScope: staging API only\nImpact: user may access another user's invoice metadata\nEvidence: request/response IDs redacted\nRoot cause: object ownership not checked server-side\nFix: enforce owner check in service layer and add tests\nVerification: repeat request returns 403"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "cy7-1",
+        "html": "IR lifecycle bosqichlarini yodladim",
+        "crit": "har bosqichga amaliy misol bor"
+      },
+      {
+        "id": "cy7-2",
+        "html": "Credential leak playbook yozdim",
+        "crit": "rotate, log search, root cause bor"
+      },
+      {
+        "id": "cy7-3",
+        "html": "Incident timeline shabloni tuzdim",
+        "crit": "UTC vaqt, manba, action bor"
+      },
+      {
+        "id": "cy7-4",
+        "html": "Capstone portfolio pack tuzdim",
+        "crit": "risk, AppSec, detection, IR hujjatlari bor"
+      },
+      {
+        "id": "cy7-5",
+        "html": "IRT rol jadvalini yozdim",
+        "crit": "security, IT, legal, HR yoki management rollari bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final",
+        "title": "NIST SP 800-61",
+        "desc": "Computer Security Incident Handling Guide",
+        "host": "csrc.nist.gov"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.cisa.gov/resources-tools/resources/incident-response-playbook",
+        "title": "CISA Incident Response Playbook",
+        "desc": "IR playbook",
+        "host": "cisa.gov"
+      },
+      {
+        "type": "doc",
+        "url": "https://owasp.org/www-project-web-security-testing-guide/",
+        "title": "OWASP WSTG",
+        "desc": "Ruxsatli web testing metodologiyasi",
+        "host": "owasp.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_incident_response.php",
+        "title": "W3Schools - Incident Response",
+        "desc": "Incident, IRT and PICERL/NIST-SP 800-61 overview",
+        "host": "w3schools.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.w3schools.com/cybersecurity/cybersecurity_penetration_testing.php",
+        "title": "W3Schools - Penetration Testing",
+        "desc": "Penetration testing and social engineering overview for ethical scope discussion",
+        "host": "w3schools.com"
+      }
+    ],
+    "project": {
+      "tag": "Final portfolio",
+      "title": "Professional Cyber Defense Pack",
+      "desc": "Bitta demo ilova uchun to'liq defensiv security portfolio tayyorla.",
+      "features": [
+        "risk assessment",
+        "secure config review",
+        "AppSec findings",
+        "3 detection rules",
+        "IR playbook",
+        "executive summary"
+      ],
+      "rubric": [
+        "Hamma ish ruxsatli lab yoki o'z demo muhitida.",
+        "Har topilma dalil, risk va fix bilan berilgan.",
+        "Portfolio ish beruvchi ko'ra oladigan darajada tartibli."
+      ],
+      "variants": [
+        {
+          "title": "SOC-ready pack",
+          "desc": "Detection va IRga urg'u berilgan variant.",
+          "deliverables": [
+            "log source map",
+            "Sigma-style rules",
+            "triage playbooks"
+          ]
+        },
+        {
+          "title": "AppSec-ready pack",
+          "desc": "Web app security reviewga urg'u berilgan variant.",
+          "deliverables": [
+            "threat model",
+            "findings report",
+            "fix PR checklist"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Containment maqsadi?",
+        "a": [
+          "zararni cheklash",
+          "rang berish",
+          "hisobotni bezash",
+          "DNS sotish"
+        ],
+        "c": 0,
+        "w": "Containment hodisa tarqalishini cheklaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Secret leakda birinchi amaliy chora?",
+        "a": [
+          "secretni revoke/rotate qilish",
+          "logni o'chirish",
+          "kutish",
+          "UI o'zgartirish"
+        ],
+        "c": 0,
+        "w": "Exposure to'xtashi uchun secret rotate qilinadi.",
+        "level": "scenario"
+      },
+      {
+        "q": "Yaxshi finding nimani o'z ichiga oladi?",
+        "a": [
+          "impact va fix",
+          "faqat rasm",
+          "faqat rang",
+          "faqat sana"
+        ],
+        "c": 0,
+        "w": "Finding qaror va tuzatish uchun yetarli bo'lishi kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Lessons learned qachon?",
+        "a": [
+          "recoverydan keyin",
+          "hodisadan oldin faqat",
+          "hech qachon",
+          "deploy payti har doim"
+        ],
+        "c": 0,
+        "w": "Lessons learned jarayonni yaxshilaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "IRT tarkibiga faqat security mutaxassislar kiradimi?",
+        "a": [
+          "ha, faqat security",
+          "yo q, IT, legal, HR va boshqalar ham kerak bo lishi mumkin",
+          "faqat developerlar",
+          "faqat finance"
+        ],
+        "c": 1,
+        "w": "Incident response ko p jamoali jarayon bo lishi mumkin.",
+        "level": "practical"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "Breach paytida loglarni o'chirish to'g'rimi?",
+        "options": [
+          "yo'q, dalil yo'qoladi",
+          "ha, joy bo'shaydi",
+          "faqat tunda",
+          "faqat admin uchun"
+        ],
+        "correct": 0,
+        "why": "Log dalil va timeline uchun kerak."
+      },
+      {
+        "type": "gap",
+        "q": "Zararni cheklash bosqichi: ____.",
+        "answers": [
+          "containment",
+          "contain"
+        ],
+        "hint": "tarqalishni to'xtatish",
+        "why": "Containment incident tarqalishini cheklaydi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "containment",
+        "uz": "zararni cheklash",
+        "ex": "Containment isolates affected systems."
+      },
+      {
+        "w": "timeline",
+        "uz": "hodisalar ketma-ketligi",
+        "ex": "The timeline shows when access happened."
+      },
+      {
+        "w": "playbook",
+        "uz": "oldindan yozilgan javob rejasi",
+        "ex": "A playbook reduces panic."
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "IR lifecycle",
+        "rule": "Prepare -> Detect -> Contain -> Eradicate -> Recover -> Lessons learned.",
+        "ex": "Credential leak: rotate, search logs, fix root cause."
+      },
+      {
+        "topic": "Portfolio pack",
+        "rule": "Risk + AppSec + Detection + IR hujjatlari bir joyga jamlanadi.",
+        "ex": "Executive summary non-technical odamga ham tushunarli bo'lishi kerak."
+      }
+    ]
+  },
+  {
+    "zoom": "CY8",
+    "title": "Endpoint & forensics",
+    "sub": "Triage, evidence, timeline",
+    "coord": "Endpoint / CY8",
+    "eyebrow": "08 / Endpoint va forensics amaliyoti",
+    "mtitle": "Kompyuterda nima bo'lganini dalil bilan tushuntirish",
+    "lede": "Security xodimi faqat alert ko'rmaydi; u hostda nima bo'lganini, qaysi process ishlaganini, qaysi user kirganini va qanday dalil borligini tartibli ko'rsatadi.",
+    "doc": "<div class='prose'><h3>Endpoint triage nimadan boshlanadi?</h3><p>Endpoint hodisasida maqsad - vahima qilmasdan minimal dalilni yo'qotmaslik: vaqt, user, process, network connection, persistence, file change va loglarni tekshirish. Bu modul hujum qilishni emas, ruxsatli labda <strong>tekshiruv va dalil yig'ish</strong>ni o'rgatadi.</p><table class='gtable'><thead><tr><th>Yo'nalish</th><th>Tekshiruv</th><th>Natija</th></tr></thead><tbody><tr><td>Process</td><td>qaysi jarayon ishlayapti?</td><td>nom, PID, parent, command line</td></tr><tr><td>Network</td><td>qaysi ulanishlar bor?</td><td>local/remote IP, port, process</td></tr><tr><td>Persistence</td><td>qayta yuklanganda nima ishga tushadi?</td><td>service, startup entry, scheduled task</td></tr><tr><td>Evidence</td><td>dalil o'zgarmadimi?</td><td>hash, vaqt, manba</td></tr></tbody></table><h3>Amaliy ish standarti</h3><p>Har tekshiruvda bitta qoida: buyruqni yoz, vaqtni yoz, natijani qisqa izohla, xulosani dalilga bog'la. \"Menimcha\" emas, \"logda shunday ko'rindi\".</p></div>",
+    "code": [
+      {
+        "heading": { "h": "Endpoint triage", "p": "Lokal/ruxsatli hostda tekshiruv." },
+        "title": "Linux triage checklist",
+        "lang": "bash",
+        "code": "date -u\nhostname\nwho\nlast -n 20\nps aux --sort=-%cpu | head\nss -tulpn\nsystemctl --type=service --state=running\nfind /tmp -maxdepth 2 -type f -mtime -1 -ls\njournalctl --since \"2 hours ago\" --no-pager"
+      },
+      {
+        "heading": { "h": "Evidence log", "p": "Tekshiruvni auditga yaroqli yozish." },
+        "title": "Dalil qaydi",
+        "lang": "text",
+        "code": "Time UTC: 2026-06-27T10:15:00Z\nHost: lab-web-01\nCommand: ss -tulpn\nObservation: node process listening on 0.0.0.0:3000\nEvidence file: evidence/ss-tulpn.txt\nHash: sha256:<hash>\nConclusion: public listener exists; verify firewall and reverse proxy exposure"
+      }
+    ],
+    "tasks": [
+      { "id": "cy8-1", "html": "Endpoint triage checklistni lokal labda bajardim", "crit": "process, network, service va auth log natijalari bor" },
+      { "id": "cy8-2", "html": "Evidence papka tuzib, har dalilga vaqt va hash yozdim", "crit": "kamida 5 dalil fayli bor" },
+      { "id": "cy8-3", "html": "Incident timeline tuzdim", "crit": "UTC vaqt, manba, kuzatuv va xulosa ustunlari bor" },
+      { "id": "cy8-4", "html": "False alarm va real suspicious signal farqini yozdim", "crit": "kamida 3 ta normal va 3 ta suspicious holat" },
+      { "id": "cy8-5", "html": "Manager uchun 1 sahifalik triage summary yozdim", "crit": "texnik bo'lmagan odam ham tushunadi" }
+    ],
+    "resources": [
+      { "type": "doc", "url": "https://www.sans.org/posters/incident-response-cheat-sheet/", "title": "SANS Incident Response Cheat Sheet", "desc": "Endpoint/IR triage eslatmalari", "host": "sans.org" },
+      { "type": "doc", "url": "https://learn.microsoft.com/en-us/sysinternals/", "title": "Microsoft Sysinternals", "desc": "Windows endpoint tahlil vositalari", "host": "learn.microsoft.com" }
+    ],
+    "project": {
+      "tag": "Endpoint portfolio",
+      "title": "Host triage report",
+      "desc": "Lokal lab host uchun process, network, service, auth log va file activity bo'yicha professional triage report yoz.",
+      "features": ["triage checklist", "evidence folder", "timeline", "risk conclusion", "recommended containment"],
+      "rubric": ["Dalillar o'zgarmaganini ko'rsatish uchun hash bor.", "Xulosalar dalilga bog'langan.", "Report texnik va executive qismga bo'lingan."]
+    },
+    "quiz": [
+      { "q": "Endpoint triageda eng muhim odat?", "a": ["dalil va vaqtni yozish", "logni o'chirish", "taxmin qilish", "faqat screenshot"], "c": 0, "w": "Dalil, vaqt va buyruq qaydi professional triage uchun zarur.", "level": "practical" },
+      { "q": "Timeline nimani beradi?", "a": ["voqealar ketma-ketligini", "rang palitrasini", "DNS narxini", "parol uzunligini"], "c": 0, "w": "Timeline hodisa rivojini tushunishga yordam beradi.", "level": "easy" },
+      { "q": "Hash dalil uchun nega kerak?", "a": ["o'zgarmaganini tekshirish uchun", "faylni chiroyli qilish uchun", "port ochish uchun", "CSS uchun"], "c": 0, "w": "Hash dalil integritysini tekshirishga yordam beradi.", "level": "scenario" }
+    ],
+    "exercises": [
+      { "type": "choice", "q": "Triage paytida birinchi xulosa qanday bo'lishi kerak?", "options": ["dalilga asoslangan", "taxminga asoslangan", "shoshilinch public post", "loglarni o'chirish"], "correct": 0, "why": "Professional xulosa dalil va kuzatuvga tayanadi." },
+      { "type": "gap", "q": "Dalil o'zgarmaganini tekshirish uchun ko'p ishlatiladigan qiymat: ____.", "answers": ["hash", "sha256"], "hint": "digest", "why": "Hash dalil integritysini ko'rsatadi." }
+    ],
+    "vocab": [
+      { "w": "evidence", "uz": "dalil", "ex": "Evidence must be preserved." },
+      { "w": "persistence", "uz": "qayta ishga tushganda saqlanib qolish", "ex": "Persistence may appear as a service." },
+      { "w": "timeline", "uz": "voqealar ketma-ketligi", "ex": "A timeline links alerts to host activity." }
+    ],
+    "grammar": [
+      { "topic": "Endpoint triage report", "rule": "Command + timestamp + observation + evidence + conclusion.", "ex": "ss output shows process listening on public interface." }
+    ]
+  },
+  {
+    "zoom": "CY9",
+    "title": "Vulnerability management",
+    "sub": "Scan, prioritize, fix",
+    "coord": "Vuln Mgmt / CY9",
+    "eyebrow": "09 / Zaifliklarni boshqarish",
+    "mtitle": "Topilmani ticket, fix va verificationgacha olib borish",
+    "lede": "Real ishda security xodim mingta zaiflikni ko'radi. Professional farq - hammasini bir xil ko'rmasdan, asset criticality, exploitability, exposure va biznes ta'sir bo'yicha prioritet berish.",
+    "doc": "<div class='prose'><h3>Vulnerability management sikli</h3><p>Inventar -> scan -> triage -> owner -> fix -> verification -> exception. Bu jarayon hujjatsiz bo'lsa, scan natijalari shunchaki shovqin bo'lib qoladi.</p><table class='gtable'><thead><tr><th>Signal</th><th>Savol</th><th>Qaror</th></tr></thead><tbody><tr><td>CVSS high</td><td>internetga ochiqmi?</td><td>public bo'lsa tezroq</td></tr><tr><td>Known exploited</td><td>KEV yoki exploit bormi?</td><td>emergency patch</td></tr><tr><td>Critical asset</td><td>data yoki authga ta'siri bormi?</td><td>business owner bilan kelishish</td></tr><tr><td>Compensating control</td><td>WAF, segmentation, config bormi?</td><td>riskni vaqtincha kamaytirish</td></tr></tbody></table><h3>Amaliy ish standarti</h3><p>Har zaiflik ticketida asset, evidence, risk, owner, due date, fix guidance va verification qadam bo'lishi kerak. \"Update qiling\" yetarli emas; qaysi package, qaysi versiya, qanday tekshirish yoziladi.</p></div>",
+    "code": [
+      {
+        "heading": { "h": "Ticket template", "p": "Security topilmani jamoaga tushunarli qilish." },
+        "title": "Vulnerability ticket",
+        "lang": "text",
+        "code": "Title: Outdated nginx image on public web gateway\nAsset: web-gateway-prod\nExposure: internet-facing\nSeverity: High\nEvidence: image nginx:1.23, advisory CVE-XXXX\nOwner: platform team\nFix: upgrade to nginx:1.26-alpine and rebuild image\nDue: 7 days\nVerification: image digest updated, scanner no longer reports CVE, smoke test passes"
+      }
+    ],
+    "tasks": [
+      { "id": "cy9-1", "html": "Asset criticality jadvali tuzdim", "crit": "public/internal, data sensitivity, owner ustunlari bor" },
+      { "id": "cy9-2", "html": "5 ta zaiflikni prioritetladim", "crit": "CVSSdan tashqari exposure va exploitability ham bor" },
+      { "id": "cy9-3", "html": "Security ticket yozdim", "crit": "owner, due date, fix guidance va verification bor" },
+      { "id": "cy9-4", "html": "Exception/risk acceptance shabloni yozdim", "crit": "muddat, sabab, compensating control bor" },
+      { "id": "cy9-5", "html": "Patch verification report tayyorladim", "crit": "before/after dalil va test natijasi bor" }
+    ],
+    "resources": [
+      { "type": "doc", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog", "title": "CISA KEV Catalog", "desc": "Real ekspluatatsiya qilingan zaifliklar katalogi", "host": "cisa.gov" },
+      { "type": "doc", "url": "https://nvd.nist.gov/vuln-metrics/cvss", "title": "NVD CVSS", "desc": "CVSS severity metrikasi", "host": "nist.gov" }
+    ],
+    "project": {
+      "tag": "Vuln mgmt portfolio",
+      "title": "30-day remediation board",
+      "desc": "Demo tashkilot uchun 10 ta zaiflikdan iborat remediation board tuz: prioritet, owner, due date, fix va verification.",
+      "features": ["asset inventory", "severity matrix", "tickets", "risk acceptance", "weekly metrics"],
+      "rubric": ["Prioritet real riskga asoslangan.", "Har ticket actionga tayyor.", "Verification mezoni aniq."]
+    },
+    "quiz": [
+      { "q": "CVSS high har doim birinchi tuzatiladimi?", "a": ["yo'q, exposure va asset criticality ham muhim", "ha, doim", "faqat rangga qaraladi", "faqat package nomiga"], "c": 0, "w": "CVSS muhim, lekin kontekst bilan qaraladi.", "level": "scenario" },
+      { "q": "Vuln ticketda nima bo'lishi shart?", "a": ["owner va verification", "faqat screenshot", "faqat emoji", "faqat URL"], "c": 0, "w": "Owner, fix va verification bo'lmasa ticket yopilmaydi.", "level": "practical" },
+      { "q": "Risk acceptance nimani anglatadi?", "a": ["riskni vaqtincha qabul qilish va hujjatlashtirish", "risk yo'q degani", "scan o'chirish", "hammani admin qilish"], "c": 0, "w": "Risk acceptance muddatli va asosli bo'lishi kerak.", "level": "practical" }
+    ],
+    "exercises": [
+      { "type": "choice", "q": "Internetga ochiq auth serverdagi KEV zaiflik qaysi prioritet?", "options": ["emergency/highest", "past", "ignore", "design"], "correct": 0, "why": "Public exposure va known exploited signal juda yuqori risk." },
+      { "type": "gap", "q": "Tuzatishdan keyin zaiflik yopilganini tekshirish: ____.", "answers": ["verification"], "hint": "fix ishladimi?", "why": "Verification ticketni yopishdan oldingi dalil." }
+    ],
+    "vocab": [
+      { "w": "remediation", "uz": "zaiflikni tuzatish", "ex": "Remediation includes fix and verification." },
+      { "w": "exposure", "uz": "tashqi ochiqlik", "ex": "Internet exposure increases priority." },
+      { "w": "risk acceptance", "uz": "riskni muddatli qabul qilish", "ex": "Risk acceptance needs owner approval." }
+    ],
+    "grammar": [
+      { "topic": "Vuln management lifecycle", "rule": "Inventory -> scan -> triage -> owner -> fix -> verify -> report.", "ex": "High CVSS on public auth service becomes emergency priority." }
+    ]
+  },
+  {
+    "zoom": "CY10",
+    "title": "GRC & audit",
+    "sub": "Policy, evidence, controls",
+    "coord": "GRC / CY10",
+    "eyebrow": "10 / Governance, risk and compliance",
+    "mtitle": "Security ishini auditga yaroqli qilib yuritish",
+    "lede": "Kompaniyada security faqat texnik emas: policy, control owner, evidence, exception, vendor risk va audit savollariga javob bera olish ham real ishning katta qismi.",
+    "doc": "<div class='prose'><h3>GRC nima beradi?</h3><p>GRC xavfsizlik ishini tartibga soladi: kim javobgar, qaysi control bor, dalil qayerda, qachon tekshirilgan va risk kim tomonidan qabul qilingan. Bu byurokratiya emas; yaxshi GRC securityni takrorlanadigan qiladi.</p><table class='gtable'><thead><tr><th>Control</th><th>Evidence</th><th>Owner</th></tr></thead><tbody><tr><td>Admin MFA enabled</td><td>IdP policy screenshot/export</td><td>IT</td></tr><tr><td>Backup restore tested</td><td>restore test report</td><td>Platform</td></tr><tr><td>Security review for PRs</td><td>PR checklist samples</td><td>Engineering</td></tr><tr><td>Incident playbook exists</td><td>approved playbook link</td><td>Security</td></tr></tbody></table><h3>Amaliy ish standarti</h3><p>Har control uchun bitta evidence yetarli emas: evidence yangiligi, kim tasdiqlagani va control real ishlashini ko'rsatish kerak. Auditga tayyor xodim dalilni tez topadi va tushuntira oladi.</p></div>",
+    "code": [
+      {
+        "heading": { "h": "Control matrix", "p": "Audit va risk tracking uchun." },
+        "title": "Control jadval namunasi",
+        "lang": "text",
+        "code": "Control ID: IAM-01\nControl: Admin accounts require MFA\nOwner: IT Operations\nFrequency: continuous\nEvidence: IdP MFA policy export, admin group list\nTest: sample 5 admin users and verify MFA enforced\nStatus: implemented\nException: break-glass account reviewed monthly"
+      }
+    ],
+    "tasks": [
+      { "id": "cy10-1", "html": "10 ta control matrix tuzdim", "crit": "control, owner, evidence, frequency bor" },
+      { "id": "cy10-2", "html": "MFA policy evidence pack tayyorladim", "crit": "policy, admin list, exception bor" },
+      { "id": "cy10-3", "html": "Vendor security questionnaire javobini yozdim", "crit": "data, access, logging, incident response bo'limlari bor" },
+      { "id": "cy10-4", "html": "Risk acceptance approval flow chizdim", "crit": "owner, expiry, review date bor" },
+      { "id": "cy10-5", "html": "Audit uchun evidence naming standard yozdim", "crit": "date, control ID, source format bor" }
+    ],
+    "resources": [
+      { "type": "doc", "url": "https://www.iso.org/standard/27001", "title": "ISO/IEC 27001", "desc": "Information security management standard", "host": "iso.org" },
+      { "type": "doc", "url": "https://www.nist.gov/cyberframework", "title": "NIST CSF", "desc": "Govern, Identify, Protect, Detect, Respond, Recover framework", "host": "nist.gov" }
+    ],
+    "project": {
+      "tag": "GRC portfolio",
+      "title": "Audit-ready evidence pack",
+      "desc": "Demo kompaniya uchun 10 control, evidence link, owner va audit test qadamlaridan iborat GRC pack tayyorla.",
+      "features": ["control matrix", "evidence folder", "risk register", "exception log", "audit summary"],
+      "rubric": ["Evidence audit savoliga javob beradi.", "Control owner va frequency aniq.", "Exceptionlar muddatli va tasdiqli."]
+    },
+    "quiz": [
+      { "q": "Control owner nima uchun kerak?", "a": ["javobgarlik aniq bo'lishi uchun", "rang uchun", "logni kamaytirish uchun", "port ochish uchun"], "c": 0, "w": "Owner bo'lmasa control qarovsiz qoladi.", "level": "practical" },
+      { "q": "Evidence qanday bo'lishi kerak?", "a": ["yangilangan va tekshiriladigan", "faqat og'zaki", "yo'q bo'lsa ham bo'ladi", "faqat screenshot nomi"], "c": 0, "w": "Audit evidence tekshiriladigan va kontekstli bo'lishi kerak.", "level": "easy" },
+      { "q": "Exception doimiymi?", "a": ["yo'q, muddat va review kerak", "ha, abadiy", "faqat developer hal qiladi", "log bilan bog'liq emas"], "c": 0, "w": "Exceptionlar vaqtinchalik va qayta ko'riladigan bo'lishi kerak.", "level": "scenario" }
+    ],
+    "exercises": [
+      { "type": "choice", "q": "Admin MFA control uchun eng yaxshi evidence?", "options": ["IdP policy export + admin group sample", "faqat 'bor' degan gap", "logo", "CSS fayl"], "correct": 0, "why": "Policy va sample evidence control real ishlashini ko'rsatadi." },
+      { "type": "gap", "q": "Governance, Risk and Compliance qisqartmasi: ____.", "answers": ["grc"], "hint": "3 harf", "why": "GRC xavfsizlik boshqaruvi va audit ishlarini tartiblaydi." }
+    ],
+    "vocab": [
+      { "w": "control matrix", "uz": "nazoratlar jadvali", "ex": "The control matrix maps evidence to owners." },
+      { "w": "evidence", "uz": "audit dalili", "ex": "Evidence proves a control works." },
+      { "w": "exception", "uz": "vaqtinchalik istisno", "ex": "Exceptions need expiry dates." }
+    ],
+    "grammar": [
+      { "topic": "Audit-ready control", "rule": "Control + owner + evidence + frequency + test + status.", "ex": "IAM-01 requires MFA for all admin accounts." }
+    ]
+  },
+  {
+    "zoom": "CY11",
+    "title": "Job simulation",
+    "sub": "5 kunlik real ish",
+    "coord": "Capstone / CY11",
+    "eyebrow": "11 / Real mutaxassis simulyatsiyasi",
+    "mtitle": "5 kunlik security analyst ish haftasi",
+    "lede": "Bu yakuniy modulda sen kursdagi hamma ko'nikmani bitta real ish oqimiga yig'asan: dushanba risk, seshanba AppSec, chorshanba SOC, payshanba IR, juma executive report.",
+    "doc": "<div class='prose'><h3>Ish haftasi ssenariysi</h3><p>Senga demo kompaniya beriladi: public web app, admin panel, cloud deploy, CI pipeline va loglar. Vazifa - xavfsizlik holatini baholash, topilmalarni prioritetlash, detection yozish, incident playbook tayyorlash va rahbariyatga qisqa hisobot berish.</p><table class='gtable'><thead><tr><th>Kun</th><th>Rol</th><th>Deliverable</th></tr></thead><tbody><tr><td>1</td><td>Security analyst</td><td>asset inventory + risk register</td></tr><tr><td>2</td><td>AppSec analyst</td><td>secure review + findings</td></tr><tr><td>3</td><td>SOC analyst</td><td>detection rules + triage notes</td></tr><tr><td>4</td><td>IR analyst</td><td>incident timeline + containment plan</td></tr><tr><td>5</td><td>Security owner</td><td>executive report + 30-day roadmap</td></tr></tbody></table><h3>Bitiruvchi talabi</h3><p>Kursni tugatgan odam real ishda kamida quyidagilarni qila olishi kerak: risk register tuzish, web security finding yozish, logdan signal chiqarish, incident playbook yuritish, patch verification qilish va security holatini oddiy tilda tushuntirish.</p></div>",
+    "code": [
+      {
+        "heading": { "h": "Final report outline", "p": "Ish beruvchiga ko'rsatish mumkin bo'lgan portfolio." },
+        "title": "Executive report",
+        "lang": "text",
+        "code": "1. Executive summary\n2. Scope and assumptions\n3. Top 5 risks\n4. Evidence-based findings\n5. Detection coverage\n6. Incident response readiness\n7. 30-day remediation roadmap\n8. Appendix: commands, logs, screenshots, tickets"
+      },
+      {
+        "heading": { "h": "30-day roadmap", "p": "Amaliy tuzatish rejasi." },
+        "title": "Remediation plan",
+        "lang": "text",
+        "code": "Week 1: enforce MFA for admins, close public debug port\nWeek 2: fix object-level authorization and add regression tests\nWeek 3: add SIEM rules for failed login and admin changes\nWeek 4: run restore test, tabletop IR exercise, update evidence pack"
+      }
+    ],
+    "tasks": [
+      { "id": "cy11-1", "html": "1-kun: asset inventory va risk register topshirdim", "crit": "kamida 10 asset va 10 risk bor" },
+      { "id": "cy11-2", "html": "2-kun: AppSec findings report yozdim", "crit": "kamida 3 finding, severity, fix, verification bor" },
+      { "id": "cy11-3", "html": "3-kun: SOC detection pack topshirdim", "crit": "3 rule, log source, triage, false positive note bor" },
+      { "id": "cy11-4", "html": "4-kun: IR tabletop mashqi o'tkazdim", "crit": "timeline, roles, containment, lessons learned bor" },
+      { "id": "cy11-5", "html": "5-kun: executive report va 30-day roadmap tayyorladim", "crit": "rahbariyatga tushunarli, prioritetlar aniq" },
+      { "id": "cy11-6", "html": "Portfolio papkani tartibladim", "crit": "README, evidence, reports, tickets, detections bor" }
+    ],
+    "resources": [
+      { "type": "doc", "url": "https://www.cisa.gov/resources-tools/resources/cybersecurity-tabletop-exercise-tips", "title": "CISA Tabletop Exercise Tips", "desc": "IR tabletop mashqlari uchun yo'l-yo'riq", "host": "cisa.gov" },
+      { "type": "doc", "url": "https://www.nist.gov/cyberframework", "title": "NIST CSF", "desc": "Final reportni Govern/Identify/Protect/Detect/Respond/Recover bo'yicha tartiblash", "host": "nist.gov" }
+    ],
+    "project": {
+      "tag": "Final job-ready capstone",
+      "title": "Security analyst portfolio dossier",
+      "desc": "Bitta demo kompaniya uchun 5 kunlik security assessmentni to'liq portfolio dossier sifatida topshir.",
+      "features": ["asset inventory", "risk register", "AppSec report", "vuln tickets", "SOC detections", "IR playbooks", "GRC evidence", "executive roadmap"],
+      "rubric": ["Har deliverable ish joyida ishlatishga tayyor.", "Dalillar tartibli va tekshiriladigan.", "Tavsiya biznes prioriteti bilan bog'langan.", "Hamma amaliyot ruxsatli/lokal labda bajarilgan."],
+      "variants": [
+        { "title": "SOC Analyst track", "desc": "Detection, triage va incident responsega urg'u berilgan yakuniy portfolio.", "deliverables": ["SIEM-style rules", "triage notes", "IR timeline"] },
+        { "title": "AppSec Analyst track", "desc": "Secure code review, web findings va fix verificationga urg'u berilgan portfolio.", "deliverables": ["threat model", "findings report", "fix checklist"] },
+        { "title": "Cloud Security track", "desc": "IAM, container, secret va exposure reviewga urg'u berilgan portfolio.", "deliverables": ["cloud exposure map", "IAM review", "container hardening report"] }
+      ]
+    },
+    "quiz": [
+      { "q": "Final capstone asosiy maqsadi?", "a": ["real ish deliverablelarini tayyorlash", "faqat test yechish", "rang almashtirish", "parol topish"], "c": 0, "w": "Capstone ish joyida kerak bo'ladigan hujjat va qarorlarni mashq qiladi.", "level": "scenario" },
+      { "q": "Executive report kim uchun yoziladi?", "a": ["rahbariyat va texnik bo'lmagan stakeholderlar", "faqat kompilyator", "faqat CSS", "faqat scanner"], "c": 0, "w": "Executive report risk va prioritetni oddiy tilda tushuntiradi.", "level": "practical" },
+      { "q": "Portfolio dossierda nima bo'lishi kerak?", "a": ["dalil, report, ticket, detection va roadmap", "faqat screenshot", "faqat link", "faqat test natijasi"], "c": 0, "w": "Portfolio ish beruvchiga real ko'nikmani ko'rsatishi kerak.", "level": "practical" }
+    ],
+    "exercises": [
+      { "type": "choice", "q": "30-day roadmapda birinchi nima turadi?", "options": ["eng yuqori risk va tez yutishlar", "eng chiroyli dizayn", "eng oson screenshot", "noma'lum ishlar"], "correct": 0, "why": "Roadmap risk va biznes ta'sir bo'yicha prioritetlanadi." },
+      { "type": "gap", "q": "Rahbariyat uchun qisqa xavfsizlik hisobot turi: ____ report.", "answers": ["executive"], "hint": "non-technical summary", "why": "Executive report texnik bo'lmagan odamga tushunarli bo'ladi." }
+    ],
+    "vocab": [
+      { "w": "deliverable", "uz": "topshiriladigan ish natijasi", "ex": "The deliverable is an audit-ready report." },
+      { "w": "roadmap", "uz": "ustuvor reja", "ex": "A 30-day roadmap prioritizes remediation." },
+      { "w": "stakeholder", "uz": "manfaatdor tomon", "ex": "Stakeholders need clear risk language." }
+    ],
+    "grammar": [
+      { "topic": "Job-ready security work", "rule": "Har ish natijasi dalil, qaror va keyingi qadam bilan tugaydi.", "ex": "Finding -> ticket -> fix -> verification -> report." }
+    ]
+  }
+]

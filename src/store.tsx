@@ -40,7 +40,7 @@ const Ctx = createContext<StoreValue | null>(null);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [courseId, setCourseId] = useState<string>(() => {
-    // Eski/yaroqsiz active_course localStorage'da qolgan bo'lsa — birinchi kursga qaytamiz
+    // Eski/yaroqsiz active_course localStorage'da qolgan bo'lsa - birinchi kursga qaytamiz
     // (aks holda COURSE_BY_ID[courseId] undefined bo'lib, ilova ishlamay qoladi).
     const saved = loadJSON<string>("active_course", COURSES[0].id);
     return COURSE_BY_ID[saved] ? saved : COURSES[0].id;
@@ -67,7 +67,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<string>(() => {
     const saved = loadJSON<string | null>("myacademy_theme", null);
     if (saved === "light" || saved === "dark") return saved;
-    // Saqlanmagan bo'lsa — tizim sozlamasiga ergashamiz (sukut: dark).
+    // Saqlanmagan bo'lsa - tizim sozlamasiga ergashamiz (sukut: dark).
     const prefersLight =
       typeof window !== "undefined" &&
       window.matchMedia &&

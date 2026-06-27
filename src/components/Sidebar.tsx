@@ -136,7 +136,7 @@ export function Sidebar({
           </button>
         )}
 
-        <span className="side-label">Bosqichlar · Layers</span>
+        <span className="side-label">Bosqichlar / Layers</span>
         <nav>
           {modules.map((m, i) => {
             const total = m.tasks.length;

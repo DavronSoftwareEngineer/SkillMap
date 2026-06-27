@@ -3,11 +3,11 @@
     "zoom": "A0",
     "title": "Boshlash & Metod",
     "sub": "Boshlash",
-    "coord": "Boshlash · A0",
-    "eyebrow": "00 · Metod va IELTS",
+    "coord": "Boshlash / A0",
+    "eyebrow": "00 / Metod va IELTS",
     "mtitle": "Inglizchani noldan: to'g'ri usul",
-    "lede": "Til <strong>yodlash</strong> emas, <strong>odat</strong>. Bu yerda samarali o'rganish usulini, IELTS nima ekanini va o'z maqsadingni aniqlaysan — keyin daraja-daraja ko'tarilasan.",
-    "doc": "<div class='prose'><p>Eng katta xato — grammatikani yodlab, gapirmaslik. Til ikki narsadan o'sadi: <strong>kirish (input)</strong> — eshitish va o'qish; <strong>chiqish (output)</strong> — gapirish va yozish. Har kuni ikkalasini ham qil.</p><h3>Samarali usul (har kuni)</h3><div class=\"chips\"><span class=\"chip t\">20 daq tinglash</span><span class=\"chip t\">20 daq o'qish</span><span class=\"chip t\">15 daq yangi so'z</span><span class=\"chip t\">10 daq gapirish/yozish</span></div><p>Kuniga 1 soat — haftada 7 soat. Bu 3 oyda sezilarli natija beradi. Muhimi: <strong>uzluksizlik</strong>, ko'p emas.</p><h3>Birinchi 20 ibora (survival English)</h3><div class=\"exlist\"><div class=\"ex\"><b>Hello / Hi</b><span>Salom</span></div><div class=\"ex\"><b>How are you?</b><span>Qalaysiz?</span></div><div class=\"ex\"><b>Nice to meet you.</b><span>Tanishganimdan xursandman.</span></div><div class=\"ex\"><b>Sorry, I don't understand.</b><span>Kechirasiz, tushunmadim.</span></div><div class=\"ex\"><b>Can you repeat, please?</b><span>Iltimos, takrorlaysizmi?</span></div><div class=\"ex\"><b>Thank you / Thanks</b><span>Rahmat</span></div><div class=\"ex\"><b>My name is ...</b><span>Mening ismim ...</span></div><div class=\"ex\"><b>I am from Uzbekistan.</b><span>Men O'zbekistondanman.</span></div></div><h3>IELTS nima?</h3><p>IELTS — inglizcha darajangni o'lchaydigan xalqaro imtihon. 4 ta bo'lim: <strong>Listening, Reading, Writing, Speaking</strong>. Har biri <strong>1 dan 9 gacha</strong> band bilan baholanadi, umumiy ball — o'rtacha.</p><div class=\"chips\"><span class=\"chip\">Band 5–6 = B1/B2</span><span class=\"chip\">Band 6.5–7 = ko'p universitet</span><span class=\"chip\">Band 7+ = kuchli daraja</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maqsadingni belgila</p><p>Avval kerakli band'ni aniqla (masalan 6.5). Maqsadsiz o'rganish sekin ketadi. Maqsad — yo'lni qisqartiradi.</p></div></div></div><div class='prose'><h3>Keng tarqalgan xato</h3><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Tarjima qilib gapirma</p><p>O'zbekcha o'ylab, so'zma-so'z tarjima qilma — bu sekin va noto'g'ri. Tayyor iboralarni (chunk) butunligicha yodla: \"How are you?\" ni so'z-so'z emas, bitta bo'lak sifatida.</p></div></div></div><div class='prose'><h3>Chuqurroq: IELTS band nimani bildiradi</h3><table class=\"gtable\"><thead><tr><th>Band</th><th>Daraja</th><th>Ma'no</th></tr></thead><tbody><tr><td>9</td><td>Expert</td><td>Mukammal, ona tilidek</td></tr><tr><td>7–8</td><td>Good</td><td>Erkin, kam xato</td></tr><tr><td>6–6.5</td><td>Competent</td><td>Ko'p universitet talabi</td></tr><tr><td>5–5.5</td><td>Modest</td><td>Asosiy muloqot</td></tr><tr><td>4</td><td>Limited</td><td>Cheklangan</td></tr></tbody></table><h3>Shadowing — talaffuz uchun kuchli usul</h3><p>Qisqa audio (10–20 soniya) tinglab, <strong>baravar takrorlab boring</strong> — ohang, urg'u va tezlikni nusxa qiling. Kuniga 5 daqiqa shadowing talaffuzni tez yaxshilaydi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Lug'atdan to'g'ri foydalan</p><p>Har yangi so'zda: <strong>talaffuz (audio)</strong>, <strong>so'z turkumi</strong> (n/v/adj) va <strong>misol gap</strong>ni ko'r. Faqat tarjimani emas.</p></div></div></div>",
+    "lede": "Til <strong>yodlash</strong> emas, <strong>odat</strong>. Bu yerda samarali o'rganish usulini, IELTS nima ekanini va o'z maqsadingni aniqlaysan - keyin daraja-daraja ko'tarilasan.",
+    "doc": "<div class='prose'><p>Eng katta xato - grammatikani yodlab, gapirmaslik. Til ikki narsadan o'sadi: <strong>kirish (input)</strong> - eshitish va o'qish; <strong>chiqish (output)</strong> - gapirish va yozish. Har kuni ikkalasini ham qil.</p><h3>Samarali usul (har kuni)</h3><div class=\"chips\"><span class=\"chip t\">20 daq tinglash</span><span class=\"chip t\">20 daq o'qish</span><span class=\"chip t\">15 daq yangi so'z</span><span class=\"chip t\">10 daq gapirish/yozish</span></div><p>Kuniga 1 soat - haftada 7 soat. Bu 3 oyda sezilarli natija beradi. Muhimi: <strong>uzluksizlik</strong>, ko'p emas.</p><h3>Birinchi 20 ibora (survival English)</h3><div class=\"exlist\"><div class=\"ex\"><b>Hello / Hi</b><span>Salom</span></div><div class=\"ex\"><b>How are you?</b><span>Qalaysiz?</span></div><div class=\"ex\"><b>Nice to meet you.</b><span>Tanishganimdan xursandman.</span></div><div class=\"ex\"><b>Sorry, I don't understand.</b><span>Kechirasiz, tushunmadim.</span></div><div class=\"ex\"><b>Can you repeat, please?</b><span>Iltimos, takrorlaysizmi?</span></div><div class=\"ex\"><b>Thank you / Thanks</b><span>Rahmat</span></div><div class=\"ex\"><b>My name is ...</b><span>Mening ismim ...</span></div><div class=\"ex\"><b>I am from Uzbekistan.</b><span>Men O'zbekistondanman.</span></div></div><h3>IELTS nima?</h3><p>IELTS - inglizcha darajangni o'lchaydigan xalqaro imtihon. 4 ta bo'lim: <strong>Listening, Reading, Writing, Speaking</strong>. Har biri <strong>1 dan 9 gacha</strong> band bilan baholanadi, umumiy ball - o'rtacha.</p><div class=\"chips\"><span class=\"chip\">Band 5-6 = B1/B2</span><span class=\"chip\">Band 6.5-7 = ko'p universitet</span><span class=\"chip\">Band 7+ = kuchli daraja</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maqsadingni belgila</p><p>Avval kerakli band'ni aniqla (masalan 6.5). Maqsadsiz o'rganish sekin ketadi. Maqsad - yo'lni qisqartiradi.</p></div></div></div><div class='prose'><h3>Keng tarqalgan xato</h3><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Tarjima qilib gapirma</p><p>O'zbekcha o'ylab, so'zma-so'z tarjima qilma - bu sekin va noto'g'ri. Tayyor iboralarni (chunk) butunligicha yodla: \"How are you?\" ni so'z-so'z emas, bitta bo'lak sifatida.</p></div></div></div><div class='prose'><h3>Chuqurroq: IELTS band nimani bildiradi</h3><table class=\"gtable\"><thead><tr><th>Band</th><th>Daraja</th><th>Ma'no</th></tr></thead><tbody><tr><td>9</td><td>Expert</td><td>Mukammal, ona tilidek</td></tr><tr><td>7-8</td><td>Good</td><td>Erkin, kam xato</td></tr><tr><td>6-6.5</td><td>Competent</td><td>Ko'p universitet talabi</td></tr><tr><td>5-5.5</td><td>Modest</td><td>Asosiy muloqot</td></tr><tr><td>4</td><td>Limited</td><td>Cheklangan</td></tr></tbody></table><h3>Shadowing - talaffuz uchun kuchli usul</h3><p>Qisqa audio (10-20 soniya) tinglab, <strong>baravar takrorlab boring</strong> - ohang, urg'u va tezlikni nusxa qiling. Kuniga 5 daqiqa shadowing talaffuzni tez yaxshilaydi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Lug'atdan to'g'ri foydalan</p><p>Har yangi so'zda: <strong>talaffuz (audio)</strong>, <strong>so'z turkumi</strong> (n/v/adj) va <strong>misol gap</strong>ni ko'r. Faqat tarjimani emas.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -122,7 +122,7 @@
           "Faqat so'z yodlash"
         ],
         "c": 1,
-        "w": "Til input va output birga ishlaganda o'sadi — har kuni oz-ozdan.",
+        "w": "Til input va output birga ishlaganda o'sadi - har kuni oz-ozdan.",
         "level": "easy"
       },
       {
@@ -134,16 +134,16 @@
           "5"
         ],
         "c": 2,
-        "w": "Listening, Reading, Writing, Speaking — 4 bo'lim.",
+        "w": "Listening, Reading, Writing, Speaking - 4 bo'lim.",
         "level": "practical"
       },
       {
         "q": "IELTS band shkalasi qanday?",
         "a": [
-          "0–100",
-          "1–9",
-          "A–F",
-          "1–5"
+          "0-100",
+          "1-9",
+          "A-F",
+          "1-5"
         ],
         "c": 1,
         "w": "Har bo'lim 1 dan 9 gacha baholanadi.",
@@ -158,7 +158,7 @@
           "Tez yodlash"
         ],
         "c": 1,
-        "w": "Kuniga 1 soat, lekin uzluksiz — eng yaxshi natija.",
+        "w": "Kuniga 1 soat, lekin uzluksiz - eng yaxshi natija.",
         "level": "practical"
       },
       {
@@ -185,7 +185,7 @@
           "Goodbye."
         ],
         "correct": 0,
-        "why": "\"How are you?\" — holat haqida; javob: I'm fine, thanks."
+        "why": "\"How are you?\" - holat haqida; javob: I'm fine, thanks."
       },
       {
         "type": "gap",
@@ -194,7 +194,7 @@
           "is",
           "'s"
         ],
-        "why": "to be: My name IS ... (he/she/it → is).",
+        "why": "to be: My name IS ... (he/she/it -> is).",
         "hint": ""
       },
       {
@@ -216,7 +216,7 @@
           "thank",
           "thanks"
         ],
-        "why": "Thank you / Thanks — minnatdorchilik.",
+        "why": "Thank you / Thanks - minnatdorchilik.",
         "hint": ""
       },
       {
@@ -318,20 +318,20 @@
       },
       {
         "topic": "to be (kirish)",
-        "rule": "I am, you are, he/she/it is — eng asosiy fe'l.",
+        "rule": "I am, you are, he/she/it is - eng asosiy fe'l.",
         "ex": "My name is Ali. I am from Uzbekistan."
       }
     ]
   },
   {
     "zoom": "A1",
-    "title": "A1 · Beginner",
+    "title": "A1 / Beginner",
     "sub": "Asoslar",
-    "coord": "Beginner · A1",
-    "eyebrow": "01 · A1 Beginner",
+    "coord": "Beginner / A1",
+    "eyebrow": "01 / A1 Beginner",
     "mtitle": "Birinchi gaplarni qurish",
-    "lede": "<strong>to be</strong> (am/is/are), olmoshlar va <strong>Present Simple</strong> — inglizchaning poydevori. Shular bilan o'zing va atrofing haqida gapira olasan.",
-    "doc": "<div class='prose'><h3>Subject pronouns (olmoshlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>I</b><span>men</span></div><div class=\"ex\"><b>you</b><span>sen/siz</span></div><div class=\"ex\"><b>he / she / it</b><span>u (erkak/ayol/jonsiz)</span></div><div class=\"ex\"><b>we</b><span>biz</span></div><div class=\"ex\"><b>they</b><span>ular</span></div></div><h3>Verb \"to be\" — am / is / are</h3><div class=\"exlist\"><div class=\"ex\"><b>I am (I'm) a student.</b><span>Men talabaman.</span></div><div class=\"ex\"><b>She is (She's) from Tashkent.</b><span>U Toshkentdan.</span></div><div class=\"ex\"><b>They are (They're) my friends.</b><span>Ular mening do'stlarim.</span></div><div class=\"ex\"><b>Are you ready?</b><span>Tayyormisan?</span></div></div><h3>Present Simple — odatiy ishlar</h3><p>Doimiy yoki takroriy harakat uchun. <strong>He/she/it</strong> bilan fe'lga <strong>-s</strong> qo'shiladi.</p><div class=\"exlist\"><div class=\"ex\"><b>I work every day.</b><span>Men har kuni ishlayman.</span></div><div class=\"ex\"><b>She works in a bank.</b><span>U bankda ishlaydi.</span></div><div class=\"ex\"><b>We don't (do not) drink coffee.</b><span>Biz qahva ichmaymiz.</span></div><div class=\"ex\"><b>Do you speak English?</b><span>Inglizcha gapirasanmi?</span></div></div><h3>a / an / the</h3><div class=\"exlist\"><div class=\"ex\"><b>a book, an apple</b><span>noaniq (bittasi)</span></div><div class=\"ex\"><b>the sun, the book on the table</b><span>aniq (ma'lum)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng ko'p xato</p><p>He/she/it bilan -s ni unutma: \"She <strong>work</strong>\" emas, \"She <strong>works</strong>\". Va \"I am agree\" emas — \"I agree\".</p></div></div></div><div class='prose'><h3>Ko'proq misol: savol yasash</h3><div class='exlist'><div class='ex'><b>Do you like tea?</b><span>Choy yoqadimi?</span></div><div class='ex'><b>Does she work here?</b><span>U shu yerda ishlaydimi?</span></div><div class='ex'><b>Where do you live?</b><span>Qayerda yashaysan?</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>\"She don't\" ❌ — to'g'risi \"She <b>doesn't</b>\". He/she/it bilan does/doesn't.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"to be\" to'liq jadval</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Tasdiq</th><th>Inkor</th><th>Qisqa</th></tr></thead><tbody><tr><td>I</td><td>I am</td><td>I am not</td><td>I'm</td></tr><tr><td>you/we/they</td><td>are</td><td>are not</td><td>aren't</td></tr><tr><td>he/she/it</td><td>is</td><td>is not</td><td>isn't</td></tr></tbody></table><h3>This / That / These / Those</h3><div class=\"exlist\"><div class=\"ex\"><b>this book (yaqin, birlik)</b><span>bu kitob</span></div><div class=\"ex\"><b>that car (uzoq, birlik)</b><span>u mashina</span></div><div class=\"ex\"><b>these books (yaqin, ko'plik)</b><span>bu kitoblar</span></div><div class=\"ex\"><b>those cars (uzoq, ko'plik)</b><span>u mashinalar</span></div></div><h3>Egalik: my / your / his / her</h3><div class=\"exlist\"><div class=\"ex\"><b>This is my phone.</b><span>Bu mening telefonim.</span></div><div class=\"ex\"><b>Her name is Aziza.</b><span>Uning ismi Aziza.</span></div></div><h3>So'z tartibi (juda muhim)</h3><p>Ingliz gapi qat'iy tartibda: <strong>Ega + Fe'l + To'ldiruvchi</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>I (ega) speak (fe'l) English (to'ldiruvchi).</b><span>Men inglizcha gapiraman.</span></div></div></div>",
+    "lede": "<strong>to be</strong> (am/is/are), olmoshlar va <strong>Present Simple</strong> - inglizchaning poydevori. Shular bilan o'zing va atrofing haqida gapira olasan.",
+    "doc": "<div class='prose'><h3>Subject pronouns (olmoshlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>I</b><span>men</span></div><div class=\"ex\"><b>you</b><span>sen/siz</span></div><div class=\"ex\"><b>he / she / it</b><span>u (erkak/ayol/jonsiz)</span></div><div class=\"ex\"><b>we</b><span>biz</span></div><div class=\"ex\"><b>they</b><span>ular</span></div></div><h3>Verb \"to be\" - am / is / are</h3><div class=\"exlist\"><div class=\"ex\"><b>I am (I'm) a student.</b><span>Men talabaman.</span></div><div class=\"ex\"><b>She is (She's) from Tashkent.</b><span>U Toshkentdan.</span></div><div class=\"ex\"><b>They are (They're) my friends.</b><span>Ular mening do'stlarim.</span></div><div class=\"ex\"><b>Are you ready?</b><span>Tayyormisan?</span></div></div><h3>Present Simple - odatiy ishlar</h3><p>Doimiy yoki takroriy harakat uchun. <strong>He/she/it</strong> bilan fe'lga <strong>-s</strong> qo'shiladi.</p><div class=\"exlist\"><div class=\"ex\"><b>I work every day.</b><span>Men har kuni ishlayman.</span></div><div class=\"ex\"><b>She works in a bank.</b><span>U bankda ishlaydi.</span></div><div class=\"ex\"><b>We don't (do not) drink coffee.</b><span>Biz qahva ichmaymiz.</span></div><div class=\"ex\"><b>Do you speak English?</b><span>Inglizcha gapirasanmi?</span></div></div><h3>a / an / the</h3><div class=\"exlist\"><div class=\"ex\"><b>a book, an apple</b><span>noaniq (bittasi)</span></div><div class=\"ex\"><b>the sun, the book on the table</b><span>aniq (ma'lum)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng ko'p xato</p><p>He/she/it bilan -s ni unutma: \"She <strong>work</strong>\" emas, \"She <strong>works</strong>\". Va \"I am agree\" emas - \"I agree\".</p></div></div></div><div class='prose'><h3>Ko'proq misol: savol yasash</h3><div class='exlist'><div class='ex'><b>Do you like tea?</b><span>Choy yoqadimi?</span></div><div class='ex'><b>Does she work here?</b><span>U shu yerda ishlaydimi?</span></div><div class='ex'><b>Where do you live?</b><span>Qayerda yashaysan?</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>\"She don't\" ❌ - to'g'risi \"She <b>doesn't</b>\". He/she/it bilan does/doesn't.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"to be\" to'liq jadval</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Tasdiq</th><th>Inkor</th><th>Qisqa</th></tr></thead><tbody><tr><td>I</td><td>I am</td><td>I am not</td><td>I'm</td></tr><tr><td>you/we/they</td><td>are</td><td>are not</td><td>aren't</td></tr><tr><td>he/she/it</td><td>is</td><td>is not</td><td>isn't</td></tr></tbody></table><h3>This / That / These / Those</h3><div class=\"exlist\"><div class=\"ex\"><b>this book (yaqin, birlik)</b><span>bu kitob</span></div><div class=\"ex\"><b>that car (uzoq, birlik)</b><span>u mashina</span></div><div class=\"ex\"><b>these books (yaqin, ko'plik)</b><span>bu kitoblar</span></div><div class=\"ex\"><b>those cars (uzoq, ko'plik)</b><span>u mashinalar</span></div></div><h3>Egalik: my / your / his / her</h3><div class=\"exlist\"><div class=\"ex\"><b>This is my phone.</b><span>Bu mening telefonim.</span></div><div class=\"ex\"><b>Her name is Aziza.</b><span>Uning ismi Aziza.</span></div></div><h3>So'z tartibi (juda muhim)</h3><p>Ingliz gapi qat'iy tartibda: <strong>Ega + Fe'l + To'ldiruvchi</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>I (ega) speak (fe'l) English (to'ldiruvchi).</b><span>Men inglizcha gapiraman.</span></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -369,7 +369,7 @@
       {
         "type": "doc",
         "url": "https://www.bbc.co.uk/learningenglish/english/course/lower-beginner",
-        "title": "BBC — Beginner course",
+        "title": "BBC - Beginner course",
         "desc": "A1 grammatika va audio",
         "host": "bbc.co.uk"
       },
@@ -391,7 +391,7 @@
     "project": {
       "tag": "A1 amaliyot",
       "title": "O'zim va oilam haqida xat",
-      "desc": "5–7 gaplik qisqa matn yoz: kim, qayerdan, nima ishlaysan.",
+      "desc": "5-7 gaplik qisqa matn yoz: kim, qayerdan, nima ishlaysan.",
       "features": [
         "to be + Present Simple ishlatilgan",
         "Kamida 6 ta gap",
@@ -411,7 +411,7 @@
       "variants": [
         {
           "title": "O'zim va oilam haqida xat - Speaking Task",
-          "desc": "A1 · Beginner bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
+          "desc": "A1 / Beginner bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
           "deliverables": [
             "60-90 sekund script",
             "3 marta qayta yozish",
@@ -484,7 +484,7 @@
           "a",
           "an",
           "the",
-          "—"
+          "-"
         ],
         "c": 1,
         "w": "Unli tovush (a) dan oldin 'an'.",
@@ -499,7 +499,7 @@
           "is",
           "'s"
         ],
-        "why": "he/she/it → is.",
+        "why": "he/she/it -> is.",
         "hint": ""
       },
       {
@@ -509,7 +509,7 @@
           "are",
           "'re"
         ],
-        "why": "we/you/they → are.",
+        "why": "we/you/they -> are.",
         "hint": ""
       },
       {
@@ -522,7 +522,7 @@
           "is play"
         ],
         "correct": 1,
-        "why": "Present Simple, 3-shaxs: -s qo'shiladi → plays."
+        "why": "Present Simple, 3-shaxs: -s qo'shiladi -> plays."
       },
       {
         "type": "gap",
@@ -541,7 +541,7 @@
           "a",
           "an",
           "the",
-          "—"
+          "-"
         ],
         "correct": 1,
         "why": "Unli tovushdan oldin: an umbrella."
@@ -565,7 +565,7 @@
           "is live"
         ],
         "correct": 1,
-        "why": "3-shaxs (she) → lives."
+        "why": "3-shaxs (she) -> lives."
       }
     ],
     "vocab": [
@@ -629,7 +629,7 @@
     "grammar": [
       {
         "topic": "to be (am/is/are)",
-        "rule": "I am · you/we/they are · he/she/it is",
+        "rule": "I am / you/we/they are / he/she/it is",
         "ex": "She is a teacher. They are here."
       },
       {
@@ -644,20 +644,20 @@
       },
       {
         "topic": "Articles a/an",
-        "rule": "Undosh → a; unli tovush → an.",
+        "rule": "Undosh -> a; unli tovush -> an.",
         "ex": "a book, an apple, an hour"
       }
     ]
   },
   {
     "zoom": "A2",
-    "title": "A2 · Elementary",
+    "title": "A2 / Elementary",
     "sub": "Kundalik hayot",
-    "coord": "Elementary · A2",
-    "eyebrow": "02 · A2 Elementary",
+    "coord": "Elementary / A2",
+    "eyebrow": "02 / A2 Elementary",
     "mtitle": "O'tmish, kelajak va imkoniyat",
     "lede": "<strong>Past Simple</strong>, <strong>going to / will</strong> va <strong>can</strong> bilan o'tgan kun, rejalar va imkoniyatlar haqida gapirasan.",
-    "doc": "<div class='prose'><h3>Past Simple — o'tgan zamon</h3><p>To'g'ri fe'llarga <strong>-ed</strong>; noto'g'ri fe'llar yodlanadi (go→went, see→saw).</p><div class=\"exlist\"><div class=\"ex\"><b>I worked yesterday.</b><span>Kecha ishladim.</span></div><div class=\"ex\"><b>She went to school.</b><span>U maktabga bordi.</span></div><div class=\"ex\"><b>We didn't (did not) sleep.</b><span>Biz uxlamadik.</span></div><div class=\"ex\"><b>Did you eat?</b><span>Ovqatlandingmi?</span></div></div><h3>Kelajak: going to / will</h3><div class=\"exlist\"><div class=\"ex\"><b>I'm going to study tonight.</b><span>Bugun kechqurun o'qiyman (reja).</span></div><div class=\"ex\"><b>I will help you.</b><span>Senga yordam beraman (qaror/va'da).</span></div><div class=\"ex\"><b>It will rain tomorrow.</b><span>Ertaga yomg'ir yog'adi (bashorat).</span></div></div><h3>can / can't — imkoniyat</h3><div class=\"exlist\"><div class=\"ex\"><b>I can swim.</b><span>Suza olaman.</span></div><div class=\"ex\"><b>She can't drive.</b><span>U hayday olmaydi.</span></div><div class=\"ex\"><b>Can you help me?</b><span>Yordam bera olasanmi?</span></div></div><h3>There is / There are</h3><div class=\"exlist\"><div class=\"ex\"><b>There is a book on the table.</b><span>Stolda kitob bor.</span></div><div class=\"ex\"><b>There are two cars outside.</b><span>Tashqarida ikkita mashina bor.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Past Simple savolda</p><p>Savol va inkorda asosiy fe'l <strong>1-shaklga</strong> qaytadi: \"Did you <strong>go</strong>?\" (went emas), \"She didn't <strong>go</strong>\".</p></div></div></div><div class='prose'><h3>Ko'proq misol: noto'g'ri fe'llar</h3><div class='exlist'><div class='ex'><b>go → went → gone</b><span>bormoq</span></div><div class='ex'><b>see → saw → seen</b><span>ko'rmoq</span></div><div class='ex'><b>have → had → had</b><span>ega bo'lmoq</span></div><div class='ex'><b>buy → bought → bought</b><span>sotib olmoq</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savol/inkorda fe'l 1-shaklga qaytadi: \"Did you <b>go</b>?\" (went emas), \"I didn't <b>see</b>\".</p></div></div></div><div class='prose'><h3>Chuqurroq: -ed talaffuzi va imlosi</h3><table class=\"gtable\"><thead><tr><th>Qoida</th><th>Misol</th><th>Talaffuz</th></tr></thead><tbody><tr><td>odatda</td><td>worked</td><td>/t/</td></tr><tr><td>d/t bilan tugasa</td><td>wanted</td><td>/ɪd/</td></tr><tr><td>jarangli</td><td>played</td><td>/d/</td></tr></tbody></table><h3>Ko'proq noto'g'ri fe'llar</h3><table class=\"gtable\"><thead><tr><th>1-shakl</th><th>2-shakl (past)</th><th>Ma'no</th></tr></thead><tbody><tr><td>make</td><td>made</td><td>qilmoq</td></tr><tr><td>take</td><td>took</td><td>olmoq</td></tr><tr><td>come</td><td>came</td><td>kelmoq</td></tr><tr><td>give</td><td>gave</td><td>bermoq</td></tr><tr><td>find</td><td>found</td><td>topmoq</td></tr><tr><td>think</td><td>thought</td><td>o'ylamoq</td></tr></tbody></table><h3>Vaqt belgilari</h3><div class=\"chips\"><span class=\"chip\">yesterday</span><span class=\"chip\">last week/year</span><span class=\"chip\">two days ago</span><span class=\"chip\">in 2010</span><span class=\"chip\">when I was young</span></div><h3>some / any</h3><div class=\"exlist\"><div class=\"ex\"><b>I have some money. (tasdiq)</b><span>menda biroz pul bor</span></div><div class=\"ex\"><b>I don't have any money. (inkor)</b><span>menda pul yo'q</span></div><div class=\"ex\"><b>Do you have any questions? (savol)</b><span>savoling bormi?</span></div></div></div>",
+    "doc": "<div class='prose'><h3>Past Simple - o'tgan zamon</h3><p>To'g'ri fe'llarga <strong>-ed</strong>; noto'g'ri fe'llar yodlanadi (go->went, see->saw).</p><div class=\"exlist\"><div class=\"ex\"><b>I worked yesterday.</b><span>Kecha ishladim.</span></div><div class=\"ex\"><b>She went to school.</b><span>U maktabga bordi.</span></div><div class=\"ex\"><b>We didn't (did not) sleep.</b><span>Biz uxlamadik.</span></div><div class=\"ex\"><b>Did you eat?</b><span>Ovqatlandingmi?</span></div></div><h3>Kelajak: going to / will</h3><div class=\"exlist\"><div class=\"ex\"><b>I'm going to study tonight.</b><span>Bugun kechqurun o'qiyman (reja).</span></div><div class=\"ex\"><b>I will help you.</b><span>Senga yordam beraman (qaror/va'da).</span></div><div class=\"ex\"><b>It will rain tomorrow.</b><span>Ertaga yomg'ir yog'adi (bashorat).</span></div></div><h3>can / can't - imkoniyat</h3><div class=\"exlist\"><div class=\"ex\"><b>I can swim.</b><span>Suza olaman.</span></div><div class=\"ex\"><b>She can't drive.</b><span>U hayday olmaydi.</span></div><div class=\"ex\"><b>Can you help me?</b><span>Yordam bera olasanmi?</span></div></div><h3>There is / There are</h3><div class=\"exlist\"><div class=\"ex\"><b>There is a book on the table.</b><span>Stolda kitob bor.</span></div><div class=\"ex\"><b>There are two cars outside.</b><span>Tashqarida ikkita mashina bor.</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Past Simple savolda</p><p>Savol va inkorda asosiy fe'l <strong>1-shaklga</strong> qaytadi: \"Did you <strong>go</strong>?\" (went emas), \"She didn't <strong>go</strong>\".</p></div></div></div><div class='prose'><h3>Ko'proq misol: noto'g'ri fe'llar</h3><div class='exlist'><div class='ex'><b>go -> went -> gone</b><span>bormoq</span></div><div class='ex'><b>see -> saw -> seen</b><span>ko'rmoq</span></div><div class='ex'><b>have -> had -> had</b><span>ega bo'lmoq</span></div><div class='ex'><b>buy -> bought -> bought</b><span>sotib olmoq</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savol/inkorda fe'l 1-shaklga qaytadi: \"Did you <b>go</b>?\" (went emas), \"I didn't <b>see</b>\".</p></div></div></div><div class='prose'><h3>Chuqurroq: -ed talaffuzi va imlosi</h3><table class=\"gtable\"><thead><tr><th>Qoida</th><th>Misol</th><th>Talaffuz</th></tr></thead><tbody><tr><td>odatda</td><td>worked</td><td>/t/</td></tr><tr><td>d/t bilan tugasa</td><td>wanted</td><td>/ɪd/</td></tr><tr><td>jarangli</td><td>played</td><td>/d/</td></tr></tbody></table><h3>Ko'proq noto'g'ri fe'llar</h3><table class=\"gtable\"><thead><tr><th>1-shakl</th><th>2-shakl (past)</th><th>Ma'no</th></tr></thead><tbody><tr><td>make</td><td>made</td><td>qilmoq</td></tr><tr><td>take</td><td>took</td><td>olmoq</td></tr><tr><td>come</td><td>came</td><td>kelmoq</td></tr><tr><td>give</td><td>gave</td><td>bermoq</td></tr><tr><td>find</td><td>found</td><td>topmoq</td></tr><tr><td>think</td><td>thought</td><td>o'ylamoq</td></tr></tbody></table><h3>Vaqt belgilari</h3><div class=\"chips\"><span class=\"chip\">yesterday</span><span class=\"chip\">last week/year</span><span class=\"chip\">two days ago</span><span class=\"chip\">in 2010</span><span class=\"chip\">when I was young</span></div><h3>some / any</h3><div class=\"exlist\"><div class=\"ex\"><b>I have some money. (tasdiq)</b><span>menda biroz pul bor</span></div><div class=\"ex\"><b>I don't have any money. (inkor)</b><span>menda pul yo'q</span></div><div class=\"ex\"><b>Do you have any questions? (savol)</b><span>savoling bormi?</span></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -695,7 +695,7 @@
       {
         "type": "doc",
         "url": "https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar",
-        "title": "British Council A1–A2",
+        "title": "British Council A1-A2",
         "desc": "Grammatika to'plami",
         "host": "britishcouncil.org"
       },
@@ -717,7 +717,7 @@
     "project": {
       "tag": "A2 amaliyot",
       "title": "Kechagi kunim (My yesterday)",
-      "desc": "8–10 gaplik matn: ertalabdan kechgacha nima qilding.",
+      "desc": "8-10 gaplik matn: ertalabdan kechgacha nima qilding.",
       "features": [
         "Past Simple ishlatilgan",
         "Kamida 3 ta noto'g'ri fe'l",
@@ -737,7 +737,7 @@
       "variants": [
         {
           "title": "Kechagi kunim (My yesterday) - Speaking Task",
-          "desc": "A2 · Elementary bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
+          "desc": "A2 / Elementary bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
           "deliverables": [
             "60-90 sekund script",
             "3 marta qayta yozish",
@@ -765,7 +765,7 @@
           "going"
         ],
         "c": 1,
-        "w": "go ning o'tgan shakli — went (noto'g'ri fe'l).",
+        "w": "go ning o'tgan shakli - went (noto'g'ri fe'l).",
         "level": "easy"
       },
       {
@@ -789,7 +789,7 @@
           "must"
         ],
         "c": 1,
-        "w": "Oldindan o'ylangan reja — 'going to'.",
+        "w": "Oldindan o'ylangan reja - 'going to'.",
         "level": "practical"
       },
       {
@@ -801,7 +801,7 @@
           "was"
         ],
         "c": 1,
-        "w": "Ko'plik — there are.",
+        "w": "Ko'plik - there are.",
         "level": "practical"
       },
       {
@@ -813,7 +813,7 @@
           "egalik"
         ],
         "c": 1,
-        "w": "can — imkoniyat yoki qobiliyat.",
+        "w": "can - imkoniyat yoki qobiliyat.",
         "level": "scenario"
       }
     ],
@@ -824,7 +824,7 @@
         "answers": [
           "went"
         ],
-        "why": "go → went (noto'g'ri fe'l).",
+        "why": "go -> went (noto'g'ri fe'l).",
         "hint": ""
       },
       {
@@ -833,7 +833,7 @@
         "answers": [
           "saw"
         ],
-        "why": "see → saw.",
+        "why": "see -> saw.",
         "hint": ""
       },
       {
@@ -858,7 +858,7 @@
           "went"
         ],
         "correct": 1,
-        "why": "Oldindan reja → am going to."
+        "why": "Oldindan reja -> am going to."
       },
       {
         "type": "gap",
@@ -866,7 +866,7 @@
         "answers": [
           "are"
         ],
-        "why": "Ko'plik → there are.",
+        "why": "Ko'plik -> there are.",
         "hint": ""
       },
       {
@@ -879,7 +879,7 @@
           "did"
         ],
         "correct": 0,
-        "why": "Qobiliyat → can."
+        "why": "Qobiliyat -> can."
       },
       {
         "type": "gap",
@@ -972,20 +972,20 @@
       },
       {
         "topic": "There is / are",
-        "rule": "Birlik → is; ko'plik → are.",
+        "rule": "Birlik -> is; ko'plik -> are.",
         "ex": "There is a cat. There are cats."
       }
     ]
   },
   {
     "zoom": "B1",
-    "title": "B1 · Intermediate",
+    "title": "B1 / Intermediate",
     "sub": "Fikr bildirish",
-    "coord": "Intermediate · B1",
-    "eyebrow": "03 · B1 Intermediate",
+    "coord": "Intermediate / B1",
+    "eyebrow": "03 / B1 Intermediate",
     "mtitle": "Tajriba, taqqoslash va shartlar",
-    "lede": "<strong>Present Perfect</strong>, taqqoslash darajalari va <strong>conditionals</strong> bilan tajriba, fikr va ehtimollik haqida gapirasan — bu IELTS uchun muhim.",
-    "doc": "<div class='prose'><h3>Present Perfect — have/has + V3</h3><p>O'tmishda bo'lgan, lekin hozir bilan bog'liq ish (aniq vaqt aytilmaydi).</p><div class=\"exlist\"><div class=\"ex\"><b>I have visited London.</b><span>Londonda bo'lganman (qachondir).</span></div><div class=\"ex\"><b>She has just finished.</b><span>U hozirgina tugatdi.</span></div><div class=\"ex\"><b>Have you ever tried sushi?</b><span>Hech sushi yeb ko'rganmisan?</span></div></div><p><strong>Past Simple vs Present Perfect:</strong> aniq vaqt bor → Past (\"I saw him yesterday\"); vaqt muhim emas/davom etadi → Perfect (\"I have seen that film\").</p><h3>Comparatives & Superlatives</h3><div class=\"exlist\"><div class=\"ex\"><b>cheaper than</b><span>...dan arzonroq</span></div><div class=\"ex\"><b>more expensive than</b><span>...dan qimmatroq</span></div><div class=\"ex\"><b>the best</b><span>eng yaxshi</span></div><div class=\"ex\"><b>the most important</b><span>eng muhim</span></div></div><h3>Conditionals (shartlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>If I have time, I will call you.</b><span>Vaqtim bo'lsa, qo'ng'iroq qilaman (real).</span></div><div class=\"ex\"><b>If I were rich, I would travel.</b><span>Boy bo'lganimda, sayohat qilardim (faraziy).</span></div></div><h3>Modals: should / must / might</h3><div class=\"exlist\"><div class=\"ex\"><b>You should sleep more.</b><span>Ko'proq uxlashing kerak (maslahat).</span></div><div class=\"ex\"><b>I must finish today.</b><span>Bugun tugatishim shart (majburiyat).</span></div><div class=\"ex\"><b>It might rain.</b><span>Yomg'ir yog'ishi mumkin (ehtimol).</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>IELTS uchun</p><p>Conditionals va modals fikr bildirishda juda kuchli. \"I think the government should...\" — Writing va Speaking'ni darrov yuqori band'ga olib chiqadi.</p></div></div></div><div class='prose'><h3>Past Simple vs Present Perfect</h3><div class='exlist'><div class='ex'><b>I saw him yesterday.</b><span>aniq vaqt → Past</span></div><div class='ex'><b>I have seen that film.</b><span>vaqt muhim emas → Perfect</span></div><div class='ex'><b>She has lived here for 5 years.</b><span>hozir ham davom etadi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>\"I have seen him yesterday\" ❌ — aniq o'tgan vaqt (yesterday) bilan Present Perfect ishlatilmaydi → \"I saw him yesterday\".</p></div></div></div><div class='prose'><h3>Chuqurroq: Present Perfect signal so'zlari</h3><table class=\"gtable\"><thead><tr><th>So'z</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>already</td><td>allaqachon</td><td>I've already eaten.</td></tr><tr><td>yet</td><td>hali (savol/inkor)</td><td>Have you finished yet?</td></tr><tr><td>just</td><td>hozirgina</td><td>She's just left.</td></tr><tr><td>since</td><td>...dan beri</td><td>I've lived here since 2019.</td></tr><tr><td>for</td><td>...davomida</td><td>I've known him for 5 years.</td></tr><tr><td>ever/never</td><td>hech/hech qachon</td><td>Have you ever been there?</td></tr></tbody></table><h3>Conditionals jadvali</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Tuzilma</th><th>Ishlatilishi</th></tr></thead><tbody><tr><td>0</td><td>If + present, present</td><td>doimiy haqiqat</td></tr><tr><td>1</td><td>If + present, will + V1</td><td>real kelajak</td></tr><tr><td>2</td><td>If + past, would + V1</td><td>faraziy hozir</td></tr></tbody></table><h3>Present Simple vs Continuous</h3><div class=\"exlist\"><div class=\"ex\"><b>I work in IT. (doimiy)</b><span>men IT'da ishlayman</span></div><div class=\"ex\"><b>I'm working now. (hozir)</b><span>men hozir ishlayapman</span></div></div></div>",
+    "lede": "<strong>Present Perfect</strong>, taqqoslash darajalari va <strong>conditionals</strong> bilan tajriba, fikr va ehtimollik haqida gapirasan - bu IELTS uchun muhim.",
+    "doc": "<div class='prose'><h3>Present Perfect - have/has + V3</h3><p>O'tmishda bo'lgan, lekin hozir bilan bog'liq ish (aniq vaqt aytilmaydi).</p><div class=\"exlist\"><div class=\"ex\"><b>I have visited London.</b><span>Londonda bo'lganman (qachondir).</span></div><div class=\"ex\"><b>She has just finished.</b><span>U hozirgina tugatdi.</span></div><div class=\"ex\"><b>Have you ever tried sushi?</b><span>Hech sushi yeb ko'rganmisan?</span></div></div><p><strong>Past Simple vs Present Perfect:</strong> aniq vaqt bor -> Past (\"I saw him yesterday\"); vaqt muhim emas/davom etadi -> Perfect (\"I have seen that film\").</p><h3>Comparatives & Superlatives</h3><div class=\"exlist\"><div class=\"ex\"><b>cheaper than</b><span>...dan arzonroq</span></div><div class=\"ex\"><b>more expensive than</b><span>...dan qimmatroq</span></div><div class=\"ex\"><b>the best</b><span>eng yaxshi</span></div><div class=\"ex\"><b>the most important</b><span>eng muhim</span></div></div><h3>Conditionals (shartlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>If I have time, I will call you.</b><span>Vaqtim bo'lsa, qo'ng'iroq qilaman (real).</span></div><div class=\"ex\"><b>If I were rich, I would travel.</b><span>Boy bo'lganimda, sayohat qilardim (faraziy).</span></div></div><h3>Modals: should / must / might</h3><div class=\"exlist\"><div class=\"ex\"><b>You should sleep more.</b><span>Ko'proq uxlashing kerak (maslahat).</span></div><div class=\"ex\"><b>I must finish today.</b><span>Bugun tugatishim shart (majburiyat).</span></div><div class=\"ex\"><b>It might rain.</b><span>Yomg'ir yog'ishi mumkin (ehtimol).</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>IELTS uchun</p><p>Conditionals va modals fikr bildirishda juda kuchli. \"I think the government should...\" - Writing va Speaking'ni darrov yuqori band'ga olib chiqadi.</p></div></div></div><div class='prose'><h3>Past Simple vs Present Perfect</h3><div class='exlist'><div class='ex'><b>I saw him yesterday.</b><span>aniq vaqt -> Past</span></div><div class='ex'><b>I have seen that film.</b><span>vaqt muhim emas -> Perfect</span></div><div class='ex'><b>She has lived here for 5 years.</b><span>hozir ham davom etadi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>\"I have seen him yesterday\" ❌ - aniq o'tgan vaqt (yesterday) bilan Present Perfect ishlatilmaydi -> \"I saw him yesterday\".</p></div></div></div><div class='prose'><h3>Chuqurroq: Present Perfect signal so'zlari</h3><table class=\"gtable\"><thead><tr><th>So'z</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>already</td><td>allaqachon</td><td>I've already eaten.</td></tr><tr><td>yet</td><td>hali (savol/inkor)</td><td>Have you finished yet?</td></tr><tr><td>just</td><td>hozirgina</td><td>She's just left.</td></tr><tr><td>since</td><td>...dan beri</td><td>I've lived here since 2019.</td></tr><tr><td>for</td><td>...davomida</td><td>I've known him for 5 years.</td></tr><tr><td>ever/never</td><td>hech/hech qachon</td><td>Have you ever been there?</td></tr></tbody></table><h3>Conditionals jadvali</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Tuzilma</th><th>Ishlatilishi</th></tr></thead><tbody><tr><td>0</td><td>If + present, present</td><td>doimiy haqiqat</td></tr><tr><td>1</td><td>If + present, will + V1</td><td>real kelajak</td></tr><tr><td>2</td><td>If + past, would + V1</td><td>faraziy hozir</td></tr></tbody></table><h3>Present Simple vs Continuous</h3><div class=\"exlist\"><div class=\"ex\"><b>I work in IT. (doimiy)</b><span>men IT'da ishlayman</span></div><div class=\"ex\"><b>I'm working now. (hozir)</b><span>men hozir ishlayapman</span></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1023,7 +1023,7 @@
       {
         "type": "doc",
         "url": "https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar",
-        "title": "British Council B1–B2",
+        "title": "British Council B1-B2",
         "desc": "Grammatika",
         "host": "britishcouncil.org"
       },
@@ -1045,7 +1045,7 @@
     "project": {
       "tag": "B1 amaliyot",
       "title": "Fikr matni (opinion)",
-      "desc": "Bitta mavzuda (masalan onlayn ta'lim) 8–10 gaplik fikr yoz.",
+      "desc": "Bitta mavzuda (masalan onlayn ta'lim) 8-10 gaplik fikr yoz.",
       "features": [
         "Present Perfect ishlatilgan",
         "Kamida 1 conditional",
@@ -1065,7 +1065,7 @@
       "variants": [
         {
           "title": "Fikr matni (opinion) - Speaking Task",
-          "desc": "B1 · Intermediate bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
+          "desc": "B1 / Intermediate bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
           "deliverables": [
             "60-90 sekund script",
             "3 marta qayta yozish",
@@ -1105,7 +1105,7 @@
           "I did saw"
         ],
         "c": 1,
-        "w": "Aniq vaqt yo'q → Present Perfect.",
+        "w": "Aniq vaqt yo'q -> Present Perfect.",
         "level": "practical"
       },
       {
@@ -1129,7 +1129,7 @@
           "can"
         ],
         "c": 1,
-        "w": "should — maslahat.",
+        "w": "should - maslahat.",
         "level": "practical"
       },
       {
@@ -1165,7 +1165,7 @@
           "I did see yesterday"
         ],
         "correct": 1,
-        "why": "Aniq vaqt (yesterday) → Past Simple: saw."
+        "why": "Aniq vaqt (yesterday) -> Past Simple: saw."
       },
       {
         "type": "gap",
@@ -1209,7 +1209,7 @@
           "might"
         ],
         "correct": 1,
-        "why": "Maslahat → should."
+        "why": "Maslahat -> should."
       },
       {
         "type": "gap",
@@ -1309,13 +1309,13 @@
   },
   {
     "zoom": "B2",
-    "title": "B2 · Upper-Inter",
+    "title": "B2 / Upper-Inter",
     "sub": "Murakkab nutq",
-    "coord": "Upper-Inter · B2",
-    "eyebrow": "04 · B2 Upper-Intermediate",
+    "coord": "Upper-Inter / B2",
+    "eyebrow": "04 / B2 Upper-Intermediate",
     "mtitle": "Murakkab gaplar va paraphrasing",
-    "lede": "<strong>Passive</strong>, <strong>relative clauses</strong>, <strong>reported speech</strong> va paraphrasing — IELTS 6.5–7+ uchun zarur grammatik vositalar.",
-    "doc": "<div class='prose'><h3>Passive voice (majhul nisbat)</h3><p>Kim bajargani muhim bo'lmaganda. be + V3.</p><div class=\"exlist\"><div class=\"ex\"><b>English is spoken worldwide.</b><span>Inglizchada butun dunyoda gapiriladi.</span></div><div class=\"ex\"><b>The bridge was built in 1990.</b><span>Ko'prik 1990-yilda qurilgan.</span></div></div><h3>Relative clauses</h3><div class=\"exlist\"><div class=\"ex\"><b>The man who called me is my boss.</b><span>Menga qo'ng'iroq qilgan odam — rahbarim.</span></div><div class=\"ex\"><b>The book that I read was great.</b><span>O'qigan kitobim zo'r edi.</span></div></div><h3>Reported speech</h3><div class=\"exlist\"><div class=\"ex\"><b>She said she was tired.</b><span>U charchaganini aytdi.</span></div><div class=\"ex\"><b>He told me he would come.</b><span>U kelishini aytdi.</span></div></div><h3>Paraphrasing (IELTS kaliti)</h3><p>Bir fikrni boshqacha aytish — yuqori band uchun shart. Sinonim va struktura o'zgartir.</p><div class=\"exlist\"><div class=\"ex\"><b>important → crucial / vital</b><span>muhim</span></div><div class=\"ex\"><b>a lot of → a significant number of</b><span>ko'p</span></div><div class=\"ex\"><b>good → beneficial / effective</b><span>yaxshi/foydali</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Linking words</p><p>Murakkab fikrni bog'la: <strong>however, moreover, as a result, on the other hand, in addition</strong>. Bular Coherence band'ini oshiradi.</p></div></div></div><div class='prose'><h3>Paraphrasing — bir fikr, ko'p shakl</h3><div class='exlist'><div class='ex'><b>Cars cause pollution.</b><span>oddiy</span></div><div class='ex'><b>Pollution is caused by cars.</b><span>passive</span></div><div class='ex'><b>Vehicles are a major source of pollution.</b><span>sinonim + struktura</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>IELTS siri</p><p>Bir fikrni 2-3 xil ayta olsang, Lexical va Grammar band'i ko'tariladi. Passive, relative va sinonimlardan foydalan.</p></div></div></div><div class='prose'><h3>Chuqurroq: Passive barcha zamonlarda</h3><table class=\"gtable\"><thead><tr><th>Zamon</th><th>Active</th><th>Passive</th></tr></thead><tbody><tr><td>Present</td><td>make</td><td>is made</td></tr><tr><td>Past</td><td>made</td><td>was made</td></tr><tr><td>Present Perfect</td><td>has made</td><td>has been made</td></tr><tr><td>Future</td><td>will make</td><td>will be made</td></tr></tbody></table><h3>Relative clause: defining vs non-defining</h3><div class=\"exlist\"><div class=\"ex\"><b>The man who lives here is a doctor. (defining — vergulsiz)</b><span>shu yerda yashaydigan odam</span></div><div class=\"ex\"><b>My brother, who lives in London, is a teacher. (non-defining — vergul bilan)</b><span>akam (u Londonda yashaydi)</span></div></div><h3>Reported speech: savollar</h3><div class=\"exlist\"><div class=\"ex\"><b>\"Where do you live?\" → He asked where I lived.</b><span>savol so'roq tartibini yo'qotadi</span></div><div class=\"ex\"><b>\"Are you ready?\" → She asked if I was ready.</b><span>ha/yo'q savol → if/whether</span></div></div><h3>Yuqori band linkerlar</h3><div class=\"chips\"><span class=\"chip t\">nevertheless</span><span class=\"chip t\">consequently</span><span class=\"chip t\">in contrast</span><span class=\"chip t\">for instance</span><span class=\"chip t\">to sum up</span><span class=\"chip t\">owing to</span></div></div>",
+    "lede": "<strong>Passive</strong>, <strong>relative clauses</strong>, <strong>reported speech</strong> va paraphrasing - IELTS 6.5-7+ uchun zarur grammatik vositalar.",
+    "doc": "<div class='prose'><h3>Passive voice (majhul nisbat)</h3><p>Kim bajargani muhim bo'lmaganda. be + V3.</p><div class=\"exlist\"><div class=\"ex\"><b>English is spoken worldwide.</b><span>Inglizchada butun dunyoda gapiriladi.</span></div><div class=\"ex\"><b>The bridge was built in 1990.</b><span>Ko'prik 1990-yilda qurilgan.</span></div></div><h3>Relative clauses</h3><div class=\"exlist\"><div class=\"ex\"><b>The man who called me is my boss.</b><span>Menga qo'ng'iroq qilgan odam - rahbarim.</span></div><div class=\"ex\"><b>The book that I read was great.</b><span>O'qigan kitobim zo'r edi.</span></div></div><h3>Reported speech</h3><div class=\"exlist\"><div class=\"ex\"><b>She said she was tired.</b><span>U charchaganini aytdi.</span></div><div class=\"ex\"><b>He told me he would come.</b><span>U kelishini aytdi.</span></div></div><h3>Paraphrasing (IELTS kaliti)</h3><p>Bir fikrni boshqacha aytish - yuqori band uchun shart. Sinonim va struktura o'zgartir.</p><div class=\"exlist\"><div class=\"ex\"><b>important -> crucial / vital</b><span>muhim</span></div><div class=\"ex\"><b>a lot of -> a significant number of</b><span>ko'p</span></div><div class=\"ex\"><b>good -> beneficial / effective</b><span>yaxshi/foydali</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Linking words</p><p>Murakkab fikrni bog'la: <strong>however, moreover, as a result, on the other hand, in addition</strong>. Bular Coherence band'ini oshiradi.</p></div></div></div><div class='prose'><h3>Paraphrasing - bir fikr, ko'p shakl</h3><div class='exlist'><div class='ex'><b>Cars cause pollution.</b><span>oddiy</span></div><div class='ex'><b>Pollution is caused by cars.</b><span>passive</span></div><div class='ex'><b>Vehicles are a major source of pollution.</b><span>sinonim + struktura</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>IELTS siri</p><p>Bir fikrni 2-3 xil ayta olsang, Lexical va Grammar band'i ko'tariladi. Passive, relative va sinonimlardan foydalan.</p></div></div></div><div class='prose'><h3>Chuqurroq: Passive barcha zamonlarda</h3><table class=\"gtable\"><thead><tr><th>Zamon</th><th>Active</th><th>Passive</th></tr></thead><tbody><tr><td>Present</td><td>make</td><td>is made</td></tr><tr><td>Past</td><td>made</td><td>was made</td></tr><tr><td>Present Perfect</td><td>has made</td><td>has been made</td></tr><tr><td>Future</td><td>will make</td><td>will be made</td></tr></tbody></table><h3>Relative clause: defining vs non-defining</h3><div class=\"exlist\"><div class=\"ex\"><b>The man who lives here is a doctor. (defining - vergulsiz)</b><span>shu yerda yashaydigan odam</span></div><div class=\"ex\"><b>My brother, who lives in London, is a teacher. (non-defining - vergul bilan)</b><span>akam (u Londonda yashaydi)</span></div></div><h3>Reported speech: savollar</h3><div class=\"exlist\"><div class=\"ex\"><b>\"Where do you live?\" -> He asked where I lived.</b><span>savol so'roq tartibini yo'qotadi</span></div><div class=\"ex\"><b>\"Are you ready?\" -> She asked if I was ready.</b><span>ha/yo'q savol -> if/whether</span></div></div><h3>Yuqori band linkerlar</h3><div class=\"chips\"><span class=\"chip t\">nevertheless</span><span class=\"chip t\">consequently</span><span class=\"chip t\">in contrast</span><span class=\"chip t\">for instance</span><span class=\"chip t\">to sum up</span><span class=\"chip t\">owing to</span></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1335,7 +1335,7 @@
       },
       {
         "id": "en4-4",
-        "html": "10 ta IELTS sinonimni o'rgandim (important→crucial...)",
+        "html": "10 ta IELTS sinonimni o'rgandim (important->crucial...)",
         "crit": "10 tasini misol gapda ishlata olasan"
       },
       {
@@ -1395,7 +1395,7 @@
       "variants": [
         {
           "title": "Murakkab abzas - Speaking Task",
-          "desc": "B2 · Upper-Inter bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
+          "desc": "B2 / Upper-Inter bo'yicha ovoz chiqarib aytiladigan real speaking topshirig'i.",
           "deliverables": [
             "60-90 sekund script",
             "3 marta qayta yozish",
@@ -1435,11 +1435,11 @@
           "what"
         ],
         "c": 1,
-        "w": "Odam uchun — who.",
+        "w": "Odam uchun - who.",
         "level": "practical"
       },
       {
-        "q": "Reported: \"I am tired\" → She said she ___ tired.",
+        "q": "Reported: \"I am tired\" -> She said she ___ tired.",
         "a": [
           "is",
           "was",
@@ -1447,7 +1447,7 @@
           "be"
         ],
         "c": 1,
-        "w": "Zamon orqaga suriladi: is → was.",
+        "w": "Zamon orqaga suriladi: is -> was.",
         "level": "practical"
       },
       {
@@ -1471,7 +1471,7 @@
           "many"
         ],
         "c": 1,
-        "w": "however — qarama-qarshilikni bog'laydi.",
+        "w": "however - qarama-qarshilikni bog'laydi.",
         "level": "scenario"
       }
     ],
@@ -1504,7 +1504,7 @@
           "what"
         ],
         "correct": 1,
-        "why": "Odam → who."
+        "why": "Odam -> who."
       },
       {
         "type": "choice",
@@ -1516,11 +1516,11 @@
           "where"
         ],
         "correct": 1,
-        "why": "Narsa → which/that."
+        "why": "Narsa -> which/that."
       },
       {
         "type": "choice",
-        "q": "Reported: \"I am busy\" → He said he ___ busy.",
+        "q": "Reported: \"I am busy\" -> He said he ___ busy.",
         "options": [
           "is",
           "was",
@@ -1528,11 +1528,11 @@
           "be"
         ],
         "correct": 1,
-        "why": "Zamon orqaga: is → was."
+        "why": "Zamon orqaga: is -> was."
       },
       {
         "type": "gap",
-        "q": "Sinonim: \"important\" → \"cr___\"",
+        "q": "Sinonim: \"important\" -> \"cr___\"",
         "answers": [
           "crucial"
         ],
@@ -1612,7 +1612,7 @@
       {
         "topic": "Reported speech",
         "rule": "Zamon bir pog'ona orqaga suriladi.",
-        "ex": "\"I am tired\" → She said she was tired."
+        "ex": "\"I am tired\" -> She said she was tired."
       },
       {
         "topic": "Linking words",
@@ -1625,11 +1625,11 @@
     "zoom": "Voc",
     "title": "Vocabulary & Talaffuz",
     "sub": "So'z boyligi",
-    "coord": "Lug'at · Voc",
-    "eyebrow": "05 · Vocabulary & Pronunciation",
+    "coord": "Lug'at / Voc",
+    "eyebrow": "05 / Vocabulary & Pronunciation",
     "mtitle": "So'z boyligi va aniq talaffuz",
-    "lede": "IELTS band'ining choragi — <strong>lexical resource</strong>. Bu yerda so'z yasash, collocation va talaffuz asoslarini, hamda eslab qolish usulini o'rganasan.",
-    "doc": "<div class='prose'><h3>Spaced repetition — eslab qolish usuli</h3><p>Yangi so'zni 1-kun, 3-kun, 7-kun, 14-kun takrorlasang, u uzoq xotiraga o'tadi. Anki kabi ilovalar buni avtomatik qiladi. So'zni <strong>misol gap bilan</strong> yodla, yakka emas.</p><h3>Word families (so'z oilalari)</h3><div class=\"exlist\"><div class=\"ex\"><b>decide (v) → decision (n) → decisive (adj)</b><span>qaror qilmoq → qaror → qat'iy</span></div><div class=\"ex\"><b>create → creation → creative</b><span>yaratmoq → yaratish → ijodiy</span></div></div><h3>Collocations (birga keladigan so'zlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>make a decision</b><span>qaror qilmoq (do emas, make)</span></div><div class=\"ex\"><b>heavy rain</b><span>kuchli yomg'ir (strong emas)</span></div><div class=\"ex\"><b>take a risk</b><span>tavakkal qilmoq</span></div></div><h3>IELTS mavzu lug'ati</h3><div class=\"chips\"><span class=\"chip t\">Education</span><span class=\"chip t\">Environment</span><span class=\"chip t\">Technology</span><span class=\"chip t\">Health</span><span class=\"chip t\">Work</span><span class=\"chip t\">Society</span></div><h3>Talaffuz: word stress</h3><p>Inglizchada urg'u ma'noni o'zgartiradi. <strong>RE</strong>cord (ot) vs re<strong>CORD</strong> (fe'l). Lug'atda IPA va urg'uni tekshir.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yakka so'z yodlama</p><p>So'zni <strong>collocation</strong> va misol gap bilan o'rgan. \"make a decision\" — bu IELTS examiner'ga tabiiy ko'rinadi va lexical band'ni oshiradi.</p></div></div></div><div class='prose'><h3>Prefix va suffix (so'z yasash)</h3><div class='exlist'><div class='ex'><b>un- (inkor): happy → unhappy</b><span>baxtsiz</span></div><div class='ex'><b>-tion (ot): educate → education</b><span>ta'lim</span></div><div class='ex'><b>-able (sifat): rely → reliable</b><span>ishonchli</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Maslahat</p><p>Bitta o'zakdan oilani o'rgansang (create/creation/creative), so'z boyliging tez kengayadi.</p></div></div></div><div class='prose'><h3>Chuqurroq: fe'l + ot collocationlari</h3><table class=\"gtable\"><thead><tr><th>Fe'l</th><th>Misollar</th></tr></thead><tbody><tr><td>make</td><td>make a decision, make progress, make a mistake</td></tr><tr><td>do</td><td>do homework, do research, do business</td></tr><tr><td>take</td><td>take a risk, take a break, take responsibility</td></tr><tr><td>have</td><td>have an effect, have a conversation</td></tr><tr><td>get</td><td>get a job, get used to, get in touch</td></tr></tbody></table><h3>Suffix → so'z turkumi</h3><table class=\"gtable\"><thead><tr><th>Suffix</th><th>Turkum</th><th>Misol</th></tr></thead><tbody><tr><td>-tion/-sion</td><td>ot</td><td>education, decision</td></tr><tr><td>-ment</td><td>ot</td><td>development, government</td></tr><tr><td>-able/-ible</td><td>sifat</td><td>reliable, possible</td></tr><tr><td>-ly</td><td>ravish</td><td>quickly, carefully</td></tr><tr><td>-ise/-ize</td><td>fe'l</td><td>organise, realise</td></tr></tbody></table><h3>IELTS mavzu lug'ati (environment)</h3><div class=\"chips\"><span class=\"chip\">pollution</span><span class=\"chip\">renewable energy</span><span class=\"chip\">carbon emissions</span><span class=\"chip\">sustainable</span><span class=\"chip\">deforestation</span><span class=\"chip\">recycle</span></div></div>",
+    "lede": "IELTS band'ining choragi - <strong>lexical resource</strong>. Bu yerda so'z yasash, collocation va talaffuz asoslarini, hamda eslab qolish usulini o'rganasan.",
+    "doc": "<div class='prose'><h3>Spaced repetition - eslab qolish usuli</h3><p>Yangi so'zni 1-kun, 3-kun, 7-kun, 14-kun takrorlasang, u uzoq xotiraga o'tadi. Anki kabi ilovalar buni avtomatik qiladi. So'zni <strong>misol gap bilan</strong> yodla, yakka emas.</p><h3>Word families (so'z oilalari)</h3><div class=\"exlist\"><div class=\"ex\"><b>decide (v) -> decision (n) -> decisive (adj)</b><span>qaror qilmoq -> qaror -> qat'iy</span></div><div class=\"ex\"><b>create -> creation -> creative</b><span>yaratmoq -> yaratish -> ijodiy</span></div></div><h3>Collocations (birga keladigan so'zlar)</h3><div class=\"exlist\"><div class=\"ex\"><b>make a decision</b><span>qaror qilmoq (do emas, make)</span></div><div class=\"ex\"><b>heavy rain</b><span>kuchli yomg'ir (strong emas)</span></div><div class=\"ex\"><b>take a risk</b><span>tavakkal qilmoq</span></div></div><h3>IELTS mavzu lug'ati</h3><div class=\"chips\"><span class=\"chip t\">Education</span><span class=\"chip t\">Environment</span><span class=\"chip t\">Technology</span><span class=\"chip t\">Health</span><span class=\"chip t\">Work</span><span class=\"chip t\">Society</span></div><h3>Talaffuz: word stress</h3><p>Inglizchada urg'u ma'noni o'zgartiradi. <strong>RE</strong>cord (ot) vs re<strong>CORD</strong> (fe'l). Lug'atda IPA va urg'uni tekshir.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yakka so'z yodlama</p><p>So'zni <strong>collocation</strong> va misol gap bilan o'rgan. \"make a decision\" - bu IELTS examiner'ga tabiiy ko'rinadi va lexical band'ni oshiradi.</p></div></div></div><div class='prose'><h3>Prefix va suffix (so'z yasash)</h3><div class='exlist'><div class='ex'><b>un- (inkor): happy -> unhappy</b><span>baxtsiz</span></div><div class='ex'><b>-tion (ot): educate -> education</b><span>ta'lim</span></div><div class='ex'><b>-able (sifat): rely -> reliable</b><span>ishonchli</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Maslahat</p><p>Bitta o'zakdan oilani o'rgansang (create/creation/creative), so'z boyliging tez kengayadi.</p></div></div></div><div class='prose'><h3>Chuqurroq: fe'l + ot collocationlari</h3><table class=\"gtable\"><thead><tr><th>Fe'l</th><th>Misollar</th></tr></thead><tbody><tr><td>make</td><td>make a decision, make progress, make a mistake</td></tr><tr><td>do</td><td>do homework, do research, do business</td></tr><tr><td>take</td><td>take a risk, take a break, take responsibility</td></tr><tr><td>have</td><td>have an effect, have a conversation</td></tr><tr><td>get</td><td>get a job, get used to, get in touch</td></tr></tbody></table><h3>Suffix -> so'z turkumi</h3><table class=\"gtable\"><thead><tr><th>Suffix</th><th>Turkum</th><th>Misol</th></tr></thead><tbody><tr><td>-tion/-sion</td><td>ot</td><td>education, decision</td></tr><tr><td>-ment</td><td>ot</td><td>development, government</td></tr><tr><td>-able/-ible</td><td>sifat</td><td>reliable, possible</td></tr><tr><td>-ly</td><td>ravish</td><td>quickly, carefully</td></tr><tr><td>-ise/-ize</td><td>fe'l</td><td>organise, realise</td></tr></tbody></table><h3>IELTS mavzu lug'ati (environment)</h3><div class=\"chips\"><span class=\"chip\">pollution</span><span class=\"chip\">renewable energy</span><span class=\"chip\">carbon emissions</span><span class=\"chip\">sustainable</span><span class=\"chip\">deforestation</span><span class=\"chip\">recycle</span></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1744,7 +1744,7 @@
           "have a decision"
         ],
         "c": 1,
-        "w": "make a decision — standart collocation.",
+        "w": "make a decision - standart collocation.",
         "level": "easy"
       },
       {
@@ -1756,7 +1756,7 @@
           "creates"
         ],
         "c": 1,
-        "w": "creation — ot shakli.",
+        "w": "creation - ot shakli.",
         "level": "practical"
       },
       {
@@ -1768,14 +1768,14 @@
           "faqat o'qish"
         ],
         "c": 1,
-        "w": "Vaqt oralig'i bilan takror — uzoq xotira.",
+        "w": "Vaqt oralig'i bilan takror - uzoq xotira.",
         "level": "practical"
       },
       {
         "q": "\"heavy rain\" da nega 'strong' emas?",
         "a": [
           "grammatika",
-          "collocation — shunday birikadi",
+          "collocation - shunday birikadi",
           "talaffuz",
           "imlo"
         ],
@@ -1792,7 +1792,7 @@
           "hech narsa"
         ],
         "c": 1,
-        "w": "REcord (ot) / reCORD (fe'l) — urg'u ma'noni o'zgartiradi.",
+        "w": "REcord (ot) / reCORD (fe'l) - urg'u ma'noni o'zgartiradi.",
         "level": "scenario"
       }
     ],
@@ -1823,20 +1823,20 @@
       },
       {
         "type": "gap",
-        "q": "Ot shakli: \"decide\" → \"dec____\"",
+        "q": "Ot shakli: \"decide\" -> \"dec____\"",
         "answers": [
           "decision"
         ],
-        "why": "decide → decision.",
+        "why": "decide -> decision.",
         "hint": ""
       },
       {
         "type": "gap",
-        "q": "Sifat shakli: \"create\" → \"cre_____\"",
+        "q": "Sifat shakli: \"create\" -> \"cre_____\"",
         "answers": [
           "creative"
         ],
-        "why": "create → creative.",
+        "why": "create -> creative.",
         "hint": ""
       },
       {
@@ -1945,7 +1945,7 @@
       {
         "topic": "Word families",
         "rule": "Bir o'zakdan turkumlar.",
-        "ex": "create → creation → creative"
+        "ex": "create -> creation -> creative"
       },
       {
         "topic": "Prefixes",
@@ -1963,11 +1963,11 @@
     "zoom": "Lis",
     "title": "IELTS Listening",
     "sub": "Tinglash",
-    "coord": "Listening · Lis",
-    "eyebrow": "06 · IELTS Listening",
-    "mtitle": "Listening — 40 savol, 30 daqiqa",
-    "lede": "4 bo'lim, 40 savol. Strategiya: <strong>oldindan o'qish, kalit so'z, imloga e'tibor</strong>. Audio bir marta eshitiladi — tayyor bo'lish kerak.",
-    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">4 bo'lim</span><span class=\"chip\">40 savol</span><span class=\"chip\">30 daq + 10 daq ko'chirish</span><span class=\"chip\">Audio 1 marta</span></div><p>1-2 bo'lim — kundalik mavzular; 3-4 — ta'lim/akademik. Qiyinlik ortib boradi.</p><h3>Savol turlari</h3><div class=\"chips\"><span class=\"chip t\">Multiple choice</span><span class=\"chip t\">Form/Note completion</span><span class=\"chip t\">Matching</span><span class=\"chip t\">Plan/Map labelling</span><span class=\"chip t\">Sentence completion</span></div><h3>Strategiya</h3><p><strong>1) Oldindan o'qi:</strong> audio boshlanishidan oldin savollarni ko'rib, nima eshitishingni bashorat qil. <strong>2) Kalit so'z:</strong> savoldagi kalit so'zlarni belgila, lekin <strong>paraphrasing</strong>ga tayyor bo'l (audio boshqacha so'z ishlatadi). <strong>3) Yozayotganda davom et:</strong> bitta javobni o'tkazib yuborsang, to'xtama — keyingisiga o't.</p><h3>Eng ko'p yo'qotiladigan ball</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Imlo va so'z chegarasi</p><p>Completion savollarida noto'g'ri <strong>imlo</strong> = noto'g'ri javob. \"NO MORE THAN TWO WORDS\" yozilsa, 3 so'z yozsang — 0 ball. Ko'rsatmani diqqat bilan o'qi.</p></div></div></div><div class='prose'><h3>Signpost so'zlar (yo'nalish beradi)</h3><div class='exlist'><div class='ex'><b>Firstly... / Next... / Finally...</b><span>ketma-ketlik</span></div><div class='ex'><b>However... / On the other hand...</b><span>qarama-qarshilik</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Maslahat</p><p>Bu so'zlar audioda keyingi javob qayerda kelishini bildiradi — ularni eshitsang, diqqatni kuchaytir.</p></div></div></div><div class='prose'><h3>Chuqurroq: savol turi bo'yicha strategiya</h3><table class=\"gtable\"><thead><tr><th>Savol turi</th><th>Strategiya</th></tr></thead><tbody><tr><td>Form/Note completion</td><td>so'z turini (raqam? ism?) oldindan taxmin qil</td></tr><tr><td>Multiple choice</td><td>barcha variantni o'qi — distraktorlardan ehtiyot bo'l</td></tr><tr><td>Map/Plan</td><td>yo'nalish so'zlarini kuzat (left, next to, opposite)</td></tr><tr><td>Matching</td><td>ro'yxatni oldindan o'qib, ohangni kuzat</td></tr></tbody></table><h3>Tuzoqlar (distractors)</h3><p>Audio ko'pincha avval <strong>noto'g'ri</strong> javobni aytib, keyin tuzatadi: \"...at 9, sorry, at 10 o'clock\". <strong>Oxirgi</strong> ma'lumotni ol.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Yo'nalish so'zlari</p><p>Map savolida: <strong>turn left/right, go straight, on your left, at the corner, opposite, between</strong> — bularni yodla.</p></div></div></div>",
+    "coord": "Listening / Lis",
+    "eyebrow": "06 / IELTS Listening",
+    "mtitle": "Listening - 40 savol, 30 daqiqa",
+    "lede": "4 bo'lim, 40 savol. Strategiya: <strong>oldindan o'qish, kalit so'z, imloga e'tibor</strong>. Audio bir marta eshitiladi - tayyor bo'lish kerak.",
+    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">4 bo'lim</span><span class=\"chip\">40 savol</span><span class=\"chip\">30 daq + 10 daq ko'chirish</span><span class=\"chip\">Audio 1 marta</span></div><p>1-2 bo'lim - kundalik mavzular; 3-4 - ta'lim/akademik. Qiyinlik ortib boradi.</p><h3>Savol turlari</h3><div class=\"chips\"><span class=\"chip t\">Multiple choice</span><span class=\"chip t\">Form/Note completion</span><span class=\"chip t\">Matching</span><span class=\"chip t\">Plan/Map labelling</span><span class=\"chip t\">Sentence completion</span></div><h3>Strategiya</h3><p><strong>1) Oldindan o'qi:</strong> audio boshlanishidan oldin savollarni ko'rib, nima eshitishingni bashorat qil. <strong>2) Kalit so'z:</strong> savoldagi kalit so'zlarni belgila, lekin <strong>paraphrasing</strong>ga tayyor bo'l (audio boshqacha so'z ishlatadi). <strong>3) Yozayotganda davom et:</strong> bitta javobni o'tkazib yuborsang, to'xtama - keyingisiga o't.</p><h3>Eng ko'p yo'qotiladigan ball</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Imlo va so'z chegarasi</p><p>Completion savollarida noto'g'ri <strong>imlo</strong> = noto'g'ri javob. \"NO MORE THAN TWO WORDS\" yozilsa, 3 so'z yozsang - 0 ball. Ko'rsatmani diqqat bilan o'qi.</p></div></div></div><div class='prose'><h3>Signpost so'zlar (yo'nalish beradi)</h3><div class='exlist'><div class='ex'><b>Firstly... / Next... / Finally...</b><span>ketma-ketlik</span></div><div class='ex'><b>However... / On the other hand...</b><span>qarama-qarshilik</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Maslahat</p><p>Bu so'zlar audioda keyingi javob qayerda kelishini bildiradi - ularni eshitsang, diqqatni kuchaytir.</p></div></div></div><div class='prose'><h3>Chuqurroq: savol turi bo'yicha strategiya</h3><table class=\"gtable\"><thead><tr><th>Savol turi</th><th>Strategiya</th></tr></thead><tbody><tr><td>Form/Note completion</td><td>so'z turini (raqam? ism?) oldindan taxmin qil</td></tr><tr><td>Multiple choice</td><td>barcha variantni o'qi - distraktorlardan ehtiyot bo'l</td></tr><tr><td>Map/Plan</td><td>yo'nalish so'zlarini kuzat (left, next to, opposite)</td></tr><tr><td>Matching</td><td>ro'yxatni oldindan o'qib, ohangni kuzat</td></tr></tbody></table><h3>Tuzoqlar (distractors)</h3><p>Audio ko'pincha avval <strong>noto'g'ri</strong> javobni aytib, keyin tuzatadi: \"...at 9, sorry, at 10 o'clock\". <strong>Oxirgi</strong> ma'lumotni ol.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Yo'nalish so'zlari</p><p>Map savolida: <strong>turn left/right, go straight, on your left, at the corner, opposite, between</strong> - bularni yodla.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2075,7 +2075,7 @@
           "Xohlasang qayta"
         ],
         "c": 1,
-        "w": "Audio faqat 1 marta — shuning uchun tayyorlik muhim.",
+        "w": "Audio faqat 1 marta - shuning uchun tayyorlik muhim.",
         "level": "easy"
       },
       {
@@ -2091,7 +2091,7 @@
         "level": "practical"
       },
       {
-        "q": "\"NO MORE THAN TWO WORDS\" — 3 so'z yozsang?",
+        "q": "\"NO MORE THAN TWO WORDS\" - 3 so'z yozsang?",
         "a": [
           "yarim ball",
           "0 ball",
@@ -2099,7 +2099,7 @@
           "farqi yo'q"
         ],
         "c": 1,
-        "w": "So'z chegarasidan oshsa — 0 ball.",
+        "w": "So'z chegarasidan oshsa - 0 ball.",
         "level": "practical"
       },
       {
@@ -2111,7 +2111,7 @@
           "tarjima qiladi"
         ],
         "c": 1,
-        "w": "Audio sinonim/boshqa struktura ishlatadi — paraphrasing'ga tayyor bo'l.",
+        "w": "Audio sinonim/boshqa struktura ishlatadi - paraphrasing'ga tayyor bo'l.",
         "level": "practical"
       },
       {
@@ -2123,7 +2123,7 @@
           "tashlab ketasan"
         ],
         "c": 1,
-        "w": "To'xtama — keyingi savolni boy bermaslik uchun davom et.",
+        "w": "To'xtama - keyingi savolni boy bermaslik uchun davom et.",
         "level": "scenario"
       }
     ],
@@ -2154,7 +2154,7 @@
       },
       {
         "type": "choice",
-        "q": "\"NO MORE THAN TWO WORDS\" — 3 so'z yozsang:",
+        "q": "\"NO MORE THAN TWO WORDS\" - 3 so'z yozsang:",
         "options": [
           "yarim ball",
           "0 ball",
@@ -2178,7 +2178,7 @@
       },
       {
         "type": "gap",
-        "q": "Imloga e'tibor: \"Wednesday\" to'g'ri yozilishi — ___ harf bilan boshlanadi.",
+        "q": "Imloga e'tibor: \"Wednesday\" to'g'ri yozilishi - ___ harf bilan boshlanadi.",
         "answers": [
           "w"
         ],
@@ -2247,11 +2247,11 @@
     "zoom": "Rea",
     "title": "IELTS Reading",
     "sub": "O'qish",
-    "coord": "Reading · Rea",
-    "eyebrow": "07 · IELTS Reading",
-    "mtitle": "Reading — 40 savol, 60 daqiqa",
-    "lede": "3 ta uzun matn, 40 savol, 60 daqiqa. Sir — har so'zni o'qima. <strong>Skimming va scanning</strong> bilan vaqtni boshqar.",
-    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">3 passage</span><span class=\"chip\">40 savol</span><span class=\"chip\">60 daqiqa</span><span class=\"chip\">Academic / General</span></div><p>Vaqt — eng katta dushman. Har passage'ga ~20 daqiqa. Javoblarni ko'chirishga alohida vaqt yo'q (Listening'dan farqli).</p><h3>Savol turlari</h3><div class=\"chips\"><span class=\"chip t\">True / False / Not Given</span><span class=\"chip t\">Matching headings</span><span class=\"chip t\">Matching information</span><span class=\"chip t\">Sentence/Summary completion</span><span class=\"chip t\">Multiple choice</span></div><h3>Skimming va scanning</h3><p><strong>Skimming:</strong> matnni tez ko'rib chiqib, umumiy mazmun va har abzas haqida nima ekanini tushunish. <strong>Scanning:</strong> aniq ma'lumot (ism, sana, raqam) ni tez topish uchun ko'z yugurtirish.</p><h3>True / False / Not Given — eng qiyini</h3><p><strong>False</strong> = matn aksini aytadi. <strong>Not Given</strong> = matnda umuman yo'q (sen taxmin qila olmaysan). Bu ikkisini farqlash band'ni belgilaydi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Vaqtni boshqar</p><p>Bitta savolda qotib qolma. 1.5 daqiqadan oshsa, taxminiy javob belgilab, keyingisiga o't. Oxirida qaytib kelasan.</p></div></div></div><div class='prose'><h3>True / False / Not Given farqi</h3><div class='exlist'><div class='ex'><b>True</b><span>matn tasdiqlaydi</span></div><div class='ex'><b>False</b><span>matn aksini aytadi</span></div><div class='ex'><b>Not Given</b><span>matnda umuman yo'q</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Not Given'ni False bilan adashtirma. False = qarama-qarshi ma'lumot bor; Not Given = ma'lumot yo'q. Taxmin qilma.</p></div></div></div><div class='prose'><h3>Chuqurroq: T/F/NG qaror daraxti</h3><table class=\"gtable\"><thead><tr><th>Holat</th><th>Javob</th></tr></thead><tbody><tr><td>Matn aynan tasdiqlaydi</td><td>TRUE</td></tr><tr><td>Matn aksini aytadi/ziddiyat</td><td>FALSE</td></tr><tr><td>Matnda bunday ma'lumot yo'q</td><td>NOT GIVEN</td></tr></tbody></table><h3>Keyword + paraphrase texnikasi</h3><p>Savoldagi kalit so'zni top, lekin matn <strong>sinonim</strong> ishlatishiga tayyor bo'l: savol \"important\" desa, matn \"crucial / significant\" deyishi mumkin.</p><h3>Vaqt rejasi</h3><table class=\"gtable\"><thead><tr><th>Bosqich</th><th>Vaqt</th></tr></thead><tbody><tr><td>Passage 1 (oson)</td><td>~16 daq</td></tr><tr><td>Passage 2</td><td>~20 daq</td></tr><tr><td>Passage 3 (qiyin)</td><td>~24 daq</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Hammasini o'qima</p><p>Avval <strong>savolni</strong> o'qi, keyin matnda <strong>scanning</strong> bilan javobni top. Har so'zni o'qishga vaqt yo'q.</p></div></div></div>",
+    "coord": "Reading / Rea",
+    "eyebrow": "07 / IELTS Reading",
+    "mtitle": "Reading - 40 savol, 60 daqiqa",
+    "lede": "3 ta uzun matn, 40 savol, 60 daqiqa. Sir - har so'zni o'qima. <strong>Skimming va scanning</strong> bilan vaqtni boshqar.",
+    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">3 passage</span><span class=\"chip\">40 savol</span><span class=\"chip\">60 daqiqa</span><span class=\"chip\">Academic / General</span></div><p>Vaqt - eng katta dushman. Har passage'ga ~20 daqiqa. Javoblarni ko'chirishga alohida vaqt yo'q (Listening'dan farqli).</p><h3>Savol turlari</h3><div class=\"chips\"><span class=\"chip t\">True / False / Not Given</span><span class=\"chip t\">Matching headings</span><span class=\"chip t\">Matching information</span><span class=\"chip t\">Sentence/Summary completion</span><span class=\"chip t\">Multiple choice</span></div><h3>Skimming va scanning</h3><p><strong>Skimming:</strong> matnni tez ko'rib chiqib, umumiy mazmun va har abzas haqida nima ekanini tushunish. <strong>Scanning:</strong> aniq ma'lumot (ism, sana, raqam) ni tez topish uchun ko'z yugurtirish.</p><h3>True / False / Not Given - eng qiyini</h3><p><strong>False</strong> = matn aksini aytadi. <strong>Not Given</strong> = matnda umuman yo'q (sen taxmin qila olmaysan). Bu ikkisini farqlash band'ni belgilaydi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Vaqtni boshqar</p><p>Bitta savolda qotib qolma. 1.5 daqiqadan oshsa, taxminiy javob belgilab, keyingisiga o't. Oxirida qaytib kelasan.</p></div></div></div><div class='prose'><h3>True / False / Not Given farqi</h3><div class='exlist'><div class='ex'><b>True</b><span>matn tasdiqlaydi</span></div><div class='ex'><b>False</b><span>matn aksini aytadi</span></div><div class='ex'><b>Not Given</b><span>matnda umuman yo'q</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Not Given'ni False bilan adashtirma. False = qarama-qarshi ma'lumot bor; Not Given = ma'lumot yo'q. Taxmin qilma.</p></div></div></div><div class='prose'><h3>Chuqurroq: T/F/NG qaror daraxti</h3><table class=\"gtable\"><thead><tr><th>Holat</th><th>Javob</th></tr></thead><tbody><tr><td>Matn aynan tasdiqlaydi</td><td>TRUE</td></tr><tr><td>Matn aksini aytadi/ziddiyat</td><td>FALSE</td></tr><tr><td>Matnda bunday ma'lumot yo'q</td><td>NOT GIVEN</td></tr></tbody></table><h3>Keyword + paraphrase texnikasi</h3><p>Savoldagi kalit so'zni top, lekin matn <strong>sinonim</strong> ishlatishiga tayyor bo'l: savol \"important\" desa, matn \"crucial / significant\" deyishi mumkin.</p><h3>Vaqt rejasi</h3><table class=\"gtable\"><thead><tr><th>Bosqich</th><th>Vaqt</th></tr></thead><tbody><tr><td>Passage 1 (oson)</td><td>~16 daq</td></tr><tr><td>Passage 2</td><td>~20 daq</td></tr><tr><td>Passage 3 (qiyin)</td><td>~24 daq</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Hammasini o'qima</p><p>Avval <strong>savolni</strong> o'qi, keyin matnda <strong>scanning</strong> bilan javobni top. Har so'zni o'qishga vaqt yo'q.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2371,7 +2371,7 @@
           "Xato imlo"
         ],
         "c": 1,
-        "w": "Not Given — matnda yo'q; taxmin qilma.",
+        "w": "Not Given - matnda yo'q; taxmin qilma.",
         "level": "practical"
       },
       {
@@ -2383,7 +2383,7 @@
           "Tarjima"
         ],
         "c": 1,
-        "w": "Skimming — umumiy g'oyani tez olish.",
+        "w": "Skimming - umumiy g'oyani tez olish.",
         "level": "practical"
       },
       {
@@ -2407,7 +2407,7 @@
           "cheksiz"
         ],
         "c": 1,
-        "w": "Listening'dan farqli — alohida ko'chirish vaqti yo'q.",
+        "w": "Listening'dan farqli - alohida ko'chirish vaqti yo'q.",
         "level": "scenario"
       }
     ],
@@ -2434,7 +2434,7 @@
           "Maybe"
         ],
         "correct": 1,
-        "why": "Qarama-qarshi → False."
+        "why": "Qarama-qarshi -> False."
       },
       {
         "type": "choice",
@@ -2446,7 +2446,7 @@
           "False"
         ],
         "correct": 2,
-        "why": "Yo'q → Not Given."
+        "why": "Yo'q -> Not Given."
       },
       {
         "type": "choice",
@@ -2458,7 +2458,7 @@
           "yodlash"
         ],
         "correct": 1,
-        "why": "Aniq ma'lumot → scanning."
+        "why": "Aniq ma'lumot -> scanning."
       },
       {
         "type": "choice",
@@ -2531,7 +2531,7 @@
       {
         "topic": "T/F/NG",
         "rule": "False = aksi; Not Given = yo'q.",
-        "ex": "Taxmin qilma — faqat matnga tayan."
+        "ex": "Taxmin qilma - faqat matnga tayan."
       }
     ]
   },
@@ -2539,11 +2539,11 @@
     "zoom": "Wri",
     "title": "IELTS Writing",
     "sub": "Yozish",
-    "coord": "Writing · Wri",
-    "eyebrow": "08 · IELTS Writing",
-    "mtitle": "Writing — Task 1 + Task 2",
-    "lede": "2 ta vazifa, 60 daqiqa. <strong>Task 2 (esse) ikki baravar muhim.</strong> Tuzilma, fikr va til aniqligi — band'ning kaliti.",
-    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">Task 1 — 20 daq, 150 so'z</span><span class=\"chip\">Task 2 — 40 daq, 250 so'z</span><span class=\"chip\">Task 2 = 2x ball</span></div><p><strong>Task 1 (Academic):</strong> grafik/jadval/jarayonni tasvirlash. <strong>(General):</strong> xat. <strong>Task 2:</strong> esse — har ikkalasida bir xil.</p><h3>4 ta baholash mezoni</h3><div class=\"chips\"><span class=\"chip t\">Task Response</span><span class=\"chip t\">Coherence & Cohesion</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammar</span></div><h3>Task 2 tuzilmasi</h3><div class=\"exlist\"><div class=\"ex\"><b>Introduction</b><span>Mavzuni paraphrasing qil + fikringni ayt (2 jumla)</span></div><div class=\"ex\"><b>Body 1</b><span>Asosiy fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Body 2</b><span>Ikkinchi fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Conclusion</b><span>Fikrni qayta umumlashtir</span></div></div><h3>Esse turlari</h3><div class=\"chips\"><span class=\"chip\">Opinion (agree/disagree)</span><span class=\"chip\">Discussion (both views)</span><span class=\"chip\">Problem & solution</span><span class=\"chip\">Advantages/disadvantages</span></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Some people argue that ...</b><span>Ba'zilar ta'kidlaydiki ...</span></div><div class=\"ex\"><b>In my opinion, ...</b><span>Mening fikrimcha ...</span></div><div class=\"ex\"><b>For instance, ...</b><span>Masalan, ...</span></div><div class=\"ex\"><b>In conclusion, ...</b><span>Xulosa qilib ...</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq <strong>javob bermaslik</strong> (Task Response past bo'ladi). Savolni diqqat bilan o'qi: \"to what extent do you agree?\" — fikringni aniq bildirishing shart.</p></div></div></div><div class='prose'><h3>Task 2 — foydali jumla qoliplari</h3><div class='exlist'><div class='ex'><b>It is often argued that...</b><span>ko'pincha aytiladiki</span></div><div class='ex'><b>There are several reasons for this.</b><span>buning bir necha sababi bor</span></div><div class='ex'><b>In conclusion, I believe that...</b><span>xulosa qilib, menimcha</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq javob berMASLIK (Task Response pasayadi). \"To what extent do you agree?\" — fikringni ANIQ bildir.</p></div></div></div><div class='prose'><h3>Chuqurroq: Task 1 (grafik) tuzilmasi</h3><table class=\"gtable\"><thead><tr><th>Qism</th><th>Vazifa</th></tr></thead><tbody><tr><td>Introduction</td><td>grafikni paraphrasing qil</td></tr><tr><td>Overview</td><td>asosiy tendensiya (eng muhim!)</td></tr><tr><td>Details 1–2</td><td>raqamlar bilan tasvirla</td></tr></tbody></table><h3>Tendensiya (trend) so'zlari</h3><div class=\"exlist\"><div class=\"ex\"><b>increase / rise / grow</b><span>oshmoq</span></div><div class=\"ex\"><b>decrease / fall / decline</b><span>kamaymoq</span></div><div class=\"ex\"><b>fluctuate</b><span>tebranmoq</span></div><div class=\"ex\"><b>remain stable</b><span>barqaror qolmoq</span></div><div class=\"ex\"><b>reach a peak</b><span>cho'qqiga chiqmoq</span></div></div><h3>Task 2 — 4 esse turi qolipi</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Body tuzilmasi</th></tr></thead><tbody><tr><td>Opinion</td><td>fikr + 2 dalil</td></tr><tr><td>Discussion</td><td>Body1: bir tomon, Body2: ikkinchi + o'z fikr</td></tr><tr><td>Problem–Solution</td><td>Body1: muammo, Body2: yechim</td></tr><tr><td>Adv–Disadv</td><td>Body1: afzallik, Body2: kamchilik</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Overview shart</p><p>Task 1'да <strong>Overview</strong> (umumiy tendensiya) bo'lmasa, band keskin tushadi.</p></div></div></div>",
+    "coord": "Writing / Wri",
+    "eyebrow": "08 / IELTS Writing",
+    "mtitle": "Writing - Task 1 + Task 2",
+    "lede": "2 ta vazifa, 60 daqiqa. <strong>Task 2 (esse) ikki baravar muhim.</strong> Tuzilma, fikr va til aniqligi - band'ning kaliti.",
+    "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">Task 1 - 20 daq, 150 so'z</span><span class=\"chip\">Task 2 - 40 daq, 250 so'z</span><span class=\"chip\">Task 2 = 2x ball</span></div><p><strong>Task 1 (Academic):</strong> grafik/jadval/jarayonni tasvirlash. <strong>(General):</strong> xat. <strong>Task 2:</strong> esse - har ikkalasida bir xil.</p><h3>4 ta baholash mezoni</h3><div class=\"chips\"><span class=\"chip t\">Task Response</span><span class=\"chip t\">Coherence & Cohesion</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammar</span></div><h3>Task 2 tuzilmasi</h3><div class=\"exlist\"><div class=\"ex\"><b>Introduction</b><span>Mavzuni paraphrasing qil + fikringni ayt (2 jumla)</span></div><div class=\"ex\"><b>Body 1</b><span>Asosiy fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Body 2</b><span>Ikkinchi fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Conclusion</b><span>Fikrni qayta umumlashtir</span></div></div><h3>Esse turlari</h3><div class=\"chips\"><span class=\"chip\">Opinion (agree/disagree)</span><span class=\"chip\">Discussion (both views)</span><span class=\"chip\">Problem & solution</span><span class=\"chip\">Advantages/disadvantages</span></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Some people argue that ...</b><span>Ba'zilar ta'kidlaydiki ...</span></div><div class=\"ex\"><b>In my opinion, ...</b><span>Mening fikrimcha ...</span></div><div class=\"ex\"><b>For instance, ...</b><span>Masalan, ...</span></div><div class=\"ex\"><b>In conclusion, ...</b><span>Xulosa qilib ...</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq <strong>javob bermaslik</strong> (Task Response past bo'ladi). Savolni diqqat bilan o'qi: \"to what extent do you agree?\" - fikringni aniq bildirishing shart.</p></div></div></div><div class='prose'><h3>Task 2 - foydali jumla qoliplari</h3><div class='exlist'><div class='ex'><b>It is often argued that...</b><span>ko'pincha aytiladiki</span></div><div class='ex'><b>There are several reasons for this.</b><span>buning bir necha sababi bor</span></div><div class='ex'><b>In conclusion, I believe that...</b><span>xulosa qilib, menimcha</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq javob berMASLIK (Task Response pasayadi). \"To what extent do you agree?\" - fikringni ANIQ bildir.</p></div></div></div><div class='prose'><h3>Chuqurroq: Task 1 (grafik) tuzilmasi</h3><table class=\"gtable\"><thead><tr><th>Qism</th><th>Vazifa</th></tr></thead><tbody><tr><td>Introduction</td><td>grafikni paraphrasing qil</td></tr><tr><td>Overview</td><td>asosiy tendensiya (eng muhim!)</td></tr><tr><td>Details 1-2</td><td>raqamlar bilan tasvirla</td></tr></tbody></table><h3>Tendensiya (trend) so'zlari</h3><div class=\"exlist\"><div class=\"ex\"><b>increase / rise / grow</b><span>oshmoq</span></div><div class=\"ex\"><b>decrease / fall / decline</b><span>kamaymoq</span></div><div class=\"ex\"><b>fluctuate</b><span>tebranmoq</span></div><div class=\"ex\"><b>remain stable</b><span>barqaror qolmoq</span></div><div class=\"ex\"><b>reach a peak</b><span>cho'qqiga chiqmoq</span></div></div><h3>Task 2 - 4 esse turi qolipi</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Body tuzilmasi</th></tr></thead><tbody><tr><td>Opinion</td><td>fikr + 2 dalil</td></tr><tr><td>Discussion</td><td>Body1: bir tomon, Body2: ikkinchi + o'z fikr</td></tr><tr><td>Problem-Solution</td><td>Body1: muammo, Body2: yechim</td></tr><tr><td>Adv-Disadv</td><td>Body1: afzallik, Body2: kamchilik</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Overview shart</p><p>Task 1'да <strong>Overview</strong> (umumiy tendensiya) bo'lmasa, band keskin tushadi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2663,7 +2663,7 @@
           "300"
         ],
         "c": 2,
-        "w": "Task 2 — kamida 250 so'z.",
+        "w": "Task 2 - kamida 250 so'z.",
         "level": "practical"
       },
       {
@@ -2699,7 +2699,7 @@
           "Linking words"
         ],
         "c": 1,
-        "w": "Task Response past bo'lsa — band tushadi.",
+        "w": "Task Response past bo'lsa - band tushadi.",
         "level": "scenario"
       }
     ],
@@ -2714,7 +2714,7 @@
           "300"
         ],
         "correct": 2,
-        "why": "Task 2 — kamida 250 so'z."
+        "why": "Task 2 - kamida 250 so'z."
       },
       {
         "type": "choice",
@@ -2762,7 +2762,7 @@
           "so"
         ],
         "correct": 1,
-        "why": "however — qarama-qarshilik."
+        "why": "however - qarama-qarshilik."
       },
       {
         "type": "gap",
@@ -2835,7 +2835,7 @@
     "grammar": [
       {
         "topic": "Task 2 tuzilmasi",
-        "rule": "Intro → Body 1 → Body 2 → Conclusion.",
+        "rule": "Intro -> Body 1 -> Body 2 -> Conclusion.",
         "ex": "4 abzas, 250+ so'z"
       },
       {
@@ -2851,7 +2851,7 @@
       {
         "topic": "Baholash mezonlari",
         "rule": "Task Response, Coherence, Lexical, Grammar.",
-        "ex": "To'rttasi teng — hammasiga e'tibor ber."
+        "ex": "To'rttasi teng - hammasiga e'tibor ber."
       }
     ]
   },
@@ -2859,11 +2859,11 @@
     "zoom": "Spk",
     "title": "IELTS Speaking",
     "sub": "Gapirish",
-    "coord": "Speaking · Spk",
-    "eyebrow": "09 · IELTS Speaking",
-    "mtitle": "Speaking — 3 qism, 11–14 daqiqa",
-    "lede": "Jonli suhbat. Baholash: <strong>Fluency, Lexical, Grammar, Pronunciation</strong>. Sir — yodlama, <strong>tabiiy va kengaytirilgan</strong> javob ber.",
-    "doc": "<div class='prose'><h3>3 qism</h3><div class=\"exlist\"><div class=\"ex\"><b>Part 1 (4–5 daq)</b><span>Oddiy savollar: o'zing, ish, uy, sevimli mashg'ulot</span></div><div class=\"ex\"><b>Part 2 (3–4 daq)</b><span>Cue card — 1 daq tayyorlanib, 2 daq monolog</span></div><div class=\"ex\"><b>Part 3 (4–5 daq)</b><span>Part 2 mavzusi bo'yicha chuqurroq muhokama</span></div></div><h3>Baholash mezonlari</h3><div class=\"chips\"><span class=\"chip t\">Fluency & Coherence</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammatical Range</span><span class=\"chip t\">Pronunciation</span></div><h3>Javobni kengaytir</h3><p>Bitta so'z bilan javob berma. Sabab + misol qo'sh.</p><div class=\"exlist\"><div class=\"ex\"><b>Do you like coffee?</b><span>Savol</span></div><div class=\"ex\"><b>Yes.</b><span>❌ juda qisqa</span></div><div class=\"ex\"><b>Yes, I love coffee, especially in the morning, because it helps me focus.</b><span>✓ kengaytirilgan</span></div></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Well, I'd say ...</b><span>Ha, men aytardimki ...</span></div><div class=\"ex\"><b>It depends on ...</b><span>...ga bog'liq</span></div><div class=\"ex\"><b>To be honest, ...</b><span>Rostini aytsam, ...</span></div><div class=\"ex\"><b>That's a good question.</b><span>Yaxshi savol (vaqt yutish)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yodlama!</p><p>Yodlangan javob examiner'ga bilinadi va band tushiradi. Tabiiy gapir, kichik xato qilsang ham davom et — <strong>ravonlik</strong> (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Javobni kengaytirish (extend)</h3><div class='exlist'><div class='ex'><b>Yes. ❌</b><span>juda qisqa</span></div><div class='ex'><b>Yes, I do — especially at weekends, because I have more free time. ✓</b><span>sabab + detal</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Yodlangan javob bilinadi va band tushiradi. Tabiiy gapir; kichik xato qilsang ham to'xtama — ravonlik (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Chuqurroq: Part 2 cue card qolipi</h3><p>Cue card'da 1 daqiqa tayyorgarlikda shu savollarga javob yoz: <strong>What? When? Where? Who? Why/How feel?</strong> — keyin shular bo'yicha gapir.</p><div class=\"exlist\"><div class=\"ex\"><b>Describe a place you like.</b><span>What place? Where? When go? Why like? How feel?</span></div></div><h3>Part 3 — javob qolipi</h3><p><strong>Fikr → sabab → misol → muvozanat</strong>: \"I think... because... For example... However, some people...\".</p><h3>Talaffuz: 3 daraja</h3><table class=\"gtable\"><thead><tr><th>Daraja</th><th>Nima</th></tr></thead><tbody><tr><td>So'z urg'usi</td><td>REcord (ot) / reCORD (fe'l)</td></tr><tr><td>Gap urg'usi</td><td>muhim so'zlarni kuchli ayt</td></tr><tr><td>Linking</td><td>so'zlarni bog'la: \"an_apple\"</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Ravonlik > mukammallik</p><p>Kichik xato uchun to'xtama. Fillers: \"Well...\", \"Let me think...\", \"That's interesting...\" — tabiiy vaqt yutadi.</p></div></div></div>",
+    "coord": "Speaking / Spk",
+    "eyebrow": "09 / IELTS Speaking",
+    "mtitle": "Speaking - 3 qism, 11-14 daqiqa",
+    "lede": "Jonli suhbat. Baholash: <strong>Fluency, Lexical, Grammar, Pronunciation</strong>. Sir - yodlama, <strong>tabiiy va kengaytirilgan</strong> javob ber.",
+    "doc": "<div class='prose'><h3>3 qism</h3><div class=\"exlist\"><div class=\"ex\"><b>Part 1 (4-5 daq)</b><span>Oddiy savollar: o'zing, ish, uy, sevimli mashg'ulot</span></div><div class=\"ex\"><b>Part 2 (3-4 daq)</b><span>Cue card - 1 daq tayyorlanib, 2 daq monolog</span></div><div class=\"ex\"><b>Part 3 (4-5 daq)</b><span>Part 2 mavzusi bo'yicha chuqurroq muhokama</span></div></div><h3>Baholash mezonlari</h3><div class=\"chips\"><span class=\"chip t\">Fluency & Coherence</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammatical Range</span><span class=\"chip t\">Pronunciation</span></div><h3>Javobni kengaytir</h3><p>Bitta so'z bilan javob berma. Sabab + misol qo'sh.</p><div class=\"exlist\"><div class=\"ex\"><b>Do you like coffee?</b><span>Savol</span></div><div class=\"ex\"><b>Yes.</b><span>❌ juda qisqa</span></div><div class=\"ex\"><b>Yes, I love coffee, especially in the morning, because it helps me focus.</b><span>✓ kengaytirilgan</span></div></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Well, I'd say ...</b><span>Ha, men aytardimki ...</span></div><div class=\"ex\"><b>It depends on ...</b><span>...ga bog'liq</span></div><div class=\"ex\"><b>To be honest, ...</b><span>Rostini aytsam, ...</span></div><div class=\"ex\"><b>That's a good question.</b><span>Yaxshi savol (vaqt yutish)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yodlama!</p><p>Yodlangan javob examiner'ga bilinadi va band tushiradi. Tabiiy gapir, kichik xato qilsang ham davom et - <strong>ravonlik</strong> (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Javobni kengaytirish (extend)</h3><div class='exlist'><div class='ex'><b>Yes. ❌</b><span>juda qisqa</span></div><div class='ex'><b>Yes, I do - especially at weekends, because I have more free time. ✓</b><span>sabab + detal</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Yodlangan javob bilinadi va band tushiradi. Tabiiy gapir; kichik xato qilsang ham to'xtama - ravonlik (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Chuqurroq: Part 2 cue card qolipi</h3><p>Cue card'da 1 daqiqa tayyorgarlikda shu savollarga javob yoz: <strong>What? When? Where? Who? Why/How feel?</strong> - keyin shular bo'yicha gapir.</p><div class=\"exlist\"><div class=\"ex\"><b>Describe a place you like.</b><span>What place? Where? When go? Why like? How feel?</span></div></div><h3>Part 3 - javob qolipi</h3><p><strong>Fikr -> sabab -> misol -> muvozanat</strong>: \"I think... because... For example... However, some people...\".</p><h3>Talaffuz: 3 daraja</h3><table class=\"gtable\"><thead><tr><th>Daraja</th><th>Nima</th></tr></thead><tbody><tr><td>So'z urg'usi</td><td>REcord (ot) / reCORD (fe'l)</td></tr><tr><td>Gap urg'usi</td><td>muhim so'zlarni kuchli ayt</td></tr><tr><td>Linking</td><td>so'zlarni bog'la: \"an_apple\"</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Ravonlik > mukammallik</p><p>Kichik xato uchun to'xtama. Fillers: \"Well...\", \"Let me think...\", \"That's interesting...\" - tabiiy vaqt yutadi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2975,7 +2975,7 @@
         "level": "easy"
       },
       {
-        "q": "\"Do you like coffee?\" — eng yaxshi javob?",
+        "q": "\"Do you like coffee?\" - eng yaxshi javob?",
         "a": [
           "Yes.",
           "No.",
@@ -2995,7 +2995,7 @@
           "majburiy"
         ],
         "c": 1,
-        "w": "Examiner yodlangan javobni sezadi — tabiiy gapir.",
+        "w": "Examiner yodlangan javobni sezadi - tabiiy gapir.",
         "level": "practical"
       },
       {
@@ -3019,7 +3019,7 @@
           "jim qolasan"
         ],
         "c": 1,
-        "w": "Ravonlikni saqla — kichik xato uchun to'xtama.",
+        "w": "Ravonlikni saqla - kichik xato uchun to'xtama.",
         "level": "scenario"
       }
     ],
@@ -3038,7 +3038,7 @@
       },
       {
         "type": "choice",
-        "q": "\"Do you like reading?\" — eng yaxshi javob:",
+        "q": "\"Do you like reading?\" - eng yaxshi javob:",
         "options": [
           "Yes.",
           "No.",
@@ -3058,7 +3058,7 @@
           "majburiy"
         ],
         "correct": 1,
-        "why": "Sun'iy ko'rinadi — tabiiy gapir."
+        "why": "Sun'iy ko'rinadi - tabiiy gapir."
       },
       {
         "type": "choice",
@@ -3082,7 +3082,7 @@
           "Next."
         ],
         "correct": 1,
-        "why": "\"That's a good question\" — tabiiy vaqt yutadi."
+        "why": "\"That's a good question\" - tabiiy vaqt yutadi."
       }
     ],
     "vocab": [
@@ -3143,7 +3143,7 @@
       {
         "topic": "Baholash mezonlari",
         "rule": "Fluency, Lexical, Grammar, Pronunciation.",
-        "ex": "Ravonlik — kichik xatodan muhimroq."
+        "ex": "Ravonlik - kichik xatodan muhimroq."
       }
     ]
   },
@@ -3151,11 +3151,11 @@
     "zoom": "Exam",
     "title": "Strategy & Mock",
     "sub": "Imtihon",
-    "coord": "Imtihon · Exam",
-    "eyebrow": "10 · IELTS Strategiya & Mock",
+    "coord": "Imtihon / Exam",
+    "eyebrow": "10 / IELTS Strategiya & Mock",
     "mtitle": "Imtihonga tayyorlik va mock testlar",
-    "lede": "Bilim — yarmi, <strong>imtihon strategiyasi</strong> — ikkinchi yarmi. Vaqtni boshqarish, mock testlar va imtihon kuni tartibi band'ingni oshiradi.",
-    "doc": "<div class='prose'><h3>Band qanday hisoblanadi</h3><p>Har 4 bo'lim 1–9 band oladi, umumiy — o'rtacha (0.5 ga yaxlitlanadi). Masalan L7, R6.5, W6, S7 → o'rtacha 6.625 → <strong>6.5</strong>.</p><h3>Vaqtni boshqarish</h3><div class=\"exlist\"><div class=\"ex\"><b>Listening</b><span>30 daq + 10 daq ko'chirish</span></div><div class=\"ex\"><b>Reading</b><span>60 daq — har passage ~20 daq</span></div><div class=\"ex\"><b>Writing</b><span>Task 1 ~20 daq, Task 2 ~40 daq</span></div><div class=\"ex\"><b>Speaking</b><span>11–14 daq jonli suhbat</span></div></div><h3>Mock test — eng muhim mashq</h3><p>Haftada kamida 1 marta <strong>to'liq, vaqtli</strong> mock test ishla (real sharoitda). Bu chidamlilik va vaqt hissini rivojlantiradi. Keyin har xatoni tahlil qil — bu eng ko'p ball qo'shadi.</p><h3>Imtihon kuni</h3><div class=\"chips\"><span class=\"chip\">Hujjat (passport)</span><span class=\"chip\">Yaxshi uxlash</span><span class=\"chip\">Erta yetib borish</span><span class=\"chip\">Listening uchun diqqat</span><span class=\"chip\">Vaqtni nazorat qilish</span></div><h3>Qachon tayyorsan?</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Mock natijasi</p><p>Agar 3 ta ketma-ket mock'da maqsadli band'ingga barqaror yetsang — imtihonga yozilish vaqti keldi. Bitta yaxshi natija tasodif bo'lishi mumkin; barqarorlik muhim.</p></div></div></div><div class='prose'><h3>Band hisoblash misoli</h3><div class='exlist'><div class='ex'><b>L7 · R6.5 · W6 · S7 → 6.625 → 6.5</b><span>o'rtacha, 0.5 ga yaxlitlanadi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Tayyorlik belgisi</p><p>3 ta ketma-ket mock'da maqsadli band'ingga barqaror yetsang — imtihonga yozilish vaqti keldi.</p></div></div></div><div class='prose'><h3>Chuqurroq: imtihon kuni jadvali</h3><table class=\"gtable\"><thead><tr><th>Tartib</th><th>Bo'lim</th></tr></thead><tbody><tr><td>1</td><td>Listening (30 daq + 10 daq ko'chirish)</td></tr><tr><td>2</td><td>Reading (60 daq)</td></tr><tr><td>3</td><td>Writing (60 daq)</td></tr><tr><td>Alohida</td><td>Speaking (suhbat, 11–14 daq)</td></tr></tbody></table><h3>Band oshirishning kalitlari</h3><table class=\"gtable\"><thead><tr><th>Bo'lim</th><th>Eng katta lever</th></tr></thead><tbody><tr><td>Listening</td><td>oldindan o'qish + imlo</td></tr><tr><td>Reading</td><td>vaqt boshqaruvi + T/F/NG</td></tr><tr><td>Writing</td><td>Task Response + tuzilma + linkerlar</td></tr><tr><td>Speaking</td><td>ravonlik + kengaytirilgan javob</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Tayyorlik mezoni</p><p>3 ta ketma-ket mock'da maqsadli band'ga barqaror yetsang — yozil. Bitta yaxshi natija tasodif bo'lishi mumkin.</p></div></div></div>",
+    "lede": "Bilim - yarmi, <strong>imtihon strategiyasi</strong> - ikkinchi yarmi. Vaqtni boshqarish, mock testlar va imtihon kuni tartibi band'ingni oshiradi.",
+    "doc": "<div class='prose'><h3>Band qanday hisoblanadi</h3><p>Har 4 bo'lim 1-9 band oladi, umumiy - o'rtacha (0.5 ga yaxlitlanadi). Masalan L7, R6.5, W6, S7 -> o'rtacha 6.625 -> <strong>6.5</strong>.</p><h3>Vaqtni boshqarish</h3><div class=\"exlist\"><div class=\"ex\"><b>Listening</b><span>30 daq + 10 daq ko'chirish</span></div><div class=\"ex\"><b>Reading</b><span>60 daq - har passage ~20 daq</span></div><div class=\"ex\"><b>Writing</b><span>Task 1 ~20 daq, Task 2 ~40 daq</span></div><div class=\"ex\"><b>Speaking</b><span>11-14 daq jonli suhbat</span></div></div><h3>Mock test - eng muhim mashq</h3><p>Haftada kamida 1 marta <strong>to'liq, vaqtli</strong> mock test ishla (real sharoitda). Bu chidamlilik va vaqt hissini rivojlantiradi. Keyin har xatoni tahlil qil - bu eng ko'p ball qo'shadi.</p><h3>Imtihon kuni</h3><div class=\"chips\"><span class=\"chip\">Hujjat (passport)</span><span class=\"chip\">Yaxshi uxlash</span><span class=\"chip\">Erta yetib borish</span><span class=\"chip\">Listening uchun diqqat</span><span class=\"chip\">Vaqtni nazorat qilish</span></div><h3>Qachon tayyorsan?</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Mock natijasi</p><p>Agar 3 ta ketma-ket mock'da maqsadli band'ingga barqaror yetsang - imtihonga yozilish vaqti keldi. Bitta yaxshi natija tasodif bo'lishi mumkin; barqarorlik muhim.</p></div></div></div><div class='prose'><h3>Band hisoblash misoli</h3><div class='exlist'><div class='ex'><b>L7 / R6.5 / W6 / S7 -> 6.625 -> 6.5</b><span>o'rtacha, 0.5 ga yaxlitlanadi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Tayyorlik belgisi</p><p>3 ta ketma-ket mock'da maqsadli band'ingga barqaror yetsang - imtihonga yozilish vaqti keldi.</p></div></div></div><div class='prose'><h3>Chuqurroq: imtihon kuni jadvali</h3><table class=\"gtable\"><thead><tr><th>Tartib</th><th>Bo'lim</th></tr></thead><tbody><tr><td>1</td><td>Listening (30 daq + 10 daq ko'chirish)</td></tr><tr><td>2</td><td>Reading (60 daq)</td></tr><tr><td>3</td><td>Writing (60 daq)</td></tr><tr><td>Alohida</td><td>Speaking (suhbat, 11-14 daq)</td></tr></tbody></table><h3>Band oshirishning kalitlari</h3><table class=\"gtable\"><thead><tr><th>Bo'lim</th><th>Eng katta lever</th></tr></thead><tbody><tr><td>Listening</td><td>oldindan o'qish + imlo</td></tr><tr><td>Reading</td><td>vaqt boshqaruvi + T/F/NG</td></tr><tr><td>Writing</td><td>Task Response + tuzilma + linkerlar</td></tr><tr><td>Speaking</td><td>ravonlik + kengaytirilgan javob</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Tayyorlik mezoni</p><p>3 ta ketma-ket mock'da maqsadli band'ga barqaror yetsang - yozil. Bitta yaxshi natija tasodif bo'lishi mumkin.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -3186,7 +3186,7 @@
       {
         "id": "en10-6",
         "html": "Imtihon kuni tartibini (checklist) tayyorladim",
-        "crit": "hujjat, vaqt, joy — hammasi rejada"
+        "crit": "hujjat, vaqt, joy - hammasi rejada"
       }
     ],
     "resources": [
@@ -3304,7 +3304,7 @@
           "darrov"
         ],
         "c": 1,
-        "w": "Barqaror natija — tasodif emas — tayyorlik belgisi.",
+        "w": "Barqaror natija - tasodif emas - tayyorlik belgisi.",
         "level": "practical"
       },
       {
@@ -3379,7 +3379,7 @@
           "darrov"
         ],
         "correct": 1,
-        "why": "Barqaror natija — tayyorlik belgisi."
+        "why": "Barqaror natija - tayyorlik belgisi."
       }
     ],
     "vocab": [
@@ -3430,7 +3430,7 @@
       {
         "topic": "Band hisoblash",
         "rule": "4 bo'lim o'rtachasi, 0.5 ga yaxlitlanadi.",
-        "ex": "L7 R6.5 W6 S7 → 6.5"
+        "ex": "L7 R6.5 W6 S7 -> 6.5"
       },
       {
         "topic": "Vaqt rejasi",
@@ -3448,11 +3448,11 @@
     "zoom": "Idm",
     "title": "Idiomalar & Phrasal verbs",
     "sub": "Tabiiy nutq",
-    "coord": "Tabiiy nutq · Idm",
-    "eyebrow": "12 · Idioms & Phrasal verbs",
+    "coord": "Tabiiy nutq / Idm",
+    "eyebrow": "12 / Idioms & Phrasal verbs",
     "mtitle": "Tabiiy gapirish: idioma va phrasal verb",
     "lede": "Ona tilida so'zlashuvchilar so'zma-so'z emas, <strong>ibora</strong> bilan gapiradi. Bu modulda eng kerakli phrasal verb va idiomalarni o'rganib, nutqni tabiiyroq qilasan.",
-    "doc": "<div class='prose'><p>Phrasal verb — fe'l + zarf/predlog (masalan <em>give up</em> = taslim bo'lish). Ma'nosi ko'pincha so'zlar yig'indisi emas — butunligicha yodla.</p><h3>Eng kerakli phrasal verblar</h3><table class='gtable'><thead><tr><th>Phrasal verb</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>give up</td><td>tashlab qo'yish / taslim</td><td>Don't give up.</td></tr><tr><td>look for</td><td>qidirmoq</td><td>I'm looking for my keys.</td></tr><tr><td>find out</td><td>aniqlash / bilib olmoq</td><td>I found out the truth.</td></tr><tr><td>turn on / off</td><td>yoqmoq / o'chirmoq</td><td>Turn off the light.</td></tr><tr><td>get up</td><td>o'rnidan turmoq</td><td>I get up at 7.</td></tr></tbody></table><h3>Foydali idiomalar</h3><div class='exlist'><div class='ex'><b>a piece of cake</b><span>juda oson</span></div><div class='ex'><b>break the ice</b><span>muloqotni boshlash</span></div><div class='ex'><b>once in a blue moon</b><span>juda kam, nadir</span></div><div class='ex'><b>hit the books</b><span>jiddiy o'qishga kirishmoq</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Idiomani tarjima qilma</p><p>Idioma so'zma-so'z tarjima qilinmaydi. \"It's raining cats and dogs\" — mushuk-it yog'ayotgani emas, <strong>qattiq yomg'ir</strong> degani. Kontekst bilan yodla.</p></div></div></div>",
+    "doc": "<div class='prose'><p>Phrasal verb - fe'l + zarf/predlog (masalan <em>give up</em> = taslim bo'lish). Ma'nosi ko'pincha so'zlar yig'indisi emas - butunligicha yodla.</p><h3>Eng kerakli phrasal verblar</h3><table class='gtable'><thead><tr><th>Phrasal verb</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>give up</td><td>tashlab qo'yish / taslim</td><td>Don't give up.</td></tr><tr><td>look for</td><td>qidirmoq</td><td>I'm looking for my keys.</td></tr><tr><td>find out</td><td>aniqlash / bilib olmoq</td><td>I found out the truth.</td></tr><tr><td>turn on / off</td><td>yoqmoq / o'chirmoq</td><td>Turn off the light.</td></tr><tr><td>get up</td><td>o'rnidan turmoq</td><td>I get up at 7.</td></tr></tbody></table><h3>Foydali idiomalar</h3><div class='exlist'><div class='ex'><b>a piece of cake</b><span>juda oson</span></div><div class='ex'><b>break the ice</b><span>muloqotni boshlash</span></div><div class='ex'><b>once in a blue moon</b><span>juda kam, nadir</span></div><div class='ex'><b>hit the books</b><span>jiddiy o'qishga kirishmoq</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Idiomani tarjima qilma</p><p>Idioma so'zma-so'z tarjima qilinmaydi. \"It's raining cats and dogs\" - mushuk-it yog'ayotgani emas, <strong>qattiq yomg'ir</strong> degani. Kontekst bilan yodla.</p></div></div></div>",
     "code": [],
     "exercises": [
       {
@@ -3544,7 +3544,7 @@
       }
     ],
     "project": {
-      "tag": "English amaliyot · Yakuniy",
+      "tag": "English amaliyot / Yakuniy",
       "title": "Idiomalar & Phrasal verbs Portfolio Task",
       "desc": "Idiomalar & Phrasal verbs modulini real natijaga aylantiradigan yakuniy amaliy ish.",
       "features": [
@@ -3655,13 +3655,13 @@
     ],
     "grammar": [
       {
-        "topic": "Phrasal verb — ajraladigan",
+        "topic": "Phrasal verb - ajraladigan",
         "rule": "Ba'zi phrasal verblar o'rtasiga obyekt kiradi: turn it on (turn on it emas).",
         "ex": "Turn the radio on. / Turn it on."
       },
       {
-        "topic": "Phrasal verb — ajralmaydigan",
-        "rule": "look for, find out kabilar bo'linmaydi — obyekt oxirda.",
+        "topic": "Phrasal verb - ajralmaydigan",
+        "rule": "look for, find out kabilar bo'linmaydi - obyekt oxirda.",
         "ex": "I'm looking for it. (look it for emas)"
       },
       {

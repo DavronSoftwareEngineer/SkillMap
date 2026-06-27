@@ -46,7 +46,7 @@ export function Flashcards() {
   }, [course, courseId]);
 
   const words = useMemo(() => allVocab.map((v) => v.w), [allVocab]);
-  // Takror navbati — bir marta hisoblanadi (har baholashda qayta tartiblanib
+  // Takror navbati - bir marta hisoblanadi (har baholashda qayta tartiblanib
   // sakrab ketmasligi uchun). Baholangan so'z navbatdan olib tashlanadi.
   const initialQueue = useMemo(
     () => dueWords(words, srs, Date.now()),
@@ -88,7 +88,7 @@ export function Flashcards() {
     setFlipped(false);
   };
 
-  // Klaviatura: Space = ag'darish, 1/2/3 = baho, → = keyingisi.
+  // Klaviatura: Space = ag'darish, 1/2/3 = baho, -> = keyingisi.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName;
@@ -110,7 +110,7 @@ export function Flashcards() {
   if (allVocab.length === 0) {
     return (
       <div className="dash">
-        <div className="eyebrow">Lug'at · Flashcards</div>
+        <div className="eyebrow">Lug'at / Flashcards</div>
         <h2 className="mtitle">Lug'at</h2>
         <p className="mlede">Bu kursda flashcard lug'at hozircha yo'q.</p>
       </div>
@@ -121,20 +121,20 @@ export function Flashcards() {
 
   return (
     <div className="dash">
-      <div className="eyebrow">Lug'at · Flashcards (interval takror)</div>
+      <div className="eyebrow">Lug'at / Flashcards (interval takror)</div>
       <h2 className="mtitle">Lug'at takrori</h2>
       <p className="mlede">
         Kartani ag'darib ma'noni ko'r, keyin o'zingni bahola:{" "}
         <strong>Qiyin</strong> tez qaytadi, <strong>Bilaman</strong> kechroq, <strong>Oson</strong> eng
-        kech. So'z {MAX_BOX}-darajaga yetsa — o'zlashtirilgan hisoblanadi.
-        {isLang && canSpeak() && " Talaffuz uchun 🔊."}
+        kech. So'z {MAX_BOX}-darajaga yetsa - o'zlashtirilgan hisoblanadi.
+        {isLang && canSpeak() && " Talaffuz uchun Audio."}
         <br />
-        <small style={{ opacity: 0.7 }}>Klaviatura: Space — ag'dar · 1 Qiyin · 2 Bilaman · 3 Oson · → keyingisi</small>
+          <small style={{ opacity: 0.7 }}>Klaviatura: Space - ag'dar / 1 Qiyin / 2 Bilaman / 3 Oson / -&gt; keyingisi</small>
       </p>
 
       <div className="fc-head">
         <span className="qscore">
-          O'zlashtirilgan: {mastered} / {words.length} &nbsp;·&nbsp; navbatda: {queue.length}
+          O'zlashtirilgan: {mastered} / {words.length} &nbsp;/&nbsp; navbatda: {queue.length}
         </span>
         <button className="qreset" onClick={resetSrs}>
           Progressni tozalash
@@ -143,7 +143,7 @@ export function Flashcards() {
 
       {done ? (
         <div className="fc-done">
-          <b>Barakalla!</b> Bugungi takror tugadi — hozir takror qilinishi kerak bo'lgan so'z qolmadi.
+          <b>Barakalla!</b> Bugungi takror tugadi - hozir takror qilinishi kerak bo'lgan so'z qolmadi.
           Ertaga yana qayt yoki{" "}
           <button className="dgo" onClick={restart}>
             hammasini qaytadan ko'r

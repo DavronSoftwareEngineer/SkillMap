@@ -10,7 +10,7 @@ const QUESTIONS: QuizQuestion[] = [
   { q: "Osmon rangi?", a: ["yashil", "ko'k"], c: 1, w: "Ko'k." },
 ];
 
-// Quiz recordQuiz orqali store'ga yozadi — natijani o'qish uchun probe.
+// Quiz recordQuiz orqali store'ga yozadi - natijani o'qish uchun probe.
 function ScoreProbe() {
   const { quizScores } = useStore();
   const s = quizScores.z1;

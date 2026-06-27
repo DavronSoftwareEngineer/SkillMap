@@ -3,10 +3,10 @@
     "zoom": "TG0",
     "title": "Bot platforma & setup",
     "sub": "Boshlash",
-    "coord": "Boshlash · TG0",
-    "eyebrow": "00 · Telegram bot nima",
+    "coord": "Boshlash / TG0",
+    "eyebrow": "00 / Telegram bot nima",
     "mtitle": "Professional Telegram bot yaratish yo'li",
-    "lede": "Telegram bot — chat ichida ishlaydigan servis. Bu kursda sen <strong>Node.js + TypeScript</strong> bilan bot yaratish, webhook, database, admin, payment, Mini App va production deploygacha borasan.",
+    "lede": "Telegram bot - chat ichida ishlaydigan servis. Bu kursda sen <strong>Node.js + TypeScript</strong> bilan bot yaratish, webhook, database, admin, payment, Mini App va production deploygacha borasan.",
     "doc": "<div class='prose'><h3>Bot nima qiladi?</h3><p>Bot foydalanuvchidan update oladi, business logic ishlaydi va javob qaytaradi. Professional bot shunchaki <code>/start</code> emas: u <strong>state, database, admin, xavfsizlik, log, deploy</strong> bilan ishlaydi.</p><div class='chips'><span class='chip t'>BotFather</span><span class='chip t'>Bot API</span><span class='chip t'>grammY / Telegraf</span><span class='chip t'>Webhook</span></div><h3>Stack tanlovi</h3><p>O'rganish uchun TypeScript + grammY qulay: tiplar yaxshi, middleware va plugin ekotizimi bor. Telegraf ham productionda ko'p ishlatiladi. Bu kurs prinsiplarni frameworkdan mustaqil o'rgatadi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Xavfsizlik</p><p>Bot token parolga teng. Uni GitHubga yozma, <code>.env</code>da saqla va leak bo'lsa BotFather orqali darhol revoke qil.</p></div></div></div>",
     "code": [
       {
@@ -65,7 +65,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Setup",
+      "tag": "Mini loyiha / Setup",
       "title": "Echo Starter Bot",
       "desc": "Token, env va minimal bot lifecycle bilan birinchi ishchi botni tayyorla.",
       "features": [
@@ -206,8 +206,8 @@
     "zoom": "TG1",
     "title": "Updates, commands & middleware",
     "sub": "Core",
-    "coord": "Core · TG1",
-    "eyebrow": "01 · Update oqimi",
+    "coord": "Core / TG1",
+    "eyebrow": "01 / Update oqimi",
     "mtitle": "Update oqimini professional boshqarish",
     "lede": "Bot har bir xabarni update sifatida oladi. Professional bot update turini ajratadi, command routing qiladi, middleware orqali logging, auth va error handlingni markazlashtiradi.",
     "doc": "<div class='prose'><h3>Update nima?</h3><p>Telegram botga xabar, callback, inline query, join request yoki payment holatlari update bo'lib keladi. Kodda avval update turini ajratish, keyin handlerga yuborish kerak.</p><h3>Middleware nima beradi?</h3><p>Middleware har update oldidan/yakunida ishlaydi: request id, logging, user context, rate limit, auth va error handling uchun juda qulay.</p></div>",
@@ -261,7 +261,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Core",
+      "tag": "Mini loyiha / Core",
       "title": "Command Router Bot",
       "desc": "Command, text va unknown holatlarni tartibli route qiladigan bot yadrosi.",
       "features": [
@@ -401,11 +401,11 @@
     "zoom": "TG2",
     "title": "State, scenes & database",
     "sub": "Ma'lumot",
-    "coord": "Ma'lumot · TG2",
-    "eyebrow": "02 · State va DB",
+    "coord": "Ma'lumot / TG2",
+    "eyebrow": "02 / State va DB",
     "mtitle": "Bot xotirasi: state, session va database",
     "lede": "Professional bot suhbatni eslab qoladi: user profili, order holati, admin sozlamasi, payment tarixi. Buning uchun session va database modelini to'g'ri qurish kerak.",
-    "doc": "<div class='prose'><h3>State turlari</h3><p><strong>Temporary state</strong> — suhbat bosqichi, form wizard. <strong>Persistent state</strong> — user, order, subscription, permission. Temporary state sessionda, muhim state databaseda saqlanadi.</p><h3>DB model</h3><p>Minimal production botda <code>User</code>, <code>Session</code>, <code>Order</code>, <code>AuditLog</code> kabi model kerak bo'ladi. Bot logic databasedan ajratilgan service qatlam orqali ishlasa, keyin kengaytirish oson bo'ladi.</p></div>",
+    "doc": "<div class='prose'><h3>State turlari</h3><p><strong>Temporary state</strong> - suhbat bosqichi, form wizard. <strong>Persistent state</strong> - user, order, subscription, permission. Temporary state sessionda, muhim state databaseda saqlanadi.</p><h3>DB model</h3><p>Minimal production botda <code>User</code>, <code>Session</code>, <code>Order</code>, <code>AuditLog</code> kabi model kerak bo'ladi. Bot logic databasedan ajratilgan service qatlam orqali ishlasa, keyin kengaytirish oson bo'ladi.</p></div>",
     "code": [
       {
         "heading": {
@@ -456,7 +456,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Database",
+      "tag": "Mini loyiha / Database",
       "title": "User Profile Bot",
       "desc": "Telegram userni DBga yozadigan, profil ko'rsatadigan va role saqlaydigan bot.",
       "features": [
@@ -595,8 +595,8 @@
     "zoom": "TG3",
     "title": "Inline keyboard & UX",
     "sub": "Interaktiv",
-    "coord": "Interaktiv · TG3",
-    "eyebrow": "03 · Bot UX",
+    "coord": "Interaktiv / TG3",
+    "eyebrow": "03 / Bot UX",
     "mtitle": "Button, callback va menu bilan qulay bot yaratish",
     "lede": "Foydalanuvchi botda kamroq yozib, ko'proq tanlashi kerak. Inline keyboard, reply keyboard, command menu va callback querylar professional bot UXining asosidir.",
     "doc": "<div class='prose'><h3>Bot UX qoidasi</h3><p>Chat interfeysida foydalanuvchi yo'qolib qolmasligi kerak. Har javob keyingi qadamni ko'rsatadi: button, menu yoki qisqa command.</p><h3>Callback data</h3><p>Callback data qisqa va xavfsiz bo'lishi kerak. Unda secret yoki uzun JSON saqlama; kerak bo'lsa ID yuborib, detallarni DBdan o'qi.</p></div>",
@@ -650,7 +650,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · UX",
+      "tag": "Mini loyiha / UX",
       "title": "Service Menu Bot",
       "desc": "Buttonlar orqali profil, buyurtma va yordam menyularini boshqaradigan bot.",
       "features": [
@@ -790,11 +790,11 @@
     "zoom": "TG4",
     "title": "Webhook, deploy & scaling",
     "sub": "Production",
-    "coord": "Production · TG4",
-    "eyebrow": "04 · Webhook",
+    "coord": "Production / TG4",
+    "eyebrow": "04 / Webhook",
     "mtitle": "Pollingdan webhook va production deployga",
     "lede": "Developmentda polling qulay, productionda webhook ko'proq nazorat beradi. Deployda HTTPS, secret path, retry, idempotency va monitoring muhim.",
-    "doc": "<div class='prose'><h3>Polling vs webhook</h3><p><strong>Polling</strong> — bot server Telegramdan update so'rab turadi. <strong>Webhook</strong> — Telegram update kelganda sening HTTPS endpointingga POST qiladi. Productionda webhook cloud deploy bilan yaxshi ishlaydi.</p><h3>Production xavflar</h3><p>Telegram retry qilishi mumkin; update qayta kelishi ehtimoli bor. Shuning uchun muhim actionlar idempotent bo'lishi, update_id yoki business id bo'yicha takror bajarilmasligi kerak.</p></div>",
+    "doc": "<div class='prose'><h3>Polling vs webhook</h3><p><strong>Polling</strong> - bot server Telegramdan update so'rab turadi. <strong>Webhook</strong> - Telegram update kelganda sening HTTPS endpointingga POST qiladi. Productionda webhook cloud deploy bilan yaxshi ishlaydi.</p><h3>Production xavflar</h3><p>Telegram retry qilishi mumkin; update qayta kelishi ehtimoli bor. Shuning uchun muhim actionlar idempotent bo'lishi, update_id yoki business id bo'yicha takror bajarilmasligi kerak.</p></div>",
     "code": [
       {
         "heading": {
@@ -845,7 +845,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Deploy",
+      "tag": "Mini loyiha / Deploy",
       "title": "Webhook Production Bot",
       "desc": "Express/Nest server ichida webhook endpoint, healthcheck va deploy script bilan production bot.",
       "features": [
@@ -984,8 +984,8 @@
     "zoom": "TG5",
     "title": "Admin, roles & moderation",
     "sub": "Boshqaruv",
-    "coord": "Boshqaruv · TG5",
-    "eyebrow": "05 · Admin panel",
+    "coord": "Boshqaruv / TG5",
+    "eyebrow": "05 / Admin panel",
     "mtitle": "Admin va role-based bot boshqaruvi",
     "lede": "Professional botda oddiy user va admin huquqlari ajraladi. Adminlar userni ko'radi, broadcast qiladi, orderni boshqaradi, lekin hamma action audit logga yoziladi.",
     "doc": "<div class='prose'><h3>Role model</h3><p>Minimal role: <code>user</code>, <code>admin</code>, <code>owner</code>. Har admin command role checkdan o'tadi. Owner-only actionlar alohida himoyalanadi.</p><h3>Audit log</h3><p>Admin actionlar keyin tekshirilishi kerak: kim, qachon, qaysi user/order ustida nima qildi. Bu production botda muhim.</p></div>",
@@ -1039,7 +1039,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Admin",
+      "tag": "Mini loyiha / Admin",
       "title": "Admin Control Bot",
       "desc": "Role guard, broadcast preview va audit log bilan admin boshqaruv botini qurish.",
       "features": [
@@ -1179,8 +1179,8 @@
     "zoom": "TG6",
     "title": "Payments, subscriptions & orders",
     "sub": "Monetizatsiya",
-    "coord": "Monetizatsiya · TG6",
-    "eyebrow": "06 · To'lov",
+    "coord": "Monetizatsiya / TG6",
+    "eyebrow": "06 / To'lov",
     "mtitle": "Bot orqali buyurtma, to'lov va obuna oqimlari",
     "lede": "Telegram bot biznes jarayonni avtomatlashtira oladi: katalog, order, invoice, payment status, subscription va refund flow. Bunda xavfsizlik va idempotency juda muhim.",
     "doc": "<div class='prose'><h3>Payment flow</h3><p>Bot mahsulotni tanlatadi, order yaratadi, invoice yuboradi, payment update kelgach order statusini yangilaydi. Hech qachon karta ma'lumotini o'zing saqlama.</p><h3>Idempotency</h3><p>Payment update qayta kelishi mumkin. Order statusini <code>paid</code> qilish operatsiyasi idempotent bo'lishi shart.</p></div>",
@@ -1234,7 +1234,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Commerce",
+      "tag": "Mini loyiha / Commerce",
       "title": "Paid Course Bot",
       "desc": "Kurs yoki raqamli mahsulot uchun order, invoice va paid access flow.",
       "features": [
@@ -1374,8 +1374,8 @@
     "zoom": "TG7",
     "title": "Mini Apps & WebApp",
     "sub": "Full-stack",
-    "coord": "Full-stack · TG7",
-    "eyebrow": "07 · Mini App",
+    "coord": "Full-stack / TG7",
+    "eyebrow": "07 / Mini App",
     "mtitle": "Telegram Mini App bilan botni full-stack mahsulotga aylantirish",
     "lede": "Murakkab UI chat ichida noqulay bo'lsa, Telegram Mini App ochiladi. Bot login/context beradi, web app esa form, dashboard, payment yoki katalogni chiroyli ko'rsatadi.",
     "doc": "<div class='prose'><h3>Qachon Mini App?</h3><p>Katalog, form, dashboard, booking, analytics, complex checkout kabi UIlar chat xabariga sig'maydi. Mini App React/Vite bilan qurilib, bot orqali ochiladi.</p><h3>Init data tekshirish</h3><p>Mini App Telegramdan init data oladi. Backend uni tekshirishi kerak; aks holda user spoofing xavfi bor.</p></div>",
@@ -1429,7 +1429,7 @@
       }
     ],
     "project": {
-      "tag": "Mini loyiha · Mini App",
+      "tag": "Mini loyiha / Mini App",
       "title": "Telegram CRM Mini App",
       "desc": "Botdan ochiladigan React Mini App: user dashboard, order list va profile.",
       "features": [
@@ -1569,8 +1569,8 @@
     "zoom": "TG8",
     "title": "Observability, security & final",
     "sub": "Senior",
-    "coord": "Senior · TG8",
-    "eyebrow": "08 · Production bot",
+    "coord": "Senior / TG8",
+    "eyebrow": "08 / Production bot",
     "mtitle": "Production Telegram botni yakunlash",
     "lede": "Senior darajadagi bot monitoring, alert, rate limit, backup, security checklist va deployment runbook bilan yashaydi. Final loyiha portfolio uchun tayyor bo'lishi kerak.",
     "doc": "<div class='prose'><h3>Production checklist</h3><p>Bot ishlashi yetmaydi; uni kuzatish, tiklash va himoya qilish kerak. Log, metric, alert, backup va incident runbook bo'lmasa, kichik xato ham biznesga zarar beradi.</p><h3>Security baseline</h3><p>Token secret managerda, webhook secret path bilan, admin command role guard bilan, payment/order idempotent, rate limit va audit log bor.</p></div>",
@@ -1631,7 +1631,7 @@
       }
     ],
     "project": {
-      "tag": "Final loyiha · Portfolio",
+      "tag": "Final loyiha / Portfolio",
       "title": "Production Telegram Business Bot",
       "desc": "Real biznes uchun bot: onboarding, menu, DB, admin, payment yoki order, webhook deploy va monitoring bilan.",
       "features": [

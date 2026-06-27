@@ -1982,6 +1982,12 @@ table.vocab td {
   --teal-deep: #168acd;
 }
 
+/* Cybersecurity kursi - signal qizil urg'u */
+.course-cybersecurity {
+  --teal: #ff6b6b;
+  --teal-deep: #d94b4b;
+}
+
 /* Playground */
 .pg-warn {
   background: rgba(244, 162, 60, 0.08);

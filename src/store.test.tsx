@@ -10,7 +10,7 @@ const wrapper = ({ children }: { children: ReactNode }) => (
 
 const render = () => renderHook(() => useStore(), { wrapper });
 
-describe("store — kurs almashish", () => {
+describe("store - kurs almashish", () => {
   it("standart kurs ro'yxatdagi birinchi kurs", () => {
     const { result } = render();
     expect(result.current.courseId).toBe(COURSES[0].id);
@@ -24,7 +24,7 @@ describe("store — kurs almashish", () => {
   });
 });
 
-describe("store — progress kurslar bo'yicha alohida", () => {
+describe("store - progress kurslar bo'yicha alohida", () => {
   it("bir kursdagi topshiriq boshqa kursga ta'sir qilmaydi", () => {
     const { result } = render();
 
@@ -35,7 +35,7 @@ describe("store — progress kurslar bo'yicha alohida", () => {
     act(() => result.current.setCourse("english"));
     expect(result.current.isDone("t1")).toBe(false);
 
-    // Birinchi kursga qaytsak — belgi saqlangan.
+    // Birinchi kursga qaytsak - belgi saqlangan.
     act(() => result.current.setCourse(COURSES[0].id));
     expect(result.current.isDone("t1")).toBe(true);
   });
@@ -55,7 +55,7 @@ describe("store — progress kurslar bo'yicha alohida", () => {
   });
 });
 
-describe("store — recordQuiz eng yaxshi natijani saqlaydi", () => {
+describe("store - recordQuiz eng yaxshi natijani saqlaydi", () => {
   it("faqat oldingidan yuqori (yoki teng) natija yoziladi", () => {
     const { result } = render();
 

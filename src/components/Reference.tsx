@@ -24,7 +24,7 @@ export function Reference() {
   if (total === 0) {
     return (
       <div className="dash">
-        <div className="eyebrow">Ma'lumotnoma · Reference</div>
+        <div className="eyebrow">Ma'lumotnoma / Reference</div>
         <h2 className="mtitle">Ma'lumotnoma</h2>
         <p className="mlede">Bu kursda grammatika ma'lumotnomasi hozircha yo'q.</p>
       </div>
@@ -33,9 +33,9 @@ export function Reference() {
 
   return (
     <div className="dash">
-      <div className="eyebrow">Ma'lumotnoma · Reference</div>
+      <div className="eyebrow">Ma'lumotnoma / Reference</div>
       <h2 className="mtitle">Grammatika ma'lumotnomasi</h2>
-      <p className="mlede">Barcha qoidalar bitta joyda — qidirib, tez eslab ol.</p>
+      <p className="mlede">Barcha qoidalar bitta joyda - qidirib, tez eslab ol.</p>
 
       <input
         className="ref-search"
@@ -49,7 +49,7 @@ export function Reference() {
       {groups.map((grp) => (
         <div className="ref-group" key={grp.zoom}>
           <h3 className="dash-h">
-            {grp.zoom} · {grp.title}
+            {grp.zoom} / {grp.title}
           </h3>
           <div className="ref-list">
             {grp.items.map((g, i) => (

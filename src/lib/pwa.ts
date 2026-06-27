@@ -4,10 +4,10 @@ export function registerSW(): void {
   if (typeof navigator === "undefined" || !("serviceWorker" in navigator)) return;
 
   window.addEventListener("load", () => {
-    // base'ga nisbatan ("./sw.js") — subkatalogda deploy bo'lsa ham ishlaydi.
+    // base'ga nisbatan ("./sw.js") - subkatalogda deploy bo'lsa ham ishlaydi.
     const url = new URL("sw.js", document.baseURI).toString();
     navigator.serviceWorker.register(url).catch(() => {
-      /* offline rejimi mavjud emas — ilova baribir ishlaydi */
+      /* offline rejimi mavjud emas - ilova baribir ishlaydi */
     });
   });
 

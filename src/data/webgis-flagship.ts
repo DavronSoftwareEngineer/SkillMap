@@ -4,8 +4,8 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   zoom: "FG",
   title: "GeoPulse Flagship",
   sub: "3 oylik capstone",
-  coord: "Portfolio loyiha · Flagship",
-  eyebrow: "FLAGSHIP · GEOSPATIAL · PRODUCTION",
+  coord: "Portfolio loyiha / Flagship",
+  eyebrow: "FLAGSHIP / GEOSPATIAL / PRODUCTION",
   mtitle: "GeoPulse: bitta katta, haqiqiy portfolio loyihasi",
   lede:
     "Bu modul barcha kurslardagi bilimni bitta <strong>deploy qilingan geospatial platforma</strong>ga yig'adi: React xarita, TypeScript API, PostGIS, Telegram bildirishnoma va production infratuzilmasi.",
@@ -67,7 +67,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     { type: "doc", url: "https://core.telegram.org/bots/api", title: "Telegram Bot API", desc: "Subscription va notification flow uchun rasmiy API.", host: "core.telegram.org" },
   ],
   project: {
-    tag: "Flagship · Portfolio · Production",
+    tag: "Flagship / Portfolio / Production",
     title: "GeoPulse Geospatial Monitoring Platform",
     desc: "Barcha kurslardagi asosiy ko'nikmalarni bitta real, deploy qilingan mahsulotga aylantir.",
     features: [

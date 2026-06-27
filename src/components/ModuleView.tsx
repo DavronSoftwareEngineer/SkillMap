@@ -42,7 +42,7 @@ export function ModuleView({
   const m = modules[index];
   const [tab, setTab] = useState("doc");
 
-  // Shu modulga biriktirilgan kitob (kurs moduleBooks[zoom] → books[] dan).
+  // Shu modulga biriktirilgan kitob (kurs moduleBooks[zoom] -> books[] dan).
   const refN = course.moduleBooks?.[m.zoom];
   const refBook = refN ? course.books?.find((b) => b.n === refN) : undefined;
 
@@ -96,11 +96,11 @@ export function ModuleView({
         <button className="modbook" style={{ ["--bc" as string]: refBook.accent }} onClick={onBooks}>
           <BookCover book={refBook} />
           <span className="mb-tx">
-            <small>📖 Bu modulga oid kitob</small>
+            <small>Kitob Bu modulga oid kitob</small>
             <b>{refBook.title}</b>
             <span>{refBook.author}</span>
           </span>
-          <span className="mb-go">Kitoblar →</span>
+          <span className="mb-go">Kitoblar -&gt;</span>
         </button>
       )}
 

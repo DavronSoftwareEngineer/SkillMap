@@ -3,11 +3,11 @@
     "zoom": "F0",
     "title": "Kirish & Metod",
     "sub": "Boshlash",
-    "coord": "Boshlash · F0",
-    "eyebrow": "00 · Moliyaviy savodxonlik nima",
-    "mtitle": "Moliyaviy savodxonlik — pulni aqlli boshqarish",
-    "lede": "Moliyaviy savodxonlik — <strong>pul topish, sarflash, tejash, qarz olish va jamg'arishni aqlli boshqarish</strong> qobiliyati. Bu yerda darajangni aniqlab, 3 bosqichli yo'lni ko'rasan.",
-    "doc": "<div class='prose'><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>O'quv eslatma</p><p>Bu kurs moliyaviy savodxonlik uchun. U shaxsiy investitsiya, kredit yoki soliq bo'yicha individual maslahat emas. Muhim qarordan oldin rasmiy manba va mutaxassis bilan tekshir.</p></div></div><p>Moliyaviy savodxon odam: <strong>daromad va xarajatini hisoblaydi</strong>; pulni bekorga sarflamaydi; qarz, kredit, foiz nima ekanini tushunadi; jamg'arma qiladi; firibgarlikdan ehtiyot bo'ladi; pulini ko'paytirish yoki saqlash yo'llarini biladi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>OECD ta'rifi</p><p>Moliyaviy savodxonlik — <strong>bilim + ko'nikma + munosabat + xatti-harakat</strong> yig'indisi. Ya'ni faqat bilish emas, pul bilan to'g'ri <strong>qaror qabul qilish</strong> ham muhim.</p></div></div><h3>Darajangni aniqla</h3><p><strong>Boshlang'ich / o'rta-boshlang'ich</strong>, agar: daromad-xarajatni yozib bormasang; oy oxirida pul qayerga ketganini aniq bilmasang; zaxira jamg'arma yo'q bo'lsa; kredit/foizni chuqur hisoblamasang.</p><p><strong>O'rta daraja</strong>, agar: har oy xarajatni nazorat qilsang; keraksiz xarajatni kamaytirsang; 1–3 oylik zaxira pulingiz bo'lsa; qarzdan oldin foiz va qaytarish rejasini hisoblasang; pulni bilim/ishga investitsiya qilishni o'ylasang.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>O'zingni tekshir</p><p>Bitta savol: <strong>oy oxirida puling qayerga ketganini aniq bilasanmi?</strong> Agar \"yo'q\" bo'lsa — birinchi qadam: 30 kun barcha xarajatni yozib borish.</p></div></div><h3>3 bosqichli yo'l</h3><div class=\"exlist\"><div class=\"ex\"><b>1-bosqich</b><span>Shaxsiy pul boshqaruvi: byudjet, jamg'arma, zaxira</span></div><div class=\"ex\"><b>2-bosqich</b><span>Qarz / kredit / foiz va moliyaviy xavfsizlik</span></div><div class=\"ex\"><b>3-bosqich</b><span>Investitsiya: omonat, obligatsiya, aksiya, ETF</span></div></div><h3>Eng muhim qoida</h3><p>Pulni qancha topish emas, uni <strong>qanday boshqarish</strong> hal qiladi. Bilim amaliyot bilan birlashganda haqiqiy savodxonlik boshlanadi.</p></div><div class='prose'><h3>Chuqurroq: nega \"boshqaruv\" muhim?</h3><p>Ikki odam bir xil — oyiga 5 mln — topadi. Biri har oy 0 jamg'aradi, ikkinchisi 1 mln. 3 yilda farq: <strong>0 vs 36 mln so'm</strong> (foizsiz ham). Daromad bir xil — natija boshqacha. Sababi — <strong>boshqaruv</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>Topish (daromad)</b><span>muhim, lekin yarmi</span></div><div class=\"ex\"><b>Boshqarish (taqsimlash)</b><span>ikkinchi yarmi — bu yerda farq tug'iladi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Ko'proq topsam, hammasi joyiga tushadi\" deb o'ylash. Aslida daromad oshsa, ko'pincha xarajat ham oshadi (lifestyle inflation). Tizim bo'lmasa, katta maosh ham yetmaydi.</p></div></div></div>",
+    "coord": "Boshlash / F0",
+    "eyebrow": "00 / Moliyaviy savodxonlik nima",
+    "mtitle": "Moliyaviy savodxonlik - pulni aqlli boshqarish",
+    "lede": "Moliyaviy savodxonlik - <strong>pul topish, sarflash, tejash, qarz olish va jamg'arishni aqlli boshqarish</strong> qobiliyati. Bu yerda darajangni aniqlab, 3 bosqichli yo'lni ko'rasan.",
+    "doc": "<div class='prose'><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>O'quv eslatma</p><p>Bu kurs moliyaviy savodxonlik uchun. U shaxsiy investitsiya, kredit yoki soliq bo'yicha individual maslahat emas. Muhim qarordan oldin rasmiy manba va mutaxassis bilan tekshir.</p></div></div><p>Moliyaviy savodxon odam: <strong>daromad va xarajatini hisoblaydi</strong>; pulni bekorga sarflamaydi; qarz, kredit, foiz nima ekanini tushunadi; jamg'arma qiladi; firibgarlikdan ehtiyot bo'ladi; pulini ko'paytirish yoki saqlash yo'llarini biladi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>OECD ta'rifi</p><p>Moliyaviy savodxonlik - <strong>bilim + ko'nikma + munosabat + xatti-harakat</strong> yig'indisi. Ya'ni faqat bilish emas, pul bilan to'g'ri <strong>qaror qabul qilish</strong> ham muhim.</p></div></div><h3>Darajangni aniqla</h3><p><strong>Boshlang'ich / o'rta-boshlang'ich</strong>, agar: daromad-xarajatni yozib bormasang; oy oxirida pul qayerga ketganini aniq bilmasang; zaxira jamg'arma yo'q bo'lsa; kredit/foizni chuqur hisoblamasang.</p><p><strong>O'rta daraja</strong>, agar: har oy xarajatni nazorat qilsang; keraksiz xarajatni kamaytirsang; 1-3 oylik zaxira pulingiz bo'lsa; qarzdan oldin foiz va qaytarish rejasini hisoblasang; pulni bilim/ishga investitsiya qilishni o'ylasang.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>O'zingni tekshir</p><p>Bitta savol: <strong>oy oxirida puling qayerga ketganini aniq bilasanmi?</strong> Agar \"yo'q\" bo'lsa - birinchi qadam: 30 kun barcha xarajatni yozib borish.</p></div></div><h3>3 bosqichli yo'l</h3><div class=\"exlist\"><div class=\"ex\"><b>1-bosqich</b><span>Shaxsiy pul boshqaruvi: byudjet, jamg'arma, zaxira</span></div><div class=\"ex\"><b>2-bosqich</b><span>Qarz / kredit / foiz va moliyaviy xavfsizlik</span></div><div class=\"ex\"><b>3-bosqich</b><span>Investitsiya: omonat, obligatsiya, aksiya, ETF</span></div></div><h3>Eng muhim qoida</h3><p>Pulni qancha topish emas, uni <strong>qanday boshqarish</strong> hal qiladi. Bilim amaliyot bilan birlashganda haqiqiy savodxonlik boshlanadi.</p></div><div class='prose'><h3>Chuqurroq: nega \"boshqaruv\" muhim?</h3><p>Ikki odam bir xil - oyiga 5 mln - topadi. Biri har oy 0 jamg'aradi, ikkinchisi 1 mln. 3 yilda farq: <strong>0 vs 36 mln so'm</strong> (foizsiz ham). Daromad bir xil - natija boshqacha. Sababi - <strong>boshqaruv</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>Topish (daromad)</b><span>muhim, lekin yarmi</span></div><div class=\"ex\"><b>Boshqarish (taqsimlash)</b><span>ikkinchi yarmi - bu yerda farq tug'iladi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Ko'proq topsam, hammasi joyiga tushadi\" deb o'ylash. Aslida daromad oshsa, ko'pincha xarajat ham oshadi (lifestyle inflation). Tizim bo'lmasa, katta maosh ham yetmaydi.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -41,7 +41,7 @@
         "type": "doc",
         "url": "https://finlit.uz/",
         "title": "Finlit.uz",
-        "desc": "Markaziy bank — rasmiy moliyaviy savodxonlik sayti (o'zbekcha)",
+        "desc": "Markaziy bank - rasmiy moliyaviy savodxonlik sayti (o'zbekcha)",
         "host": "finlit.uz"
       },
       {
@@ -110,7 +110,7 @@
           "Faqat investitsiya"
         ],
         "c": 1,
-        "w": "Bu — pulni boshqarish qobiliyati (faqat topish emas).",
+        "w": "Bu - pulni boshqarish qobiliyati (faqat topish emas).",
         "level": "easy"
       },
       {
@@ -146,14 +146,14 @@
           "Qaysi valyuta"
         ],
         "c": 1,
-        "w": "Boshqaruv — savodxonlikning o'zagi.",
+        "w": "Boshqaruv - savodxonlikning o'zagi.",
         "level": "practical"
       },
       {
         "q": "Zaxira jamg'arma necha oylik bo'lishi tavsiya etiladi?",
         "a": [
           "0 oy",
-          "1–3 oylik xarajat",
+          "1-3 oylik xarajat",
           "12 oylik",
           "Kerak emas"
         ],
@@ -173,11 +173,11 @@
           "Mashina olish"
         ],
         "correct": 2,
-        "why": "Avval pul oqimini ko'rish — xarajat yozuvi."
+        "why": "Avval pul oqimini ko'rish - xarajat yozuvi."
       },
       {
         "type": "choice",
-        "q": "\"Oy oxirida pulim qayerga ketdi?\" — bilmaslik nimani bildiradi?",
+        "q": "\"Oy oxirida pulim qayerga ketdi?\" - bilmaslik nimani bildiradi?",
         "options": [
           "O'rta daraja",
           "Boshlang'ich daraja (yozuv kerak)",
@@ -185,7 +185,7 @@
           "Hech narsa"
         ],
         "correct": 1,
-        "why": "Yozuv yo'qligi — boshlang'ich daraja belgisi."
+        "why": "Yozuv yo'qligi - boshlang'ich daraja belgisi."
       },
       {
         "type": "choice",
@@ -213,7 +213,7 @@
       },
       {
         "type": "choice",
-        "q": "\"Bilim + amaliyot\" — bu nimani anglatadi?",
+        "q": "\"Bilim + amaliyot\" - bu nimani anglatadi?",
         "options": [
           "faqat o'qish yetarli",
           "o'rganib, hayotda qo'llash",
@@ -233,7 +233,7 @@
       {
         "w": "xarajat",
         "uz": "pul chiqimi",
-        "ex": "Eng katta xarajat — ijara."
+        "ex": "Eng katta xarajat - ijara."
       },
       {
         "w": "byudjet",
@@ -259,7 +259,7 @@
       },
       {
         "topic": "3 bosqich",
-        "rule": "Boshqaruv → qarz/xavfsizlik → investitsiya.",
+        "rule": "Boshqaruv -> qarz/xavfsizlik -> investitsiya.",
         "ex": "Avval byudjet, oxirida aksiya."
       }
     ]
@@ -268,11 +268,11 @@
     "zoom": "F1",
     "title": "Xarajat yozish",
     "sub": "1-hafta",
-    "coord": "Tracking · F1",
-    "eyebrow": "01 · Daromad–xarajatni yozish",
+    "coord": "Tracking / F1",
+    "eyebrow": "01 / Daromad-xarajatni yozish",
     "mtitle": "30 kun: pulni kuzatish",
-    "lede": "Eng kuchli amaliyot — <strong>har bitta xarajatni yozish</strong>. Notes, Google Sheets yoki app — qaysi qulay bo'lsa. Muhimi: xarajatdan keyin <strong>darrov</strong> yozish.",
-    "doc": "<div class='prose'><h3>Qanday yoziladi</h3><p>Har xarajatdan keyin 10 soniyada yoz: <strong>Sana — nima — summa — kategoriya</strong>.</p><div class='codewrap'><div class='codehead'><span class='fn'>Notes / Sheets misoli</span><span class='lang'>YOZUV</span></div><pre><code data-lang='text'>11.06 — Ovqat — 45 000 — Ovqat\n11.06 — Taxi — 25 000 — Transport\n11.06 — Internet — 70 000 — Aloqa\n12.06 — Kofe — 18 000 — Keraksiz</code></pre></div><h3>Kategoriyalar</h3><div class=\"chips\"><span class=\"chip\">Ovqat</span><span class=\"chip\">Transport</span><span class=\"chip\">Aloqa</span><span class=\"chip\">Uy/ijara</span><span class=\"chip\">Oila</span><span class=\"chip\">Kiyim</span><span class=\"chip\">Sog'liq</span><span class=\"chip\">O'qish/rivojlanish</span><span class=\"chip\">Keraksiz</span></div><h3>Qaysi vosita?</h3><div class=\"exlist\"><div class=\"ex\"><b>Telefon Notes</b><span>Eng tez — boshlash uchun ideal</span></div><div class=\"ex\"><b>Google Sheets</b><span>Bepul, avtomatik saqlanadi, hisob oson</span></div><div class=\"ex\"><b>Money Manager / app</b><span>Grafik va byudjet bilan, keyinroq</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>\"Keyin yozaman\" — ko'pi esdan chiqadi. <strong>Darrov yoz.</strong> 1000 so'm bo'lsa ham yoz — aniqlik shundan keladi.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"sezilmas\" xarajatlar</h3><p>Eng katta tuzoq — kichik, lekin tez-tez takrorlanadigan xarajat. Kuniga 1 marta 25 000 so'mlik kofe → oyiga:</p><div class='codewrap'><div class='codehead'><span class='fn'>Kichik xarajat = katta summa</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>25 000 × 30 kun = 750 000 so'm/oy\n750 000 × 12 = 9 000 000 so'm/yil</code></pre></div><p>Bu \"oz-oz\" deganlar yilda 9 mln bo'lib chiqadi. Yozuvsiz buni hech kim sezmaydi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat KATTA xarajatlarni yozish (ijara, telefon). Aslida byudjetni kichik, kunlik xarajatlar yeydi. <strong>Hammasini yoz</strong> — 1000 so'm ham.</p></div></div></div>",
+    "lede": "Eng kuchli amaliyot - <strong>har bitta xarajatni yozish</strong>. Notes, Google Sheets yoki app - qaysi qulay bo'lsa. Muhimi: xarajatdan keyin <strong>darrov</strong> yozish.",
+    "doc": "<div class='prose'><h3>Qanday yoziladi</h3><p>Har xarajatdan keyin 10 soniyada yoz: <strong>Sana - nima - summa - kategoriya</strong>.</p><div class='codewrap'><div class='codehead'><span class='fn'>Notes / Sheets misoli</span><span class='lang'>YOZUV</span></div><pre><code data-lang='text'>11.06 - Ovqat - 45 000 - Ovqat\n11.06 - Taxi - 25 000 - Transport\n11.06 - Internet - 70 000 - Aloqa\n12.06 - Kofe - 18 000 - Keraksiz</code></pre></div><h3>Kategoriyalar</h3><div class=\"chips\"><span class=\"chip\">Ovqat</span><span class=\"chip\">Transport</span><span class=\"chip\">Aloqa</span><span class=\"chip\">Uy/ijara</span><span class=\"chip\">Oila</span><span class=\"chip\">Kiyim</span><span class=\"chip\">Sog'liq</span><span class=\"chip\">O'qish/rivojlanish</span><span class=\"chip\">Keraksiz</span></div><h3>Qaysi vosita?</h3><div class=\"exlist\"><div class=\"ex\"><b>Telefon Notes</b><span>Eng tez - boshlash uchun ideal</span></div><div class=\"ex\"><b>Google Sheets</b><span>Bepul, avtomatik saqlanadi, hisob oson</span></div><div class=\"ex\"><b>Money Manager / app</b><span>Grafik va byudjet bilan, keyinroq</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>\"Keyin yozaman\" - ko'pi esdan chiqadi. <strong>Darrov yoz.</strong> 1000 so'm bo'lsa ham yoz - aniqlik shundan keladi.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"sezilmas\" xarajatlar</h3><p>Eng katta tuzoq - kichik, lekin tez-tez takrorlanadigan xarajat. Kuniga 1 marta 25 000 so'mlik kofe -> oyiga:</p><div class='codewrap'><div class='codehead'><span class='fn'>Kichik xarajat = katta summa</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>25 000 × 30 kun = 750 000 so'm/oy\n750 000 × 12 = 9 000 000 so'm/yil</code></pre></div><p>Bu \"oz-oz\" deganlar yilda 9 mln bo'lib chiqadi. Yozuvsiz buni hech kim sezmaydi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat KATTA xarajatlarni yozish (ijara, telefon). Aslida byudjetni kichik, kunlik xarajatlar yeydi. <strong>Hammasini yoz</strong> - 1000 so'm ham.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -305,7 +305,7 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Budjet bo'limi",
+        "title": "Finlit.uz - Budjet bo'limi",
         "desc": "Byudjet va xarajatni boshqarish (o'zbekcha)",
         "host": "finlit.uz"
       },
@@ -370,12 +370,12 @@
         "q": "Yozuvning to'g'ri formati?",
         "a": [
           "Faqat summa",
-          "Sana — nima — summa — kategoriya",
+          "Sana - nima - summa - kategoriya",
           "Faqat kategoriya",
           "Oyiga bir marta"
         ],
         "c": 1,
-        "w": "To'rt element birga — keyin tahlil oson.",
+        "w": "To'rt element birga - keyin tahlil oson.",
         "level": "easy"
       },
       {
@@ -387,7 +387,7 @@
           "Yilda bir"
         ],
         "c": 2,
-        "w": "Darrov yozsang — esdan chiqmaydi.",
+        "w": "Darrov yozsang - esdan chiqmaydi.",
         "level": "practical"
       },
       {
@@ -399,7 +399,7 @@
           "Qog'oz arxiv"
         ],
         "c": 1,
-        "w": "Notes — eng tez; keyin Sheets/app.",
+        "w": "Notes - eng tez; keyin Sheets/app.",
         "level": "practical"
       },
       {
@@ -422,7 +422,7 @@
         "options": [
           "45000",
           "Ovqat",
-          "11.06 — Ovqat — 45 000 — Ovqat",
+          "11.06 - Ovqat - 45 000 - Ovqat",
           "ko'p pul ketdi"
         ],
         "correct": 2,
@@ -438,7 +438,7 @@
           "Farqi yo'q"
         ],
         "correct": 1,
-        "why": "Darrov yozish — aniqlik kaliti."
+        "why": "Darrov yozish - aniqlik kaliti."
       },
       {
         "type": "gap",
@@ -446,7 +446,7 @@
         "answers": [
           "aloqa"
         ],
-        "why": "Internet/telefon — Aloqa kategoriyasi.",
+        "why": "Internet/telefon - Aloqa kategoriyasi.",
         "hint": ""
       },
       {
@@ -459,7 +459,7 @@
           "Hech narsa"
         ],
         "correct": 1,
-        "why": "Sodda vosita — odat shakllanadi."
+        "why": "Sodda vosita - odat shakllanadi."
       },
       {
         "type": "gap",
@@ -478,7 +478,7 @@
           "540000",
           "540 000"
         ],
-        "why": "18 000 × 30 = 540 000 — mayda, lekin katta summa.",
+        "why": "18 000 × 30 = 540 000 - mayda, lekin katta summa.",
         "hint": ""
       },
       {
@@ -503,7 +503,7 @@
           "Kiyim"
         ],
         "correct": 1,
-        "why": "Internet/telefon — Aloqa."
+        "why": "Internet/telefon - Aloqa."
       }
     ],
     "vocab": [
@@ -520,7 +520,7 @@
       {
         "w": "kuzatuv (tracking)",
         "uz": "pul oqimini kuzatish",
-        "ex": "Tracking — birinchi qadam."
+        "ex": "Tracking - birinchi qadam."
       },
       {
         "w": "daromad",
@@ -536,8 +536,8 @@
     "grammar": [
       {
         "topic": "Yozuv formati",
-        "rule": "Sana — nima — summa — kategoriya.",
-        "ex": "11.06 — Taxi — 25 000 — Transport"
+        "rule": "Sana - nima - summa - kategoriya.",
+        "ex": "11.06 - Taxi - 25 000 - Transport"
       },
       {
         "topic": "Darrov yozish qoidasi",
@@ -555,11 +555,11 @@
     "zoom": "F2",
     "title": "Byudjet tuzish",
     "sub": "2-hafta",
-    "coord": "Byudjet · F2",
-    "eyebrow": "02 · Byudjet va 70/20/10",
+    "coord": "Byudjet / F2",
+    "eyebrow": "02 / Byudjet va 70/20/10",
     "mtitle": "Byudjet: pulni oldindan taqsimlash",
-    "lede": "Yozuvdan keyin — <strong>reja</strong>. Xarajatni 3 turga ajratib, daromadni <strong>70/20/10</strong> qoidasi bilan taqsimlaysan.",
-    "doc": "<div class='prose'><h3>Xarajatni 3 turga ajrat</h3><div class=\"exlist\"><div class=\"ex\"><b>Majburiy</b><span>ijara, ovqat, transport, internet, kommunal, oila</span></div><div class=\"ex\"><b>Kerakli, lekin kamaytirsa bo'ladigan</b><span>kiyim, kafe, taksi, buyurtma ovqat</span></div><div class=\"ex\"><b>Keraksiz</b><span>impulsiv xarid, foydasiz obuna, mayda lekin ko'p ketadigan</span></div></div><h3>70 / 20 / 10 qoidasi</h3><div class=\"chips\"><span class=\"chip t\">70% — yashash</span><span class=\"chip t\">20% — jamg'arma/zaxira</span><span class=\"chip t\">10% — rivojlanish (o'qish, kurs, kitob)</span></div><p>Misol: oyiga <strong>5 000 000 so'm</strong> bo'lsa →</p><div class='codewrap'><div class='codehead'><span class='fn'>70/20/10 taqsimot</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Yashash      70%  = 3 500 000 so'm\nJamg'arma    20%  = 1 000 000 so'm\nRivojlanish  10%  =   500 000 so'm</code></pre></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>20% qiyin bo'lsa</p><p>Jamg'armani <strong>5% dan boshla</strong>. Muhimi — summa emas, <strong>odat</strong>. Keyin asta oshirasan.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"o'zingga avval to'la\"</h3><p>Ko'pchilik aksincha qiladi: avval sarflaydi, oxirida <strong>qolganini</strong> jamg'arishga uriniadi — lekin odatda hech narsa qolmaydi. To'g'ri yo'l — maosh kelishi bilan jamg'armani <strong>birinchi</strong> ajratish.</p><div class='codewrap'><div class='codehead'><span class='fn'>Noto'g'ri vs to'g'ri tartib</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>❌ Daromad − xarajat = jamg'arma (qoladimi?)\n✓ Daromad − jamg'arma = sarflanadigan pul</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Avtomatlashtir</b><span>maosh kuni avtomatik o'tkazma sozla</span></div><div class=\"ex\"><b>Ko'rinmas qil</b><span>jamg'armani alohida hisobda saqla</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>70/20/10 ni mukammal bajarishga urinib, 1-oydayoq tashlab yuborish. Mukammallik emas — <strong>davomiylik</strong> muhim. 5% bo'lsa ham, har oy.</p></div></div></div>",
+    "lede": "Yozuvdan keyin - <strong>reja</strong>. Xarajatni 3 turga ajratib, daromadni <strong>70/20/10</strong> qoidasi bilan taqsimlaysan.",
+    "doc": "<div class='prose'><h3>Xarajatni 3 turga ajrat</h3><div class=\"exlist\"><div class=\"ex\"><b>Majburiy</b><span>ijara, ovqat, transport, internet, kommunal, oila</span></div><div class=\"ex\"><b>Kerakli, lekin kamaytirsa bo'ladigan</b><span>kiyim, kafe, taksi, buyurtma ovqat</span></div><div class=\"ex\"><b>Keraksiz</b><span>impulsiv xarid, foydasiz obuna, mayda lekin ko'p ketadigan</span></div></div><h3>70 / 20 / 10 qoidasi</h3><div class=\"chips\"><span class=\"chip t\">70% - yashash</span><span class=\"chip t\">20% - jamg'arma/zaxira</span><span class=\"chip t\">10% - rivojlanish (o'qish, kurs, kitob)</span></div><p>Misol: oyiga <strong>5 000 000 so'm</strong> bo'lsa -></p><div class='codewrap'><div class='codehead'><span class='fn'>70/20/10 taqsimot</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Yashash      70%  = 3 500 000 so'm\nJamg'arma    20%  = 1 000 000 so'm\nRivojlanish  10%  =   500 000 so'm</code></pre></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>20% qiyin bo'lsa</p><p>Jamg'armani <strong>5% dan boshla</strong>. Muhimi - summa emas, <strong>odat</strong>. Keyin asta oshirasan.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"o'zingga avval to'la\"</h3><p>Ko'pchilik aksincha qiladi: avval sarflaydi, oxirida <strong>qolganini</strong> jamg'arishga uriniadi - lekin odatda hech narsa qolmaydi. To'g'ri yo'l - maosh kelishi bilan jamg'armani <strong>birinchi</strong> ajratish.</p><div class='codewrap'><div class='codehead'><span class='fn'>Noto'g'ri vs to'g'ri tartib</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>❌ Daromad − xarajat = jamg'arma (qoladimi?)\n✓ Daromad − jamg'arma = sarflanadigan pul</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Avtomatlashtir</b><span>maosh kuni avtomatik o'tkazma sozla</span></div><div class=\"ex\"><b>Ko'rinmas qil</b><span>jamg'armani alohida hisobda saqla</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>70/20/10 ni mukammal bajarishga urinib, 1-oydayoq tashlab yuborish. Mukammallik emas - <strong>davomiylik</strong> muhim. 5% bo'lsa ham, har oy.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -580,7 +580,7 @@
       {
         "id": "fl2-4",
         "html": "Agar 20% qiyin bo'lsa, jamg'armani kichikroq foizdan boshladim",
-        "crit": "real foiz belgilangan (masalan 5–10%)"
+        "crit": "real foiz belgilangan (masalan 5-10%)"
       },
       {
         "id": "fl2-5",
@@ -592,21 +592,21 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Pul & Budjet",
+        "title": "Finlit.uz - Pul & Budjet",
         "desc": "Byudjet tuzish asoslari (o'zbekcha)",
         "host": "finlit.uz"
       },
       {
         "type": "doc",
         "url": "https://www.investopedia.com/guide-to-financial-literacy-4800530",
-        "title": "Investopedia — Budgeting",
+        "title": "Investopedia - Budgeting",
         "desc": "Byudjet va cash flow (maqolalar)",
         "host": "investopedia.com"
       },
       {
         "type": "doc",
         "url": "https://www.coursera.org/courses?query=personal%20finance",
-        "title": "Coursera — Personal Finance",
+        "title": "Coursera - Personal Finance",
         "desc": "Byudjet, maqsad, cash flow kurslari",
         "host": "coursera.org"
       }
@@ -662,7 +662,7 @@
           "ko'ngilochar"
         ],
         "c": 1,
-        "w": "20% — jamg'arma va zaxira.",
+        "w": "20% - jamg'arma va zaxira.",
         "level": "easy"
       },
       {
@@ -698,7 +698,7 @@
           "kutib turasiz"
         ],
         "c": 1,
-        "w": "Kichik foizdan boshla — odat muhim.",
+        "w": "Kichik foizdan boshla - odat muhim.",
         "level": "scenario"
       }
     ],
@@ -733,7 +733,7 @@
           "jamg'arma"
         ],
         "correct": 2,
-        "why": "Rejasiz xarid — keraksiz xarajat."
+        "why": "Rejasiz xarid - keraksiz xarajat."
       },
       {
         "type": "choice",
@@ -745,7 +745,7 @@
           "soliq"
         ],
         "correct": 1,
-        "why": "Byudjet — oldindan reja."
+        "why": "Byudjet - oldindan reja."
       },
       {
         "type": "gap",
@@ -787,7 +787,7 @@
           "jamg'arma"
         ],
         "correct": 2,
-        "why": "Ishlatilmasa — keraksiz xarajat."
+        "why": "Ishlatilmasa - keraksiz xarajat."
       },
       {
         "type": "choice",
@@ -799,7 +799,7 @@
           "soliq to'lash"
         ],
         "correct": 1,
-        "why": "Reja va nazorat — byudjetning maqsadi."
+        "why": "Reja va nazorat - byudjetning maqsadi."
       }
     ],
     "vocab": [
@@ -811,7 +811,7 @@
       {
         "w": "majburiy xarajat",
         "uz": "shart bo'lgan chiqim",
-        "ex": "Ijara — majburiy xarajat."
+        "ex": "Ijara - majburiy xarajat."
       },
       {
         "w": "keraksiz xarajat",
@@ -833,7 +833,7 @@
       {
         "topic": "70/20/10 qoidasi",
         "rule": "70% yashash, 20% jamg'arma, 10% rivojlanish.",
-        "ex": "5 mln → 3.5 / 1.0 / 0.5 mln"
+        "ex": "5 mln -> 3.5 / 1.0 / 0.5 mln"
       },
       {
         "topic": "Xarajat turlari",
@@ -851,11 +851,11 @@
     "zoom": "F3",
     "title": "Zaxira fond",
     "sub": "3-hafta",
-    "coord": "Zaxira · F3",
-    "eyebrow": "03 · Favqulodda zaxira jamg'arma",
+    "coord": "Zaxira / F3",
+    "eyebrow": "03 / Favqulodda zaxira jamg'arma",
     "mtitle": "Zaxira fond: birinchi katta maqsad",
-    "lede": "Birinchi katta maqsad — investitsiya emas, <strong>zaxira pul</strong>. Kasallik, ishsizlik, favqulodda holat uchun <strong>1 → 3 oylik xarajat</strong> miqdorida pul.",
-    "doc": "<div class='prose'><h3>Nega zaxira birinchi?</h3><p>Zaxira fondsiz har favqulodda holat seni <strong>qarzga</strong> majbur qiladi. Zaxira — bu \"xotirjamlik puli\".</p><h3>Qancha kerak?</h3><p>Oylik xarajatingga bog'liq. Misol: oyiga <strong>3 000 000 so'm</strong> xarajat qilsang →</p><div class='codewrap'><div class='codehead'><span class='fn'>Zaxira maqsadi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1 oylik zaxira = 3 000 000 so'm   (birinchi maqsad)\n3 oylik zaxira = 9 000 000 so'm   (keyingi maqsad)</code></pre></div><h3>Qayerda saqlanadi?</h3><div class=\"exlist\"><div class=\"ex\"><b>Alohida hisob/omonat</b><span>kundalik kartadan ajratilgan</span></div><div class=\"ex\"><b>Tez yechib olinadigan</b><span>investitsiya emas — kerak bo'lsa darrov olinadi</span></div><div class=\"ex\"><b>Daromad kelishi bilan</b><span>avval zaxiraga o'tkaz, keyin sarfla</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qoida: \"avval o'zingga to'la\"</p><p>Maosh kelishi bilan jamg'arma/zaxirani <strong>birinchi</strong> ajrat (qolganini sarfla) — aksincha emas.</p></div></div></div><div class='prose'><h3>Chuqurroq: nega aynan 3–6 oy?</h3><p>Zaxira fond ishni yo'qotsang yoki kasal bo'lsang, <strong>panikasiz</strong> yangi yo'l topish vaqtini beradi. 1 oylik — minimal himoya; 3–6 oylik — barqaror xotirjamlik. IT/freelance kabi notekis daromadda 6 oylik tavsiya etiladi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Bosqichma-bosqich maqsad</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1-bosqich: 1 oylik xarajat  (tezda)\n2-bosqich: 3 oylik xarajat\n3-bosqich: 6 oylik (notekis daromadda)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Zaxira fondni investitsiya yoki uzoq omonatga qo'yib, kerak bo'lganda yecholmaslik (yoki jarima to'lash). Zaxira — <strong>likvid</strong> bo'lishi shart: istalganda, jarimasiz olinsin.</p></div></div></div>",
+    "lede": "Birinchi katta maqsad - investitsiya emas, <strong>zaxira pul</strong>. Kasallik, ishsizlik, favqulodda holat uchun <strong>1 -> 3 oylik xarajat</strong> miqdorida pul.",
+    "doc": "<div class='prose'><h3>Nega zaxira birinchi?</h3><p>Zaxira fondsiz har favqulodda holat seni <strong>qarzga</strong> majbur qiladi. Zaxira - bu \"xotirjamlik puli\".</p><h3>Qancha kerak?</h3><p>Oylik xarajatingga bog'liq. Misol: oyiga <strong>3 000 000 so'm</strong> xarajat qilsang -></p><div class='codewrap'><div class='codehead'><span class='fn'>Zaxira maqsadi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1 oylik zaxira = 3 000 000 so'm   (birinchi maqsad)\n3 oylik zaxira = 9 000 000 so'm   (keyingi maqsad)</code></pre></div><h3>Qayerda saqlanadi?</h3><div class=\"exlist\"><div class=\"ex\"><b>Alohida hisob/omonat</b><span>kundalik kartadan ajratilgan</span></div><div class=\"ex\"><b>Tez yechib olinadigan</b><span>investitsiya emas - kerak bo'lsa darrov olinadi</span></div><div class=\"ex\"><b>Daromad kelishi bilan</b><span>avval zaxiraga o'tkaz, keyin sarfla</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qoida: \"avval o'zingga to'la\"</p><p>Maosh kelishi bilan jamg'arma/zaxirani <strong>birinchi</strong> ajrat (qolganini sarfla) - aksincha emas.</p></div></div></div><div class='prose'><h3>Chuqurroq: nega aynan 3-6 oy?</h3><p>Zaxira fond ishni yo'qotsang yoki kasal bo'lsang, <strong>panikasiz</strong> yangi yo'l topish vaqtini beradi. 1 oylik - minimal himoya; 3-6 oylik - barqaror xotirjamlik. IT/freelance kabi notekis daromadda 6 oylik tavsiya etiladi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Bosqichma-bosqich maqsad</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1-bosqich: 1 oylik xarajat  (tezda)\n2-bosqich: 3 oylik xarajat\n3-bosqich: 6 oylik (notekis daromadda)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Zaxira fondni investitsiya yoki uzoq omonatga qo'yib, kerak bo'lganda yecholmaslik (yoki jarima to'lash). Zaxira - <strong>likvid</strong> bo'lishi shart: istalganda, jarimasiz olinsin.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -875,7 +875,7 @@
       },
       {
         "id": "fl3-4",
-        "html": "\"Avval o'zingga to'la\" — maoshdan birinchi jamg'arma ajratdim",
+        "html": "\"Avval o'zingga to'la\" - maoshdan birinchi jamg'arma ajratdim",
         "crit": "kirim kelishi bilan ajratish odati"
       },
       {
@@ -888,21 +888,21 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Omonat/Depozit",
+        "title": "Finlit.uz - Omonat/Depozit",
         "desc": "Jamg'arma va omonat (o'zbekcha)",
         "host": "finlit.uz"
       },
       {
         "type": "doc",
         "url": "https://www.investopedia.com/terms/e/emergency_fund.asp",
-        "title": "Investopedia — Emergency Fund",
+        "title": "Investopedia - Emergency Fund",
         "desc": "Zaxira fond tushunchasi",
         "host": "investopedia.com"
       },
       {
         "type": "doc",
         "url": "https://www.khanacademy.org/college-careers-more/financial-literacy",
-        "title": "Khan Academy — Saving",
+        "title": "Khan Academy - Saving",
         "desc": "Jamg'arma asoslari",
         "host": "khanacademy.org"
       },
@@ -965,14 +965,14 @@
           "biznes"
         ],
         "c": 1,
-        "w": "Avval zaxira — keyin investitsiya.",
+        "w": "Avval zaxira - keyin investitsiya.",
         "level": "easy"
       },
       {
         "q": "Zaxira fond qancha bo'lishi tavsiya etiladi?",
         "a": [
           "1 kunlik",
-          "1 → 3 oylik xarajat",
+          "1 -> 3 oylik xarajat",
           "10 yillik",
           "kerak emas"
         ],
@@ -1047,7 +1047,7 @@
           "jamg'armani oshiradi"
         ],
         "correct": 1,
-        "why": "Zaxira — qarzdan himoya."
+        "why": "Zaxira - qarzdan himoya."
       },
       {
         "type": "gap",
@@ -1086,7 +1086,7 @@
           "valyutadan"
         ],
         "correct": 1,
-        "why": "Zaxira — qarzsiz qiyinchilikni o'tash."
+        "why": "Zaxira - qarzsiz qiyinchilikni o'tash."
       }
     ],
     "vocab": [
@@ -1103,7 +1103,7 @@
       {
         "w": "favqulodda holat",
         "uz": "kutilmagan vaziyat",
-        "ex": "Kasallik — favqulodda holat."
+        "ex": "Kasallik - favqulodda holat."
       },
       {
         "w": "likvidlik",
@@ -1119,13 +1119,13 @@
     "grammar": [
       {
         "topic": "Zaxira maqsadi",
-        "rule": "1 → 3 oylik xarajat miqdorida.",
-        "ex": "Oylik 3 mln → 9 mln (3 oylik)"
+        "rule": "1 -> 3 oylik xarajat miqdorida.",
+        "ex": "Oylik 3 mln -> 9 mln (3 oylik)"
       },
       {
         "topic": "Saqlash joyi",
         "rule": "Tez yechiladigan, xavfsiz hisob.",
-        "ex": "Investitsiya emas — likvid omonat."
+        "ex": "Investitsiya emas - likvid omonat."
       },
       {
         "topic": "Avval o'zingga to'la",
@@ -1136,13 +1136,13 @@
   },
   {
     "zoom": "F4",
-    "title": "Qarz · Kredit · Foiz",
+    "title": "Qarz / Kredit / Foiz",
     "sub": "4-hafta",
-    "coord": "Kredit · F4",
-    "eyebrow": "04 · Qarz, kredit va foiz",
+    "coord": "Kredit / F4",
+    "eyebrow": "04 / Qarz, kredit va foiz",
     "mtitle": "Qarzni aqlli boshqarish",
-    "lede": "Qarz — yomon emas, lekin <strong>foiz va qaytarish rejasi</strong>ni hisoblamasdan olish xavfli. Bu yerda foiz, oylik to'lov va inflyatsiyani tushunasan.",
-    "doc": "<div class='prose'><h3>Foiz nima?</h3><p>Foiz — qarz uchun to'lanadigan \"ijara haqi\". <strong>Yillik foiz stavkasi (APR)</strong> qarzning haqiqiy narxini ko'rsatadi.</p><div class=\"exlist\"><div class=\"ex\"><b>Asosiy qarz (principal)</b><span>olingan summa</span></div><div class=\"ex\"><b>Foiz (interest)</b><span>qarz ustiga to'lov</span></div><div class=\"ex\"><b>Muddat</b><span>necha oyda qaytariladi</span></div></div><h3>Oddiy hisob (misol)</h3><div class='codewrap'><div class='codehead'><span class='fn'>Yillik foiz misoli</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Qarz       = 10 000 000 so'm\nYillik foiz= 24%\n1 yillik foiz ≈ 10 000 000 × 0.24 = 2 400 000 so'm\nJami qaytarish ≈ 12 400 000 so'm (taxminiy)</code></pre></div><h3>Inflyatsiya</h3><p>Inflyatsiya — narxlarning oshishi; pulning <strong>qadrsizlanishi</strong>. Shuning uchun \"matras ostidagi\" pul har yili kuchsizlanadi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qarzdan oldin</p><p>Doim hisobla: <strong>oylik to'lov</strong> daromadingga sig'adimi? <strong>Jami qaytarish</strong> qancha? Maqsad foydalimi (uy, ta'lim) yoki keraksizmi (impulsiv xarid)? Foiz noma'lum qarzdan qoch.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"yaxshi qarz\" va \"yomon qarz\"</h3><div class=\"exlist\"><div class=\"ex\"><b>Yaxshi qarz</b><span>qiymat oshiradi: ta'lim, kasb, ishlab chiqarish vositasi</span></div><div class=\"ex\"><b>Yomon qarz</b><span>tez qadrsizlanadigan narsaga, yuqori foizda: impulsiv xarid</span></div></div><p>Yana bir muhim narsa — <strong>murakkab foiz qarzda senga qarshi ishlaydi</strong>. To'lanmagan foiz ustiga foiz qo'shiladi va qarz tez o'sadi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Foizli qarz qanday o'sadi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>10 mln, oyiga 3% (to'lanmasa):\n1-oy: 10.30 mln\n6-oy: ~11.94 mln\n12-oy: ~14.26 mln  (to'lamasang)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat \"oylik to'lov kichik\"ga qarab qarz olish. Kichik oylik to'lov ko'pincha <strong>uzoq muddat + katta jami foiz</strong> degani. Doim JAMI qaytarishni hisobla.</p></div></div></div>",
+    "lede": "Qarz - yomon emas, lekin <strong>foiz va qaytarish rejasi</strong>ni hisoblamasdan olish xavfli. Bu yerda foiz, oylik to'lov va inflyatsiyani tushunasan.",
+    "doc": "<div class='prose'><h3>Foiz nima?</h3><p>Foiz - qarz uchun to'lanadigan \"ijara haqi\". <strong>Yillik foiz stavkasi (APR)</strong> qarzning haqiqiy narxini ko'rsatadi.</p><div class=\"exlist\"><div class=\"ex\"><b>Asosiy qarz (principal)</b><span>olingan summa</span></div><div class=\"ex\"><b>Foiz (interest)</b><span>qarz ustiga to'lov</span></div><div class=\"ex\"><b>Muddat</b><span>necha oyda qaytariladi</span></div></div><h3>Oddiy hisob (misol)</h3><div class='codewrap'><div class='codehead'><span class='fn'>Yillik foiz misoli</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Qarz       = 10 000 000 so'm\nYillik foiz= 24%\n1 yillik foiz ≈ 10 000 000 × 0.24 = 2 400 000 so'm\nJami qaytarish ≈ 12 400 000 so'm (taxminiy)</code></pre></div><h3>Inflyatsiya</h3><p>Inflyatsiya - narxlarning oshishi; pulning <strong>qadrsizlanishi</strong>. Shuning uchun \"matras ostidagi\" pul har yili kuchsizlanadi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qarzdan oldin</p><p>Doim hisobla: <strong>oylik to'lov</strong> daromadingga sig'adimi? <strong>Jami qaytarish</strong> qancha? Maqsad foydalimi (uy, ta'lim) yoki keraksizmi (impulsiv xarid)? Foiz noma'lum qarzdan qoch.</p></div></div></div><div class='prose'><h3>Chuqurroq: \"yaxshi qarz\" va \"yomon qarz\"</h3><div class=\"exlist\"><div class=\"ex\"><b>Yaxshi qarz</b><span>qiymat oshiradi: ta'lim, kasb, ishlab chiqarish vositasi</span></div><div class=\"ex\"><b>Yomon qarz</b><span>tez qadrsizlanadigan narsaga, yuqori foizda: impulsiv xarid</span></div></div><p>Yana bir muhim narsa - <strong>murakkab foiz qarzda senga qarshi ishlaydi</strong>. To'lanmagan foiz ustiga foiz qo'shiladi va qarz tez o'sadi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Foizli qarz qanday o'sadi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>10 mln, oyiga 3% (to'lanmasa):\n1-oy: 10.30 mln\n6-oy: ~11.94 mln\n12-oy: ~14.26 mln  (to'lamasang)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat \"oylik to'lov kichik\"ga qarab qarz olish. Kichik oylik to'lov ko'pincha <strong>uzoq muddat + katta jami foiz</strong> degani. Doim JAMI qaytarishni hisobla.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1175,7 +1175,7 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Kredit",
+        "title": "Finlit.uz - Kredit",
         "desc": "Kredit va foiz (o'zbekcha)",
         "host": "finlit.uz"
       },
@@ -1189,7 +1189,7 @@
       {
         "type": "doc",
         "url": "https://www.investopedia.com/terms/a/apr.asp",
-        "title": "Investopedia — APR",
+        "title": "Investopedia - APR",
         "desc": "Yillik foiz stavkasi tushunchasi",
         "host": "investopedia.com"
       },
@@ -1224,7 +1224,7 @@
       "variants": [
         {
           "title": "Qarz tahlili - Household Plan",
-          "desc": "Qarz · Kredit · Foiz mavzusini oila yoki shaxsiy byudjetga qo'llab ko'r.",
+          "desc": "Qarz / Kredit / Foiz mavzusini oila yoki shaxsiy byudjetga qo'llab ko'r.",
           "deliverables": [
             "Income/expense jadvali",
             "Risk note",
@@ -1252,11 +1252,11 @@
           "soliq"
         ],
         "c": 1,
-        "w": "Foiz — qarz ustiga to'lov.",
+        "w": "Foiz - qarz ustiga to'lov.",
         "level": "easy"
       },
       {
-        "q": "10 mln, yillik 24% — 1 yillik foiz taxminan?",
+        "q": "10 mln, yillik 24% - 1 yillik foiz taxminan?",
         "a": [
           "240 000",
           "2 400 000",
@@ -1276,7 +1276,7 @@
           "yo'qotadi"
         ],
         "c": 1,
-        "w": "Narx oshadi — pul qadrsizlanadi.",
+        "w": "Narx oshadi - pul qadrsizlanadi.",
         "level": "practical"
       },
       {
@@ -1288,7 +1288,7 @@
           "faqat bank nomi"
         ],
         "c": 1,
-        "w": "To'lov, jami va maqsad — uchalasi.",
+        "w": "To'lov, jami va maqsad - uchalasi.",
         "level": "scenario"
       }
     ],
@@ -1334,7 +1334,7 @@
           "apr",
           "APR"
         ],
-        "why": "APR — Annual Percentage Rate.",
+        "why": "APR - Annual Percentage Rate.",
         "hint": ""
       },
       {
@@ -1362,7 +1362,7 @@
         "q": "Yuqori foizli impulsiv kredit (kerakmas narsaga):",
         "options": [
           "oqilona",
-          "xavfli — qoching",
+          "xavfli - qoching",
           "majburiy",
           "foydali"
         ],
@@ -1379,7 +1379,7 @@
           "ikki baravar"
         ],
         "correct": 1,
-        "why": "Narx oshadi — pul qadrsizlanadi."
+        "why": "Narx oshadi - pul qadrsizlanadi."
       }
     ],
     "vocab": [
@@ -1418,7 +1418,7 @@
       {
         "topic": "Qarzdan oldin 3 savol",
         "rule": "Oylik to'lov? Jami qaytarish? Maqsad?",
-        "ex": "Foiz noma'lum bo'lsa — olma."
+        "ex": "Foiz noma'lum bo'lsa - olma."
       },
       {
         "topic": "Inflyatsiya",
@@ -1431,11 +1431,11 @@
     "zoom": "F5",
     "title": "Moliyaviy xavfsizlik",
     "sub": "Himoya",
-    "coord": "Xavfsizlik · F5",
-    "eyebrow": "05 · Firibgarlikdan himoya",
+    "coord": "Xavfsizlik / F5",
+    "eyebrow": "05 / Firibgarlikdan himoya",
     "mtitle": "Pulingni firibgarlikdan himoya qil",
-    "lede": "Moliyaviy savodxonlikning eng amaliy qismi — <strong>firibgarlikdan ehtiyot bo'lish</strong>. Karta ma'lumoti, \"tez boyish\" va'dalari, soxta investitsiyalar — eng katta xavf.",
-    "doc": "<div class='prose'><h3>Eng keng tarqalgan firibgarliklar</h3><div class=\"exlist\"><div class=\"ex\"><b>Karta/SMS-kod so'rash</b><span>bank hech qachon to'liq karta + kodni so'ramaydi</span></div><div class=\"ex\"><b>\"Tez va kafolatli boyish\"</b><span>yuqori daromad + nol xavf — bu yolg'on</span></div><div class=\"ex\"><b>Soxta investitsiya / piramida</b><span>yangi pul bilan eski to'lov — qulaydi</span></div><div class=\"ex\"><b>Shoshiltirish</b><span>\"hozir to'lamasang yo'qotasan\" — bosim belgisi</span></div></div><h3>Himoya qoidalari</h3><div class=\"chips\"><span class=\"chip t\">Karta kodi/CVV/SMS — hech kimga</span><span class=\"chip t\">Rasmiy ilova/sayt</span><span class=\"chip t\">Shoshilma — tekshir</span><span class=\"chip t\">Yuqori daromad = yuqori xavf</span></div><h3>Kafolatli foyda yo'q</h3><p>Hech bir haqiqiy investitsiya \"kafolatli yuqori foyda\" bermaydi. Kim shunday va'da bersa — bu <strong>qizil bayroq</strong>.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Oltin qoida</p><p>Investitsiya yoki kredit bo'yicha maslahat berayotgan odamga <strong>darrov ishonma</strong>. Avval asosiy tushunchani <strong>mustaqil tekshir</strong> (Finlit.uz, Markaziy bank).</p></div></div></div><div class='prose'><h3>Chuqurroq: firibgar qanday ishontiradi?</h3><p>Firibgarlar mantiqqa emas, <strong>his-tuyg'uga</strong> ta'sir qiladi: ochko'zlik (\"tez boyish\"), qo'rquv (\"hisobing bloklanadi\"), shoshilinch (\"faqat bugun\"). Shu uchta tuyg'u paydo bo'lsa — <strong>to'xta</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>Ochko'zlik</b><span>\"kafolatli 2 baravar foyda\"</span></div><div class=\"ex\"><b>Qo'rquv</b><span>\"kartangiz bloklanadi, kod yuboring\"</span></div><div class=\"ex\"><b>Shoshilinch</b><span>\"5 daqiqa ichida to'lang\"</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Menga bunday bo'lmaydi\" deb o'ylash. Firibgarlik har kimga — o'qimishliga ham — bo'lishi mumkin. Qoida oddiy: <strong>kod/parol — hech kimga</strong>, va shubhali bo'lsa rasmiy raqamga (bank ilovasidagi) o'zing qo'ng'iroq qil.</p></div></div></div>",
+    "lede": "Moliyaviy savodxonlikning eng amaliy qismi - <strong>firibgarlikdan ehtiyot bo'lish</strong>. Karta ma'lumoti, \"tez boyish\" va'dalari, soxta investitsiyalar - eng katta xavf.",
+    "doc": "<div class='prose'><h3>Eng keng tarqalgan firibgarliklar</h3><div class=\"exlist\"><div class=\"ex\"><b>Karta/SMS-kod so'rash</b><span>bank hech qachon to'liq karta + kodni so'ramaydi</span></div><div class=\"ex\"><b>\"Tez va kafolatli boyish\"</b><span>yuqori daromad + nol xavf - bu yolg'on</span></div><div class=\"ex\"><b>Soxta investitsiya / piramida</b><span>yangi pul bilan eski to'lov - qulaydi</span></div><div class=\"ex\"><b>Shoshiltirish</b><span>\"hozir to'lamasang yo'qotasan\" - bosim belgisi</span></div></div><h3>Himoya qoidalari</h3><div class=\"chips\"><span class=\"chip t\">Karta kodi/CVV/SMS - hech kimga</span><span class=\"chip t\">Rasmiy ilova/sayt</span><span class=\"chip t\">Shoshilma - tekshir</span><span class=\"chip t\">Yuqori daromad = yuqori xavf</span></div><h3>Kafolatli foyda yo'q</h3><p>Hech bir haqiqiy investitsiya \"kafolatli yuqori foyda\" bermaydi. Kim shunday va'da bersa - bu <strong>qizil bayroq</strong>.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Oltin qoida</p><p>Investitsiya yoki kredit bo'yicha maslahat berayotgan odamga <strong>darrov ishonma</strong>. Avval asosiy tushunchani <strong>mustaqil tekshir</strong> (Finlit.uz, Markaziy bank).</p></div></div></div><div class='prose'><h3>Chuqurroq: firibgar qanday ishontiradi?</h3><p>Firibgarlar mantiqqa emas, <strong>his-tuyg'uga</strong> ta'sir qiladi: ochko'zlik (\"tez boyish\"), qo'rquv (\"hisobing bloklanadi\"), shoshilinch (\"faqat bugun\"). Shu uchta tuyg'u paydo bo'lsa - <strong>to'xta</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>Ochko'zlik</b><span>\"kafolatli 2 baravar foyda\"</span></div><div class=\"ex\"><b>Qo'rquv</b><span>\"kartangiz bloklanadi, kod yuboring\"</span></div><div class=\"ex\"><b>Shoshilinch</b><span>\"5 daqiqa ichida to'lang\"</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Menga bunday bo'lmaydi\" deb o'ylash. Firibgarlik har kimga - o'qimishliga ham - bo'lishi mumkin. Qoida oddiy: <strong>kod/parol - hech kimga</strong>, va shubhali bo'lsa rasmiy raqamga (bank ilovasidagi) o'zing qo'ng'iroq qil.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1445,13 +1445,13 @@
       },
       {
         "id": "fl5-2",
-        "html": "\"Kafolatli yuqori foyda\" — firibgarlik belgisi ekanini tushundim",
+        "html": "\"Kafolatli yuqori foyda\" - firibgarlik belgisi ekanini tushundim",
         "crit": "qizil bayroqlarni sanay olasan"
       },
       {
         "id": "fl5-3",
         "html": "Piramida (Ponzi) sxemasi qanday ishlashini o'rgandim",
-        "crit": "yangi pul → eski to'lov mantig'ini bilasan"
+        "crit": "yangi pul -> eski to'lov mantig'ini bilasan"
       },
       {
         "id": "fl5-4",
@@ -1468,7 +1468,7 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Moliyaviy xavfsizlik",
+        "title": "Finlit.uz - Moliyaviy xavfsizlik",
         "desc": "Firibgarlikdan himoya (o'zbekcha)",
         "host": "finlit.uz"
       },
@@ -1482,7 +1482,7 @@
       {
         "type": "doc",
         "url": "https://www.investopedia.com/terms/p/ponzischeme.asp",
-        "title": "Investopedia — Ponzi Scheme",
+        "title": "Investopedia - Ponzi Scheme",
         "desc": "Piramida sxemasi tushunchasi",
         "host": "investopedia.com"
       }
@@ -1538,11 +1538,11 @@
           "hech narsa"
         ],
         "c": 1,
-        "w": "To'liq karta + kod so'rash — firibgarlik.",
+        "w": "To'liq karta + kod so'rash - firibgarlik.",
         "level": "easy"
       },
       {
-        "q": "\"Kafolatli yuqori foyda\" — bu:",
+        "q": "\"Kafolatli yuqori foyda\" - bu:",
         "a": [
           "ajoyib imkoniyat",
           "firibgarlik belgisi",
@@ -1550,7 +1550,7 @@
           "soliq"
         ],
         "c": 1,
-        "w": "Kafolatli yuqori foyda — yolg'on.",
+        "w": "Kafolatli yuqori foyda - yolg'on.",
         "level": "practical"
       },
       {
@@ -1562,7 +1562,7 @@
           "davlat"
         ],
         "c": 1,
-        "w": "Yangi pul tugasa — qulaydi.",
+        "w": "Yangi pul tugasa - qulaydi.",
         "level": "practical"
       },
       {
@@ -1574,7 +1574,7 @@
           "ishonib ber"
         ],
         "c": 1,
-        "w": "Shoshilma — avval tekshir.",
+        "w": "Shoshilma - avval tekshir.",
         "level": "scenario"
       }
     ],
@@ -1584,7 +1584,7 @@
         "q": "Notanish odam SMS-kodingizni so'rasa:",
         "options": [
           "aytasiz",
-          "bermaysiz — bu firibgarlik",
+          "bermaysiz - bu firibgarlik",
           "yarmini aytasiz",
           "keyin aytasiz"
         ],
@@ -1593,7 +1593,7 @@
       },
       {
         "type": "choice",
-        "q": "\"3 kunda pulingizni 2 baravar qilamiz\" — bu:",
+        "q": "\"3 kunda pulingizni 2 baravar qilamiz\" - bu:",
         "options": [
           "yaxshi investitsiya",
           "firibgarlik (qizil bayroq)",
@@ -1601,7 +1601,7 @@
           "davlat dasturi"
         ],
         "correct": 1,
-        "why": "Kafolatli tez boyish — yolg'on."
+        "why": "Kafolatli tez boyish - yolg'on."
       },
       {
         "type": "choice",
@@ -1613,7 +1613,7 @@
           "foydali"
         ],
         "correct": 1,
-        "why": "Shoshiltirish — manipulyatsiya belgisi."
+        "why": "Shoshiltirish - manipulyatsiya belgisi."
       },
       {
         "type": "choice",
@@ -1673,7 +1673,7 @@
           "SMS bilan yuboriladi"
         ],
         "correct": 1,
-        "why": "CVV — maxfiy, hech kimga berilmaydi."
+        "why": "CVV - maxfiy, hech kimga berilmaydi."
       }
     ],
     "vocab": [
@@ -1690,7 +1690,7 @@
       {
         "w": "qizil bayroq",
         "uz": "ogohlantiruvchi belgi",
-        "ex": "Kafolatli foyda — qizil bayroq."
+        "ex": "Kafolatli foyda - qizil bayroq."
       },
       {
         "w": "CVV / SMS-kod",
@@ -1706,7 +1706,7 @@
     "grammar": [
       {
         "topic": "Maxfiy ma'lumot",
-        "rule": "Karta + CVV + SMS-kod — hech kimga.",
+        "rule": "Karta + CVV + SMS-kod - hech kimga.",
         "ex": "Bank ularni so'ramaydi."
       },
       {
@@ -1723,13 +1723,13 @@
   },
   {
     "zoom": "F6",
-    "title": "Bank · Karta · Omonat",
+    "title": "Bank / Karta / Omonat",
     "sub": "Vositalar",
-    "coord": "Bank · F6",
-    "eyebrow": "06 · Bank xizmatlari",
+    "coord": "Bank / F6",
+    "eyebrow": "06 / Bank xizmatlari",
     "mtitle": "Bank, karta va omonatlardan to'g'ri foydalanish",
-    "lede": "Kundalik moliya vositalari: <strong>debet/kredit karta, omonat, o'tkazmalar</strong>. Ularning farqi va xarajatlarini bilish — keraksiz to'lovlardan saqlaydi.",
-    "doc": "<div class='prose'><h3>Debet va kredit karta farqi</h3><div class=\"exlist\"><div class=\"ex\"><b>Debet karta</b><span>o'z pulingni sarflaysan (hisobingdagi)</span></div><div class=\"ex\"><b>Kredit karta</b><span>bank pulini qarz olasan — foiz bor</span></div></div><h3>Omonat (depozit)</h3><p>Pulni bankda saqlab, <strong>foiz</strong> olasan. Turlari: muddatli (yuqori foiz, muddatgacha yechmaysan) va talab qilinguncha (past foiz, istalganda yechasan).</p><div class=\"chips\"><span class=\"chip\">Muddatli omonat</span><span class=\"chip\">Talab qilinguncha</span><span class=\"chip\">Jamg'arma hisobi</span></div><h3>Yashirin xarajatlar</h3><p>Komissiya, oylik xizmat haqi, bankomatda yechish to'lovi, valyuta ayirboshlash farqi — bularni <strong>shartnomada</strong> oldindan o'qi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Zaxira fondni <strong>muddatli omonatda</strong> emas, tez yechiladigan hisobda saqla. Uzoq jamg'armani esa foiz beradigan omonatda.</p></div></div></div><div class='prose'><h3>Chuqurroq: foiz va inflyatsiya</h3><p>Omonat foizi foydali, lekin uni <strong>inflyatsiya bilan solishtir</strong>. Agar omonat 14%, inflyatsiya 12% bo'lsa — real foyda atigi ~2%. Foiz inflyatsiyadan past bo'lsa, pul aslida qadrsizlanadi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Real foyda</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Nominal foiz   = 14%\nInflyatsiya    = 12%\nReal foyda ≈ 14% − 12% = 2%</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Nominal foiz</b><span>e'lon qilingan foiz</span></div><div class=\"ex\"><b>Real foyda</b><span>inflyatsiya chiqarib tashlangani</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat foiz raqamiga qarash. Yuqori foiz har doim ham foyda emas — inflyatsiya va shartlarni (muddatli yechib bo'lmaslik, jarima) ham tekshir.</p></div></div></div>",
+    "lede": "Kundalik moliya vositalari: <strong>debet/kredit karta, omonat, o'tkazmalar</strong>. Ularning farqi va xarajatlarini bilish - keraksiz to'lovlardan saqlaydi.",
+    "doc": "<div class='prose'><h3>Debet va kredit karta farqi</h3><div class=\"exlist\"><div class=\"ex\"><b>Debet karta</b><span>o'z pulingni sarflaysan (hisobingdagi)</span></div><div class=\"ex\"><b>Kredit karta</b><span>bank pulini qarz olasan - foiz bor</span></div></div><h3>Omonat (depozit)</h3><p>Pulni bankda saqlab, <strong>foiz</strong> olasan. Turlari: muddatli (yuqori foiz, muddatgacha yechmaysan) va talab qilinguncha (past foiz, istalganda yechasan).</p><div class=\"chips\"><span class=\"chip\">Muddatli omonat</span><span class=\"chip\">Talab qilinguncha</span><span class=\"chip\">Jamg'arma hisobi</span></div><h3>Yashirin xarajatlar</h3><p>Komissiya, oylik xizmat haqi, bankomatda yechish to'lovi, valyuta ayirboshlash farqi - bularni <strong>shartnomada</strong> oldindan o'qi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Zaxira fondni <strong>muddatli omonatda</strong> emas, tez yechiladigan hisobda saqla. Uzoq jamg'armani esa foiz beradigan omonatda.</p></div></div></div><div class='prose'><h3>Chuqurroq: foiz va inflyatsiya</h3><p>Omonat foizi foydali, lekin uni <strong>inflyatsiya bilan solishtir</strong>. Agar omonat 14%, inflyatsiya 12% bo'lsa - real foyda atigi ~2%. Foiz inflyatsiyadan past bo'lsa, pul aslida qadrsizlanadi.</p><div class='codewrap'><div class='codehead'><span class='fn'>Real foyda</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Nominal foiz   = 14%\nInflyatsiya    = 12%\nReal foyda ≈ 14% − 12% = 2%</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Nominal foiz</b><span>e'lon qilingan foiz</span></div><div class=\"ex\"><b>Real foyda</b><span>inflyatsiya chiqarib tashlangani</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Faqat foiz raqamiga qarash. Yuqori foiz har doim ham foyda emas - inflyatsiya va shartlarni (muddatli yechib bo'lmaslik, jarima) ham tekshir.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -1762,7 +1762,7 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — To'lov va o'tkazmalar",
+        "title": "Finlit.uz - To'lov va o'tkazmalar",
         "desc": "Karta, omonat, o'tkazmalar (o'zbekcha)",
         "host": "finlit.uz"
       },
@@ -1776,7 +1776,7 @@
       {
         "type": "doc",
         "url": "https://www.investopedia.com/terms/c/certificateofdeposit.asp",
-        "title": "Investopedia — Deposits",
+        "title": "Investopedia - Deposits",
         "desc": "Omonat turlari",
         "host": "investopedia.com"
       }
@@ -1804,7 +1804,7 @@
       "variants": [
         {
           "title": "Hisob va karta auditi - Household Plan",
-          "desc": "Bank · Karta · Omonat mavzusini oila yoki shaxsiy byudjetga qo'llab ko'r.",
+          "desc": "Bank / Karta / Omonat mavzusini oila yoki shaxsiy byudjetga qo'llab ko'r.",
           "deliverables": [
             "Income/expense jadvali",
             "Risk note",
@@ -1832,7 +1832,7 @@
           "naqd"
         ],
         "c": 1,
-        "w": "Kredit karta — qarz, foiz bor.",
+        "w": "Kredit karta - qarz, foiz bor.",
         "level": "easy"
       },
       {
@@ -1844,7 +1844,7 @@
           "hech narsa"
         ],
         "c": 0,
-        "w": "Omonat — saqlash + foiz.",
+        "w": "Omonat - saqlash + foiz.",
         "level": "practical"
       },
       {
@@ -1883,7 +1883,7 @@
           "obligatsiya"
         ],
         "correct": 1,
-        "why": "Debet — o'z hisobingdan."
+        "why": "Debet - o'z hisobingdan."
       },
       {
         "type": "choice",
@@ -1895,7 +1895,7 @@
           "naqd"
         ],
         "correct": 1,
-        "why": "Muddatli omonat — yuqori foiz."
+        "why": "Muddatli omonat - yuqori foiz."
       },
       {
         "type": "choice",
@@ -1931,7 +1931,7 @@
           "lizing"
         ],
         "correct": 1,
-        "why": "Debet — o'z hisob puling."
+        "why": "Debet - o'z hisob puling."
       },
       {
         "type": "choice",
@@ -1943,7 +1943,7 @@
           "kredit"
         ],
         "correct": 1,
-        "why": "Muddatli omonat — yuqori foiz."
+        "why": "Muddatli omonat - yuqori foiz."
       },
       {
         "type": "choice",
@@ -1998,7 +1998,7 @@
       },
       {
         "topic": "Yashirin to'lovlar",
-        "rule": "Komissiya, xizmat haqi — shartnomada.",
+        "rule": "Komissiya, xizmat haqi - shartnomada.",
         "ex": "Oldindan o'qi."
       }
     ]
@@ -2007,11 +2007,11 @@
     "zoom": "F7",
     "title": "Investitsiya asoslari",
     "sub": "2-oy",
-    "coord": "Investitsiya · F7",
-    "eyebrow": "07 · Investitsiya asoslari",
+    "coord": "Investitsiya / F7",
+    "eyebrow": "07 / Investitsiya asoslari",
     "mtitle": "Pulni ko'paytirish: investitsiya asoslari",
-    "lede": "Zaxira tayyor bo'lgach — <strong>investitsiya</strong>. Omonat, obligatsiya, aksiya, ETF nima ekanini va <strong>xavf-foyda</strong> muvozanatini o'rganasan.",
-    "doc": "<div class='prose'><h3>Asosiy vositalar</h3><div class=\"exlist\"><div class=\"ex\"><b>Omonat / depozit</b><span>past xavf, past foyda — eng xavfsiz</span></div><div class=\"ex\"><b>Obligatsiya (bond)</b><span>qarz vositasi, barqaror foiz</span></div><div class=\"ex\"><b>Aksiya (stock)</b><span>kompaniya ulushi, yuqori xavf/foyda</span></div><div class=\"ex\"><b>ETF / fond</b><span>ko'p aksiya to'plami — diversifikatsiya</span></div></div><h3>Xavf va foyda</h3><p><strong>Yuqori foyda = yuqori xavf</strong>. \"Kafolatli yuqori foyda\" yo'q. Aksiya qiymati tushishi ham mumkin.</p><h3>Asosiy tamoyillar</h3><div class=\"chips\"><span class=\"chip t\">Faqat ortiqcha pulni investitsiya qil</span><span class=\"chip t\">Diversifikatsiya (bir savatga emas)</span><span class=\"chip t\">Uzoq muddat</span><span class=\"chip t\">Tushunmasang — kirma</span></div><h3>Murakkab foiz (compound)</h3><p>Foyda ustiga foyda — vaqt bilan kuchayadi. Shuning uchun <strong>erta va muntazam</strong> boshlash muhim.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Avval zaxira</p><p>Investitsiyadan oldin <strong>zaxira fond</strong> va <strong>yuqori foizli qarzsizlik</strong> bo'lishi kerak. Qarzni yopish ko'pincha eng yaxshi \"investitsiya\".</p></div></div></div><div class='prose'><h3>Chuqurroq: murakkab foizning kuchi</h3><p>Erta boshlash eng katta afzallik. Misol (taxminiy, yiliga ~15%):</p><div class='codewrap'><div class='codehead'><span class='fn'>Erta vs kech boshlash</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Oyiga 500 000 so'm, ~15%/yil:\n10 yil  → ~13.9 mln × ... (foyda o'sadi)\n20 yil  → bir necha barobar ko'p\nVaqt — compound'ning eng kuchli omili</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Diversifikatsiya</b><span>turli aktivlarga bo'l (bir savatga emas)</span></div><div class=\"ex\"><b>Uzoq muddat</b><span>qisqa tebranishga panika qilma</span></div><div class=\"ex\"><b>Faqat ortiqcha pul</b><span>zaxira va qarzsizlikdan keyin</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Tezda boyitamiz\" va'dasiga ergashish yoki tushunmagan narsaga (kripto, hype) hamma pulni tikish. Qoida: <strong>tushunmasang — kirma</strong>, va yo'qotsang chidaydigan summadan oshirma.</p></div></div></div>",
+    "lede": "Zaxira tayyor bo'lgach - <strong>investitsiya</strong>. Omonat, obligatsiya, aksiya, ETF nima ekanini va <strong>xavf-foyda</strong> muvozanatini o'rganasan.",
+    "doc": "<div class='prose'><h3>Asosiy vositalar</h3><div class=\"exlist\"><div class=\"ex\"><b>Omonat / depozit</b><span>past xavf, past foyda - eng xavfsiz</span></div><div class=\"ex\"><b>Obligatsiya (bond)</b><span>qarz vositasi, barqaror foiz</span></div><div class=\"ex\"><b>Aksiya (stock)</b><span>kompaniya ulushi, yuqori xavf/foyda</span></div><div class=\"ex\"><b>ETF / fond</b><span>ko'p aksiya to'plami - diversifikatsiya</span></div></div><h3>Xavf va foyda</h3><p><strong>Yuqori foyda = yuqori xavf</strong>. \"Kafolatli yuqori foyda\" yo'q. Aksiya qiymati tushishi ham mumkin.</p><h3>Asosiy tamoyillar</h3><div class=\"chips\"><span class=\"chip t\">Faqat ortiqcha pulni investitsiya qil</span><span class=\"chip t\">Diversifikatsiya (bir savatga emas)</span><span class=\"chip t\">Uzoq muddat</span><span class=\"chip t\">Tushunmasang - kirma</span></div><h3>Murakkab foiz (compound)</h3><p>Foyda ustiga foyda - vaqt bilan kuchayadi. Shuning uchun <strong>erta va muntazam</strong> boshlash muhim.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Avval zaxira</p><p>Investitsiyadan oldin <strong>zaxira fond</strong> va <strong>yuqori foizli qarzsizlik</strong> bo'lishi kerak. Qarzni yopish ko'pincha eng yaxshi \"investitsiya\".</p></div></div></div><div class='prose'><h3>Chuqurroq: murakkab foizning kuchi</h3><p>Erta boshlash eng katta afzallik. Misol (taxminiy, yiliga ~15%):</p><div class='codewrap'><div class='codehead'><span class='fn'>Erta vs kech boshlash</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Oyiga 500 000 so'm, ~15%/yil:\n10 yil  -> ~13.9 mln × ... (foyda o'sadi)\n20 yil  -> bir necha barobar ko'p\nVaqt - compound'ning eng kuchli omili</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Diversifikatsiya</b><span>turli aktivlarga bo'l (bir savatga emas)</span></div><div class=\"ex\"><b>Uzoq muddat</b><span>qisqa tebranishga panika qilma</span></div><div class=\"ex\"><b>Faqat ortiqcha pul</b><span>zaxira va qarzsizlikdan keyin</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Tezda boyitamiz\" va'dasiga ergashish yoki tushunmagan narsaga (kripto, hype) hamma pulni tikish. Qoida: <strong>tushunmasang - kirma</strong>, va yo'qotsang chidaydigan summadan oshirma.</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2044,21 +2044,21 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/",
-        "title": "Finlit.uz — Moliya bozori",
+        "title": "Finlit.uz - Moliya bozori",
         "desc": "Investitsiya asoslari (o'zbekcha)",
         "host": "finlit.uz"
       },
       {
         "type": "doc",
         "url": "https://www.investopedia.com/investing-4427685",
-        "title": "Investopedia — Investing",
+        "title": "Investopedia - Investing",
         "desc": "Aksiya, obligatsiya, ETF",
         "host": "investopedia.com"
       },
       {
         "type": "doc",
         "url": "https://www.khanacademy.org/college-careers-more/financial-literacy",
-        "title": "Khan Academy — Investing",
+        "title": "Khan Academy - Investing",
         "desc": "Investitsiya asoslari (bepul)",
         "host": "khanacademy.org"
       },
@@ -2121,7 +2121,7 @@
           "ETF"
         ],
         "c": 1,
-        "w": "Omonat — eng xavfsiz, past foyda.",
+        "w": "Omonat - eng xavfsiz, past foyda.",
         "level": "easy"
       },
       {
@@ -2133,7 +2133,7 @@
           "omonat"
         ],
         "c": 1,
-        "w": "ETF — savat (bir nechta aktiv).",
+        "w": "ETF - savat (bir nechta aktiv).",
         "level": "practical"
       },
       {
@@ -2164,7 +2164,7 @@
     "exercises": [
       {
         "type": "choice",
-        "q": "\"Bir savatga hamma tuxumni qo'yma\" — bu:",
+        "q": "\"Bir savatga hamma tuxumni qo'yma\" - bu:",
         "options": [
           "jamg'arma",
           "diversifikatsiya",
@@ -2172,7 +2172,7 @@
           "komissiya"
         ],
         "correct": 1,
-        "why": "Xavfni taqsimlash — diversifikatsiya."
+        "why": "Xavfni taqsimlash - diversifikatsiya."
       },
       {
         "type": "choice",
@@ -2196,7 +2196,7 @@
           "taqiqlangan"
         ],
         "correct": 1,
-        "why": "Vaqt — compound'ning do'sti."
+        "why": "Vaqt - compound'ning do'sti."
       },
       {
         "type": "choice",
@@ -2220,7 +2220,7 @@
           "startap"
         ],
         "correct": 1,
-        "why": "Omonat — eng xavfsiz."
+        "why": "Omonat - eng xavfsiz."
       },
       {
         "type": "choice",
@@ -2232,7 +2232,7 @@
           "likvidlik"
         ],
         "correct": 1,
-        "why": "Diversifikatsiya — bir savatga qo'yma."
+        "why": "Diversifikatsiya - bir savatga qo'yma."
       },
       {
         "type": "choice",
@@ -2256,7 +2256,7 @@
           "davlat kafolati"
         ],
         "correct": 1,
-        "why": "Bunday narsa yo'q — qizil bayroq."
+        "why": "Bunday narsa yo'q - qizil bayroq."
       }
     ],
     "vocab": [
@@ -2273,7 +2273,7 @@
       {
         "w": "obligatsiya (bond)",
         "uz": "qarz vositasi, barqaror foiz",
-        "ex": "Obligatsiya — past xavf."
+        "ex": "Obligatsiya - past xavf."
       },
       {
         "w": "ETF / fond",
@@ -2295,7 +2295,7 @@
       {
         "topic": "Vositalar",
         "rule": "Omonat < obligatsiya < aksiya (xavf bo'yicha).",
-        "ex": "ETF — diversifikatsiyalangan savat."
+        "ex": "ETF - diversifikatsiyalangan savat."
       },
       {
         "topic": "Xavf-foyda",
@@ -2313,11 +2313,11 @@
     "zoom": "F8",
     "title": "Moliyaviy reja",
     "sub": "3-oy",
-    "coord": "Reja · F8",
-    "eyebrow": "08 · Shaxsiy moliyaviy reja",
+    "coord": "Reja / F8",
+    "eyebrow": "08 / Shaxsiy moliyaviy reja",
     "mtitle": "Uzoq muddatli reja va maqsadlar",
-    "lede": "Yakuniy bosqich — <strong>shaxsiy moliyaviy reja</strong>: uy, mashina, biznes, oila, pensiya, kapital. Maqsadni <strong>aniq, o'lchanadigan, muddatli</strong> qilib qo'y.",
-    "doc": "<div class='prose'><h3>Maqsadni to'g'ri qo'yish (SMART)</h3><p>\"Pul yig'aman\" emas — <strong>\"12 oyda uy uchun 60 mln so'm boshlang'ich to'lov\"</strong>. Aniq summa + muddat.</p><div class=\"exlist\"><div class=\"ex\"><b>Aniq</b><span>qancha so'm?</span></div><div class=\"ex\"><b>O'lchanadigan</b><span>har oy qancha?</span></div><div class=\"ex\"><b>Muddatli</b><span>qachongacha?</span></div></div><h3>Maqsad turlari</h3><div class=\"chips\"><span class=\"chip\">Qisqa (≤1 yil)</span><span class=\"chip\">O'rta (1–5 yil)</span><span class=\"chip\">Uzoq (5+ yil, pensiya)</span></div><h3>Reja namunasi</h3><div class='codewrap'><div class='codehead'><span class='fn'>Maqsad → oylik ajratma</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Maqsad: 12 oyda 12 000 000 so'm\nOylik ajratma = 12 000 000 / 12 = 1 000 000 so'm/oy\nByudjetda 20% jamg'armaga mosmi? — tekshir</code></pre></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Reja = byudjet bilan bog'lansin</p><p>Har maqsad oylik ajratmaga aylanadi va <strong>byudjetingga</strong> joylanadi. Aks holda reja qog'ozda qoladi.</p></div></div></div><div class='prose'><h3>Chuqurroq: rejani tirik saqlash</h3><p>Reja bir marta yozib qo'yiladigan narsa emas — u <strong>har oy ko'rib chiqiladi</strong>. Hayot o'zgaradi (daromad, oila, maqsad), reja ham moslashadi.</p><div class=\"exlist\"><div class=\"ex\"><b>Oylik review</b><span>jamg'arma maqsadga bormoqdami?</span></div><div class=\"ex\"><b>Choraklik</b><span>maqsadlarni qayta baholash</span></div><div class=\"ex\"><b>Yillik</b><span>katta rasm: kapital, pensiya</span></div></div><div class='codewrap'><div class='codehead'><span class='fn'>Maqsadlar piramidasi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1) Zaxira fond      (xavfsizlik)\n2) Qarzsizlik       (yuqori foizli qarzni yopish)\n3) Uy/katta xaridlar (o'rta maqsad)\n4) Investitsiya/kapital (uzoq)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Investitsiya yoki uy haqida o'ylashdan oldin zaxira va qarzni e'tiborsiz qoldirish. Tartib muhim: avval poydevor (zaxira + qarzsizlik), keyin o'sish (investitsiya).</p></div></div></div>",
+    "lede": "Yakuniy bosqich - <strong>shaxsiy moliyaviy reja</strong>: uy, mashina, biznes, oila, pensiya, kapital. Maqsadni <strong>aniq, o'lchanadigan, muddatli</strong> qilib qo'y.",
+    "doc": "<div class='prose'><h3>Maqsadni to'g'ri qo'yish (SMART)</h3><p>\"Pul yig'aman\" emas - <strong>\"12 oyda uy uchun 60 mln so'm boshlang'ich to'lov\"</strong>. Aniq summa + muddat.</p><div class=\"exlist\"><div class=\"ex\"><b>Aniq</b><span>qancha so'm?</span></div><div class=\"ex\"><b>O'lchanadigan</b><span>har oy qancha?</span></div><div class=\"ex\"><b>Muddatli</b><span>qachongacha?</span></div></div><h3>Maqsad turlari</h3><div class=\"chips\"><span class=\"chip\">Qisqa (≤1 yil)</span><span class=\"chip\">O'rta (1-5 yil)</span><span class=\"chip\">Uzoq (5+ yil, pensiya)</span></div><h3>Reja namunasi</h3><div class='codewrap'><div class='codehead'><span class='fn'>Maqsad -> oylik ajratma</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Maqsad: 12 oyda 12 000 000 so'm\nOylik ajratma = 12 000 000 / 12 = 1 000 000 so'm/oy\nByudjetda 20% jamg'armaga mosmi? - tekshir</code></pre></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Reja = byudjet bilan bog'lansin</p><p>Har maqsad oylik ajratmaga aylanadi va <strong>byudjetingga</strong> joylanadi. Aks holda reja qog'ozda qoladi.</p></div></div></div><div class='prose'><h3>Chuqurroq: rejani tirik saqlash</h3><p>Reja bir marta yozib qo'yiladigan narsa emas - u <strong>har oy ko'rib chiqiladi</strong>. Hayot o'zgaradi (daromad, oila, maqsad), reja ham moslashadi.</p><div class=\"exlist\"><div class=\"ex\"><b>Oylik review</b><span>jamg'arma maqsadga bormoqdami?</span></div><div class=\"ex\"><b>Choraklik</b><span>maqsadlarni qayta baholash</span></div><div class=\"ex\"><b>Yillik</b><span>katta rasm: kapital, pensiya</span></div></div><div class='codewrap'><div class='codehead'><span class='fn'>Maqsadlar piramidasi</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>1) Zaxira fond      (xavfsizlik)\n2) Qarzsizlik       (yuqori foizli qarzni yopish)\n3) Uy/katta xaridlar (o'rta maqsad)\n4) Investitsiya/kapital (uzoq)</code></pre></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>Investitsiya yoki uy haqida o'ylashdan oldin zaxira va qarzni e'tiborsiz qoldirish. Tartib muhim: avval poydevor (zaxira + qarzsizlik), keyin o'sish (investitsiya).</p></div></div></div>",
     "code": [],
     "tasks": [
       {
@@ -2350,21 +2350,21 @@
       {
         "type": "doc",
         "url": "https://finlit.uz/uz/training/books/",
-        "title": "Finlit.uz — Kitoblar",
+        "title": "Finlit.uz - Kitoblar",
         "desc": "Chuqurroq o'qish uchun (o'zbekcha)",
         "host": "finlit.uz"
       },
       {
         "type": "doc",
         "url": "https://www.coursera.org/courses?query=personal%20finance",
-        "title": "Coursera — Personal Finance",
+        "title": "Coursera - Personal Finance",
         "desc": "Moliyaviy maqsad va reja kurslari",
         "host": "coursera.org"
       },
       {
         "type": "doc",
         "url": "https://www.investopedia.com/financial-planning-4689695",
-        "title": "Investopedia — Financial Planning",
+        "title": "Investopedia - Financial Planning",
         "desc": "Shaxsiy reja tuzish",
         "host": "investopedia.com"
       }
@@ -2420,11 +2420,11 @@
           "boy bo'laman"
         ],
         "c": 1,
-        "w": "Aniq summa + muddat — SMART.",
+        "w": "Aniq summa + muddat - SMART.",
         "level": "easy"
       },
       {
-        "q": "12 oyda 12 mln maqsad → oylik ajratma?",
+        "q": "12 oyda 12 mln maqsad -> oylik ajratma?",
         "a": [
           "120 000",
           "1 000 000",
@@ -2444,7 +2444,7 @@
           "taksi"
         ],
         "c": 1,
-        "w": "Pensiya — uzoq muddat.",
+        "w": "Pensiya - uzoq muddat.",
         "level": "practical"
       },
       {
@@ -2456,7 +2456,7 @@
           "do'stga aytiladi"
         ],
         "c": 1,
-        "w": "Maqsad → oylik ajratma → byudjet.",
+        "w": "Maqsad -> oylik ajratma -> byudjet.",
         "level": "scenario"
       }
     ],
@@ -2482,7 +2482,7 @@
       },
       {
         "type": "choice",
-        "q": "\"Boy bo'laman\" — bu qanday maqsad?",
+        "q": "\"Boy bo'laman\" - bu qanday maqsad?",
         "options": [
           "SMART",
           "noaniq (yomon)",
@@ -2490,7 +2490,7 @@
           "o'lchanadigan"
         ],
         "correct": 1,
-        "why": "Aniq emas — SMART emas."
+        "why": "Aniq emas - SMART emas."
       },
       {
         "type": "choice",
@@ -2502,7 +2502,7 @@
           "haftalik"
         ],
         "correct": 1,
-        "why": "1–5+ yil — o'rta/uzoq muddat."
+        "why": "1-5+ yil - o'rta/uzoq muddat."
       },
       {
         "type": "gap",
@@ -2525,7 +2525,7 @@
       },
       {
         "type": "choice",
-        "q": "\"Tez orada boy bo'laman\" — bu maqsad:",
+        "q": "\"Tez orada boy bo'laman\" - bu maqsad:",
         "options": [
           "SMART",
           "noaniq (yomon)",
@@ -2533,7 +2533,7 @@
           "muddatli"
         ],
         "correct": 1,
-        "why": "Aniq summa+muddat yo'q — SMART emas."
+        "why": "Aniq summa+muddat yo'q - SMART emas."
       },
       {
         "type": "choice",
@@ -2545,14 +2545,14 @@
           "do'stga aytiladi"
         ],
         "correct": 1,
-        "why": "Maqsad → oylik ajratma → byudjet."
+        "why": "Maqsad -> oylik ajratma -> byudjet."
       }
     ],
     "vocab": [
       {
         "w": "moliyaviy maqsad",
         "uz": "pul bo'yicha aniq maqsad",
-        "ex": "Maqsadim — 12 oyda 12 mln."
+        "ex": "Maqsadim - 12 oyda 12 mln."
       },
       {
         "w": "oylik ajratma",
@@ -2562,7 +2562,7 @@
       {
         "w": "qisqa/uzoq muddat",
         "uz": "maqsad davomiyligi",
-        "ex": "Pensiya — uzoq muddat."
+        "ex": "Pensiya - uzoq muddat."
       },
       {
         "w": "SMART maqsad",
@@ -2582,12 +2582,12 @@
         "ex": "12 oyda 12 mln so'm"
       },
       {
-        "topic": "Maqsad → ajratma",
+        "topic": "Maqsad -> ajratma",
         "rule": "Maqsad / oy = oylik summa.",
         "ex": "12 mln / 12 = 1 mln/oy"
       },
       {
-        "topic": "Reja–byudjet bog'i",
+        "topic": "Reja-byudjet bog'i",
         "rule": "Ajratma byudjetga joylanadi.",
         "ex": "Aks holda reja qog'ozda qoladi."
       }
@@ -2597,11 +2597,11 @@
     "zoom": "F9",
     "title": "Pensiya & uzoq reja",
     "sub": "Murakkab foiz",
-    "coord": "Uzoq muddat · F9",
-    "eyebrow": "10 · Pensiya va uzoq muddatli reja",
-    "mtitle": "Vaqt — eng kuchli pul vositasi",
-    "lede": "Eng katta sir — <strong>murakkab foiz</strong> (compound interest). Erta boshlagan kishi kam pul qo'yib ham, kech boshlagandan ko'p yig'adi. Bu modulda uzoq muddatli reja tuzamiz.",
-    "doc": "<div class='prose'><p>Murakkab foiz — foiz ustiga foiz. Puling o'sadi, o'sgan qismi ham o'sadi. Vaqt qancha uzoq bo'lsa, ta'sir shuncha katta.</p><h3>Erta boshlashning kuchi</h3><p>Aytaylik yiliga 10% o'sish. 25 yoshda oyiga 500 000 so'm qo'ygan kishi 60 yoshda, 35 yoshda boshlagandan <strong>2–3 baravar</strong> ko'p to'playdi — chunki puli 10 yil ko'proq o'sdi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg></span><div><p>72 qoidasi</p><p>Puling necha yilda ikki barobar bo'lishini bilish: <strong>72 ÷ foiz</strong>. 10%да — 72÷10 = ~7.2 yil. Bu tez baholash usuli.</p></div></div><h3>Uzoq reja qadamlari</h3><ol><li>Maqsad: pensiya/uy/ta'lim uchun qancha kerak?</li><li>Oylik ajratma: daromadning 10–20%.</li><li>Diversifikatsiya: hammani bir joyga qo'yma.</li><li>Avtomatlashtirish: oyiga avtomatik o'tkaz.</li></ol></div>",
+    "coord": "Uzoq muddat / F9",
+    "eyebrow": "10 / Pensiya va uzoq muddatli reja",
+    "mtitle": "Vaqt - eng kuchli pul vositasi",
+    "lede": "Eng katta sir - <strong>murakkab foiz</strong> (compound interest). Erta boshlagan kishi kam pul qo'yib ham, kech boshlagandan ko'p yig'adi. Bu modulda uzoq muddatli reja tuzamiz.",
+    "doc": "<div class='prose'><p>Murakkab foiz - foiz ustiga foiz. Puling o'sadi, o'sgan qismi ham o'sadi. Vaqt qancha uzoq bo'lsa, ta'sir shuncha katta.</p><h3>Erta boshlashning kuchi</h3><p>Aytaylik yiliga 10% o'sish. 25 yoshda oyiga 500 000 so'm qo'ygan kishi 60 yoshda, 35 yoshda boshlagandan <strong>2-3 baravar</strong> ko'p to'playdi - chunki puli 10 yil ko'proq o'sdi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg></span><div><p>72 qoidasi</p><p>Puling necha yilda ikki barobar bo'lishini bilish: <strong>72 ÷ foiz</strong>. 10%да - 72÷10 = ~7.2 yil. Bu tez baholash usuli.</p></div></div><h3>Uzoq reja qadamlari</h3><ol><li>Maqsad: pensiya/uy/ta'lim uchun qancha kerak?</li><li>Oylik ajratma: daromadning 10-20%.</li><li>Diversifikatsiya: hammani bir joyga qo'yma.</li><li>Avtomatlashtirish: oyiga avtomatik o'tkaz.</li></ol></div>",
     "code": [],
     "exercises": [
       {
@@ -2635,7 +2635,7 @@
           "Qimmat mashina"
         ],
         "correct": 1,
-        "why": "Vaqt va muntazamlik — murakkab foizni ishga soladi."
+        "why": "Vaqt va muntazamlik - murakkab foizni ishga soladi."
       },
       {
         "type": "gap",
@@ -2643,7 +2643,7 @@
         "answers": [
           "10"
         ],
-        "why": "Odatda 10–20% tavsiya etiladi; minimum 10%.",
+        "why": "Odatda 10-20% tavsiya etiladi; minimum 10%.",
         "hint": "ikki xonali, eng kam"
       }
     ],
@@ -2655,7 +2655,7 @@
       },
       {
         "id": "fin9-2",
-        "html": "Oylik daromadimning 10–20% ini uzoq muddatga ajratdim",
+        "html": "Oylik daromadimning 10-20% ini uzoq muddatga ajratdim",
         "crit": "aniq summa va sana belgilangan"
       },
       {
@@ -2690,7 +2690,7 @@
       "title": "Shaxsiy pensiya rejasi",
       "desc": "30 yillik uzoq muddatli jamg'arma rejasini tuz.",
       "features": [
-        "Oylik ajratma (10–20%)",
+        "Oylik ajratma (10-20%)",
         "Kutilayotgan o'sish foizi",
         "10/20/30 yillik maqsad",
         "Avtomatlashtirish rejasi",
@@ -2736,7 +2736,7 @@
         "q": "Murakkab foizda vaqt nega muhim?",
         "a": [
           "Hech qanday farq qilmaydi",
-          "Uzoq vaqt — o'sgan qism ham o'sadi, natija eksponentsial",
+          "Uzoq vaqt - o'sgan qism ham o'sadi, natija eksponentsial",
           "Faqat bankka foydali",
           "Soliqni kamaytiradi"
         ],
@@ -2765,7 +2765,7 @@
           "Hech qachon ajratmaslik"
         ],
         "c": 1,
-        "w": "Muntazamlik (avtomatik) — eng ishonchli yo'l.",
+        "w": "Muntazamlik (avtomatik) - eng ishonchli yo'l.",
         "level": "scenario"
       }
     ]

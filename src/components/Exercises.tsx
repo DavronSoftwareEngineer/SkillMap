@@ -46,7 +46,7 @@ function GapItem({ ex, idx }: { ex: Exercise; idx: number }) {
         {state === "ok" && <span className="exc-fb ok">To'g'ri ✓</span>}
         {state === "no" && (
           <span className="exc-fb no">
-            Xato — to'g'ri javob: <b>{(ex.answers || [])[0]}</b>
+            Xato - to'g'ri javob: <b>{(ex.answers || [])[0]}</b>
           </span>
         )}
       </div>
@@ -106,7 +106,7 @@ function ListenItem({ ex, idx }: { ex: Exercise; idx: number }) {
       <div className="exc">
         <div className="exc-q">
           <span className="exc-n">{idx + 1}.</span>
-          <span>Tinglash mashqi — brauzeringiz ovozni qo'llab-quvvatlamaydi.</span>
+          <span>Tinglash mashqi - brauzeringiz ovozni qo'llab-quvvatlamaydi.</span>
         </div>
       </div>
     );
@@ -141,7 +141,7 @@ function ListenItem({ ex, idx }: { ex: Exercise; idx: number }) {
         {state === "ok" && <span className="exc-fb ok">To'g'ri ✓</span>}
         {state === "no" && (
           <span className="exc-fb no">
-            Xato — to'g'ri javob: <b>{target}</b>
+            Xato - to'g'ri javob: <b>{target}</b>
           </span>
         )}
       </div>
@@ -154,7 +154,7 @@ export function Exercises({ items }: { items: Exercise[] }) {
   return (
     <div className="excset">
       <p className="qintro">
-        Yozib, tanlab yoki tinglab javob ber — har biri darhol tekshiriladi va izoh chiqaradi.
+        Yozib, tanlab yoki tinglab javob ber - har biri darhol tekshiriladi va izoh chiqaradi.
       </p>
       {items.map((ex, i) =>
         ex.type === "gap" ? (

@@ -32,7 +32,7 @@ export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestio
   );
 
   // Test natijasini render paytida emas, javoblar to'liq bo'lgach effektda yozamiz
-  // (recordQuiz ota store'ni yangilaydi — render ichida chaqirib bo'lmaydi).
+  // (recordQuiz ota store'ni yangilaydi - render ichida chaqirib bo'lmaydi).
   useEffect(() => {
     if (questions.length > 0 && answered === questions.length) {
       recordQuiz(zoom, right, questions.length);
@@ -56,10 +56,10 @@ export function Quiz({ zoom, questions }: { zoom: string; questions: QuizQuestio
 
   return (
     <div className="quiz">
-      <p className="qintro">O'zingni tekshir — har savolga javob ber, izoh va ball darhol chiqadi.</p>
+      <p className="qintro">O'zingni tekshir - har savolga javob ber, izoh va ball darhol chiqadi.</p>
       <div className="qhead">
         <span className="qscore">
-          Natija: {right} / {questions.length} &nbsp;·&nbsp; {answered} javob
+          Natija: {right} / {questions.length} &nbsp;/&nbsp; {answered} javob
         </span>
         <button className="qreset" onClick={() => setPicks({})}>
           Qayta boshlash

@@ -24,7 +24,7 @@ export function highlight(raw: string, lang: string): string {
   try {
     s = s.replace(/(?<![\u0001\d.])\d+(?:\.\d+)?(?![\d.\u0002])/g, (m) => stash(`<span class="tn">${m}</span>`));
   } catch {
-    /* lookbehind unsupported — skip number colouring */
+    /* lookbehind unsupported - skip number colouring */
   }
   s = s.replace(/\u0001(\d+)\u0002/g, (_, i) => bag[+i]);
   return s;

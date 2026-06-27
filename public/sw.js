@@ -1,4 +1,4 @@
-// SkillMap service worker — oddiy runtime caching (offline ishlash uchun).
+// SkillMap service worker - oddiy runtime caching (offline ishlash uchun).
 // Vite build fayl nomlariga hash qo'shgani uchun aniq fayl ro'yxati saqlanmaydi;
 // o'rniga so'rovlar paytida keshlanadi (cache-first + tarmoq fallback).
 const CACHE = "skillmap-v1";
@@ -25,7 +25,7 @@ self.addEventListener("fetch", (e) => {
 
   const url = new URL(req.url);
 
-  // Sahifa navigatsiyasi — avval tarmoq, uzilsa keshdagi index.html (SPA).
+  // Sahifa navigatsiyasi - avval tarmoq, uzilsa keshdagi index.html (SPA).
   if (req.mode === "navigate") {
     e.respondWith(
       fetch(req)
@@ -39,7 +39,7 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // Qolganlari (JS/CSS/shrift/rasm) — keshdan, bo'lmasa tarmoqdan olib keshla.
+  // Qolganlari (JS/CSS/shrift/rasm) - keshdan, bo'lmasa tarmoqdan olib keshla.
   e.respondWith(
     caches.match(req).then((cached) => {
       const fetched = fetch(req)

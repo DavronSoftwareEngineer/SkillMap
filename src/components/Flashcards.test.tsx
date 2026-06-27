@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { Flashcards } from "./Flashcards";
 import { StoreProvider } from "../store";
 
-// Flashcards faol kursning lug'atini ko'rsatadi — English'da vocab bor.
+// Flashcards faol kursning lug'atini ko'rsatadi - English'da vocab bor.
 // active_course localStorage'dan o'qiladi (saveJSON формати = JSON.stringify).
 beforeEach(() => {
   localStorage.setItem("active_course", JSON.stringify("english"));
@@ -18,10 +18,10 @@ function renderFlashcards() {
   );
 }
 
-describe("Flashcards — SRS oqimi", () => {
+describe("Flashcards - SRS oqimi", () => {
   it("birinchi karta va o'zlashtirilgan hisobi ko'rinadi", async () => {
     renderFlashcards();
-    // SRS bo'sh — barcha so'z navbatda, birinchisi 'hello'.
+    // SRS bo'sh - barcha so'z navbatda, birinchisi 'hello'.
     expect(await screen.findByText("hello")).toBeInTheDocument();
     expect(screen.getByText(/O'zlashtirilgan: 0 \//)).toBeInTheDocument();
   });
@@ -32,7 +32,7 @@ describe("Flashcards — SRS oqimi", () => {
     await screen.findByText("hello");
     const card = container.querySelector<HTMLButtonElement>(".flashcard")!;
     await user.click(card);
-    expect(screen.getByText("salom")).toBeInTheDocument(); // hello → salom
+    expect(screen.getByText("salom")).toBeInTheDocument(); // hello -> salom
   });
 
   it("'Bilaman' baholansa keyingi kartaga o'tadi va SRS saqlanadi", async () => {
