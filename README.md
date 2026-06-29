@@ -4,8 +4,8 @@
 
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
-Bitta ilova, **beshta mustaqil kurs**:
-- **Geospatial** - WebGIS Full-Stack (React, NestJS, PostGIS, Tegola, Docker)
+Bitta ilova, **oltita mustaqil kurs**:
+- **Geospatial** - WebGIS Full-Stack (React TS, MapLibre, FastAPI/Python, PostGIS, GDAL/Rasterio/YOLO, Docker/Nginx/Redis)
 - **English** - 0 dan IELTS gacha (A1->B2 + Listening/Reading/Writing/Speaking)
 - **Moliya** - Moliyaviy savodxonlik (byudjet -> jamg'arma -> qarz -> xavfsizlik -> investitsiya)
 - **Rus tili** - 0 -> B1 (kirill alifbosi, kelishiklar, fe'l aspekti, suhbat; talaffuz audiosi bilan)
@@ -16,7 +16,7 @@ React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
 
 ## Ishga tushirish
 
-Node.js (LTS) kerak.
+Node.js (LTS) va Python 3 kerak.
 
 ```bash
 npm install
@@ -47,7 +47,7 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 ```
 src/
   data/
-    webgis.json      Geospatial kurs (11 modul)
+    webgis.json      Geospatial kurs (20 modul: professional FastAPI/PostGIS/AI-GIS/Senior tartibida)
     english.json     English kurs (12 modul: A0->Exam)
     finance.json     Moliya kursi (10 modul: F0->F9)
     russian.json     Rus tili kursi (10 modul: Алф->Речь)
@@ -79,7 +79,7 @@ public/
 - **Global qidiruv:** yon paneldagi *Qidiruv* - darslar, topshiriqlar, lug'at, grammatika va testlar bo'ylab qidirib, to'g'ridan-to'g'ri modulga o'tadi.
 - **Tinglash mashqi (English):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan - darhol tekshiriladi.
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
-- **Yangi modullar:** har kursga bittadan qo'shildi - Geospatial *Monitoring*, English *Idiomalar & Phrasal verbs*, Moliya *Pensiya & murakkab foiz*, Rus tili *Kelishiklar*.
+- **Geospatial kengaytirildi:** professional tartib, arxitektura chizmalari, request/data flowlar, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlar qo'shildi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
 - **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas.
 

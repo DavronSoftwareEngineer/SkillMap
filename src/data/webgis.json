@@ -7,40 +7,37 @@
     "eyebrow": "00 / Boshlang'ich brifing",
     "mtitle": "0 dan professional darajagacha: yo'l xaritasi",
     "lede": "Bu platforma seni <strong>WebGIS Engineer</strong> holatdan to'liq <strong>Geospatial Full-Stack Engineer</strong> darajasiga olib chiqadi. Pastdagi bo'limlar xaritaning zoom darajalari kabi tartiblangan - eng katta ko'rinishdan (asoslar) eng nozik detallargacha (deploy va portfolio).",
-    "doc": "<p>Maqsad bitta jumlada: <strong>React/Map frontend + NestJS API + PostGIS + Tegola vector tiles + Docker/Nginx deploy</strong> ni bitta production WebGIS platformaga yig'ish.</p>\n<h3>Maqsadli stack (target stack)</h3>\n<div class=\"chips\">\n<span class=\"chip t\">React + TypeScript + Vite</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip\">NestJS</span><span class=\"chip\">PostgreSQL + PostGIS</span>\n<span class=\"chip\">Tegola</span><span class=\"chip\">QGIS + OSM</span>\n<span class=\"chip\">Docker Compose</span><span class=\"chip\">Nginx + Linux</span>\n</div>\n<p>NestJS TypeScript asosida ishlaydi - sen React TS bilganing uchun backendga o'tish osonroq bo'ladi. Tegola PostGIS kabi manbalardan vector tile beradi, MapLibre esa browserda ularni WebGL orqali render qiladi.</p>\n<h3>Bo'limlar (zoom darajalari)</h3>\n<p>Har bir bo'lim - xaritada bir zoom darajasi. Yuqoriroq daraja = chuqurroq detal:</p>\n<div class=\"chips\">\n<span class=\"chip\">z6 / Backend asoslari</span>\n<span class=\"chip\">z10 / PostGIS</span>\n<span class=\"chip\">z13 / Vector tiles</span>\n<span class=\"chip\">z16 / Docker &amp; deploy</span>\n<span class=\"chip\">z18 / Auth &amp; portfolio</span>\n</div>\n<h3>Har kuni qanday o'rganasan</h3>\n<p>Kuniga 2-3 soat ajratsang yetarli. Eng muhim qoida: <strong>o'qigan narsangni darhol o'z WebGIS loyihangga qo'sh.</strong></p>\n<div class=\"chips\">\n<span class=\"chip\">30 daq / nazariya/docs</span>\n<span class=\"chip\">90 daq / kod yozish</span>\n<span class=\"chip\">30 daq / debugging</span>\n<span class=\"chip\">30 daq / README/note</span>\n</div>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg></span>\n<div><p>Hozircha o'rganma</p><p>Kubernetes, Kafka, RabbitMQ, microservices, GraphQL advanced, AWS advanced. Bular keyin kerak. Hozir fokus: API + PostGIS + Tegola + Docker + Nginx.</p></div>\n</div>",
+    "doc": "<p>Maqsad bitta jumlada: <strong>React + TypeScript + MapLibre frontend, Python FastAPI API, PostgreSQL/PostGIS database, GDAL/Shapely/Rasterio/YOLO processing va Docker/Nginx/Redis deploy</strong> ni bitta production geospatial platformaga yig'ish.</p>\n<h3>Maqsadli stack (target stack)</h3>\n<div class=\"chips\">\n<span class=\"chip t\">React + TypeScript + Vite</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip t\">Python + FastAPI</span><span class=\"chip\">PostgreSQL + PostGIS</span>\n<span class=\"chip\">GDAL / Shapely / Rasterio</span><span class=\"chip\">YOLO</span>\n<span class=\"chip\">Docker Compose</span><span class=\"chip\">Nginx + Redis</span>\n</div>\n<p>Frontend xarita va UI uchun React/TypeScript ishlatiladi. Backendning asosiy API qismi Python/FastAPI bo'ladi, chunki geospatial processing, raster/vector pipeline va AI inference Python ekotizimida kuchli. PostGIS spatial database, MapLibre browserdagi xarita, Docker/Nginx/Redis esa production infratuzilma vazifasini bajaradi.</p>\n<h3>Bo'limlar (zoom darajalari)</h3>\n<p>Har bir bo'lim - xaritada bir zoom darajasi. Yuqoriroq daraja = chuqurroq detal:</p>\n<div class=\"chips\">\n<span class=\"chip\">z3 / React TS + MapLibre</span>\n<span class=\"chip\">z6 / FastAPI backend</span>\n<span class=\"chip\">z10 / PostGIS</span>\n<span class=\"chip\">z13 / Vector tiles</span>\n<span class=\"chip\">z16 / Docker &amp; deploy</span>\n<span class=\"chip\">z28 / GIS processing</span>\n<span class=\"chip\">z30 / AI-GIS</span>\n</div>\n<h3>Har kuni qanday o'rganasan</h3>\n<p>Kuniga 2-3 soat ajratsang yetarli. Eng muhim qoida: <strong>o'qigan narsangni darhol o'z WebGIS loyihangga qo'sh.</strong></p>\n<div class=\"chips\">\n<span class=\"chip\">30 daq / nazariya/docs</span>\n<span class=\"chip\">90 daq / kod yozish</span>\n<span class=\"chip\">30 daq / debugging</span>\n<span class=\"chip\">30 daq / README/note</span>\n</div>\n<div class=\"callout\"><div><p>Asosiy qaror</p><p>Kursning backend yo'li endi <strong>FastAPI + Python</strong>. Oldingi TypeScript backend flow asosiy yo'ldan olib tashlandi; geospatial va AI uchun Python/FastAPI ustuvor.</p></div></div>\n<h3>Butun tizim chizmasi</h3>\n<div class=\"tree\">\n[Browser]\n  React + TypeScript + MapLibre\n      |\n      | /api/search, /api/features, /api/upload\n      v\n[FastAPI + Python] -----> [Redis cache / queue]\n      |                         |\n      | SQL / spatial query     | background jobs\n      v                         v\n[PostgreSQL + PostGIS]     [GDAL / Rasterio / YOLO worker]\n      |\n      | vector tile source\n      v\n[Tegola] ---- /tiles/{z}/{x}/{y}.pbf ----> [MapLibre]\n</div>\n<p>Bu chizma kursdagi hamma modulning qayerga ulanishini ko'rsatadi: frontend xaritani boshqaradi, FastAPI API vazifasini bajaradi, PostGIS spatial data saqlaydi, worker esa og'ir processing va AI ishlarini bajaradi.</p>",
     "code": [
       {
         "heading": {
-          "h": null,
-          "p": "Birinchi kuni kod yozma - faqat muhitni tayyorla. Quyidagilarni o'rnat va tekshir."
+          "h": "Frontend va backend runtime tekshiruvi",
+          "p": "React uchun Node, API uchun Python kerak."
         },
-        "title": "Node.js o'rnatilganini tekshirish",
+        "title": "terminal",
         "lang": "bash",
-        "code": "# nodejs.org dan LTS versiyasini o'rnat, keyin:\nnode -v   # masalan v22.x.x chiqishi kerak\nnpm -v"
+        "code": "# Frontend uchun\nnode -v\nnpm -v\n\n# Backend uchun\npython --version\npip --version"
       },
       {
-        "heading": null,
-        "title": "VS Code uchun kerakli kengaytmalar",
-        "lang": "tools",
-        "code": "# VS Code ichiga o'rnatiladigan extensions:\n#  - ESLint\n#  - Prettier\n#  - Thunder Client (API test qilish uchun)\n#  - PostgreSQL (keyinroq 2-oyda)\n#  - Docker (keyinroq 4-oyda)"
-      },
-      {
-        "heading": null,
-        "title": "Birinchi loyiha papkasi",
-        "lang": "bash",
-        "code": "mkdir backend-darslik\ncd backend-darslik\nnpm init -y       # package.json - loyihaning \"pasporti\""
+        "heading": {
+          "h": "Loyiha papka tuzilishi",
+          "p": "Boshidanoq professional stack bo'yicha ajrat."
+        },
+        "title": "structure.txt",
+        "lang": "txt",
+        "code": "uzbekistan-geospatial-platform/\n  frontend/      # React + TypeScript + MapLibre\n  api/           # Python + FastAPI\n  processing/    # GDAL / Shapely / Rasterio / YOLO jobs\n  database/      # PostGIS init, migrations, seed\n  tegola/        # vector tile config\n  nginx/         # reverse proxy\n  docker-compose.yml\n  README.md"
       }
     ],
     "tasks": [
       {
         "id": "m0-1",
-        "html": "Node.js LTS o'rnatildi va <code class=\"inline\">node -v</code> raqam qaytardi",
-        "crit": "node -v xato emas, versiya raqamini ko'rsatadi"
+        "html": "Node.js va Python o'rnatildi: <code>node -v</code>, <code>python --version</code> ishladi",
+        "crit": "ikkalasi ham versiya raqamini qaytaradi"
       },
       {
         "id": "m0-2",
-        "html": "VS Code o'rnatildi + ESLint/Prettier/Thunder Client kengaytmalari qo'shildi",
-        "crit": "VS Code kengaytmalar ro'yxatida 4 tasi ham ko'rinadi"
+        "html": "VS Code o'rnatildi + Python, ESLint, Prettier, Thunder Client kengaytmalari qo'shildi",
+        "crit": "extensionlar ro'yxatda ko'rinadi"
       },
       {
         "id": "m0-3",
@@ -56,31 +53,31 @@
     "resources": [
       {
         "type": "doc",
-        "url": "https://docs.nestjs.com",
-        "title": "NestJS rasmiy hujjati",
-        "desc": "Butun backend bo'limi uchun asosiy manba",
-        "host": "docs.nestjs.com"
+        "url": "https://react.dev/",
+        "title": "React docs",
+        "desc": "Frontend UI uchun rasmiy hujjat.",
+        "host": "react.dev"
       },
       {
         "type": "doc",
-        "url": "https://postgis.net",
+        "url": "https://www.typescriptlang.org/docs/",
+        "title": "TypeScript docs",
+        "desc": "Frontend kodni xavfsiz yozish uchun.",
+        "host": "typescriptlang.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://fastapi.tiangolo.com/",
+        "title": "FastAPI docs",
+        "desc": "Asosiy backend API uchun.",
+        "host": "fastapi.tiangolo.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://postgis.net/docs/",
         "title": "PostGIS hujjati",
-        "desc": "Spatial database - 2-bo'lim asosi",
+        "desc": "Spatial database uchun.",
         "host": "postgis.net"
-      },
-      {
-        "type": "doc",
-        "url": "https://tegola.io",
-        "title": "Tegola tile server",
-        "desc": "Vector tile - 3-bo'lim asosi",
-        "host": "tegola.io"
-      },
-      {
-        "type": "doc",
-        "url": "https://maplibre.org/maplibre-gl-js/docs/",
-        "title": "MapLibre GL JS",
-        "desc": "Frontend xarita kutubxonasi",
-        "host": "maplibre.org"
       }
     ],
     "project": {
@@ -88,10 +85,13 @@
       "title": "Kirish & Maqsadli Stack Portfolio Task",
       "desc": "Kirish & Maqsadli Stack modulini real natijaga aylantiradigan yakuniy amaliy ish.",
       "features": [
-        "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
-        "Performance va bbox/zoom talabi",
-        "READMEda data source va deploy izohi"
+        "React + TypeScript + MapLibre frontend",
+        "Python FastAPI backend",
+        "PostGIS spatial database",
+        "Tegola vector tile pipeline",
+        "GDAL/Shapely/Rasterio processing",
+        "YOLO AI-GIS extension",
+        "Docker + Nginx + Redis deploy"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
@@ -122,52 +122,52 @@
     },
     "quiz": [
       {
-        "q": "Maqsadli stack'da vector tile serveri qaysi?",
+        "q": "Maqsadli stack'da asosiy backend API qaysi?",
         "a": [
-          "MapLibre",
-          "NestJS",
-          "Tegola",
-          "PostGIS"
+          "FastAPI + Python",
+          "TypeScript backend",
+          "Laravel",
+          "Django admin only"
         ],
-        "c": 2,
-        "w": "Tegola PostGIS'dan vector tile beradi. MapLibre - frontend, NestJS - API, PostGIS - baza.",
+        "c": 0,
+        "w": "Bu kursda asosiy backend API FastAPI + Python bilan quriladi.",
         "level": "easy"
       },
       {
-        "q": "Nega avval Express, keyin NestJS o'rganiladi?",
+        "q": "React + TypeScript kursda qaysi qism uchun?",
         "a": [
-          "Express tezroq",
-          "NestJS ko'p narsani 'sehrli' qiladi, asossiz chalg'itadi",
-          "Express bepul",
-          "NestJS eskirgan"
+          "Frontend xarita va UI",
+          "PostGIS extension",
+          "Raster clip",
+          "Nginx config"
         ],
-        "c": 1,
-        "w": "Asos bo'lmasa, NestJS'ning avtomatik mexanizmlari tushunarsiz tuyuladi.",
+        "c": 0,
+        "w": "React/TS foydalanuvchi ko'radigan xarita, panel, filter va admin UI uchun.",
+        "level": "easy"
+      },
+      {
+        "q": "GDAL/Shapely/Rasterio nima uchun kerak?",
+        "a": [
+          "GIS processing",
+          "Button styling",
+          "JWT secret yaratish",
+          "NPM install"
+        ],
+        "c": 0,
+        "w": "Bu kutubxonalar vector/raster geodata bilan ishlash uchun.",
         "level": "practical"
       },
       {
-        "q": "Hozir o'rganMASLIK tavsiya etilgan narsa?",
+        "q": "Deploy stackidagi cache/queue komponenti qaysi?",
         "a": [
-          "PostGIS",
-          "Docker",
-          "Kubernetes",
-          "Express"
+          "Redis",
+          "MapLibre",
+          "QGIS",
+          "Pydantic"
         ],
-        "c": 2,
-        "w": "Kubernetes, Kafka, microservices keyinroq. Hozir fokus: API + PostGIS + Tegola + Docker.",
+        "c": 0,
+        "w": "Redis cache va background queue uchun ishlatiladi.",
         "level": "practical"
-      },
-      {
-        "q": "Frontend qaysi tilda yoziladi?",
-        "a": [
-          "Python",
-          "Go",
-          "React + TypeScript",
-          "PHP"
-        ],
-        "c": 2,
-        "w": "React + TypeScript - sening mavjud tajribang shu yerda ishlaydi.",
-        "level": "scenario"
       }
     ],
     "exercises": [
@@ -227,7 +227,7 @@
       {
         "w": "stack",
         "uz": "texnologiyalar to'plami",
-        "ex": "Bizning stack: React, NestJS, PostGIS."
+        "ex": "Bizning stack: React, FastAPI, PostGIS."
       },
       {
         "w": "frontend",
@@ -247,14 +247,14 @@
     ],
     "grammar": [
       {
-        "topic": "Stack qatlamlari",
-        "rule": "Frontend -> Backend -> DB -> Tiles -> DevOps.",
-        "ex": "React -> NestJS -> PostGIS -> Tegola -> Docker"
+        "topic": "Stack oqimi",
+        "rule": "React TS -> FastAPI -> PostGIS -> Processing/Redis -> MapLibre",
+        "ex": "Frontend bbox yuboradi, FastAPI PostGIS'dan GeoJSON qaytaradi."
       },
       {
-        "topic": "WebGIS oqimi",
-        "rule": "DB'dagi geo-ma'lumot -> tile -> xaritada.",
-        "ex": "PostGIS -> Tegola -> MapLibre"
+        "topic": "Asosiy backend",
+        "rule": "Bu kursda backendning asosiy yo'li Python/FastAPI",
+        "ex": "FastAPI alternativ emas, asosiy flowdan olib tashlangan."
       }
     ]
   },
@@ -619,7 +619,7 @@
     "eyebrow": "Frontend / React TS / Vite",
     "mtitle": "Frontend - foydalanuvchi ko'radigan tomon",
     "lede": "Backend data beradi, lekin foydalanuvchi <strong>xaritani</strong> ko'radi. Bu bo'limda React + TypeScript + Vite asosida MapLibre xaritasini qurib, uni o'z API'ingga ulaysan va xarita harakatlanganda datani jonli yangilaysan.",
-    "doc": "<p>Nega Vite? - u juda tez dev server beradi va React + TypeScript shablonini bir buyruq bilan tayyorlaydi. Sening React TS tajribang bu yerda to'g'ridan-to'g'ri ishlaydi.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">Vite + React + TS</span><span class=\"chip\">komponentlar</span>\n<span class=\"chip\">useRef / useEffect</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip\">map lifecycle</span><span class=\"chip\">vector + geojson source</span>\n<span class=\"chip\">bbox refresh</span><span class=\"chip\">search + flyTo</span><span class=\"chip\">popup</span>\n</div>\n<h3>MapLibre vs Leaflet - qachon qaysi biri?</h3>\n<p><strong>MapLibre GL JS</strong> - vector tiles, WebGL/GPU, 3D, silliq uzluksiz zoom. Sening Tegola pipeline'ing uchun aynan shu kerak - million obyektni GPU'da render qiladi. <strong>Leaflet</strong> - raster tiles, oddiyroq API, ulkan plugin ekotizimi, lekin native vector tile va WebGL yo'q. Tez prototip yoki oddiy marker xaritasi uchun yaxshi.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg></span>\n<div><p>Diqqat: koordinata tartibi</p><p>MapLibre <code class=\"inline\">[lng, lat]</code> tartibini kutadi, Leaflet esa <code class=\"inline\">[lat, lng]</code>. Eng ko'p uchraydigan xato shu - marker noto'g'ri joyda chiqsa, avval shuni tekshir.</p></div>\n</div>\n<h3>Map komponenti tuzilishi</h3>\n<p>Xarita DOM'ga bir marta yaratiladi va React qayta render qilganda <strong>qayta yaratilmasligi</strong> kerak. Shuning uchun <code class=\"inline\">useRef</code> (DOM va map obyekti uchun) + <code class=\"inline\">useEffect</code> (yaratish va tozalash uchun) ishlatiladi.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Vector tile (Tegola) + API GeoJSON (NestJS) ikkalasini ko'rsatadigan, xarita harakatlanganda bbox bo'yicha yangilanadigan, qidiruv va popup'li interaktiv WebGIS frontend.</p>\n<h3>deck.gl va Three.js - katta hajmli va 3D vizualizatsiya</h3>\n<p>MapLibre va Leaflet oddiy xarita uchun yetadi. Lekin <strong>millionlab nuqta</strong> yoki <strong>3D</strong> kerak bo'lsa - WebGL kutubxonalari ishga tushadi (bular asosan <strong>frontend</strong> qismi):</p>\n<div class=\"exlist\"><div class=\"ex\"><b>deck.gl</b><span>Uber'ning WebGL data-viz qatlamlari: millionlab nuqta/yo'l, heatmap, hexagon - MapLibre ustiga qo'yiladi</span></div><div class=\"ex\"><b>Three.js</b><span>umumiy 3D dvigatel (WebGL): 3D bino, sahna, model. React'da <code class=\"inline\">react-three-fiber</code> (R3F) bilan</span></div></div>\n<div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qaysi birini?</p><p>Oddiy xarita -> <strong>MapLibre/Leaflet</strong>. Katta hajmli geodata qatlamlari -> <strong>deck.gl</strong>. Umumiy 3D (xaritasiz model/sahna) -> <strong>Three.js</strong>. deck.gl ko'pincha MapLibre bilan birga ishlaydi.</p></div></div>",
+    "doc": "<p>Nega Vite? - u juda tez dev server beradi va React + TypeScript shablonini bir buyruq bilan tayyorlaydi. Sening React TS tajribang bu yerda to'g'ridan-to'g'ri ishlaydi.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">Vite + React + TS</span><span class=\"chip\">komponentlar</span>\n<span class=\"chip\">useRef / useEffect</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip\">map lifecycle</span><span class=\"chip\">vector + geojson source</span>\n<span class=\"chip\">bbox refresh</span><span class=\"chip\">search + flyTo</span><span class=\"chip\">popup</span>\n</div>\n<h3>MapLibre vs Leaflet - qachon qaysi biri?</h3>\n<p><strong>MapLibre GL JS</strong> - vector tiles, WebGL/GPU, 3D, silliq uzluksiz zoom. Sening Tegola pipeline'ing uchun aynan shu kerak - million obyektni GPU'da render qiladi. <strong>Leaflet</strong> - raster tiles, oddiyroq API, ulkan plugin ekotizimi, lekin native vector tile va WebGL yo'q. Tez prototip yoki oddiy marker xaritasi uchun yaxshi.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg></span>\n<div><p>Diqqat: koordinata tartibi</p><p>MapLibre <code class=\"inline\">[lng, lat]</code> tartibini kutadi, Leaflet esa <code class=\"inline\">[lat, lng]</code>. Eng ko'p uchraydigan xato shu - marker noto'g'ri joyda chiqsa, avval shuni tekshir.</p></div>\n</div>\n<h3>Map komponenti tuzilishi</h3>\n<p>Xarita DOM'ga bir marta yaratiladi va React qayta render qilganda <strong>qayta yaratilmasligi</strong> kerak. Shuning uchun <code class=\"inline\">useRef</code> (DOM va map obyekti uchun) + <code class=\"inline\">useEffect</code> (yaratish va tozalash uchun) ishlatiladi.</p>\n<h3>Bu bo'lim oxiridagi natija</h3>\n<p>Vector tile (Tegola) + API GeoJSON (FastAPI) ikkalasini ko'rsatadigan, xarita harakatlanganda bbox bo'yicha yangilanadigan, qidiruv va popup'li interaktiv WebGIS frontend.</p>\n<h3>deck.gl va Three.js - katta hajmli va 3D vizualizatsiya</h3>\n<p>MapLibre va Leaflet oddiy xarita uchun yetadi. Lekin <strong>millionlab nuqta</strong> yoki <strong>3D</strong> kerak bo'lsa - WebGL kutubxonalari ishga tushadi (bular asosan <strong>frontend</strong> qismi):</p>\n<div class=\"exlist\"><div class=\"ex\"><b>deck.gl</b><span>Uber'ning WebGL data-viz qatlamlari: millionlab nuqta/yo'l, heatmap, hexagon - MapLibre ustiga qo'yiladi</span></div><div class=\"ex\"><b>Three.js</b><span>umumiy 3D dvigatel (WebGL): 3D bino, sahna, model. React'da <code class=\"inline\">react-three-fiber</code> (R3F) bilan</span></div></div>\n<div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Qaysi birini?</p><p>Oddiy xarita -> <strong>MapLibre/Leaflet</strong>. Katta hajmli geodata qatlamlari -> <strong>deck.gl</strong>. Umumiy 3D (xaritasiz model/sahna) -> <strong>Three.js</strong>. deck.gl ko'pincha MapLibre bilan birga ishlaydi.</p></div></div>",
     "code": [
       {
         "heading": {
@@ -741,7 +741,7 @@
       },
       {
         "id": "mf-5",
-        "html": "NestJS API'dan GeoJSON olib, xaritada ko'rsatdim",
+        "html": "FastAPI'dan GeoJSON olib, xaritada ko'rsatdim",
         "crit": "API'dan kelgan obyektlar xaritada ko'rinadi"
       },
       {
@@ -1035,205 +1035,206 @@
   },
   {
     "zoom": "z6",
-    "title": "Backend asoslari",
-    "sub": "1-oy",
-    "coord": "Davlat ko'rinishi / z6",
-    "eyebrow": "01 / 1-oy",
-    "mtitle": "Backend asoslari - API'dan qo'rqmaslik",
-    "lede": "Bu oyda sen API yozish, frontendga JSON qaytarish va so'rovlarni boshqarishni o'rganasan. Avval toza Express bilan \"backend qanday ishlaydi\"ni his qilasan, keyin NestJS'ga o'tasan.",
-    "doc": "<p>Ko'pchilik xatosi - to'g'ridan-to'g'ri NestJS'ga sakrash. NestJS ko'p narsani \"sehrli\" qiladi; agar asos bo'lmasa, o'sha sehr seni chalg'itadi. Shuning uchun tartib: <strong>avval Express -> keyin NestJS</strong>.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip\">Node.js asoslari</span><span class=\"chip\">TypeScript</span><span class=\"chip\">Express server</span>\n<span class=\"chip\">REST API</span><span class=\"chip\">GET / POST</span><span class=\"chip\">route params</span>\n<span class=\"chip\">status kodlar</span><span class=\"chip\">.env</span><span class=\"chip\">error handling</span>\n</div>\n<div class=\"chips\">\n<span class=\"chip t\">NestJS: Controller</span><span class=\"chip t\">Service</span><span class=\"chip t\">Module</span>\n<span class=\"chip t\">DTO</span><span class=\"chip t\">Validation</span>\n</div>\n<h3>4 ta tushuncha (NestJS yuragi)</h3>\n<p><strong>Controller</strong> - URL'ni qabul qiladi (kim qaysi eshikni qoqdi). <strong>Service</strong> - asl ishni bajaradi (logika). <strong>Module</strong> - bularni bitta to'plamga bog'laydi. <strong>DTO</strong> - kiruvchi ma'lumot shaklini tekshiradi.</p>\n<h3>1-oy oxiridagi natija</h3>\n<p>React frontend backendga so'rov yuboradi -> backend PostgreSQL'dan (hozircha massivdan) data oladi -> JSON qaytaradi -> frontend uni map yoki panelda ko'rsatadi. Bu bosqichda asosiy ko'nikma - <strong>API fikrlash</strong>.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M9 18l6-6-6-6\"></path></svg></span>\n<div><p>Har kuni bitta yangi endpoint</p><p>Du: /api/health ishladi / Se: /api/buildings / Cho: /api/buildings/:id / Pay: POST /api/feedback / Ju: hammasini Thunder Client'da test qil.</p></div>\n</div>",
+    "title": "FastAPI backend asoslari",
+    "sub": "Python API",
+    "coord": "API / z6",
+    "eyebrow": "04 / Backend API",
+    "mtitle": "FastAPI - geospatial backend poydevori",
+    "lede": "Bu modulda backendning asosiy yo'li to'liq <strong>Python + FastAPI</strong> bo'ladi. Sen frontendga JSON/GeoJSON qaytarish, request validation, error handling va API fikrlashni amalda o'rganasan.",
+    "doc": "<p>FastAPI - Python'da tez, tartibli va professional API yozish frameworki. Geospatial yo'nalishda u juda mos: PostGIS bilan ishlaydi, GDAL/Shapely/Rasterio pipelinega ulanadi, YOLO inference uchun Python ekotizimidan foydalanadi.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">Python venv</span><span class=\"chip\">pip</span><span class=\"chip t\">FastAPI</span>\n<span class=\"chip\">uvicorn</span><span class=\"chip\">Pydantic</span><span class=\"chip\">GET / POST</span>\n<span class=\"chip\">path/query params</span><span class=\"chip\">status kodlar</span><span class=\"chip\">error handling</span>\n</div>\n<h3>FastAPI yuragi</h3>\n<p><strong>Route</strong> - URL eshigi. <strong>Pydantic schema</strong> - kiruvchi/chiqadigan ma'lumot shakli. <strong>Dependency</strong> - DB ulanish, auth yoki sozlamani endpointga toza berish usuli. <strong>Service function</strong> - biznes logika.</p>\n<h3>Modul oxiridagi natija</h3>\n<p>React frontend FastAPI'ga so'rov yuboradi -> FastAPI PostGIS yoki vaqtinchalik data'dan o'qiydi -> JSON/GeoJSON qaytaradi -> frontend uni map yoki panelda ko'rsatadi.</p>\n<div class=\"callout\"><div><p>Har kuni bitta endpoint</p><p>Du: /health / Se: /layers / Cho: /features / Pay: POST /feedback / Ju: hammasini Swagger va Thunder Client'da test qil.</p></div></div>\n<h3>Request lifecycle chizmasi</h3>\n<div class=\"tree\">\nReact fetch('/api/features?bbox=...')\n  -> Nginx /api route\n  -> FastAPI route\n  -> Pydantic validation\n  -> Service function\n  -> PostGIS query\n  -> GeoJSON response\n  -> MapLibre source.setData(...)\n</div>\n<p>Backendni shunday o'ylasang osonlashadi: route so'rovni qabul qiladi, schema tekshiradi, service ishni bajaradi, response esa frontend uchun aniq formatda qaytadi.</p>",
     "code": [
       {
         "heading": {
-          "h": "1-hafta: toza Express bilan birinchi server",
-          "p": null
+          "h": "FastAPI loyihasi",
+          "p": "Python API uchun minimal setup."
         },
-        "title": "Kutubxonalarni o'rnatish",
+        "title": "terminal",
         "lang": "bash",
-        "code": "npm install express\nnpm install -D typescript ts-node @types/node @types/express\nnpx tsc --init"
-      },
-      {
-        "heading": null,
-        "title": "index.ts - birinchi server",
-        "lang": "typescript",
-        "code": "import express from \"express\";\n\nconst app = express();      // ilovani yaratamiz\napp.use(express.json());    // kelgan JSON'ni o'qiy oladigan qilamiz\n\n// Birinchi eshik (endpoint)\napp.get(\"/api/health\", (req, res) => {\n  res.json({ status: \"ok\" });\n});\n\napp.listen(3000, () => {\n  console.log(\"Server ishlayapti: http://localhost:3000\");\n});"
-      },
-      {
-        "heading": null,
-        "title": "Ishga tushirish",
-        "lang": "bash",
-        "code": "npx ts-node index.ts\n# brauzerda: http://localhost:3000/api/health\n# javob: { \"status\": \"ok\" }"
-      },
-      {
-        "heading": null,
-        "title": "GET - ma'lumot qaytarish (route param + status)",
-        "lang": "typescript",
-        "code": "const buildings = [\n  { id: 1, name: \"Amir Temur\", height: 40 },\n  { id: 2, name: \"NBU Tower\", height: 120 },\n];\n\napp.get(\"/api/buildings\", (req, res) => res.json(buildings));\n\napp.get(\"/api/buildings/:id\", (req, res) => {\n  const building = buildings.find(b => b.id === Number(req.params.id));\n  if (!building) return res.status(404).json({ error: \"Bino topilmadi\" });\n  res.json(building);\n});"
-      },
-      {
-        "heading": null,
-        "title": "POST - ma'lumot qabul qilish",
-        "variants": [
-          {
-            "label": "TS",
-            "lang": "typescript",
-            "code": "const feedbacks: any[] = [];\n\napp.post('/api/feedback', (req, res) => {\n  const { message } = req.body;\n  if (!message) return res.status(400).json({ error: 'message kerak' });\n  feedbacks.push({ id: feedbacks.length + 1, message });\n  res.status(201).json({ ok: true });\n});"
-          },
-          {
-            "label": "JS",
-            "lang": "javascript",
-            "code": "const feedbacks = [];\n\napp.post('/api/feedback', (req, res) => {\n  const { message } = req.body;\n  if (!message) return res.status(400).json({ error: 'message kerak' });\n  feedbacks.push({ id: feedbacks.length + 1, message });\n  res.status(201).json({ ok: true });\n});"
-          }
-        ],
-        "lang": "typescript",
-        "code": "const feedbacks: any[] = [];\n\napp.post(\"/api/feedback\", (req, res) => {\n  const { message } = req.body;          // frontend yuborgan ma'lumot\n  if (!message) return res.status(400).json({ error: \"message kerak\" });\n  feedbacks.push({ id: feedbacks.length + 1, message });\n  res.status(201).json({ ok: true });\n});"
+        "code": "python -m venv .venv\n# Windows:\n.venv\\Scripts\\activate\n\npip install fastapi uvicorn pydantic\nuvicorn main:app --reload"
       },
       {
         "heading": {
-          "h": "2-hafta: xuddi shularni NestJS'da qayta yozish",
-          "p": null
+          "h": "Birinchi server",
+          "p": "Healthcheck va layer list."
         },
-        "title": "NestJS loyihasi yaratish",
-        "lang": "bash",
-        "code": "npm i -g @nestjs/cli\nnest new backend\nnest g resource buildings   # controller + service + module avtomatik"
+        "title": "main.py",
+        "lang": "py",
+        "code": "from fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI(title=\"Uzbekistan Geo API\")\n\nclass Layer(BaseModel):\n    id: str\n    title: str\n    geometry: str\n\n@app.get(\"/health\")\ndef health():\n    return {\"status\": \"ok\"}\n\n@app.get(\"/layers\", response_model=list[Layer])\ndef layers():\n    return [\n        {\"id\": \"buildings\", \"title\": \"Buildings\", \"geometry\": \"Polygon\"},\n        {\"id\": \"roads\", \"title\": \"Roads\", \"geometry\": \"LineString\"},\n    ]"
       },
       {
-        "heading": null,
-        "title": "buildings.controller.ts",
-        "lang": "typescript",
-        "code": "import { Controller, Get, Param } from \"@nestjs/common\";\nimport { BuildingsService } from \"./buildings.service\";\n\n@Controller(\"api/buildings\")\nexport class BuildingsController {\n  constructor(private readonly service: BuildingsService) {}\n\n  @Get()\n  findAll() {\n    return this.service.findAll();\n  }\n\n  @Get(\":id\")\n  findOne(@Param(\"id\") id: string) {\n    return this.service.findOne(Number(id));\n  }\n}"
+        "heading": {
+          "h": "Feature detail",
+          "p": "Path param va 404 xato."
+        },
+        "title": "features.py",
+        "lang": "py",
+        "code": "from fastapi import HTTPException\n\nFEATURES = {\n    1: {\"id\": 1, \"name\": \"Amir Temur Square\", \"type\": \"poi\"},\n    2: {\"id\": 2, \"name\": \"NBU Tower\", \"type\": \"building\"},\n}\n\n@app.get(\"/features/{feature_id}\")\ndef feature_detail(feature_id: int):\n    feature = FEATURES.get(feature_id)\n    if not feature:\n        raise HTTPException(status_code=404, detail=\"Feature topilmadi\")\n    return feature"
       },
       {
-        "heading": null,
-        "title": "buildings.service.ts - biznes logika",
-        "lang": "typescript",
-        "code": "import { Injectable, NotFoundException } from \"@nestjs/common\";\n\n@Injectable()\nexport class BuildingsService {\n  private buildings = [\n    { id: 1, name: \"Amir Temur\", height: 40 },\n    { id: 2, name: \"NBU Tower\", height: 120 },\n  ];\n\n  findAll() { return this.buildings; }\n\n  findOne(id: number) {\n    const b = this.buildings.find(x => x.id === id);\n    if (!b) throw new NotFoundException(\"Bino topilmadi\");\n    return b;\n  }\n}"
+        "heading": {
+          "h": "POST validation",
+          "p": "Pydantic body tekshiruvi."
+        },
+        "title": "feedback.py",
+        "lang": "py",
+        "code": "from pydantic import BaseModel, Field\n\nclass FeedbackIn(BaseModel):\n    message: str = Field(min_length=3, max_length=500)\n\n@app.post(\"/feedback\", status_code=201)\ndef create_feedback(body: FeedbackIn):\n    return {\"ok\": True, \"message\": body.message}"
+      },
+      {
+        "heading": {
+          "h": "CORS va settings",
+          "p": "Frontend FastAPI'ga ulanishi uchun minimal sozlama."
+        },
+        "title": "app_setup.py",
+        "lang": "py",
+        "code": "from fastapi import FastAPI\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom pydantic_settings import BaseSettings\n\nclass Settings(BaseSettings):\n    database_url: str = \"postgresql+asyncpg://gis:secret@localhost:5432/gis\"\n    frontend_origin: str = \"http://localhost:5176\"\n\nsettings = Settings()\napp = FastAPI(title=\"Uzbekistan Geo API\")\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[settings.frontend_origin],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)"
       }
     ],
     "tasks": [
       {
         "id": "m1-1",
-        "html": "Express bilan <code class=\"inline\">/api/health</code> yozdim va brauzerda <code class=\"inline\">{ \"status\": \"ok\" }</code> ko'rdim",
-        "crit": "brauzer { \"status\": \"ok\" } ko'rsatadi"
+        "html": "Python virtual environment ochdim va FastAPI/uvicorn o'rnatdim",
+        "crit": "<code>uvicorn main:app --reload</code> xatosiz ishlaydi"
       },
       {
         "id": "m1-2",
-        "html": "<code class=\"inline\">/api/buildings</code> va <code class=\"inline\">/api/buildings/:id</code> massivdan data qaytardi",
-        "crit": "/buildings massiv, /buildings/1 esa bitta obyekt qaytaradi"
+        "html": "FastAPI bilan <code>/health</code> endpoint yozdim",
+        "crit": "brauzer yoki Swagger { \"status\": \"ok\" } ko'rsatadi"
       },
       {
         "id": "m1-3",
-        "html": "<code class=\"inline\">POST /api/feedback</code> ni Thunder Client'da test qildim <small>Body -> JSON -> message yubor</small>",
-        "crit": "Thunder Client 201 va { ok: true } qaytaradi"
+        "html": "<code>/layers</code> endpointini Pydantic response model bilan yozdim",
+        "crit": "Swagger response schema ko'rsatadi"
       },
       {
         "id": "m1-4",
-        "html": "404 va 400 status kodlarini ataylab chiqarib ko'rdim",
-        "crit": "noto'g'ri so'rovda 404 yoki 400 status ko'rinadi"
+        "html": "<code>/features/{id}</code> endpointida path param va 404 xatoni ishlatdim",
+        "crit": "mavjud id data, noto'g'ri id 404 qaytaradi"
       },
       {
         "id": "m1-5",
-        "html": "NestJS loyiha ochib, <code class=\"inline\">/api/buildings</code> ni Controller + Service bilan qayta yozdim",
-        "crit": "NestJS /api/buildings xuddi shu javobni beradi"
+        "html": "<code>POST /feedback</code> endpointida body validation qo'shdim",
+        "crit": "juda qisqa message 422 qaytaradi"
       },
       {
         "id": "m1-6",
-        "html": "<code class=\"inline\">/api/search?q=...</code> query parametri bilan qidiruv yozdim",
-        "crit": "/api/search?q=... filtrlangan natijani qaytaradi"
+        "html": "Frontenddan FastAPI endpointiga fetch yubordim",
+        "crit": "React UI API javobini ko'rsatadi"
       },
       {
         "id": "m1-7",
-        "html": "DTO + class-validator bilan POST kirishini validatsiya qildim",
-        "crit": "noto'g'ri body yuborilganda 400 validatsiya xatosi chiqadi"
+        "html": "Swagger UI orqali barcha endpointlarni test qildim",
+        "crit": "<code>/docs</code> sahifasida endpointlar ishlaydi"
       },
       {
         "id": "m1-8",
-        "html": "React frontend'dan <code class=\"inline\">fetch</code> bilan API'ga ulanib, javobni panelda ko'rsatdim",
-        "crit": "frontend panelida API ma'lumoti ko'rinadi"
+        "html": "README'ga backend setup va endpoint ro'yxatini yozdim",
+        "crit": "yangi odam API'ni ishga tushira oladi"
+      },
+      {
+        "id": "m1-9",
+        "html": "FastAPI CORS sozlamasini qo'shdim va React frontenddan API'ga ulana oldim",
+        "crit": "browser console'da CORS xatosi chiqmaydi"
+      },
+      {
+        "id": "m1-10",
+        "html": "Settings/.env orqali <code>DATABASE_URL</code> va frontend originni boshqardim",
+        "crit": ".env.example bor va maxfiy qiymatlar gitga tushmaydi"
       }
     ],
     "resources": [
       {
         "type": "doc",
-        "url": "https://docs.nestjs.com/first-steps",
-        "title": "NestJS - First Steps",
-        "desc": "Controller, service, module rasmiy darslik",
-        "host": "docs.nestjs.com"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/results?search_query=nestjs+crash+course+rest+api",
-        "title": "NestJS crash course (video)",
-        "desc": "YouTube qidiruv: NestJS REST API",
-        "host": "youtube.com"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/results?search_query=express+typescript+rest+api+tutorial",
-        "title": "Express + TypeScript (video)",
-        "desc": "YouTube qidiruv: Express TS API",
-        "host": "youtube.com"
+        "url": "https://fastapi.tiangolo.com/",
+        "title": "FastAPI docs",
+        "desc": "Asosiy backend API uchun rasmiy hujjat.",
+        "host": "fastapi.tiangolo.com"
       },
       {
         "type": "doc",
-        "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
-        "title": "TypeScript Handbook",
-        "desc": "Tildagi asosiy tushunchalar",
-        "host": "typescriptlang.org"
+        "url": "https://docs.pydantic.dev/",
+        "title": "Pydantic docs",
+        "desc": "Validation va schema uchun.",
+        "host": "docs.pydantic.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.uvicorn.org/",
+        "title": "Uvicorn docs",
+        "desc": "FastAPI development server.",
+        "host": "uvicorn.org"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/results?search_query=fastapi+python+rest+api+tutorial",
+        "title": "FastAPI REST API (video)",
+        "desc": "YouTube qidiruv: FastAPI Python API",
+        "host": "youtube.com"
       }
     ],
     "project": {
-      "tag": "1-oy loyihasi",
-      "title": "WebGIS API skeleti",
-      "desc": "Hozircha database'siz, massiv bilan ishlaydigan to'liq REST API.",
+      "tag": "1-oy",
+      "title": "FastAPI Geo Starter",
+      "desc": "React frontendga ulanadigan Python FastAPI starter API.",
       "features": [
-        "4+ endpoint (health, buildings, search, feedback)",
-        "NestJS controller/service/module struktura",
-        "DTO + validatsiya",
-        "React frontend API'ga ulangan",
-        "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
-        "Performance va bbox/zoom talabi",
-        "READMEda data source va deploy izohi"
+        "FastAPI app",
+        "Pydantic schemas",
+        "/health endpoint",
+        "/layers endpoint",
+        "/features/{id}",
+        "POST validation",
+        "Swagger docs",
+        "React fetch integration"
       ],
       "rubric": [
-        "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
-        "Bbox/zoom yoki layer performance hisobga olingan.",
-        "Data manbasi va import qadamlari yozilgan.",
-        "Mobil/desktopda asosiy map UI buzilmaydi."
+        "API lokalda ishlaydi.",
+        "Swagger endpointlarni ko'rsatadi.",
+        "Validation va xato statuslari bor.",
+        "Frontend API javobini ko'rsatadi."
       ],
       "variants": [
         {
-          "title": "WebGIS API skeleti - Field Data",
-          "desc": "Backend asoslari mavzusini dala ma'lumoti bilan ishlaydigan GIS workflowga aylantir.",
+          "title": "City Layers API",
+          "desc": "Layerlar va obyekt detail endpointlari.",
           "deliverables": [
-            "GeoJSON/PostGIS data import",
-            "Map layer styling",
-            "Feature detail panel"
+            "layers",
+            "features",
+            "README"
           ]
         },
         {
-          "title": "WebGIS API skeleti - City Dashboard",
-          "desc": "Hudud, obyekt va statistikani ko'rsatadigan boshqaruv paneli variantini qur.",
+          "title": "Survey Feedback API",
+          "desc": "Dala feedback qabul qiladigan API.",
           "deliverables": [
-            "Filter/search controls",
-            "Layer visibility",
-            "Performance note"
+            "POST validation",
+            "status codes",
+            "frontend form"
           ]
         }
       ]
     },
     "quiz": [
       {
-        "q": "NestJS'da URL so'rovini kim qabul qiladi?",
+        "q": "Bu kursda asosiy backend framework qaysi?",
         "a": [
-          "Service",
-          "Controller",
-          "Module",
-          "DTO"
+          "FastAPI",
+          "TypeScript backend",
+          "jQuery",
+          "Bootstrap"
         ],
-        "c": 1,
-        "w": "Controller - qaysi eshik qoqilganini qabul qiladi; asl ishni Service bajaradi.",
+        "c": 0,
+        "w": "Geospatial + AI yo'nalish uchun asosiy backend FastAPI + Python.",
+        "level": "easy"
+      },
+      {
+        "q": "FastAPI'da validation uchun nima ishlatiladi?",
+        "a": [
+          "Pydantic",
+          "Nginx",
+          "Tegola",
+          "MapLibre"
+        ],
+        "c": 0,
+        "w": "Pydantic request/response schema va validation beradi.",
         "level": "easy"
       },
       {
@@ -1245,44 +1246,32 @@
           "Ruxsat yo'q"
         ],
         "c": 1,
-        "w": "404 = resurs topilmadi. 200 = ok, 400 = noto'g'ri so'rov, 500 = server xatosi.",
+        "w": "404 = resurs topilmadi.",
         "level": "practical"
       },
       {
-        "q": "Ma'lumotni qabul qilish uchun qaysi metod?",
+        "q": "POST qachon ishlatiladi?",
         "a": [
-          "GET",
-          "POST",
-          "DELETE",
-          "HEAD"
+          "Ma'lumot yuborish/yaratish",
+          "Faqat o'qish",
+          "CSS yuklash",
+          "Zoom qilish"
         ],
-        "c": 1,
-        "w": "POST tanada (body) ma'lumot yuboradi; GET faqat o'qish uchun.",
+        "c": 0,
+        "w": "POST body orqali ma'lumot yuboradi.",
         "level": "practical"
       },
       {
-        "q": "Biznes logika qayerda yoziladi?",
+        "q": "Swagger UI FastAPI'da qayerda ochiladi?",
         "a": [
-          "Controller",
-          "Service",
-          "main.ts",
-          "DTO"
+          "/docs",
+          "/map",
+          "/style.css",
+          "/tiles"
         ],
-        "c": 1,
-        "w": "Service logikani bajaradi; Controller faqat so'rovni qabul qilib, Service'ni chaqiradi.",
-        "level": "practical"
-      },
-      {
-        "q": "DTO nima vazifani bajaradi?",
-        "a": [
-          "Bazaga ulanadi",
-          "Kiruvchi ma'lumot shaklini tekshiradi",
-          "Tile beradi",
-          "Loglarni yozadi"
-        ],
-        "c": 1,
-        "w": "DTO + validatsiya kiruvchi datani belgilangan shaklga moslashtiradi.",
-        "level": "scenario"
+        "c": 0,
+        "w": "FastAPI avtomatik Swagger hujjatini /docs da beradi.",
+        "level": "easy"
       }
     ],
     "exercises": [
@@ -1385,7 +1374,7 @@
     "eyebrow": "02 / 2-oy",
     "mtitle": "PostGIS - spatial database",
     "lede": "Oddiy API emas, <strong>mapping API</strong> yozasan. PostGIS PostgreSQL'ga spatial data saqlash, indexlash va query qilish imkonini qo'shadi - bu WebGIS backendning yuragi.",
-    "doc": "<p>Endi massiv o'rniga haqiqiy spatial data bilan ishlaysan. Geometry (nuqta, chiziq, poligon), koordinata tizimlari (SRID) va spatial query'lar markaziy mavzu.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip\">SELECT/INSERT/UPDATE/DELETE</span><span class=\"chip t\">geometry / geography</span>\n<span class=\"chip t\">SRID (4326)</span><span class=\"chip t\">ST_Transform</span><span class=\"chip t\">ST_AsGeoJSON</span>\n<span class=\"chip t\">ST_Intersects</span><span class=\"chip t\">ST_Contains</span><span class=\"chip t\">ST_DWithin</span>\n<span class=\"chip t\">ST_MakeEnvelope</span><span class=\"chip\">GIST index</span><span class=\"chip\">EXPLAIN ANALYZE</span>\n</div>\n<h3>Asosiy 3 ta API</h3>\n<p><strong>BBOX</strong> - xaritada ko'rinayotgan to'rtburchak ichidagi obyektlar. <strong>Nearby</strong> - bir nuqtadan radius ichidagilar (<code class=\"inline\">ST_DWithin</code> - index'dan foydalanadi, shuning uchun tez). <strong>Search</strong> - nom bo'yicha qidiruv.</p>\n<h3>SRID nima?</h3>\n<p>SRID - koordinata tizimi raqami. <strong>4326</strong> = oddiy lat/lng (GPS). <strong>3857</strong> = web xaritalar ishlatadigan metr asosidagi proyeksiya. <code class=\"inline\">ST_Transform</code> bittasidan ikkinchisiga o'tkazadi.</p>\n<h3>2-oy oxiridagi natija</h3>\n<p>PostGIS'dan bbox bo'yicha GeoJSON olish, GIST index qo'yish, spatial query'ni <code class=\"inline\">EXPLAIN ANALYZE</code> bilan optimizatsiya qilish va natijani map frontend'da ko'rsatish.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"></polygon></svg></span>\n<div><p>Tezlik siri: GIST index</p><p>Geometry ustunga GIST index qo'ymasang, har query butun jadvalni skanlaydi. Index bilan PostGIS faqat kerakli hududni ko'radi - minglab marta tez.</p></div>\n</div>",
+    "doc": "<p>Endi massiv o'rniga haqiqiy spatial data bilan ishlaysan. Geometry (nuqta, chiziq, poligon), koordinata tizimlari (SRID) va spatial query'lar markaziy mavzu.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip\">SELECT/INSERT/UPDATE/DELETE</span><span class=\"chip t\">geometry / geography</span>\n<span class=\"chip t\">SRID (4326)</span><span class=\"chip t\">ST_Transform</span><span class=\"chip t\">ST_AsGeoJSON</span>\n<span class=\"chip t\">ST_Intersects</span><span class=\"chip t\">ST_Contains</span><span class=\"chip t\">ST_DWithin</span>\n<span class=\"chip t\">ST_MakeEnvelope</span><span class=\"chip\">GIST index</span><span class=\"chip\">EXPLAIN ANALYZE</span>\n</div>\n<h3>Asosiy 3 ta API</h3>\n<p><strong>BBOX</strong> - xaritada ko'rinayotgan to'rtburchak ichidagi obyektlar. <strong>Nearby</strong> - bir nuqtadan radius ichidagilar (<code class=\"inline\">ST_DWithin</code> - index'dan foydalanadi, shuning uchun tez). <strong>Search</strong> - nom bo'yicha qidiruv.</p>\n<h3>SRID nima?</h3>\n<p>SRID - koordinata tizimi raqami. <strong>4326</strong> = oddiy lat/lng (GPS). <strong>3857</strong> = web xaritalar ishlatadigan metr asosidagi proyeksiya. <code class=\"inline\">ST_Transform</code> bittasidan ikkinchisiga o'tkazadi.</p>\n<h3>2-oy oxiridagi natija</h3>\n<p>PostGIS'dan bbox bo'yicha GeoJSON olish, GIST index qo'yish, spatial query'ni <code class=\"inline\">EXPLAIN ANALYZE</code> bilan optimizatsiya qilish va natijani map frontend'da ko'rsatish.</p>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\"></polygon></svg></span>\n<div><p>Tezlik siri: GIST index</p><p>Geometry ustunga GIST index qo'ymasang, har query butun jadvalni skanlaydi. Index bilan PostGIS faqat kerakli hududni ko'radi - minglab marta tez.</p></div>\n</div>\n<h3>Spatial schema namunasi</h3>\n<div class=\"tree\">\nlayers\n  id, title, geometry_type, min_zoom, max_zoom\n\nfeatures\n  id, layer_id, name, props JSONB, geom geometry(Geometry,4326)\n  index: GIST(geom)\n\nuploads\n  id, filename, status, created_at, error_message\n</div>\n<p>Professional PostGIS loyihada faqat bitta jadval yetmaydi. Layer metadata, feature data, upload status va spatial indexlar alohida o'ylanadi.</p>",
     "code": [
       {
         "heading": null,
@@ -1412,16 +1401,28 @@
         "code": "-- GET /api/search?q=Amir Temur\nSELECT id, name, ST_AsGeoJSON(geometry)::json AS geometry\nFROM buildings\nWHERE name ILIKE '%' || $1 || '%'\nLIMIT 20;"
       },
       {
-        "heading": null,
-        "title": "NestJS service'da PostGIS so'rovi (pg)",
-        "lang": "typescript",
-        "code": "import { Injectable } from \"@nestjs/common\";\nimport { Pool } from \"pg\";\n\n@Injectable()\nexport class BuildingsService {\n  private pool = new Pool({ connectionString: process.env.DATABASE_URL });\n\n  async findInBbox(b: number[]) {\n    const sql = `\n      SELECT id, name, height, ST_AsGeoJSON(geometry)::json AS geometry\n      FROM buildings\n      WHERE ST_Intersects(geometry, ST_MakeEnvelope($1,$2,$3,$4,4326))\n      LIMIT 500`;\n    const { rows } = await this.pool.query(sql, b);\n    return { type: \"FeatureCollection\",\n             features: rows.map(r => ({ type: \"Feature\",\n               geometry: r.geometry,\n               properties: { id: r.id, name: r.name, height: r.height } })) };\n  }\n}"
+        "heading": {
+          "h": "FastAPI service'da PostGIS so'rovi",
+          "p": "bbox bo'yicha GeoJSON qaytarish."
+        },
+        "title": "features_service.py",
+        "lang": "py",
+        "code": "from sqlalchemy import text\n\nBBOX_SQL = text(\"\"\"\nSELECT id, name, height, ST_AsGeoJSON(geometry)::json AS geometry\nFROM buildings\nWHERE ST_Intersects(geometry, ST_MakeEnvelope(:minx, :miny, :maxx, :maxy, 4326))\nLIMIT 500;\n\"\"\")\n\nasync def find_buildings_in_bbox(session, bbox: tuple[float, float, float, float]):\n    minx, miny, maxx, maxy = bbox\n    rows = await session.execute(BBOX_SQL, {\"minx\": minx, \"miny\": miny, \"maxx\": maxx, \"maxy\": maxy})\n    return {\n        \"type\": \"FeatureCollection\",\n        \"features\": [\n            {\"type\": \"Feature\", \"geometry\": r.geometry, \"properties\": {\"id\": r.id, \"name\": r.name, \"height\": r.height}}\n            for r in rows\n        ],\n    }"
       },
       {
         "heading": null,
         "title": "Optimizatsiyani tekshirish",
         "lang": "sql",
         "code": "EXPLAIN ANALYZE\nSELECT id FROM buildings\nWHERE ST_Intersects(geometry, ST_MakeEnvelope(69.2,41.2,69.3,41.4,4326));\n-- \"Index Scan using idx_buildings_geom\" ko'rinsa - index ishlayapti"
+      },
+      {
+        "heading": {
+          "h": "Spatial index va query profiling",
+          "p": "Query tezligini o'lchashni boshidan odat qil."
+        },
+        "title": "profile_query.sql",
+        "lang": "sql",
+        "code": "CREATE INDEX IF NOT EXISTS idx_features_geom\nON features USING GIST (geom);\n\nEXPLAIN ANALYZE\nSELECT id, name\nFROM features\nWHERE ST_Intersects(\n  geom,\n  ST_MakeEnvelope(69.10, 41.20, 69.40, 41.40, 4326)\n)\nLIMIT 500;"
       }
     ],
     "tasks": [
@@ -1464,6 +1465,16 @@
         "id": "m2-8",
         "html": "<code class=\"inline\">ST_Transform</code> bilan 4326 ↔ 3857 o'tkazishni sinab ko'rdim",
         "crit": "ST_Transform'dan keyin koordinatalar kutilgan birlikda"
+      },
+      {
+        "id": "m2-9",
+        "html": "Feature jadvali uchun <code>GIST</code> spatial index yaratdim",
+        "crit": "EXPLAIN natijasida index ishlatilgani ko'rinadi"
+      },
+      {
+        "id": "m2-10",
+        "html": "Layer metadata jadvali bilan frontendga layer ro'yxatini DB'dan berdim",
+        "crit": "/layers endpointi PostGIS jadvalidan o'qiydi"
       }
     ],
     "resources": [
@@ -1693,6 +1704,440 @@
         "topic": "Fazoviy indeks",
         "rule": "CREATE INDEX ... USING GIST (geom);",
         "ex": "Katta jadvalda shart"
+      }
+    ]
+  },
+  {
+    "zoom": "z26",
+    "title": "Python FastAPI + PostGIS",
+    "sub": "Geo backend",
+    "coord": "Backend / z26",
+    "eyebrow": "12 / Python geospatial backend",
+    "mtitle": "Python backend - FastAPI bilan geospatial API",
+    "lede": "Chatdagi ish e'loniga yaqinlashish uchun backend asosiy yo'li <strong>Python FastAPI</strong> qilib belgilandi. Maqsad: PostGIS bilan gaplashadigan, GeoJSON qaytaradigan, upload va processing ishlarini boshlaydigan professional geo API.",
+    "doc": "<div class='prose'><p>Geospatial bozorda Python juda kuchli: GIS processing kutubxonalari, AI inference, raster/vector pipeline va automation ko'pincha Python atrofida yuradi. TypeScript frontend xarita va UI uchun qoladi; backendning asosiy API qismi esa <strong>Python/FastAPI</strong> bo'ladi.</p><h3>O'rganadigan mavzular</h3><div class='chips'><span class='chip t'>Python typing</span><span class='chip'>venv / pip</span><span class='chip t'>FastAPI</span><span class='chip'>Pydantic</span><span class='chip'>SQLAlchemy</span><span class='chip t'>PostGIS</span><span class='chip'>GeoJSON response</span><span class='chip'>file upload</span></div><h3>Minimal ishga tayyor endpointlar</h3><p><code>/health</code>, <code>/layers</code>, <code>/features</code>, <code>/features/{id}</code>, <code>/features/near</code>, <code>/upload</code> va <code>/process</code>. Har endpoint README'da request/response namunasi bilan yoziladi.</p><div class='callout'><div><p>Strategiya</p><p>Frontend va map UI - React/TS. Backend API, geo processing, AI inference va PostGIS-heavy logic - Python/FastAPI. Shu kombinatsiya xalqaro e'lonlarda kuchli ko'rinadi.</p></div></div></div>\n<h3>FastAPI + PostGIS service arxitekturasi</h3>\n<div class=\"tree\">\napi/\n  main.py\n  core/config.py\n  db/session.py\n  modules/\n    layers/router.py\n    features/router.py\n    features/service.py\n    uploads/router.py\n  tests/\n    test_features.py\n</div>\n<p>Router faqat HTTP bilan ishlaydi. Service PostGIS queryni bajaradi. DB session alohida dependency bo'ladi. Shu tartib kodni kattalashganda ham boshqariladigan qiladi.</p>",
+    "code": [
+      {
+        "heading": {
+          "h": "FastAPI health + layers",
+          "p": "Birinchi tekshiriladigan production endpointlar."
+        },
+        "title": "main.py",
+        "lang": "py",
+        "code": "from fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI(title=\"Geo API\")\n\nclass Layer(BaseModel):\n    id: str\n    title: str\n    geometry: str\n\n@app.get(\"/health\")\ndef health():\n    return {\"status\": \"ok\", \"service\": \"geo-api\"}\n\n@app.get(\"/layers\", response_model=list[Layer])\ndef layers():\n    return [\n        {\"id\": \"buildings\", \"title\": \"Buildings\", \"geometry\": \"Polygon\"},\n        {\"id\": \"roads\", \"title\": \"Roads\", \"geometry\": \"LineString\"},\n    ]"
+      },
+      {
+        "heading": {
+          "h": "PostGIS nearby query",
+          "p": "Map viewport yoki koordinata bo'yicha obyekt topish."
+        },
+        "title": "features.py",
+        "lang": "py",
+        "code": "from sqlalchemy import text\n\nNEARBY_SQL = text(\"\"\"\nSELECT id, name, ST_AsGeoJSON(geom)::json AS geometry\nFROM buildings\nWHERE ST_DWithin(\n  geom::geography,\n  ST_SetSRID(ST_MakePoint(:lng, :lat), 4326)::geography,\n  :meters\n)\nORDER BY ST_Distance(\n  geom::geography,\n  ST_SetSRID(ST_MakePoint(:lng, :lat), 4326)::geography\n)\nLIMIT 50;\n\"\"\")\n\nasync def find_nearby(session, lat: float, lng: float, meters: int = 500):\n    rows = await session.execute(NEARBY_SQL, {\"lat\": lat, \"lng\": lng, \"meters\": meters})\n    return [dict(row._mapping) for row in rows]"
+      },
+      {
+        "heading": {
+          "h": "BBox endpoint",
+          "p": "MapLibre viewport bo'yicha GeoJSON qaytarish."
+        },
+        "title": "features_router.py",
+        "lang": "py",
+        "code": "from fastapi import APIRouter, Depends, Query\nfrom sqlalchemy.ext.asyncio import AsyncSession\nfrom .service import features_in_bbox\nfrom app.db.session import get_session\n\nrouter = APIRouter(prefix=\"/features\", tags=[\"features\"])\n\n@router.get(\"/bbox\")\nasync def bbox(\n    minx: float = Query(...),\n    miny: float = Query(...),\n    maxx: float = Query(...),\n    maxy: float = Query(...),\n    session: AsyncSession = Depends(get_session),\n):\n    return await features_in_bbox(session, (minx, miny, maxx, maxy))"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis12-1",
+        "html": "Python <code>venv</code> ochib, FastAPI loyihasini ishga tushirdim",
+        "crit": "<code>uvicorn main:app --reload</code> localhostda ishlaydi"
+      },
+      {
+        "id": "gis12-2",
+        "html": "<code>/health</code> va <code>/layers</code> endpointlarini yozdim",
+        "crit": "Swagger UI'da endpointlar ko'rinadi va JSON qaytaradi"
+      },
+      {
+        "id": "gis12-3",
+        "html": "Pydantic schema bilan layer va feature response shaklini tekshirdim",
+        "crit": "noto'g'ri response testda ushlanadi"
+      },
+      {
+        "id": "gis12-4",
+        "html": "FastAPI'ni PostGIS databasega uladim",
+        "crit": "SELECT 1 va kamida bitta spatial query ishlaydi"
+      },
+      {
+        "id": "gis12-5",
+        "html": "<code>/features/near</code> endpointida ST_DWithin ishlatdim",
+        "crit": "lat/lng/meters bilan yaqin obyektlar qaytadi"
+      },
+      {
+        "id": "gis12-6",
+        "html": "GeoJSON FeatureCollection response qaytardim",
+        "crit": "MapLibre yoki geojson.io response'ni ochadi"
+      },
+      {
+        "id": "gis12-7",
+        "html": "<code>/upload</code> uchun GeoJSON fayl qabul qilishni qo'shdim",
+        "crit": "fayl hajmi va extension validatsiya qilinadi"
+      },
+      {
+        "id": "gis12-8",
+        "html": "README'ga Python API setup, env va endpoint namunalarini yozdim",
+        "crit": "yangi odam 10 daqiqada API'ni ishga tushira oladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://fastapi.tiangolo.com/",
+        "title": "FastAPI docs",
+        "desc": "Python API uchun asosiy rasmiy hujjat.",
+        "host": "fastapi.tiangolo.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.pydantic.dev/",
+        "title": "Pydantic docs",
+        "desc": "Schema va validation uchun.",
+        "host": "docs.pydantic.dev"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.sqlalchemy.org/",
+        "title": "SQLAlchemy docs",
+        "desc": "Python database access va querylar.",
+        "host": "docs.sqlalchemy.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://postgis.net/docs/",
+        "title": "PostGIS docs",
+        "desc": "Spatial SQL, geometry va indexlar.",
+        "host": "postgis.net"
+      }
+    ],
+    "project": {
+      "tag": "Professional backend",
+      "title": "FastAPI Geo Service",
+      "desc": "React/MapLibre frontendga ulanadigan Python + PostGIS geospatial API.",
+      "features": [
+        "FastAPI + Pydantic schema",
+        "PostGIS connection",
+        "GeoJSON FeatureCollection",
+        "Nearby/bbox endpoint",
+        "Upload endpoint",
+        "Swagger + README"
+      ],
+      "rubric": [
+        "Endpointlar localda ishlaydi.",
+        "Spatial query PostGIS indexdan foydalanadi.",
+        "Response format frontend uchun tayyor.",
+        "README setup va API namunalarini beradi."
+      ],
+      "variants": [
+        {
+          "title": "City Object API",
+          "desc": "Bino, yo'l va POI obyektlari uchun CRUD + search.",
+          "deliverables": [
+            "layers endpoint",
+            "bbox query",
+            "feature detail"
+          ]
+        },
+        {
+          "title": "Field Survey API",
+          "desc": "Dala ma'lumotini upload qilib, xaritada ko'rsatish.",
+          "deliverables": [
+            "upload",
+            "validation",
+            "GeoJSON output"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Nega Python geospatial backendda kuchli?",
+        "a": [
+          "CSS yaxshi yozgani uchun",
+          "GDAL, Shapely, Rasterio, GeoPandas va AI ekotizimi kuchli bo'lgani uchun",
+          "Faqat browserda ishlagani uchun",
+          "PostGIS o'rniga ishlatilgani uchun"
+        ],
+        "c": 1,
+        "w": "Python GIS processing va AI/data pipeline uchun juda boy ekotizimga ega.",
+        "level": "easy"
+      },
+      {
+        "q": "FastAPI'da request/response validation uchun nima ishlatiladi?",
+        "a": [
+          "Pydantic",
+          "Nginx",
+          "Tegola",
+          "MapLibre"
+        ],
+        "c": 0,
+        "w": "Pydantic schema ma'lumot shaklini tekshiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Yaqin obyektlarni topishda PostGIS'da qaysi funksiya mos?",
+        "a": [
+          "ST_DWithin",
+          "ST_Color",
+          "ST_Login",
+          "ST_Button"
+        ],
+        "c": 0,
+        "w": "ST_DWithin masofa ichidagi geometriyalarni topadi.",
+        "level": "practical"
+      },
+      {
+        "q": "GeoJSON response kimga kerak?",
+        "a": [
+          "Faqat Dockerga",
+          "Map frontendga spatial obyektlarni ko'rsatish uchun",
+          "Parol yaratish uchun",
+          "CSS minify qilish uchun"
+        ],
+        "c": 1,
+        "w": "MapLibre/Leaflet kabi frontendlar GeoJSON bilan qatlam ko'rsata oladi.",
+        "level": "practical"
+      },
+      {
+        "q": "TS va Pythonni bir loyihada qanday bo'lish to'g'ri?",
+        "a": [
+          "TS frontend/map UI, Python geo processing/API",
+          "Python CSS uchun, TS database uchun",
+          "Ikkalasini ham ishlatmaslik",
+          "Faqat bitta tilga yopishib olish"
+        ],
+        "c": 0,
+        "w": "Bu rol uchun amaliy kombinatsiya: TS UI, Python GIS/AI/backend.",
+        "level": "scenario"
+      }
+    ]
+  },
+  {
+    "zoom": "z28",
+    "title": "GDAL / Shapely / Rasterio",
+    "sub": "GIS processing",
+    "coord": "Data pipeline / z28",
+    "eyebrow": "13 / Vector va raster processing",
+    "mtitle": "GIS processing - fayldan production datagacha",
+    "lede": "Professional geospatial muhandis faqat xarita chizmaydi; u ma'lumotni tozalaydi, transform qiladi, validatsiya qiladi va servisga tayyorlaydi. Bu modul <strong>GDAL, Shapely, GeoPandas, Rasterio va PyProj</strong> atrofida quriladi.",
+    "doc": "<div class='prose'><p>Real data tartibsiz keladi: CRS noto'g'ri, geometry invalid, atributlar aralash, raster katta, formatlar har xil. Bu modulda sen data pipeline qurishni o'rganasan: <strong>read -> inspect -> clean -> transform -> validate -> export -> serve</strong>.</p><h3>Asosiy kutubxonalar</h3><div class='chips'><span class='chip t'>GDAL / ogr2ogr</span><span class='chip'>GeoPandas</span><span class='chip t'>Shapely</span><span class='chip'>Rasterio</span><span class='chip'>PyProj</span><span class='chip'>COG</span><span class='chip'>GPKG</span><span class='chip'>FlatGeobuf</span></div><h3>Amaliy pipeline</h3><p>GeoJSON yoki Shapefile olasan, CRS'ni 4326 ga o'tkazasiz, invalid polygonlarni tuzatasiz, bbox bo'yicha clip qilasiz, PostGIS'ga yozasiz. Raster tomonda GeoTIFF'ni clip, reproject va COG formatga tayyorlashni o'rganasan.</p><div class='callout'><div><p>Ishdagi farq</p><p>Frontend xaritani chiroyli qiladi. GIS processing esa xarita ortidagi ma'lumotni ishonchli qiladi. Seniorlik shu yerda ko'rinadi.</p></div></div></div>\n<h3>Data quality checklist</h3>\n<div class=\"exlist\">\n<div class=\"ex\"><b>CRS</b><span>Layer CRS bor, kerak bo'lsa EPSG:4326 ga o'tkazilgan.</span></div>\n<div class=\"ex\"><b>Geometry</b><span>Invalid va empty geometrylar tuzatilgan yoki olib tashlangan.</span></div>\n<div class=\"ex\"><b>Attributes</b><span>Kerakli ustunlar nomi toza, null qiymatlar nazorat qilingan.</span></div>\n<div class=\"ex\"><b>Size</b><span>Katta fayllar clip/simplify qilinib, web uchun yengillashtirilgan.</span></div>\n</div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Vector cleanup",
+          "p": "Invalid geometry va CRS muammosini tuzatish."
+        },
+        "title": "clean_vectors.py",
+        "lang": "py",
+        "code": "import geopandas as gpd\n\nsrc = gpd.read_file(\"data/raw/regions.geojson\")\n\n# Hamma layerni WGS84 ga keltiramiz\nif src.crs is None:\n    src = src.set_crs(4326)\nelse:\n    src = src.to_crs(4326)\n\nsrc[\"geometry\"] = src.geometry.make_valid()\nsrc = src[~src.geometry.is_empty]\nsrc[[\"name\", \"geometry\"]].to_file(\"data/clean/regions.gpkg\", layer=\"regions\", driver=\"GPKG\")"
+      },
+      {
+        "heading": {
+          "h": "Raster clip",
+          "p": "GeoTIFF'ni polygon bilan kesish."
+        },
+        "title": "clip_raster.py",
+        "lang": "py",
+        "code": "import geopandas as gpd\nimport rasterio\nfrom rasterio.mask import mask\n\narea = gpd.read_file(\"data/clean/aoi.geojson\").to_crs(4326)\n\nwith rasterio.open(\"data/raw/ortho.tif\") as src:\n    shapes = area.to_crs(src.crs).geometry\n    clipped, transform = mask(src, shapes, crop=True)\n    profile = src.profile\n    profile.update(height=clipped.shape[1], width=clipped.shape[2], transform=transform)\n\nwith rasterio.open(\"data/clean/ortho_clip.tif\", \"w\", **profile) as dst:\n    dst.write(clipped)"
+      },
+      {
+        "heading": {
+          "h": "Quality report",
+          "p": "Har importdan oldin data sifati bo'yicha qisqa hisobot."
+        },
+        "title": "quality_report.py",
+        "lang": "py",
+        "code": "import geopandas as gpd\n\nlayer = gpd.read_file(\"data/raw/buildings.geojson\")\nreport = {\n    \"rows\": len(layer),\n    \"crs\": str(layer.crs),\n    \"bounds\": layer.total_bounds.tolist(),\n    \"geometry_types\": layer.geometry.geom_type.value_counts().to_dict(),\n    \"invalid_geometry\": int((~layer.geometry.is_valid).sum()),\n    \"empty_geometry\": int(layer.geometry.is_empty.sum()),\n}\nprint(report)"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis13-1",
+        "html": "GeoJSON, GPKG va Shapefile farqini README'da qisqa yozdim",
+        "crit": "qachon qaysi format tanlanishi aniq"
+      },
+      {
+        "id": "gis13-2",
+        "html": "GeoPandas bilan layer ochib, CRS va geometry turini tekshirdim",
+        "crit": "notebook yoki script outputida crs, count, bounds bor"
+      },
+      {
+        "id": "gis13-3",
+        "html": "Invalid geometrylarni Shapely/GeoPandas bilan tuzatdim",
+        "crit": "invalid count kamaygani yozilgan"
+      },
+      {
+        "id": "gis13-4",
+        "html": "Layerni bbox yoki AOI polygon bo'yicha clip qildim",
+        "crit": "natija faqat kerakli hududni saqlaydi"
+      },
+      {
+        "id": "gis13-5",
+        "html": "ogr2ogr yoki GeoPandas orqali PostGIS'ga import qildim",
+        "crit": "PostGIS jadvalida geometry va SRID to'g'ri"
+      },
+      {
+        "id": "gis13-6",
+        "html": "Rasterio bilan GeoTIFF metadata va bounds tekshirdim",
+        "crit": "CRS, resolution va bounds yozilgan"
+      },
+      {
+        "id": "gis13-7",
+        "html": "GeoTIFF'ni AOI bo'yicha clip qildim",
+        "crit": "chiqqan raster kichikroq va xaritada joyida ochiladi"
+      },
+      {
+        "id": "gis13-8",
+        "html": "Data pipeline scriptini bitta buyruq bilan ishga tushadigan qildim",
+        "crit": "raw data -> clean data oqimi hujjatlashtirilgan"
+      },
+      {
+        "id": "gis13-9",
+        "html": "Har bir raw layer uchun quality report chiqardim",
+        "crit": "rows, crs, bounds, geometry type, invalid count yozilgan"
+      },
+      {
+        "id": "gis13-10",
+        "html": "Clean data bilan raw data farqini README'da jadval qilib ko'rsatdim",
+        "crit": "qaysi muammo tuzatilgani aniq ko'rinadi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://gdal.org/",
+        "title": "GDAL docs",
+        "desc": "Raster/vector geodata processing uchun asosiy toolkit.",
+        "host": "gdal.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://geopandas.org/",
+        "title": "GeoPandas docs",
+        "desc": "Python'da vector geodata tahlili.",
+        "host": "geopandas.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://shapely.readthedocs.io/",
+        "title": "Shapely docs",
+        "desc": "Geometry operation va validation.",
+        "host": "shapely.readthedocs.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://rasterio.readthedocs.io/",
+        "title": "Rasterio docs",
+        "desc": "GeoTIFF va raster processing.",
+        "host": "rasterio.readthedocs.io"
+      }
+    ],
+    "project": {
+      "tag": "Data engineering",
+      "title": "Uzbekistan GIS Data Pipeline",
+      "desc": "Raw vector/raster fayllarni tozalab, PostGIS va map servisga tayyorlaydigan pipeline.",
+      "features": [
+        "CRS normalization",
+        "Geometry validation",
+        "AOI clip",
+        "Raster metadata report",
+        "PostGIS import",
+        "Pipeline README"
+      ],
+      "rubric": [
+        "Raw va clean data ajratilgan.",
+        "Har qadam takrorlanadigan script bilan bajariladi.",
+        "CRS va geometry sifati tekshirilgan.",
+        "Natija xaritada joyida ko'rinadi."
+      ],
+      "variants": [
+        {
+          "title": "Vector Pipeline",
+          "desc": "OSM/GeoJSON layerlarni production tablega tayyorlash.",
+          "deliverables": [
+            "clean gpkg",
+            "postgis import",
+            "quality report"
+          ]
+        },
+        {
+          "title": "Raster Pipeline",
+          "desc": "GeoTIFF clip va metadata report.",
+          "deliverables": [
+            "clipped raster",
+            "bounds report",
+            "map preview"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "CRS noto'g'ri bo'lsa eng ko'p nima bo'ladi?",
+        "a": [
+          "Data noto'g'ri joyda chiqadi",
+          "Button ishlamaydi",
+          "Parol o'zgaradi",
+          "CSS yo'qoladi"
+        ],
+        "c": 0,
+        "w": "CRS xatosi obyektlarni xaritada noto'g'ri joyga chiqaradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Shapely nima uchun kerak?",
+        "a": [
+          "Geometry operation va validation",
+          "React state boshqarish",
+          "Docker image siqish",
+          "JWT yaratish"
+        ],
+        "c": 0,
+        "w": "Shapely geometriya bilan ishlaydi: validatsiya, union, buffer, intersection.",
+        "level": "easy"
+      },
+      {
+        "q": "Rasterio asosan qaysi data bilan ishlaydi?",
+        "a": [
+          "GeoTIFF/raster",
+          "HTML forma",
+          "JWT token",
+          "NPM package"
+        ],
+        "c": 0,
+        "w": "Rasterio raster data, masalan GeoTIFF bilan ishlaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "Production pipeline'da eng yaxshi qoida qaysi?",
+        "a": [
+          "Qo'lda QGIS'da qilib, yozmaslik",
+          "Har qadam script va README bilan takrorlanadigan bo'lishi",
+          "Faqat screenshot saqlash",
+          "CRS'ni tekshirmaslik"
+        ],
+        "c": 1,
+        "w": "Ishonchli pipeline takrorlanadi va hujjatlashtiriladi.",
+        "level": "scenario"
+      },
+      {
+        "q": "PostGIS'ga importdan oldin nima tekshiriladi?",
+        "a": [
+          "CRS, geometry validity, atributlar",
+          "Button rangi",
+          "Favicon",
+          "Login rasmi"
+        ],
+        "c": 0,
+        "w": "Data sifati importdan oldin tekshirilsa, keyingi muammo kamayadi.",
+        "level": "practical"
       }
     ]
   },
@@ -2016,12 +2461,12 @@
     "coord": "Bino ko'rinishi / z16",
     "eyebrow": "04 / 4-oy",
     "mtitle": "Hammasini bitta production platformaga yig'ish",
-    "lede": "Frontend, backend, PostGIS, Tegola va Nginx - barchasini Docker Compose bilan bitta buyruq orqali ko'tariladigan WebGIS platformaga aylantirasan.",
-    "doc": "<p>Docker har xizmatni alohida \"konteyner\"ga joylaydi - sening kompyuteringda ham, serverda ham bir xil ishlaydi. Nginx esa hamma so'rovlarni to'g'ri xizmatga yo'naltiruvchi \"qabulxona\".</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip\">Dockerfile</span><span class=\"chip\">docker-compose.yml</span>\n<span class=\"chip\">volume / network</span><span class=\"chip\">.env</span>\n<span class=\"chip t\">Nginx reverse proxy</span><span class=\"chip\">logs</span><span class=\"chip\">backup</span><span class=\"chip\">monitoring</span>\n</div>\n<h3>Final loyiha strukturasi</h3>\n<div class=\"tree\">\nuzbekistan-webgis-platform/\n  <span class=\"dir\">frontend/</span> <span class=\"cm\"># React TS + MapLibre</span>\n<span class=\"dir\">backend/</span> <span class=\"cm\"># NestJS API</span>\n<span class=\"dir\">tegola/</span> <span class=\"cm\"># tegola.toml</span>\n<span class=\"dir\">database/</span> <span class=\"cm\"># init.sql, indexes.sql</span>\n<span class=\"dir\">nginx/</span> <span class=\"cm\"># nginx.conf</span>\n  docker-compose.yml\n  .env.example\n  README.md\n      </div>\n<h3>Docker Compose'dagi servislar</h3>\n<div class=\"chips\">\n<span class=\"chip\">frontend</span><span class=\"chip\">backend</span><span class=\"chip\">postgres-postgis</span>\n<span class=\"chip\">tegola</span><span class=\"chip\">nginx</span><span class=\"chip\">pgadmin</span>\n</div>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M12 2L2 7l10 5 10-5-10-5z\"></path><path d=\"M2 17l10 5 10-5\"></path><path d=\"M2 12l10 5 10-5\"></path></svg></span>\n<div><p>Yakuniy maqsad</p><p>Bitta buyruq - <code class=\"inline\">docker compose up -d</code> - butun WebGIS platformani ko'taradi. Bu sening portfoliongdagi eng kuchli isbot.</p></div>\n</div>",
+    "lede": "Frontend, FastAPI API, PostGIS, Tegola, Redis, worker va Nginx - barchasini Docker Compose bilan bitta buyruq orqali ko'tariladigan geospatial platformaga aylantirasan.",
+    "doc": "<p>Docker har xizmatni alohida \"konteyner\"ga joylaydi - sening kompyuteringda ham, serverda ham bir xil ishlaydi. Nginx esa hamma so'rovlarni to'g'ri xizmatga yo'naltiruvchi \"qabulxona\".</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip\">Dockerfile</span><span class=\"chip\">docker-compose.yml</span>\n<span class=\"chip\">volume / network</span><span class=\"chip\">.env</span>\n<span class=\"chip t\">Nginx reverse proxy</span><span class=\"chip\">logs</span><span class=\"chip\">backup</span><span class=\"chip\">monitoring</span>\n</div>\n<h3>Final loyiha strukturasi</h3>\n<div class=\"tree\">\nuzbekistan-webgis-platform/\n  <span class=\"dir\">frontend/</span> <span class=\"cm\"># React TS + MapLibre</span>\n<span class=\"dir\">api/</span> <span class=\"cm\"># Python FastAPI API</span>\n<span class=\"dir\">tegola/</span> <span class=\"cm\"># tegola.toml</span>\n<span class=\"dir\">database/</span> <span class=\"cm\"># init.sql, indexes.sql</span>\n<span class=\"dir\">nginx/</span> <span class=\"cm\"># nginx.conf</span>\n  docker-compose.yml\n  .env.example\n  README.md\n      </div>\n<h3>Docker Compose'dagi servislar</h3>\n<div class=\"chips\">\n<span class=\"chip\">frontend</span><span class=\"chip\">api</span><span class=\"chip\">worker</span><span class=\"chip\">postgres-postgis</span>\n<span class=\"chip\">tegola</span><span class=\"chip\">nginx</span><span class=\"chip\">pgadmin</span>\n</div>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M12 2L2 7l10 5 10-5-10-5z\"></path><path d=\"M2 17l10 5 10-5\"></path><path d=\"M2 12l10 5 10-5\"></path></svg></span>\n<div><p>Yakuniy maqsad</p><p>Bitta buyruq - <code class=\"inline\">docker compose up -d</code> - butun WebGIS platformani ko'taradi. Bu sening portfoliongdagi eng kuchli isbot.</p></div>\n</div>",
     "code": [
       {
         "heading": null,
-        "title": "backend/Dockerfile",
+        "title": "api/Dockerfile",
         "lang": "dockerfile",
         "code": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\nEXPOSE 3000\nCMD [\"node\", \"dist/main.js\"]"
       },
@@ -2029,13 +2474,13 @@
         "heading": null,
         "title": "docker-compose.yml",
         "lang": "yaml",
-        "code": "services:\n  postgres:\n    image: postgis/postgis:16-3.4\n    environment:\n      POSTGRES_DB: gis\n      POSTGRES_USER: gis\n      POSTGRES_PASSWORD: secret\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql\n\n  backend:\n    build: ./backend\n    environment:\n      DATABASE_URL: postgres://gis:secret@postgres:5432/gis\n    depends_on: [postgres]\n\n  tegola:\n    image: gospatial/tegola\n    command: serve --config /etc/tegola/config.toml\n    volumes:\n      - ./tegola/tegola.toml:/etc/tegola/config.toml\n    depends_on: [postgres]\n\n  frontend:\n    build: ./frontend\n\n  nginx:\n    image: nginx:alpine\n    ports: [\"80:80\"]\n    volumes:\n      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf\n    depends_on: [backend, tegola, frontend]\n\nvolumes:\n  pgdata:"
+        "code": "services:\n  postgres:\n    image: postgis/postgis:16-3.4\n    environment:\n      POSTGRES_DB: gis\n      POSTGRES_USER: gis\n      POSTGRES_PASSWORD: secret\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql\n\n  api:\n    build: ./api\n    environment:\n      DATABASE_URL: postgresql+asyncpg://gis:secret@postgres:5432/gis\n    depends_on: [postgres]\n\n  tegola:\n    image: gospatial/tegola\n    command: serve --config /etc/tegola/config.toml\n    volumes:\n      - ./tegola/tegola.toml:/etc/tegola/config.toml\n    depends_on: [postgres]\n\n  frontend:\n    build: ./frontend\n\n  nginx:\n    image: nginx:alpine\n    ports: [\"80:80\"]\n    volumes:\n      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf\n    depends_on: [api, tegola, frontend]\n\nvolumes:\n  pgdata:"
       },
       {
         "heading": null,
         "title": "nginx/nginx.conf - reverse proxy",
         "lang": "nginx",
-        "code": "server {\n  listen 80;\n\n  location /api/ {\n    proxy_pass http://backend:3000/;\n  }\n\n  location /tiles/ {\n    proxy_pass http://tegola:8080/;\n  }\n\n  location / {\n    proxy_pass http://frontend:80/;\n  }\n}"
+        "code": "server {\n  listen 80;\n\n  location /api/ {\n    proxy_pass http://api:8000/;\n  }\n\n  location /tiles/ {\n    proxy_pass http://tegola:8080/;\n  }\n\n  location / {\n    proxy_pass http://frontend:80/;\n  }\n}"
       },
       {
         "heading": null,
@@ -2052,12 +2497,12 @@
       },
       {
         "id": "m4-2",
-        "html": "Backend uchun Dockerfile yozdim va image build qildim",
+        "html": "FastAPI API uchun Dockerfile yozdim va image build qildim",
         "crit": "docker build xatosiz tugaydi, image ro'yxatda ko'rinadi"
       },
       {
         "id": "m4-3",
-        "html": "docker-compose.yml'da postgres + backend + tegola servislarini bog'ladim",
+        "html": "docker-compose.yml'da postgres + api + tegola servislarini bog'ladim",
         "crit": "docker compose ps barcha servisni 'Up' ko'rsatadi"
       },
       {
@@ -2072,7 +2517,7 @@
       },
       {
         "id": "m4-6",
-        "html": "Nginx reverse proxy: /api -> backend, /tiles -> tegola, / -> frontend",
+        "html": "Nginx reverse proxy: /api -> api, /tiles -> tegola, / -> frontend",
         "crit": "bitta domendan /api ham, /tiles ham ishlaydi"
       },
       {
@@ -2312,6 +2757,1211 @@
     ]
   },
   {
+    "zoom": "z30",
+    "title": "Drone Imagery + YOLO",
+    "sub": "AI-GIS",
+    "coord": "AI imagery / z30",
+    "eyebrow": "14 / Computer vision for maps",
+    "mtitle": "AI-GIS - drone imagery va object detection",
+    "lede": "Chatdagi e'londa drone imagery va AI object detection muhim edi. Bu modulda sen georeferenced rasm ustida detection natijasini xaritaga olib chiqishni o'rganasan: <strong>YOLO inference -> bbox -> GeoJSON -> MapLibre layer</strong>.",
+    "doc": "<div class='prose'><p>AI-GIS yo'nalishida maqsad modelni noldan yaratish emas; avval tayyor model bilan <strong>ishlaydigan pipeline</strong> qurish. Rasm keladi, model obyekt topadi, natija spatial formatga o'tadi va xaritada tekshiriladi.</p><h3>O'rganadigan mavzular</h3><div class='chips'><span class='chip t'>orthophoto</span><span class='chip'>GeoTIFF</span><span class='chip t'>YOLO inference</span><span class='chip'>bbox</span><span class='chip'>confidence</span><span class='chip'>tiling</span><span class='chip t'>GeoJSON output</span><span class='chip'>human review</span></div><h3>Professional ehtiyotkorlik</h3><p>Detection natijasi 100% haqiqat emas. Productionda confidence threshold, manual review, false positive/false negative hisoboti va data privacy yoziladi.</p><div class='callout'><div><p>Portfolio kuchi</p><p>Map ustida AI topgan obyektlarni rang bilan ko'rsatish, confidence filter va review panel qo'shish - oddiy WebGIS loyihani kuchli AI-GIS case studyga aylantiradi.</p></div></div></div>\n<h3>AI detection oqimi</h3>\n<div class=\"tree\">\nDrone image / orthophoto\n  -> tile yoki crop\n  -> YOLO inference\n  -> pixel bbox\n  -> georeference transform\n  -> GeoJSON polygon\n  -> FastAPI /detections\n  -> MapLibre layer + confidence filter\n  -> human review\n</div>\n<p>Bu yerda eng muhim fikr: AI natija xaritada ko'rinishi uchun pixel koordinata spatial koordinataga to'g'ri o'tishi kerak.</p>",
+    "code": [
+      {
+        "heading": {
+          "h": "YOLO inference skeleton",
+          "p": "Rasm bo'yicha detection natijasini JSON qilish."
+        },
+        "title": "detect.py",
+        "lang": "py",
+        "code": "from ultralytics import YOLO\n\nmodel = YOLO(\"yolov8n.pt\")\nresults = model(\"data/tiles/tile_001.jpg\", conf=0.35)\n\nfeatures = []\nfor box in results[0].boxes:\n    x1, y1, x2, y2 = box.xyxy[0].tolist()\n    features.append({\n        \"class_id\": int(box.cls[0]),\n        \"confidence\": float(box.conf[0]),\n        \"pixel_bbox\": [x1, y1, x2, y2],\n    })\n\nprint({\"detections\": features})"
+      },
+      {
+        "heading": {
+          "h": "Detection GeoJSON",
+          "p": "Model natijasini map frontendga berish formati."
+        },
+        "title": "detections.geojson",
+        "lang": "json",
+        "code": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"properties\": { \"class\": \"building\", \"confidence\": 0.87, \"review\": \"pending\" },\n      \"geometry\": {\n        \"type\": \"Polygon\",\n        \"coordinates\": [[[69.24,41.31],[69.241,41.31],[69.241,41.311],[69.24,41.311],[69.24,41.31]]]\n      }\n    }\n  ]\n}"
+      },
+      {
+        "heading": {
+          "h": "MapLibre detection layer",
+          "p": "AI topgan obyektlarni xaritada rang bilan ko'rsatish."
+        },
+        "title": "DetectionLayer.ts",
+        "lang": "ts",
+        "code": "map.addSource(\"detections\", {\n  type: \"geojson\",\n  data: \"/api/detections?min_conf=0.5\",\n});\n\nmap.addLayer({\n  id: \"detections-fill\",\n  type: \"fill\",\n  source: \"detections\",\n  paint: {\n    \"fill-color\": [\n      \"case\",\n      [\">=\", [\"get\", \"confidence\"], 0.8], \"#22c55e\",\n      [\">=\", [\"get\", \"confidence\"], 0.5], \"#f59e0b\",\n      \"#ef4444\"\n    ],\n    \"fill-opacity\": 0.35,\n  },\n});"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis14-1",
+        "html": "Drone imagery / orthophoto / GeoTIFF tushunchalarini README'da yozdim",
+        "crit": "raster, pixel coordinate va map coordinate farqi tushuntirilgan"
+      },
+      {
+        "id": "gis14-2",
+        "html": "Tayyor YOLO model bilan bitta rasmda inference ishga tushirdim",
+        "crit": "confidence va class natijalari chiqadi"
+      },
+      {
+        "id": "gis14-3",
+        "html": "Detection natijasini JSON formatga saqladim",
+        "crit": "class, confidence va bbox bor"
+      },
+      {
+        "id": "gis14-4",
+        "html": "Pixel bbox -> map geometry mapping jarayonini hujjatlashtirdim",
+        "crit": "georeference kerakligi aniq yozilgan"
+      },
+      {
+        "id": "gis14-5",
+        "html": "Detection GeoJSON'ni MapLibre layer sifatida ko'rsatdim",
+        "crit": "obyektlar xaritada polygon yoki marker bo'lib ko'rinadi"
+      },
+      {
+        "id": "gis14-6",
+        "html": "Confidence slider/filter qo'shdim",
+        "crit": "past confidence natijalar yashiriladi"
+      },
+      {
+        "id": "gis14-7",
+        "html": "Manual review statusini qo'shdim: pending/accepted/rejected",
+        "crit": "AI natija inson tekshiruvidan o'tadi"
+      },
+      {
+        "id": "gis14-8",
+        "html": "False positive va false negative misollarini case studyga yozdim",
+        "crit": "model cheklovi ochiq ko'rsatilgan"
+      },
+      {
+        "id": "gis14-9",
+        "html": "Detection layer uchun confidence ranglarini qo'shdim",
+        "crit": "yuqori, o'rta, past confidence xaritada farqli rangda chiqadi"
+      },
+      {
+        "id": "gis14-10",
+        "html": "AI detection uchun privacy va limitation bo'limini README'ga yozdim",
+        "crit": "model xatolari va data maxfiyligi ochiq tushuntirilgan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.ultralytics.com/",
+        "title": "Ultralytics YOLO docs",
+        "desc": "YOLO inference va training asoslari.",
+        "host": "docs.ultralytics.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://rasterio.readthedocs.io/",
+        "title": "Rasterio docs",
+        "desc": "Georeferenced raster bilan ishlash.",
+        "host": "rasterio.readthedocs.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://maplibre.org/maplibre-gl-js/docs/",
+        "title": "MapLibre docs",
+        "desc": "Detection layerlarni xaritada ko'rsatish.",
+        "host": "maplibre.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://cogeo.org/",
+        "title": "Cloud Optimized GeoTIFF",
+        "desc": "Katta rasterlarni web uchun tayyorlash tushunchasi.",
+        "host": "cogeo.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.mapbox.com/help/glossary/geojson/",
+        "title": "GeoJSON glossary",
+        "desc": "Detection natijalarini map formatida tushunish uchun.",
+        "host": "docs.mapbox.com"
+      }
+    ],
+    "project": {
+      "tag": "AI-GIS portfolio",
+      "title": "Drone Detection Map",
+      "desc": "Drone imagerydan topilgan obyektlarni xaritada ko'rsatadigan AI-GIS demo.",
+      "features": [
+        "YOLO inference output",
+        "Detection GeoJSON",
+        "MapLibre layer",
+        "Confidence filter",
+        "Manual review status",
+        "Case study with limitations"
+      ],
+      "rubric": [
+        "AI natijasi xaritada ko'rinadi.",
+        "Confidence va review workflow bor.",
+        "Georeference cheklovlari tushuntirilgan.",
+        "README model, data va privacy izohini beradi."
+      ],
+      "variants": [
+        {
+          "title": "Building Detection",
+          "desc": "Binolarni topish va mapda ko'rsatish.",
+          "deliverables": [
+            "detections",
+            "map layer",
+            "review panel"
+          ]
+        },
+        {
+          "title": "Road Damage Review",
+          "desc": "Yo'l shikastlarini review queue bilan ko'rsatish.",
+          "deliverables": [
+            "confidence filter",
+            "status update",
+            "report"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "AI detection natijasida confidence nimani bildiradi?",
+        "a": [
+          "Model ishonch darajasi",
+          "Xarita zoomi",
+          "DB paroli",
+          "CSS o'lchami"
+        ],
+        "c": 0,
+        "w": "Confidence model topgan obyektga qanchalik ishonganini bildiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Pixel bbox xaritada to'g'ri chiqishi uchun nima kerak?",
+        "a": [
+          "Georeference/transform",
+          "Button hover",
+          "JWT secret",
+          "NPM audit"
+        ],
+        "c": 0,
+        "w": "Pixel koordinatani geographic koordinataga o'tkazish uchun georeference kerak.",
+        "level": "practical"
+      },
+      {
+        "q": "Production AI-GISda nima uchun manual review kerak?",
+        "a": [
+          "Model xato qilishi mumkin",
+          "MapLibre ishlamaydi",
+          "Docker faqat shunday yuradi",
+          "PostGIS kerak emas"
+        ],
+        "c": 0,
+        "w": "AI false positive/negative beradi, shuning uchun inson tekshiruvi muhim.",
+        "level": "scenario"
+      },
+      {
+        "q": "Detection natijasini map frontendga berish uchun qulay format?",
+        "a": [
+          "GeoJSON",
+          "DOCX",
+          "MP3",
+          "ICO"
+        ],
+        "c": 0,
+        "w": "GeoJSON map layer sifatida ko'rsatishga qulay.",
+        "level": "easy"
+      },
+      {
+        "q": "YOLO bu modulda asosan nima uchun ishlatiladi?",
+        "a": [
+          "Object detection inference",
+          "SQL index yaratish",
+          "Nginx reverse proxy",
+          "React router"
+        ],
+        "c": 0,
+        "w": "YOLO rasmda obyekt topish uchun ishlatiladi.",
+        "level": "practical"
+      }
+    ]
+  },
+  {
+    "zoom": "z32",
+    "title": "Cloud / Queue / Scale",
+    "sub": "Production infra",
+    "coord": "Cloud / z32",
+    "eyebrow": "15 / Real production architecture",
+    "mtitle": "Cloud va scaling - katta geospatial tizimni yuritish",
+    "lede": "Kuchli geospatial tizim faqat localhostda emas, productionda yashaydi. Bu modulda <strong>AWS/S3, Redis cache, background jobs, queue, Kubernetes asoslari va deployment architecture</strong> ishga tayyor darajada tartiblanadi.",
+    "doc": "<div class='prose'><p>Geospatial workload og'ir bo'ladi: katta raster, tile generation, upload processing, AI inference, search va real-time tracking. Bularni bitta HTTP request ichida bajarish yomon. Og'ir ishlar queue/background workerga ketadi, tez-tez so'raladigan natija cache qilinadi, file storage alohida yuradi.</p><h3>Arxitektura bloklari</h3><div class='chips'><span class='chip t'>Docker Compose</span><span class='chip'>Nginx</span><span class='chip t'>Redis cache</span><span class='chip'>Celery/RQ</span><span class='chip'>S3 object storage</span><span class='chip'>PostGIS backup</span><span class='chip'>Kubernetes basics</span><span class='chip'>CI/CD</span></div><h3>Qachon Kubernetes?</h3><p>Boshida Docker Compose yetadi. Kubernetesni faqat ko'p servis, autoscaling, jamoa va cloud talab qilganda chuqurlashtirasan. Lekin deployment, pod, service, ingress, secret tushunchalarini bilish xalqaro suhbatlarda yordam beradi.</p><div class='callout'><div><p>Professional signal</p><p>README'da architecture diagram, env namuna, backup/restore, healthcheck va monitoring bo'lsa, loyiha toy emasligini ko'rsatadi.</p></div></div></div>\n<h3>Production deployment chizmasi</h3>\n<div class=\"tree\">\nInternet\n  -> Nginx (HTTPS, reverse proxy)\n    -> frontend static files\n    -> /api -> FastAPI\n    -> /tiles -> Tegola\nFastAPI\n  -> PostGIS\n  -> Redis\n  -> Worker queue\nWorker\n  -> GDAL/Rasterio/YOLO jobs\n  -> object storage\n</div>\n<p>Shu chizma interviewda ham ishlaydi: har komponent nima qiladi, qaysi biri scale qilinadi, qaysi biri state saqlaydi - barchasi tushunarli.</p>",
+    "code": [
+      {
+        "heading": {
+          "h": "Queue job flow",
+          "p": "Upload processingni requestdan ajratish."
+        },
+        "title": "worker.py",
+        "lang": "py",
+        "code": "from rq import Queue\nfrom redis import Redis\n\nredis = Redis(host=\"redis\", port=6379)\nqueue = Queue(\"geo-processing\", connection=redis)\n\ndef process_upload(upload_id: str):\n    # 1. file storage'dan faylni ol\n    # 2. GDAL/GeoPandas bilan tozala\n    # 3. PostGIS'ga yoz\n    # 4. statusni accepted/failed qilib yangila\n    return {\"upload_id\": upload_id, \"status\": \"done\"}\n\ndef enqueue_upload(upload_id: str):\n    job = queue.enqueue(process_upload, upload_id)\n    return {\"job_id\": job.id, \"status\": \"queued\"}"
+      },
+      {
+        "heading": {
+          "h": "Production compose",
+          "p": "API, worker, Redis va PostGIS bitta lokal production modelda."
+        },
+        "title": "docker-compose.yml",
+        "lang": "yaml",
+        "code": "services:\n  api:\n    build: ./api\n    env_file: .env\n    depends_on: [postgis, redis]\n  worker:\n    build: ./api\n    command: rq worker geo-processing\n    env_file: .env\n    depends_on: [postgis, redis]\n  redis:\n    image: redis:7-alpine\n  postgis:\n    image: postgis/postgis:16-3.4\n    volumes:\n      - postgis-data:/var/lib/postgresql/data\nvolumes:\n  postgis-data:"
+      },
+      {
+        "heading": {
+          "h": "Nginx reverse proxy",
+          "p": "Frontend, API va tile servislarini bitta domen ostida berish."
+        },
+        "title": "nginx.conf",
+        "lang": "nginx",
+        "code": "server {\n  listen 80;\n  server_name example.com;\n\n  location / {\n    root /usr/share/nginx/html;\n    try_files $uri /index.html;\n  }\n\n  location /api/ {\n    proxy_pass http://api:8000/;\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n  }\n\n  location /tiles/ {\n    proxy_pass http://tegola:8080/;\n  }\n}"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis15-1",
+        "html": "Architecture diagram chizdim: frontend, API, PostGIS, Tegola, Redis, worker, storage",
+        "crit": "README'da diagram va data flow bor"
+      },
+      {
+        "id": "gis15-2",
+        "html": "Redis cache bilan bitta expensive query natijasini cache qildim",
+        "crit": "ikkinchi so'rov tezroq yoki cached flag qaytaradi"
+      },
+      {
+        "id": "gis15-3",
+        "html": "Upload processingni background jobga ajratdim",
+        "crit": "HTTP request darhol job_id qaytaradi"
+      },
+      {
+        "id": "gis15-4",
+        "html": "Worker job statusini pending/running/done/failed qilib saqladim",
+        "crit": "frontend statusni poll qilib ko'ra oladi"
+      },
+      {
+        "id": "gis15-5",
+        "html": "S3 yoki S3-compatible storage tushunchasini loyiha hujjatiga qo'shdim",
+        "crit": "katta raster/fayl DB ichida saqlanmasligi tushuntirilgan"
+      },
+      {
+        "id": "gis15-6",
+        "html": "PostGIS backup/restore buyruqlarini yozdim",
+        "crit": "pg_dump va restore qadamlari README'da bor"
+      },
+      {
+        "id": "gis15-7",
+        "html": "Kubernetes asosiy obyektlarini tushuntirdim: Deployment, Service, Ingress, Secret",
+        "crit": "Docker Compose bilan farqi yozilgan"
+      },
+      {
+        "id": "gis15-8",
+        "html": "CI/CD pipelinega test, build va deploy checklist qo'shdim",
+        "crit": "pushdan keyingi qadamlar avtomatik yoki hujjatlashtirilgan"
+      },
+      {
+        "id": "gis15-9",
+        "html": "Nginx configda frontend, API va tile route'larini ajratdim",
+        "crit": "/, /api, /tiles route'lari kerakli servisga ketadi"
+      },
+      {
+        "id": "gis15-10",
+        "html": "Production architecture chizmasini README'ga qo'shdim",
+        "crit": "diagramdan data flow va service vazifalari tushuniladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://redis.io/docs/latest/",
+        "title": "Redis docs",
+        "desc": "Cache va queue backend uchun.",
+        "host": "redis.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://python-rq.org/",
+        "title": "RQ docs",
+        "desc": "Python background jobs uchun sodda queue.",
+        "host": "python-rq.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.aws.amazon.com/s3/",
+        "title": "Amazon S3 docs",
+        "desc": "Object storage tushunchasi.",
+        "host": "docs.aws.amazon.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://kubernetes.io/docs/concepts/",
+        "title": "Kubernetes concepts",
+        "desc": "Pod, service, deployment va ingress asoslari.",
+        "host": "kubernetes.io"
+      }
+    ],
+    "project": {
+      "tag": "Production architecture",
+      "title": "Scalable Geo Processing Platform",
+      "desc": "Upload, processing, cache va monitoringga ega production geospatial arxitektura.",
+      "features": [
+        "Redis cache",
+        "Background worker",
+        "Job status API",
+        "Object storage plan",
+        "PostGIS backup",
+        "Kubernetes basics note",
+        "CI/CD checklist"
+      ],
+      "rubric": [
+        "Og'ir ishlar background jobga ajratilgan.",
+        "Cache qayerda va nima uchun ishlatilgani aniq.",
+        "Backup/restore qadamlari bor.",
+        "Architecture diagram productionga yaqin."
+      ],
+      "variants": [
+        {
+          "title": "Tile Cache Platform",
+          "desc": "Tile seeding va cache bilan tez xarita.",
+          "deliverables": [
+            "cache config",
+            "benchmark",
+            "README"
+          ]
+        },
+        {
+          "title": "Upload Processing Platform",
+          "desc": "Fayl upload -> queue -> clean -> PostGIS oqimi.",
+          "deliverables": [
+            "job API",
+            "worker",
+            "status UI"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Og'ir GeoTIFF processingni HTTP request ichida bajarish nega yomon?",
+        "a": [
+          "Javob sekinlashadi va timeout xavfi oshadi",
+          "CSS buziladi",
+          "MapLibre taqiqlaydi",
+          "PostGIS o'chadi"
+        ],
+        "c": 0,
+        "w": "Og'ir ishlar background workerga ajratiladi.",
+        "level": "scenario"
+      },
+      {
+        "q": "Redis bu arxitekturada nimalarga ishlatiladi?",
+        "a": [
+          "Cache va queue backend",
+          "Raster chizish",
+          "HTML yozish",
+          "CRS almashtirish"
+        ],
+        "c": 0,
+        "w": "Redis tezkor cache va queue broker sifatida ishlatiladi.",
+        "level": "practical"
+      },
+      {
+        "q": "Katta raster fayllarni DB ichida saqlash o'rniga qayerga qo'yish yaxshi?",
+        "a": [
+          "Object storage/S3",
+          "CSS fayl",
+          "JWT token",
+          "README ichiga"
+        ],
+        "c": 0,
+        "w": "Katta fayllar object storageda, metadatasi DB'da saqlanadi.",
+        "level": "practical"
+      },
+      {
+        "q": "Kubernetesni qachon chuqur o'rganish kerak?",
+        "a": [
+          "Ko'p servis, scaling va cloud talab bo'lganda",
+          "Birinchi HTML darsidan oldin",
+          "Faqat rang tanlash uchun",
+          "Hech qachon kerak emas"
+        ],
+        "c": 0,
+        "w": "Avval Docker Compose, keyin ehtiyojga qarab Kubernetes.",
+        "level": "scenario"
+      },
+      {
+        "q": "Production portfolio uchun eng kuchli signal qaysi?",
+        "a": [
+          "Architecture diagram, healthcheck, backup, monitoring va deploy izohi",
+          "Faqat chiroyli logo",
+          "Kod bo'lmasligi",
+          "Faqat screenshot"
+        ],
+        "c": 0,
+        "w": "Bu elementlar loyihaning real production fikrlash bilan qurilganini ko'rsatadi.",
+        "level": "easy"
+      }
+    ]
+  },
+  {
+    "zoom": "z34",
+    "title": "Large Project Build",
+    "sub": "End-to-end kod",
+    "coord": "Senior build / z34",
+    "eyebrow": "16 / Real product implementation",
+    "mtitle": "Katta loyiha - bosqichma-bosqich production kod",
+    "lede": "Senior darajaga yaqinlashish uchun faqat mavzu bilish yetmaydi. Bu modulda GeoPulse platformasini <strong>real sprintlar</strong> orqali qurish rejasini olasan: issue, branch, migration, API, UI, test, review va release.",
+    "doc": "<div class='prose'><p>Bu modul kursni \"o'qidim\" holatdan \"qurib chiqdim\" holatga o'tkazadi. Har feature kichik ticketga bo'linadi va yakunda ishlaydigan mahsulotga ulanadi.</p><h3>Sprint xaritasi</h3><div class='tree'>Sprint 1: repo, Docker, env, healthcheck\nSprint 2: auth, user, role\nSprint 3: layers/features CRUD\nSprint 4: MapLibre bbox/search UI\nSprint 5: upload -> processing queue\nSprint 6: tiles/cache/performance\nSprint 7: audit log, backup, monitoring\nSprint 8: demo, docs, release</div><h3>Definition of Done</h3><div class='exlist'><div class='ex'><b>Code</b><span>Feature ishlaydi, xato holatlari bor.</span></div><div class='ex'><b>Test</b><span>Unit yoki integration test qo'shilgan.</span></div><div class='ex'><b>Docs</b><span>README/API docs yangilangan.</span></div><div class='ex'><b>Demo</b><span>Screenshot yoki video bilan isbotlangan.</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Feature ticket template",
+          "p": "Har vazifa aniq scope bilan boshlanadi."
+        },
+        "title": "ISSUE_TEMPLATE.md",
+        "lang": "md",
+        "code": "## Goal\nFeature nima muammoni hal qiladi?\n\n## Scope\n- API endpoint\n- DB migration\n- UI state\n- Tests\n\n## Acceptance criteria\n- [ ] Happy path ishlaydi\n- [ ] Error state bor\n- [ ] Test yozilgan\n- [ ] README/API docs yangilangan\n\n## Demo\nScreenshot yoki video link"
+      },
+      {
+        "heading": {
+          "h": "FastAPI project skeleton",
+          "p": "Katta API uchun papka tartibi."
+        },
+        "title": "api_structure.txt",
+        "lang": "txt",
+        "code": "api/\n  app/\n    main.py\n    core/config.py\n    db/session.py\n    modules/\n      auth/\n      users/\n      layers/\n      features/\n      uploads/\n      detections/\n    workers/\n    tests/\n  pyproject.toml\n  Dockerfile"
+      },
+      {
+        "heading": {
+          "h": "Frontend feature folders",
+          "p": "Map UI katta bo'lganda tartib saqlash."
+        },
+        "title": "frontend_structure.txt",
+        "lang": "txt",
+        "code": "src/\n  app/\n  api/\n  features/\n    map/\n    layers/\n    auth/\n    uploads/\n    detections/\n  components/\n  lib/\n  styles.css"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis16-1",
+        "html": "GeoPulse uchun 8 sprintli GitHub issue ro'yxati tuzdim",
+        "crit": "har issue acceptance criteria bilan yozilgan"
+      },
+      {
+        "id": "gis16-2",
+        "html": "Monorepo papka strukturasini yaratdim: frontend, api, processing, infra",
+        "crit": "har papkada README yoki placeholder bor"
+      },
+      {
+        "id": "gis16-3",
+        "html": "Feature branch workflow ishlatdim: branch -> commit -> PR -> review",
+        "crit": "kamida bitta PR description to'liq yozilgan"
+      },
+      {
+        "id": "gis16-4",
+        "html": "DB migration va seed flowini bitta buyruqqa keltirdim",
+        "crit": "bo'sh DB qayta yaratilganda demo data tushadi"
+      },
+      {
+        "id": "gis16-5",
+        "html": "Frontend map UI va FastAPI endpointini bitta feature sifatida uladim",
+        "crit": "UI action real API response bilan ishlaydi"
+      },
+      {
+        "id": "gis16-6",
+        "html": "Har sprint oxirida demo note yozdim",
+        "crit": "nima ishladi, nima qoldi, qanday test qilindi yozilgan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues",
+        "title": "GitHub Issues",
+        "desc": "Sprint va issue tracking uchun.",
+        "host": "docs.github.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.github.com/en/pull-requests",
+        "title": "Pull requests",
+        "desc": "Review va PR workflow.",
+        "host": "docs.github.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://fastapi.tiangolo.com/tutorial/bigger-applications/",
+        "title": "FastAPI Bigger Applications",
+        "desc": "Katta FastAPI loyihani modullarga ajratish.",
+        "host": "fastapi.tiangolo.com"
+      }
+    ],
+    "project": {
+      "tag": "Senior build",
+      "title": "GeoPulse Sprint Plan",
+      "desc": "Katta loyihani 8 sprintga bo'lib, professional build rejasini tuz.",
+      "features": [
+        "Issue board",
+        "Monorepo structure",
+        "PR template",
+        "Migration flow",
+        "Demo notes"
+      ],
+      "rubric": [
+        "Har sprint yakunida ishlaydigan increment bor.",
+        "Featurelar API, UI, DB va test bilan bog'langan.",
+        "README doim yangilanadi."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Seniorga yaqin portfolio uchun eng kuchli isbot nima?",
+        "a": [
+          "Faqat dars ko'rish",
+          "Bosqichma-bosqich qurilgan, testlangan, deploy qilingan loyiha",
+          "Faqat logo",
+          "Faqat sertifikat"
+        ],
+        "c": 1,
+        "w": "Senior signal - murakkab loyihani tartib bilan yakunlash.",
+        "level": "scenario"
+      },
+      {
+        "q": "Definition of Done nimani anglatadi?",
+        "a": [
+          "Feature tugaganini tekshiradigan mezonlar",
+          "CSS ranglar",
+          "Git username",
+          "Server narxi"
+        ],
+        "c": 0,
+        "w": "DoD feature haqiqatan tayyorligini belgilaydi.",
+        "level": "easy"
+      },
+      {
+        "q": "Feature branch workflow nima beradi?",
+        "a": [
+          "Tartibli review va xavfsiz o'zgarish",
+          "DB index",
+          "Raster clip",
+          "YOLO model"
+        ],
+        "c": 0,
+        "w": "Branch/PR/review katta loyihada sifatni ushlab turadi.",
+        "level": "practical"
+      }
+    ]
+  },
+  {
+    "zoom": "z36",
+    "title": "Performance + Raster/COG",
+    "sub": "PostGIS va raster",
+    "coord": "Performance / z36",
+    "eyebrow": "17 / Deep geospatial performance",
+    "mtitle": "PostGIS tuning va real raster/COG pipeline",
+    "lede": "Bu modul Senior darajadagi eng muhim farqni beradi: <strong>katta data sekinlashganda sababini topish</strong>. PostGIS query profiling, index strategiya, vector tile optimizatsiya va COG raster pipeline chuqurlashadi.",
+    "doc": "<div class='prose'><h3>Performance fikrlash</h3><p>Avval o'lcha, keyin optimizatsiya qil. <code>EXPLAIN ANALYZE BUFFERS</code>, query latency, tile size, cache hit ratio va p95 response vaqtini ko'rmasdan taxmin qilma.</p><div class='tree'>Slow map\n  -> browser network tab\n  -> API latency\n  -> EXPLAIN ANALYZE\n  -> index/selectivity\n  -> tile size/cache\n  -> simplify/generalize\n  -> benchmark before/after</div><h3>Raster/COG pipeline</h3><p>GeoTIFF katta bo'ladi. Web uchun Cloud Optimized GeoTIFF, overviews, tiling va metadata kerak. Rasterio/GDAL bilan clip/reproject, keyin COG formatda saqlashni o'rganasan.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "EXPLAIN BUFFERS",
+          "p": "Index haqiqatan ishlayaptimi?"
+        },
+        "title": "explain_buffers.sql",
+        "lang": "sql",
+        "code": "EXPLAIN (ANALYZE, BUFFERS, VERBOSE)\nSELECT id, name\nFROM features\nWHERE geom && ST_MakeEnvelope(69.1, 41.2, 69.4, 41.4, 4326)\nORDER BY updated_at DESC\nLIMIT 500;"
+      },
+      {
+        "heading": {
+          "h": "COG yaratish",
+          "p": "GDAL bilan webga mos raster."
+        },
+        "title": "make_cog.sh",
+        "lang": "bash",
+        "code": "gdal_translate input.tif output_cog.tif \\\n  -of COG \\\n  -co COMPRESS=DEFLATE \\\n  -co PREDICTOR=2 \\\n  -co BLOCKSIZE=512 \\\n  -co OVERVIEWS=AUTO"
+      },
+      {
+        "heading": {
+          "h": "Raster metadata API",
+          "p": "Frontend raster haqida ma'lumot oladi."
+        },
+        "title": "rasters_router.py",
+        "lang": "py",
+        "code": "import rasterio\nfrom fastapi import APIRouter\n\nrouter = APIRouter(prefix=\"/rasters\", tags=[\"rasters\"])\n\n@router.get(\"/{name}/metadata\")\ndef raster_metadata(name: str):\n    with rasterio.open(f\"data/cog/{name}.tif\") as src:\n        return {\n            \"crs\": str(src.crs),\n            \"bounds\": list(src.bounds),\n            \"width\": src.width,\n            \"height\": src.height,\n            \"overviews\": src.overviews(1),\n        }"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis17-1",
+        "html": "3 ta sekin spatial query uchun EXPLAIN ANALYZE BUFFERS oldim",
+        "crit": "README'da before/after latency bor"
+      },
+      {
+        "id": "gis17-2",
+        "html": "GIST, partial yoki composite indexdan kamida bittasini asoslab qo'lladim",
+        "crit": "index tanlovi query pattern bilan izohlangan"
+      },
+      {
+        "id": "gis17-3",
+        "html": "Tile hajmini o'lchab, simplification yoki zoom filter bilan kamaytirdim",
+        "crit": "tile size oldin/keyin solishtirilgan"
+      },
+      {
+        "id": "gis17-4",
+        "html": "GeoTIFF'ni COG formatga o'tkazdim",
+        "crit": "gdalinfo COG layout va overviews borligini ko'rsatadi"
+      },
+      {
+        "id": "gis17-5",
+        "html": "Raster metadata endpoint yozdim",
+        "crit": "CRS, bounds, size va overviewlar JSON qaytadi"
+      },
+      {
+        "id": "gis17-6",
+        "html": "Performance budget yozdim",
+        "crit": "API p95, tile size, map load targetlari belgilangan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://postgis.net/workshops/postgis-intro/indexing.html",
+        "title": "PostGIS Indexing",
+        "desc": "Spatial index va query planning.",
+        "host": "postgis.net"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.cogeo.org/",
+        "title": "Cloud Optimized GeoTIFF",
+        "desc": "COG tushunchasi.",
+        "host": "cogeo.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://gdal.org/en/stable/programs/gdal_translate.html",
+        "title": "gdal_translate",
+        "desc": "COG yaratish va format konvertatsiya.",
+        "host": "gdal.org"
+      }
+    ],
+    "project": {
+      "tag": "Performance lab",
+      "title": "Million Object + COG Performance Lab",
+      "desc": "Katta vector va raster data bilan benchmark, index, cache va COG pipeline.",
+      "features": [
+        "EXPLAIN reports",
+        "Index strategy",
+        "Tile size budget",
+        "COG raster",
+        "Metadata API"
+      ],
+      "rubric": [
+        "Before/after o'lchov bor.",
+        "Optimization sababi tushuntirilgan.",
+        "Raster webga mos formatda."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Performance muammosida birinchi qadam nima?",
+        "a": [
+          "Taxmin qilish",
+          "O'lchash/profiling",
+          "Rang almashtirish",
+          "Kod o'chirish"
+        ],
+        "c": 1,
+        "w": "O'lchamasdan optimizatsiya noto'g'ri yo'nalishga olib ketadi.",
+        "level": "easy"
+      },
+      {
+        "q": "COG nima uchun foydali?",
+        "a": [
+          "Katta rasterlarni web/cloud orqali samarali o'qish",
+          "JWT yaratish",
+          "CSS yozish",
+          "SQL index"
+        ],
+        "c": 0,
+        "w": "COG raster bo'laklarini kerakli joydan o'qishga moslaydi.",
+        "level": "practical"
+      },
+      {
+        "q": "EXPLAIN ANALYZE BUFFERS nimani ko'rsatadi?",
+        "a": [
+          "Query rejasi, vaqt va buffer foydalanishi",
+          "Map ranglari",
+          "Docker image hajmi",
+          "User roli"
+        ],
+        "c": 0,
+        "w": "Bu query ichki ishlashini ko'rsatadi.",
+        "level": "scenario"
+      }
+    ]
+  },
+  {
+    "zoom": "z38",
+    "title": "Security + Backup",
+    "sub": "Auth, audit, recovery",
+    "coord": "Security / z38",
+    "eyebrow": "18 / Production safety",
+    "mtitle": "Auth, role, audit log va backup/restore amaliyoti",
+    "lede": "Production tizimda xavfsizlik alohida modul emas, har feature ichida bo'lishi kerak. Bu modulda JWT, role, permission, audit log, rate limit, secret management va PostGIS backup/restore amaliyoti qo'shiladi.",
+    "doc": "<div class='prose'><h3>Security qatlamlari</h3><div class='tree'>Request\n  -> HTTPS/Nginx\n  -> rate limit\n  -> JWT verify\n  -> role/permission check\n  -> validation\n  -> audit log\n  -> business action</div><p>Admin CRUD, upload va processing endpointlari alohida himoya talab qiladi. Audit log kim, qachon, nimani o'zgartirganini saqlaydi.</p><h3>Recovery fikrlash</h3><p>Backup borligi yetmaydi. Restore sinovdan o'tmagan backup - ishonchsiz. Har oy restore drill qilinadi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Audit log modeli",
+          "p": "Muhim o'zgarishlar izini saqlash."
+        },
+        "title": "audit_schema.sql",
+        "lang": "sql",
+        "code": "CREATE TABLE audit_logs (\n  id bigserial PRIMARY KEY,\n  actor_id uuid,\n  action text NOT NULL,\n  entity_type text NOT NULL,\n  entity_id text,\n  before jsonb,\n  after jsonb,\n  ip inet,\n  created_at timestamptz DEFAULT now()\n);\n\nCREATE INDEX audit_logs_entity_idx ON audit_logs(entity_type, entity_id);"
+      },
+      {
+        "heading": {
+          "h": "Role dependency",
+          "p": "FastAPI endpointni role bilan himoyalash."
+        },
+        "title": "roles.py",
+        "lang": "py",
+        "code": "from fastapi import Depends, HTTPException\n\ndef require_role(*roles: str):\n    def checker(user = Depends(get_current_user)):\n        if user.role not in roles:\n            raise HTTPException(status_code=403, detail=\"Forbidden\")\n        return user\n    return checker\n\n@app.delete(\"/features/{feature_id}\")\ndef delete_feature(feature_id: int, user=Depends(require_role(\"admin\"))):\n    return service.delete_feature(feature_id, actor=user)"
+      },
+      {
+        "heading": {
+          "h": "Backup/restore drill",
+          "p": "Backupni tiklab ko'rish majburiy."
+        },
+        "title": "backup_restore.sh",
+        "lang": "bash",
+        "code": "pg_dump \"$DATABASE_URL\" --format=custom --file backups/geopulse.dump\n\ncreatedb geopulse_restore\npg_restore --dbname geopulse_restore backups/geopulse.dump\npsql geopulse_restore -c \"SELECT count(*) FROM features;\""
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis18-1",
+        "html": "JWT auth va refresh token strategiyasini hujjatlashtirdim",
+        "crit": "token muddati va logout oqimi tushuntirilgan"
+      },
+      {
+        "id": "gis18-2",
+        "html": "Admin endpointlarga role dependency qo'shdim",
+        "crit": "oddiy user 403 oladi"
+      },
+      {
+        "id": "gis18-3",
+        "html": "Audit log jadvali va service yozdim",
+        "crit": "create/update/delete actionlar auditga tushadi"
+      },
+      {
+        "id": "gis18-4",
+        "html": "Upload endpointiga file type/size validation qo'shdim",
+        "crit": "noto'g'ri fayl 400/422 qaytaradi"
+      },
+      {
+        "id": "gis18-5",
+        "html": "pg_dump backup va restore drill bajardim",
+        "crit": "restore DB'da feature count tekshirildi"
+      },
+      {
+        "id": "gis18-6",
+        "html": ".env.example va secret management checklist yozdim",
+        "crit": "secretlar gitga tushmagan"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://fastapi.tiangolo.com/tutorial/security/",
+        "title": "FastAPI Security",
+        "desc": "JWT/OAuth2 xavfsizlik asoslari.",
+        "host": "fastapi.tiangolo.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://www.postgresql.org/docs/current/backup-dump.html",
+        "title": "PostgreSQL Backup",
+        "desc": "pg_dump va restore.",
+        "host": "postgresql.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://owasp.org/www-project-api-security/",
+        "title": "OWASP API Security",
+        "desc": "API xavfsizlik risklari.",
+        "host": "owasp.org"
+      }
+    ],
+    "project": {
+      "tag": "Production safety",
+      "title": "Secure Geo Admin",
+      "desc": "Admin CRUD'ni role, audit log va backup/restore bilan productionga tayyorla.",
+      "features": [
+        "JWT",
+        "Role dependency",
+        "Audit log",
+        "Upload validation",
+        "Backup/restore"
+      ],
+      "rubric": [
+        "Unauthorized flowlar yopilgan.",
+        "Audit log ishlaydi.",
+        "Restore drill bajarilgan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Audit log nima uchun kerak?",
+        "a": [
+          "Kim nima o'zgartirganini bilish uchun",
+          "Map zoom qilish uchun",
+          "Raster compress qilish uchun",
+          "CSS yozish uchun"
+        ],
+        "c": 0,
+        "w": "Audit log productionda javobgarlik va tekshiruv uchun kerak.",
+        "level": "easy"
+      },
+      {
+        "q": "Backup ishonchli bo'lishi uchun nima kerak?",
+        "a": [
+          "Faqat fayl borligi",
+          "Restore sinovi",
+          "Screenshot",
+          "README rangi"
+        ],
+        "c": 1,
+        "w": "Restore drill bo'lmasa backup amalda ishlashiga ishonch yo'q.",
+        "level": "scenario"
+      },
+      {
+        "q": "Admin endpointni himoyalashda nima tekshiriladi?",
+        "a": [
+          "JWT va role/permission",
+          "Tile z/x/y",
+          "COG overview",
+          "Map center"
+        ],
+        "c": 0,
+        "w": "Auth kimligini, role esa ruxsatini tekshiradi.",
+        "level": "practical"
+      }
+    ]
+  },
+  {
+    "zoom": "z40",
+    "title": "Testing + CI/CD + Observability",
+    "sub": "Quality pipeline",
+    "coord": "Quality / z40",
+    "eyebrow": "19 / Automated confidence",
+    "mtitle": "Testlar, real CI/CD va Prometheus/Grafana config",
+    "lede": "Senior darajada 'menda ishlaydi' yetmaydi. Kod har pushda testdan o'tishi, deploy qilinishi va productionda kuzatilishi kerak. Bu modul unit, integration, E2E, CI/CD va observabilityni real configlar bilan beradi.",
+    "doc": "<div class='prose'><h3>Test piramidasi</h3><div class='tree'>Unit tests: service, validation, pure logic\nIntegration tests: FastAPI + test DB + PostGIS\nE2E tests: browser flow, map/search/upload\nSmoke tests: deploydan keyin /health, /ready, /metrics</div><h3>Observability</h3><p>Loglar nima bo'lganini, metrikalar qancha va qachon bo'lganini, trace esa qayerda sekinlashganini ko'rsatadi. Minimal stack: structured JSON logs, Prometheus metrics, Grafana dashboard, alert rule.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Integration test",
+          "p": "FastAPI endpoint va test DB."
+        },
+        "title": "test_features.py",
+        "lang": "py",
+        "code": "import pytest\nfrom httpx import AsyncClient\n\n@pytest.mark.asyncio\nasync def test_features_bbox_returns_geojson(app):\n    async with AsyncClient(app=app, base_url=\"http://test\") as client:\n        res = await client.get(\"/features/bbox\", params={\"minx\":69.1,\"miny\":41.2,\"maxx\":69.4,\"maxy\":41.4})\n    assert res.status_code == 200\n    body = res.json()\n    assert body[\"type\"] == \"FeatureCollection\""
+      },
+      {
+        "heading": {
+          "h": "GitHub Actions",
+          "p": "Test, build, docker image."
+        },
+        "title": ".github/workflows/ci.yml",
+        "lang": "yaml",
+        "code": "name: ci\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    services:\n      postgres:\n        image: postgis/postgis:16-3.4\n        ports: ['5432:5432']\n        env:\n          POSTGRES_PASSWORD: secret\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with: { python-version: '3.12' }\n      - run: pip install -r api/requirements.txt\n      - run: pytest api/tests\n      - uses: actions/setup-node@v4\n        with: { node-version: 22 }\n      - run: npm ci && npm test && npm run build"
+      },
+      {
+        "heading": {
+          "h": "Prometheus metrics",
+          "p": "FastAPI metrika endpoint."
+        },
+        "title": "metrics.py",
+        "lang": "py",
+        "code": "from prometheus_fastapi_instrumentator import Instrumentator\n\nInstrumentator().instrument(app).expose(app, endpoint=\"/metrics\")\n\n# Grafana panel: request count, p95 latency, 5xx errors, queue size"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis19-1",
+        "html": "FastAPI service uchun unit test yozdim",
+        "crit": "pytest service logicni DBsiz tekshiradi"
+      },
+      {
+        "id": "gis19-2",
+        "html": "PostGIS test DB bilan integration test yozdim",
+        "crit": "bbox endpoint FeatureCollection qaytaradi"
+      },
+      {
+        "id": "gis19-3",
+        "html": "Frontendda search/map user-flow test yozdim",
+        "crit": "qidiruvdan keyin xarita state o'zgaradi"
+      },
+      {
+        "id": "gis19-4",
+        "html": "GitHub Actions CI pipeline qo'shdim",
+        "crit": "pushda backend test, frontend test va build ishlaydi"
+      },
+      {
+        "id": "gis19-5",
+        "html": "Prometheus /metrics endpoint va Grafana dashboard yaratdim",
+        "crit": "request count, p95 latency, error rate ko'rinadi"
+      },
+      {
+        "id": "gis19-6",
+        "html": "Alert rule yozdim",
+        "crit": "5xx yoki p95 yuqori bo'lsa alert trigger bo'ladi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.pytest.org/",
+        "title": "pytest docs",
+        "desc": "Python testlar.",
+        "host": "docs.pytest.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.github.com/en/actions",
+        "title": "GitHub Actions",
+        "desc": "CI/CD pipeline.",
+        "host": "docs.github.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://prometheus.io/docs/introduction/overview/",
+        "title": "Prometheus",
+        "desc": "Metrics collection.",
+        "host": "prometheus.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://grafana.com/docs/grafana/latest/",
+        "title": "Grafana",
+        "desc": "Dashboard va alerting.",
+        "host": "grafana.com"
+      }
+    ],
+    "project": {
+      "tag": "Quality pipeline",
+      "title": "Automated GeoPulse Quality Gate",
+      "desc": "Test, CI/CD, metrics va dashboard bilan production confidence yarat.",
+      "features": [
+        "pytest",
+        "integration DB",
+        "frontend flow",
+        "GitHub Actions",
+        "Prometheus",
+        "Grafana"
+      ],
+      "rubric": [
+        "CI qizil bo'lsa merge qilinmaydi.",
+        "Metrics dashboard real endpointdan o'qiydi.",
+        "Alert condition hujjatlashtirilgan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Integration test nimani tekshiradi?",
+        "a": [
+          "Bir nechta komponent birga ishlashini",
+          "Faqat CSS",
+          "Faqat README",
+          "Logo"
+        ],
+        "c": 0,
+        "w": "Integration test API + DB kabi komponentlarni birga tekshiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "CI pipeline nima uchun kerak?",
+        "a": [
+          "Har pushda avtomatik test/build",
+          "Xarita rangini almashtirish",
+          "Manual backup",
+          "Token saqlash"
+        ],
+        "c": 0,
+        "w": "CI sifat darvozasini avtomatlashtiradi.",
+        "level": "practical"
+      },
+      {
+        "q": "p95 latency nimani bildiradi?",
+        "a": [
+          "So'rovlarning 95 foizi shu vaqt ichida javob oladi",
+          "95 ta user",
+          "95 MB tile",
+          "95 ta branch"
+        ],
+        "c": 0,
+        "w": "p95 production performance uchun muhim metrika.",
+        "level": "scenario"
+      }
+    ]
+  },
+  {
+    "zoom": "z42",
+    "title": "AI Evaluation + System Design",
+    "sub": "Senior interviews",
+    "coord": "Architecture / z42",
+    "eyebrow": "20 / AI quality and system design",
+    "mtitle": "AI detection evaluation va geospatial system design case studylar",
+    "lede": "AI-GIS moduli modelni ishlatishni beradi; bu modul esa natijani professional baholashni o'rgatadi: dataset split, precision/recall, confusion matrix, review workflow va katta geospatial tizimlarni loyihalash.",
+    "doc": "<div class='prose'><h3>AI evaluation oqimi</h3><div class='tree'>Dataset\n  -> train/val/test split\n  -> annotation quality check\n  -> model inference\n  -> precision/recall/F1\n  -> false positive review\n  -> threshold tuning\n  -> human-in-the-loop workflow</div><h3>System design case studylar</h3><div class='exlist'><div class='ex'><b>Real-time tracking</b><span>GPS ingest, WebSocket, Redis, PostGIS, map update.</span></div><div class='ex'><b>National map portal</b><span>Tile pipeline, CDN, cache, permissions, admin workflow.</span></div><div class='ex'><b>Drone inspection</b><span>Upload, queue, AI inference, review, report export.</span></div></div></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Evaluation report format",
+          "p": "Model natijasi faqat screenshot emas, metrika bilan topshiriladi."
+        },
+        "title": "evaluation_report.md",
+        "lang": "md",
+        "code": "# Detection Evaluation\n\n## Dataset\n- Train: 1200 images\n- Validation: 300 images\n- Test: 300 images\n\n## Metrics\n| class | precision | recall | f1 |\n| --- | ---: | ---: | ---: |\n| building | 0.88 | 0.81 | 0.84 |\n| road_damage | 0.72 | 0.65 | 0.68 |\n\n## Error analysis\n- False positives: shadows, roof edges\n- False negatives: small/blurred objects\n\n## Decision\nProduction threshold: 0.65 + human review"
+      },
+      {
+        "heading": {
+          "h": "System design skeleton",
+          "p": "Interview javobini tartib bilan berish."
+        },
+        "title": "system_design_template.md",
+        "lang": "md",
+        "code": "## Requirements\nFunctional / non-functional\n\n## Scale assumptions\nUsers, objects, update rate, latency target\n\n## Architecture\nClient -> API -> DB/cache/queue -> workers -> storage\n\n## Data model\nTables, indexes, retention\n\n## Bottlenecks\nHot queries, tile size, upload processing, AI cost\n\n## Reliability\nBackup, monitoring, retry, idempotency\n\n## Security\nAuth, roles, audit, privacy"
+      },
+      {
+        "heading": {
+          "h": "Threshold tuning",
+          "p": "Confidence cutoffni metrika bilan tanlash."
+        },
+        "title": "threshold_eval.py",
+        "lang": "py",
+        "code": "thresholds = [0.3, 0.5, 0.65, 0.8]\nfor t in thresholds:\n    precision, recall, f1 = evaluate_predictions(predictions, labels, threshold=t)\n    print({\"threshold\": t, \"precision\": precision, \"recall\": recall, \"f1\": f1})\n\n# Tanlov: false positive qimmat bo'lsa precisionni, o'tkazib yuborish qimmat bo'lsa recallni ko'tar."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis20-1",
+        "html": "AI detection uchun train/validation/test split rejasini yozdim",
+        "crit": "dataset leakage xavfi tushuntirilgan"
+      },
+      {
+        "id": "gis20-2",
+        "html": "Detection natijasi uchun precision/recall/F1 report yaratdim",
+        "crit": "kamida 2 class uchun metrikalar bor"
+      },
+      {
+        "id": "gis20-3",
+        "html": "False positive va false negative galereyasini tuzdim",
+        "crit": "xato turlari va sabablar yozilgan"
+      },
+      {
+        "id": "gis20-4",
+        "html": "Confidence threshold tanlovini asosladim",
+        "crit": "precision/recall trade-off yozilgan"
+      },
+      {
+        "id": "gis20-5",
+        "html": "Real-time tracking system design case study yozdim",
+        "crit": "scale, data model, cache, WebSocket va bottlenecklar bor"
+      },
+      {
+        "id": "gis20-6",
+        "html": "Drone inspection platform system design yozdim",
+        "crit": "upload, queue, AI, review va report export oqimi bor"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.ultralytics.com/guides/model-evaluation-insights/",
+        "title": "YOLO Model Evaluation",
+        "desc": "Detection metrikalarini tushunish.",
+        "host": "docs.ultralytics.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+        "title": "Precision and Recall",
+        "desc": "Classification metrikalari.",
+        "host": "developers.google.com"
+      },
+      {
+        "type": "doc",
+        "url": "https://postgis.net/docs/manual-3.5/using_postgis_dbmanagement.html",
+        "title": "PostGIS DB Management",
+        "desc": "Spatial data model va boshqaruv.",
+        "host": "postgis.net"
+      }
+    ],
+    "project": {
+      "tag": "Senior interview",
+      "title": "AI-GIS Evaluation and Design Pack",
+      "desc": "AI detection model baholash reporti va 2 ta system design case study.",
+      "features": [
+        "Evaluation report",
+        "Error analysis",
+        "Threshold tuning",
+        "Real-time tracking design",
+        "Drone inspection design"
+      ],
+      "rubric": [
+        "Metrikalar aniq.",
+        "Trade-offlar tushuntirilgan.",
+        "System design scale va bottlenecklarni qamrab olgan."
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Precision nimani bildiradi?",
+        "a": [
+          "Topilgan obyektlarning qanchasi to'g'ri",
+          "Barcha haqiqiy obyektlarning qanchasi topildi",
+          "DB hajmi",
+          "Map zoom"
+        ],
+        "c": 0,
+        "w": "Precision false positive bilan bog'liq.",
+        "level": "easy"
+      },
+      {
+        "q": "Recall nimani bildiradi?",
+        "a": [
+          "Haqiqiy obyektlarning qanchasini model topdi",
+          "Tile cache",
+          "JWT muddati",
+          "CI vaqti"
+        ],
+        "c": 0,
+        "w": "Recall false negative bilan bog'liq.",
+        "level": "easy"
+      },
+      {
+        "q": "System design javobida scale assumptions nega kerak?",
+        "a": [
+          "Arxitektura qarorlari hajmga bog'liq",
+          "Matn chiroyli bo'lishi uchun",
+          "CSS uchun",
+          "Logo uchun"
+        ],
+        "c": 0,
+        "w": "1k user va 1M user uchun yechim bir xil bo'lmasligi mumkin.",
+        "level": "scenario"
+      }
+    ]
+  },
+  {
     "zoom": "z18",
     "title": "Auth / Admin / Portfolio",
     "sub": "11-16 hafta",
@@ -2319,31 +3969,25 @@
     "eyebrow": "05 / Yakuniy bosqich",
     "mtitle": "Professional darajaga sayqal",
     "lede": "Oxirgi qadam: platformaga JWT auth va admin CRUD panel qo'shasan, so'ng portfolio'ni bozorga chiqishga tayyor holatga keltirasan. Shundan keyin title'ni halol ishlatasan.",
-    "doc": "<p>Bu bosqichda platforma \"demo\"dan \"mahsulot\"ga aylanadi: foydalanuvchi tizimi, ma'lumotni boshqarish paneli va professional taqdimot.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">JWT auth</span><span class=\"chip\">login / register</span><span class=\"chip\">guards</span>\n<span class=\"chip\">role (admin/user)</span><span class=\"chip\">Admin CRUD</span>\n<span class=\"chip\">README</span><span class=\"chip\">architecture diagram</span><span class=\"chip\">demo video</span>\n</div>\n<h3>Bozorga chiqish positioning</h3>\n<p>Hozirdan o'zingni shunday tut: <strong>\"WebGIS Engineer transitioning into Geospatial Full-Stack Engineering\"</strong>. Bu halol va kuchli. Quyidagilarning 80% ni mustaqil qila olsang - to'liq <strong>Geospatial Full-Stack Engineer</strong> deyishga tayyorsan.</p>\n<h3>GitHub README'da yoziladigan gap</h3>\n<div class=\"codewrap\"><div class=\"codehead\"><span class=\"fn\">README.md</span><span class=\"lang\">markdown</span></div><pre><code data-lang=\"md\">Full-stack WebGIS platform built with React TypeScript,\nMapLibre, NestJS, PostgreSQL/PostGIS, Tegola, Docker and Nginx.\n\nPipeline: OSM data -> PostGIS -> Tegola vector tiles ->\nMapLibre frontend -> Docker/Nginx deployment.</code></pre></div>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M12 15l-2 5 2-1 2 1-2-5\"></path><circle cx=\"12\" cy=\"8\" r=\"6\"></circle></svg></span>\n<div><p>Portfolio = isbot</p><p>Bitta yaxshi tugatilgan WebGIS platforma 10 ta yarim loyihadan kuchliroq. README, diagram, screenshot va demo video bilan to'ldir.</p></div>\n</div>",
+    "doc": "<p>Bu bosqichda platforma \"demo\"dan \"mahsulot\"ga aylanadi: foydalanuvchi tizimi, ma'lumotni boshqarish paneli va professional taqdimot.</p>\n<h3>O'rganadigan mavzular</h3>\n<div class=\"chips\">\n<span class=\"chip t\">JWT auth</span><span class=\"chip\">login / register</span><span class=\"chip\">dependencies</span>\n<span class=\"chip\">role (admin/user)</span><span class=\"chip\">Admin CRUD</span>\n<span class=\"chip\">README</span><span class=\"chip\">architecture diagram</span><span class=\"chip\">demo video</span>\n</div>\n<h3>Bozorga chiqish positioning</h3>\n<p>Hozirdan o'zingni shunday tut: <strong>\"WebGIS Engineer transitioning into Geospatial Full-Stack Engineering\"</strong>. Bu halol va kuchli. Quyidagilarning 80% ni mustaqil qila olsang - to'liq <strong>Geospatial Full-Stack Engineer</strong> deyishga tayyorsan.</p>\n<h3>GitHub README'da yoziladigan gap</h3>\n<div class=\"codewrap\"><div class=\"codehead\"><span class=\"fn\">README.md</span><span class=\"lang\">markdown</span></div><pre><code data-lang=\"md\">Full-stack WebGIS platform built with React TypeScript,\nMapLibre, FastAPI, PostgreSQL/PostGIS, Tegola, Docker and Nginx.\n\nPipeline: OSM data -> PostGIS -> Tegola vector tiles ->\nMapLibre frontend -> FastAPI API -> Docker/Nginx deployment.</code></pre></div>\n<div class=\"callout\">\n<span class=\"ic\"><svg fill=\"none\" height=\"20\" stroke=\"currentColor\" stroke-width=\"2\" viewbox=\"0 0 24 24\" width=\"20\"><path d=\"M12 15l-2 5 2-1 2 1-2-5\"></path><circle cx=\"12\" cy=\"8\" r=\"6\"></circle></svg></span>\n<div><p>Portfolio = isbot</p><p>Bitta yaxshi tugatilgan WebGIS platforma 10 ta yarim loyihadan kuchliroq. README, diagram, screenshot va demo video bilan to'ldir.</p></div>\n</div>",
     "code": [
       {
-        "heading": null,
-        "title": "JWT auth - NestJS guard",
-        "lang": "typescript",
-        "code": "import { Controller, Post, Body, UseGuards } from \"@nestjs/common\";\nimport { AuthGuard } from \"@nestjs/passport\";\n\n@Controller(\"api/buildings\")\nexport class BuildingsController {\n\n  @UseGuards(AuthGuard(\"jwt\"))   // faqat login qilganlar\n  @Post()\n  create(@Body() dto: CreateBuildingDto) {\n    return this.service.create(dto);\n  }\n}"
+        "heading": {
+          "h": "JWT auth - FastAPI dependency",
+          "p": "Token tekshirish va himoyalangan endpoint."
+        },
+        "title": "auth.py",
+        "lang": "py",
+        "code": "from fastapi import Depends, HTTPException, status\nfrom fastapi.security import OAuth2PasswordBearer\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"/auth/login\")\n\ndef get_current_user(token: str = Depends(oauth2_scheme)):\n    user = verify_jwt(token)  # o'zing yozadigan tekshiruv funksiyasi\n    if not user:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    return user\n\n@app.post(\"/features\")\ndef create_feature(dto: FeatureIn, user=Depends(get_current_user)):\n    return service.create_feature(dto, owner_id=user.id)"
       },
       {
-        "heading": null,
-        "title": "Role bilan himoya (faqat admin)",
-        "lang": "typescript",
-        "code": "@UseGuards(AuthGuard(\"jwt\"), RolesGuard)\n@Roles(\"admin\")\n@Delete(\":id\")\nremove(@Param(\"id\") id: string) {\n  return this.service.remove(Number(id));\n}"
-      },
-      {
-        "heading": null,
-        "title": "Admin CRUD - yangi bino qo'shish (PostGIS)",
-        "lang": "sql",
-        "code": "INSERT INTO buildings (name, height, geometry)\nVALUES (\n  $1, $2,\n  ST_GeomFromGeoJSON($3)   -- frontend yuborgan GeoJSON\n);"
-      },
-      {
-        "heading": null,
-        "title": "Architecture diagram (README uchun matn)",
-        "lang": "text",
-        "code": "[ Browser ]\n   │  React + MapLibre\n   ▼\n[ Nginx ]  ──/api/──►  [ NestJS ]  ──►  [ PostGIS ]\n   │                                        ▲\n   └────────/tiles/──►  [ Tegola ]  ────────┘"
+        "heading": {
+          "h": "Final arxitektura",
+          "p": "Frontend, API, tiles va DB oqimi."
+        },
+        "title": "architecture.txt",
+        "lang": "txt",
+        "code": "[ Browser ]\n   |  React + MapLibre\n   v\n[ Nginx ]  --/api/-->  [ FastAPI ]  --> [ PostGIS ]\n   |                         |\n   |                         v\n   |                    [ Redis / Worker / GDAL / YOLO ]\n   |\n   '--/tiles/--> [ Tegola ]  --> [ PostGIS ]"
       }
     ],
     "tasks": [
@@ -2354,7 +3998,7 @@
       },
       {
         "id": "m5-2",
-        "html": "Guard bilan ba'zi endpointlarni himoyaladim",
+        "html": "FastAPI dependency bilan ba'zi endpointlarni himoyaladim",
         "crit": "token'siz himoyalangan endpoint 401 beradi"
       },
       {
@@ -2391,31 +4035,31 @@
     "resources": [
       {
         "type": "doc",
-        "url": "https://docs.nestjs.com/security/authentication",
-        "title": "NestJS - Authentication",
-        "desc": "JWT, passport, guards",
-        "host": "docs.nestjs.com"
+        "url": "https://fastapi.tiangolo.com/tutorial/security/",
+        "title": "FastAPI Security",
+        "desc": "OAuth2, JWT va dependency asoslari.",
+        "host": "fastapi.tiangolo.com"
       },
       {
         "type": "doc",
-        "url": "https://docs.nestjs.com/guards",
-        "title": "NestJS - Guards & Roles",
-        "desc": "Role asosida himoya",
-        "host": "docs.nestjs.com"
+        "url": "https://fastapi.tiangolo.com/tutorial/dependencies/",
+        "title": "FastAPI Dependencies",
+        "desc": "Auth, DB va shared logic uchun dependency pattern.",
+        "host": "fastapi.tiangolo.com"
       },
       {
         "type": "video",
-        "url": "https://www.youtube.com/results?search_query=nestjs+jwt+authentication+roles+tutorial",
-        "title": "NestJS JWT auth (video)",
+        "url": "https://www.youtube.com/results?search_query=fastapi+jwt+authentication+roles+tutorial",
+        "title": "FastAPI JWT auth (video)",
         "desc": "YouTube qidiruv",
         "host": "youtube.com"
       },
       {
-        "type": "video",
-        "url": "https://www.youtube.com/results?search_query=developer+portfolio+github+readme+best+practices",
-        "title": "Portfolio & README (video)",
-        "desc": "Professional taqdimot",
-        "host": "youtube.com"
+        "type": "doc",
+        "url": "https://docs.pydantic.dev/",
+        "title": "Pydantic validation",
+        "desc": "Admin CRUD schema validatsiyasi.",
+        "host": "docs.pydantic.dev"
       }
     ],
     "project": {
@@ -2461,27 +4105,27 @@
     },
     "quiz": [
       {
-        "q": "Login qilganlarni tekshiradigan mexanizm?",
+        "q": "FastAPI'da login qilgan foydalanuvchini endpointga berish uchun nima qulay?",
         "a": [
-          "DTO",
-          "Guard (JWT)",
-          "Service",
-          "Pipe"
+          "Depends dependency",
+          "CSS class",
+          "Tegola layer",
+          "Docker volume"
         ],
-        "c": 1,
-        "w": "AuthGuard JWT token'ni tekshiradi - token'siz so'rov 401 oladi.",
+        "c": 0,
+        "w": "Depends orqali token tekshirish va userni endpointga berish mumkin.",
         "level": "easy"
       },
       {
-        "q": "Endpoint'ni faqat adminga ochish uchun?",
+        "q": "Endpoint'ni faqat adminga ochish uchun nima tekshiriladi?",
         "a": [
-          "@Get",
-          "Roles + RolesGuard",
-          "@Param",
-          "DTO"
+          "User role",
+          "Map zoom",
+          "Tile size",
+          "CSS color"
         ],
-        "c": 1,
-        "w": "@Roles('admin') + RolesGuard role asosida ruxsat beradi.",
+        "c": 0,
+        "w": "JWT ichidagi yoki DB'dagi role tekshirilib, admin bo'lmasa 403 qaytariladi.",
         "level": "practical"
       },
       {
@@ -2497,15 +4141,15 @@
         "level": "practical"
       },
       {
-        "q": "README'da nima bo'lishi kerak?",
+        "q": "FastAPI admin CRUD'da schema nima uchun kerak?",
         "a": [
-          "Faqat nom",
-          "Stack + pipeline + ishga tushirish",
-          "Faqat rasm",
-          "Hech narsa"
+          "Kiruvchi data shaklini tekshirish",
+          "Xaritani zoom qilish",
+          "Docker image nomlash",
+          "Nginx port ochish"
         ],
-        "c": 1,
-        "w": "Begona odam README orqali loyihani tushunib, ishga tushira olishi kerak.",
+        "c": 0,
+        "w": "Pydantic schema noto'g'ri ma'lumotni API chegarasida ushlaydi.",
         "level": "scenario"
       }
     ],
@@ -2964,6 +4608,158 @@
     ]
   },
   {
+    "zoom": "z24",
+    "title": "Kuzatuv & Monitoring",
+    "sub": "Observability",
+    "coord": "Monitoring / z24",
+    "eyebrow": "11 / Production observability",
+    "mtitle": "Productionda tizimni kuzatish",
+    "lede": "Ishlab chiqarishga qo'yilgan WebGIS - <strong>jim qolmasligi</strong> kerak. Bu modulda healthcheck, log, metrika va xato kuzatuvini sozlaymiz: nosozlikni foydalanuvchidan oldin sen bilasan.",
+    "doc": "<div class='prose'><p>Observability - tizimning ichida nima bo'layotganini tashqaridan ko'ra olish. Uch ustun bor: <strong>loglar</strong> (nima bo'ldi), <strong>metrikalar</strong> (qancha/qachon), <strong>traces</strong> (so'rov qayerda sekinlashdi).</p><h3>Healthcheck - eng birinchi qadam</h3><p>Har servisda <code>/health</code> endpoint bo'lsin: DB ulanishi, disk, navbat holati. Docker va orkestrator shu orqali servis tirikmi-yo'qmi biladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg></span><div><p>Liveness ≠ Readiness</p><p><strong>Liveness</strong> - servis qotgan emasmi (qayta ishga tushir). <strong>Readiness</strong> - trafik qabul qilishga tayyormi (DB ulangach). Ikkalasini alohida endpoint qil.</p></div></div><h3>Metrika va dashboard</h3><p>Prometheus metrikani yig'adi, Grafana ko'rsatadi. Asosiy: so'rov soni, p95 javob vaqti, xato foizi (RED metodi - Rate, Errors, Duration).</p><h3>Loglar - structured JSON</h3><p>Matn emas, JSON log yoz: <code>{level, msg, traceId, userId}</code>. Keyin Loki/Elasticsearch'da maydon bo'yicha qidirsa bo'ladi.</p></div>",
+    "code": [
+      {
+        "heading": {
+          "h": "Healthcheck endpoint (FastAPI)",
+          "p": "DB ulanishini tekshirib, holat qaytaradi."
+        },
+        "title": "health.py",
+        "lang": "py",
+        "code": "from fastapi import FastAPI, HTTPException\nfrom sqlalchemy import text\n\napp = FastAPI()\n\n@app.get(\"/health\")\nasync def health():\n    try:\n        await db.execute(text(\"SELECT 1\"))\n        return {\"status\": \"ok\", \"db\": \"up\"}\n    except Exception:\n        raise HTTPException(status_code=503, detail={\"status\": \"down\", \"db\": \"down\"})"
+      },
+      {
+        "heading": {
+          "h": "docker-compose healthcheck",
+          "p": "Konteyner sog'ligini avtomatik kuzatadi."
+        },
+        "title": "docker-compose.yml",
+        "lang": "yaml",
+        "code": "services:\n  api:\n    build: ./api\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/health\"]\n      interval: 30s\n      timeout: 5s\n      retries: 3\n      start_period: 10s"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "gis11-1",
+        "html": "API'ga <code>/health</code> (readiness) va <code>/health/live</code> (liveness) endpointlari qo'shdim",
+        "crit": "ikkalasi alohida, DB tushsa readiness 503 qaytaradi"
+      },
+      {
+        "id": "gis11-2",
+        "html": "docker-compose'ga healthcheck qo'shib, konteyner 'unhealthy' holatini ko'rdim",
+        "crit": "docker ps STATUSda healthy/unhealthy ko'rinadi"
+      },
+      {
+        "id": "gis11-3",
+        "html": "Structured (JSON) loglarni yoqdim - har logda traceId bor",
+        "crit": "log JSON formatda, qidirsa bo'ladi"
+      },
+      {
+        "id": "gis11-4",
+        "html": "Prometheus + Grafana'ni ko'tarib, p95 javob vaqti dashboardini tuzdim",
+        "crit": "Grafanada RED metrikalar ko'rinadi"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://prometheus.io/docs/introduction/overview/",
+        "title": "Prometheus hujjatlari",
+        "desc": "Metrika yig'ish asoslari",
+        "host": "prometheus.io"
+      },
+      {
+        "type": "doc",
+        "url": "https://grafana.com/docs/grafana/latest/",
+        "title": "Grafana hujjatlari",
+        "desc": "Dashboard qurish",
+        "host": "grafana.com"
+      }
+    ],
+    "project": {
+      "tag": "Capstone+",
+      "title": "Kuzatiladigan WebGIS",
+      "desc": "Avvalgi loyihangga to'liq observability qatlami qo'sh.",
+      "features": [
+        "Health/readiness endpointlar",
+        "Structured JSON loglar + traceId",
+        "Prometheus metrika (RED)",
+        "Grafana dashboard + alert",
+        "Real yoki namunaviy geodata",
+        "Map/filter/search flow",
+        "Performance va bbox/zoom talabi",
+        "READMEda data source va deploy izohi"
+      ],
+      "rubric": [
+        "webgis bo'yicha yakuniy ish mustaqil ishga tushadigan holatda bo'lishi kerak.",
+        "Asosiy talablar bajarilgan: funksionallik, aniqlik, xatolarni ko'rsatish va yakuniy natija tekshiriladi.",
+        "Kod yoki yozma ish tartibli, nomlash tushunarli, keraksiz murakkabliksiz tayyorlangan.",
+        "Natija qisqa izoh bilan topshiriladi: nima qilindi, qanday tekshirildi, keyingi yaxshilash nima.",
+        "Kamida bitta real holat yoki foydalanuvchi ssenariysi bilan sinab ko'rilgan.",
+        "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
+        "Bbox/zoom yoki layer performance hisobga olingan.",
+        "Data manbasi va import qadamlari yozilgan.",
+        "Mobil/desktopda asosiy map UI buzilmaydi."
+      ],
+      "variants": [
+        {
+          "title": "Kuzatiladigan WebGIS - Field Data",
+          "desc": "Kuzatuv & Monitoring mavzusini dala ma'lumoti bilan ishlaydigan GIS workflowga aylantir.",
+          "deliverables": [
+            "GeoJSON/PostGIS data import",
+            "Map layer styling",
+            "Feature detail panel"
+          ]
+        },
+        {
+          "title": "Kuzatiladigan WebGIS - City Dashboard",
+          "desc": "Hudud, obyekt va statistikani ko'rsatadigan boshqaruv paneli variantini qur.",
+          "deliverables": [
+            "Filter/search controls",
+            "Layer visibility",
+            "Performance note"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Liveness probe nima uchun?",
+        "a": [
+          "Servis qotgan-qotmaganini aniqlash (kerak bo'lsa qayta ishga tushir)",
+          "Foydalanuvchi parolini tekshirish",
+          "Xaritani render qilish",
+          "Ma'lumotni zaxiralash"
+        ],
+        "c": 0,
+        "w": "Liveness - servis tirikmi; muammo bo'lsa orkestrator restart qiladi.",
+        "level": "easy"
+      },
+      {
+        "q": "RED metodidagi uchta metrika qaysi?",
+        "a": [
+          "Red, Edit, Delete",
+          "Rate, Errors, Duration",
+          "Read, Encode, Decode",
+          "Route, Endpoint, Data"
+        ],
+        "c": 1,
+        "w": "Rate (so'rov soni), Errors (xato foizi), Duration (javob vaqti).",
+        "level": "practical"
+      },
+      {
+        "q": "Nega structured (JSON) log afzal?",
+        "a": [
+          "Faylni kichraytiradi",
+          "Mashinada qidiriladi va filtrlanadi",
+          "Internet tezlashtiradi",
+          "Kodni yashiradi"
+        ],
+        "c": 1,
+        "w": "JSON loglar dashboard/qidiruvda maydon bo'yicha filtrlanadi.",
+        "level": "scenario"
+      }
+    ]
+  },
+  {
     "zoom": "z22",
     "title": "Karyera / Ish topish",
     "sub": "Career",
@@ -2980,7 +4776,7 @@
         },
         "title": "README.md (profil)",
         "lang": "markdown",
-        "code": "## Salom, men [Ism] Salom\n\nGeospatial Full-Stack Engineer / WebGIS\n\nTools React / TypeScript / MapLibre / NestJS / PostGIS / Tegola / Docker\nGlobe Flagship: Uzbekistan WebGIS Platform - [jonli demo](https://...)\nPost Case study: [Vector tile pipeline'ni qanday qurdim](https://...)\nAloqa LinkedIn / email@example.com"
+        "code": "## Salom, men [Ism] Salom\n\nGeospatial Full-Stack Engineer / WebGIS\n\nTools React / TypeScript / MapLibre / FastAPI / PostGIS / GDAL / YOLO / Docker\nGlobe Flagship: Uzbekistan WebGIS Platform - [jonli demo](https://...)\nPost Case study: [Vector tile pipeline'ni qanday qurdim](https://...)\nAloqa LinkedIn / email@example.com"
       },
       {
         "heading": {
@@ -2989,7 +4785,7 @@
         },
         "title": "README.md (loyiha)",
         "lang": "markdown",
-        "code": "# Uzbekistan WebGIS Platform\n\nFull-stack WebGIS: React + MapLibre frontend, NestJS API,\nPostgreSQL/PostGIS, Tegola vector tiles, Docker + Nginx.\n\n![demo](docs/demo.gif)\n\n## Demo\n[Jonli demo](https://...) / [Video (2 daq)](https://...)\n\n## Arxitektura\nOSM -> PostGIS -> Tegola -> MapLibre -> Docker/Nginx\n\n## Asosiy imkoniyatlar\n- 1M+ obyekt uchun silliq vector tile render\n- bbox / nearby / search API (GIST index)\n- Admin CRUD + JWT auth\n\n## Ishga tushirish\ndocker compose up -d   # http://localhost\n\n## Texnologiyalar\nReact / TypeScript / NestJS / PostGIS / Tegola / Docker / Nginx"
+        "code": "# Uzbekistan WebGIS Platform\n\nFull-stack WebGIS: React + MapLibre frontend, FastAPI API,\nPostgreSQL/PostGIS, Tegola vector tiles, Docker + Nginx.\n\n![demo](docs/demo.gif)\n\n## Demo\n[Jonli demo](https://...) / [Video (2 daq)](https://...)\n\n## Arxitektura\nOSM -> PostGIS -> Tegola -> MapLibre -> Docker/Nginx\n\n## Asosiy imkoniyatlar\n- 1M+ obyekt uchun silliq vector tile render\n- bbox / nearby / search API (GIST index)\n- Admin CRUD + JWT auth\n\n## Ishga tushirish\ndocker compose up -d   # http://localhost\n\n## Texnologiyalar\nReact / TypeScript / FastAPI / PostGIS / Tegola / Docker / Nginx"
       },
       {
         "heading": {
@@ -3025,7 +4821,7 @@
         },
         "title": "profil matni",
         "lang": "text",
-        "code": "HEADLINE:\nGeospatial Full-Stack Engineer | WebGIS | React / TypeScript /\nPostGIS / Tegola / Docker | Open to remote\n\nABOUT:\nWebGIS yo'nalishida full-stack muhandisman. React/MapLibre frontend,\nNestJS/PostGIS backend va Tegola vector tile pipeline quraman.\nSo'nggi loyiham - O'zbekiston uchun million obyektli interaktiv\nWebGIS platforma (Docker bilan deploy qilingan)."
+        "code": "HEADLINE:\nGeospatial Full-Stack Engineer | WebGIS | React / TypeScript /\nPostGIS / Tegola / Docker | Open to remote\n\nABOUT:\nWebGIS yo'nalishida full-stack muhandisman. React/MapLibre frontend,\nFastAPI/PostGIS backend, GDAL processing va Tegola vector tile pipeline quraman.\nSo'nggi loyiham - O'zbekiston uchun million obyektli interaktiv\nWebGIS platforma (Docker bilan deploy qilingan)."
       },
       {
         "heading": {
@@ -3034,7 +4830,7 @@
         },
         "title": "1 sahifa tartibi",
         "lang": "text",
-        "code": "[ISM]  /  Geospatial Full-Stack Engineer\nemail / telefon / GitHub / LinkedIn / shahar\n\nSUMMARY    - 2 jumla: kimsan + nima qila olasan\nSKILLS     - React, TS, NestJS, PostGIS, Tegola, Docker, Nginx, QGIS\nPROJECTS   - Flagship loyiha (birinchi!) + 1-2 ta\nEXPERIENCE - har ish: rol, sana, 2-4 ta XYZ bullet\nEDUCATION  - qisqa"
+        "code": "[ISM]  /  Geospatial Full-Stack Engineer\nemail / telefon / GitHub / LinkedIn / shahar\n\nSUMMARY    - 2 jumla: kimsan + nima qila olasan\nSKILLS     - React, TS, MapLibre, Python, FastAPI, PostGIS, GDAL, Rasterio, YOLO, Docker, Nginx, Redis\nPROJECTS   - Flagship loyiha (birinchi!) + 1-2 ta\nEXPERIENCE - har ish: rol, sana, 2-4 ta XYZ bullet\nEDUCATION  - qisqa"
       },
       {
         "heading": {
@@ -3486,158 +5282,6 @@
         "topic": "Suhbat",
         "rule": "Loyihani 'nima/nega/qanday' bilan tushuntir.",
         "ex": "STAR usuli"
-      }
-    ]
-  },
-  {
-    "zoom": "z24",
-    "title": "Kuzatuv & Monitoring",
-    "sub": "Observability",
-    "coord": "Monitoring / z24",
-    "eyebrow": "11 / Production observability",
-    "mtitle": "Productionda tizimni kuzatish",
-    "lede": "Ishlab chiqarishga qo'yilgan WebGIS - <strong>jim qolmasligi</strong> kerak. Bu modulda healthcheck, log, metrika va xato kuzatuvini sozlaymiz: nosozlikni foydalanuvchidan oldin sen bilasan.",
-    "doc": "<div class='prose'><p>Observability - tizimning ichida nima bo'layotganini tashqaridan ko'ra olish. Uch ustun bor: <strong>loglar</strong> (nima bo'ldi), <strong>metrikalar</strong> (qancha/qachon), <strong>traces</strong> (so'rov qayerda sekinlashdi).</p><h3>Healthcheck - eng birinchi qadam</h3><p>Har servisda <code>/health</code> endpoint bo'lsin: DB ulanishi, disk, navbat holati. Docker va orkestrator shu orqali servis tirikmi-yo'qmi biladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 12h-4l-3 9L9 3l-3 9H2'/></svg></span><div><p>Liveness ≠ Readiness</p><p><strong>Liveness</strong> - servis qotgan emasmi (qayta ishga tushir). <strong>Readiness</strong> - trafik qabul qilishga tayyormi (DB ulangach). Ikkalasini alohida endpoint qil.</p></div></div><h3>Metrika va dashboard</h3><p>Prometheus metrikani yig'adi, Grafana ko'rsatadi. Asosiy: so'rov soni, p95 javob vaqti, xato foizi (RED metodi - Rate, Errors, Duration).</p><h3>Loglar - structured JSON</h3><p>Matn emas, JSON log yoz: <code>{level, msg, traceId, userId}</code>. Keyin Loki/Elasticsearch'da maydon bo'yicha qidirsa bo'ladi.</p></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Healthcheck endpoint (NestJS)",
-          "p": "DB ulanishini tekshirib, holat qaytaradi."
-        },
-        "title": "health.controller.ts",
-        "lang": "ts",
-        "code": "@Controller('health')\nexport class HealthController {\n  constructor(private readonly db: DataSource) {}\n\n  @Get()\n  async check() {\n    try {\n      await this.db.query('SELECT 1');\n      return { status: 'ok', db: 'up' };\n    } catch {\n      throw new ServiceUnavailableException({ status: 'down', db: 'down' });\n    }\n  }\n}"
-      },
-      {
-        "heading": {
-          "h": "docker-compose healthcheck",
-          "p": "Konteyner sog'ligini avtomatik kuzatadi."
-        },
-        "title": "docker-compose.yml",
-        "lang": "yaml",
-        "code": "services:\n  api:\n    build: ./api\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/health\"]\n      interval: 30s\n      timeout: 5s\n      retries: 3\n      start_period: 10s"
-      }
-    ],
-    "tasks": [
-      {
-        "id": "gis11-1",
-        "html": "API'ga <code>/health</code> (readiness) va <code>/health/live</code> (liveness) endpointlari qo'shdim",
-        "crit": "ikkalasi alohida, DB tushsa readiness 503 qaytaradi"
-      },
-      {
-        "id": "gis11-2",
-        "html": "docker-compose'ga healthcheck qo'shib, konteyner 'unhealthy' holatini ko'rdim",
-        "crit": "docker ps STATUSda healthy/unhealthy ko'rinadi"
-      },
-      {
-        "id": "gis11-3",
-        "html": "Structured (JSON) loglarni yoqdim - har logda traceId bor",
-        "crit": "log JSON formatda, qidirsa bo'ladi"
-      },
-      {
-        "id": "gis11-4",
-        "html": "Prometheus + Grafana'ni ko'tarib, p95 javob vaqti dashboardini tuzdim",
-        "crit": "Grafanada RED metrikalar ko'rinadi"
-      }
-    ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://prometheus.io/docs/introduction/overview/",
-        "title": "Prometheus hujjatlari",
-        "desc": "Metrika yig'ish asoslari",
-        "host": "prometheus.io"
-      },
-      {
-        "type": "doc",
-        "url": "https://grafana.com/docs/grafana/latest/",
-        "title": "Grafana hujjatlari",
-        "desc": "Dashboard qurish",
-        "host": "grafana.com"
-      }
-    ],
-    "project": {
-      "tag": "Capstone+",
-      "title": "Kuzatiladigan WebGIS",
-      "desc": "Avvalgi loyihangga to'liq observability qatlami qo'sh.",
-      "features": [
-        "Health/readiness endpointlar",
-        "Structured JSON loglar + traceId",
-        "Prometheus metrika (RED)",
-        "Grafana dashboard + alert",
-        "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
-        "Performance va bbox/zoom talabi",
-        "READMEda data source va deploy izohi"
-      ],
-      "rubric": [
-        "webgis bo'yicha yakuniy ish mustaqil ishga tushadigan holatda bo'lishi kerak.",
-        "Asosiy talablar bajarilgan: funksionallik, aniqlik, xatolarni ko'rsatish va yakuniy natija tekshiriladi.",
-        "Kod yoki yozma ish tartibli, nomlash tushunarli, keraksiz murakkabliksiz tayyorlangan.",
-        "Natija qisqa izoh bilan topshiriladi: nima qilindi, qanday tekshirildi, keyingi yaxshilash nima.",
-        "Kamida bitta real holat yoki foydalanuvchi ssenariysi bilan sinab ko'rilgan.",
-        "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
-        "Bbox/zoom yoki layer performance hisobga olingan.",
-        "Data manbasi va import qadamlari yozilgan.",
-        "Mobil/desktopda asosiy map UI buzilmaydi."
-      ],
-      "variants": [
-        {
-          "title": "Kuzatiladigan WebGIS - Field Data",
-          "desc": "Kuzatuv & Monitoring mavzusini dala ma'lumoti bilan ishlaydigan GIS workflowga aylantir.",
-          "deliverables": [
-            "GeoJSON/PostGIS data import",
-            "Map layer styling",
-            "Feature detail panel"
-          ]
-        },
-        {
-          "title": "Kuzatiladigan WebGIS - City Dashboard",
-          "desc": "Hudud, obyekt va statistikani ko'rsatadigan boshqaruv paneli variantini qur.",
-          "deliverables": [
-            "Filter/search controls",
-            "Layer visibility",
-            "Performance note"
-          ]
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "q": "Liveness probe nima uchun?",
-        "a": [
-          "Servis qotgan-qotmaganini aniqlash (kerak bo'lsa qayta ishga tushir)",
-          "Foydalanuvchi parolini tekshirish",
-          "Xaritani render qilish",
-          "Ma'lumotni zaxiralash"
-        ],
-        "c": 0,
-        "w": "Liveness - servis tirikmi; muammo bo'lsa orkestrator restart qiladi.",
-        "level": "easy"
-      },
-      {
-        "q": "RED metodidagi uchta metrika qaysi?",
-        "a": [
-          "Red, Edit, Delete",
-          "Rate, Errors, Duration",
-          "Read, Encode, Decode",
-          "Route, Endpoint, Data"
-        ],
-        "c": 1,
-        "w": "Rate (so'rov soni), Errors (xato foizi), Duration (javob vaqti).",
-        "level": "practical"
-      },
-      {
-        "q": "Nega structured (JSON) log afzal?",
-        "a": [
-          "Faylni kichraytiradi",
-          "Mashinada qidiriladi va filtrlanadi",
-          "Internet tezlashtiradi",
-          "Kodni yashiradi"
-        ],
-        "c": 1,
-        "w": "JSON loglar dashboard/qidiruvda maydon bo'yicha filtrlanadi.",
-        "level": "scenario"
       }
     ]
   }

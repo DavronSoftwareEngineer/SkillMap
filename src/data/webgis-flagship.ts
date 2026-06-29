@@ -8,17 +8,17 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   eyebrow: "FLAGSHIP / GEOSPATIAL / PRODUCTION",
   mtitle: "GeoPulse: bitta katta, haqiqiy portfolio loyihasi",
   lede:
-    "Bu modul barcha kurslardagi bilimni bitta <strong>deploy qilingan geospatial platforma</strong>ga yig'adi: React xarita, TypeScript API, PostGIS, Telegram bildirishnoma va production infratuzilmasi.",
+    "Bu modul barcha kurslardagi bilimni bitta <strong>deploy qilingan geospatial platforma</strong>ga yig'adi: React xarita, FastAPI API, PostGIS, Telegram bildirishnoma va production infratuzilmasi.",
   doc: `
     <p><strong>GeoPulse</strong> hududiy obyektlar, hodisalar yoki infratuzilmani kuzatish uchun platforma. Foydalanuvchi xaritada obyektlarni qidiradi va filtrlaydi; administrator ma'lumotni boshqaradi; foydalanuvchilar esa muhim hodisalar haqida Telegram orqali bildirishnoma oladi.</p>
     <h3>Mahsulot arxitekturasi</h3>
     <div class="chips">
-      <span class="chip t">React + MapLibre UI</span><span class="chip">Node.js + TypeScript API</span>
+      <span class="chip t">React + MapLibre UI</span><span class="chip">Node.js + FastAPI API</span>
       <span class="chip">PostgreSQL + PostGIS</span><span class="chip t">Telegram Bot</span>
       <span class="chip">Docker Compose + Nginx</span><span class="chip">CI/CD + monitoring</span>
     </div>
     <h3>1-oy: mahsulot poydevori</h3>
-    <p>React dashboard, login, obyektlar ro'yxati, qidiruv va filter qur. TypeScript API orqali CRUD, pagination, validation, PostgreSQL migration va role-based access control qo'sh.</p>
+    <p>React dashboard, login, obyektlar ro'yxati, qidiruv va filter qur. FastAPI API orqali CRUD, pagination, validation, PostgreSQL migration va role-based access control qo'sh.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Auth bilan himoyalangan, deploy qilishga tayyor dashboard va API. Foydalanuvchi hamda admin rollari alohida ishlaydi.</p></div></div>
     <h3>2-oy: GIS va performance</h3>
     <p>GeoJSON, raster/vector farqi, CRS/EPSG, MapLibre layerlar va viewport bo'yicha qidiruvni amalda ishlat. PostGIS spatial query hamda GIST index bilan katta data uchun tezlikni o'lcha. OSM licensing, data quality va location privacy'ni hujjatlashtir.</p>
@@ -39,7 +39,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
       heading: { h: "Boshlang'ich arxitektura", p: "Barcha servislar lokal development uchun bitta buyruq bilan turishi kerak." },
       title: "docker-compose.yml skeleti",
       lang: "yaml",
-      code: `services:\n  web:\n    build: ./web\n    environment:\n      VITE_API_URL: http://localhost:4000\n  api:\n    build: ./api\n    env_file: .env\n    depends_on:\n      db:\n        condition: service_healthy\n  db:\n    image: postgis/postgis\n    environment:\n      POSTGRES_DB: geopulse\n    healthcheck:\n      test: ["CMD-SHELL", "pg_isready -U postgres"]`,
+      code: `services:\n  web:\n    build: ./web\n    environment:\n      VITE_API_URL: http://localhost:8000\n  api:\n    build: ./api\n    env_file: .env\n    depends_on:\n      db:\n        condition: service_healthy\n  db:\n    image: postgis/postgis\n    environment:\n      POSTGRES_DB: geopulse\n    healthcheck:\n      test: ["CMD-SHELL", "pg_isready -U postgres"]`,
     },
     {
       heading: { h: "Spatial query", p: "Viewport ichidagi obyektlarni index yordamida olish uchun minimal query." },
@@ -50,7 +50,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   ],
   tasks: [
     { id: "fg-1", html: "GeoPulse uchun bitta aniq muammo va foydalanuvchi rolini tanladim", crit: "README'da muammo, user va admin oqimi 5-10 qatorda yozilgan" },
-    { id: "fg-2", html: "React dashboard va TypeScript API uchun alohida papkalar yaratdim", crit: "web/ va api/ mustaqil ishga tushadi" },
+    { id: "fg-2", html: "React dashboard va FastAPI API uchun alohida papkalar yaratdim", crit: "web/ va api/ mustaqil ishga tushadi" },
     { id: "fg-3", html: "Auth, validation va user/admin role'larini qo'shdim", crit: "admin bo'lmagan foydalanuvchi boshqaruv endpointiga kira olmaydi" },
     { id: "fg-4", html: "PostgreSQL/PostGIS migration va real yoki namunaviy geodata seed qildim", crit: "yangi database bo'sh holatdan bitta buyruq bilan to'ladi" },
     { id: "fg-5", html: "MapLibre xaritasida layer, filter va bbox qidiruv ishladi", crit: "xaritani surishda faqat ko'rinayotgan hudud ma'lumoti olinadi" },
@@ -72,7 +72,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     desc: "Barcha kurslardagi asosiy ko'nikmalarni bitta real, deploy qilingan mahsulotga aylantir.",
     features: [
       "React + MapLibre xarita, qidiruv va filterlar",
-      "TypeScript API, auth, role va validation",
+      "FastAPI API, auth, role va validation",
       "PostgreSQL + PostGIS spatial query va index",
       "Telegram subscription va notification",
       "Docker Compose, Nginx, CI/CD va health check",

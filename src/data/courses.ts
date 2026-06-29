@@ -49,7 +49,7 @@ export const COURSES: CourseMeta[] = [
     id: "webgis",
     name: "Geospatial",
     brandTitle: "Geospatial Full-Stack Academy",
-    brandSub: "WebGIS / React TS / PostGIS / Tegola / Docker",
+    brandSub: "React TS / MapLibre / FastAPI / PostGIS / GDAL / YOLO / Docker",
     labels: {
       doc: "Hujjat",
       code: "Kod misollari",
@@ -66,8 +66,10 @@ export const COURSES: CourseMeta[] = [
       { n: 4, accent: D, title: "PostGIS in Action", author: "Regina Obe, Leo Hsu", isbn: "9781617294860", note: "Geofazoviy ma'lumotlar bazasi - PostGIS modullari uchun asosiy manba." },
       { n: 5, accent: E, title: "Web Mapping Illustrated", author: "Tyler Mitchell", isbn: "9780596008659", note: "Web xarita asoslari: proyeksiya, tile, server. Tegola/MapLibre modullaridan oldin foydali." },
       { n: 6, accent: F, title: "Designing Data-Intensive Applications", author: "Martin Kleppmann", isbn: "9781449373320", note: "Backend va ma'lumot tizimlari chuqur. Kurs oxirida - production darajaga chiqqach o'qi." },
+      { n: 7, accent: A, title: "Python Crash Course", author: "Eric Matthes", isbn: "9781718502703", note: "Python/FastAPI va GIS processing modullariga kirishdan oldin Python poydevorini mustahkamlaydi." },
+      { n: 8, accent: B, title: "Geospatial Data Science with Python", author: "M. O. Idowu", note: "GeoPandas, Shapely, Rasterio va geospatial data processing bo'limlari uchun amaliy yo'nalish." },
     ],
-    moduleBooks: { z0: 1, z3: 3, z6: 6, z10: 4, z13: 5 },
+    moduleBooks: { z0: 1, z3: 3, z6: 7, z10: 4, z13: 5, z26: 7, z28: 8, z30: 8, z32: 6, z34: 6, z36: 4, z38: 6, z40: 6, z42: 6 },
   },
   {
     id: "frontend",
