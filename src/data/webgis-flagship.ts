@@ -18,7 +18,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
       <span class="chip">Docker Compose + Nginx</span><span class="chip">CI/CD + monitoring</span>
     </div>
     <h3>1-oy: mahsulot poydevori</h3>
-    <p>React dashboard, login, obyektlar ro'yxati, qidiruv va filter qur. FastAPI API orqali CRUD, pagination, validation, PostgreSQL migration va role-based access control qo'sh.</p>
+    <p>React dashboard, login, obyektlar ro'yxati, qidiruv va filtr qur. FastAPI API orqali CRUD, pagination, validation, PostgreSQL migration va role-based access control qo'sh.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Auth bilan himoyalangan, deploy qilishga tayyor dashboard va API. Foydalanuvchi hamda admin rollari alohida ishlaydi.</p></div></div>
     <h3>2-oy: GIS va performance</h3>
     <p>GeoJSON, raster/vector farqi, CRS/EPSG, MapLibre layerlar va viewport bo'yicha qidiruvni amalda ishlat. PostGIS spatial query hamda GIST index bilan katta data uchun tezlikni o'lcha. OSM licensing, data quality va location privacy'ni hujjatlashtir.</p>
@@ -53,7 +53,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     { id: "fg-2", html: "React dashboard va FastAPI API uchun alohida papkalar yaratdim", crit: "web/ va api/ mustaqil ishga tushadi" },
     { id: "fg-3", html: "Auth, validation va user/admin role'larini qo'shdim", crit: "admin bo'lmagan foydalanuvchi boshqaruv endpointiga kira olmaydi" },
     { id: "fg-4", html: "PostgreSQL/PostGIS migration va real yoki namunaviy geodata seed qildim", crit: "yangi database bo'sh holatdan bitta buyruq bilan to'ladi" },
-    { id: "fg-5", html: "MapLibre xaritasida layer, filter va bbox qidiruv ishladi", crit: "xaritani surishda faqat ko'rinayotgan hudud ma'lumoti olinadi" },
+    { id: "fg-5", html: "MapLibre xaritasida layer, filtr va bbox qidiruv ishladi", crit: "xaritani surishda faqat ko'rinayotgan hudud ma'lumoti olinadi" },
     { id: "fg-6", html: "PostGIS spatial index yaratib, query tezligini solishtirdim", crit: "EXPLAIN ANALYZE natijasi README'da qisqacha izohlangan" },
     { id: "fg-7", html: "Telegram botda subscription va bitta notification flow yozdim", crit: "test foydalanuvchiga real xabar yetib boradi" },
     { id: "fg-8", html: "Unit, API integration va bitta frontend user-flow test yozdim", crit: "CI ichida uchala turdagi tekshiruv ishlaydi" },
@@ -71,7 +71,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     title: "GeoPulse Geospatial Monitoring Platform",
     desc: "Barcha kurslardagi asosiy ko'nikmalarni bitta real, deploy qilingan mahsulotga aylantir.",
     features: [
-      "React + MapLibre xarita, qidiruv va filterlar",
+      "React + MapLibre xarita, qidiruv va filtrlar",
       "FastAPI API, auth, role va validation",
       "PostgreSQL + PostGIS spatial query va index",
       "Telegram subscription va notification",
@@ -88,9 +88,9 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
       "README, demo va arxitektura sxemasi boshqa dasturchiga tushunarli.",
     ],
     variants: [
-      { title: "Shahar infratuzilmasi", desc: "Yo'l, yoritish, chiqindi yoki kommunal muammolarni xaritada kuzatadigan platforma.", deliverables: ["Muammo kategoriyalari", "Hudud bo'yicha filter", "Operator Telegram notification"] },
+      { title: "Shahar infratuzilmasi", desc: "Yo'l, yoritish, chiqindi yoki kommunal muammolarni xaritada kuzatadigan platforma.", deliverables: ["Muammo kategoriyalari", "Hudud bo'yicha filtr", "Operator Telegram notification"] },
       { title: "Biznes joylashuv analitikasi", desc: "Savdo nuqtalari, mijozlar yoki filiallar bo'yicha hududiy tahlil dashboardi.", deliverables: ["Branch layer", "Catchment/nearby tahlil", "Admin export"] },
-      { title: "Ekologik monitoring", desc: "Havo sifati, suv nuqtalari yoki yashil hududlarni kuzatish uchun ochiq data platformasi.", deliverables: ["Vaqt bo'yicha filter", "Alert threshold", "Public map view"] },
+      { title: "Ekologik monitoring", desc: "Havo sifati, suv nuqtalari yoki yashil hududlarni kuzatish uchun ochiq data platformasi.", deliverables: ["Vaqt bo'yicha filtr", "Alert threshold", "Public map view"] },
     ],
   },
   quiz: [

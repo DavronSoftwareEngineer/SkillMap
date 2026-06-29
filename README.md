@@ -47,7 +47,7 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 ```
 src/
   data/
-    webgis.json      Geospatial kurs (20 modul: professional FastAPI/PostGIS/AI-GIS/Senior tartibida)
+    webgis.json      Geospatial kurs (21 modul: JS/TS -> Python ko'prigi + professional FastAPI/PostGIS/AI-GIS/Senior tartibida)
     english.json     English kurs (12 modul: A0->Exam)
     finance.json     Moliya kursi (10 modul: F0->F9)
     russian.json     Rus tili kursi (10 modul: Алф->Речь)
@@ -79,7 +79,7 @@ public/
 - **Global qidiruv:** yon paneldagi *Qidiruv* - darslar, topshiriqlar, lug'at, grammatika va testlar bo'ylab qidirib, to'g'ridan-to'g'ri modulga o'tadi.
 - **Tinglash mashqi (English):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan - darhol tekshiriladi.
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
-- **Geospatial kengaytirildi:** professional tartib, arxitektura chizmalari, request/data flowlar, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlar qo'shildi.
+- **Geospatial kengaytirildi:** JS/TS biladiganlar uchun Python ko'prigi, professional tartib, arxitektura chizmalari, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlari qo'shildi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
 - **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas.
 

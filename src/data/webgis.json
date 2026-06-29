@@ -142,7 +142,7 @@
           "Nginx config"
         ],
         "c": 0,
-        "w": "React/TS foydalanuvchi ko'radigan xarita, panel, filter va admin UI uchun.",
+        "w": "React/TS foydalanuvchi ko'radigan xarita, panel, filtr va admin UI uchun.",
         "level": "easy"
       },
       {
@@ -426,7 +426,7 @@
         "Linux serverga ulanish + Docker o'rnatilgan",
         "ufw firewall + service boshqaruvi",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow"
+        "Xarita/filtr/qidiruv oqimi"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
@@ -837,7 +837,7 @@
         "Layer toggle (qatlamlarni yoqish/o'chirish)",
         "Backend bilan to'liq ulangan",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow"
+        "Xarita/filtr/qidiruv oqimi"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
@@ -1030,6 +1030,332 @@
         "topic": "Props",
         "rule": "Ota -> bola ma'lumot uzatish.",
         "ex": "<Map center={c} zoom={z} />"
+      }
+    ]
+  },
+  {
+    "zoom": "z4",
+    "title": "Python for JS/TS Devs",
+    "sub": "Python ko'prigi",
+    "coord": "Python basics / z4",
+    "eyebrow": "04 / JS/TS'dan Python'ga o'tish",
+    "mtitle": "Python poydevori - JavaScript/TypeScript biladiganlar uchun",
+    "lede": "Bu modul Python'ni noldan, lekin <strong>JS/TS biladigan dasturchi ko'zi bilan</strong> tushuntiradi. Maqsad: FastAPI, PostGIS, GDAL, Rasterio va YOLO modullariga kirishdan oldin Python sintaksisi, typing, venv, pip, async va fayl bilan ishlashni qo'lga olish.",
+    "doc": "<div class='prose'>\n<p>Sen allaqachon JavaScript/TypeScript bilan ishlagansan. Shuning uchun Python'ni butunlay begona til sifatida emas, tanish tushunchalarning boshqa sintaksisi sifatida o'rganamiz: o'zgaruvchi, funksiya, array/list, object/dict, class, async, module va package.</p>\n<h3>JS/TS -> Python mosliklari</h3>\n<div class=\"tree\">\nconst / let        -> name = value\narray             -> list\nobject            -> dict\ninterface/type    -> dataclass yoki Pydantic model\nPromise/async     -> async def / await\nnpm package       -> pip package\npackage.json      -> pyproject.toml yoki requirements.txt\nnode_modules      -> .venv\nfetch/api client  -> httpx / requests\nJSON.parse        -> json.loads\n</div>\n<h3>Nimani chuqur o'rganasan?</h3>\n<div class='chips'><span class='chip t'>venv</span><span class='chip'>pip</span><span class='chip t'>list/dict</span><span class='chip'>function</span><span class='chip'>class</span><span class='chip t'>type hints</span><span class='chip'>dataclass</span><span class='chip'>async/await</span><span class='chip'>file I/O</span><span class='chip'>JSON</span></div>\n<div class='callout'><div><p>Fokus</p><p>Python'ni umumiy dasturchilik uchun emas, <strong>geospatial backend va processing</strong> uchun o'rganasan. Shuning uchun birinchi mini mashqlar JSON, GeoJSON, fayl va API atrofida bo'ladi.</p></div></div>\n</div>",
+    "code": [
+      {
+        "heading": {
+          "h": "JS/TS va Python sintaksis farqi",
+          "p": "Bir xil fikr, ikki xil yozilish."
+        },
+        "title": "syntax_compare.py",
+        "lang": "py",
+        "code": "# TypeScript:\n# const user = { id: 1, name: 'Ali' }\n# const names = users.map(u => u.name)\n\nuser = {\"id\": 1, \"name\": \"Ali\"}\nusers = [user, {\"id\": 2, \"name\": \"Vali\"}]\nnames = [u[\"name\"] for u in users]\n\nprint(names)  # ['Ali', 'Vali']"
+      },
+      {
+        "heading": {
+          "h": "Type hints",
+          "p": "TypeScriptdagi tip fikrlash Python'da ham foydali."
+        },
+        "title": "typing_basics.py",
+        "lang": "py",
+        "code": "from typing import TypedDict\n\nclass Feature(TypedDict):\n    id: int\n    name: str\n    geometry_type: str\n\ndef format_feature(feature: Feature) -> str:\n    return f\"{feature['id']} - {feature['name']} ({feature['geometry_type']})\"\n\nprint(format_feature({\"id\": 1, \"name\": \"Road A\", \"geometry_type\": \"LineString\"}))"
+      },
+      {
+        "heading": {
+          "h": "Dataclass vs object",
+          "p": "Ma'lumot modelini toza saqlash."
+        },
+        "title": "dataclass_feature.py",
+        "lang": "py",
+        "code": "from dataclasses import dataclass\n\n@dataclass\nclass Layer:\n    id: str\n    title: str\n    geometry: str\n    min_zoom: int = 0\n\nlayer = Layer(id=\"buildings\", title=\"Buildings\", geometry=\"Polygon\", min_zoom=14)\nprint(layer.title)"
+      },
+      {
+        "heading": {
+          "h": "JSON va GeoJSON o'qish",
+          "p": "GIS processingning birinchi qadami."
+        },
+        "title": "read_geojson.py",
+        "lang": "py",
+        "code": "import json\nfrom pathlib import Path\n\npath = Path(\"data/sample.geojson\")\nfc = json.loads(path.read_text(encoding=\"utf-8\"))\n\nprint(fc[\"type\"])\nprint(\"features:\", len(fc[\"features\"]))\nfor feature in fc[\"features\"][:3]:\n    print(feature[\"properties\"].get(\"name\"), feature[\"geometry\"][\"type\"])"
+      },
+      {
+        "heading": {
+          "h": "Async mental model",
+          "p": "JS Promise fikrini Python async bilan bog'lash."
+        },
+        "title": "async_example.py",
+        "lang": "py",
+        "code": "import asyncio\n\nasync def fetch_layer(layer_id: str) -> dict:\n    await asyncio.sleep(0.1)  # network/db kutishni tasavvur qil\n    return {\"id\": layer_id, \"count\": 120}\n\nasync def main():\n    buildings, roads = await asyncio.gather(\n        fetch_layer(\"buildings\"),\n        fetch_layer(\"roads\"),\n    )\n    print(buildings, roads)\n\nasyncio.run(main())"
+      },
+      {
+        "heading": {
+          "h": "Mini CLI",
+          "p": "Processing skriptlari uchun argument qabul qilish."
+        },
+        "title": "geo_count.py",
+        "lang": "py",
+        "code": "import argparse\nimport json\nfrom pathlib import Path\n\nparser = argparse.ArgumentParser()\nparser.add_argument(\"file\")\nargs = parser.parse_args()\n\nfc = json.loads(Path(args.file).read_text(encoding=\"utf-8\"))\nprint({\"file\": args.file, \"features\": len(fc.get(\"features\", []))})\n\n# python geo_count.py data/sample.geojson"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "py0-1",
+        "html": "Python 3 o'rnatdim va <code>python --version</code> ishladi",
+        "crit": "terminal versiya qaytaradi"
+      },
+      {
+        "id": "py0-2",
+        "html": "<code>.venv</code> yaratdim va activate qildim",
+        "crit": "terminal promptda .venv yoki pip list alohida muhitni ko'rsatadi"
+      },
+      {
+        "id": "py0-3",
+        "html": "JS object/array misolini Python dict/listga o'tkazdim",
+        "crit": "natija printda to'g'ri chiqadi"
+      },
+      {
+        "id": "py0-4",
+        "html": "Type hints bilan kamida 3 ta function yozdim",
+        "crit": "mypy yoki editor tip xatolarini ko'rsatadi"
+      },
+      {
+        "id": "py0-5",
+        "html": "Dataclass yordamida Layer yoki Feature modeli yozdim",
+        "crit": "obyekt yaratilib, maydonlarga murojaat qilinadi"
+      },
+      {
+        "id": "py0-6",
+        "html": "GeoJSON faylni Python bilan o'qib, feature sonini chiqardim",
+        "crit": "skript FeatureCollection va feature sonini ko'rsatadi"
+      },
+      {
+        "id": "py0-7",
+        "html": "Async/await misolini ishga tushirdim",
+        "crit": "asyncio.gather ikkita natijani qaytaradi"
+      },
+      {
+        "id": "py0-8",
+        "html": "Mini CLI yozdim: fayl path'ini qabul qilib GeoJSON feature sonini qaytardi",
+        "crit": "<code>python geo_count.py data/sample.geojson</code> ishlaydi"
+      },
+      {
+        "id": "py0-9",
+        "html": "JS/TS -> Python farqlari bo'yicha o'zim uchun cheat sheet yozdim",
+        "crit": "kamida 15 ta moslik: array/list, object/dict, Promise/async va hokazo"
+      },
+      {
+        "id": "py0-10",
+        "html": "Python xatolarini o'qish mashqi qildim: SyntaxError, KeyError, TypeError",
+        "crit": "har xato nimadan chiqishini qisqa yozding"
+      }
+    ],
+    "resources": [
+      {
+        "type": "doc",
+        "url": "https://docs.python.org/3/tutorial/",
+        "title": "Python Tutorial",
+        "desc": "Python rasmiy boshlang'ich qo'llanma.",
+        "host": "docs.python.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.python.org/3/library/venv.html",
+        "title": "venv docs",
+        "desc": "Virtual environment yaratish.",
+        "host": "docs.python.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.python.org/3/library/typing.html",
+        "title": "typing docs",
+        "desc": "Type hints va TypedDict.",
+        "host": "docs.python.org"
+      },
+      {
+        "type": "doc",
+        "url": "https://docs.python.org/3/library/dataclasses.html",
+        "title": "dataclasses docs",
+        "desc": "Data model uchun dataclass.",
+        "host": "docs.python.org"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/results?search_query=python+for+javascript+developers",
+        "title": "Python for JavaScript Developers",
+        "desc": "JS biladiganlar uchun Python video darslar.",
+        "host": "youtube.com"
+      }
+    ],
+    "project": {
+      "tag": "Python ko'prigi",
+      "title": "GeoJSON Inspector CLI",
+      "desc": "JS/TS bilimingdan foydalanib, Python'da GeoJSON faylni tekshiradigan kichik CLI vosita yoz.",
+      "features": [
+        "GeoJSON file read",
+        "Feature count",
+        "Geometry type summary",
+        "Missing name/property report",
+        "CLI argument",
+        "README usage example"
+      ],
+      "rubric": [
+        "CLI path argument qabul qiladi.",
+        "Noto'g'ri fayl uchun tushunarli xato chiqaradi.",
+        "Feature soni va geometry type statistikasi chiqadi.",
+        "Kodda type hints bor.",
+        "README'da ishga tushirish misoli bor."
+      ],
+      "variants": [
+        {
+          "title": "GeoJSON Inspector",
+          "desc": "FeatureCollection ichidagi data sifatini tekshir.",
+          "deliverables": [
+            "count",
+            "geometry summary",
+            "error handling"
+          ]
+        },
+        {
+          "title": "Layer Manifest Generator",
+          "desc": "GeoJSON fayllardan layer manifest JSON yarat.",
+          "deliverables": [
+            "input folder",
+            "manifest output",
+            "README"
+          ]
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Python'da JS objectga eng yaqin data turi qaysi?",
+        "a": [
+          "dict",
+          "list",
+          "tuple",
+          "set"
+        ],
+        "c": 0,
+        "w": "dict key/value saqlaydi, JS objectga eng yaqin.",
+        "level": "easy"
+      },
+      {
+        "q": "Python'da arrayga eng yaqin data turi qaysi?",
+        "a": [
+          "list",
+          "dict",
+          "class",
+          "module"
+        ],
+        "c": 0,
+        "w": "list tartibli elementlar ro'yxati.",
+        "level": "easy"
+      },
+      {
+        "q": "TypeScript interface fikriga Python'da qaysi narsalar yaqin?",
+        "a": [
+          "TypedDict/Pydantic/dataclass",
+          "print",
+          "pip",
+          "venv"
+        ],
+        "c": 0,
+        "w": "Ma'lumot shaklini TypedDict, dataclass yoki Pydantic bilan ifodalash mumkin.",
+        "level": "practical"
+      },
+      {
+        "q": "venv nima uchun kerak?",
+        "a": [
+          "Har loyiha dependency'larini alohida saqlash",
+          "Xaritani zoom qilish",
+          "PostGIS index yaratish",
+          "CSS yozish"
+        ],
+        "c": 0,
+        "w": "venv dependency'lar to'qnashuvini kamaytiradi.",
+        "level": "easy"
+      },
+      {
+        "q": "Python'da Promise.all fikriga qaysi misol yaqin?",
+        "a": [
+          "asyncio.gather",
+          "json.loads",
+          "Path.read_text",
+          "dataclass"
+        ],
+        "c": 0,
+        "w": "asyncio.gather bir nechta async ishni parallel kutadi.",
+        "level": "scenario"
+      }
+    ],
+    "exercises": [
+      {
+        "type": "choice",
+        "q": "JS const names = users.map(u => u.name) Python'da qaysi yozuvga mos?",
+        "options": [
+          "names = [u['name'] for u in users]",
+          "names := users",
+          "users.name()",
+          "map.name(users)"
+        ],
+        "correct": 0,
+        "why": "List comprehension mapga o'xshash transform qiladi."
+      },
+      {
+        "type": "gap",
+        "q": "Python virtual environment buyrug'i: python -m ___ .venv",
+        "answers": [
+          "venv"
+        ],
+        "why": "venv Python virtual environment yaratadi.",
+        "hint": "v bilan boshlanadi"
+      },
+      {
+        "type": "choice",
+        "q": "GeoJSON faylni o'qishda qaysi modul kerak bo'ladi?",
+        "options": [
+          "json",
+          "random",
+          "calendar",
+          "email"
+        ],
+        "correct": 0,
+        "why": "json.loads GeoJSON matnini Python dict/listga aylantiradi."
+      }
+    ],
+    "vocab": [
+      {
+        "w": "venv",
+        "uz": "Python virtual muhiti",
+        "ex": "Har loyiha uchun alohida venv yarat."
+      },
+      {
+        "w": "dict",
+        "uz": "key/value obyekt",
+        "ex": "GeoJSON feature properties dict ko'rinishida bo'ladi."
+      },
+      {
+        "w": "list comprehension",
+        "uz": "ro'yxatni ixcham transform qilish",
+        "ex": "names = [u['name'] for u in users]"
+      },
+      {
+        "w": "type hint",
+        "uz": "Python'dagi tip ko'rsatmasi",
+        "ex": "def add(a: int, b: int) -> int"
+      }
+    ],
+    "grammar": [
+      {
+        "topic": "JS/TS -> Python",
+        "rule": "object -> dict, array -> list, Promise -> coroutine/task",
+        "ex": "users.map(...) -> [ ... for user in users ]"
+      },
+      {
+        "topic": "Python project",
+        "rule": "venv + requirements/pyproject + src layout",
+        "ex": "python -m venv .venv; pip install fastapi"
       }
     ]
   },
@@ -1517,7 +1843,7 @@
         "GeoJSON FeatureCollection javob",
         "Xarita bbox'iga bog'langan frontend",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
+        "Xarita/filtr/qidiruv oqimi",
         "Performance va bbox/zoom talabi",
         "READMEda data source va deploy izohi"
       ],
@@ -2269,7 +2595,7 @@
         "Tile cache yoqilgan",
         "MapLibre'da silliq render",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
+        "Xarita/filtr/qidiruv oqimi",
         "Performance va bbox/zoom talabi",
         "READMEda data source va deploy izohi"
       ],
@@ -2571,7 +2897,7 @@
         "Volume bilan saqlanadigan data",
         ".env bilan xavfsiz konfiguratsiya",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
+        "Xarita/filtr/qidiruv oqimi",
         "Performance va bbox/zoom talabi",
         "READMEda data source va deploy izohi"
       ],
@@ -2764,7 +3090,7 @@
     "eyebrow": "14 / Computer vision for maps",
     "mtitle": "AI-GIS - drone imagery va object detection",
     "lede": "Chatdagi e'londa drone imagery va AI object detection muhim edi. Bu modulda sen georeferenced rasm ustida detection natijasini xaritaga olib chiqishni o'rganasan: <strong>YOLO inference -> bbox -> GeoJSON -> MapLibre layer</strong>.",
-    "doc": "<div class='prose'><p>AI-GIS yo'nalishida maqsad modelni noldan yaratish emas; avval tayyor model bilan <strong>ishlaydigan pipeline</strong> qurish. Rasm keladi, model obyekt topadi, natija spatial formatga o'tadi va xaritada tekshiriladi.</p><h3>O'rganadigan mavzular</h3><div class='chips'><span class='chip t'>orthophoto</span><span class='chip'>GeoTIFF</span><span class='chip t'>YOLO inference</span><span class='chip'>bbox</span><span class='chip'>confidence</span><span class='chip'>tiling</span><span class='chip t'>GeoJSON output</span><span class='chip'>human review</span></div><h3>Professional ehtiyotkorlik</h3><p>Detection natijasi 100% haqiqat emas. Productionda confidence threshold, manual review, false positive/false negative hisoboti va data privacy yoziladi.</p><div class='callout'><div><p>Portfolio kuchi</p><p>Map ustida AI topgan obyektlarni rang bilan ko'rsatish, confidence filter va review panel qo'shish - oddiy WebGIS loyihani kuchli AI-GIS case studyga aylantiradi.</p></div></div></div>\n<h3>AI detection oqimi</h3>\n<div class=\"tree\">\nDrone image / orthophoto\n  -> tile yoki crop\n  -> YOLO inference\n  -> pixel bbox\n  -> georeference transform\n  -> GeoJSON polygon\n  -> FastAPI /detections\n  -> MapLibre layer + confidence filter\n  -> human review\n</div>\n<p>Bu yerda eng muhim fikr: AI natija xaritada ko'rinishi uchun pixel koordinata spatial koordinataga to'g'ri o'tishi kerak.</p>",
+    "doc": "<div class='prose'><p>AI-GIS yo'nalishida maqsad modelni noldan yaratish emas; avval tayyor model bilan <strong>ishlaydigan pipeline</strong> qurish. Rasm keladi, model obyekt topadi, natija spatial formatga o'tadi va xaritada tekshiriladi.</p><h3>O'rganadigan mavzular</h3><div class='chips'><span class='chip t'>orthophoto</span><span class='chip'>GeoTIFF</span><span class='chip t'>YOLO inference</span><span class='chip'>bbox</span><span class='chip'>confidence</span><span class='chip'>tiling</span><span class='chip t'>GeoJSON output</span><span class='chip'>human review</span></div><h3>Professional ehtiyotkorlik</h3><p>Detection natijasi 100% haqiqat emas. Productionda confidence threshold, manual review, false positive/false negative hisoboti va data privacy yoziladi.</p><div class='callout'><div><p>Portfolio kuchi</p><p>Map ustida AI topgan obyektlarni rang bilan ko'rsatish, confidence filtri va review panel qo'shish - oddiy WebGIS loyihani kuchli AI-GIS case studyga aylantiradi.</p></div></div></div>\n<h3>AI detection oqimi</h3>\n<div class=\"tree\">\nDrone image / orthophoto\n  -> tile yoki crop\n  -> YOLO inference\n  -> pixel bbox\n  -> georeference transform\n  -> GeoJSON polygon\n  -> FastAPI /detections\n  -> MapLibre layer + confidence filtri\n  -> human review\n</div>\n<p>Bu yerda eng muhim fikr: AI natija xaritada ko'rinishi uchun pixel koordinata spatial koordinataga to'g'ri o'tishi kerak.</p>",
     "code": [
       {
         "heading": {
@@ -2822,7 +3148,7 @@
       },
       {
         "id": "gis14-6",
-        "html": "Confidence slider/filter qo'shdim",
+        "html": "Confidence slider/filtr qo'shdim",
         "crit": "past confidence natijalar yashiriladi"
       },
       {
@@ -2891,7 +3217,7 @@
         "YOLO inference output",
         "Detection GeoJSON",
         "MapLibre layer",
-        "Confidence filter",
+        "Confidence filtri",
         "Manual review status",
         "Case study with limitations"
       ],
@@ -2915,7 +3241,7 @@
           "title": "Road Damage Review",
           "desc": "Yo'l shikastlarini review queue bilan ko'rsatish.",
           "deliverables": [
-            "confidence filter",
+            "confidence filtri",
             "status update",
             "report"
           ]
@@ -3408,7 +3734,7 @@
       },
       {
         "id": "gis17-3",
-        "html": "Tile hajmini o'lchab, simplification yoki zoom filter bilan kamaytirdim",
+        "html": "Tile hajmini o'lchab, simplification yoki zoom filtri bilan kamaytirdim",
         "crit": "tile size oldin/keyin solishtirilgan"
       },
       {
@@ -4074,7 +4400,7 @@
         "Admin CRUD + JWT auth",
         "Dockerized + Nginx + optimized SQL",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow"
+        "Xarita/filtr/qidiruv oqimi"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
@@ -4421,7 +4747,7 @@
         "Bitta chuqur ixtisoslashuv feature",
         "Texnik post + arxitektura diagrammasi",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow"
+        "Xarita/filtr/qidiruv oqimi"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",
@@ -4684,7 +5010,7 @@
         "Prometheus metrika (RED)",
         "Grafana dashboard + alert",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow",
+        "Xarita/filtr/qidiruv oqimi",
         "Performance va bbox/zoom talabi",
         "READMEda data source va deploy izohi"
       ],
@@ -5039,7 +5365,7 @@
         "Jonli portfolio + case study + demo video",
         "Elevator pitch + interview + negotiation tayyor",
         "Real yoki namunaviy geodata",
-        "Map/filter/search flow"
+        "Xarita/filtr/qidiruv oqimi"
       ],
       "rubric": [
         "Xarita real data bilan ochiladi va navigatsiya ishlaydi.",

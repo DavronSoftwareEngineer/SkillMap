@@ -69,7 +69,7 @@ export const COURSES: CourseMeta[] = [
       { n: 7, accent: A, title: "Python Crash Course", author: "Eric Matthes", isbn: "9781718502703", note: "Python/FastAPI va GIS processing modullariga kirishdan oldin Python poydevorini mustahkamlaydi." },
       { n: 8, accent: B, title: "Geospatial Data Science with Python", author: "M. O. Idowu", note: "GeoPandas, Shapely, Rasterio va geospatial data processing bo'limlari uchun amaliy yo'nalish." },
     ],
-    moduleBooks: { z0: 1, z3: 3, z6: 7, z10: 4, z13: 5, z26: 7, z28: 8, z30: 8, z32: 6, z34: 6, z36: 4, z38: 6, z40: 6, z42: 6 },
+    moduleBooks: { z0: 1, z3: 3, z4: 7, z6: 7, z10: 4, z13: 5, z26: 7, z28: 8, z30: 8, z32: 6, z34: 6, z36: 4, z38: 6, z40: 6, z42: 6 },
   },
   {
     id: "frontend",

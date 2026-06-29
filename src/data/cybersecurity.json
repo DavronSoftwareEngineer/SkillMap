@@ -7,7 +7,7 @@
     "eyebrow": "00 / Professional xavfsizlik fikrlashi",
     "mtitle": "Cybersecurity nima: riskni kamaytirish san'ati",
     "lede": "Cybersecurity - bu faqat hack emas. Professional darajada u <strong>aktivlarni aniqlash</strong>, <strong>riskni baholash</strong>, <strong>nazorat qo'yish</strong> va <strong>hodisaga tayyor turish</strong> jarayonidir.",
-    "doc": "<div class='prose'><h3>Asosiy maqsad</h3><p>Xavfsizlikning vazifasi biznesni to'xtatish emas, uni xavfsiz ishlatish. Shuning uchun savol doim shunday: nimani himoya qilamiz, kimdan, qanday ehtimol bilan va qanday zarar bo'ladi?</p><div class='chips'><span class='chip t'>Asset</span><span class='chip t'>Threat</span><span class='chip'>Vulnerability</span><span class='chip'>Risk</span><span class='chip t'>Control</span></div><h3>CIA triad</h3><table class='gtable'><thead><tr><th>Tamoyil</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>Confidentiality</td><td>maxfiylik</td><td>parol hash, access control</td></tr><tr><td>Integrity</td><td>butunlik</td><td>audit log, checksum, review</td></tr><tr><td>Availability</td><td>mavjudlik</td><td>backup, monitoring, DDoS himoya</td></tr></tbody></table><h3>Etika</h3><p>Professional kiberxavfsizlikda ruxsat, scope va yozma kelishuv majburiy. Real tizimni tekshirish faqat egasining aniq ruxsati bilan qilinadi. Kursdagi amaliyotlar lokal lab, CTF yoki o'zingga tegishli demo muhitda bajariladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 8v5'/><path d='M12 16h.01'/></svg></span><div><p>Professional qoida</p><p>Qila olamanmi degan savoldan oldin: ruxsat bormi, scope qayergacha, zararni qanday oldini olaman va natijani qanday hujjatlashtiraman?</p></div></div><h3>W3Schools mapping</h3><p>W3Schools kursi cyber crime, money-making threats, dark web, networking, attacks, security operations va incident response kabi 16 ta asosiy sahifani ketma-ket beradi. Bu modul osha roadmapni professional risk tili bilan boglaydi: threat, vulnerability, impact, likelihood va control.</p></div>",
+    "doc": "<div class='prose'><h3>Asosiy maqsad</h3><p>Xavfsizlikning vazifasi biznesni to'xtatish emas, uni xavfsiz ishlatish. Shuning uchun savol doim shunday: nimani himoya qilamiz, kimdan, qanday ehtimol bilan va qanday zarar bo'ladi?</p><div class='chips'><span class='chip t'>Asset</span><span class='chip t'>Threat</span><span class='chip'>Vulnerability</span><span class='chip'>Risk</span><span class='chip t'>Control</span></div><h3>CIA triad</h3><table class='gtable'><thead><tr><th>Tamoyil</th><th>Ma'no</th><th>Misol</th></tr></thead><tbody><tr><td>Confidentiality</td><td>maxfiylik</td><td>parol hash, access control</td></tr><tr><td>Integrity</td><td>butunlik</td><td>audit log, checksum, review</td></tr><tr><td>Availability</td><td>mavjudlik</td><td>backup, monitoring, DDoS himoya</td></tr></tbody></table><h3>Etika</h3><p>Professional kiberxavfsizlikda ruxsat, scope va yozma kelishuv majburiy. Real tizimni tekshirish faqat egasining aniq ruxsati bilan qilinadi. Kursdagi amaliyotlar lokal lab, CTF yoki o'zingga tegishli demo muhitda bajariladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 8v5'/><path d='M12 16h.01'/></svg></span><div><p>Professional qoida</p><p>Qila olamanmi degan savoldan oldin: ruxsat bormi, scope qayergacha, zararni qanday oldini olaman va natijani qanday hujjatlashtiraman?</p></div></div><h3>W3Schools mapping</h3><p>W3Schools kursi cyber crime, money-making threats, dark web, networking, attacks, security operations va incident response kabi 16 ta asosiy sahifani ketma-ket beradi. Bu modul o'sha roadmapni professional risk tili bilan bog'laydi: threat, vulnerability, impact, likelihood va control.</p></div>",
     "code": [
       {
         "heading": {
@@ -161,7 +161,7 @@
         "level": "easy"
       },
       {
-        "q": "W3Schools intro kursi nimaga yaxshi primer bo ladi?",
+        "q": "W3Schools intro kursi nimaga yaxshi primer bo'ladi?",
         "a": [
           "faqat dizayn uchun",
           "cybersecurity domenlarini umumiy ko rish uchun",
@@ -384,7 +384,7 @@
           "faqat backup qiladi"
         ],
         "c": 1,
-        "w": "NGFW ko proq qatlam va kontekst bo yicha nazorat beradi.",
+        "w": "NGFW ko'proq qatlam va kontekst bo'yicha nazorat beradi.",
         "level": "practical"
       }
     ],
@@ -492,7 +492,7 @@
       {
         "id": "cy2-5",
         "html": "Ruxsatli lab uchun port inventory jadvali tuzdim",
-        "crit": "host, port, service, owner, kerakmi/yo qmi ustunlari bor"
+        "crit": "host, port, service, owner, kerakmi/yo'qmi ustunlari bor"
       }
     ],
     "resources": [
@@ -641,7 +641,7 @@
     "eyebrow": "03 / Web xavfsizlik",
     "mtitle": "Web ilovani zaiflikdan himoyalash",
     "lede": "Web security professional uchun OWASP Top 10, auth, session, input validation, output encoding, CORS, CSRF va security headerlar kundalik mavzu.",
-    "doc": "<div class='prose'><h3>Himoya nuqtai nazari</h3><p>Zaifliklarni bilishdan maqsad real tizimga zarar yetkazish emas, ilovani xavfsiz loyihalash va tekshirish. Har amaliyot lokal demo, CTF yoki ruxsatli staging muhitda bajariladi.</p><h3>Eng ko'p uchraydigan risklar</h3><table class='gtable'><thead><tr><th>Risk</th><th>Sabab</th><th>Himoya</th></tr></thead><tbody><tr><td>Injection</td><td>input queryga qo'shiladi</td><td>parameterized query, validation</td></tr><tr><td>XSS</td><td>ishonilmagan HTML chiqadi</td><td>escaping, CSP, sanitization</td></tr><tr><td>Broken access control</td><td>serverda tekshiruv yo'q</td><td>deny by default, policy test</td></tr><tr><td>CSRF</td><td>cookie avtomatik yuboriladi</td><td>SameSite, token, origin check</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Web Application Attacks sahifasi IDOR, magic numbers, GUID/UUID va SQL injection kabi mavzularni sodda ko rsatadi. Bu modul ularni professional AppSec checklistga aylantiradi: object-level authorization, unguessable identifiers, parameterized queries va regression test.</p></div>",
+    "doc": "<div class='prose'><h3>Himoya nuqtai nazari</h3><p>Zaifliklarni bilishdan maqsad real tizimga zarar yetkazish emas, ilovani xavfsiz loyihalash va tekshirish. Har amaliyot lokal demo, CTF yoki ruxsatli staging muhitda bajariladi.</p><h3>Eng ko'p uchraydigan risklar</h3><table class='gtable'><thead><tr><th>Risk</th><th>Sabab</th><th>Himoya</th></tr></thead><tbody><tr><td>Injection</td><td>input queryga qo'shiladi</td><td>parameterized query, validation</td></tr><tr><td>XSS</td><td>ishonilmagan HTML chiqadi</td><td>escaping, CSP, sanitization</td></tr><tr><td>Broken access control</td><td>serverda tekshiruv yo'q</td><td>deny by default, policy test</td></tr><tr><td>CSRF</td><td>cookie avtomatik yuboriladi</td><td>SameSite, token, origin check</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Web Application Attacks sahifasi IDOR, magic numbers, GUID/UUID va SQL injection kabi mavzularni sodda ko'rsatadi. Bu modul ularni professional AppSec checklistga aylantiradi: object-level authorization, unguessable identifiers, parameterized queries va regression test.</p></div>",
     "code": [
       {
         "heading": {
@@ -858,7 +858,7 @@
     "eyebrow": "04 / Kimlik va maxfiylik",
     "mtitle": "Parol, token va crypto xatolarini kamaytirish",
     "lede": "Ko'p breachlar credential bilan boshlanadi. Identity security - MFA, session, password hashing, secret management va audit demak.",
-    "doc": "<div class='prose'><h3>Auth vs authorization</h3><p>Authentication - kim ekaningni tasdiqlash. Authorization - nima qilishga huquqing borligini tekshirish. Ikkalasi aralashsa, broken access control paydo bo'ladi.</p><h3>Crypto qoidasi</h3><p>O'zing crypto algoritm yaratma. Standart, tekshirilgan kutubxona va konfiguratsiyadan foydalan. Parollar encryption qilinmaydi, sekin password hash bilan saqlanadi.</p><div class='chips'><span class='chip t'>MFA</span><span class='chip'>bcrypt/argon2</span><span class='chip t'>short-lived token</span><span class='chip'>secret rotation</span></div><h3>W3Schools mapping</h3><p>W3Schools passwords mavzusi credential xavfini beginner darajada ochadi. Bu modulda u MFA, password hashing, session expiry, reset flow va secret rotation bilan professional identity hardening rejasiga kengaytiriladi.</p></div>",
+    "doc": "<div class='prose'><h3>Auth vs authorization</h3><p>Authentication - kim ekaningni tasdiqlash. Authorization - nima qilishga huquqing borligini tekshirish. Ikkalasi aralashsa, broken access control paydo bo'ladi.</p><h3>Crypto qoidasi</h3><p>O'zing crypto algoritm yaratma. Standart, tekshirilgan kutubxona va konfiguratsiyadan foydalan. Parollar encryption qilinmaydi, sekin password hash bilan saqlanadi.</p><div class='chips'><span class='chip t'>MFA</span><span class='chip'>bcrypt/argon2</span><span class='chip t'>short-lived token</span><span class='chip'>secret rotation</span></div><h3>W3Schools mapping</h3><p>W3Schools passwords mavzusi credential xavfini boshlang'ich darajada ochadi. Bu modulda u MFA, password hashing, session expiry, reset flow va secret rotation bilan professional identity hardening rejasiga kengaytiriladi.</p></div>",
     "code": [
       {
         "heading": {
@@ -1043,7 +1043,7 @@
     "eyebrow": "05 / Cloud va ishlab chiqish xavfsizligi",
     "mtitle": "Securityni deploy jarayoniga qo'shish",
     "lede": "Cloud securityda eng ko'p xato IAM, public bucket, secret, network exposure va noto'g'ri container image sozlamalarida bo'ladi. DevSecOps bu nazoratlarni jarayonga qo'shadi.",
-    "doc": "<div class='prose'><h3>Shared responsibility</h3><p>Cloud provider datacenter va managed service poydevorini beradi. Lekin identity, config, data access, network exposure va app security ko'pincha sening javobgarliging.</p><h3>SDLC nazoratlari</h3><div class='exlist'><div class='ex'><b>Design</b><span>threat model, data flow</span></div><div class='ex'><b>Code</b><span>secure review, secret scan</span></div><div class='ex'><b>Build</b><span>SCA, SAST, dependency pin</span></div><div class='ex'><b>Deploy</b><span>config review, rollback</span></div></div><h3>Container hardening</h3><div class='chips'><span class='chip t'>non-root user</span><span class='chip'>minimal image</span><span class='chip t'>pinned version</span><span class='chip'>secret outside image</span></div><h3>W3Schools mapping</h3><p>Cloud va DevSecOps modulida W3Schools firewall segmentation g oyasi cloud security group, subnet, admin access va container exposurega ko chirildi. Har public endpoint intentional bo lishi va egasi aniq yozilishi kerak.</p></div>",
+    "doc": "<div class='prose'><h3>Shared responsibility</h3><p>Cloud provider datacenter va managed service poydevorini beradi. Lekin identity, config, data access, network exposure va app security ko'pincha sening javobgarliging.</p><h3>SDLC nazoratlari</h3><div class='exlist'><div class='ex'><b>Design</b><span>threat model, data flow</span></div><div class='ex'><b>Code</b><span>secure review, secret scan</span></div><div class='ex'><b>Build</b><span>SCA, SAST, dependency pin</span></div><div class='ex'><b>Deploy</b><span>config review, rollback</span></div></div><h3>Container hardening</h3><div class='chips'><span class='chip t'>non-root user</span><span class='chip'>minimal image</span><span class='chip t'>pinned version</span><span class='chip'>secret outside image</span></div><h3>W3Schools mapping</h3><p>Cloud va DevSecOps modulida W3Schools firewall segmentation g'oyasi cloud security group, subnet, admin access va container exposurega ko'chirildi. Har public endpoint intentional bo'lishi va egasi aniq yozilishi kerak.</p></div>",
     "code": [
       {
         "heading": {
@@ -1249,7 +1249,7 @@
     "eyebrow": "06 / Detection engineering",
     "mtitle": "Hodisani ko'rish: logdan alertgacha",
     "lede": "Blue teamning kuchi - tizimda nima normal, nima shubhali ekanini bilish. Log, SIEM, alert, triage va threat hunting shu yerda birlashadi.",
-    "doc": "<div class='prose'><h3>Detection pipeline</h3><p>Log yig'iladi, normalizatsiya qilinadi, qoida yoki analytics ishlaydi, alert chiqadi, analyst triage qiladi. Yaxshi detection aniq, tushunarli va false positive past bo'ladi.</p><table class='gtable'><thead><tr><th>Log</th><th>Qimmat maydon</th><th>Shubhali signal</th></tr></thead><tbody><tr><td>auth</td><td>user, IP, result</td><td>ko'p failed login</td></tr><tr><td>web</td><td>path, status, user-agent</td><td>admin endpointga g'alati urinish</td></tr><tr><td>cloud</td><td>principal, action, resource</td><td>yangi admin policy</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Security Operations sahifasi SOC vazifasi threatlarni aniqlash va qimmat muammoga aylanishidan oldin to xtatish ekanini tushuntiradi. SIEM loglardan event va alert chiqaradi; network, host va application eventlari turli darajada kontekst beradi.</p></div>",
+    "doc": "<div class='prose'><h3>Detection pipeline</h3><p>Log yig'iladi, normalizatsiya qilinadi, qoida yoki analytics ishlaydi, alert chiqadi, analyst triage qiladi. Yaxshi detection aniq, tushunarli va false positive past bo'ladi.</p><table class='gtable'><thead><tr><th>Log</th><th>Qimmat maydon</th><th>Shubhali signal</th></tr></thead><tbody><tr><td>auth</td><td>user, IP, result</td><td>ko'p failed login</td></tr><tr><td>web</td><td>path, status, user-agent</td><td>admin endpointga g'alati urinish</td></tr><tr><td>cloud</td><td>principal, action, resource</td><td>yangi admin policy</td></tr></tbody></table><h3>W3Schools mapping</h3><p>W3Schools Security Operations sahifasi SOC vazifasi threatlarni aniqlash va qimmat muammoga aylanishidan oldin to'xtatish ekanini tushuntiradi. SIEM loglardan event va alert chiqaradi; network, host va application eventlari turli darajada kontekst beradi.</p></div>",
     "code": [
       {
         "heading": {
@@ -1446,7 +1446,7 @@
     "eyebrow": "07 / Hodisaga javob va yakuniy loyiha",
     "mtitle": "Incident response: vahima emas, playbook",
     "lede": "Breach bo'lganda eng muhim narsa - tartib. Prepare, detect, contain, eradicate, recover va lessons learned jarayoni oldindan tayyor bo'lishi kerak.",
-    "doc": "<div class='prose'><h3>IR lifecycle</h3><table class='gtable'><thead><tr><th>Bosqich</th><th>Maqsad</th><th>Misol</th></tr></thead><tbody><tr><td>Prepare</td><td>oldindan tayyorgarlik</td><td>contacts, logs, backup</td></tr><tr><td>Detect</td><td>hodisani ko'rish</td><td>alert, report, anomaly</td></tr><tr><td>Contain</td><td>zararni cheklash</td><td>token revoke, isolate host</td></tr><tr><td>Eradicate</td><td>sababni yo'qotish</td><td>patch, remove persistence</td></tr><tr><td>Recover</td><td>xizmatni tiklash</td><td>restore, monitor</td></tr></tbody></table><h3>Evidence</h3><p>Log va dalillarni saqlashda vaqt, manba, kim olgani va o'zgarmaganini qayd et. IRda shoshilib log o'chirish eng yomon odatlardan biri.</p><h3>Capstone</h3><p>Kurs oxirida professional portfolio uchun defensiv security pack tayyorlaysan: risk assessment, secure config review, detection rules va IR playbook.</p><h3>W3Schools mapping</h3><p>W3Schools Incident Response sahifasi incidentni adverse threat sifatida ta riflaydi va IRT tarkibida security, IT operations, network, development, legal va HR kabi rollar bo lishi mumkinligini ko rsatadi. PICERL/NIST-SP 800-61 yondashuvi preparationdan lessons learnedgacha tartibli javob beradi.</p></div>",
+    "doc": "<div class='prose'><h3>IR lifecycle</h3><table class='gtable'><thead><tr><th>Bosqich</th><th>Maqsad</th><th>Misol</th></tr></thead><tbody><tr><td>Prepare</td><td>oldindan tayyorgarlik</td><td>contacts, logs, backup</td></tr><tr><td>Detect</td><td>hodisani ko'rish</td><td>alert, report, anomaly</td></tr><tr><td>Contain</td><td>zararni cheklash</td><td>token revoke, isolate host</td></tr><tr><td>Eradicate</td><td>sababni yo'qotish</td><td>patch, remove persistence</td></tr><tr><td>Recover</td><td>xizmatni tiklash</td><td>restore, monitor</td></tr></tbody></table><h3>Evidence</h3><p>Log va dalillarni saqlashda vaqt, manba, kim olgani va o'zgarmaganini qayd et. IRda shoshilib log o'chirish eng yomon odatlardan biri.</p><h3>Capstone</h3><p>Kurs oxirida professional portfolio uchun defensiv security pack tayyorlaysan: risk assessment, secure config review, detection rules va IR playbook.</p><h3>W3Schools mapping</h3><p>W3Schools Incident Response sahifasi incidentni adverse threat sifatida ta'riflaydi va IRT tarkibida security, IT operations, network, development, legal va HR kabi rollar bo'lishi mumkinligini ko'rsatadi. PICERL/NIST-SP 800-61 yondashuvi preparationdan lessons learnedgacha tartibli javob beradi.</p></div>",
     "code": [
       {
         "heading": {
@@ -1622,12 +1622,12 @@
         "q": "IRT tarkibiga faqat security mutaxassislar kiradimi?",
         "a": [
           "ha, faqat security",
-          "yo q, IT, legal, HR va boshqalar ham kerak bo lishi mumkin",
+          "yo'q, IT, legal, HR va boshqalar ham kerak bo'lishi mumkin",
           "faqat developerlar",
           "faqat finance"
         ],
         "c": 1,
-        "w": "Incident response ko p jamoali jarayon bo lishi mumkin.",
+        "w": "Incident response ko'p jamoali jarayon bo'lishi mumkin.",
         "level": "practical"
       }
     ],
