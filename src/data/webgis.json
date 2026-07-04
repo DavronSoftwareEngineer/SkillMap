@@ -6735,5 +6735,743 @@
     "ex": "1M obyekt uchun vector tile yoki viewport query kerak."
    }
   ]
+ },
+ {
+  "zoom": "z24",
+  "title": "Processing/COG Production Lab",
+  "sub": "GDAL pipeline",
+  "coord": "Processing / z24",
+  "eyebrow": "24 / GDAL / RASTERIO / COG",
+  "mtitle": "Geospatial processing: GDAL, Rasterio, Shapely va COG pipeline",
+  "lede": "Bu modul data processing qismini yakunlaydi: GeoJSON/GPKG validation, geometry fix, raster clip/reproject, COG yaratish, metadata report va worker ichida takrorlanadigan pipeline.",
+  "doc": "<div class='prose'>\n<h3>Processing nima uchun qimmat skill</h3>\n<p>Geospatial loyihalarda data ko'pincha tayyor holatda kelmaydi: CRS noto'g'ri, geometry invalid, raster juda katta, attribute nomlari chalkash, fayl formatlari turlicha. Professional muhandis data'ni productionga tayyorlaydi: <strong>validate -> transform -> optimize -> publish -> verify</strong>.</p>\n<h3>Pipeline bosqichlari</h3>\n<div class=\"tree\">Input\n  -> inspect metadata (CRS, bounds, size, geometry type)\n  -> validate geometry / raster profile\n  -> reproject to target CRS\n  -> clean attributes\n  -> optimize (COG, simplify, index)\n  -> publish to storage/PostGIS\n  -> generate processing report</div>\n<p>Har processing job oxirida faqat output fayl emas, report ham chiqadi: input size, output size, CRS, bounds, duration, warninglar va validation natijasi.</p>\n<div class=\"callout\"><div><p>Senior qoida</p><p>Processing pipeline idempotent bo'lsin: bir xil input bir xil output beradi, xato bo'lsa qayerda to'xtaganini logdan bilasan.</p></div></div>\n<figure class='svgfig'><svg viewBox='0 0 700 175' role='img' aria-label='GDAL Rasterio COG processing pipeline'>\n<rect class='boxa' x='20' y='55' width='115' height='50' rx='8'/><text x='77' y='76' text-anchor='middle'>Input</text><text x='77' y='92' text-anchor='middle' class='muted'>GeoTIFF/GPKG</text>\n<path class='edga' d='M135 80 H180' marker-end='url(#arZ24)'/>\n<rect class='box' x='180' y='55' width='120' height='50' rx='8'/><text x='240' y='76' text-anchor='middle'>Validate</text><text x='240' y='92' text-anchor='middle' class='muted'>CRS/geom</text>\n<path class='edga' d='M300 80 H345' marker-end='url(#arZ24)'/>\n<rect class='box' x='345' y='55' width='120' height='50' rx='8'/><text x='405' y='76' text-anchor='middle'>Transform</text><text x='405' y='92' text-anchor='middle' class='muted'>clip/reproject</text>\n<path class='edga' d='M465 80 H510' marker-end='url(#arZ24)'/>\n<rect class='boxa' x='510' y='55' width='165' height='50' rx='8'/><text x='592' y='76' text-anchor='middle'>Publish</text><text x='592' y='92' text-anchor='middle' class='muted'>COG/PostGIS</text>\n<text x='350' y='145' text-anchor='middle' class='accent'>metadata report + benchmark + validation evidence</text>\n<defs><marker id='arZ24' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Production processing: inputni tekshir, transform qil, optimallashtir, publish qil va report yoz.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Raster metadata inspection",
+     "p": "Processingdan oldin fayl haqida faktlarni yozib ol."
+    },
+    "title": "processing/inspect_raster.py",
+    "lang": "python",
+    "code": "import rasterio\n\ndef inspect_raster(path: str) -> dict:\n    with rasterio.open(path) as src:\n        return {\n            \"crs\": str(src.crs),\n            \"bounds\": tuple(src.bounds),\n            \"width\": src.width,\n            \"height\": src.height,\n            \"count\": src.count,\n            \"dtype\": src.dtypes[0],\n        }"
+   },
+   {
+    "heading": {
+     "h": "Vector geometry fix",
+     "p": "Invalid geometry production query va tile pipeline'ni buzadi."
+    },
+    "title": "processing/fix_geometries.py",
+    "lang": "python",
+    "code": "import geopandas as gpd\n\ndef clean_vector(input_path: str, output_path: str):\n    gdf = gpd.read_file(input_path)\n    gdf = gdf.to_crs(\"EPSG:4326\")\n    gdf[\"geometry\"] = gdf.geometry.make_valid()\n    gdf = gdf[~gdf.geometry.is_empty]\n    gdf.to_file(output_path, driver=\"GPKG\")"
+   },
+   {
+    "heading": {
+     "h": "COG creation command",
+     "p": "Webga tayyor raster uchun overview va tiling kerak."
+    },
+    "title": "processing/make_cog.sh",
+    "lang": "bash",
+    "code": "gdalwarp -t_srs EPSG:3857 input.tif warped.tif\ngdaladdo -r average warped.tif 2 4 8 16\ngdal_translate warped.tif output_cog.tif -of COG -co COMPRESS=DEFLATE -co BIGTIFF=IF_SAFER\ngdalinfo output_cog.tif"
+   },
+   {
+    "heading": {
+     "h": "Processing report",
+     "p": "Har job yakunida evidence JSON hosil bo'ladi."
+    },
+    "title": "processing/report.py",
+    "lang": "python",
+    "code": "from dataclasses import asdict, dataclass\nfrom time import perf_counter\n\n@dataclass\nclass ProcessingReport:\n    input_path: str\n    output_path: str\n    duration_ms: int\n    warnings: list[str]\n    output_size_mb: float\n\ndef run_with_report(input_path: str, output_path: str, fn):\n    start = perf_counter()\n    warnings = fn(input_path, output_path)\n    duration_ms = int((perf_counter() - start) * 1000)\n    return asdict(ProcessingReport(input_path, output_path, duration_ms, warnings or [], 0.0))"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z24-1",
+    "html": "Raster metadata inspection script yozildi",
+    "crit": "CRS, bounds, size, dtype va band count reportda chiqadi"
+   },
+   {
+    "id": "z24-2",
+    "html": "GeoJSON/GPKG geometry validation va fix pipeline yozildi",
+    "crit": "invalid geometry make_valid bilan tuzatiladi va empty geometry olib tashlanadi"
+   },
+   {
+    "id": "z24-3",
+    "html": "Raster clip/reproject jarayoni bajarildi",
+    "crit": "input va output CRS/bounds farqi reportda bor"
+   },
+   {
+    "id": "z24-4",
+    "html": "COG output yaratildi va gdalinfo bilan tekshirildi",
+    "crit": "COG overview va compression borligi tasdiqlangan"
+   },
+   {
+    "id": "z24-5",
+    "html": "Processing job report JSON hosil qilindi",
+    "crit": "duration, warnings, input/output metadata yozilgan"
+   },
+   {
+    "id": "z24-6",
+    "html": "Katta fayl memory strategy yozildi",
+    "crit": "chunk/windowed read, temp storage va timeout qoidalari bor"
+   },
+   {
+    "id": "z24-7",
+    "html": "Processing workerga retry/failure handling qo'shildi",
+    "crit": "failed job sababi va qayta urinish soni ko'rinadi"
+   },
+   {
+    "id": "z24-8",
+    "html": "Output publish strategy tanlandi",
+    "crit": "raster COG storagega, vector PostGIS/GPKGga ketishi yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://gdal.org/",
+    "title": "GDAL docs",
+    "desc": "Raster/vector processing commandlari.",
+    "host": "gdal.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://rasterio.readthedocs.io/",
+    "title": "Rasterio docs",
+    "desc": "Python raster processing.",
+    "host": "rasterio.readthedocs.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://geopandas.org/",
+    "title": "GeoPandas docs",
+    "desc": "Vector data processing.",
+    "host": "geopandas.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://shapely.readthedocs.io/",
+    "title": "Shapely docs",
+    "desc": "Geometry validation va operations.",
+    "host": "shapely.readthedocs.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://cogeo.org/",
+    "title": "Cloud Optimized GeoTIFF",
+    "desc": "COG konsepti va best practice.",
+    "host": "cogeo.org"
+   }
+  ],
+  "project": {
+   "tag": "GDAL / Rasterio / COG",
+   "title": "Geospatial Processing Pipeline",
+   "desc": "Upload qilingan raster/vector fayllarni productionga tayyorlaydigan validation, transform, COG va report pipeline.",
+   "features": [
+    "metadata inspection",
+    "geometry validation/fix",
+    "raster clip/reproject",
+    "COG creation",
+    "processing report",
+    "worker retry/failure"
+   ],
+   "rubric": [
+    "Pipeline takrorlanadi",
+    "Output validatsiya qilingan",
+    "Report evidence bor",
+    "Large file strategy yozilgan",
+    "Worker failure holati ko'rinadi"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "COG nima uchun webda foydali?",
+    "a": [
+     "butun raster faylni har safar yuklash uchun",
+     "range request va overview orqali kerakli qismini o'qish uchun",
+     "JWT yaratish uchun",
+     "CSS yozish uchun"
+    ],
+    "c": 1,
+    "w": "COG katta rasterlarni web va cloud storage uchun samarali qiladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Invalid geometry nimani buzishi mumkin?",
+    "a": [
+     "tile/query pipeline",
+     "font tanlash",
+     "commit message",
+     "monitor rangini"
+    ],
+    "c": 0,
+    "w": "Invalid geometry PostGIS query, tile generation yoki overlay analysisda xato keltiradi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Processing report nima uchun kerak?",
+    "a": [
+     "faqat matn ko'paytirish uchun",
+     "job natijasini dalil bilan tekshirish uchun",
+     "secret saqlash uchun",
+     "mapni o'chirish uchun"
+    ],
+    "c": 1,
+    "w": "Report input/output metadata, duration va warninglarni saqlaydi.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Katta raster faylni memoryga to'liq o'qish o'rniga nima ishlatiladi?",
+    "options": [
+     "windowed/chunked read",
+     "hammasini RAMga olish",
+     "CSS grid",
+     "git branch"
+    ],
+    "correct": 0,
+    "why": "Windowed read memory bosimini kamaytiradi."
+   },
+   {
+    "type": "gap",
+    "q": "GeoTIFFni web uchun optimallashtirilgan formatga aylantirish natijasi: ___",
+    "answers": [
+     "COG",
+     "cog"
+    ],
+    "hint": "Cloud Optimized GeoTIFF",
+    "why": "COG overview va internal tiling bilan ishlaydi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "CRS",
+    "uz": "koordinata referens tizimi",
+    "ex": "EPSG:4326 va EPSG:3857 turli CRS."
+   },
+   {
+    "w": "overview",
+    "uz": "raster past rezolyutsiyali pog'onasi",
+    "ex": "Overview past zoom uchun tez o'qiladi."
+   },
+   {
+    "w": "idempotent",
+    "uz": "qayta ishlaganda bir xil natija beruvchi",
+    "ex": "Processing job idempotent bo'lishi kerak."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Processing lifecycle",
+    "rule": "inspect -> validate -> transform -> optimize -> publish -> report.",
+    "ex": "GeoTIFF COGga aylanishidan oldin CRS va bounds tekshiriladi."
+   }
+  ]
+ },
+ {
+  "zoom": "z25",
+  "title": "YOLO Detection Lifecycle Lab",
+  "sub": "AI-GIS",
+  "coord": "AI detection / z25",
+  "eyebrow": "25 / YOLO / MODEL EVALUATION",
+  "mtitle": "YOLO detection: dataset, inference, evaluation va geospatial output",
+  "lede": "Bu modul YOLO qismini tugatadi: dataset tayyorlash, inference, confidence threshold, precision/recall/F1, false positive tahlil va detection natijalarini xaritada ko'rsatish.",
+  "doc": "<div class='prose'>\n<h3>AI-GIS'da model nomi yetarli emas</h3>\n<p>YOLO ishlatish - faqat modelni chaqirish emas. Professional workflow: datasetni hujjatlash, label sifatini tekshirish, inference natijasini georeference qilish, threshold tanlash, false positive/false negative tahlil qilish va operatorga tushunarli confidence bilan ko'rsatish.</p>\n<div class=\"tree\">Dataset\n  -> labels QA\n  -> train/val split\n  -> inference\n  -> evaluation metrics\n  -> threshold decision\n  -> geospatial post-processing\n  -> MapLibre detection layer\n  -> model card</div>\n<div class=\"callout\"><div><p>Real ish signali</p><p>Model yaxshi deyish emas, qayerda adashishini ko'rsatish seniorlik belgisi. False positive va false negative misollarini reportga qo'sh.</p></div></div>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "YOLO validation command",
+     "p": "Modelni metrika bilan tekshir."
+    },
+    "title": "ai/validate.sh",
+    "lang": "bash",
+    "code": "yolo detect val model=runs/detect/train/weights/best.pt data=data.yaml imgsz=1024 conf=0.25\n# report: precision, recall, mAP50, mAP50-95, confusion matrix"
+   },
+   {
+    "heading": {
+     "h": "Detection GeoJSON",
+     "p": "Model natijasini xaritada ko'rsatish uchun FeatureCollectionga aylantir."
+    },
+    "title": "ai/detections_to_geojson.py",
+    "lang": "python",
+    "code": "def detection_feature(det, image_bounds):\n    return {\n        \"type\": \"Feature\",\n        \"geometry\": bbox_to_polygon(det[\"bbox\"], image_bounds),\n        \"properties\": {\n            \"class\": det[\"class_name\"],\n            \"confidence\": round(det[\"confidence\"], 3),\n            \"model_version\": det[\"model_version\"],\n        },\n    }"
+   },
+   {
+    "heading": {
+     "h": "Model card",
+     "p": "Model qayerda ishlaydi va qayerda ishlamasligini yoz."
+    },
+    "title": "docs/model-card.md",
+    "lang": "md",
+    "code": "# Model card\n\n## Dataset\nSource, date, classes, label quality.\n\n## Metrics\nprecision, recall, F1, mAP, threshold.\n\n## Known failures\nFalse positives, false negatives, weather/angle/resolution limits.\n\n## Intended use\nOperator assist, not final automated decision."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z25-1",
+    "html": "Dataset card yozildi",
+    "crit": "source, class, label quality, train/val split bor"
+   },
+   {
+    "id": "z25-2",
+    "html": "YOLO validation natijalari report qilindi",
+    "crit": "precision, recall, F1/mAP va confusion matrix bor"
+   },
+   {
+    "id": "z25-3",
+    "html": "Confidence threshold qarori yozildi",
+    "crit": "false positive/false negative trade-off tushuntirilgan"
+   },
+   {
+    "id": "z25-4",
+    "html": "Detection natijalari GeoJSON layerga aylantirildi",
+    "crit": "MapLibre detection layer confidence bilan ko'rinadi"
+   },
+   {
+    "id": "z25-5",
+    "html": "Model card tayyorlandi",
+    "crit": "intended use, limitations va known failures bor"
+   },
+   {
+    "id": "z25-6",
+    "html": "Operator review flow yozildi",
+    "crit": "AI topilmani inson tasdiqlashi yoki rad qilishi mumkin"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.ultralytics.com/",
+    "title": "Ultralytics YOLO docs",
+    "desc": "Training, validation va inference.",
+    "host": "docs.ultralytics.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.ultralytics.com/modes/val/",
+    "title": "YOLO validation",
+    "desc": "Model metrikalarini o'lchash.",
+    "host": "docs.ultralytics.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://developers.google.com/machine-learning/crash-course/classification/accuracy-precision-recall",
+    "title": "Precision and recall",
+    "desc": "Evaluation metrikalar tushunchasi.",
+    "host": "developers.google.com"
+   }
+  ],
+  "project": {
+   "tag": "YOLO / AI-GIS / Evaluation",
+   "title": "Detection Evaluation Pack",
+   "desc": "YOLO model uchun dataset card, validation report, threshold decision, GeoJSON output va model card.",
+   "features": [
+    "dataset card",
+    "validation metrics",
+    "threshold decision",
+    "GeoJSON detections",
+    "model card",
+    "operator review flow"
+   ],
+   "rubric": [
+    "Metrikalar bor",
+    "Xato tahlili bor",
+    "Map layer chiqadi",
+    "Model limitations yozilgan",
+    "Operator review flow bor"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "YOLO modelni productionga yaqinlashtirish uchun nima yetarli emas?",
+    "a": [
+     "faqat model nomi",
+     "evaluation report",
+     "model card",
+     "false positive tahlil"
+    ],
+    "c": 0,
+    "w": "Model nomi emas, metrika va limitationlar isbot bo'ladi.",
+    "level": "easy"
+   },
+   {
+    "q": "Threshold qarori nimaga bog'liq?",
+    "a": [
+     "false positive/false negative narxiga",
+     "CSS rangiga",
+     "Git branch nomiga",
+     "monitor kattaligiga"
+    ],
+    "c": 0,
+    "w": "Threshold biznes va xavfsizlik trade-offiga bog'liq.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Model cardda nima bo'lishi kerak?",
+    "options": [
+     "dataset, metrics, limitations",
+     "faqat logo",
+     "faqat commit",
+     "faqat rang"
+    ],
+    "correct": 0,
+    "why": "Model card model ishlash chegaralarini tushuntiradi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "false negative",
+    "uz": "bor obyektni topolmaslik",
+    "ex": "False negative xavfli obyekt o'tib ketishiga olib keladi."
+   },
+   {
+    "w": "model card",
+    "uz": "model imkoniyati va cheklovi hujjati",
+    "ex": "Model card operatorga modelga qanday ishonishni aytadi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "AI evaluation lifecycle",
+    "rule": "dataset -> validation -> threshold -> error analysis -> model card.",
+    "ex": "YOLO natijasi map layerga chiqishidan oldin threshold tanlanadi."
+   }
+  ]
+ },
+ {
+  "zoom": "z26",
+  "title": "Deploy/Ops Runbook Lab",
+  "sub": "Production ops",
+  "coord": "Deploy / z26",
+  "eyebrow": "26 / DOCKER / NGINX / OPS",
+  "mtitle": "Production runbook: deploy, rollback, monitoring, backup va incident drill",
+  "lede": "Bu modul deployment va operations qismini yakunlaydi: Docker Compose, Nginx, env/secrets, healthcheck, backup/restore, rollback, monitoring alert va incident drill.",
+  "doc": "<div class='prose'>\n<h3>Deploy qilingan loyiha ham parvarish talab qiladi</h3>\n<p>Production faqat serverga chiqarish emas. Runbook bo'lmasa, xato paytida nima qilishni hech kim bilmaydi. Bu modulda deploy, rollback, backup/restore, monitoring va incident drill bir joyga yig'iladi.</p>\n<div class=\"tree\">release\n  -> build image\n  -> run migrations\n  -> healthcheck\n  -> smoke test\n  -> monitor metrics\n  -> rollback plan\n  -> backup/restore drill</div>\n<div class=\"callout\"><div><p>Runbook qoida</p><p>Runbookni faqat xato bo'lganda yozilmaydi. Oldindan yoziladi, keyin har deploy va incidentdan keyin yangilanadi.</p></div></div>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Production checklist",
+     "p": "Deploydan oldin va keyin bajariladigan qat'iy ro'yxat."
+    },
+    "title": "docs/runbook.md",
+    "lang": "md",
+    "code": "# Production runbook\n\n## Pre-deploy\n- tests passed\n- migrations reviewed\n- backup completed\n- env/secrets verified\n\n## Deploy\n- build image\n- run migration\n- restart services\n- healthcheck\n- smoke test\n\n## Rollback\n- previous image tag\n- migration rollback plan\n- restore point\n\n## Incident\n- severity\n- owner\n- timeline\n- containment\n- recovery\n- postmortem"
+   },
+   {
+    "heading": {
+     "h": "Nginx reverse proxy",
+     "p": "Frontend, API va tile endpointlar bitta domen ostida."
+    },
+    "title": "infra/nginx.conf",
+    "lang": "nginx",
+    "code": "server {\n  listen 80;\n  server_name example.com;\n\n  location /api/ {\n    proxy_pass http://api:8000/;\n    proxy_set_header X-Request-Id $request_id;\n  }\n\n  location /tiles/ {\n    proxy_pass http://tegola:8080/;\n    proxy_cache tiles;\n  }\n\n  location / {\n    proxy_pass http://frontend:80;\n  }\n}"
+   },
+   {
+    "heading": {
+     "h": "Smoke test",
+     "p": "Deploydan keyin minimal sog'liq tekshiruvi."
+    },
+    "title": "scripts/smoke-test.sh",
+    "lang": "bash",
+    "code": "curl -f https://example.com/api/health\ncurl -f \"https://example.com/api/features?bbox=69.1,41.2,69.4,41.4\"\ncurl -f https://example.com/"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z26-1",
+    "html": "Production runbook yozildi",
+    "crit": "pre-deploy, deploy, rollback, incident va postmortem bo'limlari bor"
+   },
+   {
+    "id": "z26-2",
+    "html": "Docker Compose production profile yozildi",
+    "crit": "frontend, api, db, redis, worker, nginx healthcheck bilan turadi"
+   },
+   {
+    "id": "z26-3",
+    "html": "Nginx reverse proxy va cache sozlandi",
+    "crit": "/api, /tiles va frontend route'lari ishlaydi"
+   },
+   {
+    "id": "z26-4",
+    "html": "Smoke test script yozildi",
+    "crit": "health, features va frontend endpointlar tekshiriladi"
+   },
+   {
+    "id": "z26-5",
+    "html": "Rollback plan yozildi",
+    "crit": "old image tag, migration rollback va restore point bor"
+   },
+   {
+    "id": "z26-6",
+    "html": "Incident drill bajarildi",
+    "crit": "timeline, owner, containment va recovery report bor"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.docker.com/compose/",
+    "title": "Docker Compose",
+    "desc": "Servislarni birga yuritish.",
+    "host": "docs.docker.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://nginx.org/en/docs/",
+    "title": "Nginx docs",
+    "desc": "Reverse proxy va caching.",
+    "host": "nginx.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://prometheus.io/docs/",
+    "title": "Prometheus docs",
+    "desc": "Metric va alert.",
+    "host": "prometheus.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://grafana.com/docs/",
+    "title": "Grafana docs",
+    "desc": "Dashboard va alert visualization.",
+    "host": "grafana.com"
+   }
+  ],
+  "project": {
+   "tag": "Deploy / Ops / Runbook",
+   "title": "GeoPulse Production Runbook",
+   "desc": "Deploy, smoke test, rollback, monitoring, backup va incident drill hujjatlari.",
+   "features": [
+    "deploy checklist",
+    "nginx proxy",
+    "smoke tests",
+    "rollback plan",
+    "incident drill",
+    "backup restore evidence"
+   ],
+   "rubric": [
+    "Runbook bajarib bo'ladi",
+    "Smoke test ishlaydi",
+    "Rollback yo'li bor",
+    "Incident report bor",
+    "Monitoring endpointlar bor"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Runbook nima uchun kerak?",
+    "a": [
+     "xato paytida aniq qadamlar bo'lishi uchun",
+     "faqat dizayn uchun",
+     "secretni ochish uchun",
+     "testni o'chirish uchun"
+    ],
+    "c": 0,
+    "w": "Runbook incident va deploy paytida jamoaga aniq yo'l beradi.",
+    "level": "practical"
+   },
+   {
+    "q": "Deploydan keyingi smoke test nimani tekshiradi?",
+    "a": [
+     "asosiy endpointlar tirik va minimal flow ishlashini",
+     "faqat rangni",
+     "faqat README uzunligini",
+     "faqat commit sonini"
+    ],
+    "c": 0,
+    "w": "Smoke test katta test emas, lekin production tirikligini tez tasdiqlaydi.",
+    "level": "easy"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "gap",
+    "q": "Productionda xato chiqsa oldingi versiyaga qaytish rejasi: ___",
+    "answers": [
+     "rollback",
+     "Rollback"
+    ],
+    "hint": "r bilan boshlanadi",
+    "why": "Rollback deploy xavfini kamaytiradi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "runbook",
+    "uz": "operatsion ishlar bo'yicha bajariladigan qo'llanma",
+    "ex": "Runbook deploy va incident qadamlarini ko'rsatadi."
+   },
+   {
+    "w": "smoke test",
+    "uz": "minimal sog'liq tekshiruvi",
+    "ex": "Smoke test deploydan keyin API tirikligini tekshiradi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Ops lifecycle",
+    "rule": "deploy -> smoke test -> monitor -> rollback/incident -> postmortem.",
+    "ex": "Release healthcheckdan o'tmasa rollback qilinadi."
+   }
+  ]
+ },
+ {
+  "zoom": "z27",
+  "title": "Senior Final Assessment",
+  "sub": "Graduation",
+  "coord": "Final / z27",
+  "eyebrow": "27 / FINAL / SENIOR-READY",
+  "mtitle": "Geospatial Full-Stack Academy yakuniy imtihoni",
+  "lede": "Bu modul kursni yopadi: final demo, code review, system design, performance defense, security review va portfolio presentation bilan senior-ready daraja baholanadi.",
+  "doc": "<div class='prose'>\n<h3>Final assessment nima</h3>\n<p>Bu oddiy quiz emas. Bu ishga kirish yoki mijoz oldida himoya qilishga yaqin sinov. Siz bitta geospatial platformani tushuntirasiz, kodini ko'rsatasiz, performance raqamlarini himoya qilasiz, security savollariga javob berasiz va keyingi roadmapni aytasiz.</p>\n<h3>Baholash bloklari</h3>\n<div class=\"chips\"><span class=\"chip t\">Live demo</span><span class=\"chip t\">Code review</span><span class=\"chip\">System design</span><span class=\"chip\">Performance defense</span><span class=\"chip\">Security review</span><span class=\"chip\">Ops runbook</span><span class=\"chip\">Portfolio pitch</span></div>\n<h3>Daraja mezoni</h3>\n<p><strong>Junior-ready:</strong> feature qo'sha oladi. <strong>Middle-ready:</strong> frontend/backend/data pipeline'ni mustaqil bog'laydi. <strong>Senior-ready:</strong> trade-off qiladi, performance va securityni isbotlaydi, production incidentga tayyor.</p>\n<div class=\"callout\"><div><p>Bitirish sharti</p><p>Demo ishlashi yetmaydi. Dalil kerak: test output, benchmark, architecture diagram, runbook, model card, security report va README.</p></div></div>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final defense checklist",
+     "p": "Bitirishdan oldin barcha dalillar bir joyga yig'iladi."
+    },
+    "title": "docs/final-assessment.md",
+    "lang": "md",
+    "code": "# Final assessment\n\n## Demo\n- live URL\n- 5 minute walkthrough\n- key user flows\n\n## Engineering evidence\n- tests\n- performance benchmark\n- processing report\n- model card\n- security report\n- runbook\n\n## System design\n- architecture diagram\n- scale assumptions\n- bottlenecks\n- trade-offs\n\n## Career package\n- README\n- portfolio case study\n- interview story"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z27-1",
+    "html": "Final live demo tayyorlandi",
+    "crit": "5 daqiqalik walkthrough frontend, API, data va deployni ko'rsatadi"
+   },
+   {
+    "id": "z27-2",
+    "html": "Code review checklistdan o'tkazildi",
+    "crit": "frontend/backend/processing bo'yicha kamida 10 finding yoki improvement yozilgan"
+   },
+   {
+    "id": "z27-3",
+    "html": "System design defense yozildi",
+    "crit": "scale assumptions, bottleneck, cache, queue, storage va trade-off bor"
+   },
+   {
+    "id": "z27-4",
+    "html": "Performance defense tayyorlandi",
+    "crit": "bbox p95, tile size, processing duration va before/after benchmark bor"
+   },
+   {
+    "id": "z27-5",
+    "html": "Security review yakunlandi",
+    "crit": "RBAC, audit, secrets, backup/restore va incident drill evidence bor"
+   },
+   {
+    "id": "z27-6",
+    "html": "Portfolio case study yozildi",
+    "crit": "muammo, yechim, stack, qarorlar, natijalar va keyingi qadamlar bor"
+   },
+   {
+    "id": "z27-7",
+    "html": "Interview pitch tayyorlandi",
+    "crit": "loyihani 2 daqiqa va 10 daqiqa formatda tushuntira olasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.levels.fyi/blog/senior-engineer.html",
+    "title": "Senior engineer expectations",
+    "desc": "Seniorlik roli va ta'siri haqida.",
+    "host": "levels.fyi"
+   },
+   {
+    "type": "doc",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "title": "System Design Primer",
+    "desc": "System design tayyorgarlik.",
+    "host": "github.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / Portfolio / Senior-ready",
+   "title": "Geospatial Full-Stack Academy Final Defense",
+   "desc": "Butun kurs natijasini live demo, engineering evidence va portfolio case study sifatida himoya qilish.",
+   "features": [
+    "live demo",
+    "code review",
+    "system design",
+    "performance defense",
+    "security review",
+    "runbook",
+    "portfolio pitch"
+   ],
+   "rubric": [
+    "Demo ishlaydi",
+    "Dalillar bor",
+    "Trade-off tushuntiriladi",
+    "Security va ops tayyor",
+    "Portfolio ish beruvchiga tushunarli"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Senior-ready bahoda eng muhim signal nima?",
+    "a": [
+     "faqat texnologiya nomlarini sanash",
+     "trade-off, evidence va production fikrlash",
+     "faqat chiroyli rang",
+     "faqat sertifikat"
+    ],
+    "c": 1,
+    "w": "Senior natijani isbotlaydi va qarorlarini himoya qiladi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Final defense uchun qaysi dalil muhim?",
+    "a": [
+     "test, benchmark, security report, runbook",
+     "faqat emoji",
+     "faqat tasodifiy rasm",
+     "faqat CV"
+    ],
+    "c": 0,
+    "w": "Engineering evidence ish sifatini ko'rsatadi.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Portfolio case study nimani ko'rsatishi kerak?",
+    "options": [
+     "muammo, qaror, natija va dalil",
+     "faqat texnologiya ro'yxati",
+     "faqat rasm",
+     "faqat shior"
+    ],
+    "correct": 0,
+    "why": "Case study ish beruvchiga fikrlash va natijani ko'rsatadi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "defense",
+    "uz": "loyihani savol-javob bilan himoya qilish",
+    "ex": "Final defense system design savollarini o'z ichiga oladi."
+   },
+   {
+    "w": "trade-off",
+    "uz": "qarorning foyda va zararini solishtirish",
+    "ex": "GeoJSON tez boshlanadi, vector tile katta data uchun yaxshi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Final proof",
+    "rule": "demo + tests + benchmark + security + runbook + case study.",
+    "ex": "Final assessmentda har claim dalil bilan yopiladi."
+   }
+  ]
  }
 ]
