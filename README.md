@@ -59,12 +59,12 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 ```
 src/
   data/
-    webgis.json        Geospatial kurs (21 modul, z0->z20 ketma-ket: JS/TS -> Python ko'prigi + FastAPI/PostGIS/AI-GIS/Senior + monitoring)
+    webgis.json        Geospatial kurs (33 modul, z0->z32: JS/TS -> Python ko'prigi + FastAPI/PostGIS/AI-GIS/Senior + Production Lab Track + Advanced (AWS/K8s, Queue, MLOps, 3D reconstruction, Edge/GeoDjango) + Final; z32 Karyera oxirida)
     webgis-flagship.ts GeoPulse flagship moduli (webgis'ga runtime'da qo'shiladi)
     frontend.json      Frontend kursi (12 modul: FE0->FE11)
     backend.json       Backend kursi (12 modul: BE0->BE11)
     git.json           Git & GitHub kursi (12 modul: GT0->GT11)
-    telegram.json      Telegram Bot kursi (9 modul: TG0->TG8)
+    telegram.json      Telegram Bot kursi (11 modul: TG0->TG10; TG9 advanced arxitektura, TG10 yakuniy capstone)
     cybersecurity.json Cybersecurity kursi (12 modul: CY0->CY11)
     english.json       English kurs (12 modul: A0->B2 + 4 ko'nikma + Exam + Idm)
     finance.json       Moliya kursi (10 modul: F0->F9)

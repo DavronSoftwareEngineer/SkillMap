@@ -1649,13 +1649,13 @@
  },
  {
   "zoom": "TG8",
-  "title": "Observability, security & final",
+  "title": "Observability, security & reliability",
   "sub": "Senior",
   "coord": "Senior / TG8",
   "eyebrow": "08 / Production bot",
-  "mtitle": "Production Telegram botni yakunlash",
-  "lede": "Senior darajadagi bot monitoring, alert, rate limit, backup, security checklist va deployment runbook bilan yashaydi. Final loyiha portfolio uchun tayyor bo'lishi kerak.",
-  "doc": "<div class='prose'><h3>Nega observability?</h3><p>Bot ishga tushishi yetarli emas - uni <strong>kuzatish, tiklash va himoya qilish</strong> kerak. Log, metric, alert, backup va incident runbook bo'lmasa, kichik xato ham sokin biznesga zarar keltiradi: foydalanuvchi shikoyat qilguncha bot ishlamayotganini bilmay qolasan. Senior darajadagi bot muammoni foydalanuvchidan oldin ko'radi.</p><h3>Structured logging</h3><p>Oddiy <code>console.log('xato')</code> incident vaqtida yordam bermaydi. Buning o'rniga <strong>structured log</strong> - JSON obyekt bilan <code>event</code>, <code>updateId</code>, <code>userId</code>, <code>durationMs</code> kabi maydonlar yoz. Bunday log'ni qidirish, filtrlash va monitoring tizimida (Grafana, Datadog) tahlil qilish oson bo'ladi. Har update uchun <code>update_id</code> bog'lansa, foydalanuvchi shikoyatidan aniq log'ni topasan.</p><figure class='svgfig'><svg viewBox='0 0 700 150' role='img' aria-label='Bot structured log metrikaga metrika alertga chiqadi backup alohida'><rect class='boxa' x='16' y='50' width='120' height='52' rx='8'/><text x='76' y='81' text-anchor='middle'>Bot</text><path class='edge' d='M136 76 H182' marker-end='url(#arTg8a)'/><rect class='box' x='182' y='50' width='140' height='52' rx='8'/><text x='252' y='75' text-anchor='middle'>Structured</text><text x='252' y='92' text-anchor='middle' class='muted'>logs</text><path class='edge' d='M322 76 H368' marker-end='url(#arTg8b)'/><rect class='box' x='368' y='50' width='140' height='52' rx='8'/><text x='438' y='81' text-anchor='middle'>Metrics</text><path class='edga' d='M508 76 H554' marker-end='url(#arTg8c)'/><rect class='boxa' x='554' y='50' width='130' height='52' rx='8'/><text x='619' y='81' text-anchor='middle'>Alert</text><path class='edge' d='M76 102 V128 H360' marker-end='url(#arTg8d)'/><text x='210' y='144' text-anchor='middle' class='muted'>DB backup + restore runbook</text><defs><marker id='arTg8a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8d' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Log -> metric -> alert; backup va runbook alohida himoya qatlami.</figcaption></figure><h3>Rate limit va himoya</h3><p>Bitta foydalanuvchi yoki bot ko'p so'rov yuborsa (spam/abuse) servering yiqilishi mumkin. <strong>Rate limit</strong> har user/time-window uchun so'rovni cheklaydi va botni overload'dan himoya qiladi. grammY'ning ratelimiter plugin'i buni yengil qiladi.</p><h3>Backup va runbook</h3><p>Database yo'qolsa yoki buzilsa, <strong>backup + restore rejasi</strong> botni tiklaydi - avtomatik backup va sinovdan o'tgan restore qadamlari bo'lishi shart. <strong>Incident runbook</strong> esa bot ishlamay qolganda vahimasiz harakat qilish uchun tekshiruv va tiklash qadamlari ro'yxatidir.</p><h3>Security baseline</h3><p>Yakuniy checklist: token secret managerda, webhook secret path/token bilan, admin command role guard bilan, payment/order idempotent, rate limit yoqilgan, audit log yozilyapti. Final loyiha portfolio uchun README, env example, screenshot, demo flow va smoke test bilan tayyor bo'lishi kerak.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Keng tarqalgan xato</p><p>Xatolarni yutib yuborish (bo'sh <code>catch {}</code>) va alert'ni har mayda hodisaga qo'yish. Bo'sh catch muammoni yashiradi; ortiqcha alert esa alert charchoqqa olib keladi va haqiqiy incident e'tibordan chetda qoladi. Alert faqat error spike yoki webhook failure kabi operatsion xavfli signallarga qo'yiladi.</p></div></div><p><strong>Amaliy maslahat:</strong> deploydan keyin bitta <code>smoke test</code> yoz - bot <code>/start</code>ga javob berishini va <code>/health</code> ishlashini avtomatik tekshirsin. Shunda buzilgan deploy tez aniqlanadi.</p></div>",
+  "mtitle": "Production botni kuzatish, himoyalash va barqarorlashtirish",
+  "lede": "Senior darajadagi bot monitoring, alert, rate limit, backup, security checklist va deployment runbook bilan yashaydi. Bu bilimlar keyingi advanced arxitektura va yakuniy capstone uchun poydevor bo'ladi.",
+  "doc": "<div class='prose'><h3>Nega observability?</h3><p>Bot ishga tushishi yetarli emas - uni <strong>kuzatish, tiklash va himoya qilish</strong> kerak. Log, metric, alert, backup va incident runbook bo'lmasa, kichik xato ham sokin biznesga zarar keltiradi: foydalanuvchi shikoyat qilguncha bot ishlamayotganini bilmay qolasan. Senior darajadagi bot muammoni foydalanuvchidan oldin ko'radi.</p><h3>Structured logging</h3><p>Oddiy <code>console.log('xato')</code> incident vaqtida yordam bermaydi. Buning o'rniga <strong>structured log</strong> - JSON obyekt bilan <code>event</code>, <code>updateId</code>, <code>userId</code>, <code>durationMs</code> kabi maydonlar yoz. Bunday log'ni qidirish, filtrlash va monitoring tizimida (Grafana, Datadog) tahlil qilish oson bo'ladi. Har update uchun <code>update_id</code> bog'lansa, foydalanuvchi shikoyatidan aniq log'ni topasan.</p><figure class='svgfig'><svg viewBox='0 0 700 150' role='img' aria-label='Bot structured log metrikaga metrika alertga chiqadi backup alohida'><rect class='boxa' x='16' y='50' width='120' height='52' rx='8'/><text x='76' y='81' text-anchor='middle'>Bot</text><path class='edge' d='M136 76 H182' marker-end='url(#arTg8a)'/><rect class='box' x='182' y='50' width='140' height='52' rx='8'/><text x='252' y='75' text-anchor='middle'>Structured</text><text x='252' y='92' text-anchor='middle' class='muted'>logs</text><path class='edge' d='M322 76 H368' marker-end='url(#arTg8b)'/><rect class='box' x='368' y='50' width='140' height='52' rx='8'/><text x='438' y='81' text-anchor='middle'>Metrics</text><path class='edga' d='M508 76 H554' marker-end='url(#arTg8c)'/><rect class='boxa' x='554' y='50' width='130' height='52' rx='8'/><text x='619' y='81' text-anchor='middle'>Alert</text><path class='edge' d='M76 102 V128 H360' marker-end='url(#arTg8d)'/><text x='210' y='144' text-anchor='middle' class='muted'>DB backup + restore runbook</text><defs><marker id='arTg8a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg8d' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Log -> metric -> alert; backup va runbook alohida himoya qatlami.</figcaption></figure><h3>Rate limit va himoya</h3><p>Bitta foydalanuvchi yoki bot ko'p so'rov yuborsa (spam/abuse) servering yiqilishi mumkin. <strong>Rate limit</strong> har user/time-window uchun so'rovni cheklaydi va botni overload'dan himoya qiladi. grammY'ning ratelimiter plugin'i buni yengil qiladi.</p><h3>Backup va runbook</h3><p>Database yo'qolsa yoki buzilsa, <strong>backup + restore rejasi</strong> botni tiklaydi - avtomatik backup va sinovdan o'tgan restore qadamlari bo'lishi shart. <strong>Incident runbook</strong> esa bot ishlamay qolganda vahimasiz harakat qilish uchun tekshiruv va tiklash qadamlari ro'yxatidir.</p><h3>Security baseline</h3><p>Yakuniy checklist: token secret managerda, webhook secret path/token bilan, admin command role guard bilan, payment/order idempotent, rate limit yoqilgan, audit log yozilyapti. Portfolio uchun README, env example, screenshot, demo flow va smoke test bilan tayyor bo'lishi kerak.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Keng tarqalgan xato</p><p>Xatolarni yutib yuborish (bo'sh <code>catch {}</code>) va alert'ni har mayda hodisaga qo'yish. Bo'sh catch muammoni yashiradi; ortiqcha alert esa alert charchoqqa olib keladi va haqiqiy incident e'tibordan chetda qoladi. Alert faqat error spike yoki webhook failure kabi operatsion xavfli signallarga qo'yiladi.</p></div></div><p><strong>Amaliy maslahat:</strong> deploydan keyin bitta <code>smoke test</code> yoz - bot <code>/start</code>ga javob berishini va <code>/health</code> ishlashini avtomatik tekshirsin. Shunda buzilgan deploy tez aniqlanadi.</p></div>",
   "code": [
    {
     "heading": {
@@ -1713,7 +1713,7 @@
    }
   ],
   "project": {
-   "tag": "Final loyiha / Portfolio",
+   "tag": "Amaliy loyiha / Senior",
    "title": "Production Telegram Business Bot",
    "desc": "Real biznes uchun bot: onboarding, menu, DB, admin, payment yoki order, webhook deploy va monitoring bilan.",
    "features": [
@@ -1854,269 +1854,10 @@
  },
  {
   "zoom": "TG9",
-  "title": "Production Bot Capstone",
-  "sub": "Portfolio",
-  "coord": "Telegram Bot / TG9",
-  "eyebrow": "09 / PROFESSIONAL BOT",
-  "mtitle": "Production Telegram bot: admin, webhook, payment va monitoring",
-  "lede": "Telegram kursi yakunida real bot deploy qilinadi: admin, role, webhook, notification va monitoring bilan.",
-  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>ishlaydigan, deploy qilingan va kuzatiladigan Telegram bot</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
-  "code": [
-   {
-    "heading": {
-     "h": "Portfolio README skeleti",
-     "p": "Har final ish shu struktura bilan topshiriladi."
-    },
-    "title": "README.md",
-    "lang": "md",
-    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
-   }
-  ],
-  "tasks": [
-   {
-    "id": "tg9-1",
-    "html": "Bot command, menu va callback flow ishladi",
-    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
-   },
-   {
-    "id": "tg9-2",
-    "html": "Admin role va moderation panel qo'shildi",
-    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
-   },
-   {
-    "id": "tg9-3",
-    "html": "Webhook yoki production deploy sozlandi",
-    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
-   },
-   {
-    "id": "tg9-4",
-    "html": "Payment/subscription yoki notification flow yozildi",
-    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
-   },
-   {
-    "id": "tg9-5",
-    "html": "Error logging, health check va README tayyorlandi",
-    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
-   }
-  ],
-  "resources": [
-   {
-    "type": "doc",
-    "url": "https://core.telegram.org/bots/api",
-    "title": "Telegram Bot API",
-    "desc": "Bot metodlari va update oqimi.",
-    "host": "core.telegram.org"
-   },
-   {
-    "type": "doc",
-    "url": "https://grammy.dev/guide/",
-    "title": "grammY Guide",
-    "desc": "TypeScript bot framework.",
-    "host": "grammy.dev"
-   }
-  ],
-  "project": {
-   "tag": "Capstone / Portfolio / Assessment",
-   "title": "Production Bot Capstone: professional portfolio topshirig'i",
-   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: ishlaydigan, deploy qilingan va kuzatiladigan Telegram bot.",
-   "features": [
-    "Bot command, menu va callback flow ishladi",
-    "Admin role va moderation panel qo'shildi",
-    "Webhook yoki production deploy sozlandi",
-    "Payment/subscription yoki notification flow yozildi",
-    "Error logging, health check va README tayyorlandi"
-   ],
-   "rubric": [
-    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
-    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
-    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamchiliklar va keyingi qadamlar halol yozilgan."
-   ]
-  },
-  "quiz": [
-   {
-    "q": "Capstone modulining asosiy maqsadi nima?",
-    "a": [
-     "faqat matn o'qish",
-     "real portfolio natijasini dalil bilan topshirish",
-     "faqat rang tanlash",
-     "tasodifiy link yig'ish"
-    ],
-    "c": 1,
-    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
-    "level": "practical"
-   },
-   {
-    "q": "README/reportda eng muhim bo'lim qaysi?",
-    "a": [
-     "faqat sarlavha",
-     "muammo, ishga tushirish va verification",
-     "faqat rasm",
-     "faqat shaxsiy fikr"
-    ],
-    "c": 1,
-    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
-    "level": "scenario"
-   }
-  ],
-  "exercises": [
-   {
-    "type": "choice",
-    "q": "Professional topshiriqda 'done' nimani anglatadi?",
-    "options": [
-     "ishlaydi, tekshirildi va hujjatlandi",
-     "faqat kod yozildi",
-     "faqat screenshot bor",
-     "faqat reja tuzildi"
-    ],
-    "correct": 0,
-    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
-   }
-  ]
- },
- {
-  "zoom": "TG10",
-  "title": "Telegram Bot Final Assessment",
-  "sub": "Final assessment",
-  "coord": "Final / Professional",
-  "eyebrow": "TG10 / FINAL / JOB-READY",
-  "mtitle": "Production bot final: webhook, admin, payment, Mini App, monitoring",
-  "lede": "Telegram Bot kursi yakunida production bot webhook, admin roles, payment/subscription, Mini App va monitoring bilan himoya qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>real production Telegram botni deploy, security va observability bilan chiqarish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
-  "code": [
-   {
-    "heading": {
-     "h": "Final evidence checklist",
-     "p": "Yakuniy ish dalil bilan yopiladi."
-    },
-    "title": "bot-production-checklist.md",
-    "lang": "md",
-    "code": "# Bot production checklist\n\n- Webhook URL set\n- Secrets stored in env\n- Admin commands protected\n- Payment flow tested\n- Errors logged\n- Healthcheck endpoint works\n- README includes deploy steps"
-   }
-  ],
-  "tasks": [
-   {
-    "id": "tg10-1",
-    "html": "Webhook production deploy ishladi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "tg10-2",
-    "html": "Admin role va moderation flow tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "tg10-3",
-    "html": "Payment/subscription yoki order flow demo qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "tg10-4",
-    "html": "Mini App yoki web dashboard botga ulandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "tg10-5",
-    "html": "Logging, error handling va healthcheck qo'shildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "tg10-6",
-    "html": "Bot security checklist bajarildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   }
-  ],
-  "resources": [
-   {
-    "type": "doc",
-    "url": "https://core.telegram.org/bots/api",
-    "title": "Telegram Bot API",
-    "desc": "Rasmiy API.",
-    "host": "core.telegram.org"
-   },
-   {
-    "type": "doc",
-    "url": "https://grammy.dev/guide/",
-    "title": "grammY guide",
-    "desc": "TS bot framework.",
-    "host": "grammy.dev"
-   },
-   {
-    "type": "doc",
-    "url": "https://docs.telegram-mini-apps.com/",
-    "title": "Telegram Mini Apps",
-    "desc": "Mini App.",
-    "host": "docs.telegram-mini-apps.com"
-   }
-  ],
-  "project": {
-   "tag": "Final / Assessment / Job-ready",
-   "title": "Telegram Bot Final Assessment: final defense",
-   "desc": "Kurs yakunida real production Telegram botni deploy, security va observability bilan chiqarish bo'yicha portfolio darajadagi natija topshiriladi.",
-   "features": [
-    "Webhook production deploy ishladi",
-    "Admin role va moderation flow tayyorlandi",
-    "Payment/subscription yoki order flow demo qilindi",
-    "Mini App yoki web dashboard botga ulandi",
-    "Logging, error handling va healthcheck qo'shildi",
-    "Bot security checklist bajarildi"
-   ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
-  },
-  "quiz": [
-   {
-    "q": "Final assessmentning asosiy maqsadi nima?",
-    "a": [
-     "faqat darsni tugatish",
-     "real natijani dalil bilan himoya qilish",
-     "faqat rang tanlash",
-     "tasodifiy link yig'ish"
-    ],
-    "c": 1,
-    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
-    "level": "practical"
-   },
-   {
-    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
-    "a": [
-     "faqat gap",
-     "demo + kod/report + verification",
-     "faqat sertifikat rasmi",
-     "faqat uzun matn"
-    ],
-    "c": 1,
-    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
-    "level": "scenario"
-   }
-  ],
-  "exercises": [
-   {
-    "type": "choice",
-    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
-    "options": [
-     "tekshiruv dalili va README/report",
-     "faqat sarlavha",
-     "faqat screenshot",
-     "faqat reja"
-    ],
-    "correct": 0,
-    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
-   }
-  ]
- },
- {
-  "zoom": "TG11",
   "title": "Advanced Production Architecture",
   "sub": "Senior stack",
-  "coord": "Production / TG11",
-  "eyebrow": "11 / ADVANCED / PRODUCTION STACK",
+  "coord": "Production / TG9",
+  "eyebrow": "09 / ADVANCED / PRODUCTION STACK",
   "mtitle": "Advanced Telegram architecture: grammY, Fastify, PostgreSQL, Redis, BullMQ va OpenTelemetry",
   "lede": "Bu modul Telegram Bot kursini eng kuchli production stackga olib chiqadi: TypeScript + grammY + Fastify + PostgreSQL + Redis + Prisma/Drizzle + BullMQ + Docker + OpenTelemetry.",
   "doc": "<div class='prose'>\n<h3>Nega bu stack aynan professional bot uchun</h3>\n<p>Oddiy bot uchun bitta fayl yetadi. Lekin admin, payment, subscription, Mini App, webhook va monitoring bo'lgan bot allaqachon kichik SaaS mahsulotga aylanadi. Shuning uchun architecture aniq bo'lishi kerak: bot logic, webhook server, database, queue, cache, observability va deploy bir-biridan ajratiladi.</p>\n<h3>Asosiy stack</h3>\n<div class=\"chips\">\n<span class=\"chip t\">TypeScript</span><span class=\"chip t\">grammY</span><span class=\"chip t\">Fastify</span>\n<span class=\"chip\">PostgreSQL</span><span class=\"chip\">Redis</span><span class=\"chip\">Prisma / Drizzle</span>\n<span class=\"chip\">BullMQ</span><span class=\"chip\">Docker</span><span class=\"chip\">OpenTelemetry</span>\n</div>\n<p><strong>grammY</strong> update, command, callback, middleware va session logicni boshqaradi. <strong>Fastify</strong> webhook, healthcheck va Mini App API uchun ishlaydi. <strong>PostgreSQL</strong> user/order/payment/subscription/audit kabi doimiy data uchun. <strong>Redis</strong> session, rate limit, cache va queue uchun. <strong>BullMQ</strong> og'ir yoki retry kerak bo'ladigan joblar uchun. <strong>OpenTelemetry</strong> log, metric va trace orqali productionda nima bo'layotganini ko'rsatadi.</p>\n<h3>Professional arxitektura</h3>\n<div class=\"tree\">Telegram\n  -> Fastify webhook /webhook/:secret\n  -> grammY bot middleware\n  -> modules: users, admin, orders, payments, subscriptions, mini-app\n  -> PostgreSQL: durable data\n  -> Redis: session, rate-limit, cache, queue\n  -> BullMQ worker: notifications, payment reconciliation, reports\n  -> OpenTelemetry: traces, metrics, logs\n  -> Docker Compose: bot, worker, postgres, redis, nginx</div>\n<h3>Qachon Prisma, qachon Drizzle?</h3>\n<p><strong>Prisma</strong> tez start, migration va developer experience uchun zo'r. <strong>Drizzle</strong> yengilroq, SQLga yaqinroq va nazorat kuchliroq. Kursda ikkalasi ko'rsatiladi: boshlash uchun Prisma, production performance va SQL nazorati kerak bo'lsa Drizzle.</p>\n<h3>Reliability qoidalari</h3>\n<div class=\"exlist\">\n<div class=\"ex\"><b>Idempotency</b><span>Telegram retry yoki payment callback ikki marta kelsa ham biznes action bir marta bajarilsin</span></div>\n<div class=\"ex\"><b>Queue</b><span>notification, report, payment reconciliation kabi ishlar HTTP/webhookni bloklamasin</span></div>\n<div class=\"ex\"><b>Observability</b><span>har update, command, payment va DB query request_id/update_id bilan kuzatilsin</span></div>\n<div class=\"ex\"><b>Security</b><span>webhook secret token, Mini App initData verify, admin role guard, rate limit</span></div>\n</div>\n<figure class='svgfig'><svg viewBox='0 0 700 205' role='img' aria-label='Advanced Telegram production architecture'>\n<rect class='boxa' x='18' y='70' width='115' height='48' rx='8'/><text x='76' y='92' text-anchor='middle'>Telegram</text><text x='76' y='108' text-anchor='middle' class='muted'>updates</text>\n<path class='edga' d='M133 94 H175' marker-end='url(#arTg11)'/>\n<rect class='box' x='175' y='70' width='118' height='48' rx='8'/><text x='234' y='92' text-anchor='middle'>Fastify</text><text x='234' y='108' text-anchor='middle' class='muted'>webhook/API</text>\n<path class='edga' d='M293 94 H335' marker-end='url(#arTg11)'/>\n<rect class='boxa' x='335' y='70' width='118' height='48' rx='8'/><text x='394' y='92' text-anchor='middle'>grammY</text><text x='394' y='108' text-anchor='middle' class='muted'>bot logic</text>\n<path class='edge' d='M394 118 V150 H165' marker-end='url(#arTg11)'/>\n<rect class='box' x='80' y='150' width='150' height='42' rx='8'/><text x='155' y='176' text-anchor='middle'>PostgreSQL</text>\n<path class='edge' d='M394 118 V150 H350' marker-end='url(#arTg11)'/>\n<rect class='box' x='305' y='150' width='120' height='42' rx='8'/><text x='365' y='176' text-anchor='middle'>Redis</text>\n<path class='edge' d='M453 94 H500' marker-end='url(#arTg11)'/>\n<rect class='box' x='500' y='70' width='175' height='48' rx='8'/><text x='587' y='92' text-anchor='middle'>BullMQ worker</text><text x='587' y='108' text-anchor='middle' class='muted'>jobs</text>\n<text x='350' y='35' text-anchor='middle' class='accent'>OpenTelemetry + Docker + healthcheck + alerts</text>\n<defs><marker id='arTg11' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Advanced production stack: Fastify webhook, grammY bot logic, durable DB, Redis/BullMQ va observability.</figcaption></figure>\n</div>",
@@ -2187,47 +1928,47 @@
   ],
   "tasks": [
    {
-    "id": "tg11-1",
+    "id": "tg9-1",
     "html": "Fastify + grammY webhook server yozildi",
     "crit": "secret token tekshiruvi va /health endpoint bor"
    },
    {
-    "id": "tg11-2",
+    "id": "tg9-2",
     "html": "PostgreSQL schema user/order/payment/subscription/audit uchun loyihalandi",
     "crit": "durable data sessiondan ajratilgan"
    },
    {
-    "id": "tg11-3",
+    "id": "tg9-3",
     "html": "Prisma yoki Drizzle tanlovi hujjatlandi",
     "crit": "nima uchun tanlangani va trade-off yozilgan"
    },
    {
-    "id": "tg11-4",
+    "id": "tg9-4",
     "html": "Redis session/rate limit/cache uchun ulandi",
     "crit": "productionda in-memory session ishlatilmaydi"
    },
    {
-    "id": "tg11-5",
+    "id": "tg9-5",
     "html": "BullMQ queue notification yoki payment reconciliation uchun qo'shildi",
     "crit": "job retry, backoff va failure state bor"
    },
    {
-    "id": "tg11-6",
+    "id": "tg9-6",
     "html": "Idempotency middleware payment va update retry uchun yozildi",
     "crit": "takror update/order biznes actionni ikki marta bajarmaydi"
    },
    {
-    "id": "tg11-7",
+    "id": "tg9-7",
     "html": "OpenTelemetry instrumentation qo'shildi",
     "crit": "webhook duration, command, DB yoki queue trace ko'rinadi"
    },
    {
-    "id": "tg11-8",
+    "id": "tg9-8",
     "html": "Docker Compose bot, worker, postgres, redis servislarini ko'tardi",
     "crit": "fresh clone bitta buyruq bilan lokal turadi"
    },
    {
-    "id": "tg11-9",
+    "id": "tg9-9",
     "html": "Production architecture README va diagram tayyorlandi",
     "crit": "boshqa developer stackni 30 daqiqada tushunadi"
    }
@@ -2439,6 +2180,173 @@
     "topic": "Data placement",
     "rule": "Durable data Postgresda, temporary/high-speed state Redisda.",
     "ex": "Order Postgresda, rate limit counter Redisda turadi."
+   }
+  ]
+ },
+ {
+  "zoom": "TG10",
+  "title": "Telegram Bot Final Assessment",
+  "sub": "Final assessment",
+  "coord": "Final / TG10",
+  "eyebrow": "10 / FINAL / JOB-READY",
+  "mtitle": "Production bot final: webhook, admin, payment, Mini App, monitoring",
+  "lede": "Telegram Bot kursi yakunida production bot webhook, admin roles, payment/subscription, Mini App va monitoring bilan himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>real production Telegram botni deploy, security va observability bilan chiqarish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final evidence checklist",
+     "p": "Yakuniy ish dalil bilan yopiladi."
+    },
+    "title": "bot-production-checklist.md",
+    "lang": "md",
+    "code": "# Bot production checklist\n\n- Webhook URL set\n- Secrets stored in env\n- Admin commands protected\n- Payment flow tested\n- Errors logged\n- Healthcheck endpoint works\n- README includes deploy steps"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "tg10-1",
+    "html": "Webhook production deploy ishladi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-2",
+    "html": "Admin role va moderation flow tayyorlandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-3",
+    "html": "Payment/subscription yoki order flow demo qilindi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-4",
+    "html": "Mini App yoki web dashboard botga ulandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-5",
+    "html": "Logging, error handling va healthcheck qo'shildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-6",
+    "html": "Bot security checklist bajarildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-7",
+    "html": "Qaror-hisobot va README yozildi: nima qilding, nega shunday tanlading, qanday tekshirding",
+    "crit": "README/report boshqa dasturchi loyihani davom ettira oladigan darajada tushunarli"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://core.telegram.org/bots/api",
+    "title": "Telegram Bot API",
+    "desc": "Rasmiy API.",
+    "host": "core.telegram.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://grammy.dev/guide/",
+    "title": "grammY guide",
+    "desc": "TS bot framework.",
+    "host": "grammy.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.telegram-mini-apps.com/",
+    "title": "Telegram Mini Apps",
+    "desc": "Mini App.",
+    "host": "docs.telegram-mini-apps.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / Assessment / Job-ready",
+   "title": "Telegram Bot Final Assessment: final defense",
+   "desc": "Kurs yakunida real production Telegram botni deploy, security va observability bilan chiqarish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "features": [
+    "Webhook production deploy ishladi",
+    "Admin role va moderation flow tayyorlandi",
+    "Payment/subscription yoki order flow demo qilindi",
+    "Mini App yoki web dashboard botga ulandi",
+    "Logging, error handling va healthcheck qo'shildi",
+    "Bot security checklist bajarildi",
+    "Qaror-hisobot va README: nima, nega, qanday tekshirilgani yozilgan"
+   ],
+   "rubric": [
+    "Natija qayta ishga tushadi yoki qayta bajariladi.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamida bitta test, checklist yoki verification dalili bor.",
+    "Kamchiliklar va keyingi qadamlar yozilgan.",
+    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda.",
+    "Boshqa dasturchi loyihani hujjat asosida davom ettira oladi."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Final assessmentning asosiy maqsadi nima?",
+    "a": [
+     "faqat darsni tugatish",
+     "real natijani dalil bilan himoya qilish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+    "a": [
+     "faqat gap",
+     "demo + kod/report + verification",
+     "faqat sertifikat rasmi",
+     "faqat uzun matn"
+    ],
+    "c": 1,
+    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+    "options": [
+     "tekshiruv dalili va README/report",
+     "faqat sarlavha",
+     "faqat screenshot",
+     "faqat reja"
+    ],
+    "correct": 0,
+    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
  }
