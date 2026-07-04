@@ -525,6 +525,37 @@ h2.mtitle {
   margin-bottom: 3px;
 }
 
+/* Vizual diagramma (dars ichidagi sxema/chizma) - mavzuga mos, responsive */
+.svgfig {
+  margin: 22px 0;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+.svgfig svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.svgfig figcaption,
+.svgfig .cap {
+  margin-top: 10px;
+  color: var(--fg-dim);
+  font-size: 13px;
+  text-align: center;
+}
+/* Diagramma ichidagi matn/chiziqlar mavzu ranglariga ergashadi */
+.svgfig svg text { fill: var(--fg); font-size: 13px; }
+.svgfig svg .muted { fill: var(--fg-dim); }
+.svgfig svg .accent { fill: var(--teal); }
+.svgfig svg .box { fill: var(--surface-2); stroke: var(--line); }
+.svgfig svg .boxa { fill: rgba(52, 214, 192, 0.12); stroke: var(--teal); }
+.svgfig svg .edge { stroke: var(--fg-dim); stroke-width: 1.5; fill: none; }
+.svgfig svg .edga { stroke: var(--teal); stroke-width: 1.8; fill: none; }
+
 /* Code */
 .codewrap {
   margin: 18px 0;
@@ -1966,9 +1997,30 @@ table.vocab td {
 .streak-chip span { color: var(--fg-dim); font-size: 12.5px; }
 .streak-best { margin-left: auto; text-align: right; }
 .streak-best b { color: var(--amber); }
-.backup-row { flex: 1 1 240px; display: flex; gap: 10px; align-items: center; }
+.backup-row { flex: 1 1 240px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+/* Zaxira eskirganida chiqadigan eslatma */
+.backup-remind { flex: 1 1 100%; font-size: 13px; color: var(--fg-dim); background: rgba(244, 162, 60, 0.08); border: 1px solid rgba(244, 162, 60, 0.35); border-radius: 11px; padding: 10px 12px; }
+.backup-remind b { color: var(--fg); }
 .backup-btn { flex: 1; cursor: pointer; background: var(--surface); border: 1px solid var(--line); color: var(--fg-dim); font-weight: 600; font-size: 13px; padding: 12px; border-radius: 11px; transition: all 0.15s; }
 .backup-btn:hover { color: var(--fg); border-color: var(--teal); }
+
+/* Frontend kursi - to'q sariq urg'u */
+.course-frontend {
+  --teal: #ff8f4d;
+  --teal-deep: #e06f2a;
+}
+
+/* Backend kursi - oltin sariq urg'u */
+.course-backend {
+  --teal: #e3b341;
+  --teal-deep: #c99a24;
+}
+
+/* Git kursi - lime yashil urg'u */
+.course-git {
+  --teal: #8fd14f;
+  --teal-deep: #6fb32e;
+}
 
 /* AI Prompt kursi - pushti urg'u */
 .course-prompting {

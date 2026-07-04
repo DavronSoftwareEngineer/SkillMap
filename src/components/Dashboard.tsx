@@ -2,12 +2,18 @@ import { useMemo, useRef } from "react";
 import type { ChangeEvent } from "react";
 import { useStore } from "../store";
 import { dayKey, isAlive } from "../lib/streak";
+import { daysSinceBackup, hasAnyProgress, shouldRemindBackup } from "../lib/backup";
 
 export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
-  const { progress, quizScores, course, streak, exportBackup, importBackup } = useStore();
+  const { progress, quizScores, course, streak, lastBackup, exportBackup, importBackup } = useStore();
   const MODULES = course.modules;
   const fileRef = useRef<HTMLInputElement>(null);
   const streakAlive = isAlive(streak, dayKey(new Date()));
+
+  // Zaxira eskirgan (yoki umuman qilinmagan) bo'lsa - eslatamiz.
+  const now = new Date();
+  const remindBackup = shouldRemindBackup(lastBackup, now, hasAnyProgress());
+  const backupDays = daysSinceBackup(lastBackup, now);
 
   const onImportFile = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -165,6 +171,16 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           </div>
         </div>
         <div className="backup-row">
+          {remindBackup && (
+            <div className="backup-remind" role="status">
+              <b>
+                {backupDays === null
+                  ? "Zaxira hali qilinmagan."
+                  : `Oxirgi zaxira ${backupDays} kun oldin.`}
+              </b>{" "}
+              Progress faqat shu brauzerda saqlanadi - eksport qilib qo'y.
+            </div>
+          )}
           <button className="backup-btn" onClick={exportBackup}>
             Zaxira eksport
           </button>

@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore, useTheme } from "../store";
 
 export function TopBar({
   coord,
@@ -11,7 +11,8 @@ export function TopBar({
   onDash: () => void;
   onMenu: () => void;
 }) {
-  const { course, theme, toggleTheme } = useStore();
+  const { course } = useStore();
+  const { theme, toggleTheme } = useTheme();
   const isLight = theme === "light";
   return (
     <div className="topbar">

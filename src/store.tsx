@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import type { ReactNode } from "react";
 import { loadJSON, saveJSON } from "./lib/storage";
 import type { QuizScore } from "./types";
@@ -8,62 +16,58 @@ import type { SrsState, Grade } from "./lib/srs";
 import { grade as gradeCard } from "./lib/srs";
 import type { Streak } from "./lib/streak";
 import { EMPTY_STREAK, dayKey, registerActivity } from "./lib/streak";
-import { applyBackup, downloadBackup } from "./lib/backup";
+import { applyBackup, downloadBackup, loadLastBackup } from "./lib/backup";
+import { parseHash } from "./lib/router";
 
 type Progress = Record<string, boolean>;
 type QuizScores = Record<string, QuizScore>;
 
 const STREAK_KEY = "myacademy_streak";
+const COURSE_IDS = COURSES.map((c) => c.id);
 
-interface StoreValue {
-  courseId: string;
-  course: Course;
-  courseLoading: boolean;
-  setCourse: (id: string) => void;
-  theme: string;
-  toggleTheme: () => void;
-  progress: Progress;
-  quizScores: QuizScores;
-  srs: SrsState;
-  streak: Streak;
-  toggleTask: (id: string) => void;
-  isDone: (id: string) => boolean;
-  recordQuiz: (zoom: string, best: number, total: number) => void;
-  gradeVocab: (word: string, g: Grade) => void;
-  resetSrs: () => void;
-  exportBackup: () => void;
-  importBackup: (text: string) => void;
-  toast: (msg: string) => void;
+/* ------------------------------ Toast ------------------------------ */
+// Alohida kontekst: toast chiqishi asosiy store iste'molchilarini re-render qilmaydi.
+
+type ToastFn = (msg: string) => void;
+const ToastCtx = createContext<ToastFn>(() => {});
+
+export function useToast(): ToastFn {
+  return useContext(ToastCtx);
 }
 
-const Ctx = createContext<StoreValue | null>(null);
+function ToastProvider({ children }: { children: ReactNode }) {
+  const [msg, setMsg] = useState<string | null>(null);
+  const timer = useRef<number | undefined>(undefined);
 
-export function StoreProvider({ children }: { children: ReactNode }) {
-  const [courseId, setCourseId] = useState<string>(() => {
-    // Eski/yaroqsiz active_course localStorage'da qolgan bo'lsa - birinchi kursga qaytamiz
-    // (aks holda COURSE_BY_ID[courseId] undefined bo'lib, ilova ishlamay qoladi).
-    const saved = loadJSON<string>("active_course", COURSES[0].id);
-    return COURSE_BY_ID[saved] ? saved : COURSES[0].id;
-  });
-  const [progressMap, setProgressMap] = useState<Record<string, Progress>>(() => {
-    const o: Record<string, Progress> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_progress", {})));
-    return o;
-  });
-  const [quizMap, setQuizMap] = useState<Record<string, QuizScores>>(() => {
-    const o: Record<string, QuizScores> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_quiz", {})));
-    return o;
-  });
-  const [srsMap, setSrsMap] = useState<Record<string, SrsState>>(() => {
-    const o: Record<string, SrsState> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_srs", {})));
-    return o;
-  });
-  const [streak, setStreak] = useState<Streak>(() => loadJSON(STREAK_KEY, EMPTY_STREAK));
-  const [modulesMap, setModulesMap] = useState<Record<string, Course["modules"]>>({});
-  const [courseLoading, setCourseLoading] = useState(true);
+  const toast = useCallback((m: string) => {
+    setMsg(m);
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setMsg(null), 2400);
+  }, []);
 
+  return (
+    <ToastCtx.Provider value={toast}>
+      {children}
+      <div className={"toast" + (msg ? " show" : "")}>{msg}</div>
+    </ToastCtx.Provider>
+  );
+}
+
+/* ------------------------------ Theme ------------------------------ */
+
+interface ThemeValue {
+  theme: string;
+  toggleTheme: () => void;
+}
+const ThemeCtx = createContext<ThemeValue | null>(null);
+
+export function useTheme(): ThemeValue {
+  const v = useContext(ThemeCtx);
+  if (!v) throw new Error("useTheme must be used within StoreProvider");
+  return v;
+}
+
+function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<string>(() => {
     const saved = loadJSON<string | null>("myacademy_theme", null);
     if (saved === "light" || saved === "dark") return saved;
@@ -86,8 +90,67 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     []
   );
 
-  const [toastMsg, setToastMsg] = useState<string | null>(null);
-  const toastTimer = useRef<number | undefined>(undefined);
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
+  return <ThemeCtx.Provider value={value}>{children}</ThemeCtx.Provider>;
+}
+
+/* --------------------------- Asosiy store --------------------------- */
+
+interface StoreValue {
+  courseId: string;
+  course: Course;
+  courseLoading: boolean;
+  setCourse: (id: string) => void;
+  progress: Progress;
+  quizScores: QuizScores;
+  srs: SrsState;
+  streak: Streak;
+  lastBackup: string | null;
+  toggleTask: (id: string) => void;
+  isDone: (id: string) => boolean;
+  recordQuiz: (zoom: string, best: number, total: number) => void;
+  gradeVocab: (word: string, g: Grade) => void;
+  resetSrs: () => void;
+  exportBackup: () => void;
+  importBackup: (text: string) => void;
+  toast: ToastFn;
+}
+
+const Ctx = createContext<StoreValue | null>(null);
+
+function CourseStoreProvider({ children }: { children: ReactNode }) {
+  const toast = useToast();
+
+  const [courseId, setCourseId] = useState<string>(() => {
+    // URL hash birinchi o'rinda (#english/dash kabi havola ulashilgan bo'lsa),
+    // keyin localStorage. Eski/yaroqsiz qiymat bo'lsa - birinchi kursga qaytamiz.
+    const fromHash =
+      typeof window !== "undefined"
+        ? parseHash(window.location.hash, COURSE_IDS).courseId
+        : null;
+    if (fromHash) return fromHash;
+    const saved = loadJSON<string>("active_course", COURSES[0].id);
+    return COURSE_BY_ID[saved] ? saved : COURSES[0].id;
+  });
+  const [progressMap, setProgressMap] = useState<Record<string, Progress>>(() => {
+    const o: Record<string, Progress> = {};
+    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_progress", {})));
+    return o;
+  });
+  const [quizMap, setQuizMap] = useState<Record<string, QuizScores>>(() => {
+    const o: Record<string, QuizScores> = {};
+    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_quiz", {})));
+    return o;
+  });
+  const [srsMap, setSrsMap] = useState<Record<string, SrsState>>(() => {
+    const o: Record<string, SrsState> = {};
+    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_srs", {})));
+    return o;
+  });
+  const [streak, setStreak] = useState<Streak>(() => loadJSON(STREAK_KEY, EMPTY_STREAK));
+  const [lastBackup, setLastBackup] = useState<string | null>(() => loadLastBackup());
+  const [modulesMap, setModulesMap] = useState<Record<string, Course["modules"]>>({});
+  const [courseLoading, setCourseLoading] = useState(true);
 
   useEffect(() => saveJSON("active_course", courseId), [courseId]);
 
@@ -164,14 +227,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     });
   }, [courseId]);
 
-  const toast = useCallback((msg: string) => {
-    setToastMsg(msg);
-    window.clearTimeout(toastTimer.current);
-    toastTimer.current = window.setTimeout(() => setToastMsg(null), 2400);
-  }, []);
-
   const exportBackup = useCallback(() => {
-    downloadBackup(new Date());
+    const now = new Date();
+    downloadBackup(now);
+    setLastBackup(now.toISOString());
     toast("Zaxira fayli yuklab olindi");
   }, [toast]);
 
@@ -189,6 +248,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setQuizMap(q);
     setSrsMap(s);
     setStreak(loadJSON(STREAK_KEY, EMPTY_STREAK));
+    setLastBackup(loadLastBackup());
     setCourseId(loadJSON<string>("active_course", COURSES[0].id));
   }, []);
 
@@ -202,32 +262,59 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }
   }, [reloadFromStorage, toast]);
 
-  const value: StoreValue = {
-    courseId,
-    course: { ...(COURSE_BY_ID[courseId] || COURSES[0]), modules: modulesMap[courseId] || [] },
-    courseLoading,
-    setCourse,
-    theme,
-    toggleTheme,
-    progress: progressMap[courseId] || {},
-    quizScores: quizMap[courseId] || {},
-    srs: srsMap[courseId] || {},
-    streak,
-    toggleTask,
-    isDone,
-    recordQuiz,
-    gradeVocab,
-    resetSrs,
-    exportBackup,
-    importBackup,
-    toast,
-  };
+  // Memoizatsiya: faqat haqiqiy holat o'zgarganda iste'molchilar re-render bo'ladi
+  // (toast xabari kabi yon holatlar bunga kirmaydi).
+  const value = useMemo<StoreValue>(
+    () => ({
+      courseId,
+      course: { ...(COURSE_BY_ID[courseId] || COURSES[0]), modules: modulesMap[courseId] || [] },
+      courseLoading,
+      setCourse,
+      progress: progressMap[courseId] || {},
+      quizScores: quizMap[courseId] || {},
+      srs: srsMap[courseId] || {},
+      streak,
+      lastBackup,
+      toggleTask,
+      isDone,
+      recordQuiz,
+      gradeVocab,
+      resetSrs,
+      exportBackup,
+      importBackup,
+      toast,
+    }),
+    [
+      courseId,
+      modulesMap,
+      courseLoading,
+      setCourse,
+      progressMap,
+      quizMap,
+      srsMap,
+      streak,
+      lastBackup,
+      toggleTask,
+      isDone,
+      recordQuiz,
+      gradeVocab,
+      resetSrs,
+      exportBackup,
+      importBackup,
+      toast,
+    ]
+  );
 
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+}
+
+export function StoreProvider({ children }: { children: ReactNode }) {
   return (
-    <Ctx.Provider value={value}>
-      {children}
-      <div className={"toast" + (toastMsg ? " show" : "")}>{toastMsg}</div>
-    </Ctx.Provider>
+    <ToastProvider>
+      <ThemeProvider>
+        <CourseStoreProvider>{children}</CourseStoreProvider>
+      </ThemeProvider>
+    </ToastProvider>
   );
 }
 

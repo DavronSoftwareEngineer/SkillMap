@@ -1,1642 +1,2055 @@
 [
-  {
-    "zoom": "P0",
-    "title": "Kirish & AI mantig'i",
-    "sub": "Boshlash",
-    "coord": "Boshlash / P0",
-    "eyebrow": "00 / AI qanday \"o'ylaydi\"",
-    "mtitle": "Prompt nima va nega muhim",
-    "lede": "AI (LLM) - <strong>ma'lumotlar bazasi emas</strong>, balki <strong>keyingi so'zni bashorat qiladigan</strong> model. Shuning uchun unga <strong>qanday murojaat qilsang - shunday javob olasan</strong>. Prompt - shu murojaat.",
-    "doc": "<div class='prose'><h3>LLM qanday ishlaydi (sodda)</h3><p>Til modeli (ChatGPT, Claude, Gemini) ulkan matnda o'qib, <strong>keyingi so'zni ehtimollik asosida bashorat qiladi</strong>. U \"bilmaydi\" - u <strong>davom ettiradi</strong>. Shuning uchun:</p><div class=\"chips\"><span class=\"chip t\">aniq so'rasang - aniq davom ettiradi</span><span class=\"chip t\">noaniq so'rasang - taxmin qiladi</span><span class=\"chip t\">kontekst bersang - moslashadi</span></div><h3>Garbage in -> garbage out</h3><p>Yomon prompt = yomon javob. Modelni ayblamadan oldin <strong>promptni yaxshila</strong>. Natijaning 80% promptga bog'liq.</p><div class=\"exlist\"><div class=\"ex\"><b>Tell me about dogs.</b><span>juda keng - model nimani aytishni bilmaydi</span></div><div class=\"ex\"><b>Explain 3 key facts about caring for a puppy, for a first-time owner, in simple terms.</b><span>aniq - yaxshi javob</span></div></div><h3>Hallucination (to'qib chiqarish)</h3><p>AI ba'zan <strong>ishonchli ohangda noto'g'ri ma'lumot</strong> beradi. Bu - galyutsinatsiya. Shuning uchun muhim faktlarni <strong>doim tekshir</strong>.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Asosiy fikr</p><p>Sen - <strong>rejissyorsan</strong>. Model qobiliyatli aktyor, lekin u sening niyatingni o'qiy olmaydi. Qancha aniq yo'naltirsang, shuncha yaxshi natija.</p></div></div></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Birinchi qoida: aniqlik",
-          "p": "Bir xil mavzu, ikki xil natija."
-        },
-        "title": "Yaxshi vs yomon (taqqoslash)",
-        "lang": "text",
-        "code": "# Yomon (noaniq):\nWrite something about marketing.\n\n# Yaxshi (aniq):\nWrite a 100-word Instagram caption for a small coffee shop's\nautumn promotion. Friendly tone, include one call-to-action."
-      }
-    ],
-    "tasks": [
-      {
-        "id": "pr0-1",
-        "html": "LLM \"davom ettiruvchi\" model ekanini tushundim (baza emas)",
-        "crit": "o'z so'zing bilan ayta olasan"
-      },
-      {
-        "id": "pr0-2",
-        "html": "\"Garbage in -> garbage out\" tamoyilini o'zlashtirdim",
-        "crit": "yomon natijada avval promptni tekshirasan"
-      },
-      {
-        "id": "pr0-3",
-        "html": "Hallucination nima ekanini bilaman",
-        "crit": "AI noto'g'ri ma'lumot berishi mumkinligini tushunasan"
-      },
-      {
-        "id": "pr0-4",
-        "html": "Bitta noaniq so'rovni aniq promptga aylantirdim",
-        "crit": "aniq, kontekstli variant yozilgan"
-      },
-      {
-        "id": "pr0-5",
-        "html": "Playgroundda birinchi promptni sinab ko'rdim",
-        "crit": "javob olding va tahlil qilding"
-      }
-    ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
-        "title": "Anthropic - Prompt Engineering",
-        "desc": "Rasmiy qo'llanma (Claude)",
-        "host": "docs.anthropic.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://platform.openai.com/docs/guides/prompt-engineering",
-        "title": "OpenAI - Prompting Guide",
-        "desc": "Rasmiy qo'llanma (GPT)",
-        "host": "platform.openai.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/",
-        "title": "Prompt Engineering Guide",
-        "desc": "Chuqur, bepul qo'llanma",
-        "host": "promptingguide.ai"
-      }
-    ],
-    "project": {
-      "tag": "Birinchi amaliyot",
-      "title": "Noaniqni aniqga aylantir",
-      "desc": "3 ta noaniq so'rovni olib, ularni aniq, kontekstli promptga aylantir va Playgroundda sinab ko'r.",
-      "features": [
-        "3 ta qayta yozilgan prompt",
-        "Har birida vazifa+kontekst",
-        "Playgroundda test",
-        "Natijani taqqoslash",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "Noaniqni aniqga aylantir - Work Assistant",
-          "desc": "Kirish & AI mantig'i texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "Noaniqni aniqga aylantir - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+ {
+  "zoom": "P0",
+  "title": "Kirish & AI mantig'i",
+  "sub": "Boshlash",
+  "coord": "Boshlash / P0",
+  "eyebrow": "00 / AI qanday \"o'ylaydi\"",
+  "mtitle": "Prompt nima va nega muhim",
+  "lede": "AI (LLM) - <strong>ma'lumotlar bazasi emas</strong>, balki <strong>keyingi so'zni bashorat qiladigan</strong> model. Shuning uchun unga <strong>qanday murojaat qilsang - shunday javob olasan</strong>. Prompt - shu murojaat.",
+  "doc": "<div class='prose'><h3>NEGA muhim</h3><p>Bugun ish, o'qish va ijodning katta qismi AI bilan suhbatga ko'chyapti. Lekin bir xil modeldan bir kishi zo'r natija, boshqasi bo'sh javob oladi. Farq - modelda emas, <strong>promptda</strong>. Prompt yozishni bilish - bu AI davrining yangi savodxonligi. Natijaning taxminan 80% aynan sen bergan so'rovga bog'liq.</p><h3>QANDAY ishlaydi: token va kontekst oynasi</h3><p>LLM matnni so'z emas, <strong>token</strong> (so'z bo'lakchalari) sifatida o'qiydi. U ulkan matnda o'rgangan naqshlar asosida <strong>keyingi tokenni ehtimollik bilan bashorat qiladi</strong> - ketma-ket, bittalab. U \"bilmaydi\", balki eng ehtimolli davomni tanlaydi.</p><div class=\"chips\"><span class=\"chip t\">aniq so'rasang - aniq davom ettiradi</span><span class=\"chip t\">noaniq so'rasang - taxmin qiladi</span><span class=\"chip t\">kontekst bersang - moslashadi</span></div><p>Model bir vaqtda faqat cheklangan matnni \"ko'radi\" - bu <strong>kontekst oynasi</strong>. Suhbat uzaysa, eng eski qism oynadan chiqib ketadi va model uni \"unutadi\". Shuning uchun muhim ma'lumotni yaqin va ixcham tut. <strong>Temperature</strong> - tasodifiylik darajasi: past (0 ga yaqin) = barqaror, takrorlanadigan, faktik javob; yuqori = xilma-xil, ijodiy, lekin nazoratsizroq.</p><figure class='svgfig'><svg viewBox='0 0 680 180' role='img' aria-label='Prompt LLM ga tushadi, LLM tokenlarni ketma-ket bashorat qilib javob hosil qiladi'><rect class='box' x='20' y='60' width='140' height='56' rx='8'/><text x='90' y='93' text-anchor='middle'>Prompt</text><path class='edga' d='M160 88 H235' marker-end='url(#arP0a)'/><rect class='boxa' x='235' y='60' width='150' height='56' rx='8'/><text x='310' y='84' text-anchor='middle'>LLM</text><text x='310' y='104' text-anchor='middle' class='muted'>token bashorati</text><path class='edga' d='M385 88 H460' marker-end='url(#arP0a)'/><rect class='box' x='460' y='60' width='140' height='56' rx='8'/><text x='530' y='93' text-anchor='middle'>Javob</text><text x='310' y='150' text-anchor='middle' class='muted'>keyingi token = eng ehtimolli davom</text><defs><marker id='arP0a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Prompt -> LLM -> javob: model tokenlarni bittalab, ehtimollik asosida bashorat qiladi.</figcaption></figure><h3>Amaliy misol: garbage in -> garbage out</h3><p>Yomon prompt = yomon javob. Modelni ayblamasdan avval <strong>promptni yaxshila</strong>.</p><div class=\"exlist\"><div class=\"ex\"><b>Tell me about dogs.</b><span>juda keng - model nimani aytishni bilmaydi, o'zi taxmin qiladi</span></div><div class=\"ex\"><b>Explain 3 key facts about caring for a puppy, for a first-time owner, in simple terms.</b><span>aniq vazifa + auditoriya + format - ishonchli javob</span></div></div><h3>Hallucination (to'qib chiqarish)</h3><p>Model tokenni bashorat qilgani uchun ba'zan <strong>ishonchli ohangda noto'g'ri ma'lumot</strong> beradi - chunki maqsadi \"tabiiy davom\", \"haqiqat\" emas. Bu galyutsinatsiya. Shuning uchun muhim faktlarni <strong>doim mustaqil tekshir</strong>.</p><figure class='svgfig'><svg viewBox='0 0 680 130' role='img' aria-label='Matn tokenlarga bolinadi va model keyingi tokenni bashorat qiladi'><rect class='box' x='20' y='45' width='90' height='44' rx='6'/><text x='65' y='72' text-anchor='middle'>Pup</text><rect class='box' x='118' y='45' width='90' height='44' rx='6'/><text x='163' y='72' text-anchor='middle'>py</text><rect class='box' x='216' y='45' width='90' height='44' rx='6'/><text x='261' y='72' text-anchor='middle'>care</text><rect class='box' x='314' y='45' width='90' height='44' rx='6'/><text x='359' y='72' text-anchor='middle'>needs</text><path class='edga' d='M404 67 H470' marker-end='url(#arP0b)'/><rect class='boxa' x='470' y='45' width='190' height='44' rx='6'/><text x='565' y='72' text-anchor='middle'>? (keyingi token)</text><text x='340' y='115' text-anchor='middle' class='muted'>matn = token ketma-ketligi; model keyingisini bashorat qiladi</text><defs><marker id='arP0b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Token oqimi: model bor tokenlarga qarab keyingi tokenni tanlaydi.</figcaption></figure><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Ko'pchilik modelni \"gugl\" yoki \"baza\" deb o'ylab, bir og'iz so'z tashlaydi va aniq javob kutadi. LLM - qidiruv tizimi emas, <strong>bashoratli matn davomchisi</strong>. Kam kontekst bersang, u bo'shliqni taxmin bilan to'ldiradi.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Sen - <strong>rejissyorsan</strong>. Model qobiliyatli aktyor, lekin niyatingni o'qiy olmaydi. Faktik ish uchun temperaturani past tut, muhim kontekstni promptning boshiga qo'y va har doim aniq vazifa ber.</p></div></div><h3>Chuqurroq: kontekst oynasi (context window)</h3><p>Kontekst oynasi - model bir vaqtda \"ko'ra oladigan\" matnning maksimal hajmi, <strong>tokenlarda</strong> o'lchanadi. Bunga sening butun suhbating kiradi: system prompt, hamma savol-javob va biriktirilgan hujjat. Oyna to'lganda, model boshqa matn qabul qila olmaydi.</p><p>Muhimi: oyna cheklangan bo'lgani uchun <strong>uzun suhbatda eng eski xabarlar oynadan chiqib ketadi</strong> va model ularni butunlay \"unutadi\" - go'yo hech qachon aytmagandek. Shuning uchun suhbat cho'zilganda model boshida bergan ko'rsatmangni yo'qotib, mavzudan chetga chiqishi mumkin.</p><div class=\"exlist\"><div class=\"ex\"><b>Token limiti</b><span>har modelning oynasi cheklangan (masalan bir necha ming - bir necha yuz ming token). Undan oshsa, ortiqcha matn kesiladi.</span></div><div class=\"ex\"><b>Eski kontekst yo'qoladi</b><span>uzun chatda boshdagi qoida/fakt oynadan tushib qolsa, model uni endi bilmaydi.</span></div><div class=\"ex\"><b>Yechim</b><span>muhim ko'rsatmani takrorla yoki yaqinroqqa qo'y; juda uzun chat o'rniga yangi, ixcham suhbat boshla.</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 170' role='img' aria-label='Kontekst oynasi tolganda eng eski xabar oynadan chiqib ketadi va model uni unutadi'><rect class='box' x='30' y='40' width='120' height='44' rx='8'/><text x='90' y='67' text-anchor='middle' class='muted'>eski xabar</text><rect class='boxa' x='170' y='40' width='120' height='44' rx='8'/><text x='230' y='67' text-anchor='middle'>xabar</text><rect class='boxa' x='310' y='40' width='120' height='44' rx='8'/><text x='370' y='67' text-anchor='middle'>xabar</text><rect class='boxa' x='450' y='40' width='120' height='44' rx='8'/><text x='510' y='67' text-anchor='middle'>yangi</text><path class='edga' d='M90 40 C90 18 60 18 40 34' marker-end='url(#arP0c)'/><text x='90' y='108' text-anchor='middle' class='muted'>oynadan chiqadi -&gt; unutiladi</text><rect x='160' y='30' width='420' height='64' rx='10' fill='none' stroke='currentColor' stroke-dasharray='5 4' opacity='0.5'/><text x='370' y='128' text-anchor='middle' class='muted'>kontekst oynasi (token limiti)</text><defs><marker id='arP0c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Oyna to'lganda eng eski xabar chiqib ketadi - model uni \"unutadi\".</figcaption></figure><h3>Chuqurroq: temperature (tasodifiylik)</h3><p><strong>Temperature</strong> - modelning keyingi tokenni tanlashdagi tasodifiylik darajasi. Model har doim ehtimolliklar ro'yxatidan tanlaydi; temperature shu tanlovning qanchalik \"jur'atli\" bo'lishini boshqaradi.</p><div class=\"exlist\"><div class=\"ex\"><b>Temperature = 0 (deterministik)</b><span>model doim eng ehtimolli tokenni oladi. Bir xil promptga deyarli bir xil javob. Faktik, kod, ekstraksiya, tasnif uchun ideal.</span></div><div class=\"ex\"><b>Temperature yuqori (masalan 0.9 - ijodiy)</b><span>model kamroq ehtimolli tokenlarni ham tanlaydi. Javoblar xilma-xil, ijodiy, kutilmagan - lekin nazoratsizroq va xato ehtimoli yuqoriroq.</span></div></div><p><strong>Amaliy misol.</strong> \"Write a slogan for a coffee shop\" so'rovini ikki marta yubor:</p><div class=\"exlist\"><div class=\"ex\"><b>temp 0</b><span>ikki marta ham deyarli bir xil, \"xavfsiz\" shior - takrorlanadigan</span></div><div class=\"ex\"><b>temp 0.9</b><span>har safar boshqacha, jonli, ijodiy variantlar - lekin ba'zisi g'alati chiqishi mumkin</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 150' role='img' aria-label='Past temperature bitta barqaror javob, yuqori temperature bir necha xilma-xil javob beradi'><rect class='box' x='20' y='20' width='150' height='40' rx='8'/><text x='95' y='45' text-anchor='middle'>temp 0</text><path class='edga' d='M170 40 H240' marker-end='url(#arP0d)'/><rect class='boxa' x='240' y='20' width='230' height='40' rx='8'/><text x='355' y='45' text-anchor='middle'>bitta barqaror javob</text><rect class='box' x='20' y='95' width='150' height='40' rx='8'/><text x='95' y='120' text-anchor='middle'>temp 0.9</text><path class='edge' d='M170 112 L240 95' marker-end='url(#arP0e)'/><path class='edge' d='M170 115 L240 118' marker-end='url(#arP0e)'/><path class='edge' d='M170 118 L240 140' marker-end='url(#arP0e)'/><rect class='box' x='240' y='83' width='230' height='24' rx='6'/><text x='355' y='100' text-anchor='middle' class='muted'>ijodiy variant 1</text><rect class='box' x='240' y='111' width='230' height='24' rx='6'/><text x='355' y='128' text-anchor='middle' class='muted'>ijodiy variant 2 ...</text><defs><marker id='arP0d' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arP0e' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Past temperature = barqaror/faktik; yuqori temperature = xilma-xil/ijodiy.</figcaption></figure><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Faktik yoki takrorlanadigan ish uchun temperaturani <strong>past</strong> tut; miya bo'roni yoki ijodiy matn uchun <strong>ko'tar</strong>. Uzun suhbatda muhim faktni oyna \"unutmasligi\" uchun uni vaqti-vaqti bilan qaytar.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Birinchi qoida: aniqlik",
+     "p": "Bir xil mavzu, ikki xil natija."
     },
-    "quiz": [
-      {
-        "q": "LLM aslida nima qiladi?",
-        "a": [
-          "faktlarni bazadan oladi",
-          "keyingi so'zni bashorat qilib davom ettiradi",
-          "internetni qidiradi",
-          "hisoblaydi"
-        ],
-        "c": 1,
-        "w": "LLM - bashoratli til modeli, baza emas.",
-        "level": "easy"
-      },
-      {
-        "q": "Yomon javob olsang, avval nimani tekshirasan?",
-        "a": [
-          "modelni almashtirasan",
-          "o'z promptingni",
-          "kompyuterni",
-          "internetni"
-        ],
-        "c": 1,
-        "w": "Ko'pincha muammo - noaniq prompt.",
-        "level": "practical"
-      },
-      {
-        "q": "Hallucination nima?",
-        "a": [
-          "tezlik xatosi",
-          "AI ishonchli ohangda noto'g'ri ma'lumot berishi",
-          "internet uzilishi",
-          "imlo xatosi"
-        ],
-        "c": 1,
-        "w": "AI to'qib chiqarishi mumkin - tekshir.",
-        "level": "practical"
-      },
-      {
-        "q": "Eng yaxshi yondashuv:",
-        "a": [
-          "bir so'z bilan so'rash",
-          "aniq, kontekstli, formatli so'rash",
-          "ko'p marta so'rash",
-          "javobni kutish"
-        ],
-        "c": 1,
-        "w": "Aniqlik + kontekst - kalit.",
-        "level": "scenario"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "Qaysi prompt aniqroq?",
-        "options": [
-          "Write about coffee.",
-          "Write a 50-word product description for a dark-roast coffee, warm tone.",
-          "Coffee?",
-          "Tell me coffee things."
-        ],
-        "correct": 1,
-        "why": "Vazifa+uzunlik+ton+mavzu aniq."
-      },
-      {
-        "type": "choice",
-        "q": "AI noto'g'ri fakt bersa (hallucination), nima qilasan?",
-        "options": [
-          "ishonasan",
-          "muhim faktني mustaqil tekshirasan",
-          "qaytarib so'raysan va ishonasan",
-          "e'tibor bermaysan"
-        ],
-        "correct": 1,
-        "why": "Muhim narsani doim tekshir."
-      },
-      {
-        "type": "choice",
-        "q": "Natijaning sifati ko'p jihatdan nimaga bog'liq?",
-        "options": [
-          "model nomiga",
-          "promptning aniqligiga",
-          "internet tezligiga",
-          "vaqtga"
-        ],
-        "correct": 1,
-        "why": "Yaxshi prompt - yaxshi natija."
-      },
-      {
-        "type": "choice",
-        "q": "\"Tell me about dogs\" nega zaif?",
-        "options": [
-          "uzun",
-          "juda keng/noaniq",
-          "inglizcha",
-          "xato"
-        ],
-        "correct": 1,
-        "why": "Juda keng - model nimani aytishni bilmaydi."
-      }
-    ],
-    "vocab": [
-      {
-        "w": "prompt",
-        "ipa": "",
-        "pos": "",
-        "uz": "AI'ga yozilgan murojaat/topshiriq",
-        "ex": "A clear prompt gives a clear answer."
-      },
-      {
-        "w": "LLM",
-        "ipa": "",
-        "pos": "",
-        "uz": "katta til modeli (ChatGPT, Claude)",
-        "ex": "An LLM predicts the next word."
-      },
-      {
-        "w": "token",
-        "ipa": "",
-        "pos": "",
-        "uz": "matnning bo'lakchasi (so'z qismi)",
-        "ex": "Models read text as tokens."
-      },
-      {
-        "w": "context",
-        "ipa": "",
-        "pos": "",
-        "uz": "modelga berilgan qo'shimcha ma'lumot",
-        "ex": "Add context for a better answer."
-      },
-      {
-        "w": "hallucination",
-        "ipa": "",
-        "pos": "",
-        "uz": "AI to'qib chiqargan noto'g'ri ma'lumot",
-        "ex": "Always verify to avoid hallucinations."
-      },
-      {
-        "w": "model",
-        "ipa": "",
-        "pos": "",
-        "uz": "AI tizimi (masalan GPT-4, Claude)",
-        "ex": "Choose a capable model."
-      }
-    ],
-    "grammar": [
-      {
-        "topic": "Asosiy tamoyil",
-        "rule": "Aniq bo'l, kontekst ber, format so'ra, misol ber, takrorla.",
-        "ex": "Vague -> specific"
-      },
-      {
-        "topic": "Garbage in/out",
-        "rule": "Yomon prompt -> yomon javob.",
-        "ex": "Avval promptni yaxshila."
-      },
-      {
-        "topic": "Hallucination",
-        "rule": "AI noto'g'ri ma'lumot berishi mumkin - tekshir.",
-        "ex": "Verify important facts."
-      }
-    ]
+    "title": "Yaxshi vs yomon (taqqoslash)",
+    "lang": "text",
+    "code": "# Yomon (noaniq):\nWrite something about marketing.\n\n# Yaxshi (aniq):\nWrite a 100-word Instagram caption for a small coffee shop's\nautumn promotion. Friendly tone, include one call-to-action."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr0-1",
+    "html": "LLM \"davom ettiruvchi\" model ekanini tushundim (baza emas)",
+    "crit": "o'z so'zing bilan ayta olasan"
+   },
+   {
+    "id": "pr0-2",
+    "html": "\"Garbage in -> garbage out\" tamoyilini o'zlashtirdim",
+    "crit": "yomon natijada avval promptni tekshirasan"
+   },
+   {
+    "id": "pr0-3",
+    "html": "Hallucination nima ekanini bilaman",
+    "crit": "AI noto'g'ri ma'lumot berishi mumkinligini tushunasan"
+   },
+   {
+    "id": "pr0-4",
+    "html": "Bitta noaniq so'rovni aniq promptga aylantirdim",
+    "crit": "aniq, kontekstli variant yozilgan"
+   },
+   {
+    "id": "pr0-5",
+    "html": "Playgroundda birinchi promptni sinab ko'rdim",
+    "crit": "javob olding va tahlil qilding"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    "title": "Anthropic - Prompt Engineering",
+    "desc": "Rasmiy qo'llanma (Claude)",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI - Prompting Guide",
+    "desc": "Rasmiy qo'llanma (GPT)",
+    "host": "platform.openai.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/",
+    "title": "Prompt Engineering Guide",
+    "desc": "Chuqur, bepul qo'llanma",
+    "host": "promptingguide.ai"
+   }
+  ],
+  "project": {
+   "tag": "Birinchi amaliyot",
+   "title": "Noaniqni aniqga aylantir",
+   "desc": "3 ta noaniq so'rovni olib, ularni aniq, kontekstli promptga aylantir va Playgroundda sinab ko'r.",
+   "features": [
+    "3 ta qayta yozilgan prompt",
+    "Har birida vazifa+kontekst",
+    "Playgroundda test",
+    "Natijani taqqoslash",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "Noaniqni aniqga aylantir - Work Assistant",
+     "desc": "Kirish & AI mantig'i texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "Noaniqni aniqga aylantir - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
   },
-  {
-    "zoom": "P1",
-    "title": "Aniq prompt",
-    "sub": "Clarity",
-    "coord": "Clarity / P1",
-    "eyebrow": "01 / Aniqlik: 4 element",
-    "mtitle": "Aniq prompt: vazifa, kontekst, format, cheklov",
-    "lede": "Kuchli promptda 4 narsa bo'ladi: <strong>Vazifa</strong> (nima qil), <strong>Kontekst</strong> (kim/nima uchun), <strong>Format</strong> (qanday ko'rinishda), <strong>Cheklov</strong> (uzunlik, ton, til).",
-    "doc": "<div class='prose'><h3>4 element</h3><div class=\"exlist\"><div class=\"ex\"><b>Task (vazifa)</b><span>Aniq fe'l: \"summarize\", \"list\", \"rewrite\", \"compare\"</span></div><div class=\"ex\"><b>Context (kontekst)</b><span>Kim uchun, qaysi vaziyat, fon ma'lumoti</span></div><div class=\"ex\"><b>Format (ko'rinish)</b><span>Ro'yxat? Jadval? Abzas? JSON?</span></div><div class=\"ex\"><b>Constraints (cheklov)</b><span>Uzunlik, ton, til, nimani qilmaslik</span></div></div><h3>Noaniqdan aniqga</h3><div class=\"exlist\"><div class=\"ex\"><b>Help me with my email.</b><span>❌ nima yordam? qanday email?</span></div><div class=\"ex\"><b>Rewrite this email to a client to sound more polite and professional. Keep it under 120 words.</b><span>✓ vazifa+kontekst+cheklov</span></div></div><h3>Aniqlik = kamroq taxmin</h3><p>Model bo'sh joyni <strong>taxmin bilan</strong> to'ldiradi. Har bir taxmin - xato ehtimoli. Aniqlik taxminni kamaytiradi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Promptni yozgach o'zingga savol ber: <strong>\"Begona odam buni o'qib, men xohlaganni aniq tushunadimi?\"</strong> Agar yo'q - aniqlashtir.</p></div></div></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Universal shablon",
-          "p": "Har qanday vazifaga moslashtir."
-        },
-        "title": "4 elementli shablon",
-        "lang": "text",
-        "code": "Task: Summarize the text below.\nContext: It's for a busy manager who has 30 seconds.\nFormat: 3 bullet points.\nConstraints: Max 15 words per bullet, plain English.\n\nText: \"\"\"<bu yerga matn>\"\"\""
-      }
+  "quiz": [
+   {
+    "q": "LLM aslida nima qiladi?",
+    "a": [
+     "faktlarni bazadan oladi",
+     "keyingi so'zni bashorat qilib davom ettiradi",
+     "internetni qidiradi",
+     "hisoblaydi"
     ],
-    "tasks": [
-      {
-        "id": "pr1-1",
-        "html": "4 elementni (vazifa/kontekst/format/cheklov) yodladim",
-        "crit": "to'rttasini sanay olasan"
-      },
-      {
-        "id": "pr1-2",
-        "html": "Bitta noaniq promptni 4 element bilan qayta yozdim",
-        "crit": "aniq, to'liq variant"
-      },
-      {
-        "id": "pr1-3",
-        "html": "Aniq fe'llardan foydalanishni o'rgandim (summarize, list...)",
-        "crit": "kuchli fe'l ishlatasan"
-      },
-      {
-        "id": "pr1-4",
-        "html": "Format so'rashni (ro'yxat/jadval) sinab ko'rdim",
-        "crit": "natija so'ralgan formatda"
-      },
-      {
-        "id": "pr1-5",
-        "html": "Playgroundda 4 elementli promptni sinadim",
-        "crit": "javob aniqroq bo'ldi"
-      }
+    "c": 1,
+    "w": "LLM - bashoratli til modeli, baza emas.",
+    "level": "easy"
+   },
+   {
+    "q": "Yomon javob olsang, avval nimani tekshirasan?",
+    "a": [
+     "modelni almashtirasan",
+     "o'z promptingni",
+     "kompyuterni",
+     "internetni"
     ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct",
-        "title": "Anthropic - Be clear & direct",
-        "desc": "Aniqlik tamoyili",
-        "host": "docs.anthropic.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/introduction/elements",
-        "title": "Prompt elementlari",
-        "desc": "Promptning tarkibi",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://platform.openai.com/docs/guides/prompt-engineering",
-        "title": "OpenAI - Guide",
-        "desc": "Aniqlik bo'yicha tavsiyalar",
-        "host": "platform.openai.com"
-      }
+    "c": 1,
+    "w": "Ko'pincha muammo - noaniq prompt.",
+    "level": "practical"
+   },
+   {
+    "q": "Hallucination nima?",
+    "a": [
+     "tezlik xatosi",
+     "AI ishonchli ohangda noto'g'ri ma'lumot berishi",
+     "internet uzilishi",
+     "imlo xatosi"
     ],
-    "project": {
-      "tag": "Clarity amaliyot",
-      "title": "4 elementli prompt",
-      "desc": "O'z ishingdan bitta real vazifani olib, 4 element bilan to'liq prompt yoz va Playgroundda sina.",
-      "features": [
-        "Vazifa aniq fe'l bilan",
-        "Kontekst berilgan",
-        "Format so'ralgan",
-        "Cheklov (uzunlik/ton)",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "4 elementli prompt - Work Assistant",
-          "desc": "Aniq prompt texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "4 elementli prompt - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+    "c": 1,
+    "w": "AI to'qib chiqarishi mumkin - tekshir.",
+    "level": "practical"
+   },
+   {
+    "q": "Eng yaxshi yondashuv:",
+    "a": [
+     "bir so'z bilan so'rash",
+     "aniq, kontekstli, formatli so'rash",
+     "ko'p marta so'rash",
+     "javobni kutish"
+    ],
+    "c": 1,
+    "w": "Aniqlik + kontekst - kalit.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Qaysi prompt aniqroq?",
+    "options": [
+     "Write about coffee.",
+     "Write a 50-word product description for a dark-roast coffee, warm tone.",
+     "Coffee?",
+     "Tell me coffee things."
+    ],
+    "correct": 1,
+    "why": "Vazifa+uzunlik+ton+mavzu aniq."
+   },
+   {
+    "type": "choice",
+    "q": "AI noto'g'ri fakt bersa (hallucination), nima qilasan?",
+    "options": [
+     "ishonasan",
+     "muhim faktni mustaqil tekshirasan",
+     "qaytarib so'raysan va ishonasan",
+     "e'tibor bermaysan"
+    ],
+    "correct": 1,
+    "why": "Muhim narsani doim tekshir."
+   },
+   {
+    "type": "choice",
+    "q": "Natijaning sifati ko'p jihatdan nimaga bog'liq?",
+    "options": [
+     "model nomiga",
+     "promptning aniqligiga",
+     "internet tezligiga",
+     "vaqtga"
+    ],
+    "correct": 1,
+    "why": "Yaxshi prompt - yaxshi natija."
+   },
+   {
+    "type": "choice",
+    "q": "\"Tell me about dogs\" nega zaif?",
+    "options": [
+     "uzun",
+     "juda keng/noaniq",
+     "inglizcha",
+     "xato"
+    ],
+    "correct": 1,
+    "why": "Juda keng - model nimani aytishni bilmaydi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "prompt",
+    "ipa": "",
+    "pos": "",
+    "uz": "AI'ga yozilgan murojaat/topshiriq",
+    "ex": "A clear prompt gives a clear answer."
+   },
+   {
+    "w": "LLM",
+    "ipa": "",
+    "pos": "",
+    "uz": "katta til modeli (ChatGPT, Claude)",
+    "ex": "An LLM predicts the next word."
+   },
+   {
+    "w": "token",
+    "ipa": "",
+    "pos": "",
+    "uz": "matnning bo'lakchasi (so'z qismi)",
+    "ex": "Models read text as tokens."
+   },
+   {
+    "w": "context",
+    "ipa": "",
+    "pos": "",
+    "uz": "modelga berilgan qo'shimcha ma'lumot",
+    "ex": "Add context for a better answer."
+   },
+   {
+    "w": "hallucination",
+    "ipa": "",
+    "pos": "",
+    "uz": "AI to'qib chiqargan noto'g'ri ma'lumot",
+    "ex": "Always verify to avoid hallucinations."
+   },
+   {
+    "w": "model",
+    "ipa": "",
+    "pos": "",
+    "uz": "AI tizimi (masalan GPT-4, Claude)",
+    "ex": "Choose a capable model."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Asosiy tamoyil",
+    "rule": "Aniq bo'l, kontekst ber, format so'ra, misol ber, takrorla.",
+    "ex": "Vague -> specific"
+   },
+   {
+    "topic": "Garbage in/out",
+    "rule": "Yomon prompt -> yomon javob.",
+    "ex": "Avval promptni yaxshila."
+   },
+   {
+    "topic": "Hallucination",
+    "rule": "AI noto'g'ri ma'lumot berishi mumkin - tekshir.",
+    "ex": "Verify important facts."
+   }
+  ]
+ },
+ {
+  "zoom": "P1",
+  "title": "Aniq prompt",
+  "sub": "Clarity",
+  "coord": "Clarity / P1",
+  "eyebrow": "01 / Aniqlik: 4 element",
+  "mtitle": "Aniq prompt: vazifa, kontekst, format, cheklov",
+  "lede": "Kuchli promptda 4 narsa bo'ladi: <strong>Vazifa</strong> (nima qil), <strong>Kontekst</strong> (kim/nima uchun), <strong>Format</strong> (qanday ko'rinishda), <strong>Cheklov</strong> (uzunlik, ton, til).",
+  "doc": "<div class='prose'><h3>NEGA muhim: aniqlik = kamroq taxmin</h3><p>Model bo'sh joyni <strong>taxmin bilan</strong> to'ldiradi, va har bir taxmin - xato ehtimoli. Noaniq prompt modelni cheksiz yo'nalishga qo'yib yuboradi; aniq prompt esa uni bitta to'g'ri yo'lga soladi. Aniqlik - eng arzon va eng kuchli sifat oshiruvchi.</p><h3>QANDAY ishlaydi: kuchli promptning 4 elementi</h3><div class=\"exlist\"><div class=\"ex\"><b>Task (vazifa)</b><span>Aniq fe'l: \"summarize\", \"list\", \"rewrite\", \"compare\"</span></div><div class=\"ex\"><b>Context (kontekst)</b><span>Kim uchun, qaysi vaziyat, fon ma'lumoti</span></div><div class=\"ex\"><b>Format (ko'rinish)</b><span>Ro'yxat? Jadval? Abzas? JSON?</span></div><div class=\"ex\"><b>Constraints (cheklov)</b><span>Uzunlik, ton, til, nimani qilmaslik</span></div></div><p>Har bir element modelning kontekstini toraytiradi. Kontekst qancha aniq bo'lsa, model \"keyingi token\"ni shuncha ishonchli tanlaydi - chunki noaniqlik kamayadi.</p><figure class='svgfig'><svg viewBox='0 0 680 210' role='img' aria-label='Noaniq prompt tarqoq javoblarga, aniq prompt bitta togri javobga olib keladi'><rect class='box' x='20' y='20' width='150' height='50' rx='8'/><text x='95' y='50' text-anchor='middle'>Noaniq prompt</text><path class='edge' d='M170 45 L300 22' marker-end='url(#arP1a)'/><path class='edge' d='M170 45 L300 45' marker-end='url(#arP1a)'/><path class='edge' d='M170 45 L300 68' marker-end='url(#arP1a)'/><rect class='box' x='305' y='8' width='120' height='30' rx='6'/><text x='365' y='28' text-anchor='middle' class='muted'>javob ?</text><rect class='box' x='305' y='42' width='120' height='30' rx='6'/><text x='365' y='62' text-anchor='middle' class='muted'>javob ?</text><rect class='box' x='305' y='76' width='120' height='30' rx='6'/><text x='365' y='96' text-anchor='middle' class='muted'>javob ?</text><rect class='box' x='20' y='140' width='150' height='50' rx='8'/><text x='95' y='170' text-anchor='middle'>Aniq prompt</text><path class='edga' d='M170 165 H430' marker-end='url(#arP1b)'/><rect class='boxa' x='430' y='140' width='210' height='50' rx='8'/><text x='535' y='170' text-anchor='middle'>Kutilgan aniq javob</text><defs><marker id='arP1a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arP1b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Noaniqlik javobni tarqatadi; aniqlik modelni bitta to'g'ri yo'lga soladi.</figcaption></figure><h3>Amaliy misol: noaniqdan aniqga</h3><div class=\"exlist\"><div class=\"ex\"><b>Help me with my email.</b><span>qanday yordam? qaysi email? kim uchun? - model taxmin qiladi</span></div><div class=\"ex\"><b>Rewrite this email to a client to sound more polite and professional. Keep it under 120 words.</b><span>vazifa + kontekst + cheklov - natija bashoralanadigan</span></div></div><p>E'tibor ber: ikkinchi variantda model uchun \"erkinlik\" deyarli qolmadi - shuning uchun natija barqaror.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Ko'pincha odam bir so'rovga <strong>hammasini</strong> tiqishtiradi va aslida nima kerakligini aytmaydi: \"yaxshi qil\", \"chiroyli yoz\". \"Yaxshi\" - o'lchab bo'lmaydigan tushuncha. Buning o'rniga o'lchanadigan cheklov ber: \"120 so'zdan oshma\", \"3 punktda\".</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Promptni yozgach o'zingga savol ber: <strong>\"Begona odam buni o'qib, men xohlaganni aniq tushunadimi?\"</strong> Agar yo'q bo'lsa, qaysi element (vazifa/kontekst/format/cheklov) yetishmayotganini top va qo'sh.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Universal shablon",
+     "p": "Har qanday vazifaga moslashtir."
     },
-    "quiz": [
-      {
-        "q": "Kuchli promptning 4 elementi?",
-        "a": [
-          "salom, savol, rahmat, xayr",
-          "vazifa, kontekst, format, cheklov",
-          "model, kalit, narx, til",
-          "ism, yosh, kasb, joy"
-        ],
-        "c": 1,
-        "w": "Task, Context, Format, Constraints.",
-        "level": "easy"
-      },
-      {
-        "q": "\"Format\" elementi nimani belgilaydi?",
-        "a": [
-          "modelni",
-          "javob ko'rinishini (ro'yxat/jadval)",
-          "narxni",
-          "tezlikni"
-        ],
-        "c": 1,
-        "w": "Format - chiqish ko'rinishi.",
-        "level": "practical"
-      },
-      {
-        "q": "Aniqlik nimani kamaytiradi?",
-        "a": [
-          "tezlikni",
-          "modelning taxminini (xato ehtimoli)",
-          "narxni",
-          "uzunlikni"
-        ],
-        "c": 1,
-        "w": "Kamroq taxmin - kamroq xato.",
-        "level": "practical"
-      },
-      {
-        "q": "Qaysi fe'l aniqroq?",
-        "a": [
-          "do something",
-          "summarize in 3 points",
-          "help",
-          "make it good"
-        ],
-        "c": 1,
-        "w": "Aniq fe'l + format.",
-        "level": "scenario"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "Qaysi promptda 'cheklov' bor?",
-        "options": [
-          "Write a poem.",
-          "Write a poem about autumn in 4 lines, simple words.",
-          "Poem please.",
-          "Make a poem about something."
-        ],
-        "correct": 1,
-        "why": "4 qator + sodda so'z = cheklov."
-      },
-      {
-        "type": "choice",
-        "q": "\"Help me with my email\" ni qanday yaxshilash mumkin?",
-        "options": [
-          "qisqartirish",
-          "vazifa+kontekst+cheklov qo'shish",
-          "rahmat qo'shish",
-          "modelni almashtirish"
-        ],
-        "correct": 1,
-        "why": "Aniq vazifa, kontekst va cheklov ber."
-      },
-      {
-        "type": "gap",
-        "q": "Javobni ro'yxat ko'rinishda so'rash uchun promptda ___ elementini beramiz.",
-        "answers": [
-          "format"
-        ],
-        "why": "Format - chiqish ko'rinishini belgilaydi.",
-        "hint": ""
-      },
-      {
-        "type": "choice",
-        "q": "\"Begona odam tushunadimi?\" testi nimaga yordam beradi?",
-        "options": [
-          "tezlikka",
-          "aniqlikni tekshirishga",
-          "narxga",
-          "imloga"
-        ],
-        "correct": 1,
-        "why": "Tushunarlilik = aniqlik."
-      }
-    ],
-    "vocab": [
-      {
-        "w": "task",
-        "ipa": "",
-        "pos": "",
-        "uz": "vazifa - nima qilish kerak",
-        "ex": "State the task with a clear verb."
-      },
-      {
-        "w": "context",
-        "ipa": "",
-        "pos": "",
-        "uz": "kontekst - fon/maqsad",
-        "ex": "Give context: who is it for?"
-      },
-      {
-        "w": "format",
-        "ipa": "",
-        "pos": "",
-        "uz": "javob ko'rinishi",
-        "ex": "Specify the output format."
-      },
-      {
-        "w": "constraint",
-        "ipa": "",
-        "pos": "",
-        "uz": "cheklov (uzunlik/ton)",
-        "ex": "Add constraints like word count."
-      },
-      {
-        "w": "specific",
-        "ipa": "",
-        "pos": "",
-        "uz": "aniq, mayda-chuyda bilan",
-        "ex": "Be specific, not vague."
-      },
-      {
-        "w": "rewrite",
-        "ipa": "",
-        "pos": "",
-        "uz": "qayta yozmoq",
-        "ex": "Rewrite this to sound formal."
-      }
-    ],
-    "grammar": [
-      {
-        "topic": "4 element",
-        "rule": "Task + Context + Format + Constraints.",
-        "ex": "Summarize ... for ... as bullets, <50 words"
-      },
-      {
-        "topic": "Aniq fe'llar",
-        "rule": "summarize, list, compare, rewrite, explain.",
-        "ex": "\"Explain\" > \"tell me about\""
-      },
-      {
-        "topic": "Tushunarlilik testi",
-        "rule": "Begona odam tushunsa - aniq.",
-        "ex": "Aks holda aniqlashtir."
-      }
-    ]
+    "title": "4 elementli shablon",
+    "lang": "text",
+    "code": "Task: Summarize the text below.\nContext: It's for a busy manager who has 30 seconds.\nFormat: 3 bullet points.\nConstraints: Max 15 words per bullet, plain English.\n\nText: \"\"\"<bu yerga matn>\"\"\""
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr1-1",
+    "html": "4 elementni (vazifa/kontekst/format/cheklov) yodladim",
+    "crit": "to'rttasini sanay olasan"
+   },
+   {
+    "id": "pr1-2",
+    "html": "Bitta noaniq promptni 4 element bilan qayta yozdim",
+    "crit": "aniq, to'liq variant"
+   },
+   {
+    "id": "pr1-3",
+    "html": "Aniq fe'llardan foydalanishni o'rgandim (summarize, list...)",
+    "crit": "kuchli fe'l ishlatasan"
+   },
+   {
+    "id": "pr1-4",
+    "html": "Format so'rashni (ro'yxat/jadval) sinab ko'rdim",
+    "crit": "natija so'ralgan formatda"
+   },
+   {
+    "id": "pr1-5",
+    "html": "Playgroundda 4 elementli promptni sinadim",
+    "crit": "javob aniqroq bo'ldi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct",
+    "title": "Anthropic - Be clear & direct",
+    "desc": "Aniqlik tamoyili",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/introduction/elements",
+    "title": "Prompt elementlari",
+    "desc": "Promptning tarkibi",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI - Guide",
+    "desc": "Aniqlik bo'yicha tavsiyalar",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Clarity amaliyot",
+   "title": "4 elementli prompt",
+   "desc": "O'z ishingdan bitta real vazifani olib, 4 element bilan to'liq prompt yoz va Playgroundda sina.",
+   "features": [
+    "Vazifa aniq fe'l bilan",
+    "Kontekst berilgan",
+    "Format so'ralgan",
+    "Cheklov (uzunlik/ton)",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "4 elementli prompt - Work Assistant",
+     "desc": "Aniq prompt texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "4 elementli prompt - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
   },
-  {
-    "zoom": "P2",
-    "title": "Rol / Ton / Format",
-    "sub": "Boshqaruv",
-    "coord": "Control / P2",
-    "eyebrow": "02 / Rol, ton, auditoriya, uzunlik",
-    "mtitle": "Javobni boshqarish: rol, ton, format",
-    "lede": "Modelga <strong>rol</strong> ber, <strong>ton</strong> va <strong>auditoriya</strong>ни belgila, <strong>chiqish formatini</strong> aniq ayt - javob aynan sen xohlagandek chiqadi.",
-    "doc": "<div class='prose'><h3>Rol berish (persona)</h3><div class=\"exlist\"><div class=\"ex\"><b>Act as an experienced English teacher.</b><span>model o'qituvchi uslubida javob beradi</span></div><div class=\"ex\"><b>You are a senior software engineer reviewing code.</b><span>ekspert nuqtai nazari</span></div></div><h3>Ton va auditoriya</h3><div class=\"exlist\"><div class=\"ex\"><b>Explain like I'm 12.</b><span>sodda, yoshga mos</span></div><div class=\"ex\"><b>Use a formal, professional tone.</b><span>rasmiy ton</span></div><div class=\"ex\"><b>Write for beginners with no technical background.</b><span>auditoriya aniq</span></div></div><h3>Chiqish formatini aniq so'ra</h3><div class=\"chips\"><span class=\"chip t\">bullet ro'yxat</span><span class=\"chip t\">jadval (table)</span><span class=\"chip t\">JSON</span><span class=\"chip t\">qadam-baqadam</span><span class=\"chip t\">max 100 so'z</span></div><h3>Salbiy cheklov ham foydali</h3><div class=\"exlist\"><div class=\"ex\"><b>Do not use jargon.</b><span>atama ishlatma</span></div><div class=\"ex\"><b>Avoid more than 5 bullet points.</b><span>5 tadan oshma</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Bitta promptda ko'p narsa so'rama. Avval <strong>rol + format</strong>ни belgila, keyin vazifani ber - javob barqaror bo'ladi.</p></div></div></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Boshqaruv shabloni",
-          "p": "Rol, ton, auditoriya, format, salbiy cheklov."
-        },
-        "title": "Rol + ton + format",
-        "lang": "text",
-        "code": "You are a friendly nutrition coach.\nExplain a balanced breakfast to a busy student.\nTone: encouraging, simple.\nFormat: 5 bullet points, each under 12 words.\nDo not recommend supplements."
-      }
+  "quiz": [
+   {
+    "q": "Kuchli promptning 4 elementi?",
+    "a": [
+     "salom, savol, rahmat, xayr",
+     "vazifa, kontekst, format, cheklov",
+     "model, kalit, narx, til",
+     "ism, yosh, kasb, joy"
     ],
-    "tasks": [
-      {
-        "id": "pr2-1",
-        "html": "Promptda rol (persona) berishni o'rgandim",
-        "crit": "\"Act as ...\" ishlatasan"
-      },
-      {
-        "id": "pr2-2",
-        "html": "Ton va auditoriyani belgiladim",
-        "crit": "rasmiy/sodda, kim uchun"
-      },
-      {
-        "id": "pr2-3",
-        "html": "Chiqish formatini aniq so'radim (ro'yxat/jadval/JSON)",
-        "crit": "natija so'ralgan formatda"
-      },
-      {
-        "id": "pr2-4",
-        "html": "Salbiy cheklov (\"do not...\") ishlatdim",
-        "crit": "kerakmas narsani taqiqlading"
-      },
-      {
-        "id": "pr2-5",
-        "html": "Playgroundda rol+format promptni sinadim",
-        "crit": "javob uslubi o'zgargani ko'rindi"
-      }
+    "c": 1,
+    "w": "Task, Context, Format, Constraints.",
+    "level": "easy"
+   },
+   {
+    "q": "\"Format\" elementi nimani belgilaydi?",
+    "a": [
+     "modelni",
+     "javob ko'rinishini (ro'yxat/jadval)",
+     "narxni",
+     "tezlikni"
     ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts",
-        "title": "Anthropic - System prompts & roles",
-        "desc": "Rol berish",
-        "host": "docs.anthropic.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/techniques",
-        "title": "Texnikalar",
-        "desc": "Rol, format, ton",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://platform.openai.com/docs/guides/prompt-engineering",
-        "title": "OpenAI - Guide",
-        "desc": "Format va uslub",
-        "host": "platform.openai.com"
-      }
+    "c": 1,
+    "w": "Format - chiqish ko'rinishi.",
+    "level": "practical"
+   },
+   {
+    "q": "Aniqlik nimani kamaytiradi?",
+    "a": [
+     "tezlikni",
+     "modelning taxminini (xato ehtimoli)",
+     "narxni",
+     "uzunlikni"
     ],
-    "project": {
-      "tag": "Control amaliyot",
-      "title": "Rolli prompt",
-      "desc": "Bitta vazifani 2 xil rol/ton bilan yozib, natijalarini Playgroundda taqqosla.",
-      "features": [
-        "2 ta rol (masalan o'qituvchi/ekspert)",
-        "Ton belgilangan",
-        "Format so'ralgan",
-        "Natijalar taqqoslangan",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "Rolli prompt - Work Assistant",
-          "desc": "Rol / Ton / Format texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "Rolli prompt - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+    "c": 1,
+    "w": "Kamroq taxmin - kamroq xato.",
+    "level": "practical"
+   },
+   {
+    "q": "Qaysi fe'l aniqroq?",
+    "a": [
+     "do something",
+     "summarize in 3 points",
+     "help",
+     "make it good"
+    ],
+    "c": 1,
+    "w": "Aniq fe'l + format.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Qaysi promptda 'cheklov' bor?",
+    "options": [
+     "Write a poem.",
+     "Write a poem about autumn in 4 lines, simple words.",
+     "Poem please.",
+     "Make a poem about something."
+    ],
+    "correct": 1,
+    "why": "4 qator + sodda so'z = cheklov."
+   },
+   {
+    "type": "choice",
+    "q": "\"Help me with my email\" ni qanday yaxshilash mumkin?",
+    "options": [
+     "qisqartirish",
+     "vazifa+kontekst+cheklov qo'shish",
+     "rahmat qo'shish",
+     "modelni almashtirish"
+    ],
+    "correct": 1,
+    "why": "Aniq vazifa, kontekst va cheklov ber."
+   },
+   {
+    "type": "gap",
+    "q": "Javobni ro'yxat ko'rinishda so'rash uchun promptda ___ elementini beramiz.",
+    "answers": [
+     "format"
+    ],
+    "why": "Format - chiqish ko'rinishini belgilaydi.",
+    "hint": ""
+   },
+   {
+    "type": "choice",
+    "q": "\"Begona odam tushunadimi?\" testi nimaga yordam beradi?",
+    "options": [
+     "tezlikka",
+     "aniqlikni tekshirishga",
+     "narxga",
+     "imloga"
+    ],
+    "correct": 1,
+    "why": "Tushunarlilik = aniqlik."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "task",
+    "ipa": "",
+    "pos": "",
+    "uz": "vazifa - nima qilish kerak",
+    "ex": "State the task with a clear verb."
+   },
+   {
+    "w": "context",
+    "ipa": "",
+    "pos": "",
+    "uz": "kontekst - fon/maqsad",
+    "ex": "Give context: who is it for?"
+   },
+   {
+    "w": "format",
+    "ipa": "",
+    "pos": "",
+    "uz": "javob ko'rinishi",
+    "ex": "Specify the output format."
+   },
+   {
+    "w": "constraint",
+    "ipa": "",
+    "pos": "",
+    "uz": "cheklov (uzunlik/ton)",
+    "ex": "Add constraints like word count."
+   },
+   {
+    "w": "specific",
+    "ipa": "",
+    "pos": "",
+    "uz": "aniq, mayda-chuyda bilan",
+    "ex": "Be specific, not vague."
+   },
+   {
+    "w": "rewrite",
+    "ipa": "",
+    "pos": "",
+    "uz": "qayta yozmoq",
+    "ex": "Rewrite this to sound formal."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "4 element",
+    "rule": "Task + Context + Format + Constraints.",
+    "ex": "Summarize ... for ... as bullets, <50 words"
+   },
+   {
+    "topic": "Aniq fe'llar",
+    "rule": "summarize, list, compare, rewrite, explain.",
+    "ex": "\"Explain\" > \"tell me about\""
+   },
+   {
+    "topic": "Tushunarlilik testi",
+    "rule": "Begona odam tushunsa - aniq.",
+    "ex": "Aks holda aniqlashtir."
+   }
+  ]
+ },
+ {
+  "zoom": "P2",
+  "title": "Rol / Ton / Format",
+  "sub": "Boshqaruv",
+  "coord": "Control / P2",
+  "eyebrow": "02 / Rol, ton, auditoriya, uzunlik",
+  "mtitle": "Javobni boshqarish: rol, ton, format",
+  "lede": "Modelga <strong>rol</strong> ber, <strong>ton</strong> va <strong>auditoriyani belgila, <strong>chiqish formatini</strong> aniq ayt - javob aynan sen xohlagandek chiqadi.",
+  "doc": "<div class='prose'><h3>NEGA muhim: rol javob uslubini boshqaradi</h3><p>Bir xil savolga shifokor, o'qituvchi va do'st uch xil javob beradi - so'z tanlashi, chuqurligi, ohangi bilan. Modelga <strong>rol (persona)</strong> bersang, uni o'sha uslubdagi matnga \"tenglaysan\" va javob aynan sen kutgan darajada chiqadi.</p><h3>QANDAY ishlaydi: persona kontekstni toraytiradi</h3><p>\"You are a senior engineer\" deganingda, model o'z bilimidan aynan <strong>ekspert uslubidagi matnlar</strong>ga yaqin naqshni tanlaydi. Rol - bu modelning ulkan ehtimollik fazosida to'g'ri \"burchak\"ni ko'rsatuvchi kompas. Ton va auditoriya esa o'sha burchakni yanada aniqlaydi.</p><div class=\"exlist\"><div class=\"ex\"><b>Act as an experienced English teacher.</b><span>model o'qituvchi uslubida, sabr bilan tushuntiradi</span></div><div class=\"ex\"><b>You are a senior software engineer reviewing code.</b><span>ekspert nuqtai nazari, texnik chuqurlik</span></div><div class=\"ex\"><b>Explain like I'm 12.</b><span>sodda, yoshga mos til</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 150' role='img' aria-label='Vazifaga rol ton va format qoshilib boshqariladigan javob hosil boladi'><rect class='box' x='20' y='50' width='120' height='50' rx='8'/><text x='80' y='80' text-anchor='middle'>Vazifa</text><path class='edga' d='M140 75 H200' marker-end='url(#arP2a)'/><rect class='boxa' x='200' y='30' width='160' height='90' rx='8'/><text x='280' y='58' text-anchor='middle'>+ Rol</text><text x='280' y='80' text-anchor='middle' class='muted'>+ Ton</text><text x='280' y='102' text-anchor='middle' class='muted'>+ Format</text><path class='edga' d='M360 75 H430' marker-end='url(#arP2a)'/><rect class='box' x='430' y='50' width='210' height='50' rx='8'/><text x='535' y='80' text-anchor='middle'>Boshqarilgan javob</text><defs><marker id='arP2a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Rol + ton + format vazifaga qo'shilib, javob uslubini aniq boshqaradi.</figcaption></figure><h3>Amaliy misol: chiqish formatini aniq so'ra</h3><div class=\"chips\"><span class=\"chip t\">bullet ro'yxat</span><span class=\"chip t\">jadval (table)</span><span class=\"chip t\">JSON</span><span class=\"chip t\">qadam-baqadam</span><span class=\"chip t\">max 100 so'z</span></div><p>Salbiy cheklov ham foydali - nimani <strong>qilmaslik</strong>ni ayt:</p><div class=\"exlist\"><div class=\"ex\"><b>Do not use jargon.</b><span>atama ishlatma</span></div><div class=\"ex\"><b>Avoid more than 5 bullet points.</b><span>5 tadan oshma</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Bitta promptda ko'p rol va ko'p vazifani aralashtirib yuborish: \"o'qituvchi ham, tanqidchi ham, tarjimon ham bo'l\". Model chalkashadi va o'rtacha, betayin javob beradi. Bitta aniq rol - bitta aniq maqsad.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Avval <strong>rol + format</strong>ni belgila, keyin vazifani ber - shunda javob barqaror bo'ladi. Takror ishlatadigan rolni <strong>system prompt</strong>ga joyla: u butun suhbat davomida amal qiladi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Boshqaruv shabloni",
+     "p": "Rol, ton, auditoriya, format, salbiy cheklov."
     },
-    "quiz": [
-      {
-        "q": "\"Act as a teacher\" - bu nima?",
-        "a": [
-          "format",
-          "rol (persona) berish",
-          "cheklov",
-          "til"
-        ],
-        "c": 1,
-        "w": "Rol/persona - javob uslubini belgilaydi.",
-        "level": "easy"
-      },
-      {
-        "q": "\"Explain like I'm 12\" nimani belgilaydi?",
-        "a": [
-          "formatni",
-          "auditoriya/sodda tonni",
-          "uzunlikni",
-          "modelni"
-        ],
-        "c": 1,
-        "w": "Auditoriya va soddalik.",
-        "level": "practical"
-      },
-      {
-        "q": "Salbiy cheklov misoli:",
-        "a": [
-          "Use jargon",
-          "Do not use jargon",
-          "Be long",
-          "Add more"
-        ],
-        "c": 1,
-        "w": "\"Do not ...\" - nimani qilmaslik.",
-        "level": "practical"
-      },
-      {
-        "q": "Barqaror javob uchun:",
-        "a": [
-          "ko'p narsa birga so'rash",
-          "rol+format avval, keyin vazifa",
-          "qisqa so'rash",
-          "takror so'rash"
-        ],
-        "c": 1,
-        "w": "Tuzilgan promat barqaror natija beradi.",
-        "level": "scenario"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "Rol berish qaysi?",
-        "options": [
-          "Write a summary.",
-          "You are an expert editor. Summarize this.",
-          "Summary now.",
-          "Make it short."
-        ],
-        "correct": 1,
-        "why": "\"You are an expert editor\" - rol."
-      },
-      {
-        "type": "choice",
-        "q": "JSON formatda javob olish uchun:",
-        "options": [
-          "umid qilasan",
-          "promptda aniq \"Return valid JSON with keys...\" deysan",
-          "modelni almashtirasan",
-          "qayta so'raysan"
-        ],
-        "correct": 1,
-        "why": "Formatni aniq talab qil."
-      },
-      {
-        "type": "choice",
-        "q": "Auditoriyani belgilash nega muhim?",
-        "options": [
-          "tezlik",
-          "javob darajasi/tili mos bo'lishi uchun",
-          "narx",
-          "model"
-        ],
-        "correct": 1,
-        "why": "Bolaga va ekspertga boshqacha tushuntiriladi."
-      },
-      {
-        "type": "gap",
-        "q": "Atama ishlatmasligini so'rash: \"___ not use jargon\" (inglizcha).",
-        "answers": [
-          "do"
-        ],
-        "why": "\"Do not use jargon\" - salbiy cheklov.",
-        "hint": ""
-      }
-    ],
-    "vocab": [
-      {
-        "w": "role / persona",
-        "ipa": "",
-        "pos": "",
-        "uz": "modelga berilgan rol",
-        "ex": "Act as a career coach."
-      },
-      {
-        "w": "tone",
-        "ipa": "",
-        "pos": "",
-        "uz": "ton (rasmiy/do'stona)",
-        "ex": "Use a professional tone."
-      },
-      {
-        "w": "audience",
-        "ipa": "",
-        "pos": "",
-        "uz": "auditoriya (kim uchun)",
-        "ex": "Write for beginners."
-      },
-      {
-        "w": "output format",
-        "ipa": "",
-        "pos": "",
-        "uz": "chiqish ko'rinishi",
-        "ex": "Return a markdown table."
-      },
-      {
-        "w": "system prompt",
-        "ipa": "",
-        "pos": "",
-        "uz": "modelga doimiy yo'riqnoma",
-        "ex": "Set behavior in the system prompt."
-      },
-      {
-        "w": "constraint",
-        "ipa": "",
-        "pos": "",
-        "uz": "cheklov",
-        "ex": "Keep it under 100 words."
-      }
-    ],
-    "grammar": [
-      {
-        "topic": "Rol",
-        "rule": "\"Act as ...\" / \"You are ...\".",
-        "ex": "You are a senior editor."
-      },
-      {
-        "topic": "Ton & auditoriya",
-        "rule": "Kim uchun va qanday ohangda.",
-        "ex": "Explain like I'm 12."
-      },
-      {
-        "topic": "Format",
-        "rule": "Ro'yxat/jadval/JSON ni aniq so'ra.",
-        "ex": "Return 5 bullets, <12 words each."
-      }
-    ]
+    "title": "Rol + ton + format",
+    "lang": "text",
+    "code": "You are a friendly nutrition coach.\nExplain a balanced breakfast to a busy student.\nTone: encouraging, simple.\nFormat: 5 bullet points, each under 12 words.\nDo not recommend supplements."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr2-1",
+    "html": "Promptda rol (persona) berishni o'rgandim",
+    "crit": "\"Act as ...\" ishlatasan"
+   },
+   {
+    "id": "pr2-2",
+    "html": "Ton va auditoriyani belgiladim",
+    "crit": "rasmiy/sodda, kim uchun"
+   },
+   {
+    "id": "pr2-3",
+    "html": "Chiqish formatini aniq so'radim (ro'yxat/jadval/JSON)",
+    "crit": "natija so'ralgan formatda"
+   },
+   {
+    "id": "pr2-4",
+    "html": "Salbiy cheklov (\"do not...\") ishlatdim",
+    "crit": "kerakmas narsani taqiqlading"
+   },
+   {
+    "id": "pr2-5",
+    "html": "Playgroundda rol+format promptni sinadim",
+    "crit": "javob uslubi o'zgargani ko'rindi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts",
+    "title": "Anthropic - System prompts & roles",
+    "desc": "Rol berish",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/techniques",
+    "title": "Texnikalar",
+    "desc": "Rol, format, ton",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI - Guide",
+    "desc": "Format va uslub",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Control amaliyot",
+   "title": "Rolli prompt",
+   "desc": "Bitta vazifani 2 xil rol/ton bilan yozib, natijalarini Playgroundda taqqosla.",
+   "features": [
+    "2 ta rol (masalan o'qituvchi/ekspert)",
+    "Ton belgilangan",
+    "Format so'ralgan",
+    "Natijalar taqqoslangan",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "Rolli prompt - Work Assistant",
+     "desc": "Rol / Ton / Format texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "Rolli prompt - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
   },
-  {
-    "zoom": "P3",
-    "title": "Misol & bosqich",
-    "sub": "Few-shot",
-    "coord": "Examples / P3",
-    "eyebrow": "03 / Misol bilan o'rgatish & bosqichma-bosqich",
-    "mtitle": "Misol ber, bosqichma-bosqich o'ylat",
-    "lede": "Modelga <strong>misol ko'rsatsang</strong> (few-shot), u naqshni nusxa qiladi. Murakkab vazifada <strong>\"bosqichma-bosqich o'yla\"</strong> (chain-of-thought) desang, aniqroq bo'ladi.",
-    "doc": "<div class='prose'><h3>Zero / One / Few-shot</h3><div class=\"exlist\"><div class=\"ex\"><b>Zero-shot</b><span>misolsiz, faqat vazifa</span></div><div class=\"ex\"><b>One-shot</b><span>bitta misol bilan</span></div><div class=\"ex\"><b>Few-shot</b><span>bir necha misol bilan - naqsh aniq</span></div></div><h3>Few-shot misol</h3><p>Modelga \"kirish -> chiqish\" namunalarini ber, keyin yangisini so'ra. U formatni va uslubni nusxa qiladi.</p><h3>Chain-of-thought (bosqichma-bosqich)</h3><p>Mantiqiy yoki matematik vazifada <strong>\"Think step by step\"</strong> desang, model oraliq qadamlarni ko'rsatadi va kamroq xato qiladi.</p><div class=\"exlist\"><div class=\"ex\"><b>Solve this. Think step by step, then give the final answer.</b><span>qadamlar + yakuniy javob</span></div></div><h3>Delimiter (ajratgich)</h3><p>Matn va ko'rsatma aralashmasin uchun ajratgich ishlat: <code class='inline'>\"\"\"</code>, <code class='inline'>###</code>, yoki teglar.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Few-shot - eng kuchli texnikalardan. Modelga \"shuning kabi qil\" deb <strong>2-3 sifatli misol</strong> bersang, natija keskin yaxshilanadi.</p></div></div></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Few-shot: misol bilan o'rgatish",
-          "p": "Naqshni ber, model nusxa qiladi."
-        },
-        "title": "Few-shot shabloni",
-        "lang": "text",
-        "code": "Classify the sentiment as Positive / Negative / Neutral.\n\nExample 1:\nText: \"I love this!\" -> Positive\nExample 2:\nText: \"It's okay.\" -> Neutral\n\nNow classify:\nText: \"This is the worst.\" ->"
-      },
-      {
-        "heading": {
-          "h": "Bosqichma-bosqich",
-          "p": "Murakkab mantiq uchun."
-        },
-        "title": "Chain-of-thought",
-        "lang": "text",
-        "code": "A shop sells pens for 3000 so'm each.\nI buy 4 pens and pay with 20000 so'm.\nThink step by step, then give the change."
-      }
+  "quiz": [
+   {
+    "q": "\"Act as a teacher\" - bu nima?",
+    "a": [
+     "format",
+     "rol (persona) berish",
+     "cheklov",
+     "til"
     ],
-    "tasks": [
-      {
-        "id": "pr3-1",
-        "html": "Zero/one/few-shot farqini o'rgandim",
-        "crit": "uchtasini farqlaysan"
-      },
-      {
-        "id": "pr3-2",
-        "html": "Few-shot prompt yozdim (2-3 misol bilan)",
-        "crit": "kirish->chiqish namunalari bor"
-      },
-      {
-        "id": "pr3-3",
-        "html": "\"Think step by step\" ni mantiqiy vazifada sinadim",
-        "crit": "javob aniqroq bo'ldi"
-      },
-      {
-        "id": "pr3-4",
-        "html": "Delimiter (\"\"\" yoki ###) ishlatdim",
-        "crit": "matn va ko'rsatma ajratilgan"
-      },
-      {
-        "id": "pr3-5",
-        "html": "Playgroundda few-shot vs zero-shot ni taqqosladim",
-        "crit": "farqni ko'rding"
-      }
+    "c": 1,
+    "w": "Rol/persona - javob uslubini belgilaydi.",
+    "level": "easy"
+   },
+   {
+    "q": "\"Explain like I'm 12\" nimani belgilaydi?",
+    "a": [
+     "formatni",
+     "auditoriya/sodda tonni",
+     "uzunlikni",
+     "modelni"
     ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/techniques/fewshot",
-        "title": "Few-shot prompting",
-        "desc": "Misol bilan o'rgatish",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/techniques/cot",
-        "title": "Chain-of-thought",
-        "desc": "Bosqichma-bosqich fikrlash",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting",
-        "title": "Anthropic - Multishot",
-        "desc": "Few-shot (Claude)",
-        "host": "docs.anthropic.com"
-      }
+    "c": 1,
+    "w": "Auditoriya va soddalik.",
+    "level": "practical"
+   },
+   {
+    "q": "Salbiy cheklov misoli:",
+    "a": [
+     "Use jargon",
+     "Do not use jargon",
+     "Be long",
+     "Add more"
     ],
-    "project": {
-      "tag": "Examples amaliyot",
-      "title": "Few-shot tasnif",
-      "desc": "Biror tasnif vazifasi (masalan: xat turini aniqlash) uchun few-shot prompt tuzib, Playgroundda sina.",
-      "features": [
-        "2-3 sifatli misol",
-        "Aniq kirish->chiqish formati",
-        "Yangi kirishda test",
-        "Zero-shot bilan taqqoslash",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "Few-shot tasnif - Work Assistant",
-          "desc": "Misol & bosqich texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "Few-shot tasnif - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+    "c": 1,
+    "w": "\"Do not ...\" - nimani qilmaslik.",
+    "level": "practical"
+   },
+   {
+    "q": "Barqaror javob uchun:",
+    "a": [
+     "ko'p narsa birga so'rash",
+     "rol+format avval, keyin vazifa",
+     "qisqa so'rash",
+     "takror so'rash"
+    ],
+    "c": 1,
+    "w": "Tuzilgan prompt barqaror natija beradi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Rol berish qaysi?",
+    "options": [
+     "Write a summary.",
+     "You are an expert editor. Summarize this.",
+     "Summary now.",
+     "Make it short."
+    ],
+    "correct": 1,
+    "why": "\"You are an expert editor\" - rol."
+   },
+   {
+    "type": "choice",
+    "q": "JSON formatda javob olish uchun:",
+    "options": [
+     "umid qilasan",
+     "promptda aniq \"Return valid JSON with keys...\" deysan",
+     "modelni almashtirasan",
+     "qayta so'raysan"
+    ],
+    "correct": 1,
+    "why": "Formatni aniq talab qil."
+   },
+   {
+    "type": "choice",
+    "q": "Auditoriyani belgilash nega muhim?",
+    "options": [
+     "tezlik",
+     "javob darajasi/tili mos bo'lishi uchun",
+     "narx",
+     "model"
+    ],
+    "correct": 1,
+    "why": "Bolaga va ekspertga boshqacha tushuntiriladi."
+   },
+   {
+    "type": "gap",
+    "q": "Atama ishlatmasligini so'rash: \"___ not use jargon\" (inglizcha).",
+    "answers": [
+     "do"
+    ],
+    "why": "\"Do not use jargon\" - salbiy cheklov.",
+    "hint": ""
+   }
+  ],
+  "vocab": [
+   {
+    "w": "role / persona",
+    "ipa": "",
+    "pos": "",
+    "uz": "modelga berilgan rol",
+    "ex": "Act as a career coach."
+   },
+   {
+    "w": "tone",
+    "ipa": "",
+    "pos": "",
+    "uz": "ton (rasmiy/do'stona)",
+    "ex": "Use a professional tone."
+   },
+   {
+    "w": "audience",
+    "ipa": "",
+    "pos": "",
+    "uz": "auditoriya (kim uchun)",
+    "ex": "Write for beginners."
+   },
+   {
+    "w": "output format",
+    "ipa": "",
+    "pos": "",
+    "uz": "chiqish ko'rinishi",
+    "ex": "Return a markdown table."
+   },
+   {
+    "w": "system prompt",
+    "ipa": "",
+    "pos": "",
+    "uz": "modelga doimiy yo'riqnoma",
+    "ex": "Set behavior in the system prompt."
+   },
+   {
+    "w": "constraint",
+    "ipa": "",
+    "pos": "",
+    "uz": "cheklov",
+    "ex": "Keep it under 100 words."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Rol",
+    "rule": "\"Act as ...\" / \"You are ...\".",
+    "ex": "You are a senior editor."
+   },
+   {
+    "topic": "Ton & auditoriya",
+    "rule": "Kim uchun va qanday ohangda.",
+    "ex": "Explain like I'm 12."
+   },
+   {
+    "topic": "Format",
+    "rule": "Ro'yxat/jadval/JSON ni aniq so'ra.",
+    "ex": "Return 5 bullets, <12 words each."
+   }
+  ]
+ },
+ {
+  "zoom": "P3",
+  "title": "Misol & bosqich",
+  "sub": "Few-shot",
+  "coord": "Examples / P3",
+  "eyebrow": "03 / Misol bilan o'rgatish & bosqichma-bosqich",
+  "mtitle": "Misol ber, bosqichma-bosqich o'ylat",
+  "lede": "Modelga <strong>misol ko'rsatsang</strong> (few-shot), u naqshni nusxa qiladi. Murakkab vazifada <strong>\"bosqichma-bosqich o'yla\"</strong> (chain-of-thought) desang, aniqroq bo'ladi.",
+  "doc": "<div class='prose'><h3>NEGA muhim: ko'rsatish - aytishdan kuchli</h3><p>Ba'zan vazifani so'z bilan tushuntirish qiyin, lekin <strong>misol</strong> ko'rsatish oson. Model naqshni g'oyat yaxshi nusxa qiladi. Murakkab mantiqda esa modelni \"o'ylashga\" majbur qilsang, xato keskin kamayadi.</p><h3>QANDAY ishlaydi: few-shot mexanizmi</h3><p>Zero / one / few-shot - misollar soni bilan farqlanadi:</p><div class=\"exlist\"><div class=\"ex\"><b>Zero-shot</b><span>misolsiz, faqat vazifa</span></div><div class=\"ex\"><b>One-shot</b><span>bitta misol bilan</span></div><div class=\"ex\"><b>Few-shot</b><span>bir necha misol bilan - naqsh aniq</span></div></div><p>\"kirish -> chiqish\" namunalarini berganingda, model shu naqshni kontekstdan o'qiydi va yangi kirish uchun <strong>xuddi shu formatda</strong> davom ettiradi. U qoidani so'zsiz, misoldan \"payqaydi\".</p><figure class='svgfig'><svg viewBox='0 0 680 190' role='img' aria-label='Few-shot: bir necha kirish chiqish misoli, songra yangi kirish uchun model chiqishni bashorat qiladi'><rect class='box' x='20' y='20' width='250' height='36' rx='6'/><text x='30' y='43' class='muted'>Text: \"I love this!\"</text><path class='edge' d='M275 38 H320' marker-end='url(#arP3a)'/><rect class='boxa' x='320' y='20' width='150' height='36' rx='6'/><text x='395' y='43' text-anchor='middle'>Positive</text><rect class='box' x='20' y='66' width='250' height='36' rx='6'/><text x='30' y='89' class='muted'>Text: \"It's okay.\"</text><path class='edge' d='M275 84 H320' marker-end='url(#arP3a)'/><rect class='boxa' x='320' y='66' width='150' height='36' rx='6'/><text x='395' y='89' text-anchor='middle'>Neutral</text><rect class='box' x='20' y='120' width='250' height='40' rx='6'/><text x='30' y='145' class='accent'>Text: \"The worst.\"</text><path class='edga' d='M275 140 H320' marker-end='url(#arP3b)'/><rect class='boxa' x='320' y='120' width='150' height='40' rx='6'/><text x='395' y='145' text-anchor='middle'>? (bashorat)</text><text x='560' y='90' text-anchor='middle' class='muted'>misollar</text><text x='560' y='108' text-anchor='middle' class='muted'>naqshni</text><text x='560' y='126' text-anchor='middle' class='muted'>beradi</text><defs><marker id='arP3a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arP3b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Few-shot: kirish->chiqish misollari naqsh beradi, model yangi kirish uchun shuni davom ettiradi.</figcaption></figure><h3>QANDAY ishlaydi: chain-of-thought</h3><p>Model javobni token-token yozadi. \"Think step by step\" desang, u avval <strong>oraliq qadamlarni</strong> yozadi, va keyingi tokenlar shu qadamlarga tayanadi - shuning uchun yakuniy javob aniqroq chiqadi. Qadamlarsiz model to'g'ridan-to'g'ri javobga \"sakraydi\" va adashadi.</p><div class=\"exlist\"><div class=\"ex\"><b>Solve this. Think step by step, then give the final answer.</b><span>qadamlar + yakuniy javob</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 130' role='img' aria-label='Chain-of-thought: savol, oraliq qadam 1, qadam 2, yakuniy javob'><rect class='box' x='15' y='45' width='120' height='44' rx='8'/><text x='75' y='72' text-anchor='middle'>Savol</text><path class='edga' d='M135 67 H185' marker-end='url(#arP3c)'/><rect class='boxa' x='185' y='45' width='120' height='44' rx='8'/><text x='245' y='72' text-anchor='middle'>Qadam 1</text><path class='edga' d='M305 67 H355' marker-end='url(#arP3c)'/><rect class='boxa' x='355' y='45' width='120' height='44' rx='8'/><text x='415' y='72' text-anchor='middle'>Qadam 2</text><path class='edga' d='M475 67 H525' marker-end='url(#arP3c)'/><rect class='box' x='525' y='45' width='140' height='44' rx='8'/><text x='595' y='72' text-anchor='middle'>Yakuniy javob</text><text x='340' y='115' text-anchor='middle' class='muted'>oraliq qadamlar xatoni kamaytiradi</text><defs><marker id='arP3c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Chain-of-thought: model oraliq qadamlarni yozib, yakuniy javobga izchil keladi.</figcaption></figure><h3>Amaliy maslahat: delimiter</h3><p>Matn va ko'rsatma aralashmasin uchun ajratgich ishlat: <code class='inline'>\"\"\"</code>, <code class='inline'>###</code>, yoki teglar. Bu modelga \"qayer ko'rsatma, qayer ma'lumot\"ni aniq ko'rsatadi va prompt injection xavfini ham kamaytiradi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Sifatsiz yoki ziddiyatli misollar berish. Model misolni ko'r-ko'rona nusxa qiladi - agar misolda xato bo'lsa, xatoni ham takrorlaydi. 2-3 ta <strong>toza, izchil</strong> misol o'nlab chalkash misoldan yaxshiroq.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Few-shot - eng kuchli texnikalardan. \"Shuning kabi qil\" deb 2-3 sifatli misol ber, natija keskin yaxshilanadi. Oddiy vazifada esa misolsiz (zero-shot) ishlab, keraksiz token sarflama.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Few-shot: misol bilan o'rgatish",
+     "p": "Naqshni ber, model nusxa qiladi."
     },
-    "quiz": [
-      {
-        "q": "Few-shot nima?",
-        "a": [
-          "misolsiz so'rash",
-          "bir necha misol bilan o'rgatish",
-          "tez so'rash",
-          "qisqa so'rash"
-        ],
-        "c": 1,
-        "w": "Bir necha namuna -> naqsh.",
-        "level": "easy"
-      },
-      {
-        "q": "\"Think step by step\" qachon foydali?",
-        "a": [
-          "salomlashda",
-          "murakkab mantiq/matematikada",
-          "qisqa javobda",
-          "tarjimada"
-        ],
-        "c": 1,
-        "w": "Oraliq qadamlar xatoni kamaytiradi.",
-        "level": "practical"
-      },
-      {
-        "q": "Delimiter nimaga kerak?",
-        "a": [
-          "bezak",
-          "matn va ko'rsatmani ajratish",
-          "tezlik",
-          "narx"
-        ],
-        "c": 1,
-        "w": "Aralashib ketmaslik uchun.",
-        "level": "practical"
-      },
-      {
-        "q": "Eng kuchli texnikalardan biri:",
-        "a": [
-          "uzun yozish",
-          "few-shot (sifatli misollar)",
-          "ko'p so'rash",
-          "qisqa so'rash"
-        ],
-        "c": 1,
-        "w": "Sifatli misol - keskin yaxshilaydi.",
-        "level": "scenario"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "One-shot - bu:",
-        "options": [
-          "misolsiz",
-          "bitta misol bilan",
-          "uch misol",
-          "ko'p misol"
-        ],
-        "correct": 1,
-        "why": "One-shot - bitta namuna."
-      },
-      {
-        "type": "choice",
-        "q": "Matematik masalada aniqlik uchun qo'shasan:",
-        "options": [
-          "\"be fast\"",
-          "\"think step by step\"",
-          "\"be short\"",
-          "\"in English\""
-        ],
-        "correct": 1,
-        "why": "Bosqichma-bosqich - kamroq xato."
-      },
-      {
-        "type": "choice",
-        "q": "Delimiter misoli:",
-        "options": [
-          "katta harf",
-          "\"\"\" yoki ### bilan o'rash",
-          "ko'p probel",
-          "rang"
-        ],
-        "correct": 1,
-        "why": "Uchlik qo'shtirnoq/### - ajratgich."
-      },
-      {
-        "type": "gap",
-        "q": "Misol bilan o'rgatish texnikasi: ___-shot (inglizcha, ko'plik misol).",
-        "answers": [
-          "few"
-        ],
-        "why": "Few-shot - bir necha misol.",
-        "hint": ""
-      }
-    ],
-    "vocab": [
-      {
-        "w": "zero-shot",
-        "ipa": "",
-        "pos": "",
-        "uz": "misolsiz so'rash",
-        "ex": "Zero-shot: just the task."
-      },
-      {
-        "w": "few-shot",
-        "ipa": "",
-        "pos": "",
-        "uz": "bir necha misol bilan",
-        "ex": "Few-shot improves accuracy."
-      },
-      {
-        "w": "chain-of-thought",
-        "ipa": "",
-        "pos": "",
-        "uz": "bosqichma-bosqich fikrlash",
-        "ex": "Ask it to think step by step."
-      },
-      {
-        "w": "delimiter",
-        "ipa": "",
-        "pos": "",
-        "uz": "ajratgich (\"\"\", ###)",
-        "ex": "Wrap text in triple quotes."
-      },
-      {
-        "w": "example",
-        "ipa": "",
-        "pos": "",
-        "uz": "misol/namuna",
-        "ex": "Give 2-3 examples."
-      },
-      {
-        "w": "pattern",
-        "ipa": "",
-        "pos": "",
-        "uz": "naqsh",
-        "ex": "The model copies the pattern."
-      }
-    ],
-    "grammar": [
-      {
-        "topic": "Few-shot",
-        "rule": "2-3 kirish->chiqish misoli ber.",
-        "ex": "Text: ... -> Label:"
-      },
-      {
-        "topic": "Chain-of-thought",
-        "rule": "\"Think step by step\".",
-        "ex": "Murakkab mantiq uchun"
-      },
-      {
-        "topic": "Delimiter",
-        "rule": "Matnni \"\"\" / ### bilan ajrat.",
-        "ex": "Text: \"\"\"...\"\"\""
-      }
-    ]
+    "title": "Few-shot shabloni",
+    "lang": "text",
+    "code": "Classify the sentiment as Positive / Negative / Neutral.\n\nExample 1:\nText: \"I love this!\" -> Positive\nExample 2:\nText: \"It's okay.\" -> Neutral\n\nNow classify:\nText: \"This is the worst.\" ->"
+   },
+   {
+    "heading": {
+     "h": "Bosqichma-bosqich",
+     "p": "Murakkab mantiq uchun."
+    },
+    "title": "Chain-of-thought",
+    "lang": "text",
+    "code": "A shop sells pens for 3000 so'm each.\nI buy 4 pens and pay with 20000 so'm.\nThink step by step, then give the change."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr3-1",
+    "html": "Zero/one/few-shot farqini o'rgandim",
+    "crit": "uchtasini farqlaysan"
+   },
+   {
+    "id": "pr3-2",
+    "html": "Few-shot prompt yozdim (2-3 misol bilan)",
+    "crit": "kirish->chiqish namunalari bor"
+   },
+   {
+    "id": "pr3-3",
+    "html": "\"Think step by step\" ni mantiqiy vazifada sinadim",
+    "crit": "javob aniqroq bo'ldi"
+   },
+   {
+    "id": "pr3-4",
+    "html": "Delimiter (\"\"\" yoki ###) ishlatdim",
+    "crit": "matn va ko'rsatma ajratilgan"
+   },
+   {
+    "id": "pr3-5",
+    "html": "Playgroundda few-shot vs zero-shot ni taqqosladim",
+    "crit": "farqni ko'rding"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/techniques/fewshot",
+    "title": "Few-shot prompting",
+    "desc": "Misol bilan o'rgatish",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/techniques/cot",
+    "title": "Chain-of-thought",
+    "desc": "Bosqichma-bosqich fikrlash",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting",
+    "title": "Anthropic - Multishot",
+    "desc": "Few-shot (Claude)",
+    "host": "docs.anthropic.com"
+   }
+  ],
+  "project": {
+   "tag": "Examples amaliyot",
+   "title": "Few-shot tasnif",
+   "desc": "Biror tasnif vazifasi (masalan: xat turini aniqlash) uchun few-shot prompt tuzib, Playgroundda sina.",
+   "features": [
+    "2-3 sifatli misol",
+    "Aniq kirish->chiqish formati",
+    "Yangi kirishda test",
+    "Zero-shot bilan taqqoslash",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "Few-shot tasnif - Work Assistant",
+     "desc": "Misol & bosqich texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "Few-shot tasnif - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
   },
-  {
-    "zoom": "P4",
-    "title": "Iteratsiya",
-    "sub": "Tuzatish",
-    "coord": "Iterate / P4",
-    "eyebrow": "04 / Takrorlash va yaxshilash",
-    "mtitle": "Prompt - bir martalik emas, takroriy",
-    "lede": "Birinchi javob mukammal bo'lmasa - normal. Yaxshi natija <strong>iteratsiya</strong>дан keladi: javobni bahola, nimani o'zgartirishni ayt, qayta so'ra.",
-    "doc": "<div class='prose'><h3>Iteratsiya tsikli</h3><div class=\"exlist\"><div class=\"ex\"><b>1. So'ra</b><span>dastlabki prompt</span></div><div class=\"ex\"><b>2. Baho</b><span>javobda nima kam/ortiqcha?</span></div><div class=\"ex\"><b>3. Tuzat</b><span>aniq feedback ber: \"qisqaroq\", \"misol qo'sh\"</span></div><div class=\"ex\"><b>4. Qayta</b><span>yaxshilangan natija</span></div></div><h3>Aniq feedback ber</h3><div class=\"exlist\"><div class=\"ex\"><b>Make it shorter - under 80 words.</b><span>aniq cheklov</span></div><div class=\"ex\"><b>Add one concrete example.</b><span>aniq qo'shimcha</span></div><div class=\"ex\"><b>Rewrite point 2 in simpler words.</b><span>aniq qism</span></div></div><h3>Modeldan o'zini yaxshilashni so'ra</h3><div class=\"exlist\"><div class=\"ex\"><b>List 3 ways this answer could be improved, then rewrite it.</b><span>model o'zini tahlil qiladi</span></div></div><h3>Keng tarqalgan muammolar</h3><div class=\"chips\"><span class=\"chip\">juda umumiy -> aniqlashtir</span><span class=\"chip\">juda uzun -> cheklov qo'y</span><span class=\"chip\">noto'g'ri ton -> ton belgila</span><span class=\"chip\">mavzudan chetga -> fokusla</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maslahat</p><p>Butun promptni qaytadan yozma - <strong>aniq bitta narsani</strong> o'zgartirib qayta so'ra. Shunda nima ishlaganini bilib borasan.</p></div></div></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Bosqichma-bosqich yaxshilash",
-          "p": "Aniq feedback bilan qayta so'ra."
-        },
-        "title": "Iteratsiya - follow-up",
-        "lang": "text",
-        "code": "(1) First prompt:\nWrite a product description for wireless earbuds.\n\n(2) Follow-up after the answer:\nGood. Now make it under 60 words, add the battery life (8h),\nand end with a short call-to-action."
-      }
+  "quiz": [
+   {
+    "q": "Few-shot nima?",
+    "a": [
+     "misolsiz so'rash",
+     "bir necha misol bilan o'rgatish",
+     "tez so'rash",
+     "qisqa so'rash"
     ],
-    "tasks": [
-      {
-        "id": "pr4-1",
-        "html": "Iteratsiya tsiklini (so'ra->baho->tuzat->qayta) o'rgandim",
-        "crit": "to'rt qadamni bilasan"
-      },
-      {
-        "id": "pr4-2",
-        "html": "Javobga aniq feedback berib qayta so'radim",
-        "crit": "aniq o'zgartirish so'raldi"
-      },
-      {
-        "id": "pr4-3",
-        "html": "Modeldan o'zini yaxshilashni so'radim",
-        "crit": "\"improve, then rewrite\""
-      },
-      {
-        "id": "pr4-4",
-        "html": "Bitta vazifani 3 marta iteratsiya qildim",
-        "crit": "natija borgan sayin yaxshilandi"
-      },
-      {
-        "id": "pr4-5",
-        "html": "Playgroundda follow-up promptni sinadim",
-        "crit": "javob aniqroq bo'ldi"
-      }
+    "c": 1,
+    "w": "Bir necha namuna -> naqsh.",
+    "level": "easy"
+   },
+   {
+    "q": "\"Think step by step\" qachon foydali?",
+    "a": [
+     "salomlashda",
+     "murakkab mantiq/matematikada",
+     "qisqa javobda",
+     "tarjimada"
     ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
-        "title": "Anthropic - Iterate",
-        "desc": "Promptni takroran yaxshilash",
-        "host": "docs.anthropic.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/introduction/tips",
-        "title": "Maslahatlar",
-        "desc": "Iteratsiya tavsiyalari",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://platform.openai.com/docs/guides/prompt-engineering",
-        "title": "OpenAI - Guide",
-        "desc": "Yaxshilash usullari",
-        "host": "platform.openai.com"
-      }
+    "c": 1,
+    "w": "Oraliq qadamlar xatoni kamaytiradi.",
+    "level": "practical"
+   },
+   {
+    "q": "Delimiter nimaga kerak?",
+    "a": [
+     "bezak",
+     "matn va ko'rsatmani ajratish",
+     "tezlik",
+     "narx"
     ],
-    "project": {
-      "tag": "Iterate amaliyot",
-      "title": "3 bosqichli yaxshilash",
-      "desc": "Bitta vazifani Playgroundda 3 marta iteratsiya qilib, har qadamda nima o'zgarganini yoz.",
-      "features": [
-        "Dastlabki prompt",
-        "3 ta aniq feedback",
-        "Har qadam natijasi",
-        "Nima ishlaganini yozish",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "3 bosqichli yaxshilash - Work Assistant",
-          "desc": "Iteratsiya texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "3 bosqichli yaxshilash - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+    "c": 1,
+    "w": "Aralashib ketmaslik uchun.",
+    "level": "practical"
+   },
+   {
+    "q": "Eng kuchli texnikalardan biri:",
+    "a": [
+     "uzun yozish",
+     "few-shot (sifatli misollar)",
+     "ko'p so'rash",
+     "qisqa so'rash"
+    ],
+    "c": 1,
+    "w": "Sifatli misol - keskin yaxshilaydi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "One-shot - bu:",
+    "options": [
+     "misolsiz",
+     "bitta misol bilan",
+     "uch misol",
+     "ko'p misol"
+    ],
+    "correct": 1,
+    "why": "One-shot - bitta namuna."
+   },
+   {
+    "type": "choice",
+    "q": "Matematik masalada aniqlik uchun qo'shasan:",
+    "options": [
+     "\"be fast\"",
+     "\"think step by step\"",
+     "\"be short\"",
+     "\"in English\""
+    ],
+    "correct": 1,
+    "why": "Bosqichma-bosqich - kamroq xato."
+   },
+   {
+    "type": "choice",
+    "q": "Delimiter misoli:",
+    "options": [
+     "katta harf",
+     "\"\"\" yoki ### bilan o'rash",
+     "ko'p probel",
+     "rang"
+    ],
+    "correct": 1,
+    "why": "Uchlik qo'shtirnoq/### - ajratgich."
+   },
+   {
+    "type": "gap",
+    "q": "Misol bilan o'rgatish texnikasi: ___-shot (inglizcha, ko'plik misol).",
+    "answers": [
+     "few"
+    ],
+    "why": "Few-shot - bir necha misol.",
+    "hint": ""
+   }
+  ],
+  "vocab": [
+   {
+    "w": "zero-shot",
+    "ipa": "",
+    "pos": "",
+    "uz": "misolsiz so'rash",
+    "ex": "Zero-shot: just the task."
+   },
+   {
+    "w": "few-shot",
+    "ipa": "",
+    "pos": "",
+    "uz": "bir necha misol bilan",
+    "ex": "Few-shot improves accuracy."
+   },
+   {
+    "w": "chain-of-thought",
+    "ipa": "",
+    "pos": "",
+    "uz": "bosqichma-bosqich fikrlash",
+    "ex": "Ask it to think step by step."
+   },
+   {
+    "w": "delimiter",
+    "ipa": "",
+    "pos": "",
+    "uz": "ajratgich (\"\"\", ###)",
+    "ex": "Wrap text in triple quotes."
+   },
+   {
+    "w": "example",
+    "ipa": "",
+    "pos": "",
+    "uz": "misol/namuna",
+    "ex": "Give 2-3 examples."
+   },
+   {
+    "w": "pattern",
+    "ipa": "",
+    "pos": "",
+    "uz": "naqsh",
+    "ex": "The model copies the pattern."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Few-shot",
+    "rule": "2-3 kirish->chiqish misoli ber.",
+    "ex": "Text: ... -> Label:"
+   },
+   {
+    "topic": "Chain-of-thought",
+    "rule": "\"Think step by step\".",
+    "ex": "Murakkab mantiq uchun"
+   },
+   {
+    "topic": "Delimiter",
+    "rule": "Matnni \"\"\" / ### bilan ajrat.",
+    "ex": "Text: \"\"\"...\"\"\""
+   }
+  ]
+ },
+ {
+  "zoom": "P4",
+  "title": "Iteratsiya",
+  "sub": "Tuzatish",
+  "coord": "Iterate / P4",
+  "eyebrow": "04 / Takrorlash va yaxshilash",
+  "mtitle": "Prompt - bir martalik emas, takroriy",
+  "lede": "Birinchi javob mukammal bo'lmasa - normal. Yaxshi natija <strong>iteratsiyadan keladi: javobni bahola, nimani o'zgartirishni ayt, qayta so'ra.",
+  "doc": "<div class='prose'><h3>NEGA muhim: birinchi javob - qoralama</h3><p>Birinchi urinishda mukammal natija kutish - eng keng tarqalgan xato. Tajribali foydalanuvchi promptni <strong>suhbat</strong> deb qaraydi: yaxshi natija bitta zarbadan emas, <strong>iteratsiyadan</strong> keladi. Har qadam avvalgisidan aniqroq bo'ladi.</p><h3>QANDAY ishlaydi: suhbat kontekst sifatida</h3><p>Follow-up so'rov yuborganingda, model <strong>butun avvalgi suhbatni</strong> kontekst sifatida ko'radi - o'zining oldingi javobi ham kontekstda turadi. Shuning uchun \"buni qisqartir\" desang, u nimaniligini biladi. Sen faqat farqni aytasan, hammasini qaytadan yozmaysan.</p><h3>Iteratsiya tsikli</h3><div class=\"exlist\"><div class=\"ex\"><b>1. So'ra</b><span>dastlabki prompt</span></div><div class=\"ex\"><b>2. Baho</b><span>javobda nima kam/ortiqcha?</span></div><div class=\"ex\"><b>3. Tuzat</b><span>aniq feedback: \"qisqaroq\", \"misol qo'sh\"</span></div><div class=\"ex\"><b>4. Qayta</b><span>yaxshilangan natija</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 220' role='img' aria-label='Iteratsiya sikli: sora, baho, tuzat, qayta - takrorlanadigan aylana'><rect class='box' x='270' y='15' width='140' height='46' rx='8'/><text x='340' y='43' text-anchor='middle'>1. So'ra</text><rect class='box' x='500' y='90' width='140' height='46' rx='8'/><text x='570' y='118' text-anchor='middle'>2. Baho</text><rect class='boxa' x='270' y='160' width='140' height='46' rx='8'/><text x='340' y='188' text-anchor='middle'>3. Tuzat</text><rect class='box' x='40' y='90' width='140' height='46' rx='8'/><text x='110' y='118' text-anchor='middle'>4. Qayta</text><path class='edga' d='M410 45 C480 55 520 75 545 88' marker-end='url(#arP4a)'/><path class='edga' d='M545 136 C520 160 470 175 412 182' marker-end='url(#arP4a)'/><path class='edga' d='M270 185 C200 178 155 158 132 138' marker-end='url(#arP4a)'/><path class='edga' d='M132 88 C155 62 205 45 268 40' marker-end='url(#arP4a)'/><text x='340' y='118' text-anchor='middle' class='muted'>har aylanada</text><text x='340' y='136' text-anchor='middle' class='muted'>aniqroq</text><defs><marker id='arP4a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Iteratsiya sikli: so'ra -> baho -> tuzat -> qayta; har aylanada natija yaxshilanadi.</figcaption></figure><h3>Amaliy misol: aniq feedback ber</h3><div class=\"exlist\"><div class=\"ex\"><b>Make it shorter - under 80 words.</b><span>aniq, o'lchanadigan cheklov</span></div><div class=\"ex\"><b>Add one concrete example.</b><span>aniq qo'shimcha</span></div><div class=\"ex\"><b>Rewrite point 2 in simpler words.</b><span>aniq qism</span></div></div><p>Modeldan o'zini yaxshilashni ham so'rash mumkin:</p><div class=\"exlist\"><div class=\"ex\"><b>List 3 ways this answer could be improved, then rewrite it.</b><span>model o'zini tahlil qiladi</span></div></div><div class=\"chips\"><span class=\"chip\">juda umumiy -> aniqlashtir</span><span class=\"chip\">juda uzun -> cheklov qo'y</span><span class=\"chip\">noto'g'ri ton -> ton belgila</span><span class=\"chip\">mavzudan chetga -> fokusla</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Bir follow-up'da bir vaqtda <strong>ko'p narsani</strong> o'zgartirish: \"qisqartir, tonni o'zgartir, misol qo'sh, tarjima qil\". Natija yaxshilansa ham, aynan nima ta'sir qilganini bilmaysan - keyingi safar takrorlay olmaysan.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Butun promptni qaytadan yozma - <strong>bitta narsani</strong> o'zgartirib qayta so'ra. Shunda nima ishlaganini aniq bilib borasan va o'z \"prompt uslubing\"ni shakllantirasan.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Bosqichma-bosqich yaxshilash",
+     "p": "Aniq feedback bilan qayta so'ra."
     },
-    "quiz": [
-      {
-        "q": "Iteratsiya nima?",
-        "a": [
-          "bir martada mukammal",
-          "javobni baholab, tuzatib qayta so'rash",
-          "tez so'rash",
-          "modelni almashtirish"
-        ],
-        "c": 1,
-        "w": "Takroriy yaxshilash.",
-        "level": "easy"
-      },
-      {
-        "q": "Eng yaxshi feedback qaysi?",
-        "a": [
-          "\"better\"",
-          "\"make it under 80 words\"",
-          "\"no\"",
-          "\"again\""
-        ],
-        "c": 1,
-        "w": "Aniq, o'lchanadigan feedback.",
-        "level": "practical"
-      },
-      {
-        "q": "Bir vaqtda nechta narsani o'zgartirgan ma'qul?",
-        "a": [
-          "hammasini",
-          "bittani (nimasi ishlaganini bilish uchun)",
-          "ikkitani har doim",
-          "hech narsani"
-        ],
-        "c": 1,
-        "w": "Bitta o'zgartirsang - sababini bilasan.",
-        "level": "practical"
-      },
-      {
-        "q": "Modeldan o'zini yaxshilashni so'rash mumkinmi?",
-        "a": [
-          "yo'q",
-          "ha - \"improve, then rewrite\"",
-          "faqat kodda",
-          "faqat inglizchada"
-        ],
-        "c": 1,
-        "w": "Model o'z javobini tahlil qila oladi.",
-        "level": "scenario"
-      }
-    ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "Aniq feedback qaysi?",
-        "options": [
-          "make it good",
-          "shorten to 50 words and add an example",
-          "fix it",
-          "more"
-        ],
-        "correct": 1,
-        "why": "O'lchanadigan, aniq."
-      },
-      {
-        "type": "choice",
-        "q": "Birinchi javob yomon bo'lsa:",
-        "options": [
-          "taslim bo'lasan",
-          "aniq feedback bilan iteratsiya qilasan",
-          "modelni o'chirasan",
-          "kutasan"
-        ],
-        "correct": 1,
-        "why": "Iteratsiya - kalit."
-      },
-      {
-        "type": "choice",
-        "q": "Bir vaqtda ko'p narsani o'zgartirsang:",
-        "options": [
-          "aniqroq bo'ladi",
-          "nima ishlaganini bilmaysan",
-          "tezroq",
-          "arzonroq"
-        ],
-        "correct": 1,
-        "why": "Bittalab o'zgartir."
-      },
-      {
-        "type": "gap",
-        "q": "Modelga: \"List 3 improvements, then ___ it\" (qayta yoz).",
-        "answers": [
-          "rewrite"
-        ],
-        "why": "Rewrite - qayta yozish.",
-        "hint": ""
-      }
-    ],
-    "vocab": [
-      {
-        "w": "iterate",
-        "ipa": "",
-        "pos": "",
-        "uz": "takroran yaxshilamoq",
-        "ex": "Iterate until it's right."
-      },
-      {
-        "w": "feedback",
-        "ipa": "",
-        "pos": "",
-        "uz": "aniq fikr/tuzatish",
-        "ex": "Give specific feedback."
-      },
-      {
-        "w": "refine",
-        "ipa": "",
-        "pos": "",
-        "uz": "sayqallamoq",
-        "ex": "Refine the prompt."
-      },
-      {
-        "w": "follow-up",
-        "ipa": "",
-        "pos": "",
-        "uz": "keyingi so'rov",
-        "ex": "Send a follow-up prompt."
-      },
-      {
-        "w": "revise",
-        "ipa": "",
-        "pos": "",
-        "uz": "qayta ko'rib chiqmoq",
-        "ex": "Revise point 2."
-      },
-      {
-        "w": "output",
-        "ipa": "",
-        "pos": "",
-        "uz": "chiqish/natija",
-        "ex": "Improve the output."
-      }
-    ],
-    "grammar": [
-      {
-        "topic": "Iteratsiya tsikli",
-        "rule": "So'ra -> baho -> tuzat -> qayta.",
-        "ex": "Aniq feedback bilan."
-      },
-      {
-        "topic": "Bittalab o'zgartir",
-        "rule": "Bir vaqtda bitta narsani o'zgartir.",
-        "ex": "Nimasi ishlaganini bilasan."
-      },
-      {
-        "topic": "O'z-o'zini yaxshilash",
-        "rule": "\"Improve, then rewrite.\"",
-        "ex": "Model o'zini tahlil qiladi."
-      }
-    ]
+    "title": "Iteratsiya - follow-up",
+    "lang": "text",
+    "code": "(1) First prompt:\nWrite a product description for wireless earbuds.\n\n(2) Follow-up after the answer:\nGood. Now make it under 60 words, add the battery life (8h),\nand end with a short call-to-action."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr4-1",
+    "html": "Iteratsiya tsiklini (so'ra->baho->tuzat->qayta) o'rgandim",
+    "crit": "to'rt qadamni bilasan"
+   },
+   {
+    "id": "pr4-2",
+    "html": "Javobga aniq feedback berib qayta so'radim",
+    "crit": "aniq o'zgartirish so'raldi"
+   },
+   {
+    "id": "pr4-3",
+    "html": "Modeldan o'zini yaxshilashni so'radim",
+    "crit": "\"improve, then rewrite\""
+   },
+   {
+    "id": "pr4-4",
+    "html": "Bitta vazifani 3 marta iteratsiya qildim",
+    "crit": "natija borgan sayin yaxshilandi"
+   },
+   {
+    "id": "pr4-5",
+    "html": "Playgroundda follow-up promptni sinadim",
+    "crit": "javob aniqroq bo'ldi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    "title": "Anthropic - Iterate",
+    "desc": "Promptni takroran yaxshilash",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/introduction/tips",
+    "title": "Maslahatlar",
+    "desc": "Iteratsiya tavsiyalari",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI - Guide",
+    "desc": "Yaxshilash usullari",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Iterate amaliyot",
+   "title": "3 bosqichli yaxshilash",
+   "desc": "Bitta vazifani Playgroundda 3 marta iteratsiya qilib, har qadamda nima o'zgarganini yoz.",
+   "features": [
+    "Dastlabki prompt",
+    "3 ta aniq feedback",
+    "Har qadam natijasi",
+    "Nima ishlaganini yozish",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "3 bosqichli yaxshilash - Work Assistant",
+     "desc": "Iteratsiya texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "3 bosqichli yaxshilash - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
   },
-  {
-    "zoom": "P5",
-    "title": "Qo'llash & Xavfsizlik",
-    "sub": "Amaliyot",
-    "coord": "Apply / P5",
-    "eyebrow": "05 / Real qo'llash va xavfsizlik",
-    "mtitle": "AI'ni real ishda aqlli qo'llash",
-    "lede": "Endi hammasini birlashtiramiz: yozish, kod, tahlil, o'rganish uchun promptlar - va eng muhimi, <strong>natijani tekshirish</strong>, <strong>maxfiylik</strong> va cheklovlarni bilish.",
-    "doc": "<div class='prose'><h3>Kundalik qo'llashlar</h3><div class=\"exlist\"><div class=\"ex\"><b>Yozish</b><span>xat, post, taklif - ton + uzunlik bilan</span></div><div class=\"ex\"><b>Kod</b><span>tushuntir, xatoni top, qayta yoz - kontekst ber</span></div><div class=\"ex\"><b>Tahlil</b><span>matnni umumlashtir, taqqosla, ro'yxatla</span></div><div class=\"ex\"><b>O'rganish</b><span>tushuntir, savol ber, mashq tuz</span></div></div><h3>Doim tekshir (verify)</h3><p>AI ishonchli eshitiladi, lekin <strong>xato bo'lishi mumkin</strong>. Faktlar, raqamlar, kod, huquqiy/tibbiy maslahatni <strong>mustaqil tekshir</strong>. AI - yordamchi, oxirgi qaror - seniki.</p><h3>Maxfiylik (privacy)</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maxfiy ma'lumot berma</p><p>Parol, karta raqami, shaxsiy/maxfiy ma'lumotni AI'ga yozma. U uchinchi tomon serveriga boradi.</p></div></div><h3>Prompt injection (ogohlik)</h3><p>AI'ga tashqi matn (veb-sahifa, hujjat) bersang, o'sha matn ichidagi \"yashirin ko'rsatma\" modelni chalg'itishi mumkin. Ishonchsiz manbaga ko'r-ko'rona ishonma.</p><h3>Etika</h3><div class=\"chips\"><span class=\"chip\">plagiat emas - o'zing tekshir</span><span class=\"chip\">haqqoniylik</span><span class=\"chip\">ma'suliyat seniki</span></div><p>AI - kuchli vosita, lekin <strong>sen boshqarasan</strong>. To'g'ri prompt + tanqidiy fikr = eng yaxshi natija.</p></div>",
-    "code": [
-      {
-        "heading": {
-          "h": "Universal prompt shabloni",
-          "p": "Bo'shliklarni to'ldirib har vazifaga ishlat."
-        },
-        "title": "Qayta ishlatiladigan shablon (template)",
-        "lang": "text",
-        "code": "Role: You are a {ROLE}.\nTask: {TASK}.\nContext: {WHO/WHY}.\nFormat: {OUTPUT FORMAT}.\nConstraints: {LENGTH, TONE, LANGUAGE}.\nIf unsure, say so instead of guessing.\n\nInput:\n\"\"\"{INPUT}\"\"\""
-      }
+  "quiz": [
+   {
+    "q": "Iteratsiya nima?",
+    "a": [
+     "bir martada mukammal",
+     "javobni baholab, tuzatib qayta so'rash",
+     "tez so'rash",
+     "modelni almashtirish"
     ],
-    "tasks": [
-      {
-        "id": "pr5-1",
-        "html": "AI javobini doim tekshirish odatini o'zlashtirdim",
-        "crit": "muhim faktni mustaqil tekshirasan"
-      },
-      {
-        "id": "pr5-2",
-        "html": "Maxfiy ma'lumot bermaslik qoidasini qabul qildim",
-        "crit": "parol/karta yozmaysan"
-      },
-      {
-        "id": "pr5-3",
-        "html": "Prompt injection xavfini tushundim",
-        "crit": "ishonchsiz matnga ehtiyot bo'lasan"
-      },
-      {
-        "id": "pr5-4",
-        "html": "O'z ishim uchun qayta ishlatiladigan shablon yasadim",
-        "crit": "to'ldiriladigan template tayyor"
-      },
-      {
-        "id": "pr5-5",
-        "html": "Playgroundda shablonni real vazifada sinadim",
-        "crit": "natija sifatli chiqdi"
-      }
+    "c": 1,
+    "w": "Takroriy yaxshilash.",
+    "level": "easy"
+   },
+   {
+    "q": "Eng yaxshi feedback qaysi?",
+    "a": [
+     "\"better\"",
+     "\"make it under 80 words\"",
+     "\"no\"",
+     "\"again\""
     ],
-    "resources": [
-      {
-        "type": "doc",
-        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
-        "title": "Anthropic - Best practices",
-        "desc": "Amaliy tavsiyalar",
-        "host": "docs.anthropic.com"
-      },
-      {
-        "type": "doc",
-        "url": "https://www.promptingguide.ai/risks",
-        "title": "Prompt risklar",
-        "desc": "Injection, xavfsizlik",
-        "host": "promptingguide.ai"
-      },
-      {
-        "type": "doc",
-        "url": "https://platform.openai.com/docs/guides/safety-best-practices",
-        "title": "OpenAI - Safety",
-        "desc": "Xavfsizlik amaliyotlari",
-        "host": "platform.openai.com"
-      }
+    "c": 1,
+    "w": "Aniq, o'lchanadigan feedback.",
+    "level": "practical"
+   },
+   {
+    "q": "Bir vaqtda nechta narsani o'zgartirgan ma'qul?",
+    "a": [
+     "hammasini",
+     "bittani (nimasi ishlaganini bilish uchun)",
+     "ikkitani har doim",
+     "hech narsani"
     ],
-    "project": {
-      "tag": "Yakuniy amaliyot",
-      "title": "Shaxsiy prompt shabloningni yarat",
-      "desc": "O'z ishingdagi bitta takroriy vazifa uchun to'liq, qayta ishlatiladigan prompt shablonini yasab, Playgroundda mukammallashtir.",
-      "features": [
-        "To'ldiriladigan template",
-        "Rol+vazifa+format+cheklov",
-        "Iteratsiya bilan sayqallangan",
-        "Natija tekshirilgan",
-        "Before/after prompt",
-        "Output baholash mezoni",
-        "Xavfsizlik va cheklov",
-        "Reusable template"
-      ],
-      "rubric": [
-        "prompting bo'yicha yakuniy ish mustaqil ishga tushadigan holatda bo'lishi kerak.",
-        "Asosiy talablar bajarilgan: funksionallik, aniqlik, xatolarni ko'rsatish va yakuniy natija tekshiriladi.",
-        "Kod yoki yozma ish tartibli, nomlash tushunarli, keraksiz murakkabliksiz tayyorlangan.",
-        "Natija qisqa izoh bilan topshiriladi: nima qilindi, qanday tekshirildi, keyingi yaxshilash nima.",
-        "Kamida bitta real holat yoki foydalanuvchi ssenariysi bilan sinab ko'rilgan.",
-        "Prompt aniq input/output format beradi.",
-        "Kamida 3 xil test holatda sinov qilingan.",
-        "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
-        "Natija baholash mezoni bilan tekshirilgan."
-      ],
-      "variants": [
-        {
-          "title": "Shaxsiy prompt shabloningni yarat - Work Assistant",
-          "desc": "Qo'llash & Xavfsizlik texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
-          "deliverables": [
-            "System/role prompt",
-            "3 test input",
-            "Output quality rubric"
-          ]
-        },
-        {
-          "title": "Shaxsiy prompt shabloningni yarat - Automation Pack",
-          "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
-          "deliverables": [
-            "Template variables",
-            "Good/bad examples",
-            "Safety note"
-          ]
-        }
-      ]
+    "c": 1,
+    "w": "Bitta o'zgartirsang - sababini bilasan.",
+    "level": "practical"
+   },
+   {
+    "q": "Modeldan o'zini yaxshilashni so'rash mumkinmi?",
+    "a": [
+     "yo'q",
+     "ha - \"improve, then rewrite\"",
+     "faqat kodda",
+     "faqat inglizchada"
+    ],
+    "c": 1,
+    "w": "Model o'z javobini tahlil qila oladi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Aniq feedback qaysi?",
+    "options": [
+     "make it good",
+     "shorten to 50 words and add an example",
+     "fix it",
+     "more"
+    ],
+    "correct": 1,
+    "why": "O'lchanadigan, aniq."
+   },
+   {
+    "type": "choice",
+    "q": "Birinchi javob yomon bo'lsa:",
+    "options": [
+     "taslim bo'lasan",
+     "aniq feedback bilan iteratsiya qilasan",
+     "modelni o'chirasan",
+     "kutasan"
+    ],
+    "correct": 1,
+    "why": "Iteratsiya - kalit."
+   },
+   {
+    "type": "choice",
+    "q": "Bir vaqtda ko'p narsani o'zgartirsang:",
+    "options": [
+     "aniqroq bo'ladi",
+     "nima ishlaganini bilmaysan",
+     "tezroq",
+     "arzonroq"
+    ],
+    "correct": 1,
+    "why": "Bittalab o'zgartir."
+   },
+   {
+    "type": "gap",
+    "q": "Modelga: \"List 3 improvements, then ___ it\" (qayta yoz).",
+    "answers": [
+     "rewrite"
+    ],
+    "why": "Rewrite - qayta yozish.",
+    "hint": ""
+   }
+  ],
+  "vocab": [
+   {
+    "w": "iterate",
+    "ipa": "",
+    "pos": "",
+    "uz": "takroran yaxshilamoq",
+    "ex": "Iterate until it's right."
+   },
+   {
+    "w": "feedback",
+    "ipa": "",
+    "pos": "",
+    "uz": "aniq fikr/tuzatish",
+    "ex": "Give specific feedback."
+   },
+   {
+    "w": "refine",
+    "ipa": "",
+    "pos": "",
+    "uz": "sayqallamoq",
+    "ex": "Refine the prompt."
+   },
+   {
+    "w": "follow-up",
+    "ipa": "",
+    "pos": "",
+    "uz": "keyingi so'rov",
+    "ex": "Send a follow-up prompt."
+   },
+   {
+    "w": "revise",
+    "ipa": "",
+    "pos": "",
+    "uz": "qayta ko'rib chiqmoq",
+    "ex": "Revise point 2."
+   },
+   {
+    "w": "output",
+    "ipa": "",
+    "pos": "",
+    "uz": "chiqish/natija",
+    "ex": "Improve the output."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Iteratsiya tsikli",
+    "rule": "So'ra -> baho -> tuzat -> qayta.",
+    "ex": "Aniq feedback bilan."
+   },
+   {
+    "topic": "Bittalab o'zgartir",
+    "rule": "Bir vaqtda bitta narsani o'zgartir.",
+    "ex": "Nimasi ishlaganini bilasan."
+   },
+   {
+    "topic": "O'z-o'zini yaxshilash",
+    "rule": "\"Improve, then rewrite.\"",
+    "ex": "Model o'zini tahlil qiladi."
+   }
+  ]
+ },
+ {
+  "zoom": "P4M",
+  "title": "Zamonaviy imkoniyatlar",
+  "sub": "RAG / Tool / JSON",
+  "coord": "Modern / P4M",
+  "eyebrow": "05 / RAG, tool calling, structured output",
+  "mtitle": "Zamonaviy LLM imkoniyatlari",
+  "lede": "Bugungi modellar shunchaki matn yozmaydi: <strong>tashqi bilim</strong> ulaydi (RAG), <strong>tashqi vosita chaqiradi</strong> (tool/function calling) va <strong>aniq formatda</strong> (structured output / JSON) javob beradi.",
+  "doc": "<div class='prose'><h3>NEGA muhim: matndan tashqariga chiqish</h3><p>Oddiy prompt modelning ichki bilimi bilan cheklangan - u eskirgan bo'lishi va to'qib chiqarishi mumkin. Zamonaviy usullar modelni <strong>tashqi bilim</strong>, <strong>tashqi vosita</strong> va <strong>qat'iy format</strong> bilan bog'laydi. Shu uch narsa AI'ni \"suhbatdosh\"dan real ish quroliga aylantiradi.</p><h3>1) RAG - tashqi bilim ulash (retrieval-augmented generation)</h3><p>RAG - model javob berishdan <strong>oldin</strong> kerakli ma'lumotni tashqi manbadan (hujjat, baza, qidiruv) topib, uni promptga <strong>kontekst sifatida qo'shish</strong>. Model endi o'z xotirasidan emas, sen bergan haqiqiy matndan javob beradi - shuning uchun to'qima kamayadi va javob dolzarb bo'ladi.</p><figure class='svgfig'><svg viewBox='0 0 680 150' role='img' aria-label='RAG oqimi: savol, qidiruv, topilgan kontekst, LLM, javob'><rect class='box' x='15' y='55' width='110' height='44' rx='8'/><text x='70' y='82' text-anchor='middle'>Savol</text><path class='edga' d='M125 77 H175' marker-end='url(#arPMr)'/><rect class='boxa' x='175' y='55' width='120' height='44' rx='8'/><text x='235' y='82' text-anchor='middle'>Qidiruv</text><path class='edga' d='M295 77 H345' marker-end='url(#arPMr)'/><rect class='boxa' x='345' y='55' width='120' height='44' rx='8'/><text x='405' y='77' text-anchor='middle'>Kontekst</text><text x='405' y='94' text-anchor='middle' class='muted'>(topilgan)</text><path class='edga' d='M465 77 H515' marker-end='url(#arPMr)'/><rect class='box' x='515' y='55' width='150' height='44' rx='8'/><text x='590' y='82' text-anchor='middle'>LLM -&gt; javob</text><text x='340' y='128' text-anchor='middle' class='muted'>model javobni topilgan haqiqiy matnga tayanib yozadi</text><defs><marker id='arPMr' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>RAG: savol -&gt; qidiruv -&gt; topilgan kontekst -&gt; LLM javobi (o'z xotirasidan emas, manbadan).</figcaption></figure><h3>2) Function / tool calling - tashqi vosita chaqirish</h3><p>Model o'zi hisoblay olmaydi, real vaqtni bilmaydi, xat yubora olmaydi. <strong>Tool calling</strong>da sen modelga vositalar ro'yxatini berasan (masalan <code class='inline'>get_weather</code>, <code class='inline'>search</code>, <code class='inline'>send_email</code>). Model o'zi javob yozish o'rniga <strong>qaysi vositani qaysi argument bilan chaqirishni</strong> aytadi; dastur o'sha vositani ishga tushirib, natijani modelga qaytaradi va model yakuniy javobni yozadi.</p><figure class='svgfig'><svg viewBox='0 0 680 160' role='img' aria-label='Tool calling oqimi: LLM vosita chaqiradi, vosita natija qaytaradi, LLM yakuniy javob beradi'><rect class='box' x='20' y='60' width='120' height='44' rx='8'/><text x='80' y='87' text-anchor='middle'>So'rov</text><path class='edga' d='M140 82 H195' marker-end='url(#arPMt)'/><rect class='boxa' x='195' y='60' width='130' height='44' rx='8'/><text x='260' y='87' text-anchor='middle'>LLM</text><path class='edga' d='M325 70 L400 42' marker-end='url(#arPMt)'/><rect class='box' x='400' y='20' width='170' height='40' rx='8'/><text x='485' y='45' text-anchor='middle' class='muted'>tool: get_weather(...)</text><path class='edga' d='M400 55 L330 78' marker-end='url(#arPMt)'/><path class='edga' d='M325 92 H400' marker-end='url(#arPMt)'/><rect class='boxa' x='400' y='104' width='170' height='40' rx='8'/><text x='485' y='129' text-anchor='middle'>yakuniy javob</text><text x='150' y='140' text-anchor='middle' class='muted'>model vositani chaqiradi, natijani oladi, javob yozadi</text><defs><marker id='arPMt' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Tool calling: LLM vositani chaqiradi -&gt; vosita natija qaytaradi -&gt; LLM yakuniy javob yozadi.</figcaption></figure><h3>3) Structured output - JSON schema bilan aniq format</h3><p>Ba'zan sizga chiroyli matn emas, <strong>dasturga mos aniq ma'lumot</strong> kerak. Modeldan <strong>JSON schema</strong> (aniq kalitlar va tiplar) bo'yicha javob so'rasang, natijani to'g'ridan-to'g'ri kodda ishlatasan - qidirib ajratib o'tirmaysan. Zamonaviy modellar formatni buzmasligiga kafolat beradigan \"structured output\" rejimiga ega.</p><div class=\"chips\"><span class=\"chip t\">aniq kalitlar</span><span class=\"chip t\">tip (string/number)</span><span class=\"chip t\">missing -&gt; null</span><span class=\"chip t\">qiymat to'qima emas</span></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>RAG'da model kontekstda yo'q narsani baribir to'qib chiqarishi mumkin. Promptga qoida qo'sh: <strong>\"Answer only from the context. If the answer is not there, say you don't know.\"</strong> Tool calling'da esa modelga <strong>ishonchsiz vosita</strong> berma - u xato yoki zararli chaqiruv yuborishi mumkin (buni Xavfsizlik bo'limida ko'ramiz).</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Uch usulni birlashtir: RAG bilan dolzarb ma'lumot ber, tool calling bilan real amal bajart, structured output bilan natijani dasturga ulash uchun aniq JSON so'ra. Bu - zamonaviy AI ilovalarining asosiy naqshi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "RAG uslubidagi prompt",
+     "p": "Faqat berilgan kontekstdan javob ber."
     },
-    "quiz": [
-      {
-        "q": "AI javobini nima qilish kerak?",
-        "a": [
-          "ko'r-ko'rona ishonish",
-          "muhim narsani tekshirish",
-          "e'tibor bermaslik",
-          "saqlash"
-        ],
-        "c": 1,
-        "w": "Verify - AI xato qilishi mumkin.",
-        "level": "easy"
-      },
-      {
-        "q": "AI'ga nimani yozMASLIK kerak?",
-        "a": [
-          "savol",
-          "parol/karta/maxfiy ma'lumot",
-          "matn",
-          "kod"
-        ],
-        "c": 1,
-        "w": "Maxfiy ma'lumotni berma.",
-        "level": "practical"
-      },
-      {
-        "q": "Prompt injection nima?",
-        "a": [
-          "tezlashtirish",
-          "tashqi matndagi yashirin ko'rsatma modelni chalg'itishi",
-          "imlo",
-          "narx"
-        ],
-        "c": 1,
-        "w": "Ishonchsiz manbaga ehtiyot bo'l.",
-        "level": "practical"
-      },
-      {
-        "q": "AI bilan eng yaxshi natija:",
-        "a": [
-          "faqat AI'ga tayanish",
-          "to'g'ri prompt + tanqidiy fikr",
-          "ko'p so'rash",
-          "uzun yozish"
-        ],
-        "c": 1,
-        "w": "Sen boshqarasan, AI yordam beradi.",
-        "level": "scenario"
-      }
+    "title": "RAG: kontekstga tayangan javob",
+    "lang": "text",
+    "code": "Answer the question using ONLY the context below.\nIf the answer is not in the context, say \"I don't know\" - do not guess.\n\nContext:\n\"\"\"\nSkillMap kursi 2026-yil iyulda yangilandi. Prompt kursi 6 bo'limdan iborat.\n\"\"\"\n\nQuestion: Prompt kursi nechta bo'limdan iborat?"
+   },
+   {
+    "heading": {
+     "h": "Tool / function calling",
+     "p": "Modelga vosita ta'rifini ber."
+    },
+    "title": "Tool calling: vosita ta'rifi + so'rov",
+    "lang": "text",
+    "code": "You can call tools. Available tool:\nget_weather(city: string) -> returns current weather.\n\nRules: if the user asks about weather, respond with a tool call\nin this exact form and nothing else:\nCALL get_weather(city=\"<city>\")\n\nUser: Toshkent shahrida bugun ob-havo qanday?"
+   },
+   {
+    "heading": {
+     "h": "Structured output",
+     "p": "JSON schema bo'yicha aniq format."
+    },
+    "title": "Structured output: JSON schema",
+    "lang": "text",
+    "code": "Extract the event. Return ONLY valid JSON matching this schema,\nno extra text:\n{\n  \"title\": string,\n  \"date\": string,        // YYYY-MM-DD\n  \"location\": string | null,\n  \"attendees\": number | null\n}\nIf a field is missing, use null. Do not invent values.\n\nText:\n\"\"\"Jamoa uchrashuvi 2026-07-10 kuni ofisda bo'ladi.\"\"\""
+   }
+  ],
+  "tasks": [
+   {
+    "id": "prm-1",
+    "html": "RAG nima ekanini tushundim (tashqi bilimni kontekstga ulash)",
+    "crit": "savol->qidiruv->kontekst->LLM oqimini ayta olasan"
+   },
+   {
+    "id": "prm-2",
+    "html": "RAG promptida \"faqat kontekstdan javob ber\" qoidasini qo'shdim",
+    "crit": "kontekstda yo'q bo'lsa model bilmasligini aytadi"
+   },
+   {
+    "id": "prm-3",
+    "html": "Function/tool calling mantig'ini o'rgandim",
+    "crit": "model vosita chaqiradi, natija qaytadi, javob yoziladi"
+   },
+   {
+    "id": "prm-4",
+    "html": "Structured output (JSON schema) promptini yozdim",
+    "crit": "aniq kalitlar + null qoidasi bilan"
+   },
+   {
+    "id": "prm-5",
+    "html": "Playgroundda uch usuldan birini sinab ko'rdim",
+    "crit": "natija kutilgan formatda chiqdi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/techniques/rag",
+    "title": "RAG - Prompting Guide",
+    "desc": "Retrieval-augmented generation",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview",
+    "title": "Anthropic - Tool use",
+    "desc": "Function/tool calling",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/structured-outputs",
+    "title": "OpenAI - Structured Outputs",
+    "desc": "JSON schema bilan format",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Modern amaliyot",
+   "title": "RAG yoki tool prompti",
+   "desc": "Bitta real vazifa uchun RAG (faqat kontekstdan javob) yoki structured output (JSON) promptini tuzib, Playgroundda sina.",
+   "features": [
+    "RAG: kontekst + \"faqat shundan\" qoidasi",
+    "yoki JSON schema (aniq kalitlar)",
+    "Tool ta'rifi (ixtiyoriy)",
+    "Missing -> null qoidasi",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "RAG yoki tool prompti - Work Assistant",
+     "desc": "Zamonaviy imkoniyatlar texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "RAG yoki tool prompti - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
+  },
+  "quiz": [
+   {
+    "q": "RAG (retrieval-augmented generation) nima qiladi?",
+    "a": [
+     "modelni tezlashtiradi",
+     "javobdan oldin tashqi manbadan ma'lumot topib, kontekstga qo'shadi",
+     "temperaturani oshiradi",
+     "promptni qisqartiradi"
     ],
-    "exercises": [
-      {
-        "type": "choice",
-        "q": "AI tibbiy maslahat bersa:",
-        "options": [
-          "darrov bajarasan",
-          "shifokor bilan tekshirasan",
-          "do'stga aytasan",
-          "e'tibor bermaysan"
-        ],
-        "correct": 1,
-        "why": "Muhim maslahatni mutaxassis bilan tekshir."
-      },
-      {
-        "type": "choice",
-        "q": "Karta raqamingni AI'ga:",
-        "options": [
-          "yozasan",
-          "yozmaysan (maxfiylik)",
-          "yarmini",
-          "rasmda"
-        ],
-        "correct": 1,
-        "why": "Maxfiy ma'lumot - hech qachon."
-      },
-      {
-        "type": "choice",
-        "q": "Veb-sahifa matnini AI'ga berganda:",
-        "options": [
-          "to'liq ishonasan",
-          "ichidagi \"ko'rsatma\"larga ehtiyot bo'lasan",
-          "o'qimaysan",
-          "tezlashtirasan"
-        ],
-        "correct": 1,
-        "why": "Prompt injection xavfi."
-      },
-      {
-        "type": "choice",
-        "q": "Eng kuchli yondashuv:",
-        "options": [
-          "AI hamma narsani hal qiladi",
-          "AI yordamchi, qaror va tekshiruv seniki",
-          "AI'ga ishonmaslik",
-          "promptsiz ishlash"
-        ],
-        "correct": 1,
-        "why": "Hamkorlik: sen boshqarasan."
-      }
+    "c": 1,
+    "w": "RAG tashqi bilimni topib, modelga kontekst sifatida beradi.",
+    "level": "easy"
+   },
+   {
+    "q": "Function/tool calling'da model nima qiladi?",
+    "a": [
+     "hamma narsani o'zi hisoblaydi",
+     "qaysi vositani qaysi argument bilan chaqirishni aytadi",
+     "internetni to'g'ridan-to'g'ri ochadi",
+     "faqat JSON qaytaradi"
     ],
-    "vocab": [
-      {
-        "w": "verify",
-        "ipa": "",
-        "pos": "",
-        "uz": "tekshirmoq",
-        "ex": "Always verify key facts."
-      },
-      {
-        "w": "hallucination",
-        "ipa": "",
-        "pos": "",
-        "uz": "to'qib chiqarish",
-        "ex": "Watch for hallucinations."
-      },
-      {
-        "w": "privacy",
-        "ipa": "",
-        "pos": "",
-        "uz": "maxfiylik",
-        "ex": "Protect your privacy."
-      },
-      {
-        "w": "prompt injection",
-        "ipa": "",
-        "pos": "",
-        "uz": "promptga yashirin hujum",
-        "ex": "Beware of prompt injection."
-      },
-      {
-        "w": "template",
-        "ipa": "",
-        "pos": "",
-        "uz": "shablon",
-        "ex": "Build a reusable template."
-      },
-      {
-        "w": "reliable",
-        "ipa": "",
-        "pos": "",
-        "uz": "ishonchli",
-        "ex": "AI is helpful but not always reliable."
-      }
+    "c": 1,
+    "w": "Model vosita chaqiruvini shakllantiradi; dastur uni bajaradi.",
+    "level": "practical"
+   },
+   {
+    "q": "Structured output (JSON schema) nega foydali?",
+    "a": [
+     "chiroyli ko'rinadi",
+     "natijani to'g'ridan-to'g'ri dasturda ishlatish mumkin (aniq kalitlar/tiplar)",
+     "tezroq",
+     "arzonroq"
     ],
-    "grammar": [
-      {
-        "topic": "Verify",
-        "rule": "Muhim natijani mustaqil tekshir.",
-        "ex": "Facts, numbers, code, advice."
-      },
-      {
-        "topic": "Privacy",
-        "rule": "Maxfiy ma'lumot berma.",
-        "ex": "No passwords/cards."
-      },
-      {
-        "topic": "Injection",
-        "rule": "Ishonchsiz matn ko'rsatmasiga ishonma.",
-        "ex": "Beware hidden instructions."
-      }
-    ]
-  }
+    "c": 1,
+    "w": "Qat'iy sxema natijani mashina o'qiy oladigan qiladi.",
+    "level": "practical"
+   },
+   {
+    "q": "RAG'da to'qimani nima kamaytiradi?",
+    "a": [
+     "uzun prompt",
+     "\"faqat kontekstdan javob ber, bo'lmasa bilmayman de\" qoidasi",
+     "yuqori temperature",
+     "ko'p vosita"
+    ],
+    "c": 1,
+    "w": "Kontekstga bog'lash va bilmaslikka ruxsat to'qimani kamaytiradi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Model dolzarb, tashqi ma'lumotga tayanib javob berishi uchun qaysi usul?",
+    "options": [
+     "few-shot",
+     "RAG (retrieval-augmented generation)",
+     "past temperature",
+     "delimiter"
+    ],
+    "correct": 1,
+    "why": "RAG tashqi manbani kontekstga ulaydi."
+   },
+   {
+    "type": "choice",
+    "q": "Model real vaqt ob-havoni bilishi uchun kerak:",
+    "options": [
+     "ko'proq misol",
+     "tool/function calling",
+     "uzunroq prompt",
+     "yuqori temperature"
+    ],
+    "correct": 1,
+    "why": "Tashqi vositani chaqirish - tool calling."
+   },
+   {
+    "type": "gap",
+    "q": "Natijani dasturda ishlatish uchun modeldan ___ schema bo'yicha javob so'raymiz (inglizcha, {} format).",
+    "answers": [
+     "JSON",
+     "json"
+    ],
+    "why": "JSON schema - structured output.",
+    "hint": ""
+   },
+   {
+    "type": "choice",
+    "q": "RAG promptiga qaysi qoidani qo'shish to'qimani kamaytiradi?",
+    "options": [
+     "\"be creative\"",
+     "\"Answer only from the context; if not there, say you don't know.\"",
+     "\"be fast\"",
+     "\"use jargon\""
+    ],
+    "correct": 1,
+    "why": "Kontekstga bog'lash va bilmaslikka ruxsat."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "RAG",
+    "ipa": "",
+    "pos": "",
+    "uz": "tashqi bilimni ulab javob berish",
+    "ex": "RAG adds retrieved context to the prompt."
+   },
+   {
+    "w": "retrieval",
+    "ipa": "",
+    "pos": "",
+    "uz": "ma'lumot topish/qidirish",
+    "ex": "Retrieval finds relevant documents."
+   },
+   {
+    "w": "tool calling",
+    "ipa": "",
+    "pos": "",
+    "uz": "tashqi vosita chaqirish",
+    "ex": "The model uses tool calling to get data."
+   },
+   {
+    "w": "function calling",
+    "ipa": "",
+    "pos": "",
+    "uz": "funksiya chaqirish",
+    "ex": "Define functions the model can call."
+   },
+   {
+    "w": "structured output",
+    "ipa": "",
+    "pos": "",
+    "uz": "aniq (JSON) formatli javob",
+    "ex": "Ask for structured output as JSON."
+   },
+   {
+    "w": "schema",
+    "ipa": "",
+    "pos": "",
+    "uz": "ma'lumot tuzilmasi (kalit/tip)",
+    "ex": "Define a JSON schema with keys."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "RAG",
+    "rule": "Tashqi manbadan topib, kontekstga qo'sh.",
+    "ex": "Answer only from the context."
+   },
+   {
+    "topic": "Tool calling",
+    "rule": "Vosita ta'rifini ber; model chaqiradi.",
+    "ex": "get_weather(city)"
+   },
+   {
+    "topic": "Structured output",
+    "rule": "JSON schema (kalit+tip) bo'yicha so'ra.",
+    "ex": "Return valid JSON, missing -> null."
+   }
+  ]
+ },
+ {
+  "zoom": "P5",
+  "title": "Qo'llash & Xavfsizlik",
+  "sub": "Amaliyot",
+  "coord": "Apply / P5",
+  "eyebrow": "06 / Real qo'llash va xavfsizlik",
+  "mtitle": "AI'ni real ishda aqlli qo'llash",
+  "lede": "Endi hammasini birlashtiramiz: yozish, kod, tahlil, o'rganish uchun promptlar - va eng muhimi, <strong>natijani tekshirish</strong>, <strong>maxfiylik</strong> va cheklovlarni bilish.",
+  "doc": "<div class='prose'><h3>Kundalik qo'llashlar</h3><div class=\"exlist\"><div class=\"ex\"><b>Yozish</b><span>xat, post, taklif - ton + uzunlik bilan</span></div><div class=\"ex\"><b>Kod</b><span>tushuntir, xatoni top, qayta yoz - kontekst ber</span></div><div class=\"ex\"><b>Tahlil</b><span>matnni umumlashtir, taqqosla, ro'yxatla</span></div><div class=\"ex\"><b>O'rganish</b><span>tushuntir, savol ber, mashq tuz</span></div></div><h3>Doim tekshir (verify)</h3><p>AI ishonchli eshitiladi, lekin <strong>xato bo'lishi mumkin</strong>. Faktlar, raqamlar, kod, huquqiy/tibbiy maslahatni <strong>mustaqil tekshir</strong>. AI - yordamchi, oxirgi qaror - seniki.</p><figure class='svgfig'><svg viewBox='0 0 680 180' role='img' aria-label='AI javobini tekshirish oqimi: javob, manba sorash, mustaqil solishtirish, qabul yoki rad'><rect class='box' x='20' y='60' width='130' height='50' rx='8'/><text x='85' y='90' text-anchor='middle'>AI javobi</text><path class='edga' d='M150 85 H210' marker-end='url(#arP5a)'/><rect class='boxa' x='210' y='60' width='160' height='50' rx='8'/><text x='290' y='84' text-anchor='middle'>Tekshir</text><text x='290' y='102' text-anchor='middle' class='muted'>manba + solishtir</text><path class='edga' d='M370 75 L440 40' marker-end='url(#arP5a)'/><path class='edga' d='M370 95 L440 130' marker-end='url(#arP5a)'/><rect class='box' x='440' y='18' width='200' height='44' rx='8'/><text x='540' y='45' text-anchor='middle' class='accent'>Tasdiqlandi -> ishlat</text><rect class='box' x='440' y='110' width='200' height='44' rx='8'/><text x='540' y='137' text-anchor='middle' class='muted'>Shubhali -> rad / qayta</text><defs><marker id='arP5a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Faktcheck oqimi: javobni manba va mustaqil solishtirish bilan tekshir, so'ng qabul qil yoki rad et.</figcaption></figure><h3>Faktlarni tekshirish amaliyoti</h3><p><strong>Hallucination qizil bayroqlari</strong> (ehtiyot bo'l):</p><div class=\"exlist\"><div class=\"ex\"><b>Juda ishonchli ohang + aniq raqam/sana</b><span>\"Aynan 47.3% o'sdi\" - manbasiz aniq raqam ko'pincha to'qima</span></div><div class=\"ex\"><b>Mavjud bo'lmagan manba/iqtibos</b><span>kitob, maqola yoki havola nomi haqiqiy ko'rinadi, lekin qidirsang topilmaydi</span></div><div class=\"ex\"><b>Ichki ziddiyat</b><span>javobning bir joyi boshqa joyiga qarama-qarshi</span></div><div class=\"ex\"><b>So'roqqa \"ha\" deb yolg'on tasdiq</b><span>sen noto'g'ri faktni aytib berasan, model rozi bo'ladi</span></div></div><p><strong>Tekshirish usullari</strong>:</p><div class=\"exlist\"><div class=\"ex\"><b>Manba so'ra</b><span>\"Cite your source with a working link.\" - haqiqiy manba yo'q bo'lsa, fakt shubhali</span></div><div class=\"ex\"><b>Mustaqil solishtir</b><span>muhim faktni qidiruv/rasmiy sayt bilan alohida tekshir - AI'ga suyanma</span></div><div class=\"ex\"><b>Sanani so'ra</b><span>\"Ma'lumot qaysi sanagacha amal qiladi?\" - eskirgan ma'lumotni ilg'aysan</span></div><div class=\"ex\"><b>\"Bilmasang bilmayman de\"</b><span>promptga qo'sh: \"If you are not sure, say you don't know instead of guessing.\"</span></div></div><h3>Self-consistency (o'zaro moslik)</h3><p>Muhim savolni <strong>bir necha marta</strong> (yoki biroz boshqacha so'z bilan) so'ra. Javoblar bir xil chiqsa - ishonch ortadi; har safar boshqacha bo'lsa - model taxmin qilyapti, tekshir.</p><h3>Maxfiylik (privacy)</h3><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Maxfiy ma'lumot berma</p><p>Parol, karta raqami, shaxsiy/maxfiy ma'lumotni AI'ga yozma. U uchinchi tomon serveriga boradi.</p></div></div><h3>Prompt injection (ogohlik)</h3><p>AI'ga tashqi matn (veb-sahifa, hujjat) bersang, o'sha matn ichidagi \"yashirin ko'rsatma\" modelni chalg'itishi mumkin. Ishonchsiz manbaga ko'r-ko'rona ishonma. Model vositaga (tool) ega bo'lsa, injection uni <strong>zararli amal</strong>ga (fayl o'chirish, ma'lumot yuborish) undashi mumkin - muhim amalni doim inson tasdig'idan o'tkaz.</p><h3>Etika</h3><div class=\"chips\"><span class=\"chip\">plagiat emas - o'zing tekshir</span><span class=\"chip\">haqqoniylik</span><span class=\"chip\">mas'uliyat seniki</span></div><div class=\"exlist\"><div class=\"ex\"><b>Talaba insho yozdiradi</b><span>To'g'ri: AI'dan g'oya/tuzilma ol, o'zing yoz va manbalarni ko'rsat. Butun ishni AI'ga yozdirib o'ziniki deb topshirish - plagiat.</span></div><div class=\"ex\"><b>Ish kodini AI'ga yuborish</b><span>To'g'ri: maxfiy kalit, mijoz ma'lumoti va ichki mantiqni olib tashla yoki soxta qiymat qo'y. Kompaniya siyosatini tekshir - hamma kod uchinchi tomon serveriga ketmasin.</span></div><div class=\"ex\"><b>AI javobini tekshirmasdan mijozga yuborish</b><span>To'g'ri: har bir faktni, raqamni va ohangni o'zing o'qib tekshir. Xato javob uchun javobgarlik AI'da emas, sen(kompaniya)da.</span></div><div class=\"ex\"><b>Deepfake / soxta kontent yaratish so'rovi</b><span>To'g'ri: real odamning yuzi/ovozi bilan soxta video yoki uni obro'sizlantiruvchi soxta iqtibos yaratma. Bu zarar keltiradi va ko'p joyda noqonuniy. Rad et va maqsadni halol yo'l bilan hal qil.</span></div><div class=\"ex\"><b>Manipulyatsiya / dezinformatsiya</b><span>To'g'ri: saylov, sog'liq yoki moliya bo'yicha odamlarni chalg'itadigan yolg'on xabar, soxta sharh yoki targ'ibot yozdirma. AI'ni fikrni yashirin boshqarish uchun ishlatish - etikasiz.</span></div><div class=\"ex\"><b>AI javobini tekshirmay tarqatish</b><span>To'g'ri: AI yozgan maqola/statistikani \"haqiqat\" deb ijtimoiy tarmoqqa tashlashdan oldin manbani tekshir. Tekshirilmagan AI kontenti - dezinformatsiya manbai.</span></div><div class=\"ex\"><b>Tool-use xavfi (agent)</b><span>To'g'ri: modelga vosita (fayl o'chirish, xat yuborish, to'lov) bersang, chaqiruvni ko'r-ko'rona bajarma. Ishonchsiz matn (prompt injection) modelni zararli buyruq yuborishga undashi mumkin - muhim amalni inson tasdig'idan o'tkaz.</span></div></div><p>AI - kuchli vosita, lekin <strong>sen boshqarasan</strong>. To'g'ri prompt + tanqidiy fikr = eng yaxshi natija.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Universal prompt shabloni",
+     "p": "Bo'shliklarni to'ldirib har vazifaga ishlat."
+    },
+    "title": "Qayta ishlatiladigan shablon (template)",
+    "lang": "text",
+    "code": "Role: You are a {ROLE}.\nTask: {TASK}.\nContext: {WHO/WHY}.\nFormat: {OUTPUT FORMAT}.\nConstraints: {LENGTH, TONE, LANGUAGE}.\nIf unsure, say so instead of guessing.\n\nInput:\n\"\"\"{INPUT}\"\"\""
+   },
+   {
+    "heading": {
+     "h": "Strukturali ekstraksiya",
+     "p": "Erkin matndan JSON chiqarish."
+    },
+    "title": "1) JSON chiqarish talabi bilan ekstraksiya",
+    "lang": "text",
+    "code": "You are a data extraction tool.\nExtract order details from the message below.\n\nReturn ONLY valid JSON, no extra text, with exactly these keys:\n{\n  \"customer\": string,\n  \"items\": [{ \"name\": string, \"qty\": number }],\n  \"total_som\": number | null,\n  \"phone\": string | null\n}\nIf a field is missing, use null. Do not invent values.\n\nMessage:\n\"\"\"Salom, men Aziz. 2 ta klaviatura va 1 sichqoncha kerak.\nTelefon: 90-123-45-67\"\"\"\n\n# Izoh: aniq kalitlar + null qoidasi to'qimani kamaytiradi."
+   },
+   {
+    "heading": {
+     "h": "Uzun hujjatni xulosalash",
+     "p": "Rol + format + qat'iy chegara."
+    },
+    "title": "2) Cheklovlar bilan xulosalash",
+    "lang": "text",
+    "code": "Role: You are an executive assistant.\nTask: Summarize the report below for a busy director.\nContext: The director has 60 seconds and needs decisions, not detail.\nFormat:\n  - 3 bullet key findings (max 15 words each)\n  - 1 line: recommended decision\n  - 1 line: main risk\nConstraints: plain language, no jargon, under 90 words total.\nIf the report lacks data for a section, write \"data not provided\".\n\nReport:\n\"\"\"<uzun hisobot matni>\"\"\"\n\n# Izoh: rol + qat'iy tuzilma + \"data not provided\" = to'qima o'rniga halol bo'shliq."
+   },
+   {
+    "heading": {
+     "h": "Kod review so'rovi",
+     "p": "Kontekst + diff + aniq savollar."
+    },
+    "title": "3) Kod review (context + diff)",
+    "lang": "text",
+    "code": "You are a senior backend reviewer.\nContext: Node.js REST API, this function handles user login.\nReview the diff below and answer these questions:\n  1. Are there security issues (injection, secret leak, auth bypass)?\n  2. Any edge cases not handled (empty input, null, timeout)?\n  3. One concrete improvement.\nBe specific: quote the exact line. If code looks fine, say so.\n\nDiff:\n\"\"\"\n- const user = db.query(\"SELECT * FROM users WHERE name='\" + name + \"'\");\n+ const user = db.query(\"SELECT * FROM users WHERE name=?\", [name]);\n\"\"\"\n\n# Izoh: aniq savollar model javobini fokuslaydi va tekshirishni osonlashtiradi."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "pr5-1",
+    "html": "AI javobini doim tekshirish odatini o'zlashtirdim",
+    "crit": "muhim faktni mustaqil tekshirasan"
+   },
+   {
+    "id": "pr5-2",
+    "html": "Maxfiy ma'lumot bermaslik qoidasini qabul qildim",
+    "crit": "parol/karta yozmaysan"
+   },
+   {
+    "id": "pr5-3",
+    "html": "Prompt injection xavfini tushundim",
+    "crit": "ishonchsiz matnga ehtiyot bo'lasan"
+   },
+   {
+    "id": "pr5-4",
+    "html": "O'z ishim uchun qayta ishlatiladigan shablon yasadim",
+    "crit": "to'ldiriladigan template tayyor"
+   },
+   {
+    "id": "pr5-5",
+    "html": "Playgroundda shablonni real vazifada sinadim",
+    "crit": "natija sifatli chiqdi"
+   },
+   {
+    "id": "pr5-6",
+    "html": "Hallucination qizil bayroqlarini (ishonchli ohang+aniq raqam, soxta manba) taniyman",
+    "crit": "javobdagi shubhali belgini ko'rsata olasan"
+   },
+   {
+    "id": "pr5-7",
+    "html": "Muhim faktni manba so'rash va mustaqil qidiruv bilan tekshirdim",
+    "crit": "AI'ga suyanmay solishtirdim"
+   },
+   {
+    "id": "pr5-8",
+    "html": "Promptga \"bilmasang bilmayman de\" ko'rsatmasini qo'shdim",
+    "crit": "model taxmin o'rniga bilmasligini aytadi"
+   },
+   {
+    "id": "pr5-9",
+    "html": "Strukturali JSON ekstraksiya promptini sinadim",
+    "crit": "faqat yaroqli JSON qaytdi"
+   },
+   {
+    "id": "pr5-10",
+    "html": "Kod review promptini aniq savollar bilan yozdim",
+    "crit": "kontekst + diff + savollar bor"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+    "title": "Anthropic - Best practices",
+    "desc": "Amaliy tavsiyalar",
+    "host": "docs.anthropic.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/risks",
+    "title": "Prompt risklar",
+    "desc": "Injection, xavfsizlik",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/safety-best-practices",
+    "title": "OpenAI - Safety",
+    "desc": "Xavfsizlik amaliyotlari",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Yakuniy amaliyot",
+   "title": "Shaxsiy prompt shabloningni yarat",
+   "desc": "O'z ishingdagi bitta takroriy vazifa uchun to'liq, qayta ishlatiladigan prompt shablonini yasab, Playgroundda mukammallashtir.",
+   "features": [
+    "To'ldiriladigan template",
+    "Rol+vazifa+format+cheklov",
+    "Iteratsiya bilan sayqallangan",
+    "Natija tekshirilgan",
+    "Before/after prompt",
+    "Output baholash mezoni",
+    "Xavfsizlik va cheklov",
+    "Reusable template"
+   ],
+   "rubric": [
+    "prompting bo'yicha yakuniy ish mustaqil ishga tushadigan holatda bo'lishi kerak.",
+    "Asosiy talablar bajarilgan: funksionallik, aniqlik, xatolarni ko'rsatish va yakuniy natija tekshiriladi.",
+    "Kod yoki yozma ish tartibli, nomlash tushunarli, keraksiz murakkabliksiz tayyorlangan.",
+    "Natija qisqa izoh bilan topshiriladi: nima qilindi, qanday tekshirildi, keyingi yaxshilash nima.",
+    "Kamida bitta real holat yoki foydalanuvchi ssenariysi bilan sinab ko'rilgan.",
+    "Prompt aniq input/output format beradi.",
+    "Kamida 3 xil test holatda sinov qilingan.",
+    "Noaniqlik va xavfsizlik cheklovlari yozilgan.",
+    "Natija baholash mezoni bilan tekshirilgan."
+   ],
+   "variants": [
+    {
+     "title": "Shaxsiy prompt shabloningni yarat - Work Assistant",
+     "desc": "Qo'llash & Xavfsizlik texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+     "deliverables": [
+      "System/role prompt",
+      "3 test input",
+      "Output quality rubric"
+     ]
+    },
+    {
+     "title": "Shaxsiy prompt shabloningni yarat - Automation Pack",
+     "desc": "Takrorlanadigan vazifa uchun qayta ishlatiladigan prompt shablonlar paketi.",
+     "deliverables": [
+      "Template variables",
+      "Good/bad examples",
+      "Safety note"
+     ]
+    }
+   ]
+  },
+  "quiz": [
+   {
+    "q": "AI javobini nima qilish kerak?",
+    "a": [
+     "ko'r-ko'rona ishonish",
+     "muhim narsani tekshirish",
+     "e'tibor bermaslik",
+     "saqlash"
+    ],
+    "c": 1,
+    "w": "Verify - AI xato qilishi mumkin.",
+    "level": "easy"
+   },
+   {
+    "q": "AI'ga nimani yozMASLIK kerak?",
+    "a": [
+     "savol",
+     "parol/karta/maxfiy ma'lumot",
+     "matn",
+     "kod"
+    ],
+    "c": 1,
+    "w": "Maxfiy ma'lumotni berma.",
+    "level": "practical"
+   },
+   {
+    "q": "Prompt injection nima?",
+    "a": [
+     "tezlashtirish",
+     "tashqi matndagi yashirin ko'rsatma modelni chalg'itishi",
+     "imlo",
+     "narx"
+    ],
+    "c": 1,
+    "w": "Ishonchsiz manbaga ehtiyot bo'l.",
+    "level": "practical"
+   },
+   {
+    "q": "AI bilan eng yaxshi natija:",
+    "a": [
+     "faqat AI'ga tayanish",
+     "to'g'ri prompt + tanqidiy fikr",
+     "ko'p so'rash",
+     "uzun yozish"
+    ],
+    "c": 1,
+    "w": "Sen boshqarasan, AI yordam beradi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Qaysi belgi hallucination qizil bayrog'i?",
+    "a": [
+     "manba so'ralganda ishlaydigan havola berishi",
+     "ishonchli ohang + manbasiz aniq raqam/soxta iqtibos",
+     "\"bilmayman\" deyishi",
+     "qisqa javob berishi"
+    ],
+    "c": 1,
+    "w": "Ishonchli ohang + tekshirib bo'lmaydigan aniq fakt - shubhali.",
+    "level": "practical"
+   },
+   {
+    "q": "Self-consistency tekshiruvi nima?",
+    "a": [
+     "javobni saqlash",
+     "muhim savolni bir necha bor so'rab, javoblar mos kelishini ko'rish",
+     "modelni almashtirish",
+     "promptni qisqartirish"
+    ],
+    "c": 1,
+    "w": "Har safar boshqacha javob - model taxmin qilyapti.",
+    "level": "scenario"
+   },
+   {
+    "q": "JSON ekstraksiyada to'qimani nima kamaytiradi?",
+    "a": [
+     "uzun prompt",
+     "aniq kalitlar + \"missing bo'lsa null, qiymat to'qima\" qoidasi",
+     "ko'p misol",
+     "tez so'rash"
+    ],
+    "c": 1,
+    "w": "Qat'iy sxema va null qoidasi modelni cheklaydi.",
+    "level": "practical"
+   },
+   {
+    "q": "Kimdir real odamning yuzi bilan soxta (deepfake) video so'rasa:",
+    "a": [
+     "yaratib berasan",
+     "rad etasan - zarar va ko'pincha noqonuniy",
+     "yarmini qilasan",
+     "tekshirmay yuborasan"
+    ],
+    "c": 1,
+    "w": "Soxta/zararli kontent yaratish - etikasiz va ko'p joyda noqonuniy.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "AI tibbiy maslahat bersa:",
+    "options": [
+     "darrov bajarasan",
+     "shifokor bilan tekshirasan",
+     "do'stga aytasan",
+     "e'tibor bermaysan"
+    ],
+    "correct": 1,
+    "why": "Muhim maslahatni mutaxassis bilan tekshir."
+   },
+   {
+    "type": "choice",
+    "q": "Karta raqamingni AI'ga:",
+    "options": [
+     "yozasan",
+     "yozmaysan (maxfiylik)",
+     "yarmini",
+     "rasmda"
+    ],
+    "correct": 1,
+    "why": "Maxfiy ma'lumot - hech qachon."
+   },
+   {
+    "type": "choice",
+    "q": "Veb-sahifa matnini AI'ga berganda:",
+    "options": [
+     "to'liq ishonasan",
+     "ichidagi \"ko'rsatma\"larga ehtiyot bo'lasan",
+     "o'qimaysan",
+     "tezlashtirasan"
+    ],
+    "correct": 1,
+    "why": "Prompt injection xavfi."
+   },
+   {
+    "type": "choice",
+    "q": "Eng kuchli yondashuv:",
+    "options": [
+     "AI hamma narsani hal qiladi",
+     "AI yordamchi, qaror va tekshiruv seniki",
+     "AI'ga ishonmaslik",
+     "promptsiz ishlash"
+    ],
+    "correct": 1,
+    "why": "Hamkorlik: sen boshqarasan."
+   },
+   {
+    "type": "choice",
+    "q": "AI \"Smith (2019) tadqiqotiga ko'ra...\" deb aniq iqtibos keltirdi. Nima qilasan?",
+    "options": [
+     "ishonasan - aniq ko'rinyapti",
+     "manbani qidirib, haqiqatan mavjudligini tekshirasan",
+     "boshqa savol berasan",
+     "saqlab qo'yasan"
+    ],
+    "correct": 1,
+    "why": "Soxta iqtibos - keng tarqalgan hallucination. Manbani tekshir."
+   },
+   {
+    "type": "choice",
+    "q": "Model taxmin qilmasligi uchun promptga nima qo'shasan?",
+    "options": [
+     "\"be fast\"",
+     "\"If unsure, say you don't know instead of guessing.\"",
+     "\"be short\"",
+     "\"in English\""
+    ],
+    "correct": 1,
+    "why": "Bilmaslikni tan olishga ruxsat berish to'qimani kamaytiradi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "verify",
+    "ipa": "",
+    "pos": "",
+    "uz": "tekshirmoq",
+    "ex": "Always verify key facts."
+   },
+   {
+    "w": "hallucination",
+    "ipa": "",
+    "pos": "",
+    "uz": "to'qib chiqarish",
+    "ex": "Watch for hallucinations."
+   },
+   {
+    "w": "privacy",
+    "ipa": "",
+    "pos": "",
+    "uz": "maxfiylik",
+    "ex": "Protect your privacy."
+   },
+   {
+    "w": "prompt injection",
+    "ipa": "",
+    "pos": "",
+    "uz": "promptga yashirin hujum",
+    "ex": "Beware of prompt injection."
+   },
+   {
+    "w": "template",
+    "ipa": "",
+    "pos": "",
+    "uz": "shablon",
+    "ex": "Build a reusable template."
+   },
+   {
+    "w": "reliable",
+    "ipa": "",
+    "pos": "",
+    "uz": "ishonchli",
+    "ex": "AI is helpful but not always reliable."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Verify",
+    "rule": "Muhim natijani mustaqil tekshir.",
+    "ex": "Facts, numbers, code, advice."
+   },
+   {
+    "topic": "Privacy",
+    "rule": "Maxfiy ma'lumot berma.",
+    "ex": "No passwords/cards."
+   },
+   {
+    "topic": "Injection",
+    "rule": "Ishonchsiz matn ko'rsatmasiga ishonma.",
+    "ex": "Beware hidden instructions."
+   }
+  ]
+ }
 ]

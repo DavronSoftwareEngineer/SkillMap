@@ -1,0 +1,1845 @@
+[
+ {
+  "zoom": "GT0",
+  "title": "Kirish & O'rnatish",
+  "sub": "Boshlash",
+  "coord": "Boshlash / GT0",
+  "eyebrow": "00 / Versiya nazorati nima",
+  "mtitle": "0 dan Senior darajagacha: Git, GitHub, GitLab",
+  "lede": "Git - dasturchining <strong>vaqt mashinasi</strong>: har bir o'zgarish tarixda saqlanadi, istalgan holatga qaytish mumkin, jamoa bitta kodda parallel ishlaydi. Bu kurs seni buyruqlarni yodlashdan emas, <strong>modelni tushunishdan</strong> boshlab senior darajaga olib chiqadi.",
+  "doc": "<div class='prose'><h3>Versiya nazorati (VCS) nima?</h3><p>Kod ustida ishlaganingda har kuni o'nlab o'zgarish qilasan. VCS bo'lmasa: <code>loyiha_final_2_ENG_OXIRGI.zip</code> degan papkalar, ustiga yozib yuborilgan ishlar, \"kecha ishlagan edi-ku\" degan sirlar. Git bularning hammasini hal qiladi: <strong>har bir saqlangan holat (commit) abadiy tarixda</strong>, istalgan payt qaytasan, solishtira olasan, kim nimani nega o'zgartirganini ko'rasan.</p><div class='chips'><span class='chip t'>Tarix</span><span class='chip t'>Parallel ish (branch)</span><span class='chip t'>Jamoa hamkorligi</span><span class='chip t'>Zaxira</span></div><h3>Git nega yutdi?</h3><p>Git <strong>taqsimlangan</strong> (distributed) VCS: har bir dasturchida repozitoriyning <strong>to'liq nusxasi</strong> (butun tarix bilan) bo'ladi. Internet yo'q joyda ham commit qilasan, tarixni ko'rasan. 2005-yilda Linus Torvalds Linux yadrosi uchun yozgan - bugun bozorning 90%+ ulushi Git'da.</p><h3>Git vs GitHub vs GitLab - adashtirma!</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Git vosita, GitHub va GitLab esa platformalar'><rect class='boxa' x='40' y='72' width='150' height='58' rx='10'/><text x='115' y='97' text-anchor='middle'>Git</text><text class='muted' x='115' y='117' text-anchor='middle'>vosita</text><path class='edga' d='M190 101 H280' marker-end='url(#arGt0a)'/><text class='muted' x='235' y='90' text-anchor='middle'>ustida</text><rect class='box' x='280' y='42' width='180' height='52' rx='10'/><text x='370' y='73' text-anchor='middle'>GitHub</text><rect class='box' x='280' y='108' width='180' height='52' rx='10'/><text x='370' y='139' text-anchor='middle'>GitLab</text><text class='muted' x='575' y='73' text-anchor='middle'>bulut + PR/CI</text><text class='muted' x='575' y='139' text-anchor='middle'>bulut + CI/CD</text><path class='edge' d='M460 68 H540'/><path class='edge' d='M460 134 H540'/><defs><marker id='arGt0a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Git - kompyuteringdagi vosita; GitHub va GitLab - uning ustidagi platformalar.</figcaption></figure><div class='exlist'><div class='ex'><b>Git</b><span>kompyuteringda ishlaydigan dastur - versiya nazorati vositasining o'zi</span></div><div class='ex'><b>GitHub</b><span>Git repolarini saqlaydigan bulut platforma + PR, Issues, Actions (Microsoft)</span></div><div class='ex'><b>GitLab</b><span>xuddi shunday platforma + kuchli ichki CI/CD; o'z serveringga ham o'rnatib bo'ladi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Asosiy tamoyil</p><p>Git'ni platformasiz ham to'liq ishlatib bo'ladi. GitHub/GitLab - Git'ning <strong>ustidagi xizmatlar</strong>. Avval Git modelini o'rgan, platformalar keyin oson bo'ladi.</p></div></div><h3>O'rnatish va birinchi sozlash</h3><p>Windows'da <strong>Git for Windows</strong> (Git Bash bilan birga), macOS'da <code>brew install git</code>, Linux'da <code>apt/dnf install git</code>. O'rnatgach ismingni va emailingni sozla - har bir commit'ga shu ma'lumot yoziladi.</p><h3>Yo'l xaritasi (0 -&gt; Senior)</h3><div class='exlist'><div class='ex'><b>Boshlang'ich</b><span>commit oqimi / branch / merge / GitHub'ga push</span></div><div class='ex'><b>O'rta</b><span>PR & code review / rebase / undo / workflow'lar</span></div><div class='ex'><b>Senior</b><span>CI/CD / ichki model / hooks / monorepo / xavfsizlik</span></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Birinchi sozlash",
+     "p": "Bir marta, global - barcha repolar uchun."
+    },
+    "title": "git config",
+    "lang": "bash",
+    "code": "# Versiyani tekshir (2.40+ yaxshi)\ngit --version\n\n# Kimligingni ayt - har commit'ga yoziladi\ngit config --global user.name \"Ism Familiya\"\ngit config --global user.email \"sen@email.uz\"\n\n# Standart branch nomi 'main' bo'lsin\ngit config --global init.defaultBranch main\n\n# Sozlamalarni ko'rish\ngit config --list --show-origin"
+   },
+   {
+    "heading": {
+     "h": "Yordam - doim yoningda",
+     "p": "Hech narsani yodlash shart emas."
+    },
+    "title": "git help",
+    "lang": "bash",
+    "code": "git help commit        # to'liq qo'llanma\ngit commit -h          # qisqa eslatma\ngit status             # hozir nima bo'layotganini AYTADI\n                       # (keyingi qadamni ham taklif qiladi)"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt0-1",
+    "html": "Git, GitHub va GitLab farqini tushundim",
+    "crit": "har birini bir jumlada ayta olasan"
+   },
+   {
+    "id": "gt0-2",
+    "html": "Git o'rnatdim va versiyani tekshirdim",
+    "crit": "git --version 2.40+ ko'rsatadi"
+   },
+   {
+    "id": "gt0-3",
+    "html": "user.name va user.email sozladim",
+    "crit": "git config --list da ko'rinadi"
+   },
+   {
+    "id": "gt0-4",
+    "html": "Taqsimlangan (distributed) VCS nima ekanini tushundim",
+    "crit": "markazlashgan modeldan farqini aytasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2",
+    "title": "Pro Git kitobi (bepul)",
+    "desc": "Rasmiy va eng yaxshi manba",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/downloads",
+    "title": "Git - yuklab olish",
+    "desc": "Barcha OS uchun o'rnatgich",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://roadmap.sh/git-github",
+    "title": "roadmap.sh - Git & GitHub",
+    "desc": "Vizual yo'l xaritasi",
+    "host": "roadmap.sh"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Boshlash",
+   "title": "Muhitni tayyorlash",
+   "desc": "Git o'rnatilgan, sozlangan va tekshirilgan ish muhiti. Maqsad: keyingi barcha modullar uchun poydevor.",
+   "features": [
+    "Git o'rnatilgan (git --version ishlaydi)",
+    "user.name / user.email / init.defaultBranch sozlangan",
+    "GitHub va GitLab'da akkaunt ochilgan",
+    "Terminalda (Git Bash / zsh) 10 ta asosiy buyruq sinab ko'rilgan"
+   ],
+   "rubric": [
+    "git config --list to'g'ri ism/email ko'rsatadi.",
+    "GitHub va GitLab profillariga kira olasan.",
+    "git help <buyruq> dan mustaqil foydalana olasan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Git nima?",
+    "a": [
+     "bulut xizmat",
+     "versiya nazorati dasturi",
+     "dasturlash tili",
+     "kod muharriri"
+    ],
+    "c": 1,
+    "w": "Git - kompyuteringda ishlaydigan taqsimlangan versiya nazorati vositasi.",
+    "level": "easy"
+   },
+   {
+    "q": "GitHub va Git farqi?",
+    "a": [
+     "bir xil narsa",
+     "GitHub - Git repolari uchun bulut platforma",
+     "Git - GitHub'ning eski nomi",
+     "GitHub tezroq Git"
+    ],
+    "c": 1,
+    "w": "Git - vosita, GitHub - shu vosita repolarini saqlaydigan va hamkorlik qo'shadigan xizmat.",
+    "level": "easy"
+   },
+   {
+    "q": "Taqsimlangan VCS degani nima?",
+    "a": [
+     "kod bo'laklarga bo'linadi",
+     "har dasturchida to'liq tarixli nusxa bor",
+     "server har doim kerak",
+     "faqat katta jamoalar uchun"
+    ],
+    "c": 1,
+    "w": "Har clone - to'liq repo (butun tarix). Shuning uchun offline ham ishlaysan.",
+    "level": "practical"
+   },
+   {
+    "q": "Har commit'ga yoziladigan muallif ma'lumoti qayerdan olinadi?",
+    "a": [
+     "GitHub profildan",
+     "git config user.name/user.email dan",
+     "OS foydalanuvchisidan",
+     "repo egasidan"
+    ],
+    "c": 1,
+    "w": "Lokal Git config'dagi ism/email commit'ga muhrlanadi - shuning uchun avval sozlaysan.",
+    "level": "practical"
+   }
+  ]
+ },
+ {
+  "zoom": "GT1",
+  "title": "Asosiy oqim: commit",
+  "sub": "Poydevor",
+  "coord": "Poydevor / GT1",
+  "eyebrow": "01 / Uch zona modeli",
+  "mtitle": "Working directory -> Staging -> Repository",
+  "lede": "Git'ning yuragi - <strong>uch zona</strong>: ish papkasi, staging (sahna) va repozitoriy. Buni tushunsang, qolgan hamma buyruq mantiqan joyiga tushadi.",
+  "doc": "<div class='prose'><h3>Uch zona modeli</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Working directory dan Staging va Repository ga add va commit orqali'><rect class='box' x='20' y='72' width='170' height='58' rx='10'/><text x='105' y='98' text-anchor='middle'>Working</text><text class='muted' x='105' y='118' text-anchor='middle'>fayllar</text><path class='edga' d='M190 101 H255' marker-end='url(#arGt1a)'/><text class='accent' x='222' y='90' text-anchor='middle'>add</text><rect class='boxa' x='255' y='72' width='170' height='58' rx='10'/><text x='340' y='98' text-anchor='middle'>Staging</text><text class='muted' x='340' y='118' text-anchor='middle'>index</text><path class='edga' d='M425 101 H490' marker-end='url(#arGt1b)'/><text class='accent' x='457' y='90' text-anchor='middle'>commit</text><rect class='box' x='490' y='72' width='170' height='58' rx='10'/><text x='575' y='98' text-anchor='middle'>Repository</text><text class='muted' x='575' y='118' text-anchor='middle'>.git tarix</text><defs><marker id='arGt1a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt1b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Uch zona: add fayllarni sahnaga, commit sahnani abadiy tarixga yozadi.</figcaption></figure><div class='exlist'><div class='ex'><b>Working directory</b><span>oddiy fayllaring - tahrirlaysan, o'chirasan, yaratasan</span></div><div class='ex'><b>Staging area (index)</b><span>keyingi commit'ga NIMA kirishini tanlaydigan sahna - git add shu yerga qo'yadi</span></div><div class='ex'><b>Repository (.git)</b><span>commit qilingan abadiy tarix - git commit shu yerga yozadi</span></div></div><p>Nega staging kerak? Chunki sen 5 faylni o'zgartirib, faqat 2 tasini <strong>bitta mantiqiy commit</strong> qilishing mumkin. Staging - commit'ni <strong>ongli ravishda yig'ish</strong> vositasi.</p><h3>Yaxshi commit qanday bo'ladi?</h3><p><strong>Atomar</strong>: bitta commit = bitta mantiqiy o'zgarish (bitta bug fix, bitta kichik feature). <strong>Xabari aniq</strong>: birinchi qator 50 belgigacha, buyruq maylida (\"Add login form\", emas \"added some stuff\"). Yomon tarix - qidirib topolmaysan; yaxshi tarix - loyihaning hujjati.</p><div class='chips'><span class='chip t'>Atomar commit</span><span class='chip t'>Aniq xabar</span><span class='chip t'>Tez-tez commit</span></div><h3>.gitignore</h3><p>Hamma narsa tarixga kirmasligi kerak: <code>node_modules/</code>, build natijalari, <code>.env</code> (sirlar!), OS fayllari (<code>.DS_Store</code>). <code>.gitignore</code> fayli Git'ga nimani <strong>ko'rmaslikni</strong> aytadi. Repo boshida yozib qo'yish - keyin tozalab yurishdan oson.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Oltin odat</p><p>Har ishdan oldin va keyin <code>git status</code>. U hozirgi zonalar holatini ko'rsatadi va ko'pincha keyingi buyruqni ham taklif qiladi. Adashsang - avval status.</p></div></div><h3>Tarixni o'qish</h3><p><code>git log</code> - to'liq tarix; <code>git log --oneline --graph</code> - ixcham daraxt ko'rinishi. <code>git diff</code> - hali stage qilinmagan o'zgarishlar; <code>git diff --staged</code> - commit'ga tayyor turganlar. <code>git show</code> - bitta commit tafsiloti.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Kundalik oqim",
+     "p": "90% ishing shu 6 buyruq."
+    },
+    "title": "asosiy oqim",
+    "lang": "bash",
+    "code": "git init                     # yangi repo (papkada .git paydo bo'ladi)\ngit status                   # nima o'zgardi, nima staged?\ngit add src/app.ts           # bitta faylni sahnaga\ngit add .                    # hammasini sahnaga (ehtiyot bo'l!)\ngit commit -m \"Add login validation\"\ngit log --oneline --graph    # ixcham tarix"
+   },
+   {
+    "heading": {
+     "h": "Diff - nimani commit qilyapman?",
+     "p": "Commit'dan oldin DOIM ko'rib chiq."
+    },
+    "title": "diff",
+    "lang": "bash",
+    "code": "git diff                 # working vs staging\ngit diff --staged        # staging vs oxirgi commit\ngit show HEAD            # oxirgi commit nimani o'zgartirgan\ngit log -p src/app.ts    # bitta fayl tarixi (patch bilan)"
+   },
+   {
+    "heading": {
+     "h": ".gitignore namunasi",
+     "p": "Repo ildizida - birinchi commit'dayoq."
+    },
+    "title": ".gitignore",
+    "lang": "text",
+    "code": "node_modules/\ndist/\n.env\n.env.*\n*.log\n.DS_Store\ncoverage/"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt1-1",
+    "html": "Uch zona (working/staging/repo) modelini chizib tushuntira olaman",
+    "crit": "add va commit qaysi zonaga ta'sirini bilasan"
+   },
+   {
+    "id": "gt1-2",
+    "html": "Yangi repo yaratib, kamida 5 ta mazmunli commit qildim",
+    "crit": "har biri atomar, xabarlari aniq"
+   },
+   {
+    "id": "gt1-3",
+    "html": "git diff va git diff --staged farqini amalda ko'rdim",
+    "crit": "qaysi zonalarni solishtirishini aytasan"
+   },
+   {
+    "id": "gt1-4",
+    "html": ".gitignore yozdim va ishlashini tekshirdim",
+    "crit": "ignore qilingan fayl status'da chiqmaydi"
+   },
+   {
+    "id": "gt1-5",
+    "html": "git log --oneline --graph bilan tarixni o'qidim",
+    "crit": "istalgan commit xabarini topa olasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+    "title": "Pro Git - Recording Changes",
+    "desc": "Uch zona va commit oqimi",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://cbea.ms/git-commit/",
+    "title": "How to Write a Git Commit Message",
+    "desc": "Commit xabari yozish san'ati",
+    "host": "cbea.ms"
+   },
+   {
+    "type": "doc",
+    "url": "https://github.com/github/gitignore",
+    "title": "gitignore shablonlari",
+    "desc": "Har til/framework uchun tayyor",
+    "host": "github.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Poydevor",
+   "title": "Kundalik daftar repo",
+   "desc": "Har kuni o'rganganingni markdown faylga yozib, Git bilan yuritiladigan repo. Maqsad: commit oqimini qo'l odatiga aylantirish.",
+   "features": [
+    "README.md + notes/ papkasi bilan repo",
+    "Kamida 10 ta atomar commit, aniq xabarlar bilan",
+    ".gitignore bilan keraksiz fayllar chiqarib tashlangan",
+    "git log --oneline o'qilsa - loyiha tarixi hikoya kabi o'qiladi"
+   ],
+   "rubric": [
+    "Har commit bitta mantiqiy o'zgarish qiladi.",
+    "Commit xabarlari buyruq maylida va 50 belgidan oshmaydi.",
+    "Ignore qilingan fayl tasodifan tarixga kirmagan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "git add nima qiladi?",
+    "a": [
+     "commit yaratadi",
+     "o'zgarishni staging'ga qo'yadi",
+     "faylni o'chiradi",
+     "serverga yuboradi"
+    ],
+    "c": 1,
+    "w": "add - keyingi commit'ga kiradigan o'zgarishlarni sahnaga (index) qo'yadi.",
+    "level": "easy"
+   },
+   {
+    "q": "git diff --staged nimani ko'rsatadi?",
+    "a": [
+     "working vs staging",
+     "staging vs oxirgi commit",
+     "ikki branch farqi",
+     "o'chirilgan fayllar"
+    ],
+    "c": 1,
+    "w": "--staged (yoki --cached) sahnadagi, ya'ni commit'ga tayyor o'zgarishlarni ko'rsatadi.",
+    "level": "practical"
+   },
+   {
+    "q": ".env fayli qayerda turishi kerak?",
+    "a": [
+     "repoda, hamma ko'rsin",
+     ".gitignore'da - tarixga kirmasin",
+     "alohida branch'da",
+     "commit xabarida"
+    ],
+    "c": 1,
+    "w": "Sirlar (parol, API key) HECH QACHON tarixga kirmasligi kerak - bir kirsa, o'chirish juda qiyin.",
+    "level": "scenario"
+   },
+   {
+    "q": "5 fayl o'zgardi, faqat 2 tasi bitta mantiqqa tegishli. Nima qilasan?",
+    "a": [
+     "git add . va commit",
+     "faqat o'sha 2 faylni add qilib commit",
+     "5 ta alohida commit",
+     "hech narsa"
+    ],
+    "c": 1,
+    "w": "Staging aynan shu uchun: tanlab add qilasan - commit atomar chiqadi.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT2",
+  "title": "Branch & Merge",
+  "sub": "Parallel ish",
+  "coord": "Parallel / GT2",
+  "eyebrow": "02 / Shoxlar dunyosi",
+  "mtitle": "Branch - Git'ning super kuchi",
+  "lede": "Branch - tarixdagi commit'ga qo'yilgan <strong>yengil ko'rsatkich</strong>, nusxa emas. Shuning uchun Git'da branch ochish bir soniya - va jamoaviy ishning butun madaniyati shunga qurilgan.",
+  "doc": "<div class='prose'><h3>Branch aslida nima?</h3><p>Ko'pchilik branch'ni \"kod nusxasi\" deb o'ylaydi - noto'g'ri. Branch - bu <strong>bitta commit'ga ishora qiluvchi 41 baytlik fayl</strong>. Yangi commit qilsang, ishora oldinga suriladi. <code>HEAD</code> esa \"hozir qaysi branch'da turibman\" degan ko'rsatkich.</p><div class='chips'><span class='chip t'>branch = pointer</span><span class='chip t'>HEAD = joriy joy</span><span class='chip t'>arzon va tez</span></div><h3>Nega branch ochamiz?</h3><p>Har yangi ish (feature, bugfix, eksperiment) <strong>o'z branch'ida</strong>: <code>main</code> doim ishlaydigan holatda qoladi, sen esa xotirjam buzib-tuzasan. Tugagach <code>main</code>ga qo'shasan (merge). Nomlash odati: <code>feature/login-form</code>, <code>fix/header-overlap</code>.</p><h3>Merge: ikki xil holat</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='main va feature branch commitlari merge commit orqali birlashishi'><text class='muted' x='40' y='55' text-anchor='middle'>main</text><text class='muted' x='40' y='150' text-anchor='middle'>feature</text><line class='edge' x1='90' y1='70' x2='430' y2='70'/><circle class='boxa' cx='110' cy='70' r='13'/><circle class='boxa' cx='230' cy='70' r='13'/><line class='edge' x1='230' y1='70' x2='330' y2='140'/><line class='edge' x1='330' y1='140' x2='470' y2='140'/><circle class='box' cx='350' cy='140' r='13'/><circle class='box' cx='450' cy='140' r='13'/><line class='edga' x1='450' y1='140' x2='560' y2='70'/><line class='edga' x1='230' y1='70' x2='560' y2='70'/><circle class='boxa' cx='560' cy='70' r='15'/><text class='accent' x='560' y='45' text-anchor='middle'>merge</text><defs><marker id='arGt2a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>feature branch main dan ajralib, ishlab, merge commit bilan qaytadi (ikki ota-ona).</figcaption></figure><div class='exlist'><div class='ex'><b>Fast-forward</b><span>main oldinga siljimagan bo'lsa - Git shunchaki ko'rsatkichni suradi, yangi commit yo'q</span></div><div class='ex'><b>Merge commit</b><span>ikkala tomonda ham yangi commit bo'lsa - ikki ota-onali birlashtiruvchi commit yaratiladi</span></div></div><h3>Konflikt - dushman emas</h3><p>Ikki branch <strong>bir faylning bir joyini</strong> har xil o'zgartirsa, Git tanlay olmaydi va senga topshiradi. Faylda <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> / <code>=======</code> / <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> markerlari paydo bo'ladi: yuqorisi - sening tomoning (HEAD), pasti - kelayotgan branch. To'g'ri variantni qoldirasan, markerlarni o'chirasan, <code>git add</code> + <code>git commit</code>.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qo'rqma</p><p>Konflikt - xato emas, <strong>normal ish jarayoni</strong>. Kichik, tez-tez merge qilinsa konfliktlar mayda bo'ladi. Adashib ketsang: <code>git merge --abort</code> - hammasi merge'dan oldingi holatga qaytadi.</p></div></div><h3>Switch vs Checkout</h3><p>Zamonaviy Git'da branch almashish uchun <code>git switch</code>, fayl tiklash uchun <code>git restore</code> ishlatiladi - eski <code>checkout</code> ikkala ishni ham qilardi va adashtirardi.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Branch hayoti",
+     "p": "Ochish -> ishlash -> qo'shish -> o'chirish."
+    },
+    "title": "branch oqimi",
+    "lang": "bash",
+    "code": "git branch                       # ro'yxat (* - joriy)\ngit switch -c feature/login      # yarat va o't\n# ... ishla, commit qil ...\ngit switch main                  # asosiyga qayt\ngit merge feature/login          # qo'sh\ngit branch -d feature/login      # tugadi - o'chir"
+   },
+   {
+    "heading": {
+     "h": "Konfliktni yechish",
+     "p": "Markerni tozala, add, commit."
+    },
+    "title": "konflikt",
+    "lang": "bash",
+    "code": "git merge feature/header\n# CONFLICT (content): Merge conflict in src/app.css\n\ngit status                # qaysi fayllar konfliktda\n# faylni och, <<<<<<< ======= >>>>>>> ni hal qil\ngit add src/app.css\ngit commit                # merge commit yakunlanadi\n\n# Yo'q, hammasini bekor qilaman:\ngit merge --abort"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt2-1",
+    "html": "Branch pointer ekanini tushundim (nusxa emas)",
+    "crit": "HEAD nima ekanini ham aytasan"
+   },
+   {
+    "id": "gt2-2",
+    "html": "Feature branch ochib, ishlab, main'ga merge qildim",
+    "crit": "fast-forward holatini ko'rding"
+   },
+   {
+    "id": "gt2-3",
+    "html": "Ataylab konflikt yasab, qo'lda yechdim",
+    "crit": "markerlarsiz toza natija"
+   },
+   {
+    "id": "gt2-4",
+    "html": "git merge --abort bilan merge'ni bekor qildim",
+    "crit": "holat merge'dan oldingiga qaytdi"
+   },
+   {
+    "id": "gt2-5",
+    "html": "switch/restore va eski checkout farqini bilaman",
+    "crit": "har birining vazifasini aytasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell",
+    "title": "Pro Git - Branching",
+    "desc": "Branch modeli chuqur",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://learngitbranching.js.org/",
+    "title": "Learn Git Branching",
+    "desc": "Interaktiv vizual mashq - MAJBURIY o'yna!",
+    "host": "learngitbranching.js.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/docs/git-merge",
+    "title": "git merge - hujjat",
+    "desc": "Merge strategiyalari",
+    "host": "git-scm.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Parallel",
+   "title": "Uch branch simulyatsiyasi",
+   "desc": "Bitta repoda o'zing bilan o'zing \"jamoa\" bo'lib ishlash: parallel branchlar, merge, konflikt. Maqsad: branch oqimini refleksga aylantirish.",
+   "features": [
+    "main + 2 ta feature branch parallel yuritilgan",
+    "Bitta fast-forward va bitta merge commit holati bor",
+    "Kamida bitta konflikt ataylab yaratilib, to'g'ri yechilgan",
+    "git log --oneline --graph --all chizmasi tushunarli daraxt ko'rsatadi"
+   ],
+   "rubric": [
+    "Graph'da qaysi commit qaysi branch'dan kelganini ko'rsata olasan.",
+    "Konflikt yechimida ikkala tomon mantig'i saqlangan.",
+    "Tugagan branchlar o'chirilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Git'da branch aslida nima?",
+    "a": [
+     "kod nusxasi",
+     "commit'ga ko'rsatkich",
+     "alohida papka",
+     "zip arxiv"
+    ],
+    "c": 1,
+    "w": "Branch - bitta commit'ga ishora. Shuning uchun ochish/o'chirish deyarli bepul.",
+    "level": "easy"
+   },
+   {
+    "q": "Fast-forward merge qachon bo'ladi?",
+    "a": [
+     "har doim",
+     "maqsad branch orqada qolmagan bo'lsa",
+     "konflikt bo'lsa",
+     "faqat GitHub'da"
+    ],
+    "c": 1,
+    "w": "Agar main'da yangi commit bo'lmasa, Git ko'rsatkichni oldinga suradi - yangi commit yaratmaydi.",
+    "level": "practical"
+   },
+   {
+    "q": "Konflikt markerida ======= dan yuqorisi nima?",
+    "a": [
+     "kelayotgan branch",
+     "sening joriy tomoning (HEAD)",
+     "umumiy ajdod",
+     "o'chirilgan kod"
+    ],
+    "c": 1,
+    "w": "Yuqorisi HEAD (sen turgan branch), pasti - merge qilinayotgan branch o'zgarishi.",
+    "level": "practical"
+   },
+   {
+    "q": "Merge chalkashib ketdi, boshidan boshlamoqchisan. Eng xavfsiz yo'l?",
+    "a": [
+     "papkani o'chirish",
+     "git merge --abort",
+     "git push --force",
+     "fayllarni qo'lda qaytarish"
+    ],
+    "c": 1,
+    "w": "--abort merge boshlanishidan oldingi holatni to'liq tiklaydi - hech narsa yo'qolmaydi.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT3",
+  "title": "Remote: GitHub & GitLab",
+  "sub": "Markaz",
+  "coord": "Markaz / GT3",
+  "eyebrow": "03 / Bulutga ulanish",
+  "mtitle": "Lokal repo'ni dunyoga ulash",
+  "lede": "Remote - repoingning boshqa joydagi (GitHub, GitLab, hamkasb kompyuteri) nusxasiga berilgan <strong>nom</strong>. push/pull/fetch - shu nusxalar orasida commit tashish.",
+  "doc": "<div class='prose'><h3>Remote modeli</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Lokal repo va origin orasida push pull fetch'><rect class='boxa' x='40' y='72' width='180' height='58' rx='10'/><text x='130' y='98' text-anchor='middle'>Lokal repo</text><text class='muted' x='130' y='118' text-anchor='middle'>kompyuter</text><path class='edga' d='M220 88 H455' marker-end='url(#arGt3a)'/><text class='accent' x='337' y='78' text-anchor='middle'>push</text><path class='edge' d='M455 114 H220' marker-end='url(#arGt3b)'/><text class='muted' x='337' y='134' text-anchor='middle'>fetch / pull</text><rect class='box' x='455' y='72' width='180' height='58' rx='10'/><text x='545' y='98' text-anchor='middle'>origin</text><text class='muted' x='545' y='118' text-anchor='middle'>GitHub / GitLab</text><defs><marker id='arGt3a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt3b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>push commitlarni origin ga yuboradi; fetch/pull u yerdan olib keladi.</figcaption></figure><p><code>origin</code> - clone qilganingda avtomatik qo'yiladigan standart remote nomi (URL'ning taxallusi). Lokal repoing GitHub'dagi bilan <strong>avtomatik sinxron emas</strong> - sen ongli ravishda yuborasan (push) va olasan (pull).</p><div class='exlist'><div class='ex'><b>git clone URL</b><span>remote repo'ni to'liq tarix bilan ko'chirib oladi</span></div><div class='ex'><b>git push</b><span>lokal commit'laringni remote'ga yuboradi</span></div><div class='ex'><b>git fetch</b><span>remote yangiliklarini olib keladi, lekin QOSHMAYDI - avval ko'rib chiqasan</span></div><div class='ex'><b>git pull</b><span>fetch + merge birga: olib kel va joriy branch'ga qo'sh</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>fetch vs pull</p><p>Professional odat: avval <code>git fetch</code>, keyin <code>git log main..origin/main</code> bilan nima kelganini ko'r, keyin qo'sh. <code>pull</code> - shoshilinch yo'l; nimani olayotganingni bilsang ishlat.</p></div></div><h3>SSH kalit - parolsiz va xavfsiz</h3><p>HTTPS'da har push'da token so'raladi (yoki keshda saqlanadi). <strong>SSH kaliti</strong> - professional standart: bir marta yaratasan (<code>ssh-keygen</code>), ochiq qismini GitHub/GitLab profilga qo'shasan, tamom. Maxfiy kalit (<code>id_ed25519</code>) hech qayerga yuborilmaydi!</p><h3>Tracking branch</h3><p><code>git push -u origin main</code> dagi <code>-u</code> - lokal <code>main</code> bilan <code>origin/main</code> ni bog'laydi. Shundan keyin oddiy <code>git push</code> / <code>git pull</code> yetadi. <code>git status</code> ham \"2 commit oldindasan\" deb ko'rsata boshlaydi.</p><h3>GitHub va GitLab'da repo ochish</h3><p>Ikkala platformada ham: New project/repository -&gt; nom -&gt; <strong>bo'sh repo</strong> (README'siz) yarat -&gt; ko'rsatilgan buyruqlar bilan lokal repoingni ula. Bitta lokal repo bir nechta remote'ga ulanishi mumkin (masalan, <code>origin</code> GitHub + <code>gitlab</code> GitLab - ko'zgu nusxa).</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "SSH kalit yaratish",
+     "p": "Bir marta - keyin unutasan."
+    },
+    "title": "ssh",
+    "lang": "bash",
+    "code": "ssh-keygen -t ed25519 -C \"sen@email.uz\"\n# Enter, Enter (parolsiz yoki passphrase bilan)\n\ncat ~/.ssh/id_ed25519.pub\n# chiqqan matnni GitHub -> Settings -> SSH keys ga qo'sh\n#             GitLab -> Preferences -> SSH Keys ga ham\n\nssh -T git@github.com     # tekshir: \"Hi username!\"\nssh -T git@gitlab.com     # tekshir: \"Welcome ...\""
+   },
+   {
+    "heading": {
+     "h": "Mavjud repo'ni remote'ga ulash",
+     "p": "Lokalda boshladingmi - endi bulutga."
+    },
+    "title": "remote",
+    "lang": "bash",
+    "code": "git remote add origin git@github.com:user/repo.git\ngit push -u origin main        # -u: tracking o'rnatadi\n\ngit remote -v                  # remote'lar ro'yxati\ngit fetch                      # yangiliklarni olib kel\ngit log main..origin/main      # nima keldi?\ngit pull                       # olib kel va qo'sh"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt3-1",
+    "html": "SSH kalit yaratib, GitHub VA GitLab'ga qo'shdim",
+    "crit": "ssh -T ikkalasida ham salomlashadi"
+   },
+   {
+    "id": "gt3-2",
+    "html": "Lokal repo'ni GitHub'ga push qildim",
+    "crit": "kod github.com'da ko'rinadi"
+   },
+   {
+    "id": "gt3-3",
+    "html": "fetch va pull farqini amalda ko'rdim",
+    "crit": "fetch'dan keyin log bilan farqni ko'rding"
+   },
+   {
+    "id": "gt3-4",
+    "html": "clone qilib, o'zgartirib, push qildim (to'liq aylanma)",
+    "crit": "boshqa papkaga clone qilib sinading"
+   },
+   {
+    "id": "gt3-5",
+    "html": "Bitta repoga ikkinchi remote (GitLab) qo'shdim",
+    "crit": "git remote -v ikkitasini ko'rsatadi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/authentication/connecting-to-github-with-ssh",
+    "title": "GitHub - SSH ulanish",
+    "desc": "Rasmiy qadam-baqadam",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes",
+    "title": "Pro Git - Remotes",
+    "desc": "Remote modeli chuqur",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.gitlab.com/ee/user/ssh.html",
+    "title": "GitLab - SSH kalitlar",
+    "desc": "GitLab tomoni sozlash",
+    "host": "docs.gitlab.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Markaz",
+   "title": "Ikki platformali repo",
+   "desc": "Bitta lokal repo GitHub'da ham, GitLab'da ham yashaydi. Maqsad: remote modeli va SSH'ni mustahkamlash.",
+   "features": [
+    "SSH orqali ikkala platformaga parolsiz push",
+    "origin (GitHub) + gitlab (GitLab) remote'lari sozlangan",
+    "Ikkala platformada ham bir xil tarix ko'rinadi",
+    "README'da clone/push yo'riqnomasi yozilgan"
+   ],
+   "rubric": [
+    "HTTPS emas, SSH URL ishlatilgan.",
+    "push -u dan keyin oddiy push/pull ishlaydi.",
+    "fetch va pull farqini misolda ko'rsata olasan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "origin nima?",
+    "a": [
+     "asosiy branch",
+     "remote URL'ning standart taxallusi",
+     "birinchi commit",
+     "GitHub'ning nomi"
+    ],
+    "c": 1,
+    "w": "origin - clone'da avtomatik qo'yiladigan remote nomi. Istalgancha remote bo'lishi mumkin.",
+    "level": "easy"
+   },
+   {
+    "q": "git fetch nima qiladi?",
+    "a": [
+     "olib keladi va merge qiladi",
+     "faqat olib keladi, qo'shmaydi",
+     "push qiladi",
+     "branch o'chiradi"
+    ],
+    "c": 1,
+    "w": "fetch - xavfsiz: yangiliklarni olib keladi, ishingga tegmaydi. pull = fetch + merge.",
+    "level": "practical"
+   },
+   {
+    "q": "SSH kalitning qaysi qismini GitHub'ga qo'yasan?",
+    "a": [
+     "maxfiy kalitni",
+     "ochiq (.pub) kalitni",
+     "ikkalasini",
+     "hech qaysisini"
+    ],
+    "c": 1,
+    "w": "Faqat .pub! Maxfiy kalit kompyuteringdan chiqmaydi - chiqsa, kalit almashtiriladi.",
+    "level": "practical"
+   },
+   {
+    "q": "push rad etildi: \"rejected - remote contains work you do not have\". Nima bo'lgan?",
+    "a": [
+     "internet uzilgan",
+     "remote'da senda yo'q commit bor - avval pull/fetch",
+     "repo o'chirilgan",
+     "SSH buzilgan"
+    ],
+    "c": 1,
+    "w": "Kimdir sendan oldin push qilgan. Avval fetch/pull qilib, o'z ishingni ustiga qo'yasan.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT4",
+  "title": "Pull Request & Review",
+  "sub": "Hamkorlik",
+  "coord": "Hamkorlik / GT4",
+  "eyebrow": "04 / Jamoaviy sifat",
+  "mtitle": "PR/MR - professional hamkorlik birligi",
+  "lede": "Pull Request (GitHub) / Merge Request (GitLab) - \"mening branch'imni qo'shib ko'rib chiqing\" degan <strong>rasmiy taklif</strong>. Zamonaviy jamoada kod PR'siz main'ga kirmaydi.",
+  "doc": "<div class='prose'><h3>PR oqimi</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Branch dan PR review CI va merge gacha oqim'><rect class='box' x='16' y='76' width='118' height='50' rx='9'/><text x='75' y='105' text-anchor='middle'>branch</text><path class='edga' d='M134 101 H166' marker-end='url(#arGt4a)'/><rect class='boxa' x='166' y='76' width='118' height='50' rx='9'/><text x='225' y='105' text-anchor='middle'>PR</text><path class='edga' d='M284 101 H316' marker-end='url(#arGt4b)'/><rect class='box' x='316' y='76' width='118' height='50' rx='9'/><text x='375' y='99' text-anchor='middle'>review</text><text class='muted' x='375' y='116' text-anchor='middle'>+ CI</text><path class='edga' d='M434 101 H466' marker-end='url(#arGt4c)'/><rect class='boxa' x='466' y='76' width='118' height='50' rx='9'/><text x='525' y='105' text-anchor='middle'>merge</text><text class='muted' x='300' y='158' text-anchor='middle'>tasdiqlangach main ga qo'shiladi, branch o'chiriladi</text><defs><marker id='arGt4a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt4b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt4c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>PR oqimi: branch -> PR -> review va CI -> merge.</figcaption></figure><div class='exlist'><div class='ex'><b>1. Branch + push</b><span>feature branch'da ishla, origin'ga push qil</span></div><div class='ex'><b>2. PR och</b><span>nima va NEGA qilganingni tavsifda yoz, kichik PR - tez review</span></div><div class='ex'><b>3. Review</b><span>hamkasb kodni o'qiydi, izoh qoldiradi, o'zgartirish so'raydi</span></div><div class='ex'><b>4. CI tekshiradi</b><span>testlar, lint avtomatik ishlaydi (keyingi modullarda)</span></div><div class='ex'><b>5. Merge</b><span>tasdiqlangach main'ga qo'shiladi, branch o'chiriladi</span></div></div><h3>Yaxshi PR qanday?</h3><p><strong>Kichik</strong> (200-400 qator ideal - kattasini hech kim sinchiklab o'qimaydi), <strong>bitta maqsadli</strong>, tavsifida: nima o'zgardi, nega, qanday tekshirish mumkin. Skrinshot/gif UI o'zgarishlarida juda yordam beradi. Draft PR - \"hali tugamadi, lekin yo'nalishni ko'rib bering\" degani.</p><h3>Review madaniyati</h3><p>Review - imtihon emas, <strong>bilim almashish</strong>. Izohda kodga gapir, odamga emas: \"bu funksiya nomi mazmunni ochmayapti\" (yaxshi) vs \"sen tushunmagansan\" (yomon). Savol shaklida taklif qil: \"bu yerda map ishlatsak soddalashadimi?\". Muallif sifatida: izohlarni himoyalanmasdan o'qi - maqsad bitta: yaxshi kod.</p><div class='chips'><span class='chip t'>Kichik PR</span><span class='chip t'>Aniq tavsif</span><span class='chip t'>Hurmatli izoh</span><span class='chip t'>Tez javob</span></div><h3>Merge strategiyalari</h3><div class='exlist'><div class='ex'><b>Merge commit</b><span>to'liq tarix saqlanadi, graph shoxlanadi</span></div><div class='ex'><b>Squash & merge</b><span>PR'ning hamma commit'i BITTA bo'lib qo'shiladi - main tarixi toza (ko'p jamoada standart)</span></div><div class='ex'><b>Rebase & merge</b><span>commit'lar birma-bir, merge commit'siz - chiziqli tarix</span></div></div><h3>Fork oqimi (ochiq kod)</h3><p>Begona repoga yozish huquqing yo'q - <strong>fork</strong> qilasan (o'zingga nusxa), unda branch ochib PR yuborasan. Open-source hissa qo'shishning standart yo'li shu. Birinchi hissa uchun repolarda <code>good first issue</code> yorlig'ini qidir.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "PR hayoti (gh CLI bilan)",
+     "p": "Brauzersiz ham ochish mumkin."
+    },
+    "title": "pr oqimi",
+    "lang": "bash",
+    "code": "git switch -c fix/empty-cart\n# ... tuzat, commit qil ...\ngit push -u origin fix/empty-cart\n\n# GitHub CLI (gh) bilan:\ngh pr create --title \"Fix empty cart crash\" \\\n  --body \"Savatcha bo'sh bo'lganda NPE tuzatildi. Test qo'shildi.\"\n\ngh pr status        # PR holatim\ngh pr view --web    # brauzerda ochish"
+   },
+   {
+    "heading": {
+     "h": "Review'dan keyin tuzatish",
+     "p": "Xuddi shu branch'ga push - PR yangilanadi."
+    },
+    "title": "review fix",
+    "lang": "bash",
+    "code": "# Reviewer izoh qoldirdi - tuzatasan:\ngit add src/cart.ts\ngit commit -m \"Address review: extract guard clause\"\ngit push                # PR avtomatik yangilanadi\n\n# Fork oqimida asl repo'ni kuzatish:\ngit remote add upstream git@github.com:asl-egasi/repo.git\ngit fetch upstream\ngit rebase upstream/main   # o'z branch'ingni yangila"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt4-1",
+    "html": "O'z repomda branch'dan PR ochib, o'zim merge qildim",
+    "crit": "tavsifda nima/nega yozilgan"
+   },
+   {
+    "id": "gt4-2",
+    "html": "Squash merge bilan oddiy merge farqini tarixda ko'rdim",
+    "crit": "log'da farqni ko'rsatasan"
+   },
+   {
+    "id": "gt4-3",
+    "html": "Begona repo'ni fork qilib, PR yubordim (yoki simulyatsiya)",
+    "crit": "upstream remote sozlangan"
+   },
+   {
+    "id": "gt4-4",
+    "html": "GitLab'da MR ochib, GitHub PR bilan solishtirdim",
+    "crit": "atama va UI farqlarini bilasan"
+   },
+   {
+    "id": "gt4-5",
+    "html": "Boshqa kodga konstruktiv review izohi yozdim",
+    "crit": "kodga qaratilgan, taklif shaklida"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/pull-requests",
+    "title": "GitHub - Pull Requests",
+    "desc": "Rasmiy PR hujjatlari",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://google.github.io/eng-practices/review/",
+    "title": "Google - Code Review qo'llanmasi",
+    "desc": "Dunyodagi eng mashhur review standarti",
+    "host": "google.github.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.gitlab.com/ee/user/project/merge_requests/",
+    "title": "GitLab - Merge Requests",
+    "desc": "MR oqimi rasmiy",
+    "host": "docs.gitlab.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Hamkorlik",
+   "title": "PR bilan yuritiladigan loyiha",
+   "desc": "Kichik loyihada (masalan, o'z portfolio sayting) BARCHA o'zgarishlar faqat PR orqali kiradi. Maqsad: professional oqimni odatga aylantirish.",
+   "features": [
+    "main'ga to'g'ridan-to'g'ri push yo'q - hamma ish PR orqali",
+    "Kamida 3 ta PR: har birida tavsif, o'z-o'ziga review izohi",
+    "Bittasi squash merge, bittasi oddiy merge bilan qo'shilgan",
+    "Bitta draft PR ochib, keyin ready qilingan"
+   ],
+   "rubric": [
+    "PR tavsiflari nima/nega/qanday-tekshirish savollariga javob beradi.",
+    "Merge'dan keyin branchlar o'chirilgan.",
+    "main tarixi o'qiladigan holatda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "PR (GitHub) ning GitLab'dagi nomi?",
+    "a": [
+     "Push Request",
+     "Merge Request",
+     "Change Request",
+     "Review Request"
+    ],
+    "c": 1,
+    "w": "GitLab'da Merge Request (MR) - mohiyati bir xil.",
+    "level": "easy"
+   },
+   {
+    "q": "Squash & merge nima qiladi?",
+    "a": [
+     "PR'ni o'chiradi",
+     "PR commit'larini bittaga birlashtirib qo'shadi",
+     "har commit'ni alohida qo'shadi",
+     "branch'ni siqadi"
+    ],
+    "c": 1,
+    "w": "Squash - PR'dagi barcha commit'lar main'da bitta toza commit bo'ladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Yozish huquqi yo'q ochiq repoga hissa qo'shish yo'li?",
+    "a": [
+     "egasiga email",
+     "fork -> branch -> PR",
+     "kodni ko'chirib yangi repo",
+     "issue'da kod yozish"
+    ],
+    "c": 1,
+    "w": "Fork o'zingda nusxa yaratadi - undan asl repoga PR yuborasan.",
+    "level": "practical"
+   },
+   {
+    "q": "Review'da katta muammo topding, lekin muallif senior. Nima qilasan?",
+    "a": [
+     "indamayman",
+     "hurmat bilan, dalil bilan izoh yozaman",
+     "boshqaga aytaman",
+     "approve qilaman"
+    ],
+    "c": 1,
+    "w": "Review darajaga qaramaydi - kodga qaratilgan, dalilli izoh har kimga yoziladi. Sifat umumiy mas'uliyat.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT5",
+  "title": "Tarixni qayta yozish",
+  "sub": "Rebase",
+  "coord": "Rebase / GT5",
+  "eyebrow": "05 / Toza tarix san'ati",
+  "mtitle": "Rebase, amend, cherry-pick",
+  "lede": "Merge tarixni <strong>qanday bo'lsa shunday</strong> saqlaydi; rebase esa uni <strong>qayta hikoya qiladi</strong> - go'yo hamma ish oxirgi holat ustida qilingan. Kuchli qurol - qoidasi bilan ishlatiladi.",
+  "doc": "<div class='prose'><h3>Rebase nima qiladi?</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Rebase feature commitlarini main oxiriga qayta joylashtiradi'><text class='muted' x='55' y='48' text-anchor='middle'>oldin</text><line class='edge' x1='90' y1='60' x2='300' y2='60'/><circle class='boxa' cx='110' cy='60' r='11'/><circle class='boxa' cx='170' cy='60' r='11'/><line class='edge' x1='170' y1='60' x2='230' y2='95'/><line class='edge' x1='230' y1='95' x2='300' y2='95'/><circle class='box' cx='250' cy='95' r='11'/><circle class='box' cx='300' cy='95' r='11'/><path class='edga' d='M340 78 H400' marker-end='url(#arGt5a)'/><text class='accent' x='370' y='68' text-anchor='middle'>rebase</text><text class='muted' x='470' y='48' text-anchor='middle'>keyin</text><line class='edge' x1='430' y1='78' x2='650' y2='78'/><circle class='boxa' cx='450' cy='78' r='11'/><circle class='boxa' cx='505' cy='78' r='11'/><circle class='box' cx='560' cy='78' r='11'/><circle class='box' cx='615' cy='78' r='11'/><text class='muted' x='587' y='108' text-anchor='middle'>chiziqli tarix</text><defs><marker id='arGt5a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Rebase feature commitlarini main ustiga yangi hash bilan chiziqli qilib ko'chiradi.</figcaption></figure><p><code>git rebase main</code> - branch'ingdagi commit'larni olib, main'ning eng oxiriga <strong>birma-bir qaytadan qo'yadi</strong>. Natija: chiziqli, toza tarix; merge commit yo'q. Muhim: commit'lar <strong>yangi</strong> yaratiladi (hash o'zgaradi) - eski tarix qayta yozildi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>OLTIN QOIDA</p><p><strong>Boshqalar bilan ulashilgan (push qilingan umumiy) branch tarixini rebase qilma!</strong> Hamkasblaring eski tarix ustida ishlayotgan bo'ladi - ularning ishi buziladi. O'z lokal/shaxsiy branch'ing - marhamat.</p></div></div><h3>Interactive rebase - tarix muharriri</h3><p><code>git rebase -i HEAD~5</code> oxirgi 5 commit ro'yxatini ochadi. Har qatorga buyruq yozasan: <code>pick</code> (qoldir), <code>squash</code> (oldingisiga qo'sh), <code>reword</code> (xabarni o'zgartir), <code>drop</code> (o'chir), <code>edit</code> (to'xtab tahrirla). PR yuborishdan oldin \"wip\", \"fix typo\" kabi commit'larni bitta mazmunli commit'ga yig'ish - professional odat.</p><h3>Kichik tuzatishlar</h3><div class='exlist'><div class='ex'><b>git commit --amend</b><span>oxirgi commit'ga qo'shimcha kirit yoki xabarini tuzat (yangi commit o'rniga)</span></div><div class='ex'><b>git cherry-pick abc123</b><span>istalgan bitta commit'ni joriy branch'ga ko'chir (masalan, hotfix'ni ikki branchga)</span></div><div class='ex'><b>git rebase --onto</b><span>branch'ni bir asosdan boshqasiga ko'chirish (ilg'or)</span></div></div><h3>Force push - faqat --force-with-lease</h3><p>Rebase'dan keyin push rad etiladi (tarix boshqa). O'z branch'ing bo'lsa: <code>git push --force-with-lease</code>. Oddiy <code>--force</code>'dan farqi: remote'da kutilmagan yangi commit bo'lsa (hamkasb push qilgan) - <strong>to'xtaydi</strong> va ishni o'chirib yubormaydi.</p><h3>Merge yoki Rebase?</h3><p>Jamoa kelishuviga bog'liq. Keng tarqalgan oqilona siyosat: <strong>feature branch'ni main ustiga rebase</strong> qilib yangilab tur (toza), main'ga esa <strong>squash merge</strong> bilan kirit. Ikkalasi ham vosita - dogma emas.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Feature'ni yangilash: merge vs rebase",
+     "p": "Ikkala yo'l - natija tarixda farq qiladi."
+    },
+    "title": "rebase",
+    "lang": "bash",
+    "code": "git switch feature/search\n\n# 1-yo'l: merge (tarix shoxlanadi)\ngit merge main\n\n# 2-yo'l: rebase (chiziqli tarix)\ngit rebase main\n# konflikt bo'lsa: hal qil -> git add -> git rebase --continue\n# qo'rqib ketding: git rebase --abort\n\ngit push --force-with-lease   # rebase'dan keyin (O'Z branch'ing!)"
+   },
+   {
+    "heading": {
+     "h": "PR oldidan tarixni tozalash",
+     "p": "wip'lardan bitta mazmunli commit."
+    },
+    "title": "interactive",
+    "lang": "bash",
+    "code": "git log --oneline\n# f3a21c wip try again\n# 9b1e44 wip\n# 2c8d10 Add search endpoint\n\ngit rebase -i HEAD~3\n# muharrirda:\n# pick 2c8d10 Add search endpoint\n# squash 9b1e44 wip\n# squash f3a21c wip try again\n# -> bitta \"Add search endpoint\" commit qoladi\n\ngit commit --amend            # oxirgi xabarni tuzatish\ngit cherry-pick a1b2c3        # bitta commit'ni ko'chirish"
+   },
+   {
+    "heading": {
+     "h": "rebase --onto: asosni almashtirish",
+     "p": "Branch'ni bir bazadan boshqasiga ko'chirish."
+    },
+    "title": "rebase --onto",
+    "lang": "bash",
+    "code": "# Holat: feature/api develop'dan ochilgan edi,\n# lekin endi u main ustida turishi kerak.\n#   develop --o--o (D1 D2)\n#                  \\--o--o  feature/api (F1 F2)\n#   main    --o--o--o\n\n# git rebase --onto <yangi-asos> <eski-asos> <branch>\ngit rebase --onto main develop feature/api\n# faqat F1,F2 (develop'dan keyingi commitlar) olinadi\n# va main uchiga qayta qo'yiladi - D1,D2 tushib qoladi\n\n# Yana bir foydali holat: oxirgi 2 commit'ni\n# joriy branch'dan olib, boshqa asosga ko'chirish\ngit rebase --onto main HEAD~2   # HEAD~2 = eski asos\n\n# konflikt bo'lsa: hal qil -> git add -> git rebase --continue"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt5-1",
+    "html": "Bir xil holatni merge va rebase bilan qilib, graph'ni solishtirdim",
+    "crit": "farqni chizib ko'rsatasan"
+   },
+   {
+    "id": "gt5-2",
+    "html": "rebase -i bilan 3 ta wip commit'ni bittaga squash qildim",
+    "crit": "yakuniy xabar mazmunli"
+   },
+   {
+    "id": "gt5-3",
+    "html": "commit --amend bilan oxirgi commit'ni tuzatdim",
+    "crit": "hash o'zgarganini payqading"
+   },
+   {
+    "id": "gt5-4",
+    "html": "cherry-pick bilan commit'ni boshqa branch'ga ko'chirdim",
+    "crit": "qachon kerakligini aytasan"
+   },
+   {
+    "id": "gt5-5",
+    "html": "Oltin qoidani va --force-with-lease ni tushuntira olaman",
+    "crit": "nega oddiy --force xavfli - bilasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Branching-Rebasing",
+    "title": "Pro Git - Rebasing",
+    "desc": "Rebase va oltin qoida",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-rebase.io/",
+    "title": "git-rebase.io",
+    "desc": "Interactive rebase amaliy darslik",
+    "host": "git-rebase.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing",
+    "title": "Atlassian - Merging vs Rebasing",
+    "desc": "Qachon qaysi biri - vizual",
+    "host": "atlassian.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Rebase",
+   "title": "Tarix tozalash mashqi",
+   "desc": "Ataylab \"iflos\" tarix yaratib (wip, typo fix, aralash commit), uni professional holatga keltirish. Maqsad: interactive rebase'ni erkin ishlatish.",
+   "features": [
+    "8-10 ta tartibsiz commit'li branch yaratilgan",
+    "rebase -i bilan 3-4 ta mazmunli commit'ga keltirilgan",
+    "Bitta commit reword, bittasi drop qilingan",
+    "main ustiga rebase qilinib, konflikt yechilgan"
+   ],
+   "rubric": [
+    "Yakuniy log'da har commit atomar va aniq xabarli.",
+    "reflog orqali eski holat hali ham topiladi (bilasan).",
+    "Force push faqat --force-with-lease bilan qilingan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Rebase merge'dan nimasi bilan farq qiladi?",
+    "a": [
+     "tezroq ishlaydi",
+     "commit'larni yangi asos ustiga qayta yozadi",
+     "konflikt bo'lmaydi",
+     "faqat GitHub'da bor"
+    ],
+    "c": 1,
+    "w": "Rebase tarixni qayta yozadi - commit'lar yangi hash bilan yangi joyga qo'yiladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Rebase'ning oltin qoidasi?",
+    "a": [
+     "har kuni rebase qil",
+     "ulashilgan branch tarixini rebase qilma",
+     "faqat main'ni rebase qil",
+     "rebase'dan keyin test yoz"
+    ],
+    "c": 1,
+    "w": "Boshqalar tayangan tarixni qayta yozsang - ularning ishi buziladi.",
+    "level": "easy"
+   },
+   {
+    "q": "--force-with-lease oddiy --force'dan afzalligi?",
+    "a": [
+     "tezroq",
+     "remote'da kutilmagan ish bo'lsa to'xtaydi",
+     "tarixni saqlaydi",
+     "parol so'ramaydi"
+    ],
+    "c": 1,
+    "w": "with-lease - \"men bilgan holatdagina yoz\" degani: hamkasb ishini o'chirib yuborishdan saqlaydi.",
+    "level": "practical"
+   },
+   {
+    "q": "PR'da 7 ta \"wip\" commit bor. Merge'dan oldin nima qilgan ma'qul?",
+    "a": [
+     "shundayligicha merge",
+     "rebase -i bilan squash qilib mazmunli commit(lar)ga keltirish",
+     "PR'ni yopish",
+     "har wip'ga tavsif yozish"
+    ],
+    "c": 1,
+    "w": "Interactive rebase (yoki platformadagi squash merge) - main tarixi toza qoladi.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT6",
+  "title": "Undo & Qutqarish",
+  "sub": "Xavfsizlik to'ri",
+  "coord": "Qutqarish / GT6",
+  "eyebrow": "06 / Hech narsa yo'qolmaydi",
+  "mtitle": "reset, revert, stash, reflog",
+  "lede": "Git'da commit qilingan ish <strong>deyarli hech qachon yo'qolmaydi</strong> - hatto \"o'chirib yuborganingda\" ham. Bu modul seni Git'dan qo'rqishdan butunlay xalos qiladi.",
+  "doc": "<div class='prose'><h3>To'rt xil \"bekor qilish\"</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Undo darajalari working staging va commit uchun mos buyruqlar'><rect class='box' x='30' y='40' width='160' height='44' rx='9'/><text x='110' y='67' text-anchor='middle'>Working</text><path class='edga' d='M300 62 H195' marker-end='url(#arGt6a)'/><text class='accent' x='250' y='52' text-anchor='middle'>restore</text><rect class='box' x='30' y='96' width='160' height='44' rx='9'/><text x='110' y='123' text-anchor='middle'>Staging</text><path class='edga' d='M300 118 H195' marker-end='url(#arGt6b)'/><text class='accent' x='255' y='108' text-anchor='middle'>restore --staged</text><rect class='box' x='30' y='152' width='160' height='44' rx='9'/><text x='110' y='179' text-anchor='middle'>Commit</text><path class='edga' d='M470 174 H195' marker-end='url(#arGt6c)'/><text class='accent' x='360' y='164' text-anchor='middle'>revert / reset</text><rect class='boxa' x='300' y='40' width='320' height='156' rx='10'/><text class='muted' x='460' y='96' text-anchor='middle'>revert: bekor qiluvchi yangi commit (umumiy)</text><text class='muted' x='460' y='120' text-anchor='middle'>reset: korsatkichni orqaga suradi (lokal)</text><defs><marker id='arGt6a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt6b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt6c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Har zonaga mos undo: restore (working/staging), revert yoki reset (commit).</figcaption></figure><div class='exlist'><div class='ex'><b>git restore fayl</b><span>fayldagi commit'lanmagan o'zgarishni o'chir (working'ni tozala)</span></div><div class='ex'><b>git restore --staged fayl</b><span>staging'dan chiqar (add'ni bekor qil), o'zgarish faylda qoladi</span></div><div class='ex'><b>git revert abc123</b><span>commit'ni BEKOR QILUVCHI yangi commit yaratadi - tarix o'chmaydi (umumiy branch uchun YAGONA to'g'ri yo'l)</span></div><div class='ex'><b>git reset</b><span>branch ko'rsatkichini orqaga suradi - tarix \"qisqaradi\" (faqat lokal/shaxsiy ish uchun)</span></div></div><h3>reset'ning uch rejimi</h3><div class='exlist'><div class='ex'><b>--soft</b><span>faqat ko'rsatkich qaytadi; o'zgarishlar staged holda turadi - \"commit'larni qayta yig'aman\"</span></div><div class='ex'><b>--mixed (standart)</b><span>ko'rsatkich + staging qaytadi; o'zgarishlar faylda turadi</span></div><div class='ex'><b>--hard</b><span>HAMMASI qaytadi - fayllar ham! Commit'lanmagan ish YO'QOLADI. Ikki marta o'yla</span></div></div><h3>stash - cho'ntakdagi ish</h3><p>Ishning o'rtasida boshqa branch'ga o'tish kerak, lekin commit qilishga hali erta? <code>git stash</code> - o'zgarishlarni cho'ntakka solib, toza holatga qaytaradi. Keyin <code>git stash pop</code> bilan qaytarib olasan. Nomlab saqlash: <code>git stash push -m \"login form yarmi\"</code>.</p><h3>reflog - vaqt mashinasining jurnali</h3><p><code>git reflog</code> - HEAD qayerlarda bo'lganining TO'LIQ jurnali: har commit, reset, rebase, switch. \"Hammasi o'chib ketdi\" degan har qanday vaziyatda: <code>reflog</code>da kerakli holatni top -&gt; <code>git reset --hard HEAD@{n}</code> yoki <code>git branch qutqarildi abc123</code>. Commit qilingan ish ~90 kun reflog'da yashaydi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qoida</p><p>Umumiy (push qilingan) branch'da xatoni <strong>revert</strong> bilan tuzat. <strong>reset</strong> - faqat hali ulashilmagan lokal tarix uchun. Bu qoidani buzish = jamoa bilan janjal.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Har darajadagi undo",
+     "p": "Yengildan og'irga."
+    },
+    "title": "undo",
+    "lang": "bash",
+    "code": "git restore src/app.ts           # fayl o'zgarishini o'chir\ngit restore --staged src/app.ts  # add'ni bekor qil\ngit commit --amend               # oxirgi commit'ni tuzat\n\ngit revert HEAD                  # oxirgi commit'ni bekor qiluvchi\n                                 # YANGI commit (umumiy branch uchun)\n\ngit reset --soft HEAD~1          # commit'ni yech, ish staged qoladi\ngit reset --hard HEAD~1          # commit + ish YO'QOLADI (lokal!)"
+   },
+   {
+    "heading": {
+     "h": "stash va reflog",
+     "p": "Cho'ntak va vaqt mashinasi."
+    },
+    "title": "qutqarish",
+    "lang": "bash",
+    "code": "git stash push -m \"navbar yarmi\"   # ishni cho'ntakka\ngit stash list                     # cho'ntaklar ro'yxati\ngit stash pop                      # qaytarib ol (va o'chir)\n\n# FALOKAT: reset --hard qilib yubordim!\ngit reflog\n# a1b2c3 HEAD@{1}: commit: Add payment form  <- mana u!\ngit reset --hard HEAD@{1}          # yoki:\ngit branch qutqarildi a1b2c3       # alohida branch'ga chiqarib ol"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt6-1",
+    "html": "restore / restore --staged / revert / reset farqini jadval qilib yozdim",
+    "crit": "qaysi zonaga ta'sirini bilasan"
+   },
+   {
+    "id": "gt6-2",
+    "html": "reset --soft/--mixed/--hard uchalasini sinab ko'rdim",
+    "crit": "har birida status nima deyishini ko'rding"
+   },
+   {
+    "id": "gt6-3",
+    "html": "Ataylab reset --hard qilib, reflog bilan qutqardim",
+    "crit": "yo'qolgan commit qaytdi"
+   },
+   {
+    "id": "gt6-4",
+    "html": "stash bilan ishni saqlab, branch almashib, qaytarib oldim",
+    "crit": "stash push -m bilan nomlading"
+   },
+   {
+    "id": "gt6-5",
+    "html": "Umumiy branch'da nega faqat revert - tushuntira olaman",
+    "crit": "reset'ning xavfini aytasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified",
+    "title": "Pro Git - Reset Demystified",
+    "desc": "reset'ni chuqur tushunish",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://ohshitgit.com/",
+    "title": "Oh Shit, Git!?!",
+    "desc": "\"Voy, nima qildim\" holatlari retseptlari",
+    "host": "ohshitgit.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/docs/git-reflog",
+    "title": "git reflog - hujjat",
+    "desc": "Qutqarish jurnali",
+    "host": "git-scm.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Qutqarish",
+   "title": "Falokat poligoni",
+   "desc": "Maxsus sinov repoda 5 ta \"falokat\" ssenariysini yaratib, har birini to'g'ri vosita bilan tuzatish. Maqsad: stress holatida ham sovuqqonlik.",
+   "features": [
+    "Noto'g'ri faylni add qilib qutqarish (restore --staged)",
+    "Noto'g'ri commit'ni umumiy branch'da bekor qilish (revert)",
+    "reset --hard dan keyin reflog bilan tiklash",
+    "Ish o'rtasida stash bilan branch almashish",
+    "Har ssenariy README'da: muammo -> buyruq -> natija"
+   ],
+   "rubric": [
+    "Har vaziyatda eng YUMSHOQ yetarli vositani tanlagansan.",
+    "reflog chiqishini o'qiy olasan.",
+    "Hech bir qutqarishda ortiqcha ish yo'qolmagan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Umumiy (push qilingan) branch'dagi xato commit'ni qanday bekor qilasan?",
+    "a": [
+     "git reset --hard",
+     "git revert",
+     "git stash",
+     "branch'ni o'chirish"
+    ],
+    "c": 1,
+    "w": "revert tarixni o'chirmasdan bekor qiluvchi commit qo'shadi - boshqalar ishi buzilmaydi.",
+    "level": "practical"
+   },
+   {
+    "q": "git reset --soft HEAD~1 dan keyin o'zgarishlar qayerda?",
+    "a": [
+     "yo'qoladi",
+     "staging'da turadi",
+     "stash'da",
+     "remote'da"
+    ],
+    "c": 1,
+    "w": "--soft faqat commit ko'rsatkichini qaytaradi - ish staged holda, qayta commit'ga tayyor.",
+    "level": "practical"
+   },
+   {
+    "q": "reset --hard qilib yubording, commit yo'qoldi. Umid bormi?",
+    "a": [
+     "yo'q, tamom",
+     "ha - reflog'da topiladi",
+     "faqat GitHub'da bo'lsa",
+     "faqat backup bo'lsa"
+    ],
+    "c": 1,
+    "w": "Commit qilingan har narsa reflog'da ~90 kun turadi - reset --hard HEAD@{n} bilan qaytadi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Ish yarmida boshqa branch'ga SHOSHILINCH o'tish kerak. Commit qilishga erta. Yechim?",
+    "a": [
+     "o'zgarishni o'chirish",
+     "git stash",
+     "baribir commit",
+     "papkani nusxalash"
+    ],
+    "c": 1,
+    "w": "stash ishni cho'ntakka solib toza holat beradi; qaytgach stash pop.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT7",
+  "title": "GitHub professional",
+  "sub": "Platforma",
+  "coord": "Platforma / GT7",
+  "eyebrow": "07 / Repo'dan mahsulotgacha",
+  "mtitle": "Issues, Releases, himoya, avtomatlashtirish",
+  "lede": "GitHub - shunchaki kod ombori emas: <strong>loyihani boshqarish, sifatni majburlash va jamoani tashkil qilish</strong> platformasi. Professional repo qanday sozlanadi - shu modulda.",
+  "doc": "<div class='prose'><h3>Issues - ishning manbai</h3><p>Har bug, g'oya, vazifa - <strong>issue</strong>. Yaxshi issue: aniq sarlavha, qayta ishlab chiqarish qadamlari (bug bo'lsa), kutilgan/haqiqiy natija. <strong>Label</strong>lar (bug, enhancement, good first issue), <strong>milestone</strong>lar (v2.0) va <strong>assignee</strong> bilan tartibga solinadi. Commit xabarida <code>Fixes #42</code> yozsang - PR merge bo'lganda issue avtomatik yopiladi.</p><h3>Branch protection - sifat qalqoni</h3><p>Settings -&gt; Branches -&gt; <code>main</code> uchun qoida: <strong>to'g'ridan-to'g'ri push taqiqlanadi</strong>, PR majburiy, kamida 1 approve, CI (status checks) o'tishi shart. Shu qoidasiz \"PR madaniyati\" ixtiyoriy bo'lib qoladi. <code>CODEOWNERS</code> fayli - qaysi papkaga kim review qilishi majburiyligini belgilaydi.</p><div class='chips'><span class='chip t'>Protected main</span><span class='chip t'>Majburiy review</span><span class='chip t'>Majburiy CI</span><span class='chip t'>CODEOWNERS</span></div><h3>Tag va Release - versiya chiqarish</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Commit dan tag va SemVer orqali GitHub Release ga'><rect class='box' x='30' y='76' width='150' height='50' rx='9'/><text x='105' y='105' text-anchor='middle'>commit</text><path class='edga' d='M180 101 H235' marker-end='url(#arGt7a)'/><text class='accent' x='207' y='90' text-anchor='middle'>tag</text><rect class='boxa' x='235' y='76' width='150' height='50' rx='9'/><text x='310' y='99' text-anchor='middle'>v1.4.0</text><text class='muted' x='310' y='117' text-anchor='middle'>SemVer</text><path class='edga' d='M385 101 H440' marker-end='url(#arGt7b)'/><text class='accent' x='412' y='90' text-anchor='middle'>release</text><rect class='box' x='440' y='76' width='200' height='50' rx='9'/><text x='540' y='99' text-anchor='middle'>GitHub Release</text><text class='muted' x='540' y='117' text-anchor='middle'>changelog + fayllar</text><text class='muted' x='310' y='158' text-anchor='middle'>MAJOR.MINOR.PATCH</text><defs><marker id='arGt7a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt7b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Commit ga tag qo'yiladi, tag ustiga changelog bilan Release e'lon qilinadi.</figcaption></figure><p><strong>Tag</strong> - commit'ga qo'yilgan doimiy nom (<code>v1.4.0</code>). <strong>SemVer</strong> qoidasi: <code>MAJOR.MINOR.PATCH</code> - buzuvchi o'zgarish / yangi imkoniyat / tuzatish. GitHub <strong>Release</strong> - tag ustiga changelog va fayllar (binary, arxiv) qo'shilgan rasmiy e'lon.</p><h3>Repo salomatligi</h3><div class='exlist'><div class='ex'><b>README.md</b><span>nima, nega, qanday ishga tushirish - 5 daqiqada tushunarli</span></div><div class='ex'><b>LICENSE</b><span>litsenziyasiz kod - huquqan ishlatib bo'lmaydigan kod</span></div><div class='ex'><b>CONTRIBUTING.md</b><span>hissa qo'shish qoidalari</span></div><div class='ex'><b>Dependabot</b><span>eskirgan/zaif dependency'larga avtomatik PR</span></div><div class='ex'><b>Secret scanning</b><span>tasodifan push qilingan API kalitlarni ushlaydi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Karyera maslahati</p><p>GitHub profiling - <strong>ochiq rezyumeng</strong>. 2-3 ta yaxshi README'li, toza tarixli, CI'li pinned repo - yuzta bo'sh repodan qimmat. Yashil katakchalar emas, <strong>sifat</strong> gapiradi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Tag va release",
+     "p": "SemVer bilan versiya chiqarish."
+    },
+    "title": "release",
+    "lang": "bash",
+    "code": "git tag -a v1.4.0 -m \"Add search + fix cart bug\"\ngit push origin v1.4.0        # tag'lar alohida push qilinadi\ngit tag                       # ro'yxat\n\n# gh CLI bilan release:\ngh release create v1.4.0 --title \"v1.4.0\" \\\n  --notes \"- Qidiruv qo'shildi\\n- Savatcha xatosi tuzatildi\""
+   },
+   {
+    "heading": {
+     "h": "CODEOWNERS",
+     "p": ".github/CODEOWNERS - papka egalari."
+    },
+    "title": "CODEOWNERS",
+    "lang": "text",
+    "code": "# Har PR'da tegishli egadan review so'raladi\n*             @teamlead\nsrc/payments/ @payments-team\nsrc/ui/       @frontend-dev\n*.sql         @dba-user"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt7-1",
+    "html": "3 ta sifatli issue ochdim (label, milestone bilan)",
+    "crit": "bug'da repro qadamlari bor"
+   },
+   {
+    "id": "gt7-2",
+    "html": "main'ga branch protection qo'ydim va sinab ko'rdim",
+    "crit": "to'g'ridan-to'g'ri push rad etiladi"
+   },
+   {
+    "id": "gt7-3",
+    "html": "Fixes #N bilan PR merge qilib, issue avtomatik yopilishini ko'rdim",
+    "crit": "bog'lanish issue'da ko'rinadi"
+   },
+   {
+    "id": "gt7-4",
+    "html": "SemVer bo'yicha tag + Release chiqardim",
+    "crit": "changelog mazmunli yozilgan"
+   },
+   {
+    "id": "gt7-5",
+    "html": "Repoga README/LICENSE/CONTRIBUTING qo'shdim",
+    "crit": "begona odam 5 daqiqada ishga tushira oladi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/issues",
+    "title": "GitHub - Issues",
+    "desc": "Issue va loyiha boshqaruvi",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://semver.org/",
+    "title": "Semantic Versioning",
+    "desc": "MAJOR.MINOR.PATCH rasmiy spetsifikatsiya",
+    "host": "semver.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+    "title": "GitHub - Protected branches",
+    "desc": "main'ni himoyalash",
+    "host": "docs.github.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Platforma",
+   "title": "Namunali ochiq repo",
+   "desc": "Bitta loyihangni to'liq professional GitHub repoga aylantirish - hujjatlar, himoya, release. Bu repo portfolio'ing yuzi bo'ladi.",
+   "features": [
+    "To'liq README (badge, o'rnatish, foydalanish, skrinshot)",
+    "LICENSE + CONTRIBUTING.md + issue shablonlari",
+    "Protected main: PR + review + CI majburiy",
+    "Kamida bitta SemVer Release changelog bilan",
+    "Issues orqali yuritilgan kamida 5 ta vazifa"
+   ],
+   "rubric": [
+    "Notanish dasturchi repo'ni ko'rib nima qilishni darrov tushunadi.",
+    "Himoya qoidalarini chetlab o'tib bo'lmaydi.",
+    "Release'dan foydalanuvchi versiya farqini biladi."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Commit/PR'da \"Fixes #42\" nima qiladi?",
+    "a": [
+     "42-qatorni tuzatadi",
+     "merge'da 42-issue'ni avtomatik yopadi",
+     "42 ta test ishga tushiradi",
+     "hech narsa"
+    ],
+    "c": 1,
+    "w": "GitHub kalit so'zlarni (Fixes, Closes, Resolves) taniydi va issue'ni PR bilan bog'lab yopadi.",
+    "level": "practical"
+   },
+   {
+    "q": "SemVer'da 2.3.1 -> 3.0.0 nimani bildiradi?",
+    "a": [
+     "kichik tuzatish",
+     "buzuvchi (breaking) o'zgarish",
+     "yangi imkoniyat",
+     "faqat hujjat"
+    ],
+    "c": 1,
+    "w": "MAJOR ko'tarilishi - eski koddan foydalanuvchilar moslashishi kerak degani.",
+    "level": "practical"
+   },
+   {
+    "q": "Branch protection'siz \"faqat PR orqali\" qoidasi...",
+    "a": [
+     "baribir majburiy",
+     "ixtiyoriy odat bo'lib qoladi",
+     "GitHub'da mumkin emas",
+     "faqat pullik"
+    ],
+    "c": 1,
+    "w": "Texnik to'siq bo'lmasa, shoshilgan odam baribir to'g'ridan-to'g'ri push qiladi. Qoida = sozlama.",
+    "level": "scenario"
+   },
+   {
+    "q": "API kalitni tasodifan push qilding. Birinchi qadam?",
+    "a": [
+     "commit'ni o'chirish yetarli",
+     "KALITNI DARHOL BEKOR QILISH (rotate), keyin tarixni tozalash",
+     "repo'ni private qilish",
+     "hech kim ko'rmagandir"
+    ],
+    "c": 1,
+    "w": "Tarixdan o'chirish sekin va kafolatsiz - kalit allaqachon skanerlangan bo'lishi mumkin. Avval kalitni o'ldirasan.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT8",
+  "title": "GitLab professional",
+  "sub": "Platforma+",
+  "coord": "Platforma / GT8",
+  "eyebrow": "08 / Ikkinchi gigant",
+  "mtitle": "GitLab: guruhlar, MR, ichki CI/CD",
+  "lede": "GitLab - GitHub'ning asosiy raqobatchisi va korporativ dunyoda juda keng tarqalgan: <strong>o'z serveringga o'rnatish</strong> (self-hosted) va <strong>chuqur o'rnatilgan CI/CD</strong> uning kuchli tomonlari.",
+  "doc": "<div class='prose'><h3>GitLab'ning farqli dunyosi</h3><div class='exlist'><div class='ex'><b>Groups / Subgroups</b><span>repolar daraxt kabi guruhlanadi: company/backend/api - yirik tashkilotga qulay</span></div><div class='ex'><b>Merge Request</b><span>PR'ning ekvivalenti; approve qoidalari yanada moslashuvchan</span></div><div class='ex'><b>Ichki CI/CD</b><span>.gitlab-ci.yml repo ildizida - hech qanday qo'shimcha xizmatsiz pipeline</span></div><div class='ex'><b>Self-hosted</b><span>bank/telekom/davlat - kod tashqariga chiqmasligi kerak joylarda GitLab CE o'z serverda</span></div></div><h3>GitLab CI asoslari</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='GitLab pipeline stagelari ketma-ket ichidagi joblar parallel'><rect class='boxa' x='24' y='40' width='170' height='150' rx='10'/><text class='accent' x='109' y='62' text-anchor='middle'>test (stage)</text><rect class='box' x='44' y='78' width='130' height='40' rx='8'/><text x='109' y='103' text-anchor='middle'>unit</text><rect class='box' x='44' y='128' width='130' height='40' rx='8'/><text x='109' y='153' text-anchor='middle'>lint</text><path class='edga' d='M194 115 H255' marker-end='url(#arGt8a)'/><rect class='boxa' x='255' y='40' width='170' height='150' rx='10'/><text class='accent' x='340' y='62' text-anchor='middle'>build (stage)</text><rect class='box' x='275' y='103' width='130' height='40' rx='8'/><text x='340' y='128' text-anchor='middle'>build-app</text><path class='edga' d='M425 115 H486' marker-end='url(#arGt8b)'/><rect class='boxa' x='486' y='40' width='170' height='150' rx='10'/><text class='accent' x='571' y='62' text-anchor='middle'>deploy (stage)</text><rect class='box' x='506' y='103' width='130' height='40' rx='8'/><text x='571' y='128' text-anchor='middle'>deploy-prod</text><defs><marker id='arGt8a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt8b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Pipeline: stagelar ketma-ket, bir stage ichidagi joblar parallel ishlaydi.</figcaption></figure><p>Pipeline <strong>stage</strong>lardan (build -&gt; test -&gt; deploy), stage esa <strong>job</strong>lardan iborat. Har job alohida <strong>runner</strong>da (ko'pincha Docker konteynerda) ishlaydi. Bir stage'dagi joblar parallel, stagelar ketma-ket. Push qilding - pipeline avtomatik ishga tushadi, MR'da natija ko'rinadi.</p><h3>Environments va Review Apps</h3><p>GitLab deploy'ni ham kuzatadi: <code>staging</code>, <code>production</code> muhitlari, qaysi versiya qayerda turgani, rollback tugmasi. <strong>Review Apps</strong> - har MR uchun vaqtinchalik jonli muhit: reviewer kodni emas, ishlayotgan natijani ham ko'radi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Qaysi birini o'rganay?</p><p>Ikkalasini ham! Git bilimi 100% ko'chadi, platforma tushunchalari 90% o'xshash (PR=MR, Actions=CI, Discussions=Epics). O'zbekistonda ham xalqaro kompaniyalarda ham ikkalasi uchraydi - biri asosiy, ikkinchisini bir kunda o'zlashtirasan.</p></div></div><h3>GitHub vs GitLab - qisqa taqqoslash</h3><div class='exlist'><div class='ex'><b>Hamjamiyat / open-source</b><span>GitHub yetakchi - deyarli barcha mashhur loyihalar</span></div><div class='ex'><b>Ichki CI/CD chuqurligi</b><span>GitLab tarixan kuchli, Actions tez yetib kelmoqda</span></div><div class='ex'><b>Self-hosted</b><span>GitLab CE bepul va mashhur; GitHub Enterprise - qimmat</span></div><div class='ex'><b>DevOps qamrovi</b><span>GitLab \"hammasi bitta joyda\" (registry, monitoring, security) yo'lida</span></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Birinchi pipeline",
+     "p": ".gitlab-ci.yml - repo ildizida."
+    },
+    "title": ".gitlab-ci.yml",
+    "lang": "yaml",
+    "code": "stages:\n  - test\n  - build\n\nunit-tests:\n  stage: test\n  image: node:22\n  script:\n    - npm ci\n    - npm test\n\nbuild-app:\n  stage: build\n  image: node:22\n  script:\n    - npm ci\n    - npm run build\n  artifacts:\n    paths:\n      - dist/          # keyingi joblar va yuklab olish uchun"
+   },
+   {
+    "heading": {
+     "h": "MR uchungina ishlaydigan job",
+     "p": "rules bilan boshqarish."
+    },
+    "title": "rules",
+    "lang": "yaml",
+    "code": "lint:\n  stage: test\n  image: node:22\n  script:\n    - npm ci\n    - npm run lint\n  rules:\n    - if: $CI_PIPELINE_SOURCE == \"merge_request_event\"\n\ndeploy-prod:\n  stage: deploy\n  script: ./deploy.sh\n  rules:\n    - if: $CI_COMMIT_BRANCH == \"main\"\n  environment: production"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt8-1",
+    "html": "GitLab'da group -> project strukturasini yaratdim",
+    "crit": "subgroup mantig'ini tushunding"
+   },
+   {
+    "id": "gt8-2",
+    "html": "MR ochib, approve qilib, merge qildim",
+    "crit": "GitHub PR bilan farqlarni sanading"
+   },
+   {
+    "id": "gt8-3",
+    "html": "Ishlaydigan .gitlab-ci.yml yozdim (test + build)",
+    "crit": "pipeline yashil, artifacts yuklanadi"
+   },
+   {
+    "id": "gt8-4",
+    "html": "Pipeline'ni faqat MR'da ishlaydigan qilib sozladim",
+    "crit": "rules ishlashini tekshirding"
+   },
+   {
+    "id": "gt8-5",
+    "html": "GitHub vs GitLab taqqoslash jadvalini yozdim",
+    "crit": "qachon qaysi biri - asoslaysan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.gitlab.com/ee/ci/",
+    "title": "GitLab CI/CD hujjatlari",
+    "desc": "Pipeline, jobs, runners rasmiy",
+    "host": "docs.gitlab.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.gitlab.com/ee/ci/quick_start/",
+    "title": "GitLab CI - Quick Start",
+    "desc": "Birinchi pipeline 10 daqiqada",
+    "host": "docs.gitlab.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.gitlab.com/ee/user/group/",
+    "title": "GitLab - Groups",
+    "desc": "Guruh va huquqlar tizimi",
+    "host": "docs.gitlab.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Platforma+",
+   "title": "GitLab'da to'liq oqim",
+   "desc": "Loyihangni GitLab'ga ko'chirib (yoki mirror qilib), MR + pipeline bilan to'liq professional oqim qurish.",
+   "features": [
+    "Group ichida project, tavsif va a'zolar bilan",
+    "Protected main + MR approval qoidasi",
+    "3 stage'li pipeline: lint -> test -> build (artifacts bilan)",
+    "MR'da pipeline natijasi ko'rinadi, qizil bo'lsa merge yopiq",
+    "Kamida bitta muvaffaqiyatsiz pipeline tuzatilgan"
+   ],
+   "rubric": [
+    "Pipeline har push'da avtomatik ishlaydi.",
+    "Job loglarini o'qib xatoni topa olasan.",
+    "GitHub'dagi jarayon bilan farqlarni tushuntira olasan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "GitLab pipeline'da stage va job munosabati?",
+    "a": [
+     "stage job ichida",
+     "job'lar stage'ga guruhlangan: stage'lar ketma-ket, ichidagi job'lar parallel",
+     "bir xil narsa",
+     "job faqat bitta bo'ladi"
+    ],
+    "c": 1,
+    "w": "test stage'idagi 3 job parallel ishlaydi; hammasi o'tsa keyingi stage boshlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "GitLab'ning self-hosted afzalligi kimga muhim?",
+    "a": [
+     "hech kimga",
+     "kod tashqariga chiqmasligi shart bo'lgan tashkilotlarga",
+     "faqat startaplarga",
+     "faqat open-source'ga"
+    ],
+    "c": 1,
+    "w": "Bank, telekom, davlat - ma'lumot o'z serverida qolishi talab qilinadi.",
+    "level": "practical"
+   },
+   {
+    "q": ".gitlab-ci.yml qayerda turadi?",
+    "a": [
+     "GitLab sozlamalarida",
+     "repo ildizida",
+     ".github papkasida",
+     "runner'da"
+    ],
+    "c": 1,
+    "w": "Pipeline konfiguratsiyasi kod bilan birga repoda - versiyalanadi, review qilinadi.",
+    "level": "easy"
+   },
+   {
+    "q": "artifacts nima uchun kerak?",
+    "a": [
+     "xatolarni yashirish",
+     "job natijasini (masalan dist/) saqlash va keyingi job'ga uzatish",
+     "runner'ni tezlatish",
+     "kod sifati"
+    ],
+    "c": 1,
+    "w": "Artifacts - job chiqindisi emas, mahsuloti: build natijasi, test hisobotlari.",
+    "level": "practical"
+   }
+  ]
+ },
+ {
+  "zoom": "GT9",
+  "title": "Jamoa workflow'lari",
+  "sub": "Jarayon",
+  "coord": "Jarayon / GT9",
+  "eyebrow": "09 / Qoidalar o'yini",
+  "mtitle": "GitHub Flow, Git Flow, trunk-based",
+  "lede": "Buyruqlarni bilish - texnika; <strong>workflow</strong> - jamoa shu texnikani qanday qoidalar bilan ishlatishi. Noto'g'ri workflow to'g'ri jamoani ham sekinlashtiradi.",
+  "doc": "<div class='prose'><h3>Uch asosiy model</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='GitHub Flow main dan qisqa feature branch PR orqali qaytadi'><text class='muted' x='45' y='60' text-anchor='middle'>main</text><line class='edga' x1='80' y1='75' x2='620' y2='75'/><circle class='boxa' cx='100' cy='75' r='12'/><circle class='boxa' cx='300' cy='75' r='12'/><circle class='boxa' cx='560' cy='75' r='12'/><line class='edge' x1='300' y1='75' x2='380' y2='140'/><line class='edge' x1='380' y1='140' x2='470' y2='140'/><circle class='box' cx='400' cy='140' r='12'/><circle class='box' cx='470' cy='140' r='12'/><line class='edge' x1='470' y1='140' x2='560' y2='75'/><text class='muted' x='435' y='170' text-anchor='middle'>feature/... (qisqa)</text><text class='accent' x='515' y='120' text-anchor='middle'>PR merge</text><defs><marker id='arGt9a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>GitHub Flow: doim tayyor main, qisqa feature branch PR orqali qaytadi.</figcaption></figure><div class='exlist'><div class='ex'><b>GitHub Flow</b><span>bitta main + qisqa feature branchlar + PR. Sodda, uzluksiz deploy'ga mos. Ko'p jamoaga SHU yetadi</span></div><div class='ex'><b>Git Flow</b><span>main + develop + feature/release/hotfix branchlar. Versiyali mahsulotlar (mobil ilova, desktop) uchun; web uchun odatda ortiqcha og'ir</span></div><div class='ex'><b>Trunk-based</b><span>hamma deyarli to'g'ridan-to'g'ri main'ga (juda qisqa branchlar, feature flag bilan). Elite jamoalar, kuchli CI talab qiladi</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Tanlov mezoni</p><p>Qancha tez-tez deploy qilasan? <strong>Kuniga bir necha marta</strong> - GitHub Flow / trunk-based. <strong>Oyda/kvartalda versiya</strong> - Git Flow mantiqan to'g'ri keladi. Workflow - maqsad emas, vosita.</p></div></div><h3>Git Flow branch modeli</h3><figure class='svgfig'><svg viewBox='0 0 680 240' role='img' aria-label='Git Flow: main develop feature release hotfix branchlari'><text class='muted' x='50' y='36' text-anchor='middle'>main</text><text class='muted' x='50' y='96' text-anchor='middle'>release</text><text class='muted' x='50' y='150' text-anchor='middle'>develop</text><text class='muted' x='50' y='210' text-anchor='middle'>feature</text><line class='edga' x1='90' y1='48' x2='640' y2='48'/><circle class='boxa' cx='110' cy='48' r='11'/><circle class='boxa' cx='470' cy='48' r='11'/><circle class='boxa' cx='610' cy='48' r='11'/><text class='muted' x='470' y='30' text-anchor='middle'>tag v2.1.0</text><line class='edga' x1='90' y1='150' x2='640' y2='150'/><circle class='box' cx='110' cy='150' r='11'/><circle class='box' cx='260' cy='150' r='11'/><circle class='box' cx='360' cy='150' r='11'/><circle class='box' cx='560' cy='150' r='11'/><line class='edge' x1='110' y1='150' x2='170' y2='198'/><line class='edge' x1='170' y1='198' x2='240' y2='198'/><circle class='box' cx='190' cy='198' r='10'/><circle class='box' cx='240' cy='198' r='10'/><line class='edge' x1='240' y1='198' x2='300' y2='150'/><text class='muted' x='205' y='226' text-anchor='middle'>feature/search</text><line class='edge' x1='360' y1='150' x2='410' y2='96'/><circle class='boxa' cx='440' cy='96' r='10'/><line class='edga' x1='410' y1='96' x2='470' y2='96'/><line class='edga' x1='470' y1='96' x2='470' y2='48'/><line class='edge' x1='470' y1='96' x2='560' y2='150'/><text class='accent' x='470' y='118' text-anchor='middle'>release/2.1.0</text><line class='edge' x1='610' y1='48' x2='610' y2='150'/><text class='muted' x='632' y='100' text-anchor='middle'>hotfix</text><defs><marker id='arGt9b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Git Flow: feature develop'ga; release develop'dan kesilib main VA develop'ga (tag bilan); hotfix main'dan tuzatib ikkalasiga qaytadi.</figcaption></figure><h3>Trunk-based development</h3><figure class='svgfig'><svg viewBox='0 0 680 190' role='img' aria-label='Trunk-based: juda qisqa branchlar tez-tez main ga qaytadi'><text class='muted' x='50' y='60' text-anchor='middle'>main</text><text class='muted' x='50' y='150' text-anchor='middle'>qisqa branch</text><line class='edga' x1='90' y1='72' x2='640' y2='72'/><circle class='boxa' cx='110' cy='72' r='11'/><circle class='boxa' cx='250' cy='72' r='11'/><circle class='boxa' cx='400' cy='72' r='11'/><circle class='boxa' cx='540' cy='72' r='11'/><circle class='boxa' cx='620' cy='72' r='11'/><line class='edge' x1='110' y1='72' x2='180' y2='120'/><circle class='box' cx='180' cy='120' r='9'/><line class='edge' x1='180' y1='120' x2='250' y2='72'/><line class='edge' x1='250' y1='72' x2='330' y2='120'/><circle class='box' cx='330' cy='120' r='9'/><line class='edge' x1='330' y1='120' x2='400' y2='72'/><line class='edge' x1='400' y1='72' x2='470' y2='120'/><circle class='box' cx='470' cy='120' r='9'/><line class='edge' x1='470' y1='120' x2='540' y2='72'/><text class='muted' x='340' y='168' text-anchor='middle'>branch umri &lt; 1 kun, feature flag bilan yashiriladi</text><defs><marker id='arGt9c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Trunk-based: kichik branchlar kuniga bir necha marta main'ga qaytadi; tugallanmagan ish feature flag ortida yashiriladi.</figcaption></figure><h3>Conventional Commits</h3><p>Commit xabari uchun standart format: <code>type(scope): tavsif</code>. Asosiy turlari: <code>feat</code> (yangi imkoniyat), <code>fix</code> (tuzatish). Qo'shimcha turlar: <code>docs</code> (hujjat), <code>style</code> (formatlash - probel, nuqta-vergul; mantiq o'zgarmaydi), <code>refactor</code> (xatti-harakat o'zgarmasdan kodni qayta tuzish), <code>perf</code> (tezlik yaxshilash), <code>test</code> (test qo'shish/tuzatish), <code>ci</code> (CI konfiguratsiyasi), <code>chore</code> (boshqa xizmat ishlari). Foydasi: tarix bir qarashda o'qiladi, <strong>changelog avtomatik</strong> yasaladi, <code>feat!</code>/<code>BREAKING CHANGE</code> dan versiya (SemVer) avtomatik ko'tariladi.</p><h3>Monorepo vs Polyrepo</h3><div class='exlist'><div class='ex'><b>Monorepo</b><span>hamma loyiha bitta repoda (Google, Meta usuli): umumiy kod oson, atomar o'zgarish; lekin maxsus asboblar kerak (Nx, Turborepo)</span></div><div class='ex'><b>Polyrepo</b><span>har servis o'z reposida: mustaqillik, aniq egalik; lekin umumiy kod versiyalash og'riqli</span></div></div><div class='exlist'><div class='ex'><b>Ko'rinish (kod)</b><span>Monorepo: hamma kod bitta joyda, izlash oson. Polyrepo: har repo alohida</span></div><div class='ex'><b>Atomar o'zgarish</b><span>Monorepo: bitta commit bir necha paketni birga o'zgartiradi. Polyrepo: paketlararo o'zgarish ko'p PR</span></div><div class='ex'><b>Bog'liqlik versiyalash</b><span>Monorepo: umumiy kod darhol ko'rinadi, versiya muammosi kam. Polyrepo: semver + publish og'riqli</span></div><div class='ex'><b>Egalik va ruxsat</b><span>Monorepo: CODEOWNERS bilan chegaralanadi. Polyrepo: repo darajasida tabiiy chegara</span></div><div class='ex'><b>CI hajmi</b><span>Monorepo: faqat o'zgargan paketni qurish uchun maxsus asbob shart. Polyrepo: har repo mustaqil quriladi</span></div><div class='ex'><b>Miqyos</b><span>Monorepo: Google/Meta darajasida maxsus infratuzilma talab qiladi. Polyrepo: oddiy, tarqoq</span></div></div><p><strong>Monorepo vositalari:</strong> <code>Nx</code> (kuchli grafik, cache, affected-only build), <code>Turborepo</code> (yengil, tez pipeline cache), <code>pnpm workspace</code> (samarali paket ulashish), <code>Yarn workspaces</code> (klassik JS monorepo). Bular \"faqat o'zgargan paketni qur/test qil\" muammosini hal qiladi.</p><h3>Amaliy jamoa qoidalari (namuna)</h3><p>1) main doim deploy'ga tayyor. 2) Branch nomi: <code>type/qisqa-tavsif</code>. 3) PR 400 qatordan oshmasin. 4) Review 24 soat ichida. 5) Squash merge, Conventional Commit sarlavha bilan. 6) Release - tag + avtomatik changelog. Bu qoidalar yozilgan bo'lishi kerak - <code>CONTRIBUTING.md</code>da.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Conventional Commits namunalari",
+     "p": "Tarix o'zi changelog bo'ladi."
+    },
+    "title": "conventional",
+    "lang": "text",
+    "code": "feat(cart): add promo code support\nfix(auth): handle expired refresh token\ndocs(readme): add local setup steps\nrefactor(api): extract validation middleware\ntest(cart): cover empty cart edge case\nchore(deps): bump vite to 5.4\n\nfeat(api)!: rename /users endpoint to /accounts\n# ! = BREAKING CHANGE -> major versiya ko'tariladi\n\nstyle(ui): format code, no logic change\nperf(list): memoize heavy row render\nci(actions): cache node_modules in workflow"
+   },
+   {
+    "heading": {
+     "h": "Git Flow'ning bir kuni",
+     "p": "Release va hotfix oqimi (soddalashtirilgan)."
+    },
+    "title": "gitflow",
+    "lang": "bash",
+    "code": "# feature: develop'dan ochiladi, develop'ga qaytadi\ngit switch develop && git switch -c feature/search\n\n# release: develop'dan kesiladi, sinovdan keyin\n#          main VA develop'ga qo'shiladi + tag\ngit switch -c release/2.1.0 develop\ngit switch main && git merge release/2.1.0\ngit tag v2.1.0\n\n# hotfix: to'g'ridan main'dan, tuzatib ikkalasiga\ngit switch -c hotfix/2.1.1 main"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt9-1",
+    "html": "Uch workflow'ni chizib, farqini tushuntirdim",
+    "crit": "har biri qachon mos - misol bilan"
+   },
+   {
+    "id": "gt9-2",
+    "html": "O'z loyihamda 2 hafta Conventional Commits ishlatdim",
+    "crit": "log'dan changelog yasab bo'ladi"
+   },
+   {
+    "id": "gt9-3",
+    "html": "Git Flow'ni sinov repoda to'liq aylantirdim (feature->release->hotfix)",
+    "crit": "tag'lar to'g'ri joyda"
+   },
+   {
+    "id": "gt9-4",
+    "html": "O'z jamoa qoidalarimni CONTRIBUTING.md qilib yozdim",
+    "crit": "6+ aniq, tekshiriladigan qoida"
+   },
+   {
+    "id": "gt9-5",
+    "html": "Monorepo vs polyrepo trade-off'larini bilaman",
+    "crit": "qachon qaysi biri - asoslaysan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.conventionalcommits.org/",
+    "title": "Conventional Commits",
+    "desc": "Rasmiy spetsifikatsiya",
+    "host": "conventionalcommits.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/get-started/using-github/github-flow",
+    "title": "GitHub Flow",
+    "desc": "Eng sodda professional oqim",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://trunkbaseddevelopment.com/",
+    "title": "Trunk Based Development",
+    "desc": "Elite jamoalar modeli chuqur",
+    "host": "trunkbaseddevelopment.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Jarayon",
+   "title": "Workflow qo'llanmasi",
+   "desc": "Xayoliy (yoki real) 4 kishilik jamoa uchun to'liq Git workflow hujjatini yozish va sinov repoda namoyish qilish.",
+   "features": [
+    "Tanlangan workflow (asoslangan!) va branch nomlash qoidalari",
+    "Commit format: Conventional Commits + misollar",
+    "PR/MR qoidalari: hajm, review muddati, merge strategiyasi",
+    "Release jarayoni: versiyalash, tag, changelog",
+    "Sinov repoda 2 haftalik \"jamoa ishi\" simulyatsiyasi"
+   ],
+   "rubric": [
+    "Yangi a'zo hujjatni o'qib birinchi kundan to'g'ri ishlaydi.",
+    "Har qoidaning NEGA'si yozilgan.",
+    "Simulyatsiya tarixini ko'rib qoidalar ishlaganini tekshirsa bo'ladi."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "GitHub Flow'ning mohiyati?",
+    "a": [
+     "ko'p doimiy branchlar",
+     "main + qisqa feature branchlar + PR",
+     "faqat main, branch yo'q",
+     "har oy release branch"
+    ],
+    "c": 1,
+    "w": "Sodda: main doim tayyor, har ish qisqa branch'da, PR orqali qaytadi.",
+    "level": "easy"
+   },
+   {
+    "q": "Git Flow qachon o'zini oqlaydi?",
+    "a": [
+     "har doim",
+     "versiyali relizli mahsulotlarda (mobil, desktop)",
+     "faqat kichik jamoada",
+     "hech qachon"
+    ],
+    "c": 1,
+    "w": "Bir nechta versiyani parallel qo'llab-quvvatlash kerak bo'lsa - release/hotfix branchlar mantiqli.",
+    "level": "practical"
+   },
+   {
+    "q": "feat(api)!: ... dagi undov belgisi nima degani?",
+    "a": [
+     "muhim commit",
+     "breaking change - major versiya",
+     "shoshilinch",
+     "test kerak"
+    ],
+    "c": 1,
+    "w": "! = moslikni buzuvchi o'zgarish; avtomatik versiyalashda MAJOR ko'tariladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Jamoada hamma o'zicha commit yozadi, tarix o'qilmaydi. Yechim?",
+    "a": [
+     "har kim erkin",
+     "Conventional Commits + PR sarlavha tekshiruvi (CI)",
+     "commit'larni taqiqlash",
+     "faqat teamlead commit qiladi"
+    ],
+    "c": 1,
+    "w": "Standart + avtomatik tekshiruv: qoida sozlamaga aylanmasa ishlamaydi.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT10",
+  "title": "CI/CD: GitHub Actions",
+  "sub": "Avtomatlash",
+  "coord": "Avtomatlash / GT10",
+  "eyebrow": "10 / Robot hamkasb",
+  "mtitle": "Push'dan production'gacha avtomatik yo'l",
+  "lede": "CI (Continuous Integration) - har o'zgarishda kod <strong>avtomatik tekshiriladi</strong>; CD (Delivery/Deployment) - tekshiruvdan o'tgani <strong>avtomatik yetkaziladi</strong>. Bu senior bo'lishning majburiy bosqichi.",
+  "doc": "<div class='prose'><h3>GitHub Actions modeli</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='CI CD oqimi push dan build test va shartli deploy gacha'><rect class='box' x='16' y='78' width='110' height='48' rx='9'/><text x='71' y='107' text-anchor='middle'>push / PR</text><path class='edga' d='M126 102 H158' marker-end='url(#arGt10a)'/><rect class='box' x='158' y='78' width='110' height='48' rx='9'/><text x='213' y='107' text-anchor='middle'>lint+build</text><path class='edga' d='M268 102 H300' marker-end='url(#arGt10b)'/><rect class='box' x='300' y='78' width='110' height='48' rx='9'/><text x='355' y='107' text-anchor='middle'>test</text><path class='edga' d='M410 102 H442' marker-end='url(#arGt10c)'/><text class='muted' x='426' y='92' text-anchor='middle'>ok</text><rect class='boxa' x='442' y='78' width='130' height='48' rx='9'/><text x='507' y='99' text-anchor='middle'>deploy</text><text class='muted' x='507' y='117' text-anchor='middle'>if main</text><text class='muted' x='300' y='158' text-anchor='middle'>qizil test -> deploy yoq, merge yopiq</text><defs><marker id='arGt10a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt10b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt10c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>CI/CD: push -> build -> test; faqat yashil bo'lsa main dan deploy.</figcaption></figure><div class='exlist'><div class='ex'><b>Workflow</b><span>.github/workflows/*.yml - jarayon tavsifi</span></div><div class='ex'><b>Trigger (on:)</b><span>qachon ishga tushadi: push, pull_request, schedule, workflow_dispatch (qo'lda)</span></div><div class='ex'><b>Job</b><span>alohida virtual mashinada ishlaydigan bosqich; joblar parallel (needs: bilan bog'lanadi)</span></div><div class='ex'><b>Step</b><span>job ichidagi qadam: buyruq (run:) yoki tayyor action (uses:)</span></div></div><h3>Nimalarni avtomatlashtiramiz?</h3><p>Minimal professional to'plam: <strong>lint + test + build</strong> har PR'da. Keyin: type-check, security audit, bundle hajmi nazorati, preview deploy, release changelog, versiya tag. Qoida: <strong>qo'lda ikki marta qilingan ishni uchinchisida avtomatlashtir</strong>.</p><h3>Secrets - sirlar ombori</h3><p>Deploy token, API kalitlar YAML'ga yozilmaydi! Settings -&gt; Secrets'ga qo'yasan, workflow'da <code>${{ secrets.DEPLOY_TOKEN }}</code> deb ishlatasan. Log'larda avtomatik yashiriladi. Fork'dan kelgan PR secrets'ga tegolmaydi - xavfsizlik.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Tezlik = pul</p><p>CI daqiqalari cheklangan (bepul tarifda oyiga 2000). <strong>Cache</strong> (node_modules, npm kesh) va shartli ishga tushirish (faqat kerakli fayl o'zgarganda) - vaqtni 3-5x qisqartiradi.</p></div></div><h3>Matrix - bir workflow, ko'p muhit</h3><p><code>strategy.matrix</code> bilan bitta jobni bir nechta versiyada parallel ishlatasan: Node 20 + 22, uch OS - kutubxona yozsang majburiy amaliyot.</p><h3>Sifat darvozasi sifatida</h3><p>Actions + branch protection = <strong>qizil CI bilan merge tugmasi yopiq</strong>. Test yozish madaniyati shu bog'lamdan boshlanadi: testni buzding - merge qilolmaysan.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Asosiy CI workflow",
+     "p": ".github/workflows/ci.yml"
+    },
+    "title": "ci.yml",
+    "lang": "yaml",
+    "code": "name: CI\non:\n  pull_request:\n  push:\n    branches: [main]\n\njobs:\n  check:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n          cache: npm        # node_modules keshi - katta tezlik\n      - run: npm ci\n      - run: npm run lint\n      - run: npm test\n      - run: npm run build"
+   },
+   {
+    "heading": {
+     "h": "Matrix va deploy",
+     "p": "Ko'p versiya + faqat main'dan deploy."
+    },
+    "title": "matrix+deploy",
+    "lang": "yaml",
+    "code": "jobs:\n  test:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node: [20, 22]\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with: { node-version: \"${{ matrix.node }}\", cache: npm }\n      - run: npm ci && npm test\n\n  deploy:\n    needs: test               # test o'tmasa deploy yo'q\n    if: github.ref == 'refs/heads/main'\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: ./deploy.sh\n        env:\n          TOKEN: ${{ secrets.DEPLOY_TOKEN }}"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt10-1",
+    "html": "Repoga lint+test+build CI qo'shdim",
+    "crit": "har PR'da avtomatik ishlaydi"
+   },
+   {
+    "id": "gt10-2",
+    "html": "Ataylab testni buzib, qizil CI merge'ni yopishini ko'rdim",
+    "crit": "branch protection bilan bog'langan"
+   },
+   {
+    "id": "gt10-3",
+    "html": "Cache qo'shib CI vaqtini o'lchadim",
+    "crit": "oldin/keyin farqini bilasan"
+   },
+   {
+    "id": "gt10-4",
+    "html": "Secret qo'shib, log'da yashirilishini tekshirdim",
+    "crit": "nega YAML'ga yozilmaydi - bilasan"
+   },
+   {
+    "id": "gt10-5",
+    "html": "Matrix bilan 2 Node versiyasida test o'tkazdim",
+    "crit": "parallel job'larni ko'rding"
+   },
+   {
+    "id": "gt10-6",
+    "html": "Xuddi shu pipeline'ni GitLab CI'da ham yozdim",
+    "crit": "ikkala sintaksisda erkin his qilasan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/actions",
+    "title": "GitHub Actions hujjatlari",
+    "desc": "Workflow sintaksisi rasmiy",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions",
+    "title": "Actions - Security hardening",
+    "desc": "CI xavfsizligi (senior mavzu)",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://github.com/actions/starter-workflows",
+    "title": "Starter workflows",
+    "desc": "Har stack uchun tayyor shablonlar",
+    "host": "github.com"
+   }
+  ],
+  "project": {
+   "tag": "Mini loyiha - Avtomatlash",
+   "title": "To'liq CI/CD pipeline",
+   "desc": "Real loyihangga (masalan, shu kursdagi portfolio) to'liq avtomatik yo'l: PR tekshiruvi -> main -> avtomatik deploy.",
+   "features": [
+    "PR'da: lint + type-check + test + build (cache bilan)",
+    "main'ga merge -> avtomatik deploy (Netlify/Vercel/GitHub Pages)",
+    "Secrets to'g'ri ishlatilgan, YAML'da sir yo'q",
+    "Status badge README'da",
+    "Bitta qizil pipeline'ni log o'qib tuzatilgan tarixi bor"
+   ],
+   "rubric": [
+    "Yangi PR'dan production'gacha qo'l aralashuvisiz yo'l bor.",
+    "CI 5 daqiqadan tez (cache ishlatilgan).",
+    "Qizil CI merge'ni texnik jihatdan bloklaydi."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "CI'ning asosiy maqsadi?",
+    "a": [
+     "deploy qilish",
+     "har o'zgarishni avtomatik tekshirib, xatoni erta ushlash",
+     "kod yozish",
+     "server boshqarish"
+    ],
+    "c": 1,
+    "w": "Integration xatolari qancha erta topilsa, shuncha arzon tuzatiladi.",
+    "level": "easy"
+   },
+   {
+    "q": "Secrets'ni qayerga yozish TO'G'RI?",
+    "a": [
+     "workflow YAML ichiga",
+     "platforma Secrets omboriga",
+     "README'ga",
+     ".env'ni push qilib"
+    ],
+    "c": 1,
+    "w": "YAML - ochiq kod. Secrets ombori shifrlangan va loglarda yashiriladi.",
+    "level": "practical"
+   },
+   {
+    "q": "needs: test qatori nima qiladi?",
+    "a": [
+     "testni o'chiradi",
+     "job'ni test job'i muvaffaqiyatidan keyingina ishlatadi",
+     "testni ikki marta ishlatadi",
+     "parallel qiladi"
+    ],
+    "c": 1,
+    "w": "needs - joblar orasidagi bog'liqlik: test yiqilsa deploy boshlanmaydi.",
+    "level": "practical"
+   },
+   {
+    "q": "CI har PR'da 15 daqiqa. Jamoa norozi. Birinchi chora?",
+    "a": [
+     "CI'ni o'chirish",
+     "cache + faqat o'zgargan qismni tekshirish",
+     "kamroq PR ochish",
+     "kattaroq server sotib olish"
+    ],
+    "c": 1,
+    "w": "Dependency cache va shartli joblar odatda vaqtni bir necha barobar qisqartiradi.",
+    "level": "scenario"
+   }
+  ]
+ },
+ {
+  "zoom": "GT11",
+  "title": "Senior: Ichki model & kuch",
+  "sub": "Senior",
+  "coord": "Senior / GT11",
+  "eyebrow": "11 / Kapot ostida",
+  "mtitle": "Objects, hooks, bisect, LFS, xavfsizlik",
+  "lede": "Senior farqi - Git'ni <strong>sehr emas, oddiy ma'lumotlar tuzilmasi</strong> sifatida ko'rishda. Ichki modelni tushunsang, har qanday g'alati holatni xotirjam yechasan.",
+  "doc": "<div class='prose'><h3>Ichki model: content-addressable ombor</h3><figure class='svgfig'><svg viewBox='0 0 680 200' role='img' aria-label='Git obyektlari commit tree va blob larga ishora qiladi'><rect class='boxa' x='30' y='80' width='150' height='52' rx='10'/><text x='105' y='105' text-anchor='middle'>commit</text><text class='muted' x='105' y='123' text-anchor='middle'>+ ota + xabar</text><path class='edga' d='M180 106 H240' marker-end='url(#arGt11a)'/><text class='muted' x='210' y='96' text-anchor='middle'>tree</text><rect class='box' x='240' y='80' width='150' height='52' rx='10'/><text x='315' y='105' text-anchor='middle'>tree</text><text class='muted' x='315' y='123' text-anchor='middle'>papka</text><path class='edga' d='M390 94 H450' marker-end='url(#arGt11b)'/><path class='edga' d='M390 118 H450' marker-end='url(#arGt11c)'/><rect class='box' x='450' y='58' width='170' height='44' rx='10'/><text x='535' y='85' text-anchor='middle'>blob (app.ts)</text><rect class='box' x='450' y='112' width='170' height='44' rx='10'/><text x='535' y='139' text-anchor='middle'>blob (README)</text><text class='muted' x='325' y='180' text-anchor='middle'>har obyekt SHA-1 hash bilan nomlanadi</text><defs><marker id='arGt11a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt11b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arGt11c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>commit -> tree -> blob: har biri mazmunining SHA-1 hashi bilan saqlanadi.</figcaption></figure><p>.git/objects ichida 4 xil obyekt yashaydi, har biri mazmunining <strong>SHA-1 hash'i</strong> bilan nomlanadi:</p><div class='exlist'><div class='ex'><b>blob</b><span>fayl mazmuni (nomi yo'q - faqat kontent)</span></div><div class='ex'><b>tree</b><span>papka: nomlar -> blob/tree ko'rsatkichlari</span></div><div class='ex'><b>commit</b><span>tree + ota-commit(lar) + muallif + xabar</span></div><div class='ex'><b>tag</b><span>annotatsiyali yorliq obyekti</span></div></div><p>Branch - <code>refs/heads/main</code> faylida bitta hash. HEAD - \"qaysi ref'dayman\". <strong>Hamma buyruq - shu graf ustidagi amal.</strong> Shu tushuncha bilan rebase, reset, cherry-pick sehrligini yo'qotadi.</p><h3>Hooks - avtomatik nazoratchilar</h3><p>.git/hooks'dagi skriptlar hodisalarda ishlaydi: <code>pre-commit</code> (commit'dan oldin - lint/format), <code>commit-msg</code> (xabar formatini tekshirish), <code>pre-push</code> (testlar). Jamoada <strong>Husky + lint-staged</strong> bilan ulashiladi: xato kod commit bosqichidayoq to'xtaydi.</p><h3>git bisect - bug detektivi</h3><p>\"3 hafta oldin ishlardi, hozir buzuq. Qaysi commit aybdor?\" <code>git bisect</code> ikkilik qidiruv bilan 1000 commit ichidan aybdorni ~10 qadamda topadi. Test skript bersang - <strong>to'liq avtomatik</strong>.</p><h3>Katta fayllar va maxsus vaziyatlar</h3><div class='exlist'><div class='ex'><b>Git LFS</b><span>video/model/dizayn fayllari - repoda faqat ko'rsatkich, o'zi alohida omborda</span></div><div class='ex'><b>git worktree</b><span>bitta repo, bir nechta papka - hotfix uchun branch almashtirmasdan parallel ish</span></div><div class='ex'><b>submodule / subtree</b><span>repo ichida boshqa repo - ehtiyotkorlik bilan (ko'p og'riq manbai)</span></div><div class='ex'><b>shallow clone</b><span>--depth 1 - CI'da faqat oxirgi holat, katta tezlik</span></div></div><h3>Xavfsizlik - senior mas'uliyati</h3><p><strong>Signed commits</strong> - commit rostdan o'sha muallifdan ekanini kriptografik isbotlaydi (GitHub'da Verified belgi). <code>user.email</code>ni istalgan odam yoza oladi, imzoni esa faqat kalit egasi qo'ya oladi.</p><h3>SSH imzo vs GPG imzo - farqi</h3><div class='exlist'><div class='ex'><b>GPG (klassik)</b><span>OpenPGP kaliti, alohida yaratiladi (gpg --gen-key). Ishonch tarmog'i (web of trust), kalit muddati va bekor qilish bor. Sozlash murakkabroq, kalit boshqaruvi og'ir</span></div><div class='ex'><b>SSH imzo (yangi, 2021+)</b><span>push uchun ishlatadigan O'SHA SSH kalitingni imzo uchun ham ishlatadi - yangi kalit shart emas. Sozlash sodda; kamchiligi - bekor qilish/muddat mexanizmi GPG'chalik boy emas</span></div><div class='ex'><b>Amaliy tavsiya</b><span>Yakka/oddiy jamoada SSH imzo yetarli va oson. Qat'iy compliance (kalit muddati, markazlashgan ishonch) kerak bo'lsa GPG</span></div></div><p>Ikkalasi ham <code>git config commit.gpgsign true</code> bilan yoqiladi; farqi <code>gpg.format</code> qiymatida (<code>openpgp</code> yoki <code>ssh</code>) va platformaga qaysi turdagi kalit qo'shilishida.</p><h3>GitHub Secret Scanning - avtomatik qorovul</h3><p>GitHub push qilingan kodni ma'lum sir naqshlariga (AWS kaliti, Stripe token, GitHub PAT va h.k.) qarshi <strong>avtomatik skanerlaydi</strong>. Sir topilsa egasiga ogohlantirish yuboradi; ba'zi provayderlar bilan hamkorlikda topilgan kalitni avtomatik <strong>bekor qildirishi</strong> ham mumkin. <strong>Push protection</strong> yoqilgan bo'lsa - sir aniqlangan push'ni <strong>qabul qilmaydi</strong>, ya'ni sir repoga umuman kirmaydi. Bepul ochiq repolarda yoqiq, xususiylarda Advanced Security bilan.</p><h3>Secret sizib chiqdi - to'liq javob rejasi</h3><p>Tartib muhim: avvalo zararni to'xtat, keyin tarixni tozala.</p><div class='exlist'><div class='ex'><b>1. Rotate</b><span>Kalitni DARHOL yangisiga almashtir (provayderda). Sizgan kalit endi kuchsiz - eng muhim qadam shu</span></div><div class='ex'><b>2. Verify</b><span>Eski kalit ishlamasligini va yangisi ishlashini tekshir; loglardan suiiste'mol bo'lmaganini ko'r</span></div><div class='ex'><b>3. filter-repo</b><span>git filter-repo (yoki BFG) bilan sirni BUTUN tarixdan o'chir - shunchaki yangi commit yetmaydi</span></div><div class='ex'><b>4. Force-push</b><span>Tozalangan tarixni --force-with-lease bilan push qil; jamoa eski clone'ni tashlab qayta clone qiladi</span></div></div><p>Protected branch + secret scanning (push protection) + Dependabot - minimal himoya to'plami. Eng yaxshi himoya - sir tarixga <strong>umuman kirmasligi</strong>.</p></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Ichki modelni paypaslash",
+     "p": "Sehr emasligini o'z ko'zing bilan ko'r."
+    },
+    "title": "plumbing",
+    "lang": "bash",
+    "code": "git cat-file -p HEAD          # commit obyekti: tree, parent, author\ngit cat-file -p HEAD^{tree}   # tree: papka mundarijasi\ncat .git/HEAD                 # ref: refs/heads/main\ncat .git/refs/heads/main      # bitta hash - branch shu xolos!\n\ngit log --oneline --graph --all   # butun graf"
+   },
+   {
+    "heading": {
+     "h": "bisect bilan bug ovlash",
+     "p": "Ikkilik qidiruv - 1000 commit, ~10 qadam."
+    },
+    "title": "bisect",
+    "lang": "bash",
+    "code": "git bisect start\ngit bisect bad                # hozirgi holat buzuq\ngit bisect good v2.0.0        # bu versiyada ishlardi\n# Git o'rtadagi commit'ga o'tkazadi - tekshirasan:\ngit bisect good   # yoki: git bisect bad\n# ... takrorlanadi ...\n# -> \"abc123 is the first bad commit\"\ngit bisect reset\n\n# Test skript bilan TO'LIQ avtomatik:\ngit bisect run npm test"
+   },
+   {
+    "heading": {
+     "h": "pre-commit hook (Husky)",
+     "p": "Xato kod commit'gacha yetmaydi."
+    },
+    "title": "husky",
+    "lang": "bash",
+    "code": "npm install --save-dev husky lint-staged\nnpx husky init\n\n# .husky/pre-commit:\nnpx lint-staged\n\n# package.json:\n# \"lint-staged\": {\n#   \"*.{ts,tsx}\": [\"eslint --fix\", \"prettier --write\"]\n# }"
+   },
+   {
+    "heading": {
+     "h": "Secret sizdi: to'liq tozalash",
+     "p": "rotate -> verify -> filter-repo -> force-push."
+    },
+    "title": "secret rotation",
+    "lang": "bash",
+    "code": "# 1) ROTATE: provayderda kalitni bekor qilib yangisini ol\n#    (AWS/GitHub/Stripe konsolida) - eng muhim, birinchi qadam\n\n# 2) VERIFY: eski kalit endi ishlamasligini tasdiqla\ncurl -H \"Authorization: Bearer $ESKI_TOKEN\" https://api.xizmat.com/me\n#    -> 401 Unauthorized kutiladi\n\n# 3) FILTER-REPO: sirni butun tarixdan o'chir\npip install git-filter-repo\ngit filter-repo --path .env --invert-paths        # faylni butkul olib tashla\n# yoki faqat matnni tozalash:\ngit filter-repo --replace-text <(echo 'ESKI_TOKEN==>REMOVED')\n\n# 4) FORCE-PUSH: tozalangan tarixni yubor\ngit remote add origin git@github.com:user/repo.git   # filter-repo remote'ni o'chiradi\ngit push --force-with-lease --all\ngit push --force-with-lease --tags\n# jamoa: eski clone'ni tashlab, qayta clone qilishi shart"
+   },
+   {
+    "heading": {
+     "h": "Commit imzolash: SSH yoki GPG",
+     "p": "Verified belgisi uchun sozlash."
+    },
+    "title": "signed commits",
+    "lang": "bash",
+    "code": "# --- SSH imzo (sodda, mavjud kalitni ishlatadi) ---\ngit config --global gpg.format ssh\ngit config --global user.signingkey ~/.ssh/id_ed25519.pub\ngit config --global commit.gpgsign true\n# ochiq kalitni GitHub -> Settings -> SSH keys ga\n#   \"Signing Key\" turi bilan qo'sh\n\n# --- GPG imzo (klassik, alohida kalit) ---\ngpg --full-generate-key\ngpg --list-secret-keys --keyid-format=long   # KEYID ni ol\ngit config --global gpg.format openpgp\ngit config --global user.signingkey <KEYID>\ngit config --global commit.gpgsign true\ngpg --armor --export <KEYID>                  # GitHub GPG keys ga\n\ngit log --show-signature -1                   # imzoni tekshir"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "gt11-1",
+    "html": "cat-file bilan commit->tree->blob zanjirini qo'lda kuzatdim",
+    "crit": "4 obyekt turini tushuntirasan"
+   },
+   {
+    "id": "gt11-2",
+    "html": "bisect bilan (sinov repoda) buzuq commit'ni topdim",
+    "crit": "bisect run bilan avtomatik ham"
+   },
+   {
+    "id": "gt11-3",
+    "html": "Husky pre-commit hook sozladim",
+    "crit": "lint xatosi commit'ni to'xtatadi"
+   },
+   {
+    "id": "gt11-4",
+    "html": "Commit'larimni imzolashni (SSH signing) yoqdim",
+    "crit": "GitHub'da Verified ko'rinadi"
+   },
+   {
+    "id": "gt11-5",
+    "html": "worktree bilan parallel hotfix ssenariysini qildim",
+    "crit": "stash'siz ikki branch'da ish"
+   },
+   {
+    "id": "gt11-6",
+    "html": "\"Secret leak\" javob rejasini yozdim",
+    "crit": "rotate -> tozalash -> tekshirish tartibi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain",
+    "title": "Pro Git - Internals",
+    "desc": "Ichki model - senior bo'lim",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://git-scm.com/docs/git-bisect",
+    "title": "git bisect - hujjat",
+    "desc": "Bug detektivi",
+    "host": "git-scm.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://typicode.github.io/husky/",
+    "title": "Husky",
+    "desc": "Git hooks'ni jamoada ulashish",
+    "host": "typicode.github.io"
+   }
+  ],
+  "project": {
+   "tag": "Portfolio - Senior",
+   "title": "Git ustaxonasi (capstone)",
+   "desc": "Kursning yakuniy isboti: to'liq professional sozlangan repo + \"Git murabbiyi\" hujjatlar to'plami. Bu repo intervyuda ko'rsatadigan darajada bo'lsin.",
+   "features": [
+    "Protected main, CODEOWNERS, PR shablon, Conventional Commits + commit-msg hook",
+    "CI/CD: lint+test+build+deploy, cache, badge (GitHub Actions VA GitLab CI)",
+    "Husky pre-commit, imzolangan commit'lar (Verified)",
+    "SemVer release'lar avtomatik changelog bilan",
+    "docs/: uch zona, rebase oltin qoidasi, undo jadvali, falokat retseptlari - o'z so'zing bilan",
+    "Sinov repoda bisect, reflog qutqaruvi, worktree namoyishlari (skrinshot/log bilan)"
+   ],
+   "rubric": [
+    "Repo'ni ko'rgan senior \"bu odam Git'ni biladi\" deydi.",
+    "Har avtomatlashtirish NEGA kerakligi hujjatlashtirilgan.",
+    "docs'dagi tushuntirishlar texnik jihatdan aniq.",
+    "Barcha himoya qoidalari amalda tekshirilgan.",
+    "Intervyu savoli darajasidagi 10 ta Git savolga javob yoza olasan."
+   ],
+   "variants": [
+    {
+     "title": "Jamoa yo'lboshchisi varianti",
+     "desc": "Xayoliy 5 kishilik jamoa uchun to'liq Git/GitHub jarayonini noldan loyihalash.",
+     "deliverables": [
+      "Workflow hujjati + himoya sozlamalari",
+      "Onboarding qo'llanma (yangi a'zo 1-kuni)",
+      "CI/CD pipeline ikkala platformada"
+     ]
+    },
+    {
+     "title": "Open-source hissa varianti",
+     "desc": "Real ochiq loyihaga kamida bitta qabul qilingan PR.",
+     "deliverables": [
+      "Fork -> issue tanlash -> PR -> review jarayoni hujjati",
+      "Loyiha qoidalariga moslashish tajribasi yozilgan",
+      "Merge qilingan PR havolasi"
+     ]
+    }
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Git'da branch ichki jihatdan nima?",
+    "a": [
+     "papka nusxasi",
+     "bitta commit hash yozilgan fayl (ref)",
+     "zip arxiv",
+     "maxsus obyekt"
+    ],
+    "c": 1,
+    "w": "refs/heads/main - ichida 40 belgili hash turgan matn fayl. Hammasi shu.",
+    "level": "practical"
+   },
+   {
+    "q": "1000 commit orasidan regressiya kiritganini topish eng tez yo'li?",
+    "a": [
+     "har birini qo'lda tekshirish",
+     "git bisect (ikkilik qidiruv)",
+     "log'ni o'qish",
+     "hammasini revert qilish"
+    ],
+    "c": 1,
+    "w": "bisect ~log2(1000)=10 qadamda topadi; test skript bilan avtomatik.",
+    "level": "practical"
+   },
+   {
+    "q": "pre-commit hook'ning jamoadagi to'g'ri roli?",
+    "a": [
+     "CI o'rnini bosadi",
+     "tez lokal tekshiruv; CI baribir qoladi",
+     "faqat teamlead uchun",
+     "commit'ni sekinlatish"
+    ],
+    "c": 1,
+    "w": "Hook - birinchi to'siq (tez feedback), CI - yakuniy qozi. Hook'ni chetlab o'tish mumkin (--no-verify), CI'ni yo'q.",
+    "level": "scenario"
+   },
+   {
+    "q": "Repoga 500MB video qo'shish kerak. To'g'ri yo'l?",
+    "a": [
+     "oddiy commit",
+     "Git LFS",
+     "zip qilib commit",
+     "alohida branch"
+    ],
+    "c": 1,
+    "w": "Katta binary tarixni abadiy shishiradi - LFS faqat ko'rsatkich saqlaydi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Signed commit nimani isbotlaydi?",
+    "a": [
+     "kod sifatini",
+     "muallif haqiqatan o'sha odam ekanini",
+     "testlar o'tganini",
+     "hech narsani"
+    ],
+    "c": 1,
+    "w": "user.email'ni istalgan odam yoza oladi - imzo esa kalit egasini kriptografik tasdiqlaydi.",
+    "level": "practical"
+   }
+  ]
+ }
+]
