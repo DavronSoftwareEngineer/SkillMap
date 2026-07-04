@@ -4999,7 +4999,7 @@
     "url": "https://github.com/maplibre/martin",
     "title": "Martin tile server",
     "desc": "Tegola muqobili (PostGIS)",
-    "host": "github.com/maplibre"
+    "host": "github.com"
    },
    {
     "type": "doc",
@@ -5753,6 +5753,328 @@
     "topic": "Suhbat",
     "rule": "Loyihani 'nima/nega/qanday' bilan tushuntir.",
     "ex": "STAR usuli"
+   }
+  ]
+ },
+ {
+  "zoom": "z21",
+  "title": "Production Lab Track",
+  "sub": "Senior portfolio",
+  "coord": "Real project / z21",
+  "eyebrow": "21 / PRODUCTION LAB / WEBGIS",
+  "mtitle": "GeoPulse Production Lab: real WebGIS loyihani ishga tayyorlash",
+  "lede": "Bu yakuniy track WebGIS kursini haqiqiy ish simulyatsiyasiga aylantiradi: FastAPI, PostGIS, MapLibre, COG/raster, YOLO, Docker, CI/CD, monitoring va security bitta tekshiriladigan portfolio natijasida yig'iladi.",
+  "doc": "<div class='prose'>\n<h3>Bu modul nima uchun kerak</h3>\n<p>Senior daraja faqat texnologiya nomlarini bilish emas. Senior natija beradi: katta data bilan ishlaydi, sekin joyni o'lchaydi, xatoni test bilan ushlaydi, deploymentni hujjatlaydi va tizimni kuzata oladi. Shu modulda <strong>GeoPulse Production Lab</strong> 6 ta sprintga bo'linadi.</p>\n<div class=\"chips\"><span class=\"chip t\">Sprint 1 / repo skeleton</span><span class=\"chip t\">Sprint 2 / PostGIS benchmark</span><span class=\"chip t\">Sprint 3 / COG raster</span><span class=\"chip t\">Sprint 4 / FastAPI tests</span><span class=\"chip t\">Sprint 5 / CI/CD + Docker</span><span class=\"chip t\">Sprint 6 / monitoring + security report</span></div>\n<h3>6 sprintlik ish rejasi</h3>\n<div class=\"tree\">Sprint 1  Monorepo: frontend, api, processing, database, infra\nSprint 2  PostGIS: import, GIST index, EXPLAIN ANALYZE, before/after report\nSprint 3  Raster/COG: GeoTIFF -> COG, overview, tile/read benchmark\nSprint 4  FastAPI: auth, bbox endpoint, upload endpoint, pytest integration\nSprint 5  Docker/CI: compose, healthcheck, lint, test, build pipeline\nSprint 6  Observability/security: Prometheus metric, Grafana panel, audit log, backup/restore drill</div>\n<h3>Professional definition of done</h3>\n<p>Har sprint oxirida faqat kod emas, <strong>dalil</strong> topshiriladi: benchmark jadvali, test natijasi, screenshot, log namunasi, architecture decision record yoki security report. Shu dalil bo'lmasa, ish tugagan hisoblanmaydi.</p>\n<div class=\"callout\"><div><p>Portfolio uchun oltin qoida</p><p>README ichida \"nima qildim\" emas, \"qanday tekshirdim\" ko'rinsin. Ish beruvchi kodni ko'radi, lekin qaror va tekshiruv seni mutaxassis sifatida ko'rsatadi.</p></div></div>\n<figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='GeoPulse production lab oqimi'>\n<rect class='boxa' x='20' y='55' width='120' height='50' rx='8'/><text x='80' y='76' text-anchor='middle'>React</text><text x='80' y='92' text-anchor='middle' class='muted'>MapLibre</text>\n<path class='edga' d='M140 80 H190' marker-end='url(#arZ21a)'/>\n<rect class='box' x='190' y='55' width='120' height='50' rx='8'/><text x='250' y='76' text-anchor='middle'>FastAPI</text><text x='250' y='92' text-anchor='middle' class='muted'>tests</text>\n<path class='edga' d='M310 80 H360' marker-end='url(#arZ21a)'/>\n<rect class='box' x='360' y='55' width='120' height='50' rx='8'/><text x='420' y='76' text-anchor='middle'>PostGIS</text><text x='420' y='92' text-anchor='middle' class='muted'>index</text>\n<path class='edga' d='M480 80 H530' marker-end='url(#arZ21a)'/>\n<rect class='boxa' x='530' y='55' width='145' height='50' rx='8'/><text x='602' y='76' text-anchor='middle'>Workers</text><text x='602' y='92' text-anchor='middle' class='muted'>COG / YOLO</text>\n<path class='edge' d='M250 105 V140 H602 V108' marker-end='url(#arZ21a)'/>\n<text x='350' y='160' text-anchor='middle' class='accent'>Docker + CI/CD + Prometheus/Grafana + backup drill</text>\n<defs><marker id='arZ21a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Yakuniy lab: frontend, API, spatial DB, processing worker va production observability bitta tizimga ulanadi.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "PostGIS benchmark report",
+     "p": "Har index o'zgarishi oldin/keyin natija bilan yoziladi."
+    },
+    "title": "benchmarks/postgis-bbox.sql",
+    "lang": "sql",
+    "code": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT id, name, category\nFROM assets\nWHERE geom && ST_MakeEnvelope(69.1, 41.2, 69.4, 41.4, 4326)\nLIMIT 500;\n\nCREATE INDEX IF NOT EXISTS assets_geom_gix ON assets USING GIST (geom);\n\n-- README jadvali:\n-- case | rows | before p95 | after p95 | plan\n-- bbox | 1M   | 1800ms     | 45ms      | Index Scan"
+   },
+   {
+    "heading": {
+     "h": "COG pipeline",
+     "p": "Katta GeoTIFF webga tayyor COG formatga aylanadi."
+    },
+    "title": "processing/make_cog.sh",
+    "lang": "bash",
+    "code": "gdalwarp -t_srs EPSG:3857 input.tif warped.tif\ngdaladdo -r average warped.tif 2 4 8 16\ngdal_translate warped.tif output_cog.tif \\\n  -of COG \\\n  -co COMPRESS=DEFLATE \\\n  -co BIGTIFF=IF_SAFER"
+   },
+   {
+    "heading": {
+     "h": "FastAPI integration test",
+     "p": "API faqat ishlashi emas, role va bbox contract ham tekshiriladi."
+    },
+    "title": "api/tests/test_features.py",
+    "lang": "python",
+    "code": "def test_bbox_requires_auth(client):\n    response = client.get(\"/api/features?bbox=69.1,41.2,69.4,41.4\")\n    assert response.status_code == 401\n\ndef test_bbox_returns_geojson(auth_client, seeded_assets):\n    response = auth_client.get(\"/api/features?bbox=69.1,41.2,69.4,41.4\")\n    assert response.status_code == 200\n    body = response.json()\n    assert body[\"type\"] == \"FeatureCollection\"\n    assert len(body[\"features\"]) > 0"
+   },
+   {
+    "heading": {
+     "h": "Prometheus metric",
+     "p": "Productionda API latency va processing joblar o'lchanadi."
+    },
+    "title": "api/metrics.py",
+    "lang": "python",
+    "code": "from prometheus_client import Histogram\n\nREQUEST_LATENCY = Histogram(\n    \"geopulse_request_latency_seconds\",\n    \"API request latency\",\n    [\"method\", \"route\", \"status\"],\n)\n\nPROCESSING_DURATION = Histogram(\n    \"geopulse_processing_duration_seconds\",\n    \"GDAL/YOLO processing duration\",\n    [\"job_type\", \"status\"],\n)"
+   },
+   {
+    "heading": {
+     "h": "CI pipeline gate",
+     "p": "Pull request test va builddan o'tmasa merge qilinmaydi."
+    },
+    "title": ".github/workflows/ci.yml",
+    "lang": "yaml",
+    "code": "name: ci\non: [push, pull_request]\njobs:\n  verify:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 20\n      - uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n      - run: npm ci\n        working-directory: frontend\n      - run: npm test && npm run build\n        working-directory: frontend\n      - run: pip install -r requirements.txt\n        working-directory: api\n      - run: pytest\n        working-directory: api"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z21-1",
+    "html": "Monorepo skeleton yaratildi: <code>frontend/ api/ processing/ database/ infra/ docs/</code>",
+    "crit": "har papkada README va minimal run command bor"
+   },
+   {
+    "id": "z21-2",
+    "html": "PostGIS bbox query uchun <code>EXPLAIN (ANALYZE, BUFFERS)</code> before/after benchmark yozildi",
+    "crit": "README'da indexdan oldin/keyin p95, rows, query plan bor"
+   },
+   {
+    "id": "z21-3",
+    "html": "COG pipeline bajarildi: GeoTIFF -> reproject -> overview -> COG",
+    "crit": "output COG validatsiya qilingan va fayl hajmi/preview screenshot yozilgan"
+   },
+   {
+    "id": "z21-4",
+    "html": "FastAPI uchun auth, bbox endpoint va upload/processing contract testlari yozildi",
+    "crit": "pytest lokal va CI ichida o'tadi"
+   },
+   {
+    "id": "z21-5",
+    "html": "Docker Compose barcha servislarni healthcheck bilan ishga tushirdi",
+    "crit": "frontend, api, db, redis, worker, nginx health status ko'rinadi"
+   },
+   {
+    "id": "z21-6",
+    "html": "CI/CD pipeline test, build va backend pytest gate bilan sozlandi",
+    "crit": "PR testdan o'tmasa merge/deploy qilinmaydi"
+   },
+   {
+    "id": "z21-7",
+    "html": "Prometheus/Grafana dashboardda API latency, error rate va worker duration ko'rindi",
+    "crit": "kamida 3 metric screenshot yoki export bilan hujjatlangan"
+   },
+   {
+    "id": "z21-8",
+    "html": "Security: RBAC, audit log, rate limit va secret handling checklist bajarildi",
+    "crit": "admin bo'lmagan user protected endpointga kira olmaydi, audit row yoziladi"
+   },
+   {
+    "id": "z21-9",
+    "html": "Backup/restore drill bajarildi",
+    "crit": "bo'sh DB'ga restore qilingan, RTO/RPO qiymati README'da yozilgan"
+   },
+   {
+    "id": "z21-10",
+    "html": "AI-GIS evaluation report tayyorlandi",
+    "crit": "precision/recall/F1, false positive misollar va threshold qarori bor"
+   },
+   {
+    "id": "z21-11",
+    "html": "System design case study yozildi",
+    "crit": "scale assumption, bottleneck, cache, queue, storage va trade-offlar yozilgan"
+   },
+   {
+    "id": "z21-12",
+    "html": "Demo package: live link, video walkthrough, architecture diagram va professional README tayyorlandi",
+    "crit": "boshqa developer 30 daqiqada loyihani tushunib ishga tushira oladi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://postgis.net/docs/",
+    "title": "PostGIS docs",
+    "desc": "Spatial index, query va geometry functions.",
+    "host": "postgis.net"
+   },
+   {
+    "type": "doc",
+    "url": "https://gdal.org/programs/gdal_translate.html",
+    "title": "GDAL gdal_translate",
+    "desc": "COG yaratish va raster convert.",
+    "host": "gdal.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.pytest.org/",
+    "title": "pytest docs",
+    "desc": "FastAPI backend testlari uchun.",
+    "host": "docs.pytest.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://prometheus.io/docs/introduction/overview/",
+    "title": "Prometheus docs",
+    "desc": "Metric va monitoring.",
+    "host": "prometheus.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://grafana.com/docs/grafana/latest/",
+    "title": "Grafana docs",
+    "desc": "Dashboard va alert visualization.",
+    "host": "grafana.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/actions",
+    "title": "GitHub Actions",
+    "desc": "CI/CD pipeline uchun.",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.ultralytics.com/modes/val/",
+    "title": "Ultralytics validation",
+    "desc": "YOLO model evaluation.",
+    "host": "docs.ultralytics.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://owasp.org/www-project-api-security/",
+    "title": "OWASP API Security",
+    "desc": "API xavfsizlik checklisti.",
+    "host": "owasp.org"
+   }
+  ],
+  "project": {
+   "tag": "Senior / WebGIS / Production",
+   "title": "GeoPulse Production Lab",
+   "desc": "React + MapLibre, FastAPI, PostGIS, COG/raster, YOLO, Docker, CI/CD va observability bilan senior portfolio loyiha.",
+   "features": [
+    "MapLibre frontend: layer, filter, bbox query, loading/error state",
+    "FastAPI backend: auth, RBAC, bbox, upload, processing job",
+    "PostGIS: spatial schema, GIST index, benchmark report",
+    "Raster/COG: GDAL/Rasterio processing pipeline",
+    "AI-GIS: YOLO validation, threshold va error analysis",
+    "Infrastructure: Docker Compose, Nginx, Redis, worker",
+    "Quality: pytest, frontend tests, CI/CD gate",
+    "Operations: Prometheus/Grafana, logs, backup/restore drill"
+   ],
+   "rubric": [
+    "Demo qayta ishga tushadi va asosiy user-flow ishlaydi.",
+    "Performance benchmark oldin/keyin raqamlari bilan yozilgan.",
+    "API va frontend uchun testlar CI'da o'tadi.",
+    "COG/raster pipeline real faylda sinab ko'rilgan.",
+    "AI evaluation metrikalari va xato tahlili bor.",
+    "Security checklist: RBAC, audit log, secret handling, rate limit.",
+    "Observability: kamida 3 metric va bitta dashboard.",
+    "README, architecture diagram va system design report professional ko'rinishda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Production Lab'da benchmark nima uchun shart?",
+    "a": [
+     "taxminni isbotlash uchun emas, o'lchangan natija olish uchun",
+     "rang tanlash uchun",
+     "faqat screenshot uchun",
+     "GitHub yulduzi uchun"
+    ],
+    "c": 0,
+    "w": "Senior optimizatsiyani o'lchov bilan qiladi: before/after, p95, query plan.",
+    "level": "practical"
+   },
+   {
+    "q": "COG pipeline'ning asosiy foydasi nima?",
+    "a": [
+     "butun raster faylni birdan yuklash",
+     "HTTP range request orqali kerakli qismini o'qish",
+     "JWT yaratish",
+     "CSS yozish"
+    ],
+    "c": 1,
+    "w": "COG web uchun optimallashtirilgan raster format: overview va internal tiling bilan kerakli oynani o'qiydi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Backup borligini qanday isbotlaysan?",
+    "a": [
+     "backup fayl bor deb aytib",
+     "restore drill qilib, RTO/RPO yozib",
+     "screenshot bilan",
+     "secretni README'ga qo'yib"
+    ],
+    "c": 1,
+    "w": "Tiklanmagan backup ishonchli emas. Restore drill production tayyorgarligini isbotlaydi.",
+    "level": "scenario"
+   },
+   {
+    "q": "AI detection evaluation'da faqat accuracy yetarlimi?",
+    "a": [
+     "ha, doim yetadi",
+     "yo'q, precision/recall/F1 va false positive tahlil kerak",
+     "faqat rang kerak",
+     "faqat model nomi kerak"
+    ],
+    "c": 1,
+    "w": "Object detectionda false positive/false negative narxi turlicha; threshold qarori metrika bilan qilinadi.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "PostGIS query sekin bo'lsa birinchi professional qadam?",
+    "options": [
+     "taxmin bilan index qo'shish",
+     "EXPLAIN ANALYZE va Network/API latency o'lchash",
+     "frontend rangini o'zgartirish",
+     "database'ni o'chirish"
+    ],
+    "correct": 1,
+    "why": "Avval sekinlik qayerdaligini o'lchaysan; keyin tuzatasan."
+   },
+   {
+    "type": "gap",
+    "q": "Production monitoring uchun API latency va worker duration metriclarini yig'adigan tizim: ___",
+    "answers": [
+     "Prometheus",
+     "prometheus"
+    ],
+    "hint": "P bilan boshlanadi",
+    "why": "Prometheus metriclarni yig'adi, Grafana esa dashboard qiladi."
+   },
+   {
+    "type": "choice",
+    "q": "CI/CD gate nimani himoya qiladi?",
+    "options": [
+     "xato kodning merge/deploy bo'lishini",
+     "faqat dizaynni",
+     "faqat kompyuter nomini",
+     "faqat README uzunligini"
+    ],
+    "correct": 0,
+    "why": "Test/build o'tmasa PR merge qilinmasligi kerak."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "RTO",
+    "uz": "tiklanish uchun maksimal vaqt",
+    "ex": "RTO 30 daqiqa bo'lsa, tizim yarim soatda qaytishi kerak."
+   },
+   {
+    "w": "RPO",
+    "uz": "yo'qotilishi mumkin bo'lgan maksimal data oynasi",
+    "ex": "RPO 1 soat bo'lsa, eng ko'pi 1 soatlik data yo'qolishi mumkin."
+   },
+   {
+    "w": "p95 latency",
+    "uz": "so'rovlarning 95 foizi undan tezroq tugaydigan vaqt",
+    "ex": "p95 bbox latency 200ms dan past bo'lishi kerak."
+   },
+   {
+    "w": "false positive",
+    "uz": "model yo'q obyektni bor deb topishi",
+    "ex": "False positive ko'p bo'lsa operator charchaydi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Professional evidence",
+    "rule": "Har qaror o'lchov yoki test bilan yopiladi.",
+    "ex": "Index qo'shdim -> EXPLAIN ANALYZE oldin/keyin jadvali."
+   },
+   {
+    "topic": "Production readiness",
+    "rule": "Deploy + monitor + backup + restore + report.",
+    "ex": "Demo ishlashi yetmaydi; tiklanishi va kuzatilishi ham kerak."
    }
   ]
  }

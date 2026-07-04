@@ -4495,5 +4495,128 @@
     "ex": "It's raining cats and dogs = qattiq yomg'ir."
    }
   ]
+ },
+ {
+  "zoom": "Job",
+  "title": "Tech English Portfolio",
+  "sub": "Career",
+  "coord": "Interview / English",
+  "eyebrow": "JOB / TECH ENGLISH",
+  "mtitle": "Texnik inglizcha: CV, portfolio, interview va docs",
+  "lede": "English kursi yakunida IT ishga kirish va remote muloqot uchun amaliy paket tayyorlanadi.",
+  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>CV, project explanation, interview answer va technical writing</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Portfolio README skeleti",
+     "p": "Har final ish shu struktura bilan topshiriladi."
+    },
+    "title": "README.md",
+    "lang": "md",
+    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "job-1",
+    "html": "Inglizcha CV va LinkedIn summary yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "job-2",
+    "html": "Bitta loyiha inglizcha 2 daqiqada tushuntirildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "job-3",
+    "html": "10 ta interview savoliga STAR formatda javob yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "job-4",
+    "html": "Technical README inglizcha qayta yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "job-5",
+    "html": "Speaking audio yoki mock interview checklist tayyorlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.cambridgeenglish.org/learning-english/",
+    "title": "Cambridge English",
+    "desc": "General English practice.",
+    "host": "cambridgeenglish.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://developers.google.com/tech-writing",
+    "title": "Google Technical Writing",
+    "desc": "Texnik yozuv uchun.",
+    "host": "developers.google.com"
+   }
+  ],
+  "project": {
+   "tag": "Capstone / Portfolio / Assessment",
+   "title": "Tech English Portfolio: professional portfolio topshirig'i",
+   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: CV, project explanation, interview answer va technical writing.",
+   "features": [
+    "Inglizcha CV va LinkedIn summary yozildi",
+    "Bitta loyiha inglizcha 2 daqiqada tushuntirildi",
+    "10 ta interview savoliga STAR formatda javob yozildi",
+    "Technical README inglizcha qayta yozildi",
+    "Speaking audio yoki mock interview checklist tayyorlandi"
+   ],
+   "rubric": [
+    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
+    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
+    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamchiliklar va keyingi qadamlar halol yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Professional topshiriqda 'done' nimani anglatadi?",
+    "options": [
+     "ishlaydi, tekshirildi va hujjatlandi",
+     "faqat kod yozildi",
+     "faqat screenshot bor",
+     "faqat reja tuzildi"
+    ],
+    "correct": 0,
+    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

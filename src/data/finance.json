@@ -2979,5 +2979,128 @@
     "level": "scenario"
    }
   ]
+ },
+ {
+  "zoom": "F10",
+  "title": "Personal Finance System",
+  "sub": "Portfolio",
+  "coord": "Money OS / F10",
+  "eyebrow": "10 / PERSONAL FINANCE",
+  "mtitle": "Shaxsiy moliya tizimi: byudjet, zaxira, qarz va investitsiya rejasi",
+  "lede": "Moliya kursi yakunida o'z hayoting uchun real ishlaydigan pul boshqaruv tizimi tuziladi.",
+  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>30 kunlik real xarajat, byudjet va uzoq muddatli reja asosida moliyaviy tizim</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Portfolio README skeleti",
+     "p": "Har final ish shu struktura bilan topshiriladi."
+    },
+    "title": "README.md",
+    "lang": "md",
+    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "f10-1",
+    "html": "30 kunlik xarajatlar jadvali to'ldirildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "f10-2",
+    "html": "50/30/20 yoki mos byudjet modeli tanlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "f10-3",
+    "html": "Zaxira fond maqsadi va muddat hisoblandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "f10-4",
+    "html": "Qarz/omonat/investitsiya bo'yicha risk checklist yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "f10-5",
+    "html": "12 oylik moliyaviy reja tayyorlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.investopedia.com/personal-finance-4427760",
+    "title": "Investopedia Personal Finance",
+    "desc": "Shaxsiy moliya tushunchalari.",
+    "host": "investopedia.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://cbu.uz/",
+    "title": "Markaziy bank",
+    "desc": "O'zbekiston moliya va bank ma'lumotlari.",
+    "host": "cbu.uz"
+   }
+  ],
+  "project": {
+   "tag": "Capstone / Portfolio / Assessment",
+   "title": "Personal Finance System: professional portfolio topshirig'i",
+   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: 30 kunlik real xarajat, byudjet va uzoq muddatli reja asosida moliyaviy tizim.",
+   "features": [
+    "30 kunlik xarajatlar jadvali to'ldirildi",
+    "50/30/20 yoki mos byudjet modeli tanlandi",
+    "Zaxira fond maqsadi va muddat hisoblandi",
+    "Qarz/omonat/investitsiya bo'yicha risk checklist yozildi",
+    "12 oylik moliyaviy reja tayyorlandi"
+   ],
+   "rubric": [
+    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
+    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
+    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamchiliklar va keyingi qadamlar halol yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Professional topshiriqda 'done' nimani anglatadi?",
+    "options": [
+     "ishlaydi, tekshirildi va hujjatlandi",
+     "faqat kod yozildi",
+     "faqat screenshot bor",
+     "faqat reja tuzildi"
+    ],
+    "correct": 0,
+    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

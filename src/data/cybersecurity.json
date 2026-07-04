@@ -2571,5 +2571,128 @@
     "ex": "Finding -> ticket -> fix -> verification -> report."
    }
   ]
+ },
+ {
+  "zoom": "CY12",
+  "title": "Security Portfolio Board",
+  "sub": "Portfolio",
+  "coord": "SOC / GRC / CY12",
+  "eyebrow": "12 / PROFESSIONAL SECURITY",
+  "mtitle": "Security portfolio: finding, evidence, ticket va executive report",
+  "lede": "Cybersecurity kursi yakunida ish beruvchiga ko'rsatish mumkin bo'lgan security dossier tayyorlanadi.",
+  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>security findingni dalil, severity, remediation va verification bilan yopish</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Portfolio README skeleti",
+     "p": "Har final ish shu struktura bilan topshiriladi."
+    },
+    "title": "README.md",
+    "lang": "md",
+    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "cy12-1",
+    "html": "Kamida 3 ta finding uchun evidence yig'ildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "cy12-2",
+    "html": "Severity va risk impact yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "cy12-3",
+    "html": "Remediation ticket va verification qadami tayyorlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "cy12-4",
+    "html": "MITRE/OWASP/NIST mapping qo'shildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "cy12-5",
+    "html": "Executive summary va technical appendix yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://owasp.org/www-project-top-ten/",
+    "title": "OWASP Top 10",
+    "desc": "Web security risklar.",
+    "host": "owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://attack.mitre.org/",
+    "title": "MITRE ATT&CK",
+    "desc": "Threat mapping uchun.",
+    "host": "attack.mitre.org"
+   }
+  ],
+  "project": {
+   "tag": "Capstone / Portfolio / Assessment",
+   "title": "Security Portfolio Board: professional portfolio topshirig'i",
+   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: security findingni dalil, severity, remediation va verification bilan yopish.",
+   "features": [
+    "Kamida 3 ta finding uchun evidence yig'ildi",
+    "Severity va risk impact yozildi",
+    "Remediation ticket va verification qadami tayyorlandi",
+    "MITRE/OWASP/NIST mapping qo'shildi",
+    "Executive summary va technical appendix yozildi"
+   ],
+   "rubric": [
+    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
+    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
+    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamchiliklar va keyingi qadamlar halol yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Professional topshiriqda 'done' nimani anglatadi?",
+    "options": [
+     "ishlaydi, tekshirildi va hujjatlandi",
+     "faqat kod yozildi",
+     "faqat screenshot bor",
+     "faqat reja tuzildi"
+    ],
+    "correct": 0,
+    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

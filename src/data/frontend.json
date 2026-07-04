@@ -2651,5 +2651,128 @@
     "why": "code review mavzusida sifat talab, kichik tekshiruv va aniq natija bilan oshadi."
    }
   ]
+ },
+ {
+  "zoom": "FE12",
+  "title": "Frontend Capstone",
+  "sub": "Portfolio",
+  "coord": "Production UI / FE12",
+  "eyebrow": "12 / PROFESSIONAL FRONTEND",
+  "mtitle": "Real dashboard: React, TypeScript, test va deploy",
+  "lede": "Frontend kursi yakunida bitta real dashboard/app quriladi va portfolio sifatida topshiriladi.",
+  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>React + TypeScript bilan real foydalanuvchi oqimiga ega, responsive, testlangan va deploy qilingan frontend</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Portfolio README skeleti",
+     "p": "Har final ish shu struktura bilan topshiriladi."
+    },
+    "title": "README.md",
+    "lang": "md",
+    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "fe12-1",
+    "html": "Responsive dashboard yoki app yaratildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "fe12-2",
+    "html": "Kamida 3 ta reusable component va bitta form flow yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "fe12-3",
+    "html": "Loading, empty, error va success state'lar qo'shildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "fe12-4",
+    "html": "Kamida bitta component yoki user-flow testi yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "fe12-5",
+    "html": "Deploy link, screenshot va README tayyorlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://react.dev/learn",
+    "title": "React Learn",
+    "desc": "React component va state poydevori.",
+    "host": "react.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://testing-library.com/docs/react-testing-library/intro/",
+    "title": "React Testing Library",
+    "desc": "Frontend testlar uchun.",
+    "host": "testing-library.com"
+   }
+  ],
+  "project": {
+   "tag": "Capstone / Portfolio / Assessment",
+   "title": "Frontend Capstone: professional portfolio topshirig'i",
+   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: React + TypeScript bilan real foydalanuvchi oqimiga ega, responsive, testlangan va deploy qilingan frontend.",
+   "features": [
+    "Responsive dashboard yoki app yaratildi",
+    "Kamida 3 ta reusable component va bitta form flow yozildi",
+    "Loading, empty, error va success state'lar qo'shildi",
+    "Kamida bitta component yoki user-flow testi yozildi",
+    "Deploy link, screenshot va README tayyorlandi"
+   ],
+   "rubric": [
+    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
+    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
+    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamchiliklar va keyingi qadamlar halol yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Professional topshiriqda 'done' nimani anglatadi?",
+    "options": [
+     "ishlaydi, tekshirildi va hujjatlandi",
+     "faqat kod yozildi",
+     "faqat screenshot bor",
+     "faqat reja tuzildi"
+    ],
+    "correct": 0,
+    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

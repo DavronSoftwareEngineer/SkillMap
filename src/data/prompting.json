@@ -2051,5 +2051,128 @@
     "ex": "Beware hidden instructions."
    }
   ]
+ },
+ {
+  "zoom": "P6",
+  "title": "AI Workflow Portfolio",
+  "sub": "Portfolio",
+  "coord": "AI Work / P6",
+  "eyebrow": "06 / PROFESSIONAL AI WORKFLOW",
+  "mtitle": "AI bilan real ish jarayoni: prompt, verification va reusable workflow",
+  "lede": "Prompting kursi yakunida AI'ni real ishga bog'laydigan qayta ishlatiladigan workflow yaratiladi.",
+  "doc": "<div class='prose'><h3>Professional yakuniy loyiha</h3><p>Bu modul kursni oddiy o'qishdan real ish natijasiga aylantiradi. Maqsad: <strong>AI yordamida ishni tezlashtirish, lekin natijani tekshirish va xavfsiz ishlatish</strong> bo'yicha ish beruvchiga ko'rsatish mumkin bo'lgan portfolio natijasini tayyorlash.</p><h3>Ish tartibi</h3><div class=\"chips\"><span class=\"chip\">talabni aniqlash</span><span class=\"chip\">minimal versiya</span><span class=\"chip\">test/tekshiruv</span><span class=\"chip\">hujjat</span><span class=\"chip\">demo</span></div><p>Har bir qaror README yoki reportda qisqa yoziladi: nima qilding, nega shunday tanlading, qanday tekshirding va keyingi yaxshilash nimadan iborat.</p><div class=\"callout\"><div><p>Baholash mezoni</p><p>Natija faqat ishlashi bilan emas, tushuntirilishi, tekshirilishi va boshqa odam davom ettira olishi bilan baholanadi.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Portfolio README skeleti",
+     "p": "Har final ish shu struktura bilan topshiriladi."
+    },
+    "title": "README.md",
+    "lang": "md",
+    "code": "# Project title\n\n## Problem\nKim uchun va qaysi muammoni hal qiladi.\n\n## Stack\nIshlatilgan texnologiyalar va sabab.\n\n## How to run\nLokal ishga tushirish qadamlari.\n\n## Verification\nTest, demo, screenshot yoki report natijalari.\n\n## Trade-offs\nQaysi qaror nega tanlandi, nimani keyin yaxshilash mumkin."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "p6-1",
+    "html": "Bitta real vazifa uchun reusable prompt template yozildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "p6-2",
+    "html": "Input/output format va cheklovlar aniq berildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "p6-3",
+    "html": "AI javobi fakt-check yoki test bilan tekshirildi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "p6-4",
+    "html": "Hallucination va privacy risklari checklist qilindi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   },
+   {
+    "id": "p6-5",
+    "html": "Before/after natija va vaqt tejalishi hujjatlandi",
+    "crit": "README/reportda dalil, tekshiruv natijasi va keyingi qadam yozilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/",
+    "title": "Prompt Engineering Guide",
+    "desc": "Prompt patternlari.",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI Prompt Engineering",
+    "desc": "Rasmiy prompt tavsiyalari.",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Capstone / Portfolio / Assessment",
+   "title": "AI Workflow Portfolio: professional portfolio topshirig'i",
+   "desc": "Kursdagi asosiy bilimlarni bitta tekshiriladigan natijaga yig'ish: AI yordamida ishni tezlashtirish, lekin natijani tekshirish va xavfsiz ishlatish.",
+   "features": [
+    "Bitta real vazifa uchun reusable prompt template yozildi",
+    "Input/output format va cheklovlar aniq berildi",
+    "AI javobi fakt-check yoki test bilan tekshirildi",
+    "Hallucination va privacy risklari checklist qilindi",
+    "Before/after natija va vaqt tejalishi hujjatlandi"
+   ],
+   "rubric": [
+    "Ish lokal yoki demo muhitda qayta ishga tushadi.",
+    "Asosiy user-flow yoki ish jarayoni dalil bilan ko'rsatilgan.",
+    "Kamida bitta test, checklist yoki verifikatsiya natijasi bor.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamchiliklar va keyingi qadamlar halol yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Capstone modulining asosiy maqsadi nima?",
+    "a": [
+     "faqat matn o'qish",
+     "real portfolio natijasini dalil bilan topshirish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional natija ishlaydi, tekshiriladi va hujjatlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "README/reportda eng muhim bo'lim qaysi?",
+    "a": [
+     "faqat sarlavha",
+     "muammo, ishga tushirish va verification",
+     "faqat rasm",
+     "faqat shaxsiy fikr"
+    ],
+    "c": 1,
+    "w": "Ish beruvchi muammo, yechim va tekshiruvni ko'rishi kerak.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Professional topshiriqda 'done' nimani anglatadi?",
+    "options": [
+     "ishlaydi, tekshirildi va hujjatlandi",
+     "faqat kod yozildi",
+     "faqat screenshot bor",
+     "faqat reja tuzildi"
+    ],
+    "correct": 0,
+    "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]
