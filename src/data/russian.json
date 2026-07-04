@@ -104,12 +104,12 @@
    {
     "q": "Rus alifbosida nechta harf bor?",
     "a": [
-     "26",
-     "30",
      "33",
+     "30",
+     "26",
      "40"
     ],
-    "c": 2,
+    "c": 0,
     "w": "Kirill alifbosida 33 harf.",
     "level": "easy"
    },
@@ -129,11 +129,11 @@
     "q": "\"Спасибо\" =",
     "a": [
      "Iltimos",
-     "Rahmat",
      "Salom",
+     "Rahmat",
      "Ha"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Спасибо - rahmat.",
     "level": "practical"
    },
@@ -141,11 +141,11 @@
     "q": "Rus tilida nima muhim?",
     "a": [
      "faqat imlo",
-     "urg'u (ударение)",
+     "rang",
      "harflar soni",
-     "rang"
+     "urg'u (ударение)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Urg'u talaffuz va ma'noga ta'sir qiladi.",
     "level": "scenario"
    }
@@ -429,12 +429,12 @@
    {
     "q": "Hozirgi zamonda \"Men talaba\" qanday?",
     "a": [
-     "Я есть студент",
      "Я студент",
+     "Я есть студент",
      "Я быть студент",
      "Студент я есть"
     ],
-    "c": 1,
+    "c": 0,
     "w": "\"to be\" yo'q: Я студент.",
     "level": "easy"
    },
@@ -466,11 +466,11 @@
     "q": "Это ... nima degani?",
     "a": [
      "U yerda",
-     "Bu ...",
+     "Qachon",
      "Kim",
-     "Qachon"
+     "Bu ..."
     ],
-    "c": 1,
+    "c": 3,
     "w": "Это - bu degani. Rus tilida predmet yoki holatni ko'rsatishda ishlatiladi: Это книга - Bu kitob. Javobda ko'rsatish ma'nosi bor.",
     "level": "scenario"
    }
@@ -669,7 +669,7 @@
   "eyebrow": "02 / Fe'l tuslanishi (hozirgi zamon)",
   "mtitle": "Fe'llar: hozirgi zamon tuslanishi",
   "lede": "Ruscha fe'l <strong>shaxsga qarab o'zgaradi</strong> (tuslanadi). Ko'p fe'l -ть bilan tugaydi. Ikki asosiy guruh bor.",
-  "doc": "<div class='prose'><h3>Nega fe'l tuslanishi muhim</h3><p>Rus tilida fe'l <b>kim bajarayotganiga qarab</b> o'zgaradi (tuslanadi) - я, ты, он uchun oxiri har xil. To'g'ri oxirni qo'ymasang, gap g'aliz eshitiladi. Yaxshi xabar: aksariyat fe'llar ikkita naqshdan biriga tushadi, shuni o'rgansang minglab fe'lni tuslay olasan.</p><h3>1-guruh: -ать (работать - ishlamoq)</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>работаю</td></tr><tr><td>ты</td><td>работаешь</td></tr><tr><td>он/она</td><td>работает</td></tr><tr><td>мы</td><td>работаем</td></tr><tr><td>вы</td><td>работаете</td></tr><tr><td>они</td><td>работают</td></tr></tbody></table><figure class='svgfig'><svg viewBox='0 0 680 170' role='img' aria-label='Fel ozagiga shaxs qoshimchasi qoshiladi'><rect class='box' x='30' y='60' width='150' height='50' rx='8'/><text x='105' y='90' text-anchor='middle'>работа- (o'zak)</text><path class='edga' d='M180 85 H250' marker-end='url(#arRu2a)'/><rect class='boxa' x='250' y='60' width='150' height='50' rx='8'/><text x='325' y='90' text-anchor='middle'>+ shaxs oxiri</text><path class='edga' d='M400 85 H470' marker-end='url(#arRu2a)'/><rect class='box' x='470' y='60' width='180' height='50' rx='8'/><text x='560' y='84' text-anchor='middle'>работаю / работаешь</text><text x='560' y='102' text-anchor='middle' class='muted'>работает ...</text><text x='105' y='140' text-anchor='middle' class='muted'>o'zgarmas qism</text><text x='325' y='140' text-anchor='middle' class='accent'>-ю -ешь -ет -ем -ете -ют</text><defs><marker id='arRu2a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Fe'lning o'zagi o'zgarmaydi; unga shaxsga mos oxir qo'shiladi.</figcaption></figure><h3>2-guruh: -ить (говорить - gapirmoq)</h3><p>Ikkinchi guruh fe'llari boshqacha oxir oladi. Ularni farqlash muhim, chunki oxirlarda -и- va -я- paydo bo'ladi.</p><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>говорю</td></tr><tr><td>ты</td><td>говоришь</td></tr><tr><td>он/она</td><td>говорит</td></tr><tr><td>мы</td><td>говорим</td></tr><tr><td>вы</td><td>говорите</td></tr><tr><td>они</td><td>говорят</td></tr></tbody></table><p>Demak, ikki asosiy naqsh bor: <b>1-guruh</b> (-ать -> -аю, -аешь ...) va <b>2-guruh</b> (-ить -> -ю, -ишь ...). Yangi fe'lni ko'rganda avval qaysi guruhga tegishli ekanini aniqla.</p><h3>Ko'p ishlatiladigan fe'llar</h3><div class=\"exlist\"><div class=\"ex\"><b>знать</b><span>bilmoq</span></div><div class=\"ex\"><b>читать</b><span>o'qimoq</span></div><div class=\"ex\"><b>делать</b><span>qilmoq</span></div><div class=\"ex\"><b>жить (живу, живёшь)</b><span>yashamoq</span></div><div class=\"ex\"><b>говорить (говорю, говоришь)</b><span>gapirmoq</span></div></div><h3>Misollar</h3><div class=\"exlist\"><div class=\"ex\"><b>Я работаю в офисе.</b><span>Men ofisda ishlayman.</span></div><div class=\"ex\"><b>Ты говоришь по-русски?</b><span>Sen ruscha gapirasanmi?</span></div><div class=\"ex\"><b>Они живут в Ташкенте.</b><span>Ular Toshkentda yashaydi.</span></div></div><h3>Noqonuniy (irregular) fe'llar</h3><p>Ba'zi fe'llar naqshga tushmaydi - ularni <b>alohida</b> yodlash kerak. Eng ko'p ishlatiladigan ikkitasi:</p><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>хотеть (istamoq)</th><th>мочь (qila olmoq)</th></tr></thead><tbody><tr><td>я</td><td>хочу</td><td>могу</td></tr><tr><td>ты</td><td>хочешь</td><td>можешь</td></tr><tr><td>он/она</td><td>хочет</td><td>может</td></tr><tr><td>мы</td><td>хотим</td><td>можем</td></tr><tr><td>вы</td><td>хотите</td><td>можете</td></tr><tr><td>они</td><td>хотят</td><td>могут</td></tr></tbody></table><p class=\"muted\">Urg'u eslatma: <b>хоч</b>у, хоч<b>е</b>шь, хоч<b>е</b>т, хот<b>и</b>м, хот<b>и</b>те, хот<b>я</b>т - birlikda o'zak \"хоч-\", ko'plikda \"хот-\". <b>мог</b>у, м<b>о</b>жешь, м<b>о</b>жет, м<b>о</b>жем, м<b>о</b>жете, м<b>о</b>гут.</p><div class=\"exlist\"><div class=\"ex\"><b>Я хочу чай.</b><span>Choy istayman.</span></div><div class=\"ex\"><b>Ты можешь помочь?</b><span>Yordam bera olasanmi?</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>O'zbek o'quvchi uchun tipik xato</p><p>Ega olmoshiga fe'l oxirini moslamaslik: \"Я <s>работаешь</s>\" - noto'g'ri (bu 'ты' shakli). To'g'risi: <b>Я работаю</b>. Yana они uchun \"хочут\" deb aytmaslik kerak - to'g'risi <b>хотят</b>.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Fe'lni doim <b>я</b> va <b>ты</b> shakli bilan yodla - qolgani shu naqshga tushadi. Har kuni 3 ta fe'lni ovoz chiqarib to'liq tusla.</p></div></div></div>",
+  "doc": "<div class='prose'><h3>Nega fe'l tuslanishi muhim</h3><p>Rus tilida fe'l <b>kim bajarayotganiga qarab</b> o'zgaradi (tuslanadi) - я, ты, он uchun oxiri har xil. To'g'ri oxirni qo'ymasang, gap g'aliz eshitiladi. Yaxshi xabar: aksariyat fe'llar ikkita naqshdan biriga tushadi, shuni o'rgansang minglab fe'lni tuslay olasan.</p><h3>1-guruh: -ать (работать - ishlamoq)</h3><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>работаю</td></tr><tr><td>ты</td><td>работаешь</td></tr><tr><td>он/она</td><td>работает</td></tr><tr><td>мы</td><td>работаем</td></tr><tr><td>вы</td><td>работаете</td></tr><tr><td>они</td><td>работают</td></tr></tbody></table><figure class='svgfig'><svg viewBox='0 0 680 170' role='img' aria-label='Fel ozagiga shaxs qoshimchasi qoshiladi'><rect class='box' x='30' y='60' width='150' height='50' rx='8'/><text x='105' y='90' text-anchor='middle'>работа- (o'zak)</text><path class='edga' d='M180 85 H250' marker-end='url(#arRu2a)'/><rect class='boxa' x='250' y='60' width='150' height='50' rx='8'/><text x='325' y='90' text-anchor='middle'>+ shaxs oxiri</text><path class='edga' d='M400 85 H470' marker-end='url(#arRu2a)'/><rect class='box' x='470' y='60' width='180' height='50' rx='8'/><text x='560' y='84' text-anchor='middle'>работаю / работаешь</text><text x='560' y='102' text-anchor='middle' class='muted'>работает ...</text><text x='105' y='140' text-anchor='middle' class='muted'>o'zgarmas qism</text><text x='325' y='140' text-anchor='middle' class='accent'>-ю -ешь -ет -ем -ете -ют</text><defs><marker id='arRu2a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Fe'lning o'zagi o'zgarmaydi; unga shaxsga mos oxir qo'shiladi.</figcaption></figure><h3>2-guruh: -ить (говорить - gapirmoq)</h3><p>Ikkinchi guruh fe'llari boshqacha oxir oladi. Ularni farqlash muhim, chunki oxirlarda -и- va -я- paydo bo'ladi.</p><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>Shakl</th></tr></thead><tbody><tr><td>я</td><td>говорю</td></tr><tr><td>ты</td><td>говоришь</td></tr><tr><td>он/она</td><td>говорит</td></tr><tr><td>мы</td><td>говорим</td></tr><tr><td>вы</td><td>говорите</td></tr><tr><td>они</td><td>говорят</td></tr></tbody></table><p>Demak, ikki asosiy naqsh bor: <b>1-guruh</b> (-ать -> -аю, -аешь ...) va <b>2-guruh</b> (-ить -> -ю, -ишь ...). Yangi fe'lni ko'rganda avval qaysi guruhga tegishli ekanini aniqla.</p><h3>Ko'p ishlatiladigan fe'llar</h3><div class=\"exlist\"><div class=\"ex\"><b>знать</b><span>bilmoq</span></div><div class=\"ex\"><b>читать</b><span>o'qimoq</span></div><div class=\"ex\"><b>делать</b><span>qilmoq</span></div><div class=\"ex\"><b>жить (живу, живёшь)</b><span>yashamoq</span></div><div class=\"ex\"><b>говорить (говорю, говоришь)</b><span>gapirmoq</span></div></div><h3>Misollar</h3><div class=\"exlist\"><div class=\"ex\"><b>Я работаю в офисе.</b><span>Men ofisda ishlayman.</span></div><div class=\"ex\"><b>Ты говоришь по-русски?</b><span>Sen ruscha gapirasanmi?</span></div><div class=\"ex\"><b>Они живут в Ташкенте.</b><span>Ular Toshkentda yashaydi.</span></div></div><h3>Noqonuniy (irregular) fe'llar</h3><p>Ba'zi fe'llar naqshga tushmaydi - ularni <b>alohida</b> yodlash kerak. Eng ko'p ishlatiladigan ikkitasi:</p><table class=\"gtable\"><thead><tr><th>Shaxs</th><th>хотеть (istamoq)</th><th>мочь (qila olmoq)</th></tr></thead><tbody><tr><td>я</td><td>хочу</td><td>могу</td></tr><tr><td>ты</td><td>хочешь</td><td>можешь</td></tr><tr><td>он/она</td><td>хочет</td><td>может</td></tr><tr><td>мы</td><td>хотим</td><td>можем</td></tr><tr><td>вы</td><td>хотите</td><td>можете</td></tr><tr><td>они</td><td>хотят</td><td>могут</td></tr></tbody></table><p class=\"muted\">Urg'u eslatma: хоч<b>у</b>, <b>хо</b>чешь, <b>хо</b>чет, хот<b>и</b>м, хот<b>и</b>те, хот<b>я</b>т - birlikda o'zak \"хоч-\", ko'plikda \"хот-\". мог<b>у</b>, м<b>о</b>жешь, м<b>о</b>жет, м<b>о</b>жем, м<b>о</b>жете, м<b>о</b>гут.</p><div class=\"exlist\"><div class=\"ex\"><b>Я хочу чай.</b><span>Choy istayman.</span></div><div class=\"ex\"><b>Ты можешь помочь?</b><span>Yordam bera olasanmi?</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>O'zbek o'quvchi uchun tipik xato</p><p>Ega olmoshiga fe'l oxirini moslamaslik: \"Я <s>работаешь</s>\" - noto'g'ri (bu 'ты' shakli). To'g'risi: <b>Я работаю</b>. Yana они uchun \"хочут\" deb aytmaslik kerak - to'g'risi <b>хотят</b>.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Fe'lni doim <b>я</b> va <b>ты</b> shakli bilan yodla - qolgani shu naqshga tushadi. Har kuni 3 ta fe'lni ovoz chiqarib to'liq tusla.</p></div></div></div>",
   "code": [],
   "tasks": [
    {
@@ -766,12 +766,12 @@
    {
     "q": "\"я работа__\":",
     "a": [
-     "работаешь",
      "работаю",
+     "работаешь",
      "работает",
      "работают"
     ],
-    "c": 1,
+    "c": 0,
     "w": "я -> работаю.",
     "level": "easy"
    },
@@ -803,11 +803,11 @@
     "q": "Ko'p fe'l qaysi qo'shimcha bilan tugaydi?",
     "a": [
      "-ний",
-     "-ть",
+     "-ка",
      "-ов",
-     "-ка"
+     "-ть"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Infinitiv ko'pincha -ть.",
     "level": "scenario"
    }
@@ -1125,12 +1125,12 @@
    {
     "q": "Rus tilida nechta kelishik bor?",
     "a": [
-     "3",
-     "4",
      "6",
+     "4",
+     "3",
      "8"
     ],
-    "c": 2,
+    "c": 0,
     "w": "6 ta kelishik (падеж).",
     "level": "easy"
    },
@@ -1162,11 +1162,11 @@
     "q": "Именительный kelishik savoli:",
     "a": [
      "кого?",
-     "кто? что?",
+     "кому?",
      "где?",
-     "кому?"
+     "кто? что?"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Им. - кто? что? (ega).",
     "level": "scenario"
    }
@@ -1467,12 +1467,12 @@
    {
     "q": "O'tgan zamon nimaga qarab o'zgaradi?",
     "a": [
-     "shaxsga",
      "rod/songa (kim bajargan)",
+     "shaxsga",
      "joyga",
      "vaqtga"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Rod va songa qarab: -л/-ла/-ло/-ли.",
     "level": "easy"
    },
@@ -1505,10 +1505,10 @@
     "a": [
      "работал",
      "работала",
-     "работали",
-     "работаю"
+     "работаю",
+     "работали"
     ],
-    "c": 2,
+    "c": 3,
     "w": "Ko'plik -> работали.",
     "level": "scenario"
    }
@@ -1826,12 +1826,12 @@
    {
     "q": "\"Mening vaqtim yo'q\":",
     "a": [
-     "У меня нет время",
      "У меня нет времени",
+     "У меня нет время",
      "У меня нет времю",
      "Я нет время"
     ],
-    "c": 1,
+    "c": 0,
     "w": "нет + родительный: времени.",
     "level": "easy"
    },
@@ -1863,11 +1863,11 @@
     "q": "\"кому?\" qaysi kelishik?",
     "a": [
      "родительный",
-     "дательный",
+     "винительный",
      "творительный",
-     "винительный"
+     "дательный"
     ],
-    "c": 1,
+    "c": 3,
     "w": "кому? - дательный.",
     "level": "scenario"
    }
@@ -2163,12 +2163,12 @@
    {
     "q": "\"Men kitobni o'qib tugatdim\" (natija):",
     "a": [
-     "Я читал книгу",
      "Я прочитал книгу",
+     "Я читал книгу",
      "Я читаю книгу",
      "Я буду читать"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Natija -> совершенный: прочитал.",
     "level": "easy"
    },
@@ -2188,11 +2188,11 @@
     "q": "\"сделать\" qaysi aspekt?",
     "a": [
      "несовершенный",
-     "совершенный (natija)",
      "kelasi",
+     "совершенный (natija)",
      "-"
     ],
-    "c": 1,
+    "c": 2,
     "w": "сделать - совершенный (tugagan).",
     "level": "practical"
    },
@@ -2200,11 +2200,11 @@
     "q": "делать ning jufti:",
     "a": [
      "делал",
-     "сделать",
+     "делает",
      "делаю",
-     "делает"
+     "сделать"
     ],
-    "c": 1,
+    "c": 3,
     "w": "делать/сделать - aspekt jufti.",
     "level": "scenario"
    }
@@ -2500,12 +2500,12 @@
    {
     "q": "Urg'usiz \"о\" ko'pincha qanday eshitiladi?",
     "a": [
-     "o",
      "a",
+     "o",
      "u",
      "e"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Reduksiya: urg'usiz о -> 'a'.",
     "level": "easy"
    },
@@ -2525,11 +2525,11 @@
     "q": "So'zni qanday yodlash yaxshi?",
     "a": [
      "yakka",
-     "urg'u + misol gap bilan",
      "tarjimasiz",
+     "urg'u + misol gap bilan",
      "tez"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Urg'u va kontekst bilan.",
     "level": "practical"
    },
@@ -2537,11 +2537,11 @@
     "q": "Talaffuz uchun shadowing nima?",
     "a": [
      "tarjima",
-     "audioni baravar takrorlash",
+     "o'qish",
      "yozish",
-     "o'qish"
+     "audioni baravar takrorlash"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Audio bilan baravar takrorlash.",
     "level": "scenario"
    }
@@ -2861,24 +2861,24 @@
    {
     "q": "\"Как вас зовут?\" - bu:",
     "a": [
-     "Qayerdansiz?",
      "Ismingiz nima?",
+     "Qayerdansiz?",
      "Qancha turadi?",
      "Qalaysiz?"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Ismni so'rash.",
     "level": "easy"
    },
    {
     "q": "\"Сколько это стоит?\" =",
     "a": [
-     "Bu qancha turadi?",
      "Bu nima?",
+     "Bu qancha turadi?",
      "Qayerda?",
      "Kim?"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Narxni so'rash.",
     "level": "practical"
    },
@@ -2886,11 +2886,11 @@
     "q": "\"Где метро?\" =",
     "a": [
      "Metro qachon?",
-     "Metro qayerda?",
      "Metro qancha?",
+     "Metro qayerda?",
      "Metro kim?"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Где - qayerda.",
     "level": "practical"
    },
@@ -2898,11 +2898,11 @@
     "q": "Suhbatda eng muhimi:",
     "a": [
      "mukammal grammatika",
-     "ravonlik (gapirishda davom etish)",
+     "uzun gaplar",
      "tez gapirish",
-     "uzun gaplar"
+     "ravonlik (gapirishda davom etish)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Ravonlik - kichik xato uchun to'xtama.",
     "level": "scenario"
    }
@@ -3283,12 +3283,12 @@
    {
     "q": "Nechta kelishik bor rus tilida?",
     "a": [
-     "4",
-     "5",
      "6",
+     "5",
+     "4",
      "7"
     ],
-    "c": 2,
+    "c": 0,
     "w": "Rus tilida 6 kelishik (падеж).",
     "level": "easy"
    },
@@ -3307,12 +3307,12 @@
    {
     "q": "\"в Ташкенте\" - qaysi kelishik?",
     "a": [
-     "Предложный",
-     "Родительный",
      "Винительный",
+     "Родительный",
+     "Предложный",
      "Именительный"
     ],
-    "c": 0,
+    "c": 2,
     "w": "в/на + где? -> предложный (o'rin).",
     "level": "scenario"
    }

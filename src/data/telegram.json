@@ -107,12 +107,12 @@
    {
     "q": "Bot token qayerda saqlanishi kerak?",
     "a": [
-     "GitHub READMEda",
      ".env faylda",
+     "GitHub READMEda",
      "frontend bundle ichida",
      "kommentda"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Token maxfiy credential. Uni .env yoki secret managerda saqlash kerak.",
     "level": "easy"
    },
@@ -219,7 +219,7 @@
     },
     "title": "middleware.ts",
     "lang": "typescript",
-    "code": "bot.use(async (ctx, next) => {\n  const started = Date.now();\n  try {\n    await next();\n  } catch (err) {\n    console.error('bot_error', err);\n    await ctx.reply('Kutilmagan xato. Keyinroq urinib ko'ring.');\n  } finally {\n    console.log({ update: ctx.update.update_id, ms: Date.now() - started });\n  }\n});\n\nbot.command('help', (ctx) => ctx.reply('/start, /help, /profile'));"
+    "code": "bot.use(async (ctx, next) => {\n  const started = Date.now();\n  try {\n    await next();\n  } catch (err) {\n    console.error('bot_error', err);\n    await ctx.reply(\"Kutilmagan xato. Keyinroq urinib ko'ring.\");\n  } finally {\n    console.log({ update: ctx.update.update_id, ms: Date.now() - started });\n  }\n});\n\nbot.command('help', (ctx) => ctx.reply('/start, /help, /profile'));"
    }
   ],
   "tasks": [
@@ -304,23 +304,23 @@
     "q": "Middleware qachon ishlaydi?",
     "a": [
      "Faqat deployda",
-     "Update handlerlardan oldin/yoki keyin",
+     "Faqat database bilan",
      "Faqat testda",
-     "Faqat database bilan"
+     "Update handlerlardan oldin/yoki keyin"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Middleware update oqimini kesib o'tadi va umumiy logicni markazlashtiradi.",
     "level": "easy"
    },
    {
     "q": "Nega global error handler kerak?",
     "a": [
-     "Botni sekinlatish uchun",
      "Crash va secret leakni kamaytirish uchun",
+     "Botni sekinlatish uchun",
      "Command nomini yashirish uchun",
      "CSS uchun"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Xatoni ushlab, log qilish va foydalanuvchiga xavfsiz javob berish production talabidir.",
     "level": "practical"
    },
@@ -328,11 +328,11 @@
     "q": "Foydalanuvchi noma'lum command yubordi. Professional javob?",
     "a": [
      "Hech narsa qilmaslik",
-     "Stack trace yuborish",
      "Help/fallback ko'rsatish",
+     "Stack trace yuborish",
      "Tokenni qaytarish"
     ],
-    "c": 2,
+    "c": 1,
     "w": "Fallback UXni yaxshilaydi va userni keyingi qadamga yo'naltiradi.",
     "level": "scenario"
    }
@@ -512,36 +512,36 @@
    {
     "q": "Qaysi state databaseda saqlanishi kerak?",
     "a": [
-     "Order/payment holati",
-     "Hozirgi typing animatsiya",
      "Bir martalik console log",
+     "Hozirgi typing animatsiya",
+     "Order/payment holati",
      "CSS rang"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Muhim biznes state restartdan keyin ham saqlanishi kerak.",
     "level": "easy"
    },
    {
     "q": "telegramId uchun eng muhim talab?",
     "a": [
-     "unique bo'lishi",
+     "o'chirilishi",
      "har safar random bo'lishi",
      "string bo'lmasligi",
-     "o'chirilishi"
+     "unique bo'lishi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Bir Telegram user bitta DB userga mos kelishi kerak.",
     "level": "practical"
    },
    {
     "q": "Bot restart bo'ldi. Order yo'qolmasligi uchun nima qilasan?",
     "a": [
-     "Orderni memoryda saqlayman",
      "Orderni DBga yozaman",
+     "Orderni memoryda saqlayman",
      "Userdan qayta so'rayman",
      "Logni o'chiraman"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Persistent biznes holat DBda saqlanadi.",
     "level": "scenario"
    }
@@ -622,7 +622,7 @@
     },
     "title": "menu.ts",
     "lang": "typescript",
-    "code": "bot.command('menu', async (ctx) => {\n  await ctx.reply('Bo'limni tanlang:', {\n    reply_markup: {\n      inline_keyboard: [\n        [{ text: 'Profil', callback_data: 'menu:profile' }],\n        [{ text: 'Buyurtma', callback_data: 'menu:order' }],\n      ],\n    },\n  });\n});\n\nbot.callbackQuery('menu:profile', (ctx) => ctx.answerCallbackQuery({ text: 'Profil ochildi' }));"
+    "code": "bot.command('menu', async (ctx) => {\n  await ctx.reply(\"Bo'limni tanlang:\", {\n    reply_markup: {\n      inline_keyboard: [\n        [{ text: 'Profil', callback_data: 'menu:profile' }],\n        [{ text: 'Buyurtma', callback_data: 'menu:order' }],\n      ],\n    },\n  });\n});\n\nbot.callbackQuery('menu:profile', (ctx) => ctx.answerCallbackQuery({ text: 'Profil ochildi' }));"
    }
   ],
   "tasks": [
@@ -706,36 +706,36 @@
    {
     "q": "Inline keyboard qayerda ko'rinadi?",
     "a": [
-     "Xabar ostida",
      "Faqat terminalda",
+     "Xabar ostida",
      "Server logda",
      "DB ichida"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Inline keyboard xabar ostidagi interaktiv buttonlar to'plami.",
     "level": "easy"
    },
    {
     "q": "Callback data ichiga nima yozmaslik kerak?",
     "a": [
-     "secret/token",
-     "qisqa action id",
      "menu prefix",
+     "qisqa action id",
+     "secret/token",
      "item id"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Callback data foydalanuvchi tomonida ko'rinishi va uzatilishi mumkin, secret saqlanmaydi.",
     "level": "practical"
    },
    {
     "q": "Button bosilganda spinner qolib ketdi. Nima yetishmayapti?",
     "a": [
-     "answerCallbackQuery",
+     "deleteWebhook",
      "sendPhoto",
      "getMe",
-     "deleteWebhook"
+     "answerCallbackQuery"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Callback queryga javob berish Telegram clientdagi loading holatini yopadi.",
     "level": "scenario"
    }
@@ -967,24 +967,24 @@
    {
     "q": "Webhook uchun nima shart?",
     "a": [
-     "HTTPS endpoint",
      "CSS file",
+     "HTTPS endpoint",
      "Browser tab",
      "SQLite faqat"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Telegram webhook URL HTTPS bo'lishi kerak.",
     "level": "practical"
    },
    {
     "q": "Telegram retry sabab bir order ikki marta bajarildi. Yechim?",
     "a": [
-     "Idempotency",
-     "Ko'proq emoji",
      "Tokenni loglash",
+     "Ko'proq emoji",
+     "Idempotency",
      "Health endpointni o'chirish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Muhim action business id bo'yicha faqat bir marta bajarilishi kerak.",
     "level": "scenario"
    }
@@ -1065,7 +1065,7 @@
     },
     "title": "guards.ts",
     "lang": "typescript",
-    "code": "async function requireAdmin(ctx: MyContext, next: NextFunction) {\n  const user = await users.findByTelegramId(ctx.from!.id);\n  if (!user || user.role !== 'admin') {\n    return ctx.reply('Bu bo'lim faqat adminlar uchun.');\n  }\n  await next();\n}\n\nbot.command('broadcast', requireAdmin, broadcastHandler);"
+    "code": "async function requireAdmin(ctx: MyContext, next: NextFunction) {\n  const user = await users.findByTelegramId(ctx.from!.id);\n  if (!user || user.role !== 'admin') {\n    return ctx.reply(\"Bu bo'lim faqat adminlar uchun.\");\n  }\n  await next();\n}\n\nbot.command('broadcast', requireAdmin, broadcastHandler);"
    }
   ],
   "tasks": [
@@ -1149,12 +1149,12 @@
    {
     "q": "Admin commanddan oldin nima tekshiriladi?",
     "a": [
-     "role/permission",
+     "username uzunligi",
      "bot avatar",
      "CSS",
-     "username uzunligi"
+     "role/permission"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Role check admin actionlarni himoya qiladi.",
     "level": "easy"
    },
@@ -1173,12 +1173,12 @@
    {
     "q": "Admin order statusini o'zgartirdi. Keyin nizo chiqdi. Nima yordam beradi?",
     "a": [
-     "audit log",
      "emoji",
+     "audit log",
      "bot nomi",
      "CSS"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Audit log kim nima qilganini ko'rsatadi.",
     "level": "scenario"
    }
@@ -1344,24 +1344,24 @@
    {
     "q": "Karta ma'lumotini bot DBsida saqlash kerakmi?",
     "a": [
-     "Yo'q",
-     "Ha, doim",
      "Faqat logda",
+     "Ha, doim",
+     "Yo'q",
      "READMEda"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Payment provider karta ma'lumotini qayta ishlaydi; botda sezgir karta data saqlanmaydi.",
     "level": "easy"
    },
    {
     "q": "Order statuslari nima uchun kerak?",
     "a": [
-     "Payment flowni boshqarish",
+     "Token uzunligi",
      "CSS rang",
      "Bot avatar",
-     "Token uzunligi"
+     "Payment flowni boshqarish"
     ],
-    "c": 0,
+    "c": 3,
     "w": "pending/paid/canceled statuslar biznes jarayonni aniq qiladi.",
     "level": "practical"
    },
@@ -1553,36 +1553,36 @@
    {
     "q": "Mini App qachon kerak?",
     "a": [
-     "Murakkab UI chatga sig'maganda",
      "Har doim",
+     "Murakkab UI chatga sig'maganda",
      "Faqat token saqlash uchun",
      "Log o'chirish uchun"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Dashboard, katalog, form kabi UIlar Mini Appga mos.",
     "level": "easy"
    },
    {
     "q": "Mini Appda user identity qanday himoyalanadi?",
     "a": [
-     "initData verification",
-     "CSS class",
      "Random username",
+     "CSS class",
+     "initData verification",
      "LocalStoragega ishonish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Backend Telegram initData imzosini tekshirishi kerak.",
     "level": "practical"
    },
    {
     "q": "Frontend userId yubordi, backend tekshirmay ishondi. Xavf?",
     "a": [
-     "User spoofing",
+     "Hech narsa",
      "Tezroq ishlash",
      "Yaxshi UX",
-     "Hech narsa"
+     "User spoofing"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Clientdan kelgan identityga tekshiruvsiz ishonish mumkin emas.",
     "level": "scenario"
    }
@@ -1769,24 +1769,24 @@
    {
     "q": "Rate limit nimani kamaytiradi?",
     "a": [
-     "Spam va overload",
      "DB schema",
+     "Spam va overload",
      "bot username",
      "deploy URL"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Rate limit ko'p so'rovdan botni himoya qiladi.",
     "level": "practical"
    },
    {
     "q": "Bot ishlamay qoldi. Senior runbookda nima bo'ladi?",
     "a": [
-     "Tekshiruv va tiklash qadamlar ro'yxati",
-     "Faqat emoji",
      "Tokenni public qilish",
+     "Faqat emoji",
+     "Tekshiruv va tiklash qadamlar ro'yxati",
      "DBni o'chirish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Runbook incidentda vahimasiz tiklash uchun kerak.",
     "level": "scenario"
    }

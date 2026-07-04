@@ -93,12 +93,12 @@
    {
     "q": "Git nima?",
     "a": [
-     "bulut xizmat",
      "versiya nazorati dasturi",
+     "bulut xizmat",
      "dasturlash tili",
      "kod muharriri"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Git - kompyuteringda ishlaydigan taqsimlangan versiya nazorati vositasi.",
     "level": "easy"
    },
@@ -118,11 +118,11 @@
     "q": "Taqsimlangan VCS degani nima?",
     "a": [
      "kod bo'laklarga bo'linadi",
-     "har dasturchida to'liq tarixli nusxa bor",
      "server har doim kerak",
+     "har dasturchida to'liq tarixli nusxa bor",
      "faqat katta jamoalar uchun"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Har clone - to'liq repo (butun tarix). Shuning uchun offline ham ishlaysan.",
     "level": "practical"
    },
@@ -130,11 +130,11 @@
     "q": "Har commit'ga yoziladigan muallif ma'lumoti qayerdan olinadi?",
     "a": [
      "GitHub profildan",
-     "git config user.name/user.email dan",
+     "repo egasidan",
      "OS foydalanuvchisidan",
-     "repo egasidan"
+     "git config user.name/user.email dan"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Lokal Git config'dagi ism/email commit'ga muhrlanadi - shuning uchun avval sozlaysan.",
     "level": "practical"
    }
@@ -248,12 +248,12 @@
    {
     "q": "git add nima qiladi?",
     "a": [
-     "commit yaratadi",
      "o'zgarishni staging'ga qo'yadi",
+     "commit yaratadi",
      "faylni o'chiradi",
      "serverga yuboradi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "add - keyingi commit'ga kiradigan o'zgarishlarni sahnaga (index) qo'yadi.",
     "level": "easy"
    },
@@ -273,11 +273,11 @@
     "q": ".env fayli qayerda turishi kerak?",
     "a": [
      "repoda, hamma ko'rsin",
-     ".gitignore'da - tarixga kirmasin",
      "alohida branch'da",
+     ".gitignore'da - tarixga kirmasin",
      "commit xabarida"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Sirlar (parol, API key) HECH QACHON tarixga kirmasligi kerak - bir kirsa, o'chirish juda qiyin.",
     "level": "scenario"
    },
@@ -285,11 +285,11 @@
     "q": "5 fayl o'zgardi, faqat 2 tasi bitta mantiqqa tegishli. Nima qilasan?",
     "a": [
      "git add . va commit",
-     "faqat o'sha 2 faylni add qilib commit",
+     "hech narsa",
      "5 ta alohida commit",
-     "hech narsa"
+     "faqat o'sha 2 faylni add qilib commit"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Staging aynan shu uchun: tanlab add qilasan - commit atomar chiqadi.",
     "level": "scenario"
    }
@@ -394,12 +394,12 @@
    {
     "q": "Git'da branch aslida nima?",
     "a": [
-     "kod nusxasi",
      "commit'ga ko'rsatkich",
+     "kod nusxasi",
      "alohida papka",
      "zip arxiv"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Branch - bitta commit'ga ishora. Shuning uchun ochish/o'chirish deyarli bepul.",
     "level": "easy"
    },
@@ -419,11 +419,11 @@
     "q": "Konflikt markerida ======= dan yuqorisi nima?",
     "a": [
      "kelayotgan branch",
-     "sening joriy tomoning (HEAD)",
      "umumiy ajdod",
+     "sening joriy tomoning (HEAD)",
      "o'chirilgan kod"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Yuqorisi HEAD (sen turgan branch), pasti - merge qilinayotgan branch o'zgarishi.",
     "level": "practical"
    },
@@ -431,11 +431,11 @@
     "q": "Merge chalkashib ketdi, boshidan boshlamoqchisan. Eng xavfsiz yo'l?",
     "a": [
      "papkani o'chirish",
-     "git merge --abort",
+     "fayllarni qo'lda qaytarish",
      "git push --force",
-     "fayllarni qo'lda qaytarish"
+     "git merge --abort"
     ],
-    "c": 1,
+    "c": 3,
     "w": "--abort merge boshlanishidan oldingi holatni to'liq tiklaydi - hech narsa yo'qolmaydi.",
     "level": "scenario"
    }
@@ -540,12 +540,12 @@
    {
     "q": "origin nima?",
     "a": [
-     "asosiy branch",
      "remote URL'ning standart taxallusi",
+     "asosiy branch",
      "birinchi commit",
      "GitHub'ning nomi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "origin - clone'da avtomatik qo'yiladigan remote nomi. Istalgancha remote bo'lishi mumkin.",
     "level": "easy"
    },
@@ -565,11 +565,11 @@
     "q": "SSH kalitning qaysi qismini GitHub'ga qo'yasan?",
     "a": [
      "maxfiy kalitni",
-     "ochiq (.pub) kalitni",
      "ikkalasini",
+     "ochiq (.pub) kalitni",
      "hech qaysisini"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Faqat .pub! Maxfiy kalit kompyuteringdan chiqmaydi - chiqsa, kalit almashtiriladi.",
     "level": "practical"
    },
@@ -577,11 +577,11 @@
     "q": "push rad etildi: \"rejected - remote contains work you do not have\". Nima bo'lgan?",
     "a": [
      "internet uzilgan",
-     "remote'da senda yo'q commit bor - avval pull/fetch",
+     "SSH buzilgan",
      "repo o'chirilgan",
-     "SSH buzilgan"
+     "remote'da senda yo'q commit bor - avval pull/fetch"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Kimdir sendan oldin push qilgan. Avval fetch/pull qilib, o'z ishingni ustiga qo'yasan.",
     "level": "scenario"
    }
@@ -686,12 +686,12 @@
    {
     "q": "PR (GitHub) ning GitLab'dagi nomi?",
     "a": [
-     "Push Request",
      "Merge Request",
+     "Push Request",
      "Change Request",
      "Review Request"
     ],
-    "c": 1,
+    "c": 0,
     "w": "GitLab'da Merge Request (MR) - mohiyati bir xil.",
     "level": "easy"
    },
@@ -711,11 +711,11 @@
     "q": "Yozish huquqi yo'q ochiq repoga hissa qo'shish yo'li?",
     "a": [
      "egasiga email",
-     "fork -> branch -> PR",
      "kodni ko'chirib yangi repo",
+     "fork -> branch -> PR",
      "issue'da kod yozish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Fork o'zingda nusxa yaratadi - undan asl repoga PR yuborasan.",
     "level": "practical"
    },
@@ -723,11 +723,11 @@
     "q": "Review'da katta muammo topding, lekin muallif senior. Nima qilasan?",
     "a": [
      "indamayman",
-     "hurmat bilan, dalil bilan izoh yozaman",
+     "approve qilaman",
      "boshqaga aytaman",
-     "approve qilaman"
+     "hurmat bilan, dalil bilan izoh yozaman"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Review darajaga qaramaydi - kodga qaratilgan, dalilli izoh har kimga yoziladi. Sifat umumiy mas'uliyat.",
     "level": "scenario"
    }
@@ -841,12 +841,12 @@
    {
     "q": "Rebase merge'dan nimasi bilan farq qiladi?",
     "a": [
-     "tezroq ishlaydi",
      "commit'larni yangi asos ustiga qayta yozadi",
+     "tezroq ishlaydi",
      "konflikt bo'lmaydi",
      "faqat GitHub'da bor"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Rebase tarixni qayta yozadi - commit'lar yangi hash bilan yangi joyga qo'yiladi.",
     "level": "practical"
    },
@@ -866,11 +866,11 @@
     "q": "--force-with-lease oddiy --force'dan afzalligi?",
     "a": [
      "tezroq",
-     "remote'da kutilmagan ish bo'lsa to'xtaydi",
      "tarixni saqlaydi",
+     "remote'da kutilmagan ish bo'lsa to'xtaydi",
      "parol so'ramaydi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "with-lease - \"men bilgan holatdagina yoz\" degani: hamkasb ishini o'chirib yuborishdan saqlaydi.",
     "level": "practical"
    },
@@ -878,11 +878,11 @@
     "q": "PR'da 7 ta \"wip\" commit bor. Merge'dan oldin nima qilgan ma'qul?",
     "a": [
      "shundayligicha merge",
-     "rebase -i bilan squash qilib mazmunli commit(lar)ga keltirish",
+     "har wip'ga tavsif yozish",
      "PR'ni yopish",
-     "har wip'ga tavsif yozish"
+     "rebase -i bilan squash qilib mazmunli commit(lar)ga keltirish"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Interactive rebase (yoki platformadagi squash merge) - main tarixi toza qoladi.",
     "level": "scenario"
    }
@@ -988,12 +988,12 @@
    {
     "q": "Umumiy (push qilingan) branch'dagi xato commit'ni qanday bekor qilasan?",
     "a": [
-     "git reset --hard",
      "git revert",
+     "git reset --hard",
      "git stash",
      "branch'ni o'chirish"
     ],
-    "c": 1,
+    "c": 0,
     "w": "revert tarixni o'chirmasdan bekor qiluvchi commit qo'shadi - boshqalar ishi buzilmaydi.",
     "level": "practical"
    },
@@ -1013,11 +1013,11 @@
     "q": "reset --hard qilib yubording, commit yo'qoldi. Umid bormi?",
     "a": [
      "yo'q, tamom",
-     "ha - reflog'da topiladi",
      "faqat GitHub'da bo'lsa",
+     "ha - reflog'da topiladi",
      "faqat backup bo'lsa"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Commit qilingan har narsa reflog'da ~90 kun turadi - reset --hard HEAD@{n} bilan qaytadi.",
     "level": "scenario"
    },
@@ -1025,11 +1025,11 @@
     "q": "Ish yarmida boshqa branch'ga SHOSHILINCH o'tish kerak. Commit qilishga erta. Yechim?",
     "a": [
      "o'zgarishni o'chirish",
-     "git stash",
+     "papkani nusxalash",
      "baribir commit",
-     "papkani nusxalash"
+     "git stash"
     ],
-    "c": 1,
+    "c": 3,
     "w": "stash ishni cho'ntakka solib toza holat beradi; qaytgach stash pop.",
     "level": "scenario"
    }
@@ -1135,12 +1135,12 @@
    {
     "q": "Commit/PR'da \"Fixes #42\" nima qiladi?",
     "a": [
-     "42-qatorni tuzatadi",
      "merge'da 42-issue'ni avtomatik yopadi",
+     "42-qatorni tuzatadi",
      "42 ta test ishga tushiradi",
      "hech narsa"
     ],
-    "c": 1,
+    "c": 0,
     "w": "GitHub kalit so'zlarni (Fixes, Closes, Resolves) taniydi va issue'ni PR bilan bog'lab yopadi.",
     "level": "practical"
    },
@@ -1160,11 +1160,11 @@
     "q": "Branch protection'siz \"faqat PR orqali\" qoidasi...",
     "a": [
      "baribir majburiy",
-     "ixtiyoriy odat bo'lib qoladi",
      "GitHub'da mumkin emas",
+     "ixtiyoriy odat bo'lib qoladi",
      "faqat pullik"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Texnik to'siq bo'lmasa, shoshilgan odam baribir to'g'ridan-to'g'ri push qiladi. Qoida = sozlama.",
     "level": "scenario"
    },
@@ -1172,11 +1172,11 @@
     "q": "API kalitni tasodifan push qilding. Birinchi qadam?",
     "a": [
      "commit'ni o'chirish yetarli",
-     "KALITNI DARHOL BEKOR QILISH (rotate), keyin tarixni tozalash",
+     "hech kim ko'rmagandir",
      "repo'ni private qilish",
-     "hech kim ko'rmagandir"
+     "KALITNI DARHOL BEKOR QILISH (rotate), keyin tarixni tozalash"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Tarixdan o'chirish sekin va kafolatsiz - kalit allaqachon skanerlangan bo'lishi mumkin. Avval kalitni o'ldirasan.",
     "level": "scenario"
    }
@@ -1282,12 +1282,12 @@
    {
     "q": "GitLab pipeline'da stage va job munosabati?",
     "a": [
-     "stage job ichida",
      "job'lar stage'ga guruhlangan: stage'lar ketma-ket, ichidagi job'lar parallel",
+     "stage job ichida",
      "bir xil narsa",
      "job faqat bitta bo'ladi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "test stage'idagi 3 job parallel ishlaydi; hammasi o'tsa keyingi stage boshlanadi.",
     "level": "practical"
    },
@@ -1307,11 +1307,11 @@
     "q": ".gitlab-ci.yml qayerda turadi?",
     "a": [
      "GitLab sozlamalarida",
-     "repo ildizida",
      ".github papkasida",
+     "repo ildizida",
      "runner'da"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Pipeline konfiguratsiyasi kod bilan birga repoda - versiyalanadi, review qilinadi.",
     "level": "easy"
    },
@@ -1319,11 +1319,11 @@
     "q": "artifacts nima uchun kerak?",
     "a": [
      "xatolarni yashirish",
-     "job natijasini (masalan dist/) saqlash va keyingi job'ga uzatish",
+     "kod sifati",
      "runner'ni tezlatish",
-     "kod sifati"
+     "job natijasini (masalan dist/) saqlash va keyingi job'ga uzatish"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Artifacts - job chiqindisi emas, mahsuloti: build natijasi, test hisobotlari.",
     "level": "practical"
    }
@@ -1429,12 +1429,12 @@
    {
     "q": "GitHub Flow'ning mohiyati?",
     "a": [
-     "ko'p doimiy branchlar",
      "main + qisqa feature branchlar + PR",
+     "ko'p doimiy branchlar",
      "faqat main, branch yo'q",
      "har oy release branch"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Sodda: main doim tayyor, har ish qisqa branch'da, PR orqali qaytadi.",
     "level": "easy"
    },
@@ -1454,11 +1454,11 @@
     "q": "feat(api)!: ... dagi undov belgisi nima degani?",
     "a": [
      "muhim commit",
-     "breaking change - major versiya",
      "shoshilinch",
+     "breaking change - major versiya",
      "test kerak"
     ],
-    "c": 1,
+    "c": 2,
     "w": "! = moslikni buzuvchi o'zgarish; avtomatik versiyalashda MAJOR ko'tariladi.",
     "level": "practical"
    },
@@ -1466,11 +1466,11 @@
     "q": "Jamoada hamma o'zicha commit yozadi, tarix o'qilmaydi. Yechim?",
     "a": [
      "har kim erkin",
-     "Conventional Commits + PR sarlavha tekshiruvi (CI)",
+     "faqat teamlead commit qiladi",
      "commit'larni taqiqlash",
-     "faqat teamlead commit qiladi"
+     "Conventional Commits + PR sarlavha tekshiruvi (CI)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Standart + avtomatik tekshiruv: qoida sozlamaga aylanmasa ishlamaydi.",
     "level": "scenario"
    }
@@ -1581,12 +1581,12 @@
    {
     "q": "CI'ning asosiy maqsadi?",
     "a": [
-     "deploy qilish",
      "har o'zgarishni avtomatik tekshirib, xatoni erta ushlash",
+     "deploy qilish",
      "kod yozish",
      "server boshqarish"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Integration xatolari qancha erta topilsa, shuncha arzon tuzatiladi.",
     "level": "easy"
    },
@@ -1606,11 +1606,11 @@
     "q": "needs: test qatori nima qiladi?",
     "a": [
      "testni o'chiradi",
-     "job'ni test job'i muvaffaqiyatidan keyingina ishlatadi",
      "testni ikki marta ishlatadi",
+     "job'ni test job'i muvaffaqiyatidan keyingina ishlatadi",
      "parallel qiladi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "needs - joblar orasidagi bog'liqlik: test yiqilsa deploy boshlanmaydi.",
     "level": "practical"
    },
@@ -1618,11 +1618,11 @@
     "q": "CI har PR'da 15 daqiqa. Jamoa norozi. Birinchi chora?",
     "a": [
      "CI'ni o'chirish",
-     "cache + faqat o'zgargan qismni tekshirish",
+     "kattaroq server sotib olish",
      "kamroq PR ochish",
-     "kattaroq server sotib olish"
+     "cache + faqat o'zgargan qismni tekshirish"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Dependency cache va shartli joblar odatda vaqtni bir necha barobar qisqartiradi.",
     "level": "scenario"
    }
@@ -1783,12 +1783,12 @@
    {
     "q": "Git'da branch ichki jihatdan nima?",
     "a": [
-     "papka nusxasi",
      "bitta commit hash yozilgan fayl (ref)",
+     "papka nusxasi",
      "zip arxiv",
      "maxsus obyekt"
     ],
-    "c": 1,
+    "c": 0,
     "w": "refs/heads/main - ichida 40 belgili hash turgan matn fayl. Hammasi shu.",
     "level": "practical"
    },
@@ -1808,11 +1808,11 @@
     "q": "pre-commit hook'ning jamoadagi to'g'ri roli?",
     "a": [
      "CI o'rnini bosadi",
-     "tez lokal tekshiruv; CI baribir qoladi",
      "faqat teamlead uchun",
+     "tez lokal tekshiruv; CI baribir qoladi",
      "commit'ni sekinlatish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Hook - birinchi to'siq (tez feedback), CI - yakuniy qozi. Hook'ni chetlab o'tish mumkin (--no-verify), CI'ni yo'q.",
     "level": "scenario"
    },
@@ -1820,23 +1820,23 @@
     "q": "Repoga 500MB video qo'shish kerak. To'g'ri yo'l?",
     "a": [
      "oddiy commit",
-     "Git LFS",
+     "alohida branch",
      "zip qilib commit",
-     "alohida branch"
+     "Git LFS"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Katta binary tarixni abadiy shishiradi - LFS faqat ko'rsatkich saqlaydi.",
     "level": "scenario"
    },
    {
     "q": "Signed commit nimani isbotlaydi?",
     "a": [
-     "kod sifatini",
      "muallif haqiqatan o'sha odam ekanini",
+     "kod sifatini",
      "testlar o'tganini",
      "hech narsani"
     ],
-    "c": 1,
+    "c": 0,
     "w": "user.email'ni istalgan odam yoza oladi - imzo esa kalit egasini kriptografik tasdiqlaydi.",
     "level": "practical"
    }

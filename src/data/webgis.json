@@ -136,36 +136,36 @@
    {
     "q": "React + TypeScript kursda qaysi qism uchun?",
     "a": [
-     "Frontend xarita va UI",
      "PostGIS extension",
+     "Frontend xarita va UI",
      "Raster clip",
      "Nginx config"
     ],
-    "c": 0,
+    "c": 1,
     "w": "React/TS foydalanuvchi ko'radigan xarita, panel, filtr va admin UI uchun.",
     "level": "easy"
    },
    {
     "q": "GDAL/Shapely/Rasterio nima uchun kerak?",
     "a": [
-     "GIS processing",
-     "Button styling",
      "JWT secret yaratish",
+     "Button styling",
+     "GIS processing",
      "NPM install"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Bu kutubxonalar vector/raster geodata bilan ishlash uchun.",
     "level": "practical"
    },
    {
     "q": "Deploy stackidagi cache/queue komponenti qaysi?",
     "a": [
-     "Redis",
+     "Pydantic",
      "MapLibre",
      "QGIS",
-     "Pydantic"
+     "Redis"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Redis cache va background queue uchun ishlatiladi.",
     "level": "practical"
    }
@@ -459,12 +459,12 @@
    {
     "q": "Butun davlat OSM ekstrakti qayerdan olinadi?",
     "a": [
-     "Overpass",
      "Geofabrik",
+     "Overpass",
      "Google Maps",
      "Bing"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Geofabrik katta .osm.pbf ekstraktlar beradi. Overpass - aniq, kichik so'rovlar uchun.",
     "level": "easy"
    },
@@ -484,11 +484,11 @@
     "q": "'Toshkentdagi barcha kasalxonalar' uchun qaysi vosita?",
     "a": [
      "Geofabrik",
-     "Overpass",
      "osm2pgsql",
+     "Overpass",
      "wget"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Overpass aniq teglar bo'yicha aniq obyektlarni oladi.",
     "level": "practical"
    },
@@ -497,22 +497,22 @@
     "a": [
      "Hammasini",
      "Faqat 22",
-     "SSH, 80, 443",
-     "Hech qaysini"
+     "Hech qaysini",
+     "SSH, 80, 443"
     ],
-    "c": 2,
+    "c": 3,
     "w": "SSH (ulanish) + 80/443 (web). Qolganlari yopiq bo'lishi xavfsizroq.",
     "level": "practical"
    },
    {
     "q": "Data noto'g'ri joyda chiqsa, birinchi nimani tekshirasan?",
     "a": [
-     "Internet",
      "CRS / EPSG",
+     "Internet",
      "RAM",
      "Brauzer"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Deyarli har doim CRS sababli - proyeksiya mos kelmaydi.",
     "level": "scenario"
    }
@@ -883,11 +883,11 @@
     "q": "Xarita React qayta render'da yo'qolmasligi uchun nima ishlatiladi?",
     "a": [
      "useState",
-     "useRef + useEffect",
      "useMemo",
+     "useRef + useEffect",
      "Hech narsa"
     ],
-    "c": 1,
+    "c": 2,
     "w": "useRef DOM/map obyektini saqlaydi, useEffect bir marta yaratib, cleanup qiladi.",
     "level": "practical"
    },
@@ -896,22 +896,22 @@
     "a": [
      "Leaflet",
      "jQuery",
-     "MapLibre",
-     "D3"
+     "D3",
+     "MapLibre"
     ],
-    "c": 2,
+    "c": 3,
     "w": "MapLibre WebGL bilan vector tile render qiladi; Leaflet'ga plugin kerak.",
     "level": "practical"
    },
    {
     "q": "Xarita harakatlanganda datani yangilash uchun qaysi hodisa?",
     "a": [
-     "click",
-     "zoom",
      "moveend",
+     "zoom",
+     "click",
      "load"
     ],
-    "c": 2,
+    "c": 0,
     "w": "moveend - surish/zoom tugagach ishlaydi, bbox bo'yicha yangi data olinadi.",
     "level": "practical"
    },
@@ -931,11 +931,11 @@
     "q": "Millionlab nuqtani xaritada ko'rsatish uchun eng mos?",
     "a": [
      "Leaflet markerlari",
-     "deck.gl (WebGL qatlami)",
      "oddiy <img>",
+     "deck.gl (WebGL qatlami)",
      "CSS"
     ],
-    "c": 1,
+    "c": 2,
     "w": "deck.gl WebGL bilan millionlab obyektni tez render qiladi; MapLibre ustiga qo'yiladi. Three.js esa umumiy 3D uchun.",
     "level": "scenario"
    }
@@ -1231,12 +1231,12 @@
    {
     "q": "Python'da JS objectga eng yaqin data turi qaysi?",
     "a": [
-     "dict",
+     "set",
      "list",
      "tuple",
-     "set"
+     "dict"
     ],
-    "c": 0,
+    "c": 3,
     "w": "dict key/value saqlaydi, JS objectga eng yaqin.",
     "level": "easy"
    },
@@ -1255,36 +1255,36 @@
    {
     "q": "TypeScript interface fikriga Python'da qaysi narsalar yaqin?",
     "a": [
-     "TypedDict/Pydantic/dataclass",
      "print",
+     "TypedDict/Pydantic/dataclass",
      "pip",
      "venv"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Ma'lumot shaklini TypedDict, dataclass yoki Pydantic bilan ifodalash mumkin.",
     "level": "practical"
    },
    {
     "q": "venv nima uchun kerak?",
     "a": [
-     "Har loyiha dependency'larini alohida saqlash",
-     "Xaritani zoom qilish",
      "PostGIS index yaratish",
+     "Xaritani zoom qilish",
+     "Har loyiha dependency'larini alohida saqlash",
      "CSS yozish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "venv dependency'lar to'qnashuvini kamaytiradi.",
     "level": "easy"
    },
    {
     "q": "Python'da Promise.all fikriga qaysi misol yaqin?",
     "a": [
-     "asyncio.gather",
+     "dataclass",
      "json.loads",
      "Path.read_text",
-     "dataclass"
+     "asyncio.gather"
     ],
-    "c": 0,
+    "c": 3,
     "w": "asyncio.gather bir nechta async ishni parallel kutadi.",
     "level": "scenario"
    }
@@ -1554,12 +1554,12 @@
    {
     "q": "FastAPI'da validation uchun nima ishlatiladi?",
     "a": [
-     "Pydantic",
      "Nginx",
+     "Pydantic",
      "Tegola",
      "MapLibre"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Pydantic request/response schema va validation beradi.",
     "level": "easy"
    },
@@ -1567,23 +1567,23 @@
     "q": "HTTP 404 nimani bildiradi?",
     "a": [
      "Muvaffaqiyat",
-     "Topilmadi",
      "Server xatosi",
+     "Topilmadi",
      "Ruxsat yo'q"
     ],
-    "c": 1,
+    "c": 2,
     "w": "404 = resurs topilmadi.",
     "level": "practical"
    },
    {
     "q": "POST qachon ishlatiladi?",
     "a": [
-     "Ma'lumot yuborish/yaratish",
+     "Zoom qilish",
      "Faqat o'qish",
      "CSS yuklash",
-     "Zoom qilish"
+     "Ma'lumot yuborish/yaratish"
     ],
-    "c": 0,
+    "c": 3,
     "w": "POST body orqali ma'lumot yuboradi.",
     "level": "practical"
    },
@@ -1927,11 +1927,11 @@
     "q": "SRID 4326 nimani anglatadi?",
     "a": [
      "Metr proyeksiya",
-     "Lat/lng (GPS)",
      "Piksel",
+     "Lat/lng (GPS)",
      "Mahalliy tizim"
     ],
-    "c": 1,
+    "c": 2,
     "w": "4326 = oddiy lat/lng. 3857 = web xaritalar ishlatadigan metr proyeksiya.",
     "level": "practical"
    },
@@ -1939,23 +1939,23 @@
     "q": "Radius ichidagilarni topadigan, index'dan foydalanadigan funksiya?",
     "a": [
      "ST_Distance",
-     "ST_DWithin",
+     "ST_Length",
      "ST_Area",
-     "ST_Length"
+     "ST_DWithin"
     ],
-    "c": 1,
+    "c": 3,
     "w": "ST_DWithin index'dan foydalanadi - shuning uchun tez. ST_Distance har juftni hisoblaydi.",
     "level": "practical"
    },
    {
     "q": "PostGIS'dan GeoJSON olish uchun?",
     "a": [
-     "ST_AsText",
      "ST_AsGeoJSON",
+     "ST_AsText",
      "ST_AsBinary",
      "ST_Dump"
     ],
-    "c": 1,
+    "c": 0,
     "w": "ST_AsGeoJSON geometryni frontend tushunadigan GeoJSON'ga aylantiradi.",
     "level": "practical"
    },
@@ -2223,23 +2223,23 @@
     "q": "Nega Python geospatial backendda kuchli?",
     "a": [
      "CSS yaxshi yozgani uchun",
-     "GDAL, Shapely, Rasterio, GeoPandas va AI ekotizimi kuchli bo'lgani uchun",
      "Faqat browserda ishlagani uchun",
+     "GDAL, Shapely, Rasterio, GeoPandas va AI ekotizimi kuchli bo'lgani uchun",
      "PostGIS o'rniga ishlatilgani uchun"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Python GIS processing va AI/data pipeline uchun juda boy ekotizimga ega.",
     "level": "easy"
    },
    {
     "q": "FastAPI'da request/response validation uchun nima ishlatiladi?",
     "a": [
-     "Pydantic",
+     "MapLibre",
      "Nginx",
      "Tegola",
-     "MapLibre"
+     "Pydantic"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Pydantic schema ma'lumot shaklini tekshiradi.",
     "level": "easy"
    },
@@ -2270,12 +2270,12 @@
    {
     "q": "TS va Pythonni bir loyihada qanday bo'lish to'g'ri?",
     "a": [
-     "TS frontend/map UI, Python geo processing/API",
-     "Python CSS uchun, TS database uchun",
      "Ikkalasini ham ishlatmaslik",
+     "Python CSS uchun, TS database uchun",
+     "TS frontend/map UI, Python geo processing/API",
      "Faqat bitta tilga yopishib olish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Bu rol uchun amaliy kombinatsiya: TS UI, Python GIS/AI/backend.",
     "level": "scenario"
    }
@@ -2444,12 +2444,12 @@
    {
     "q": "CRS noto'g'ri bo'lsa eng ko'p nima bo'ladi?",
     "a": [
-     "Data noto'g'ri joyda chiqadi",
+     "CSS yo'qoladi",
      "Button ishlamaydi",
      "Parol o'zgaradi",
-     "CSS yo'qoladi"
+     "Data noto'g'ri joyda chiqadi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "CRS xatosi obyektlarni xaritada noto'g'ri joyga chiqaradi.",
     "level": "easy"
    },
@@ -2468,12 +2468,12 @@
    {
     "q": "Rasterio asosan qaysi data bilan ishlaydi?",
     "a": [
-     "GeoTIFF/raster",
      "HTML forma",
+     "GeoTIFF/raster",
      "JWT token",
      "NPM package"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Rasterio raster data, masalan GeoTIFF bilan ishlaydi.",
     "level": "practical"
    },
@@ -2481,23 +2481,23 @@
     "q": "Production pipeline'da eng yaxshi qoida qaysi?",
     "a": [
      "Qo'lda QGIS'da qilib, yozmaslik",
-     "Har qadam script va README bilan takrorlanadigan bo'lishi",
      "Faqat screenshot saqlash",
+     "Har qadam script va README bilan takrorlanadigan bo'lishi",
      "CRS'ni tekshirmaslik"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Ishonchli pipeline takrorlanadi va hujjatlashtiriladi.",
     "level": "scenario"
    },
    {
     "q": "PostGIS'ga importdan oldin nima tekshiriladi?",
     "a": [
-     "CRS, geometry validity, atributlar",
+     "Login rasmi",
      "Button rangi",
      "Favicon",
-     "Login rasmi"
+     "CRS, geometry validity, atributlar"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Data sifati importdan oldin tekshirilsa, keyingi muammo kamayadi.",
     "level": "practical"
    }
@@ -2666,12 +2666,12 @@
    {
     "q": "Nega vector tile kerak?",
     "a": [
-     "Chiroyli ko'rinadi",
      "Million obyektni bitta GeoJSON sifatida yuborib bo'lmaydi",
+     "Chiroyli ko'rinadi",
      "Bepul",
      "SQL tezroq"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Tile xaritani kichik kvadratlarga bo'lib, faqat ko'rinayotgan qismini yuboradi.",
     "level": "easy"
    },
@@ -2691,11 +2691,11 @@
     "q": "Pastki zoom'da tile hajmini kamaytiradigan funksiya?",
     "a": [
      "ST_Buffer",
-     "ST_Simplify",
      "ST_Union",
+     "ST_Simplify",
      "ST_Scale"
     ],
-    "c": 1,
+    "c": 2,
     "w": "ST_Simplify geometryni soddalashtiradi - uzoqdan aniq shakl kerak emas.",
     "level": "practical"
    },
@@ -2703,23 +2703,23 @@
     "q": "Buzuq (invalid) geometryni tuzatadigan funksiya?",
     "a": [
      "ST_Fix",
-     "ST_MakeValid",
+     "ST_Clean",
      "ST_Repair",
-     "ST_Clean"
+     "ST_MakeValid"
     ],
-    "c": 1,
+    "c": 3,
     "w": "ST_MakeValid buzuq poligonlarni to'g'rilaydi.",
     "level": "practical"
    },
    {
     "q": "MapLibre'dagi source-layer nima bilan mos kelishi kerak?",
     "a": [
-     "Fayl nomi",
      "Tegola layer nomi",
+     "Fayl nomi",
      "Bazadagi ustun",
      "URL"
     ],
-    "c": 1,
+    "c": 0,
     "w": "source-layer Tegola config'dagi layer nomi bilan aynan bir xil bo'lishi shart.",
     "level": "scenario"
    }
@@ -2981,11 +2981,11 @@
     "q": "/api so'rovini backendga yo'naltiruvchi komponent?",
     "a": [
      "PostGIS",
-     "Nginx reverse proxy",
      "Tegola",
+     "Nginx reverse proxy",
      "Docker"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Nginx so'rovlarni to'g'ri servisga (backend/tegola/frontend) yo'naltiradi.",
     "level": "practical"
    },
@@ -2993,23 +2993,23 @@
     "q": "Butun platformani fonda ko'taradigan buyruq?",
     "a": [
      "docker build",
-     "docker compose up -d",
+     "npm start",
      "docker ps",
-     "npm start"
+     "docker compose up -d"
     ],
-    "c": 1,
+    "c": 3,
     "w": "up -d barcha servisni fonda (detached) ishga tushiradi.",
     "level": "practical"
    },
    {
     "q": "Parol va maxfiy URL'lar qayerda saqlanishi kerak?",
     "a": [
-     "Kod ichida",
+     "Faqat .env",
      "docker-compose.yml ochiq",
      "Nginx config",
-     "Faqat .env"
+     "Kod ichida"
     ],
-    "c": 3,
+    "c": 0,
     "w": ".env maxfiy ma'lumotni koddan ajratadi (va git'ga qo'shilmaydi).",
     "level": "practical"
    },
@@ -3264,48 +3264,48 @@
    {
     "q": "FastAPI'da login qilgan foydalanuvchini endpointga berish uchun nima qulay?",
     "a": [
-     "Depends dependency",
-     "CSS class",
      "Tegola layer",
+     "CSS class",
+     "Depends dependency",
      "Docker volume"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Depends orqali token tekshirish va userni endpointga berish mumkin.",
     "level": "easy"
    },
    {
     "q": "Endpoint'ni faqat adminga ochish uchun nima tekshiriladi?",
     "a": [
-     "User role",
+     "CSS color",
      "Map zoom",
      "Tile size",
-     "CSS color"
+     "User role"
     ],
-    "c": 0,
+    "c": 3,
     "w": "JWT ichidagi yoki DB'dagi role tekshirilib, admin bo'lmasa 403 qaytariladi.",
     "level": "practical"
    },
    {
     "q": "Portfolio'da eng kuchli isbot nima?",
     "a": [
-     "10 ta yarim loyiha",
      "Bitta tugatilgan, deploy qilingan loyiha",
+     "10 ta yarim loyiha",
      "Ko'p sertifikat",
      "Uzun CV"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Bitta jonli, tugagan loyiha 10 ta yarim loyihadan kuchli.",
     "level": "practical"
    },
    {
     "q": "FastAPI admin CRUD'da schema nima uchun kerak?",
     "a": [
-     "Kiruvchi data shaklini tekshirish",
      "Xaritani zoom qilish",
+     "Kiruvchi data shaklini tekshirish",
      "Docker image nomlash",
      "Nginx port ochish"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Pydantic schema noto'g'ri ma'lumotni API chegarasida ushlaydi.",
     "level": "scenario"
    }
@@ -3575,24 +3575,24 @@
    {
     "q": "AI detection natijasida confidence nimani bildiradi?",
     "a": [
-     "Model ishonch darajasi",
-     "Xarita zoomi",
      "DB paroli",
+     "Xarita zoomi",
+     "Model ishonch darajasi",
      "CSS o'lchami"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Confidence model topgan obyektga qanchalik ishonganini bildiradi.",
     "level": "easy"
    },
    {
     "q": "Pixel bbox xaritada to'g'ri chiqishi uchun nima kerak?",
     "a": [
-     "Georeference/transform",
+     "NPM audit",
      "Button hover",
      "JWT secret",
-     "NPM audit"
+     "Georeference/transform"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Pixel koordinatani geographic koordinataga o'tkazish uchun georeference kerak.",
     "level": "practical"
    },
@@ -3611,24 +3611,24 @@
    {
     "q": "Detection natijasini map frontendga berish uchun qulay format?",
     "a": [
-     "GeoJSON",
      "DOCX",
+     "GeoJSON",
      "MP3",
      "ICO"
     ],
-    "c": 0,
+    "c": 1,
     "w": "GeoJSON map layer sifatida ko'rsatishga qulay.",
     "level": "easy"
    },
    {
     "q": "YOLO bu modulda asosan nima uchun ishlatiladi?",
     "a": [
-     "Object detection inference",
-     "SQL index yaratish",
      "Nginx reverse proxy",
+     "SQL index yaratish",
+     "Object detection inference",
      "React router"
     ],
-    "c": 0,
+    "c": 2,
     "w": "YOLO rasmda obyekt topish uchun ishlatiladi.",
     "level": "practical"
    }
@@ -3798,12 +3798,12 @@
    {
     "q": "Og'ir GeoTIFF processingni HTTP request ichida bajarish nega yomon?",
     "a": [
-     "Javob sekinlashadi va timeout xavfi oshadi",
+     "PostGIS o'chadi",
      "CSS buziladi",
      "MapLibre taqiqlaydi",
-     "PostGIS o'chadi"
+     "Javob sekinlashadi va timeout xavfi oshadi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Og'ir ishlar background workerga ajratiladi.",
     "level": "scenario"
    },
@@ -3822,36 +3822,36 @@
    {
     "q": "Katta raster fayllarni DB ichida saqlash o'rniga qayerga qo'yish yaxshi?",
     "a": [
-     "Object storage/S3",
      "CSS fayl",
+     "Object storage/S3",
      "JWT token",
      "README ichiga"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Katta fayllar object storageda, metadatasi DB'da saqlanadi.",
     "level": "practical"
    },
    {
     "q": "Kubernetesni qachon chuqur o'rganish kerak?",
     "a": [
-     "Ko'p servis, scaling va cloud talab bo'lganda",
-     "Birinchi HTML darsidan oldin",
      "Faqat rang tanlash uchun",
+     "Birinchi HTML darsidan oldin",
+     "Ko'p servis, scaling va cloud talab bo'lganda",
      "Hech qachon kerak emas"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Avval Docker Compose, keyin ehtiyojga qarab Kubernetes.",
     "level": "scenario"
    },
    {
     "q": "Production portfolio uchun eng kuchli signal qaysi?",
     "a": [
-     "Architecture diagram, healthcheck, backup, monitoring va deploy izohi",
+     "Faqat screenshot",
      "Faqat chiroyli logo",
      "Kod bo'lmasligi",
-     "Faqat screenshot"
+     "Architecture diagram, healthcheck, backup, monitoring va deploy izohi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Bu elementlar loyihaning real production fikrlash bilan qurilganini ko'rsatadi.",
     "level": "easy"
    }
@@ -4039,35 +4039,35 @@
     "q": "Nega structured (JSON) log afzal?",
     "a": [
      "Faylni kichraytiradi",
-     "Mashinada qidiriladi va filtrlanadi",
      "Internet tezlashtiradi",
+     "Mashinada qidiriladi va filtrlanadi",
      "Kodni yashiradi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "JSON loglar dashboard/qidiruvda maydon bo'yicha filtrlanadi.",
     "level": "scenario"
    },
    {
     "q": "Ko'p konteyner loglarini bitta joyda qidirish uchun qaysi stack?",
     "a": [
-     "Promtail + Loki (yoki ELK)",
+     "Vite + React",
      "Nginx + Redis",
      "GDAL + Rasterio",
-     "Vite + React"
+     "Promtail + Loki (yoki ELK)"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Promtail loglarni Loki'ga yuboradi, Grafana'da qidiriladi; ELK - og'irroq muqobil.",
     "level": "practical"
    },
    {
     "q": "Yaxshi alert qanday bo'lishi kerak?",
     "a": [
-     "Har mayda hodisaga - ko'p bo'lsin",
      "Aniq, kam va harakatga chorlaydigan (actionable)",
+     "Har mayda hodisaga - ko'p bo'lsin",
      "Faqat ish vaqtida",
      "Faqat email orqali"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Shovqinli alert charchatadi (alert fatigue); faqat foydalanuvchiga ta'sir qiladigan holatga alert qil.",
     "level": "scenario"
    }
@@ -4199,24 +4199,24 @@
    {
     "q": "Definition of Done nimani anglatadi?",
     "a": [
-     "Feature tugaganini tekshiradigan mezonlar",
-     "CSS ranglar",
      "Git username",
+     "CSS ranglar",
+     "Feature tugaganini tekshiradigan mezonlar",
      "Server narxi"
     ],
-    "c": 0,
+    "c": 2,
     "w": "DoD feature haqiqatan tayyorligini belgilaydi.",
     "level": "easy"
    },
    {
     "q": "Feature branch workflow nima beradi?",
     "a": [
-     "Tartibli review va xavfsiz o'zgarish",
+     "YOLO model",
      "DB index",
      "Raster clip",
-     "YOLO model"
+     "Tartibli review va xavfsiz o'zgarish"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Branch/PR/review katta loyihada sifatni ushlab turadi.",
     "level": "practical"
    }
@@ -4372,36 +4372,36 @@
    {
     "q": "Performance muammosida birinchi qadam nima?",
     "a": [
-     "Taxmin qilish",
      "O'lchash/profiling",
+     "Taxmin qilish",
      "Rang almashtirish",
      "Kod o'chirish"
     ],
-    "c": 1,
+    "c": 0,
     "w": "O'lchamasdan optimizatsiya noto'g'ri yo'nalishga olib ketadi.",
     "level": "easy"
    },
    {
     "q": "COG nima uchun foydali?",
     "a": [
-     "Katta rasterlarni web/cloud orqali samarali o'qish",
      "JWT yaratish",
+     "Katta rasterlarni web/cloud orqali samarali o'qish",
      "CSS yozish",
      "SQL index"
     ],
-    "c": 0,
+    "c": 1,
     "w": "COG raster bo'laklarini kerakli joydan o'qishga moslaydi.",
     "level": "practical"
    },
    {
     "q": "EXPLAIN ANALYZE BUFFERS nimani ko'rsatadi?",
     "a": [
-     "Query rejasi, vaqt va buffer foydalanishi",
-     "Map ranglari",
      "Docker image hajmi",
+     "Map ranglari",
+     "Query rejasi, vaqt va buffer foydalanishi",
      "User roli"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Bu query ichki ishlashini ko'rsatadi.",
     "level": "scenario"
    }
@@ -4521,36 +4521,36 @@
    {
     "q": "Audit log nima uchun kerak?",
     "a": [
-     "Kim nima o'zgartirganini bilish uchun",
+     "CSS yozish uchun",
      "Map zoom qilish uchun",
      "Raster compress qilish uchun",
-     "CSS yozish uchun"
+     "Kim nima o'zgartirganini bilish uchun"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Audit log productionda javobgarlik va tekshiruv uchun kerak.",
     "level": "easy"
    },
    {
     "q": "Backup ishonchli bo'lishi uchun nima kerak?",
     "a": [
-     "Faqat fayl borligi",
      "Restore sinovi",
+     "Faqat fayl borligi",
      "Screenshot",
      "README rangi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Restore drill bo'lmasa backup amalda ishlashiga ishonch yo'q.",
     "level": "scenario"
    },
    {
     "q": "Admin endpointni himoyalashda nima tekshiriladi?",
     "a": [
-     "JWT va role/permission",
      "Tile z/x/y",
+     "JWT va role/permission",
      "COG overview",
      "Map center"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Auth kimligini, role esa ruxsatini tekshiradi.",
     "level": "practical"
    }
@@ -4678,24 +4678,24 @@
    {
     "q": "Integration test nimani tekshiradi?",
     "a": [
-     "Bir nechta komponent birga ishlashini",
-     "Faqat CSS",
      "Faqat README",
+     "Faqat CSS",
+     "Bir nechta komponent birga ishlashini",
      "Logo"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Integration test API + DB kabi komponentlarni birga tekshiradi.",
     "level": "easy"
    },
    {
     "q": "CI pipeline nima uchun kerak?",
     "a": [
-     "Har pushda avtomatik test/build",
+     "Token saqlash",
      "Xarita rangini almashtirish",
      "Manual backup",
-     "Token saqlash"
+     "Har pushda avtomatik test/build"
     ],
-    "c": 0,
+    "c": 3,
     "w": "CI sifat darvozasini avtomatlashtiradi.",
     "level": "practical"
    },
@@ -4827,36 +4827,36 @@
    {
     "q": "Precision nimani bildiradi?",
     "a": [
-     "Topilgan obyektlarning qanchasi to'g'ri",
      "Barcha haqiqiy obyektlarning qanchasi topildi",
+     "Topilgan obyektlarning qanchasi to'g'ri",
      "DB hajmi",
      "Map zoom"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Precision false positive bilan bog'liq.",
     "level": "easy"
    },
    {
     "q": "Recall nimani bildiradi?",
     "a": [
-     "Haqiqiy obyektlarning qanchasini model topdi",
-     "Tile cache",
      "JWT muddati",
+     "Tile cache",
+     "Haqiqiy obyektlarning qanchasini model topdi",
      "CI vaqti"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Recall false negative bilan bog'liq.",
     "level": "easy"
    },
    {
     "q": "System design javobida scale assumptions nega kerak?",
     "a": [
-     "Arxitektura qarorlari hajmga bog'liq",
+     "Logo uchun",
      "Matn chiroyli bo'lishi uchun",
      "CSS uchun",
-     "Logo uchun"
+     "Arxitektura qarorlari hajmga bog'liq"
     ],
-    "c": 0,
+    "c": 3,
     "w": "1k user va 1M user uchun yechim bir xil bo'lmasligi mumkin.",
     "level": "scenario"
    }
@@ -5068,12 +5068,12 @@
    {
     "q": "Junior'ni senior'dan ajratadigan asosiy chiziq?",
     "a": [
-     "Ko'proq til bilish",
      "'Ishlaydi'dan 'masshtabda tez ishlaydi'gacha",
+     "Ko'proq til bilish",
      "Tez yozish",
      "Ko'p kutubxona"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Performance va masshtab - aynan shu joy darajani ko'rsatadi.",
     "level": "easy"
    },
@@ -5105,23 +5105,23 @@
     "q": "API/tile yukini o'lchaydigan vosita?",
     "a": [
      "Postman",
-     "k6",
+     "Prettier",
      "ESLint",
-     "Prettier"
+     "k6"
     ],
-    "c": 1,
+    "c": 3,
     "w": "k6 ko'p virtual foydalanuvchi (vus) bilan yukni simulyatsiya qiladi.",
     "level": "practical"
    },
    {
     "q": "Darajangni boshqalarga 'ko'rsatadigan' eng muhim narsa?",
     "a": [
-     "Maxfiy kod",
      "Ko'rinish - post, ochiq hissa, build in public",
+     "Maxfiy kod",
      "Uzun CV",
      "Ko'p akkaunt"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Qilgan ishingni ko'rsatmasang, darajang faqat o'zingga ma'lum qoladi.",
     "level": "scenario"
    }
@@ -5556,11 +5556,11 @@
     "q": "Profil README qaysi repo'da bo'lishi kerak?",
     "a": [
      "Istalgan repo",
-     "username bilan bir xil nomli repo",
      "README.io",
+     "username bilan bir xil nomli repo",
      "profile.md"
     ],
-    "c": 1,
+    "c": 2,
     "w": "username/username repo'sidagi README profil bosh sahifangda chiqadi.",
     "level": "practical"
    },
@@ -5568,23 +5568,23 @@
     "q": "Yaxshi CV uzunligi qancha?",
     "a": [
      "3-4 sahifa",
-     "1 sahifa",
+     "Faqat rasm",
      "Cheksiz",
-     "Faqat rasm"
+     "1 sahifa"
     ],
-    "c": 1,
+    "c": 3,
     "w": "1 sahifa, natijaga yo'naltirilgan. Recruiter unga bir necha soniya qaraydi.",
     "level": "practical"
    },
    {
     "q": "CV bulletida qaysi biri kuchliroq?",
     "a": [
-     "'API yozdim'",
      "'GIST index bilan javobni 800ms->90ms tushirdim'",
+     "'API yozdim'",
      "'Backend bildim'",
      "'Ko'p ishladim'"
     ],
-    "c": 1,
+    "c": 0,
     "w": "XYZ formulasi: natija + usul + o'lchanadigan raqam vazifa ro'yxatidan kuchli.",
     "level": "practical"
    },
@@ -5604,11 +5604,11 @@
     "q": "Ko'p Yevropa va davlat GIS kompaniyalari qaysini ishlatadi?",
     "a": [
      "Faqat GitHub",
-     "GitLab",
      "Bitbucket",
+     "GitLab",
      "Hech qaysi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "GitLab - loyihangni mirror qilsang, o'sha bozorga ham ochilasan.",
     "level": "practical"
    },
@@ -5616,23 +5616,23 @@
     "q": "Behavioral savolga qaysi usul bilan javob berasan?",
     "a": [
      "Tezda 'ha/yo'q'",
-     "STAR (Situation, Task, Action, Result)",
+     "Jim turish",
      "Faqat texnologiya nomlari",
-     "Jim turish"
+     "STAR (Situation, Task, Action, Result)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "STAR javobni tuzilgan va ishonchli qiladi.",
     "level": "practical"
    },
    {
     "q": "Interview'da loyihangni gapirganda nimaga urg'u berasan?",
     "a": [
-     "Faqat texnologiyalar nomi",
      "Muammo -> yechim -> natija",
+     "Faqat texnologiyalar nomi",
      "Kod qatorlari soni",
      "Ishlagan vaqting"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Nima muammoni, qanday yechding va qanday natija - eng kuchli hikoya shu.",
     "level": "practical"
    },
@@ -5652,11 +5652,11 @@
     "q": "Ish taklifi kelganda maosh bo'yicha to'g'ri yondashuv?",
     "a": [
      "Darhol rozi bo'lish",
-     "Bozorni o'rganib, hurmat bilan kelishish (negotiate)",
      "Rad etish",
+     "Bozorni o'rganib, hurmat bilan kelishish (negotiate)",
      "Jim qolish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Kelishuv normal; ko'pchilik birinchi taklifni qabul qilib pul yo'qotadi. Umumiy paketga qara.",
     "level": "scenario"
    }

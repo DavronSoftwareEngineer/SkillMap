@@ -125,12 +125,12 @@
    {
     "q": "Confidentiality nimani himoya qiladi?",
     "a": [
-     "mavjudlikni",
      "maxfiy ma'lumotni",
+     "mavjudlikni",
      "tezlikni",
      "dizaynni"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Confidentiality - ma'lumotni ruxsatsiz ko'rishdan himoya qiladi.",
     "level": "easy"
    },
@@ -150,35 +150,35 @@
     "q": "Professional test uchun birinchi shart nima?",
     "a": [
      "tez internet",
-     "yozma ruxsat va scope",
      "ko'p tool",
+     "yozma ruxsat va scope",
      "anonim bo'lish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Ruxsat va scope bo'lmasa test qilinmaydi.",
     "level": "scenario"
    },
    {
     "q": "Control nima?",
     "a": [
-     "xavfni kamaytiruvchi chora",
+     "random parol",
      "faqat hujum nomi",
      "terminal oynasi",
-     "random parol"
+     "xavfni kamaytiruvchi chora"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Control - riskni kamaytirish yoki aniqlash chorasi.",
     "level": "easy"
    },
    {
     "q": "W3Schools intro kursi nimaga yaxshi primer bo'ladi?",
     "a": [
-     "faqat dizayn uchun",
      "cybersecurity domenlarini umumiy ko'rish uchun",
+     "faqat dizayn uchun",
      "faqat CSS uchun",
      "server sotib olish uchun"
     ],
-    "c": 1,
+    "c": 0,
     "w": "W3Schools intro sahifasi turli cyber security domenlariga kirish beradi.",
     "level": "practical"
    }
@@ -367,35 +367,35 @@
     "q": "TLS asosiy vazifasi?",
     "a": [
      "rang berish",
-     "trafikni shifrlash va serverni tekshirish",
      "disk tozalash",
+     "trafikni shifrlash va serverni tekshirish",
      "port yopish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "TLS maxfiylik va server autentifikatsiyasi beradi.",
     "level": "easy"
    },
    {
     "q": "Keraksiz ochiq port nima?",
     "a": [
-     "attack surface",
+     "cookie",
      "backup",
      "hash",
-     "cookie"
+     "attack surface"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Ochiq portlar attack surface bo'lishi mumkin.",
     "level": "practical"
    },
    {
     "q": "curl -I nimani ko'rsatadi?",
     "a": [
-     "faqat body",
      "HTTP headerlarni",
+     "faqat body",
      "Wi-Fi parolni",
      "kernel logni"
     ],
-    "c": 1,
+    "c": 0,
     "w": "curl -I HEAD so'rov qilib headerlarni ko'rsatadi.",
     "level": "practical"
    },
@@ -609,11 +609,11 @@
     "q": "Least privilege nima?",
     "a": [
      "hamma root bo'lishi",
-     "faqat kerakli huquq berish",
      "parolni o'chirish",
+     "faqat kerakli huquq berish",
      "logni yashirish"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Least privilege - minimal kerakli huquq.",
     "level": "easy"
    },
@@ -621,11 +621,11 @@
     "q": "journalctl nimaga kerak?",
     "a": [
      "rasm ko'rish",
-     "systemd loglarini o'qish",
+     "CSS yozish",
      "DNS sotib olish",
-     "CSS yozish"
+     "systemd loglarini o'qish"
     ],
-    "c": 1,
+    "c": 3,
     "w": "journalctl systemd journal loglarini ko'rsatadi.",
     "level": "easy"
    },
@@ -644,12 +644,12 @@
    {
     "q": "Firewall asosiy vazifasi?",
     "a": [
-     "keraksiz trafikni cheklash",
      "HTML render",
+     "keraksiz trafikni cheklash",
      "parol yaratish",
      "backup siqish"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Firewall trafikni qoida asosida ruxsatlaydi yoki bloklaydi.",
     "level": "practical"
    }
@@ -815,11 +815,11 @@
     "q": "SQL injectionga asosiy himoya?",
     "a": [
      "string concat",
-     "parameterized query",
      "CSS",
+     "parameterized query",
      "random sleep"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Parameterized query inputni query kodidan ajratadi.",
     "level": "practical"
    },
@@ -827,11 +827,11 @@
     "q": "Access control qayerda majburiy tekshiriladi?",
     "a": [
      "faqat frontendda",
-     "serverda",
+     "ranglarda",
      "READMEda",
-     "ranglarda"
+     "serverda"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Frontend yordamchi, server tekshiruvi majburiy.",
     "level": "scenario"
    },
@@ -850,24 +850,24 @@
    {
     "q": "CSRF qachon dolzarb?",
     "a": [
-     "cookie-based authda",
      "faqat CLI appda",
+     "cookie-based authda",
      "offline faylda",
      "rasm ko'rishda"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Cookie avtomatik yuborilgani uchun CSRF cookie authda muhim.",
     "level": "scenario"
    },
    {
     "q": "Magic number riskini kamaytirish uchun nima foydali, lekin yetarli emas?",
     "a": [
-     "UUID/GUID",
-     "CSS",
      "favicon",
+     "CSS",
+     "UUID/GUID",
      "console.log"
     ],
-    "c": 0,
+    "c": 2,
     "w": "UUID enumerationni qiyinlashtiradi, lekin authorization baribir majburiy.",
     "level": "practical"
    }
@@ -1044,11 +1044,11 @@
     "q": "Parol qanday saqlanadi?",
     "a": [
      "plain text",
-     "sekin password hash bilan",
+     "URLda",
      "base64",
-     "URLda"
+     "sekin password hash bilan"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Parollar bcrypt/argon2 kabi sekin hash bilan saqlanadi.",
     "level": "easy"
    },
@@ -1079,12 +1079,12 @@
    {
     "q": "Secret leak bo'lsa birinchi amaliy choralar?",
     "a": [
-     "rotate va audit",
-     "CSS o'zgartirish",
      "logni o'chirish",
+     "CSS o'zgartirish",
+     "rotate va audit",
      "kutish"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Secret rotate qilinadi va foydalanish izlari tekshiriladi.",
     "level": "scenario"
    }
@@ -1265,36 +1265,36 @@
    {
     "q": "Container ichida root user nima uchun xavf?",
     "a": [
-     "privilege impact oshadi",
+     "log kamayadi",
      "rang buziladi",
      "DNS tezlashadi",
-     "log kamayadi"
+     "privilege impact oshadi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Root container escape yoki noto'g'ri mountda riskni oshiradi.",
     "level": "scenario"
    },
    {
     "q": "Secret image ichiga qo'yiladimi?",
     "a": [
-     "ha, qulay",
      "yo'q, tashqi secret manager/env orqali",
+     "ha, qulay",
      "faqat READMEga",
      "faqat CSSga"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Image qatlamlarida secret qolib ketishi mumkin.",
     "level": "practical"
    },
    {
     "q": "SCA nimani tekshiradi?",
     "a": [
-     "dependency risklarini",
      "fontlarni",
+     "dependency risklarini",
      "ranglarni",
      "monitor brightness"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Software Composition Analysis dependency va license risklarini ko'radi.",
     "level": "practical"
    },
@@ -1302,11 +1302,11 @@
     "q": "IAM least privilege nimani anglatadi?",
     "a": [
      "*:* berish",
-     "faqat kerakli action/resource",
      "parolsiz kirish",
+     "faqat kerakli action/resource",
      "barcha admin"
     ],
-    "c": 1,
+    "c": 2,
     "w": "IAM policy minimal action va resource bilan yoziladi.",
     "level": "easy"
    }
@@ -1469,12 +1469,12 @@
    {
     "q": "SIEM nima qiladi?",
     "a": [
-     "loglarni yig'ib tahlil qiladi",
+     "rasm optimizatsiya qiladi",
      "CSS yozadi",
      "parol hash qiladi",
-     "rasm optimizatsiya qiladi"
+     "loglarni yig'ib tahlil qiladi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "SIEM loglarni markazlashgan tahlil qiladi.",
     "level": "easy"
    },
@@ -1493,24 +1493,24 @@
    {
     "q": "Detection rule uchun eng muhim narsa?",
     "a": [
-     "data source mavjudligi",
      "logo",
+     "data source mavjudligi",
      "font",
      "random delay"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Log manbasi bo'lmasa rule ishlamaydi.",
     "level": "practical"
    },
    {
     "q": "Triage nimani anglatadi?",
     "a": [
-     "alertni tekshirib ustuvorlik berish",
-     "server bezash",
      "port sotish",
+     "server bezash",
+     "alertni tekshirib ustuvorlik berish",
      "HTML formatlash"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Triage alert haqiqiymi va qanchalik jiddiyligini aniqlaydi.",
     "level": "practical"
    }
@@ -1710,12 +1710,12 @@
    {
     "q": "Containment maqsadi?",
     "a": [
-     "zararni cheklash",
+     "DNS sotish",
      "rang berish",
      "hisobotni bezash",
-     "DNS sotish"
+     "zararni cheklash"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Containment hodisa tarqalishini cheklaydi.",
     "level": "easy"
    },
@@ -1734,24 +1734,24 @@
    {
     "q": "Yaxshi finding nimani o'z ichiga oladi?",
     "a": [
-     "impact va fix",
      "faqat rasm",
+     "impact va fix",
      "faqat rang",
      "faqat sana"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Finding qaror va tuzatish uchun yetarli bo'lishi kerak.",
     "level": "practical"
    },
    {
     "q": "Lessons learned qachon?",
     "a": [
-     "recoverydan keyin",
-     "hodisadan oldin faqat",
      "hech qachon",
+     "hodisadan oldin faqat",
+     "recoverydan keyin",
      "deploy payti har doim"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Lessons learned jarayonni yaxshilaydi.",
     "level": "easy"
    },
@@ -1759,11 +1759,11 @@
     "q": "IRT tarkibiga faqat security mutaxassislar kiradimi?",
     "a": [
      "ha, faqat security",
-     "yo'q, IT, legal, HR va boshqalar ham kerak bo'lishi mumkin",
+     "faqat finance",
      "faqat developerlar",
-     "faqat finance"
+     "yo'q, IT, legal, HR va boshqalar ham kerak bo'lishi mumkin"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Incident response ko'p jamoali jarayon bo'lishi mumkin.",
     "level": "practical"
    }
@@ -1927,24 +1927,24 @@
    {
     "q": "Timeline nimani beradi?",
     "a": [
-     "voqealar ketma-ketligini",
      "rang palitrasini",
+     "voqealar ketma-ketligini",
      "DNS narxini",
      "parol uzunligini"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Timeline hodisa rivojini tushunishga yordam beradi.",
     "level": "easy"
    },
    {
     "q": "Hash dalil uchun nega kerak?",
     "a": [
-     "o'zgarmaganini tekshirish uchun",
-     "faylni chiroyli qilish uchun",
      "port ochish uchun",
+     "faylni chiroyli qilish uchun",
+     "o'zgarmaganini tekshirish uchun",
      "CSS uchun"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Hash dalil integritysini tekshirishga yordam beradi.",
     "level": "scenario"
    }
@@ -2096,12 +2096,12 @@
    {
     "q": "CVSS high har doim birinchi tuzatiladimi?",
     "a": [
-     "yo'q, exposure va asset criticality ham muhim",
+     "faqat package nomiga",
      "ha, doim",
      "faqat rangga qaraladi",
-     "faqat package nomiga"
+     "yo'q, exposure va asset criticality ham muhim"
     ],
-    "c": 0,
+    "c": 3,
     "w": "CVSS muhim, lekin kontekst bilan qaraladi.",
     "level": "scenario"
    },
@@ -2120,12 +2120,12 @@
    {
     "q": "Risk acceptance nimani anglatadi?",
     "a": [
-     "riskni vaqtincha qabul qilish va hujjatlashtirish",
      "risk yo'q degani",
+     "riskni vaqtincha qabul qilish va hujjatlashtirish",
      "scan o'chirish",
      "hammani admin qilish"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Risk acceptance muddatli va asosli bo'lishi kerak.",
     "level": "practical"
    }
@@ -2272,24 +2272,24 @@
    {
     "q": "Control owner nima uchun kerak?",
     "a": [
-     "javobgarlik aniq bo'lishi uchun",
-     "rang uchun",
      "logni kamaytirish uchun",
+     "rang uchun",
+     "javobgarlik aniq bo'lishi uchun",
      "port ochish uchun"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Owner bo'lmasa control qarovsiz qoladi.",
     "level": "practical"
    },
    {
     "q": "Evidence qanday bo'lishi kerak?",
     "a": [
-     "yangilangan va tekshiriladigan",
+     "faqat screenshot nomi",
      "faqat og'zaki",
      "yo'q bo'lsa ham bo'ladi",
-     "faqat screenshot nomi"
+     "yangilangan va tekshiriladigan"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Audit evidence tekshiriladigan va kontekstli bo'lishi kerak.",
     "level": "easy"
    },
@@ -2490,36 +2490,36 @@
    {
     "q": "Final capstone asosiy maqsadi?",
     "a": [
-     "real ish deliverablelarini tayyorlash",
      "faqat test yechish",
+     "real ish deliverablelarini tayyorlash",
      "rang almashtirish",
      "parol topish"
     ],
-    "c": 0,
+    "c": 1,
     "w": "Capstone ish joyida kerak bo'ladigan hujjat va qarorlarni mashq qiladi.",
     "level": "scenario"
    },
    {
     "q": "Executive report kim uchun yoziladi?",
     "a": [
-     "rahbariyat va texnik bo'lmagan stakeholderlar",
-     "faqat kompilyator",
      "faqat CSS",
+     "faqat kompilyator",
+     "rahbariyat va texnik bo'lmagan stakeholderlar",
      "faqat scanner"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Executive report risk va prioritetni oddiy tilda tushuntiradi.",
     "level": "practical"
    },
    {
     "q": "Portfolio dossierda nima bo'lishi kerak?",
     "a": [
-     "dalil, report, ticket, detection va roadmap",
+     "faqat test natijasi",
      "faqat screenshot",
      "faqat link",
-     "faqat test natijasi"
+     "dalil, report, ticket, detection va roadmap"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Portfolio ish beruvchiga real ko'nikmani ko'rsatishi kerak.",
     "level": "practical"
    }

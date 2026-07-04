@@ -111,12 +111,12 @@
    {
     "q": "Moliyaviy savodxonlik nima?",
     "a": [
-     "Faqat ko'p pul topish",
      "Pulni topish, sarflash, tejash, qarz va jamg'arishni aqlli boshqarish",
+     "Faqat ko'p pul topish",
      "Faqat bank ishi",
      "Faqat investitsiya"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Bu - pulni boshqarish qobiliyati (faqat topish emas).",
     "level": "easy"
    },
@@ -148,23 +148,23 @@
     "q": "Eng muhim narsa nima?",
     "a": [
      "Qancha topish",
-     "Pulni qanday boshqarish",
+     "Qaysi valyuta",
      "Qaysi bank",
-     "Qaysi valyuta"
+     "Pulni qanday boshqarish"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Boshqaruv - savodxonlikning o'zagi.",
     "level": "practical"
    },
    {
     "q": "Zaxira jamg'arma necha oylik bo'lishi tavsiya etiladi?",
     "a": [
-     "0 oy",
      "1-3 oylik xarajat",
+     "0 oy",
      "12 oylik",
      "Kerak emas"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Avval 1, keyin 3 oylik zaxira.",
     "level": "scenario"
    }
@@ -401,23 +401,23 @@
     "q": "Boshlash uchun eng tez vosita?",
     "a": [
      "Bank dasturi",
-     "Telefon Notes",
+     "Qog'oz arxiv",
      "Maxsus server",
-     "Qog'oz arxiv"
+     "Telefon Notes"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Notes - eng tez; keyin Sheets/app.",
     "level": "practical"
    },
    {
     "q": "Eng kichik xarajatni yozish kerakmi?",
     "a": [
-     "Yo'q",
      "Ha, 1000 so'm bo'lsa ham",
+     "Yo'q",
      "Faqat 100 mingdan oshsa",
      "Faqat ovqatni"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Mayda, ko'p ketadigan xarajatlar muhim.",
     "level": "scenario"
    }
@@ -688,23 +688,23 @@
     "q": "Kafeda ovqatlanish qaysi turga?",
     "a": [
      "majburiy",
-     "kerakli, lekin kamaytirsa bo'ladigan",
+     "daromad",
      "keraksiz har doim",
-     "daromad"
+     "kerakli, lekin kamaytirsa bo'ladigan"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Kerakli, lekin kamaytirilishi mumkin.",
     "level": "practical"
    },
    {
     "q": "20% jamg'arish qiyin bo'lsa nima qilasiz?",
     "a": [
-     "umuman jamg'armaysiz",
      "5% dan boshlaysiz",
+     "umuman jamg'armaysiz",
      "kredit olasiz",
      "kutib turasiz"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Kichik foizdan boshla - odat muhim.",
     "level": "scenario"
    }
@@ -984,11 +984,11 @@
     "q": "Zaxira fond qancha bo'lishi tavsiya etiladi?",
     "a": [
      "1 kunlik",
-     "1 -> 3 oylik xarajat",
      "10 yillik",
+     "1 -> 3 oylik xarajat",
      "kerak emas"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Avval 1, keyin 3 oylik xarajat.",
     "level": "practical"
    },
@@ -996,23 +996,23 @@
     "q": "Zaxira pul qanday saqlanadi?",
     "a": [
      "aksiyada",
-     "tez yechib olinadigan hisobda",
+     "qarzda",
      "naqd uyda yashirin",
-     "qarzda"
+     "tez yechib olinadigan hisobda"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Kerak bo'lsa darrov olinishi kerak.",
     "level": "practical"
    },
    {
     "q": "\"Avval o'zingga to'la\" nimani anglatadi?",
     "a": [
-     "avval sarfla",
      "maoshdan birinchi jamg'arma ajrat",
+     "avval sarfla",
      "kredit ol",
      "soliq to'la"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Jamg'armani birinchi ajrat, qolganini sarfla.",
     "level": "scenario"
    }
@@ -1283,11 +1283,11 @@
     "q": "10 mln, yillik 24% - 1 yillik foiz taxminan?",
     "a": [
      "240 000",
-     "2 400 000",
      "24 000 000",
+     "2 400 000",
      "1 000 000"
     ],
-    "c": 1,
+    "c": 2,
     "w": "10 000 000 × 0.24 = 2.4 mln.",
     "level": "practical"
    },
@@ -1295,23 +1295,23 @@
     "q": "Inflyatsiya pulga qanday ta'sir qiladi?",
     "a": [
      "qadrini oshiradi",
-     "qadrini kamaytiradi",
+     "yo'qotadi",
      "ta'sirsiz",
-     "yo'qotadi"
+     "qadrini kamaytiradi"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Narx oshadi - pul qadrsizlanadi.",
     "level": "practical"
    },
    {
     "q": "Qarzdan oldin nimani hisoblash shart?",
     "a": [
-     "hech narsa",
      "oylik to'lov, jami qaytarish, maqsad",
+     "hech narsa",
      "faqat summa",
      "faqat bank nomi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "To'lov, jami va maqsad - uchalasi.",
     "level": "scenario"
    }
@@ -1579,11 +1579,11 @@
     "q": "\"Kafolatli yuqori foyda\" - bu:",
     "a": [
      "ajoyib imkoniyat",
-     "firibgarlik belgisi",
      "oddiy bank",
+     "firibgarlik belgisi",
      "soliq"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Kafolatli yuqori foyda - yolg'on.",
     "level": "practical"
    },
@@ -1591,23 +1591,23 @@
     "q": "Piramida sxema nimaga asoslanadi?",
     "a": [
      "real foyda",
-     "yangi a'zolar puli bilan eski to'lov",
+     "davlat",
      "bank foizi",
-     "davlat"
+     "yangi a'zolar puli bilan eski to'lov"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Yangi pul tugasa - qulaydi.",
     "level": "practical"
    },
    {
     "q": "Shubhali taklifga javob?",
     "a": [
-     "darrov to'la",
      "shoshilmasdan mustaqil tekshir",
+     "darrov to'la",
      "do'stga ber",
      "ishonib ber"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Shoshilma - avval tekshir.",
     "level": "scenario"
    }
@@ -1937,12 +1937,12 @@
    {
     "q": "Omonat nima beradi?",
     "a": [
-     "foiz",
-     "qarz",
      "soliq",
+     "qarz",
+     "foiz",
      "hech narsa"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Omonat - saqlash + foiz.",
     "level": "practical"
    },
@@ -1950,23 +1950,23 @@
     "q": "Zaxira fond uchun mos hisob?",
     "a": [
      "uzoq muddatli omonat",
-     "tez yechiladigan hisob",
+     "aksiya",
      "kredit karta",
-     "aksiya"
+     "tez yechiladigan hisob"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Zaxira darrov kerak bo'lishi mumkin.",
     "level": "practical"
    },
    {
     "q": "Yashirin xarajatlarni qayerdan bilasiz?",
     "a": [
-     "taxmin qilib",
      "shartnoma/tariflarni o'qib",
+     "taxmin qilib",
      "do'stdan",
      "umuman bilmaysiz"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Shartnomada komissiyalar yoziladi.",
     "level": "scenario"
    }
@@ -2110,7 +2110,7 @@
   "eyebrow": "07 / Investitsiya asoslari",
   "mtitle": "Pulni ko'paytirish: investitsiya asoslari",
   "lede": "Zaxira tayyor bo'lgach - <strong>investitsiya</strong>. Omonat, obligatsiya, aksiya, ETF nima ekanini va <strong>xavf-foyda</strong> muvozanatini o'rganasan.",
-  "doc": "<div class='prose'><h3>Asosiy vositalar</h3><div class=\"exlist\"><div class=\"ex\"><b>Omonat / depozit</b><span>past xavf, past foyda - eng xavfsiz</span></div><div class=\"ex\"><b>Obligatsiya (bond)</b><span>qarz vositasi, barqaror foiz</span></div><div class=\"ex\"><b>Aksiya (stock)</b><span>kompaniya ulushi, yuqori xavf/foyda</span></div><div class=\"ex\"><b>ETF / fond</b><span>ko'p aksiya to'plami - diversifikatsiya</span></div></div><h3>Xavf va foyda</h3><p><strong>Yuqori foyda = yuqori xavf</strong>. \"Kafolatli yuqori foyda\" yo'q. Aksiya qiymati tushishi ham mumkin.</p><h3>Asosiy tamoyillar</h3><div class=\"chips\"><span class=\"chip t\">Faqat ortiqcha pulni investitsiya qil</span><span class=\"chip t\">Diversifikatsiya (bir savatga emas)</span><span class=\"chip t\">Uzoq muddat</span><span class=\"chip t\">Tushunmasang - kirma</span></div><h3>Murakkab foiz (compound)</h3><p>Foyda ustiga foyda - vaqt bilan kuchayadi. Shuning uchun <strong>erta va muntazam</strong> boshlash muhim.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Avval zaxira</p><p>Investitsiyadan oldin <strong>zaxira fond</strong> va <strong>yuqori foizli qarzsizlik</strong> bo'lishi kerak. Qarzni yopish ko'pincha eng yaxshi \"investitsiya\".</p></div></div></div><div class='prose'><h3>Chuqurroq: murakkab foizning kuchi</h3><p>Erta boshlash eng katta afzallik. Misol (taxminiy, yiliga ~15%):</p><div class='codewrap'><div class='codehead'><span class='fn'>Erta vs kech boshlash</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Oyiga 500 000 so'm, ~15%/yil:\n10 yil  -> ~13.9 mln × ... (foyda o'sadi)\n20 yil  -> bir necha barobar ko'p\nVaqt - compound'ning eng kuchli omili</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Diversifikatsiya</b><span>turli aktivlarga bo'l (bir savatga emas)</span></div><div class=\"ex\"><b>Uzoq muddat</b><span>qisqa tebranishga panika qilma</span></div><div class=\"ex\"><b>Faqat ortiqcha pul</b><span>zaxira va qarzsizlikdan keyin</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Tezda boyitamiz\" va'dasiga ergashish yoki tushunmagan narsaga (kripto, hype) hamma pulni tikish. Qoida: <strong>tushunmasang - kirma</strong>, va yo'qotsang chidaydigan summadan oshirma.</p></div></div><figure class='svgfig'><svg viewBox='0 0 700 210' role='img' aria-label='Investitsiya turli aktivlarga diversifikatsiya qilinadi'><rect class='boxa' x='16' y='82' width='160' height='52' rx='8'/><text x='96' y='112' text-anchor='middle'>Ortiqcha pul</text><path class='edga' d='M176 96 H256' marker-end='url(#arF7a)'/><path class='edga' d='M176 108 H256' marker-end='url(#arF7a)'/><path class='edga' d='M176 120 H256' marker-end='url(#arF7a)'/><rect class='box' x='256' y='16' width='200' height='40' rx='8'/><text x='356' y='41' text-anchor='middle'>Omonat (past xavf)</text><rect class='box' x='256' y='66' width='200' height='40' rx='8'/><text x='356' y='91' text-anchor='middle'>Obligatsiya</text><rect class='box' x='256' y='116' width='200' height='40' rx='8'/><text x='356' y='141' text-anchor='middle'>Aksiya</text><rect class='box' x='256' y='166' width='200' height='40' rx='8'/><text x='356' y='191' text-anchor='middle'>ETF / fond</text><text x='500' y='96' class='muted'>past</text><text x='500' y='170' class='accent'>yuqori xavf</text><defs><marker id='arF7a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' class='accent'/></marker></defs></svg><figcaption>Diversifikatsiya: pulni turli xavf darajasidagi aktivlarga bo'lish</figcaption></figure></div><div class='prose'><h3>Amaliy hisob 1: portfelni taqsimlash (10 mln so'm misoli)</h3><p>Aytaylik zaxira fond va yuqori foizli qarzsizlik BOR, va investitsiyaga <strong>10 000 000 so'm ortiqcha pul</strong> ajratding. Diversifikatsiya - buni bir joyga emas, xavf darajasi bo'yicha bo'lish. Konservativ namuna taqsimot (bu KAFOLAT emas, faqat misol):</p><div class='codewrap'><div class='codehead'><span class='fn'>10 mln so'm - namuna taqsimot (misol uchun)</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Omonat (past xavf)   50%  = 5 000 000 so'm\nObligatsiya          30%  = 3 000 000 so'm\nAksiya / ETF         20%  = 2 000 000 so'm\n-----------------------------------------\nJami                100%  = 10 000 000 so'm</code></pre></div><p>Yosh va xavfga munosabatga qarab nisbat o'zgaradi: yoshroq va uzoq muddatga - aksiya ulushi biroz kattaroq; xavfdan qo'rqsang - omonat ulushi kattaroq. Aniq foizni <strong>o'zing</strong> hal qil, birovning \"kafolatli\" nisbatiga ishonma.</p><h3>Amaliy hisob 2: oyiga X so'm, N yil (murakkab foiz bilan)</h3><p>Har oy muntazam ajratsang, murakkab foiz vaqt bilan qo'shiladi. Quyida yillik ~12% o'sish taxmini bilan misol (bu KAFOLAT emas - <strong>misol uchun taxminiy</strong>; real natija bozorga qarab yuqori yoki past bo'ladi):</p><div class='codewrap'><div class='codehead'><span class='fn'>Oyiga 1 000 000 so'm, ~12%/yil (misol uchun taxminiy)</span><span class='lang'>MISOL</span></div><pre><code data-lang='text'>Oyiga qo'yiladigan   = 1 000 000 so'm\nBir yilda jami qo'yiladi = 12 000 000 so'm\n\nFaqat qo'yilgan pul (foizsiz):\n  5 yil  -> 60 000 000 so'm\n  10 yil -> 120 000 000 so'm\n\n~12%/yil o'sish bilan (taxminiy):\n  5 yil  -> ~82 000 000 so'm\n  10 yil -> ~230 000 000 so'm\nFarq = murakkab foizning (compound) ta'siri</code></pre></div><p>Diqqat: raqamlar <strong>taxminiy</strong> va o'sish foizi kafolatlanmaydi. Muhim xulosa - <strong>foizsiz</strong> ham muntazam jamg'arma katta summa yig'adi, foiz esa uni yana tezlashtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Foizni o'zing tekshir</p><p>Yuqoridagi ~12% - faqat tushuntirish uchun olingan taxminiy raqam. Real omonat/investitsiya foizini <strong>rasmiy manbadan</strong> (bank sayti, cbu.uz) tekshir. \"Kafolatli yuqori foyda\" yo'q.</p></div></div><figure class='svgfig'><svg viewBox='0 0 700 240' role='img' aria-label='Muntazam jamg''arma foizsiz va murakkab foiz bilan o''sishi'><path class='edge' d='M60 200 H660'/><path class='edge' d='M60 200 V24'/><text x='60' y='220' class='muted'>0 yil</text><text x='648' y='220' text-anchor='end' class='muted'>10 yil</text><text x='16' y='34' class='muted'>summa</text><path class='edge' d='M60 196 L360 148 L660 100' marker-end='url(#arF7b)'/><text x='470' y='118' class='muted'>faqat qo'yilgan (foizsiz)</text><path class='edga' d='M60 196 Q360 172 500 120 T660 34' marker-end='url(#arF7c)'/><text x='470' y='58' class='accent'>~12% bilan (taxminiy)</text><circle class='muted' cx='660' cy='100' r='4'/><circle class='accent' cx='660' cy='34' r='4'/><defs><marker id='arF7b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arF7c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' class='accent'/></marker></defs></svg><figcaption>Oyiga bir xil summa: foizsiz chiziqli, murakkab foiz bilan tik o'sadi (taxminiy)</figcaption></figure></div>",
+  "doc": "<div class='prose'><h3>Asosiy vositalar</h3><div class=\"exlist\"><div class=\"ex\"><b>Omonat / depozit</b><span>past xavf, past foyda - eng xavfsiz</span></div><div class=\"ex\"><b>Obligatsiya (bond)</b><span>qarz vositasi, barqaror foiz</span></div><div class=\"ex\"><b>Aksiya (stock)</b><span>kompaniya ulushi, yuqori xavf/foyda</span></div><div class=\"ex\"><b>ETF / fond</b><span>ko'p aksiya to'plami - diversifikatsiya</span></div></div><h3>Xavf va foyda</h3><p><strong>Yuqori foyda = yuqori xavf</strong>. \"Kafolatli yuqori foyda\" yo'q. Aksiya qiymati tushishi ham mumkin.</p><h3>Asosiy tamoyillar</h3><div class=\"chips\"><span class=\"chip t\">Faqat ortiqcha pulni investitsiya qil</span><span class=\"chip t\">Diversifikatsiya (bir savatga emas)</span><span class=\"chip t\">Uzoq muddat</span><span class=\"chip t\">Tushunmasang - kirma</span></div><h3>Murakkab foiz (compound)</h3><p>Foyda ustiga foyda - vaqt bilan kuchayadi. Shuning uchun <strong>erta va muntazam</strong> boshlash muhim.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Avval zaxira</p><p>Investitsiyadan oldin <strong>zaxira fond</strong> va <strong>yuqori foizli qarzsizlik</strong> bo'lishi kerak. Qarzni yopish ko'pincha eng yaxshi \"investitsiya\".</p></div></div></div><div class='prose'><h3>Chuqurroq: murakkab foizning kuchi</h3><p>Erta boshlash eng katta afzallik. Misol (taxminiy, yiliga ~15%):</p><div class='codewrap'><div class='codehead'><span class='fn'>Erta vs kech boshlash</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Oyiga 500 000 so'm, ~15%/yil:\n10 yil  -> ~138 mln (jami solingan 60 mln)\n20 yil  -> ~750 mln (jami solingan 120 mln)\nVaqt - compound'ning eng kuchli omili</code></pre></div><div class=\"exlist\"><div class=\"ex\"><b>Diversifikatsiya</b><span>turli aktivlarga bo'l (bir savatga emas)</span></div><div class=\"ex\"><b>Uzoq muddat</b><span>qisqa tebranishga panika qilma</span></div><div class=\"ex\"><b>Faqat ortiqcha pul</b><span>zaxira va qarzsizlikdan keyin</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Keng tarqalgan xato</p><p>\"Tezda boyitamiz\" va'dasiga ergashish yoki tushunmagan narsaga (kripto, hype) hamma pulni tikish. Qoida: <strong>tushunmasang - kirma</strong>, va yo'qotsang chidaydigan summadan oshirma.</p></div></div><figure class='svgfig'><svg viewBox='0 0 700 210' role='img' aria-label='Investitsiya turli aktivlarga diversifikatsiya qilinadi'><rect class='boxa' x='16' y='82' width='160' height='52' rx='8'/><text x='96' y='112' text-anchor='middle'>Ortiqcha pul</text><path class='edga' d='M176 96 H256' marker-end='url(#arF7a)'/><path class='edga' d='M176 108 H256' marker-end='url(#arF7a)'/><path class='edga' d='M176 120 H256' marker-end='url(#arF7a)'/><rect class='box' x='256' y='16' width='200' height='40' rx='8'/><text x='356' y='41' text-anchor='middle'>Omonat (past xavf)</text><rect class='box' x='256' y='66' width='200' height='40' rx='8'/><text x='356' y='91' text-anchor='middle'>Obligatsiya</text><rect class='box' x='256' y='116' width='200' height='40' rx='8'/><text x='356' y='141' text-anchor='middle'>Aksiya</text><rect class='box' x='256' y='166' width='200' height='40' rx='8'/><text x='356' y='191' text-anchor='middle'>ETF / fond</text><text x='500' y='96' class='muted'>past</text><text x='500' y='170' class='accent'>yuqori xavf</text><defs><marker id='arF7a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' class='accent'/></marker></defs></svg><figcaption>Diversifikatsiya: pulni turli xavf darajasidagi aktivlarga bo'lish</figcaption></figure></div><div class='prose'><h3>Amaliy hisob 1: portfelni taqsimlash (10 mln so'm misoli)</h3><p>Aytaylik zaxira fond va yuqori foizli qarzsizlik BOR, va investitsiyaga <strong>10 000 000 so'm ortiqcha pul</strong> ajratding. Diversifikatsiya - buni bir joyga emas, xavf darajasi bo'yicha bo'lish. Konservativ namuna taqsimot (bu KAFOLAT emas, faqat misol):</p><div class='codewrap'><div class='codehead'><span class='fn'>10 mln so'm - namuna taqsimot (misol uchun)</span><span class='lang'>HISOB</span></div><pre><code data-lang='text'>Omonat (past xavf)   50%  = 5 000 000 so'm\nObligatsiya          30%  = 3 000 000 so'm\nAksiya / ETF         20%  = 2 000 000 so'm\n-----------------------------------------\nJami                100%  = 10 000 000 so'm</code></pre></div><p>Yosh va xavfga munosabatga qarab nisbat o'zgaradi: yoshroq va uzoq muddatga - aksiya ulushi biroz kattaroq; xavfdan qo'rqsang - omonat ulushi kattaroq. Aniq foizni <strong>o'zing</strong> hal qil, birovning \"kafolatli\" nisbatiga ishonma.</p><h3>Amaliy hisob 2: oyiga X so'm, N yil (murakkab foiz bilan)</h3><p>Har oy muntazam ajratsang, murakkab foiz vaqt bilan qo'shiladi. Quyida yillik ~12% o'sish taxmini bilan misol (bu KAFOLAT emas - <strong>misol uchun taxminiy</strong>; real natija bozorga qarab yuqori yoki past bo'ladi):</p><div class='codewrap'><div class='codehead'><span class='fn'>Oyiga 1 000 000 so'm, ~12%/yil (misol uchun taxminiy)</span><span class='lang'>MISOL</span></div><pre><code data-lang='text'>Oyiga qo'yiladigan   = 1 000 000 so'm\nBir yilda jami qo'yiladi = 12 000 000 so'm\n\nFaqat qo'yilgan pul (foizsiz):\n  5 yil  -> 60 000 000 so'm\n  10 yil -> 120 000 000 so'm\n\n~12%/yil o'sish bilan (taxminiy):\n  5 yil  -> ~82 000 000 so'm\n  10 yil -> ~230 000 000 so'm\nFarq = murakkab foizning (compound) ta'siri</code></pre></div><p>Diqqat: raqamlar <strong>taxminiy</strong> va o'sish foizi kafolatlanmaydi. Muhim xulosa - <strong>foizsiz</strong> ham muntazam jamg'arma katta summa yig'adi, foiz esa uni yana tezlashtiradi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Foizni o'zing tekshir</p><p>Yuqoridagi ~12% - faqat tushuntirish uchun olingan taxminiy raqam. Real omonat/investitsiya foizini <strong>rasmiy manbadan</strong> (bank sayti, cbu.uz) tekshir. \"Kafolatli yuqori foyda\" yo'q.</p></div></div><figure class='svgfig'><svg viewBox='0 0 700 240' role='img' aria-label='Muntazam jamg''arma foizsiz va murakkab foiz bilan o''sishi'><path class='edge' d='M60 200 H660'/><path class='edge' d='M60 200 V24'/><text x='60' y='220' class='muted'>0 yil</text><text x='648' y='220' text-anchor='end' class='muted'>10 yil</text><text x='16' y='34' class='muted'>summa</text><path class='edge' d='M60 196 L360 148 L660 100' marker-end='url(#arF7b)'/><text x='470' y='118' class='muted'>faqat qo'yilgan (foizsiz)</text><path class='edga' d='M60 196 Q360 172 500 120 T660 34' marker-end='url(#arF7c)'/><text x='470' y='58' class='accent'>~12% bilan (taxminiy)</text><circle class='muted' cx='660' cy='100' r='4'/><circle class='accent' cx='660' cy='34' r='4'/><defs><marker id='arF7b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arF7c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' class='accent'/></marker></defs></svg><figcaption>Oyiga bir xil summa: foizsiz chiziqli, murakkab foiz bilan tik o'sadi (taxminiy)</figcaption></figure></div>",
   "code": [],
   "tasks": [
    {
@@ -2237,35 +2237,35 @@
     "q": "ETF nima?",
     "a": [
      "bitta aksiya",
-     "ko'p aksiya to'plami (diversifikatsiya)",
      "qarz",
+     "ko'p aksiya to'plami (diversifikatsiya)",
      "omonat"
     ],
-    "c": 1,
+    "c": 2,
     "w": "ETF - savat (bir nechta aktiv).",
     "level": "practical"
    },
    {
     "q": "Yuqori foyda bilan nima keladi?",
     "a": [
-     "yuqori xavf",
+     "nol xavf",
      "kafolat",
      "soliq yo'qligi",
-     "nol xavf"
+     "yuqori xavf"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Foyda va xavf birga oshadi.",
     "level": "practical"
    },
    {
     "q": "Investitsiyadan oldin nima bo'lishi kerak?",
     "a": [
-     "yangi telefon",
      "zaxira fond + qarzsizlik",
+     "yangi telefon",
      "kredit",
      "hech narsa"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Avval xavfsizlik yostig'i.",
     "level": "scenario"
    }
@@ -2592,11 +2592,11 @@
     "q": "12 oyda 12 mln maqsad -> oylik ajratma?",
     "a": [
      "120 000",
-     "1 000 000",
      "12 000 000",
+     "1 000 000",
      "100 000"
     ],
-    "c": 1,
+    "c": 2,
     "w": "12 mln / 12 = 1 mln/oy.",
     "level": "practical"
    },
@@ -2604,23 +2604,23 @@
     "q": "Uzoq muddatli maqsadga misol?",
     "a": [
      "bugungi ovqat",
-     "pensiya/kapital (5+ yil)",
+     "taksi",
      "haftalik xarid",
-     "taksi"
+     "pensiya/kapital (5+ yil)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Pensiya - uzoq muddat.",
     "level": "practical"
    },
    {
     "q": "Reja qog'ozda qolmasligi uchun nima qilinadi?",
     "a": [
-     "unutiladi",
      "byudjetga oylik ajratma qilib joylanadi",
+     "unutiladi",
      "bankga beriladi",
      "do'stga aytiladi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Maqsad -> oylik ajratma -> byudjet.",
     "level": "scenario"
    }
@@ -2958,11 +2958,11 @@
     "q": "72 qoidasi nimani baholaydi?",
     "a": [
      "Soliq miqdorini",
-     "Pul necha yilda ikki barobar bo'lishini",
      "Inflyatsiya darajasini",
+     "Pul necha yilda ikki barobar bo'lishini",
      "Kredit foizini"
     ],
-    "c": 1,
+    "c": 2,
     "w": "72 ÷ foiz = ikki barobar bo'lish yili (taxminiy).",
     "level": "practical"
    },
@@ -2970,11 +2970,11 @@
     "q": "Uzoq muddatli reja uchun eng yaxshi odat?",
     "a": [
      "Ba'zan katta summa qo'yish",
-     "Muntazam, avtomatik ajratma",
+     "Hech qachon ajratmaslik",
      "Faqat daromad oshganda",
-     "Hech qachon ajratmaslik"
+     "Muntazam, avtomatik ajratma"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Muntazamlik (avtomatik) - eng ishonchli yo'l.",
     "level": "scenario"
    }

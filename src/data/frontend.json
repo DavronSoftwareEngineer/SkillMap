@@ -114,12 +114,12 @@
    {
     "q": "DOM nima?",
     "a": [
-     "server fayli",
      "brauzer HTML'dan tuzgan daraxt (obyektlar)",
+     "server fayli",
      "CSS turi",
      "ma'lumotlar bazasi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "DOM - brauzer HTML hujjatdan tuzgan obyektlar daraxti; JS uni o'zgartiradi.",
     "level": "easy"
    },
@@ -320,11 +320,11 @@
     "q": "Bosiladigan amal uchun to'g'ri teg?",
     "a": [
      "<div onclick>",
-     "<button>",
+     "<p>",
      "<span>",
-     "<p>"
+     "<button>"
     ],
-    "c": 1,
+    "c": 3,
     "w": "<button> - klaviatura va a11y bilan ishlaydi; div emas.",
     "level": "easy"
    },
@@ -356,11 +356,11 @@
     "q": "Bezak (dekorativ) rasmga alt qanday yoziladi?",
     "a": [
      "alt umuman yozilmaydi",
-     "alt=''",
      "alt='rasm'",
+     "alt=''",
      "alt='bezak'"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Bo'sh alt ekran o'quvchiga rasmni tashlab ketishni aytadi; alt bo'lmasa fayl nomi o'qilishi mumkin.",
     "level": "practical"
    }
@@ -551,24 +551,24 @@
    {
     "q": "box-sizing: border-box nima qiladi?",
     "a": [
-     "paddingni kenglik ichida hisoblaydi",
+     "elementni yashiradi",
      "marginni o'chiradi",
      "rangni o'zgartiradi",
-     "elementni yashiradi"
+     "paddingni kenglik ichida hisoblaydi"
     ],
-    "c": 0,
+    "c": 3,
     "w": "border-box: padding va border element kengligi ichida hisoblanadi.",
     "level": "easy"
    },
    {
     "q": "Moslashuvchan o'lcham uchun qaysi birlik?",
     "a": [
-     "px",
      "rem",
+     "px",
      "pt",
      "cm"
     ],
-    "c": 1,
+    "c": 0,
     "w": "rem ildiz shriftga nisbatan masshtablanadi - responsive uchun yaxshi.",
     "level": "practical"
    },
@@ -588,11 +588,11 @@
     "q": "2026 da element o'z konteyneri kengligiga moslashishi uchun?",
     "a": [
      "media query",
-     "container query",
      "float",
+     "container query",
      "table"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Container queries - komponent ekran emas, o'rab turgan konteyner kengligiga qaraydi.",
     "level": "practical"
    },
@@ -600,11 +600,11 @@
     "q": "Qaysi biri \"utility-first\" CSS framework?",
     "a": [
      "Bootstrap",
-     "Tailwind CSS",
+     "MUI",
      "Sass",
-     "MUI"
+     "Tailwind CSS"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Tailwind - HTML ichida utility klasslar bilan stil beradi; Sass - preprotsessor, MUI/Bootstrap - komponent kutubxonalari.",
     "level": "scenario"
    }
@@ -770,12 +770,12 @@
    {
     "q": "Ikki o'lchamli (qator+ustun) layout uchun?",
     "a": [
-     "Flexbox",
      "Grid",
+     "Flexbox",
      "float",
      "table"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Grid - qator va ustunni birga boshqaradi.",
     "level": "easy"
    },
@@ -795,11 +795,11 @@
     "q": "Flexbox'da elementlar orasi bo'shliq uchun?",
     "a": [
      "margin har biriga",
-     "gap",
      "padding",
+     "gap",
      "space"
     ],
-    "c": 1,
+    "c": 2,
     "w": "gap - zamonaviy va toza usul.",
     "level": "scenario"
    }
@@ -981,35 +981,35 @@
     "q": "Massivning har elementini o'zgartirib yangi massiv qaytaradi?",
     "a": [
      "filter",
-     "map",
+     "find",
      "forEach",
-     "find"
+     "map"
     ],
-    "c": 1,
+    "c": 3,
     "w": "map - har element ustida o'zgartirib yangi massiv qaytaradi.",
     "level": "easy"
    },
    {
     "q": "Standart o'zgaruvchi e'loni?",
     "a": [
-     "var",
      "const (kerak bo'lsa let)",
+     "var",
      "global",
      "def"
     ],
-    "c": 1,
+    "c": 0,
     "w": "const ni standart qil; o'zgarsa let. var dan qoching.",
     "level": "practical"
    },
    {
     "q": "Hodisaga javob berish uchun?",
     "a": [
-     "addEventListener",
      "querySelector",
+     "addEventListener",
      "getElement",
      "fetch"
     ],
-    "c": 0,
+    "c": 1,
     "w": "addEventListener('click', fn) - hodisani tinglaydi.",
     "level": "scenario"
    }
@@ -1212,11 +1212,11 @@
     "q": "fetch() nima qaytaradi?",
     "a": [
      "matn",
-     "Promise",
      "massiv",
+     "Promise",
      "DOM"
     ],
-    "c": 1,
+    "c": 2,
     "w": "fetch Promise qaytaradi; natijani await yoki .then bilan olasan.",
     "level": "easy"
    },
@@ -1224,11 +1224,11 @@
     "q": "Asinxron xatoni qanday ushlaysan?",
     "a": [
      "if",
-     "try/catch",
+     "hech qanday",
      "switch",
-     "hech qanday"
+     "try/catch"
     ],
-    "c": 1,
+    "c": 3,
     "w": "async/await bilan try/catch ishlatiladi.",
     "level": "practical"
    },
@@ -1248,11 +1248,11 @@
     "q": "Promise zanjirida xatoni qaysi usul ushlaydi?",
     "a": [
      ".finally",
-     ".then",
      ".catch",
+     ".then",
      ".map"
     ],
-    "c": 2,
+    "c": 1,
     "w": ".catch zanjirdagi istalgan xatoni ushlaydi; async/await uslubida bunga try/catch teng keladi.",
     "level": "easy"
    }
@@ -1417,11 +1417,11 @@
     "q": "package.json nima?",
     "a": [
      "CSS fayl",
-     "loyiha bog'liqlik+skript pasporti",
      "rasm",
+     "loyiha bog'liqlik+skript pasporti",
      "ma'lumotlar bazasi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "package.json - bog'liqliklar va skriptlarni saqlaydi.",
     "level": "easy"
    },
@@ -1429,23 +1429,23 @@
     "q": "O'zgarishni saqlash buyrug'i?",
     "a": [
      "git save",
-     "git commit",
+     "git keep",
      "git store",
-     "git keep"
+     "git commit"
     ],
-    "c": 1,
+    "c": 3,
     "w": "git add bilan tayyorlab, git commit bilan saqlanadi.",
     "level": "practical"
    },
    {
     "q": "HMR nima?",
     "a": [
-     "xato turi",
      "kod o'zgarsa sahifa avtomatik yangilanishi",
+     "xato turi",
      "test",
      "deploy"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Hot Module Replacement - saqlasang brauzer darhol yangilanadi.",
     "level": "scenario"
    }
@@ -1633,12 +1633,12 @@
    {
     "q": "Obyekt shakli uchun?",
     "a": [
-     "interface yoki type",
-     "var",
      "class only",
+     "var",
+     "interface yoki type",
      "json"
     ],
-    "c": 0,
+    "c": 2,
     "w": "interface yoki type bilan obyekt shaklini tasvirlaysan.",
     "level": "practical"
    },
@@ -1646,11 +1646,11 @@
     "q": "Nimadan qochish kerak?",
     "a": [
      "string",
-     "any",
+     "interface",
      "number",
-     "interface"
+     "any"
     ],
-    "c": 1,
+    "c": 3,
     "w": "any tip tekshiruvini o'chiradi - qoching.",
     "level": "scenario"
    }
@@ -1858,12 +1858,12 @@
    {
     "q": "Props qanaqa?",
     "a": [
-     "o'zgaruvchan ichki holat",
      "otadan kelgan, o'qish uchun ma'lumot",
+     "o'zgaruvchan ichki holat",
      "CSS",
      "global"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Props - ota komponentdan keladi va faqat o'qiladi.",
     "level": "easy"
    },
@@ -1883,11 +1883,11 @@
     "q": "Ro'yxat render'da nima kerak?",
     "a": [
      "id",
-     "key prop",
      "class",
+     "key prop",
      "style"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Har elementga barqaror key - React'ga elementlarni farqlash uchun.",
     "level": "practical"
    },
@@ -1895,23 +1895,23 @@
     "q": "React 19 Compiler nimani avtomatlashtiradi?",
     "a": [
      "deploy",
-     "memoizatsiya (useMemo/useCallback)",
+     "routing",
      "test",
-     "routing"
+     "memoizatsiya (useMemo/useCallback)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "React Compiler memoizatsiyani o'zi qiladi - qo'lda useMemo/useCallback kamroq kerak.",
     "level": "scenario"
    },
    {
     "q": "key={index} qachon muammo chiqaradi?",
     "a": [
-     "Hech qachon",
      "Ro'yxat o'zgarganda (qo'shish/o'chirish/saralash)",
+     "Hech qachon",
      "Faqat TypeScript loyihada",
      "Faqat 100+ elementda"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Indekslar surilganda React elementlarni adashtiradi - input holati noto'g'ri qatorda qoladi. Barqaror id ishlat.",
     "level": "practical"
    }
@@ -2151,11 +2151,11 @@
     "q": "Custom hook nima beradi?",
     "a": [
      "CSS",
-     "qayta ishlatiladigan mantiq",
      "tezroq build",
+     "qayta ishlatiladigan mantiq",
      "yangi til"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Takrorlanuvchi logikani ajratib, qayta ishlatadi.",
     "level": "practical"
    },
@@ -2163,23 +2163,23 @@
     "q": "Server ma'lumoti (kesh, qayta urinish) uchun yaxshi vosita?",
     "a": [
      "useState",
-     "TanStack Query",
+     "alert",
      "localStorage",
-     "alert"
+     "TanStack Query"
     ],
-    "c": 1,
+    "c": 3,
     "w": "TanStack Query server holatini professional boshqaradi.",
     "level": "practical"
    },
    {
     "q": "Sodda, kichik global holat uchun bugun mashhur tanlov?",
     "a": [
-     "Redux (klassik)",
      "Zustand",
+     "Redux (klassik)",
      "jQuery",
      "localStorage"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Zustand - minimal boilerplate, hook asosida; Redux Toolkit katta loyihalarda yaxshi.",
     "level": "practical"
    },
@@ -2356,35 +2356,35 @@
     "q": "Testing Library qaysi nuqtai nazardan sinaydi?",
     "a": [
      "ichki kod",
-     "foydalanuvchi (matn/rol/bosish)",
      "CSS",
+     "foydalanuvchi (matn/rol/bosish)",
      "server"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Foydalanuvchi qanday ishlatsa shunday - getByRole/getByText.",
     "level": "easy"
    },
    {
     "q": "Keraksiz render kamaytirish uchun?",
     "a": [
-     "memo/useMemo",
+     "inline style",
      "ko'proq state",
      "any",
-     "inline style"
+     "memo/useMemo"
     ],
-    "c": 0,
+    "c": 3,
     "w": "memo/useMemo - qayta hisoblash va render'ni kamaytiradi.",
     "level": "practical"
    },
    {
     "q": "a11y nega muhim?",
     "a": [
-     "faqat dizayn",
      "ko'proq foydalanuvchi + SEO + qonun",
+     "faqat dizayn",
      "tezlik",
      "kerak emas"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Hamma foydalana oladi, SEO yaxshilanadi, ko'p joyda talab.",
     "level": "scenario"
    }
@@ -2580,35 +2580,35 @@
     "q": "Senior kodning asosiy belgisi?",
     "a": [
      "eng aqlli/qisqa",
-     "jamoa oson tushunadigan va o'zgartiradigan",
      "eng ko'p qator",
+     "jamoa oson tushunadigan va o'zgartiradigan",
      "framework'siz"
     ],
-    "c": 1,
+    "c": 2,
     "w": "O'qiladigan, qo'llab-quvvatlanadigan kod - senior belgisi.",
     "level": "practical"
    },
    {
     "q": "Statik frontend deploy uchun?",
     "a": [
-     "Vercel/Netlify",
+     "Excel",
      "MySQL",
      "Photoshop",
-     "Excel"
+     "Vercel/Netlify"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Vercel/Netlify - statik/SPA deploy uchun mashhur platformalar.",
     "level": "scenario"
    },
    {
     "q": "Feature-based tuzilmada Button kabi umumiy komponent qayerda turadi?",
     "a": [
-     "features/cart/components",
      "shared/ui",
+     "features/cart/components",
      "app/",
      "har feature'da nusxa"
     ],
-    "c": 1,
+    "c": 0,
     "w": "2+ feature ishlatadigan kod shared/ga ko'chadi; features/ ichida faqat shu feature'ga oid kod turadi.",
     "level": "practical"
    }

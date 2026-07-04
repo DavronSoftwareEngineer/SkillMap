@@ -126,12 +126,12 @@
    {
     "q": "Backend asosan qayerda ishlaydi?",
     "a": [
-     "brauzerda",
      "serverda",
+     "brauzerda",
      "DB ichida",
      "CSS'da"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Backend kodi serverda ishlaydi; frontend brauzerda.",
     "level": "easy"
    },
@@ -151,11 +151,11 @@
     "q": "2026 da eng tez runtime sifatida tanilgan?",
     "a": [
      "Deno",
-     "Bun",
      "PHP",
+     "Bun",
      "Ruby"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Bun eng tez HTTP/paket runtime; Node hukmron va barqaror.",
     "level": "scenario"
    }
@@ -326,24 +326,24 @@
    {
     "q": "Node nechta asosiy oqimda JS bajaradi?",
     "a": [
-     "bitta (event loop)",
+     "ikkita",
      "har so'rovga bitta",
      "cheksiz",
-     "ikkita"
+     "bitta (event loop)"
     ],
-    "c": 0,
+    "c": 3,
     "w": "Node bitta oqim + event loop bilan asinxron ishlaydi.",
     "level": "easy"
    },
    {
     "q": "Zamonaviy Node modul tizimi?",
     "a": [
-     "CommonJS only",
      "ESM (import/export)",
+     "CommonJS only",
      "AMD",
      "global"
     ],
-    "c": 1,
+    "c": 0,
     "w": "ESM (import/export) zamonaviy standart; package.json type:module.",
     "level": "practical"
    },
@@ -527,11 +527,11 @@
     "q": "Resurs topilmasa qaysi status?",
     "a": [
      "200",
-     "404",
      "201",
+     "404",
      "500"
     ],
-    "c": 1,
+    "c": 2,
     "w": "404 Not Found - resurs yo'q. 201 - yaratildi, 400 - noto'g'ri so'rov.",
     "level": "easy"
    },
@@ -539,23 +539,23 @@
     "q": "req.body o'qish uchun Express'da nima kerak?",
     "a": [
      "hech narsa",
-     "express.json() middleware",
+     "cors",
      "fs",
-     "cors"
+     "express.json() middleware"
     ],
-    "c": 1,
+    "c": 3,
     "w": "express.json() kelgan JSON tanasini parse qiladi.",
     "level": "practical"
    },
    {
     "q": "Yangi resurs yaratilganda qaytariladigan status?",
     "a": [
-     "200",
      "201",
+     "200",
      "204",
      "301"
     ],
-    "c": 1,
+    "c": 0,
     "w": "201 Created - yangi resurs muvaffaqiyatli yaratildi.",
     "level": "scenario"
    }
@@ -727,11 +727,11 @@
     "q": "Zod nima beradi?",
     "a": [
      "faqat tip",
-     "validatsiya + tip (z.infer)",
      "DB",
+     "validatsiya + tip (z.infer)",
      "log"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Zod ham runtime validatsiya, ham TS tipini bitta sxemadan beradi.",
     "level": "practical"
    },
@@ -739,11 +739,11 @@
     "q": "Tashqi (foydalanuvchi) ma'lumotga munosabat?",
     "a": [
      "ishonamiz",
-     "hech qachon ishonmaymiz - tekshiramiz",
+     "DB tekshiradi",
      "faqat frontend tekshiradi",
-     "DB tekshiradi"
+     "hech qachon ishonmaymiz - tekshiramiz"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Backend kiruvchi ma'lumotni doim validatsiya qilishi shart (xavfsizlik).",
     "level": "scenario"
    }
@@ -946,12 +946,12 @@
    {
     "q": "Jadvaldagi noyob identifikator?",
     "a": [
-     "foreign key",
      "primary key",
+     "foreign key",
      "index",
      "join"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Primary key - har qatorni noyob aniqlaydi.",
     "level": "easy"
    },
@@ -970,12 +970,12 @@
    {
     "q": "Qidiruvni tezlashtiradigan narsa?",
     "a": [
-     "index",
-     "JOIN",
      "DELETE",
+     "JOIN",
+     "index",
      "izoh"
     ],
-    "c": 0,
+    "c": 2,
     "w": "Index tez-tez qidiriladigan ustunda so'rovni tezlashtiradi.",
     "level": "scenario"
    }
@@ -1153,35 +1153,35 @@
     "q": "ORM nima beradi?",
     "a": [
      "faqat CSS",
-     "tip-xavfsiz DB so'rovlari + migratsiya",
+     "log",
      "tezroq internet",
-     "log"
+     "tip-xavfsiz DB so'rovlari + migratsiya"
     ],
-    "c": 1,
+    "c": 3,
     "w": "ORM bazani tiplangan obyekt sifatida ko'rsatadi va migratsiyani boshqaradi.",
     "level": "easy"
    },
    {
     "q": "Serverless uchun yengilligi bilan ajralib turadigan ORM?",
     "a": [
-     "Prisma",
      "Drizzle",
+     "Prisma",
      "TypeORM",
      "Sequelize"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Drizzle juda yengil (~280KB) - serverless/edge uchun mos.",
     "level": "practical"
    },
    {
     "q": "ORM o'rganishdan oldin nimani bilish kerak?",
     "a": [
-     "SQL asoslarini",
      "CSS",
+     "SQL asoslarini",
      "Docker",
      "GraphQL"
     ],
-    "c": 0,
+    "c": 1,
     "w": "ORM SQL'ni yashiradi; asosini bilsang muammoni tushunasan.",
     "level": "scenario"
    }
@@ -1377,11 +1377,11 @@
     "q": "Redis asosan nima uchun?",
     "a": [
      "asosiy saqlash",
-     "tez kesh / sessiya / navbat",
      "frontend",
+     "tez kesh / sessiya / navbat",
      "CSS"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Redis xotirada - kesh, sessiya, rate limit, navbat uchun.",
     "level": "easy"
    },
@@ -1389,23 +1389,23 @@
     "q": "Moslashuvchan, sxemasiz hujjat bazasi?",
     "a": [
      "PostgreSQL",
-     "MongoDB",
+     "MySQL",
      "Redis",
-     "MySQL"
+     "MongoDB"
     ],
-    "c": 1,
+    "c": 3,
     "w": "MongoDB - JSON hujjatlar, moslashuvchan sxema.",
     "level": "practical"
    },
    {
     "q": "Redis'ni qachon qo'shish kerak?",
     "a": [
-     "doim birinchi",
      "tezlik muammosi paydo bo'lganda",
+     "doim birinchi",
      "hech qachon",
      "frontend uchun"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Erta optimallashtirma - real ehtiyoj bo'lganda kesh qo'sh.",
     "level": "scenario"
    }
@@ -1594,11 +1594,11 @@
     "q": "\"Nimaga ruxsati bor?\" - bu nima?",
     "a": [
      "authentication",
-     "authorization",
      "encryption",
+     "authorization",
      "validation"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Authorization - huquq/rol; authentication - kimligi.",
     "level": "practical"
    },
@@ -1606,11 +1606,11 @@
     "q": "Maxfiy kalit qayerda?",
     "a": [
      "kodda",
-     ".env / secret manager",
+     "README'da",
      "frontend'da",
-     "README'da"
+     ".env / secret manager"
     ],
-    "c": 1,
+    "c": 3,
     "w": ".env va secret-manager; kodga yozilmaydi, git'ga qo'shilmaydi.",
     "level": "scenario"
    }
@@ -1769,12 +1769,12 @@
    {
     "q": "Biznes mantiq qaysi qatlamda?",
     "a": [
-     "controller",
      "service",
+     "controller",
      "repository",
      "middleware"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Service - biznes mantiq; controller - HTTP; repository - DB.",
     "level": "easy"
    },
@@ -1794,11 +1794,11 @@
     "q": "Nega mantiqni HTTP'dan ajratamiz?",
     "a": [
      "chiroyli ko'rinadi",
-     "test oson + framework'ga bog'liq emas",
      "tezroq",
+     "test oson + framework'ga bog'liq emas",
      "shart emas"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Ajratilgan mantiq sinaladi va framework almashsa ham qoladi.",
     "level": "scenario"
    }
@@ -2006,11 +2006,11 @@
     "q": "Over-fetching'ni kamaytiradigan uslub?",
     "a": [
      "REST",
-     "GraphQL",
+     "FTP",
      "SOAP",
-     "FTP"
+     "GraphQL"
     ],
-    "c": 1,
+    "c": 3,
     "w": "GraphQL'da mijoz aynan kerakli maydonni so'raydi.",
     "level": "easy"
    },
@@ -2194,11 +2194,11 @@
     "q": "Eng ko'p qaysi test bo'lishi kerak?",
     "a": [
      "E2E",
-     "unit",
      "manual",
+     "unit",
      "hech qanday"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Test piramidasi: ko'p unit, kamroq integration, eng kam E2E.",
     "level": "easy"
    },
@@ -2206,23 +2206,23 @@
     "q": "Strukturali log nima?",
     "a": [
      "console.log matn",
-     "JSON (vaqt, daraja, id)",
+     "CSS",
      "rasm",
-     "CSS"
+     "JSON (vaqt, daraja, id)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "JSON log qidirish/tahlil uchun qulay (pino/winston).",
     "level": "practical"
    },
    {
     "q": "Bo'sh catch (xatoni yutish) nega yomon?",
     "a": [
-     "tez",
      "muammo ko'rinmay qoladi",
+     "tez",
      "xavfsiz",
      "yaxshi amaliyot"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Ko'rinmaydigan xato eng xavfli - logla va kuzat.",
     "level": "scenario"
    }
@@ -2422,11 +2422,11 @@
     "q": "Horizontal masshtablash nimani talab qiladi?",
     "a": [
      "kuchliroq CPU",
-     "stateless dizayn + load balancer",
      "katta disk",
+     "stateless dizayn + load balancer",
      "ko'proq RAM"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Ko'p nusxa ishlashi uchun ilova stateless bo'lishi kerak.",
     "level": "practical"
    },
@@ -2434,11 +2434,11 @@
     "q": "Microservices'ni qachon tanlash kerak?",
     "a": [
      "doim, boshidan",
-     "haqiqiy ehtiyoj bo'lganda",
+     "kichik loyihada",
      "hech qachon",
-     "kichik loyihada"
+     "haqiqiy ehtiyoj bo'lganda"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Monolit ko'p loyihaga yetadi; murakkablikni ehtiyojga qarab qo'sh.",
     "level": "scenario"
    }

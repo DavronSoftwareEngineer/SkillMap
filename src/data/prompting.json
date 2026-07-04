@@ -114,12 +114,12 @@
    {
     "q": "LLM aslida nima qiladi?",
     "a": [
-     "faktlarni bazadan oladi",
      "keyingi so'zni bashorat qilib davom ettiradi",
+     "faktlarni bazadan oladi",
      "internetni qidiradi",
      "hisoblaydi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "LLM - bashoratli til modeli, baza emas.",
     "level": "easy"
    },
@@ -139,11 +139,11 @@
     "q": "Hallucination nima?",
     "a": [
      "tezlik xatosi",
-     "AI ishonchli ohangda noto'g'ri ma'lumot berishi",
      "internet uzilishi",
+     "AI ishonchli ohangda noto'g'ri ma'lumot berishi",
      "imlo xatosi"
     ],
-    "c": 1,
+    "c": 2,
     "w": "AI to'qib chiqarishi mumkin - tekshir.",
     "level": "practical"
    },
@@ -151,11 +151,11 @@
     "q": "Eng yaxshi yondashuv:",
     "a": [
      "bir so'z bilan so'rash",
-     "aniq, kontekstli, formatli so'rash",
+     "javobni kutish",
      "ko'p marta so'rash",
-     "javobni kutish"
+     "aniq, kontekstli, formatli so'rash"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Aniqlik + kontekst - kalit.",
     "level": "scenario"
    }
@@ -387,12 +387,12 @@
    {
     "q": "Kuchli promptning 4 elementi?",
     "a": [
-     "salom, savol, rahmat, xayr",
      "vazifa, kontekst, format, cheklov",
+     "salom, savol, rahmat, xayr",
      "model, kalit, narx, til",
      "ism, yosh, kasb, joy"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Task, Context, Format, Constraints.",
     "level": "easy"
    },
@@ -412,11 +412,11 @@
     "q": "Aniqlik nimani kamaytiradi?",
     "a": [
      "tezlikni",
-     "modelning taxminini (xato ehtimoli)",
      "narxni",
+     "modelning taxminini (xato ehtimoli)",
      "uzunlikni"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Kamroq taxmin - kamroq xato.",
     "level": "practical"
    },
@@ -424,11 +424,11 @@
     "q": "Qaysi fe'l aniqroq?",
     "a": [
      "do something",
-     "summarize in 3 points",
+     "make it good",
      "help",
-     "make it good"
+     "summarize in 3 points"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Aniq fe'l + format.",
     "level": "scenario"
    }
@@ -657,12 +657,12 @@
    {
     "q": "\"Act as a teacher\" - bu nima?",
     "a": [
-     "format",
      "rol (persona) berish",
+     "format",
      "cheklov",
      "til"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Rol/persona - javob uslubini belgilaydi.",
     "level": "easy"
    },
@@ -682,11 +682,11 @@
     "q": "Salbiy cheklov misoli:",
     "a": [
      "Use jargon",
-     "Do not use jargon",
      "Be long",
+     "Do not use jargon",
      "Add more"
     ],
-    "c": 1,
+    "c": 2,
     "w": "\"Do not ...\" - nimani qilmaslik.",
     "level": "practical"
    },
@@ -694,11 +694,11 @@
     "q": "Barqaror javob uchun:",
     "a": [
      "ko'p narsa birga so'rash",
-     "rol+format avval, keyin vazifa",
+     "takror so'rash",
      "qisqa so'rash",
-     "takror so'rash"
+     "rol+format avval, keyin vazifa"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Tuzilgan prompt barqaror natija beradi.",
     "level": "scenario"
    }
@@ -936,12 +936,12 @@
    {
     "q": "Few-shot nima?",
     "a": [
-     "misolsiz so'rash",
      "bir necha misol bilan o'rgatish",
+     "misolsiz so'rash",
      "tez so'rash",
      "qisqa so'rash"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Bir necha namuna -> naqsh.",
     "level": "easy"
    },
@@ -961,11 +961,11 @@
     "q": "Delimiter nimaga kerak?",
     "a": [
      "bezak",
-     "matn va ko'rsatmani ajratish",
      "tezlik",
+     "matn va ko'rsatmani ajratish",
      "narx"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Aralashib ketmaslik uchun.",
     "level": "practical"
    },
@@ -973,11 +973,11 @@
     "q": "Eng kuchli texnikalardan biri:",
     "a": [
      "uzun yozish",
-     "few-shot (sifatli misollar)",
+     "qisqa so'rash",
      "ko'p so'rash",
-     "qisqa so'rash"
+     "few-shot (sifatli misollar)"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Sifatli misol - keskin yaxshilaydi.",
     "level": "scenario"
    }
@@ -1206,12 +1206,12 @@
    {
     "q": "Iteratsiya nima?",
     "a": [
-     "bir martada mukammal",
      "javobni baholab, tuzatib qayta so'rash",
+     "bir martada mukammal",
      "tez so'rash",
      "modelni almashtirish"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Takroriy yaxshilash.",
     "level": "easy"
    },
@@ -1231,11 +1231,11 @@
     "q": "Bir vaqtda nechta narsani o'zgartirgan ma'qul?",
     "a": [
      "hammasini",
-     "bittani (nimasi ishlaganini bilish uchun)",
      "ikkitani har doim",
+     "bittani (nimasi ishlaganini bilish uchun)",
      "hech narsani"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Bitta o'zgartirsang - sababini bilasan.",
     "level": "practical"
    },
@@ -1243,11 +1243,11 @@
     "q": "Modeldan o'zini yaxshilashni so'rash mumkinmi?",
     "a": [
      "yo'q",
-     "ha - \"improve, then rewrite\"",
+     "faqat inglizchada",
      "faqat kodda",
-     "faqat inglizchada"
+     "ha - \"improve, then rewrite\""
     ],
-    "c": 1,
+    "c": 3,
     "w": "Model o'z javobini tahlil qila oladi.",
     "level": "scenario"
    }
@@ -1378,7 +1378,7 @@
     },
     "title": "RAG: kontekstga tayangan javob",
     "lang": "text",
-    "code": "Answer the question using ONLY the context below.\nIf the answer is not in the context, say \"I don't know\" - do not guess.\n\nContext:\n\"\"\"\nSkillMap kursi 2026-yil iyulda yangilandi. Prompt kursi 6 bo'limdan iborat.\n\"\"\"\n\nQuestion: Prompt kursi nechta bo'limdan iborat?"
+    "code": "Answer the question using ONLY the context below.\nIf the answer is not in the context, say \"I don't know\" - do not guess.\n\nContext:\n\"\"\"\nSkillMap kursi 2026-yil iyulda yangilandi. Prompt kursi 7 bo'limdan iborat.\n\"\"\"\n\nQuestion: Prompt kursi nechta bo'limdan iborat?"
    },
    {
     "heading": {
@@ -1494,12 +1494,12 @@
    {
     "q": "RAG (retrieval-augmented generation) nima qiladi?",
     "a": [
-     "modelni tezlashtiradi",
      "javobdan oldin tashqi manbadan ma'lumot topib, kontekstga qo'shadi",
+     "modelni tezlashtiradi",
      "temperaturani oshiradi",
      "promptni qisqartiradi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "RAG tashqi bilimni topib, modelga kontekst sifatida beradi.",
     "level": "easy"
    },
@@ -1519,11 +1519,11 @@
     "q": "Structured output (JSON schema) nega foydali?",
     "a": [
      "chiroyli ko'rinadi",
-     "natijani to'g'ridan-to'g'ri dasturda ishlatish mumkin (aniq kalitlar/tiplar)",
      "tezroq",
+     "natijani to'g'ridan-to'g'ri dasturda ishlatish mumkin (aniq kalitlar/tiplar)",
      "arzonroq"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Qat'iy sxema natijani mashina o'qiy oladigan qiladi.",
     "level": "practical"
    },
@@ -1531,11 +1531,11 @@
     "q": "RAG'da to'qimani nima kamaytiradi?",
     "a": [
      "uzun prompt",
-     "\"faqat kontekstdan javob ber, bo'lmasa bilmayman de\" qoidasi",
+     "ko'p vosita",
      "yuqori temperature",
-     "ko'p vosita"
+     "\"faqat kontekstdan javob ber, bo'lmasa bilmayman de\" qoidasi"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Kontekstga bog'lash va bilmaslikka ruxsat to'qimani kamaytiradi.",
     "level": "scenario"
    }
@@ -1822,12 +1822,12 @@
    {
     "q": "AI javobini nima qilish kerak?",
     "a": [
-     "ko'r-ko'rona ishonish",
      "muhim narsani tekshirish",
+     "ko'r-ko'rona ishonish",
      "e'tibor bermaslik",
      "saqlash"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Verify - AI xato qilishi mumkin.",
     "level": "easy"
    },
@@ -1847,11 +1847,11 @@
     "q": "Prompt injection nima?",
     "a": [
      "tezlashtirish",
-     "tashqi matndagi yashirin ko'rsatma modelni chalg'itishi",
      "imlo",
+     "tashqi matndagi yashirin ko'rsatma modelni chalg'itishi",
      "narx"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Ishonchsiz manbaga ehtiyot bo'l.",
     "level": "practical"
    },
@@ -1859,23 +1859,23 @@
     "q": "AI bilan eng yaxshi natija:",
     "a": [
      "faqat AI'ga tayanish",
-     "to'g'ri prompt + tanqidiy fikr",
+     "uzun yozish",
      "ko'p so'rash",
-     "uzun yozish"
+     "to'g'ri prompt + tanqidiy fikr"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Sen boshqarasan, AI yordam beradi.",
     "level": "scenario"
    },
    {
     "q": "Qaysi belgi hallucination qizil bayrog'i?",
     "a": [
-     "manba so'ralganda ishlaydigan havola berishi",
      "ishonchli ohang + manbasiz aniq raqam/soxta iqtibos",
+     "manba so'ralganda ishlaydigan havola berishi",
      "\"bilmayman\" deyishi",
      "qisqa javob berishi"
     ],
-    "c": 1,
+    "c": 0,
     "w": "Ishonchli ohang + tekshirib bo'lmaydigan aniq fakt - shubhali.",
     "level": "practical"
    },
@@ -1895,11 +1895,11 @@
     "q": "JSON ekstraksiyada to'qimani nima kamaytiradi?",
     "a": [
      "uzun prompt",
-     "aniq kalitlar + \"missing bo'lsa null, qiymat to'qima\" qoidasi",
      "ko'p misol",
+     "aniq kalitlar + \"missing bo'lsa null, qiymat to'qima\" qoidasi",
      "tez so'rash"
     ],
-    "c": 1,
+    "c": 2,
     "w": "Qat'iy sxema va null qoidasi modelni cheklaydi.",
     "level": "practical"
    },
@@ -1907,11 +1907,11 @@
     "q": "Kimdir real odamning yuzi bilan soxta (deepfake) video so'rasa:",
     "a": [
      "yaratib berasan",
-     "rad etasan - zarar va ko'pincha noqonuniy",
+     "tekshirmay yuborasan",
      "yarmini qilasan",
-     "tekshirmay yuborasan"
+     "rad etasan - zarar va ko'pincha noqonuniy"
     ],
-    "c": 1,
+    "c": 3,
     "w": "Soxta/zararli kontent yaratish - etikasiz va ko'p joyda noqonuniy.",
     "level": "scenario"
    }
