@@ -2110,5 +2110,336 @@
     "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "TG11",
+  "title": "Advanced Production Architecture",
+  "sub": "Senior stack",
+  "coord": "Production / TG11",
+  "eyebrow": "11 / ADVANCED / PRODUCTION STACK",
+  "mtitle": "Advanced Telegram architecture: grammY, Fastify, PostgreSQL, Redis, BullMQ va OpenTelemetry",
+  "lede": "Bu modul Telegram Bot kursini eng kuchli production stackga olib chiqadi: TypeScript + grammY + Fastify + PostgreSQL + Redis + Prisma/Drizzle + BullMQ + Docker + OpenTelemetry.",
+  "doc": "<div class='prose'>\n<h3>Nega bu stack aynan professional bot uchun</h3>\n<p>Oddiy bot uchun bitta fayl yetadi. Lekin admin, payment, subscription, Mini App, webhook va monitoring bo'lgan bot allaqachon kichik SaaS mahsulotga aylanadi. Shuning uchun architecture aniq bo'lishi kerak: bot logic, webhook server, database, queue, cache, observability va deploy bir-biridan ajratiladi.</p>\n<h3>Asosiy stack</h3>\n<div class=\"chips\">\n<span class=\"chip t\">TypeScript</span><span class=\"chip t\">grammY</span><span class=\"chip t\">Fastify</span>\n<span class=\"chip\">PostgreSQL</span><span class=\"chip\">Redis</span><span class=\"chip\">Prisma / Drizzle</span>\n<span class=\"chip\">BullMQ</span><span class=\"chip\">Docker</span><span class=\"chip\">OpenTelemetry</span>\n</div>\n<p><strong>grammY</strong> update, command, callback, middleware va session logicni boshqaradi. <strong>Fastify</strong> webhook, healthcheck va Mini App API uchun ishlaydi. <strong>PostgreSQL</strong> user/order/payment/subscription/audit kabi doimiy data uchun. <strong>Redis</strong> session, rate limit, cache va queue uchun. <strong>BullMQ</strong> og'ir yoki retry kerak bo'ladigan joblar uchun. <strong>OpenTelemetry</strong> log, metric va trace orqali productionda nima bo'layotganini ko'rsatadi.</p>\n<h3>Professional arxitektura</h3>\n<div class=\"tree\">Telegram\n  -> Fastify webhook /webhook/:secret\n  -> grammY bot middleware\n  -> modules: users, admin, orders, payments, subscriptions, mini-app\n  -> PostgreSQL: durable data\n  -> Redis: session, rate-limit, cache, queue\n  -> BullMQ worker: notifications, payment reconciliation, reports\n  -> OpenTelemetry: traces, metrics, logs\n  -> Docker Compose: bot, worker, postgres, redis, nginx</div>\n<h3>Qachon Prisma, qachon Drizzle?</h3>\n<p><strong>Prisma</strong> tez start, migration va developer experience uchun zo'r. <strong>Drizzle</strong> yengilroq, SQLga yaqinroq va nazorat kuchliroq. Kursda ikkalasi ko'rsatiladi: boshlash uchun Prisma, production performance va SQL nazorati kerak bo'lsa Drizzle.</p>\n<h3>Reliability qoidalari</h3>\n<div class=\"exlist\">\n<div class=\"ex\"><b>Idempotency</b><span>Telegram retry yoki payment callback ikki marta kelsa ham biznes action bir marta bajarilsin</span></div>\n<div class=\"ex\"><b>Queue</b><span>notification, report, payment reconciliation kabi ishlar HTTP/webhookni bloklamasin</span></div>\n<div class=\"ex\"><b>Observability</b><span>har update, command, payment va DB query request_id/update_id bilan kuzatilsin</span></div>\n<div class=\"ex\"><b>Security</b><span>webhook secret token, Mini App initData verify, admin role guard, rate limit</span></div>\n</div>\n<figure class='svgfig'><svg viewBox='0 0 700 205' role='img' aria-label='Advanced Telegram production architecture'>\n<rect class='boxa' x='18' y='70' width='115' height='48' rx='8'/><text x='76' y='92' text-anchor='middle'>Telegram</text><text x='76' y='108' text-anchor='middle' class='muted'>updates</text>\n<path class='edga' d='M133 94 H175' marker-end='url(#arTg11)'/>\n<rect class='box' x='175' y='70' width='118' height='48' rx='8'/><text x='234' y='92' text-anchor='middle'>Fastify</text><text x='234' y='108' text-anchor='middle' class='muted'>webhook/API</text>\n<path class='edga' d='M293 94 H335' marker-end='url(#arTg11)'/>\n<rect class='boxa' x='335' y='70' width='118' height='48' rx='8'/><text x='394' y='92' text-anchor='middle'>grammY</text><text x='394' y='108' text-anchor='middle' class='muted'>bot logic</text>\n<path class='edge' d='M394 118 V150 H165' marker-end='url(#arTg11)'/>\n<rect class='box' x='80' y='150' width='150' height='42' rx='8'/><text x='155' y='176' text-anchor='middle'>PostgreSQL</text>\n<path class='edge' d='M394 118 V150 H350' marker-end='url(#arTg11)'/>\n<rect class='box' x='305' y='150' width='120' height='42' rx='8'/><text x='365' y='176' text-anchor='middle'>Redis</text>\n<path class='edge' d='M453 94 H500' marker-end='url(#arTg11)'/>\n<rect class='box' x='500' y='70' width='175' height='48' rx='8'/><text x='587' y='92' text-anchor='middle'>BullMQ worker</text><text x='587' y='108' text-anchor='middle' class='muted'>jobs</text>\n<text x='350' y='35' text-anchor='middle' class='accent'>OpenTelemetry + Docker + healthcheck + alerts</text>\n<defs><marker id='arTg11' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Advanced production stack: Fastify webhook, grammY bot logic, durable DB, Redis/BullMQ va observability.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Production folder structure",
+     "p": "Bot bitta fayl emas, modul va infra qatlamlariga ajratiladi."
+    },
+    "title": "bot/structure.txt",
+    "lang": "txt",
+    "code": "bot/\n  src/\n    bot.ts\n    server.ts\n    config.ts\n    modules/\n      users/\n      admin/\n      orders/\n      payments/\n      subscriptions/\n      notifications/\n      mini-app/\n    infra/\n      db.ts\n      redis.ts\n      queue.ts\n      logger.ts\n      telemetry.ts\n    middlewares/\n      session.ts\n      rate-limit.ts\n      idempotency.ts\n      error-handler.ts\n    workers/\n      notification.worker.ts\n      payment-reconcile.worker.ts"
+   },
+   {
+    "heading": {
+     "h": "Fastify + grammY webhook",
+     "p": "Fastify webhook/API server, grammY esa bot logic."
+    },
+    "title": "src/server.ts",
+    "lang": "ts",
+    "code": "import Fastify from \"fastify\";\nimport { webhookCallback } from \"grammy\";\nimport { bot } from \"./bot\";\nimport { env } from \"./config\";\n\nexport const app = Fastify({ logger: true });\n\napp.get(\"/health\", async () => ({ ok: true }));\n\napp.post(`/webhook/${env.WEBHOOK_PATH}`, async (req, reply) => {\n  const got = req.headers[\"x-telegram-bot-api-secret-token\"];\n  if (got !== env.WEBHOOK_SECRET) return reply.code(401).send({ error: \"unauthorized\" });\n  return webhookCallback(bot, \"fastify\")(req, reply);\n});\n\nawait app.listen({ port: env.PORT, host: \"0.0.0.0\" });"
+   },
+   {
+    "heading": {
+     "h": "Prisma durable data",
+     "p": "User, order, payment va audit log Postgresda turadi."
+    },
+    "title": "prisma/schema.prisma",
+    "lang": "prisma",
+    "code": "model User {\n  id         String   @id @default(cuid())\n  telegramId BigInt  @unique\n  role       Role    @default(USER)\n  orders     Order[]\n  createdAt  DateTime @default(now())\n}\n\nmodel Order {\n  id        String      @id @default(cuid())\n  userId    String\n  status    OrderStatus @default(PENDING)\n  amount    Int\n  payload   String      @unique\n  user      User        @relation(fields: [userId], references: [id])\n  createdAt DateTime    @default(now())\n}\n\nenum Role { USER ADMIN }\nenum OrderStatus { PENDING PAID DELIVERED CANCELED REFUNDED }"
+   },
+   {
+    "heading": {
+     "h": "Drizzle alternative",
+     "p": "SQLga yaqinroq va yengilroq variant."
+    },
+    "title": "src/infra/schema.drizzle.ts",
+    "lang": "ts",
+    "code": "import { pgEnum, pgTable, text, timestamp, bigint } from \"drizzle-orm/pg-core\";\n\nexport const role = pgEnum(\"role\", [\"USER\", \"ADMIN\"]);\n\nexport const users = pgTable(\"users\", {\n  id: text(\"id\").primaryKey(),\n  telegramId: bigint(\"telegram_id\", { mode: \"bigint\" }).unique().notNull(),\n  role: role(\"role\").default(\"USER\").notNull(),\n  createdAt: timestamp(\"created_at\").defaultNow().notNull(),\n});"
+   },
+   {
+    "heading": {
+     "h": "Redis session + BullMQ queue",
+     "p": "Session va joblar webhookni bloklamaydi."
+    },
+    "title": "src/infra/queue.ts",
+    "lang": "ts",
+    "code": "import { Queue, Worker } from \"bullmq\";\nimport IORedis from \"ioredis\";\nimport { env } from \"../config\";\n\nexport const redis = new IORedis(env.REDIS_URL, { maxRetriesPerRequest: null });\n\nexport const notificationQueue = new Queue(\"notifications\", { connection: redis });\n\nexport async function enqueueNotification(userId: string, text: string) {\n  return notificationQueue.add(\"send\", { userId, text }, {\n    attempts: 5,\n    backoff: { type: \"exponential\", delay: 1000 },\n    removeOnComplete: 1000,\n  });\n}\n\nnew Worker(\"notifications\", async (job) => {\n  // bot.api.sendMessage(...) service orqali chaqiriladi\n  console.log(\"send notification\", job.data);\n}, { connection: redis });"
+   },
+   {
+    "heading": {
+     "h": "OpenTelemetry setup",
+     "p": "Webhook, DB va joblarni trace qilish."
+    },
+    "title": "src/infra/telemetry.ts",
+    "lang": "ts",
+    "code": "import { NodeSDK } from \"@opentelemetry/sdk-node\";\nimport { getNodeAutoInstrumentations } from \"@opentelemetry/auto-instrumentations-node\";\n\nexport const telemetry = new NodeSDK({\n  serviceName: \"telegram-production-bot\",\n  instrumentations: [getNodeAutoInstrumentations()],\n});\n\ntelemetry.start();"
+   },
+   {
+    "heading": {
+     "h": "Docker Compose",
+     "p": "Bot, worker, Postgres va Redis bitta muhitda turadi."
+    },
+    "title": "docker-compose.yml",
+    "lang": "yaml",
+    "code": "services:\n  bot:\n    build: .\n    command: npm run start\n    env_file: .env\n    depends_on: [postgres, redis]\n  worker:\n    build: .\n    command: npm run worker\n    env_file: .env\n    depends_on: [postgres, redis]\n  postgres:\n    image: postgres:16\n    environment:\n      POSTGRES_DB: bot\n      POSTGRES_PASSWORD: postgres\n  redis:\n    image: redis:7-alpine"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "tg11-1",
+    "html": "Fastify + grammY webhook server yozildi",
+    "crit": "secret token tekshiruvi va /health endpoint bor"
+   },
+   {
+    "id": "tg11-2",
+    "html": "PostgreSQL schema user/order/payment/subscription/audit uchun loyihalandi",
+    "crit": "durable data sessiondan ajratilgan"
+   },
+   {
+    "id": "tg11-3",
+    "html": "Prisma yoki Drizzle tanlovi hujjatlandi",
+    "crit": "nima uchun tanlangani va trade-off yozilgan"
+   },
+   {
+    "id": "tg11-4",
+    "html": "Redis session/rate limit/cache uchun ulandi",
+    "crit": "productionda in-memory session ishlatilmaydi"
+   },
+   {
+    "id": "tg11-5",
+    "html": "BullMQ queue notification yoki payment reconciliation uchun qo'shildi",
+    "crit": "job retry, backoff va failure state bor"
+   },
+   {
+    "id": "tg11-6",
+    "html": "Idempotency middleware payment va update retry uchun yozildi",
+    "crit": "takror update/order biznes actionni ikki marta bajarmaydi"
+   },
+   {
+    "id": "tg11-7",
+    "html": "OpenTelemetry instrumentation qo'shildi",
+    "crit": "webhook duration, command, DB yoki queue trace ko'rinadi"
+   },
+   {
+    "id": "tg11-8",
+    "html": "Docker Compose bot, worker, postgres, redis servislarini ko'tardi",
+    "crit": "fresh clone bitta buyruq bilan lokal turadi"
+   },
+   {
+    "id": "tg11-9",
+    "html": "Production architecture README va diagram tayyorlandi",
+    "crit": "boshqa developer stackni 30 daqiqada tushunadi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://grammy.dev/",
+    "title": "grammY docs",
+    "desc": "Bot framework va middleware.",
+    "host": "grammy.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://fastify.dev/docs/latest/",
+    "title": "Fastify docs",
+    "desc": "Webhook/API server.",
+    "host": "fastify.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.postgresql.org/docs/",
+    "title": "PostgreSQL docs",
+    "desc": "Durable database.",
+    "host": "postgresql.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://redis.io/docs/latest/",
+    "title": "Redis docs",
+    "desc": "Session, cache va queue.",
+    "host": "redis.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.bullmq.io/",
+    "title": "BullMQ docs",
+    "desc": "Redis queue va workers.",
+    "host": "docs.bullmq.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.prisma.io/docs",
+    "title": "Prisma docs",
+    "desc": "ORM va migrations.",
+    "host": "prisma.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://orm.drizzle.team/docs/overview",
+    "title": "Drizzle docs",
+    "desc": "TypeScript SQL toolkit.",
+    "host": "orm.drizzle.team"
+   },
+   {
+    "type": "doc",
+    "url": "https://opentelemetry.io/docs/languages/js/",
+    "title": "OpenTelemetry JS",
+    "desc": "Tracing, metrics va instrumentation.",
+    "host": "opentelemetry.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.docker.com/compose/",
+    "title": "Docker Compose",
+    "desc": "Production-like local environment.",
+    "host": "docs.docker.com"
+   }
+  ],
+  "project": {
+   "tag": "Advanced / Production / Architecture",
+   "title": "Production Telegram SaaS Bot Architecture",
+   "desc": "TypeScript + grammY + Fastify + PostgreSQL + Redis + Prisma/Drizzle + BullMQ + Docker + OpenTelemetry asosidagi production bot.",
+   "features": [
+    "Fastify webhook/API server",
+    "grammY command/callback middleware",
+    "PostgreSQL durable domain data",
+    "Redis session/rate-limit/cache",
+    "BullMQ background workers",
+    "Prisma or Drizzle data access",
+    "OpenTelemetry tracing and metrics",
+    "Docker Compose local production stack"
+   ],
+   "rubric": [
+    "Webhook secret bilan himoyalangan.",
+    "Bot logic, API server, DB va worker qatlamlari ajratilgan.",
+    "Payment/order/idempotency flow bor.",
+    "Queue retry/failure handling bilan ishlaydi.",
+    "OpenTelemetry yoki structured monitoring dalili bor.",
+    "Docker Compose fresh clone'da ishlaydi.",
+    "Architecture README trade-offlarni tushuntiradi."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Fastify bu stackda nima vazifa bajaradi?",
+    "a": [
+     "webhook/API server",
+     "database engine",
+     "Telegram client",
+     "CSS framework"
+    ],
+    "c": 0,
+    "w": "Fastify Telegram webhook, healthcheck va Mini App API endpointlari uchun server vazifasini bajaradi.",
+    "level": "easy"
+   },
+   {
+    "q": "PostgreSQL va Redis farqi nima?",
+    "a": [
+     "PostgreSQL durable data, Redis tezkor vaqtinchalik/session/queue",
+     "ikkalasi ham faqat CSS",
+     "Redis paymentni doimiy saqlaydi",
+     "PostgreSQL faqat cache"
+    ],
+    "c": 0,
+    "w": "Durable biznes data Postgresda, tezkor vaqtinchalik state Redisda saqlanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "BullMQ nima uchun kerak?",
+    "a": [
+     "og'ir yoki retry kerak joblarni webhookdan ajratish uchun",
+     "font tanlash uchun",
+     "Mini App ranglari uchun",
+     "tokenni ochish uchun"
+    ],
+    "c": 0,
+    "w": "Queue notification, report, payment reconciliation kabi ishlarni background workerga chiqaradi.",
+    "level": "scenario"
+   },
+   {
+    "q": "OpenTelemetry nimani hal qiladi?",
+    "a": [
+     "productiondagi request/job trace va metricsni ko'rish",
+     "DB schema yaratish",
+     "BotFather token berish",
+     "HTML yozish"
+    ],
+    "c": 0,
+    "w": "OpenTelemetry webhook, DB query, queue job va xatolarni kuzatishga yordam beradi.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Productionda in-memory session nimaga xavfli?",
+    "options": [
+     "restart/scale paytida yo'qoladi",
+     "tezroq bo'lgani uchun",
+     "Postgresga aylanadi",
+     "OpenTelemetryni o'chiradi"
+    ],
+    "correct": 0,
+    "why": "Bir nechta instance yoki restart bo'lsa memory session yo'qoladi; Redis/DB storage kerak."
+   },
+   {
+    "type": "gap",
+    "q": "Redis asosidagi Node.js queue kutubxonasi: ___",
+    "answers": [
+     "BullMQ",
+     "bullmq"
+    ],
+    "hint": "B bilan boshlanadi",
+    "why": "BullMQ Redis ustida job queue va worker beradi."
+   },
+   {
+    "type": "choice",
+    "q": "Prisma va Drizzle tanlovida asosiy trade-off qaysi?",
+    "options": [
+     "Prisma DX kuchli, Drizzle SQLga yaqin va yengil",
+     "ikkalasi CSS framework",
+     "Drizzle browser xarita",
+     "Prisma queue"
+    ],
+    "correct": 0,
+    "why": "Ikkalasi ham ishlaydi, tanlov nazorat va developer experience balansiga bog'liq."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "durable data",
+    "uz": "restartdan keyin ham yo'qolmaydigan data",
+    "ex": "Order va payment durable data bo'lib Postgresda turadi."
+   },
+   {
+    "w": "idempotency",
+    "uz": "takror chaqirilsa ham natija bir marta bo'lishi",
+    "ex": "Payment callback idempotent bo'lishi shart."
+   },
+   {
+    "w": "trace",
+    "uz": "request yoki jobning tizim bo'ylab yo'li",
+    "ex": "Trace webhookdan DB querygacha yo'lni ko'rsatadi."
+   },
+   {
+    "w": "worker",
+    "uz": "background joblarni bajaruvchi alohida process",
+    "ex": "Worker notification queue'ni ishlaydi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Production bot flow",
+    "rule": "Telegram -> Fastify -> grammY -> services -> Postgres/Redis/BullMQ -> telemetry.",
+    "ex": "Webhook update Fastifyga keladi, grammY handler ishlaydi, service DBga yozadi, telemetry trace beradi."
+   },
+   {
+    "topic": "Data placement",
+    "rule": "Durable data Postgresda, temporary/high-speed state Redisda.",
+    "ex": "Order Postgresda, rate limit counter Redisda turadi."
+   }
+  ]
  }
 ]
