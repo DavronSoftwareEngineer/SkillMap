@@ -47,15 +47,15 @@ export interface QuizQuestion {
   level?: "easy" | "practical" | "scenario";
 }
 export interface Exercise {
-  type: "gap" | "choice" | "listen";
+  type: "gap" | "choice" | "listen" | "speak";
   q: string;
   answers?: string[];
   options?: string[];
   correct?: number;
   hint?: string;
   why: string;
-  say?: string; // "listen" turi uchun: ovoz chiqarib o'qiladigan matn
-  lang?: string; // "listen" turi uchun til (en-US / ru-RU)
+  say?: string; // "listen": ovoz o'qiydigan matn | "speak": talaffuz qilinadigan (nishon) matn
+  lang?: string; // "listen"/"speak" uchun til (en-US / ru-RU)
 }
 export interface Vocab {
   w: string;

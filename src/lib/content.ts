@@ -3,7 +3,7 @@
 import type { Module } from "../types";
 import type { CourseMeta } from "../data/courses";
 
-const EXERCISE_TYPES = ["gap", "choice", "listen"];
+const EXERCISE_TYPES = ["gap", "choice", "listen", "speak"];
 
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
@@ -67,6 +67,11 @@ export function validateModules(courseId: string, modules: Module[]): string[] {
           e.correct >= e.options.length
         ) {
           err(where, `exercises[${ei}].correct variantlar chegarasidan tashqarida`);
+        }
+      } else if (e.type === "speak") {
+        // speak: talaffuz qilinadigan nishon matn (say) shart, answers ixtiyoriy
+        if (!isNonEmptyString(e.say)) {
+          err(where, `exercises[${ei}].say (talaffuz qilinadigan matn) bo'sh`);
         }
       } else {
         // gap / listen javob(lar)ni talab qiladi

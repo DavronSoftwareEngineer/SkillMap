@@ -2196,6 +2196,27 @@
     "title": "BBC Learning English",
     "desc": "Kundalik tinglash mashqi",
     "host": "bbc.co.uk"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+    "title": "BBC 6 Minute English",
+    "desc": "Real aksent, qisqa audio + transkript - kunlik tinglash.",
+    "host": "bbc.co.uk"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.ted.com/talks",
+    "title": "TED Talks",
+    "desc": "Turli mavzu/aksent, transkript va tezlik boshqaruvi bilan.",
+    "host": "ted.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.youtube.com/@ieltsofficial",
+    "title": "IELTS Official (YouTube)",
+    "desc": "Rasmiy IELTS listening namuna va strategiyalari.",
+    "host": "youtube.com"
    }
   ],
   "project": {
@@ -2932,7 +2953,7 @@
   "eyebrow": "08 / IELTS Writing",
   "mtitle": "Writing - Task 1 + Task 2",
   "lede": "2 ta vazifa, 60 daqiqa. <strong>Task 2 (esse) ikki baravar muhim.</strong> Tuzilma, fikr va til aniqligi - band'ning kaliti.",
-  "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">Task 1 - 20 daq, 150 so'z</span><span class=\"chip\">Task 2 - 40 daq, 250 so'z</span><span class=\"chip\">Task 2 = 2x ball</span></div><p><strong>Task 1 (Academic):</strong> grafik/jadval/jarayonni tasvirlash. <strong>(General):</strong> xat. <strong>Task 2:</strong> esse - har ikkalasida bir xil.</p><h3>4 ta baholash mezoni</h3><div class=\"chips\"><span class=\"chip t\">Task Response</span><span class=\"chip t\">Coherence & Cohesion</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammar</span></div><h3>Task 2 tuzilmasi</h3><div class=\"exlist\"><div class=\"ex\"><b>Introduction</b><span>Mavzuni paraphrasing qil + fikringni ayt (2 jumla)</span></div><div class=\"ex\"><b>Body 1</b><span>Asosiy fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Body 2</b><span>Ikkinchi fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Conclusion</b><span>Fikrni qayta umumlashtir</span></div></div><h3>Esse turlari</h3><div class=\"chips\"><span class=\"chip\">Opinion (agree/disagree)</span><span class=\"chip\">Discussion (both views)</span><span class=\"chip\">Problem & solution</span><span class=\"chip\">Advantages/disadvantages</span></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Some people argue that ...</b><span>Ba'zilar ta'kidlaydiki ...</span></div><div class=\"ex\"><b>In my opinion, ...</b><span>Mening fikrimcha ...</span></div><div class=\"ex\"><b>For instance, ...</b><span>Masalan, ...</span></div><div class=\"ex\"><b>In conclusion, ...</b><span>Xulosa qilib ...</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq <strong>javob bermaslik</strong> (Task Response past bo'ladi). Savolni diqqat bilan o'qi: \"to what extent do you agree?\" - fikringni aniq bildirishing shart.</p></div></div></div><div class='prose'><h3>Task 2 - foydali jumla qoliplari</h3><div class='exlist'><div class='ex'><b>It is often argued that...</b><span>ko'pincha aytiladiki</span></div><div class='ex'><b>There are several reasons for this.</b><span>buning bir necha sababi bor</span></div><div class='ex'><b>In conclusion, I believe that...</b><span>xulosa qilib, menimcha</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq javob berMASLIK (Task Response pasayadi). \"To what extent do you agree?\" - fikringni ANIQ bildir.</p></div></div></div><div class='prose'><h3>Chuqurroq: Task 1 (grafik) tuzilmasi</h3><table class=\"gtable\"><thead><tr><th>Qism</th><th>Vazifa</th></tr></thead><tbody><tr><td>Introduction</td><td>grafikni paraphrasing qil</td></tr><tr><td>Overview</td><td>asosiy tendensiya (eng muhim!)</td></tr><tr><td>Details 1-2</td><td>raqamlar bilan tasvirla</td></tr></tbody></table><h3>Tendensiya (trend) so'zlari</h3><div class=\"exlist\"><div class=\"ex\"><b>increase / rise / grow</b><span>oshmoq</span></div><div class=\"ex\"><b>decrease / fall / decline</b><span>kamaymoq</span></div><div class=\"ex\"><b>fluctuate</b><span>tebranmoq</span></div><div class=\"ex\"><b>remain stable</b><span>barqaror qolmoq</span></div><div class=\"ex\"><b>reach a peak</b><span>cho'qqiga chiqmoq</span></div></div><h3>Task 2 - 4 esse turi qolipi</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Body tuzilmasi</th></tr></thead><tbody><tr><td>Opinion</td><td>fikr + 2 dalil</td></tr><tr><td>Discussion</td><td>Body1: bir tomon, Body2: ikkinchi + o'z fikr</td></tr><tr><td>Problem-Solution</td><td>Body1: muammo, Body2: yechim</td></tr><tr><td>Adv-Disadv</td><td>Body1: afzallik, Body2: kamchilik</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Overview shart</p><p>Task 1'da <strong>Overview</strong> (umumiy tendensiya) bo'lmasa, band keskin tushadi.</p></div></div></div><figure class='svgfig'><svg viewBox='0 0 680 220' role='img' aria-label='IELTS Writing Task 2 esse strukturasi'><rect class='boxa' x='180' y='15' width='320' height='40' rx='8'/><text x='340' y='40' text-anchor='middle'>Introduction (paraphrase + fikr)</text><path class='edga' d='M340 55 V75' marker-end='url(#arEn8a)'/><rect class='box' x='180' y='75' width='320' height='40' rx='8'/><text x='340' y='100' text-anchor='middle'>Body 1 (asosiy fikr + misol)</text><path class='edga' d='M340 115 V135' marker-end='url(#arEn8a)'/><rect class='box' x='180' y='135' width='320' height='40' rx='8'/><text x='340' y='160' text-anchor='middle'>Body 2 (asosiy fikr + misol)</text><path class='edga' d='M340 175 V195' marker-end='url(#arEn8a)'/><rect class='boxa' x='180' y='195' width='320' height='22' rx='8'/><text x='340' y='211' text-anchor='middle'>Conclusion (xulosa)</text><text x='620' y='45' text-anchor='middle' class='muted'>250+</text><text x='620' y='63' text-anchor='middle' class='muted'>so'z</text><defs><marker id='arEn8a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Task 2 esse: kirish -> 2 asosiy band -> xulosa (kamida 250 so'z).</figcaption></figure>",
+  "doc": "<div class='prose'><h3>Format</h3><div class=\"chips\"><span class=\"chip\">Task 1 - 20 daq, 150 so'z</span><span class=\"chip\">Task 2 - 40 daq, 250 so'z</span><span class=\"chip\">Task 2 = 2x ball</span></div><p><strong>Task 1 (Academic):</strong> grafik/jadval/jarayonni tasvirlash. <strong>(General):</strong> xat. <strong>Task 2:</strong> esse - har ikkalasida bir xil.</p><h3>4 ta baholash mezoni</h3><div class=\"chips\"><span class=\"chip t\">Task Response</span><span class=\"chip t\">Coherence & Cohesion</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammar</span></div><h3>Task 2 tuzilmasi</h3><div class=\"exlist\"><div class=\"ex\"><b>Introduction</b><span>Mavzuni paraphrasing qil + fikringni ayt (2 jumla)</span></div><div class=\"ex\"><b>Body 1</b><span>Asosiy fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Body 2</b><span>Ikkinchi fikr + tushuntir + misol</span></div><div class=\"ex\"><b>Conclusion</b><span>Fikrni qayta umumlashtir</span></div></div><h3>Esse turlari</h3><div class=\"chips\"><span class=\"chip\">Opinion (agree/disagree)</span><span class=\"chip\">Discussion (both views)</span><span class=\"chip\">Problem & solution</span><span class=\"chip\">Advantages/disadvantages</span></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Some people argue that ...</b><span>Ba'zilar ta'kidlaydiki ...</span></div><div class=\"ex\"><b>In my opinion, ...</b><span>Mening fikrimcha ...</span></div><div class=\"ex\"><b>For instance, ...</b><span>Masalan, ...</span></div><div class=\"ex\"><b>In conclusion, ...</b><span>Xulosa qilib ...</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq <strong>javob bermaslik</strong> (Task Response past bo'ladi). Savolni diqqat bilan o'qi: \"to what extent do you agree?\" - fikringni aniq bildirishing shart.</p></div></div></div><div class='prose'><h3>Task 2 - foydali jumla qoliplari</h3><div class='exlist'><div class='ex'><b>It is often argued that...</b><span>ko'pincha aytiladiki</span></div><div class='ex'><b>There are several reasons for this.</b><span>buning bir necha sababi bor</span></div><div class='ex'><b>In conclusion, I believe that...</b><span>xulosa qilib, menimcha</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Savolga to'liq javob berMASLIK (Task Response pasayadi). \"To what extent do you agree?\" - fikringni ANIQ bildir.</p></div></div></div><div class='prose'><h3>Chuqurroq: Task 1 (grafik) tuzilmasi</h3><table class=\"gtable\"><thead><tr><th>Qism</th><th>Vazifa</th></tr></thead><tbody><tr><td>Introduction</td><td>grafikni paraphrasing qil</td></tr><tr><td>Overview</td><td>asosiy tendensiya (eng muhim!)</td></tr><tr><td>Details 1-2</td><td>raqamlar bilan tasvirla</td></tr></tbody></table><h3>Tendensiya (trend) so'zlari</h3><div class=\"exlist\"><div class=\"ex\"><b>increase / rise / grow</b><span>oshmoq</span></div><div class=\"ex\"><b>decrease / fall / decline</b><span>kamaymoq</span></div><div class=\"ex\"><b>fluctuate</b><span>tebranmoq</span></div><div class=\"ex\"><b>remain stable</b><span>barqaror qolmoq</span></div><div class=\"ex\"><b>reach a peak</b><span>cho'qqiga chiqmoq</span></div></div><h3>Task 2 - 4 esse turi qolipi</h3><table class=\"gtable\"><thead><tr><th>Tur</th><th>Body tuzilmasi</th></tr></thead><tbody><tr><td>Opinion</td><td>fikr + 2 dalil</td></tr><tr><td>Discussion</td><td>Body1: bir tomon, Body2: ikkinchi + o'z fikr</td></tr><tr><td>Problem-Solution</td><td>Body1: muammo, Body2: yechim</td></tr><tr><td>Adv-Disadv</td><td>Body1: afzallik, Body2: kamchilik</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Overview shart</p><p>Task 1'da <strong>Overview</strong> (umumiy tendensiya) bo'lmasa, band keskin tushadi.</p></div></div></div><figure class='svgfig'><svg viewBox='0 0 680 220' role='img' aria-label='IELTS Writing Task 2 esse strukturasi'><rect class='boxa' x='180' y='15' width='320' height='40' rx='8'/><text x='340' y='40' text-anchor='middle'>Introduction (paraphrase + fikr)</text><path class='edga' d='M340 55 V75' marker-end='url(#arEn8a)'/><rect class='box' x='180' y='75' width='320' height='40' rx='8'/><text x='340' y='100' text-anchor='middle'>Body 1 (asosiy fikr + misol)</text><path class='edga' d='M340 115 V135' marker-end='url(#arEn8a)'/><rect class='box' x='180' y='135' width='320' height='40' rx='8'/><text x='340' y='160' text-anchor='middle'>Body 2 (asosiy fikr + misol)</text><path class='edga' d='M340 175 V195' marker-end='url(#arEn8a)'/><rect class='boxa' x='180' y='195' width='320' height='22' rx='8'/><text x='340' y='211' text-anchor='middle'>Conclusion (xulosa)</text><text x='620' y='45' text-anchor='middle' class='muted'>250+</text><text x='620' y='63' text-anchor='middle' class='muted'>so'z</text><defs><marker id='arEn8a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Task 2 esse: kirish -> 2 asosiy band -> xulosa (kamida 250 so'z).</figcaption></figure><div class='prose'>\n<h3>Amaliy yozuv ramkalari (tech ish uchun)</h3>\n<p><strong>IELTS Task 2:</strong> Intro (fikr) -> Body 1 (sabab+misol) -> Body 2 (sabab+misol) -> Conclusion. 250+ so'z.</p>\n<p><strong>Formal email:</strong> Subject -> Salom (Dear...) -> maqsad -> tafsilot -> so'rov -> yakun (Best regards).</p>\n<p><strong>Cover letter (3 abzats):</strong> (1) kim sen + qaysi rolga, (2) nega mos - aniq tajriba/loyiha, (3) nega aynan shu kompaniya + chaqiruv.</p>\n<p><strong>PR / README:</strong> nima o'zgardi -> nega -> qanday tekshirilgan -> qanday ishga tushirish.</p>\n<h3>Model cover letter (geo + AI roli)</h3>\n<div class=\"callout\"><div><p><em>Dear Hiring Team,<br/>I am a full-stack engineer with two years of experience building geospatial applications with React, TypeScript, FastAPI and PostGIS. Recently I built a platform that detects objects in drone imagery with YOLO and visualizes them on a MapLibre map. I am excited about your mission to turn aerial imagery into life-saving intelligence, and I would love to contribute to it. Thank you for your consideration.<br/>Best regards, Aziz</em></p></div></div>\n<h3>O'z-o'zini tekshirish (rubrik)</h3>\n<ul>\n<li>Har abzatning aniq bitta maqsadi bormi?</li>\n<li>Aniq dalil (loyiha/raqam) keltirdingmi, quruq gap emasmi?</li>\n<li>Grammatika/artikl/zamon to'g'rimi? (Write &amp; Improve'ga tashla)</li>\n<li>Boshqa odam 30 soniyada tushunadimi?</li>\n</ul>\n</div>",
   "code": [],
   "tasks": [
    {
@@ -2964,6 +2985,21 @@
     "id": "en8-6",
     "html": "Esseni mezonlar bo'yicha o'zim baholadim (yoki tekshirtirdim)",
     "crit": "kuchli/zaif tomonlarini bilasan"
+   },
+   {
+    "id": "en-wri-1",
+    "html": "4 jumlalik English self-introduction yozildi (ism, rol, tajriba, maqsad)",
+    "crit": "har jumla grammatik to'g'ri, aniq va qisqa"
+   },
+   {
+    "id": "en-wri-2",
+    "html": "Yuqoridagi ramka bo'yicha bitta cover letter yozildi",
+    "crit": "3 abzat, aniq loyiha dalili bilan, rubrikadan o'tdi"
+   },
+   {
+    "id": "en-wri-3",
+    "html": "Write & Improve yoki Grammarly'da yozuv tekshirildi va tuzatildi",
+    "crit": "avtomatik feedback asosida kamida 3 xato tuzatildi"
    }
   ],
   "resources": [
@@ -2987,6 +3023,27 @@
     "title": "Task 2 band 8 (video)",
     "desc": "YouTube qidiruv",
     "host": "youtube.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://writeandimprove.com/",
+    "title": "Cambridge Write & Improve",
+    "desc": "Yozuvingni BEPUL avtomatik baholaydi va CEFR daraja beradi.",
+    "host": "writeandimprove.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.grammarly.com/",
+    "title": "Grammarly",
+    "desc": "Grammatika/uslub xatolarini real vaqtда tuzatadi.",
+    "host": "grammarly.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://ieltsliz.com/ielts-writing-task-2/",
+    "title": "IELTS Liz - Writing Task 2",
+    "desc": "Task 2 struktura, model esse va mavzular.",
+    "host": "ieltsliz.com"
    }
   ],
   "project": {
@@ -3314,7 +3371,7 @@
   "eyebrow": "09 / IELTS Speaking",
   "mtitle": "Speaking - 3 qism, 11-14 daqiqa",
   "lede": "Jonli suhbat. Baholash: <strong>Fluency, Lexical, Grammar, Pronunciation</strong>. Sir - yodlama, <strong>tabiiy va kengaytirilgan</strong> javob ber.",
-  "doc": "<div class='prose'><h3>3 qism</h3><div class=\"exlist\"><div class=\"ex\"><b>Part 1 (4-5 daq)</b><span>Oddiy savollar: o'zing, ish, uy, sevimli mashg'ulot</span></div><div class=\"ex\"><b>Part 2 (3-4 daq)</b><span>Cue card - 1 daq tayyorlanib, 2 daq monolog</span></div><div class=\"ex\"><b>Part 3 (4-5 daq)</b><span>Part 2 mavzusi bo'yicha chuqurroq muhokama</span></div></div><h3>Baholash mezonlari</h3><div class=\"chips\"><span class=\"chip t\">Fluency & Coherence</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammatical Range</span><span class=\"chip t\">Pronunciation</span></div><h3>Javobni kengaytir</h3><p>Bitta so'z bilan javob berma. Sabab + misol qo'sh.</p><div class=\"exlist\"><div class=\"ex\"><b>Do you like coffee?</b><span>Savol</span></div><div class=\"ex\"><b>Yes.</b><span>❌ juda qisqa</span></div><div class=\"ex\"><b>Yes, I love coffee, especially in the morning, because it helps me focus.</b><span>✓ kengaytirilgan</span></div></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Well, I'd say ...</b><span>Ha, men aytardimki ...</span></div><div class=\"ex\"><b>It depends on ...</b><span>...ga bog'liq</span></div><div class=\"ex\"><b>To be honest, ...</b><span>Rostini aytsam, ...</span></div><div class=\"ex\"><b>That's a good question.</b><span>Yaxshi savol (vaqt yutish)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yodlama!</p><p>Yodlangan javob examiner'ga bilinadi va band tushiradi. Tabiiy gapir, kichik xato qilsang ham davom et - <strong>ravonlik</strong> (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Javobni kengaytirish (extend)</h3><div class='exlist'><div class='ex'><b>Yes. ❌</b><span>juda qisqa</span></div><div class='ex'><b>Yes, I do - especially at weekends, because I have more free time. ✓</b><span>sabab + detal</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Yodlangan javob bilinadi va band tushiradi. Tabiiy gapir; kichik xato qilsang ham to'xtama - ravonlik (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Chuqurroq: Part 2 cue card qolipi</h3><p>Cue card'da 1 daqiqa tayyorgarlikda shu savollarga javob yoz: <strong>What? When? Where? Who? Why/How feel?</strong> - keyin shular bo'yicha gapir.</p><div class=\"exlist\"><div class=\"ex\"><b>Describe a place you like.</b><span>What place? Where? When go? Why like? How feel?</span></div></div><h3>Part 3 - javob qolipi</h3><p><strong>Fikr -> sabab -> misol -> muvozanat</strong>: \"I think... because... For example... However, some people...\".</p><h3>Talaffuz: 3 daraja</h3><table class=\"gtable\"><thead><tr><th>Daraja</th><th>Nima</th></tr></thead><tbody><tr><td>So'z urg'usi</td><td>REcord (ot) / reCORD (fe'l)</td></tr><tr><td>Gap urg'usi</td><td>muhim so'zlarni kuchli ayt</td></tr><tr><td>Linking</td><td>so'zlarni bog'la: \"an_apple\"</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Ravonlik > mukammallik</p><p>Kichik xato uchun to'xtama. Fillers: \"Well...\", \"Let me think...\", \"That's interesting...\" - tabiiy vaqt yutadi.</p></div></div></div><figure class='svgfig'><svg viewBox='0 0 680 170' role='img' aria-label='IELTS Speaking uch qismi'><rect class='box' x='20' y='50' width='190' height='64' rx='8'/><text x='115' y='78' text-anchor='middle'>Part 1</text><text x='115' y='98' text-anchor='middle' class='muted'>tanishuv, 4-5 daq</text><path class='edga' d='M210 82 H245' marker-end='url(#arEn9a)'/><rect class='boxa' x='245' y='50' width='190' height='64' rx='8'/><text x='340' y='78' text-anchor='middle'>Part 2</text><text x='340' y='98' text-anchor='middle' class='muted'>cue card, 1-2 daq</text><path class='edga' d='M435 82 H470' marker-end='url(#arEn9a)'/><rect class='box' x='470' y='50' width='190' height='64' rx='8'/><text x='565' y='78' text-anchor='middle'>Part 3</text><text x='565' y='98' text-anchor='middle' class='muted'>munozara, 4-5 daq</text><text x='340' y='30' text-anchor='middle' class='accent'>Jami 11-14 daqiqa</text><defs><marker id='arEn9a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Speaking uch qismdan iborat: tanishuv, cue card monolog va munozara.</figcaption></figure>",
+  "doc": "<div class='prose'><h3>3 qism</h3><div class=\"exlist\"><div class=\"ex\"><b>Part 1 (4-5 daq)</b><span>Oddiy savollar: o'zing, ish, uy, sevimli mashg'ulot</span></div><div class=\"ex\"><b>Part 2 (3-4 daq)</b><span>Cue card - 1 daq tayyorlanib, 2 daq monolog</span></div><div class=\"ex\"><b>Part 3 (4-5 daq)</b><span>Part 2 mavzusi bo'yicha chuqurroq muhokama</span></div></div><h3>Baholash mezonlari</h3><div class=\"chips\"><span class=\"chip t\">Fluency & Coherence</span><span class=\"chip t\">Lexical Resource</span><span class=\"chip t\">Grammatical Range</span><span class=\"chip t\">Pronunciation</span></div><h3>Javobni kengaytir</h3><p>Bitta so'z bilan javob berma. Sabab + misol qo'sh.</p><div class=\"exlist\"><div class=\"ex\"><b>Do you like coffee?</b><span>Savol</span></div><div class=\"ex\"><b>Yes.</b><span>❌ juda qisqa</span></div><div class=\"ex\"><b>Yes, I love coffee, especially in the morning, because it helps me focus.</b><span>✓ kengaytirilgan</span></div></div><h3>Foydali iboralar</h3><div class=\"exlist\"><div class=\"ex\"><b>Well, I'd say ...</b><span>Ha, men aytardimki ...</span></div><div class=\"ex\"><b>It depends on ...</b><span>...ga bog'liq</span></div><div class=\"ex\"><b>To be honest, ...</b><span>Rostini aytsam, ...</span></div><div class=\"ex\"><b>That's a good question.</b><span>Yaxshi savol (vaqt yutish)</span></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Yodlama!</p><p>Yodlangan javob examiner'ga bilinadi va band tushiradi. Tabiiy gapir, kichik xato qilsang ham davom et - <strong>ravonlik</strong> (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Javobni kengaytirish (extend)</h3><div class='exlist'><div class='ex'><b>Yes. ❌</b><span>juda qisqa</span></div><div class='ex'><b>Yes, I do - especially at weekends, because I have more free time. ✓</b><span>sabab + detal</span></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M12 9v4'/><path d='M12 17h.01'/><circle cx='12' cy='12' r='10'/></svg></span><div><p>Eng katta xato</p><p>Yodlangan javob bilinadi va band tushiradi. Tabiiy gapir; kichik xato qilsang ham to'xtama - ravonlik (fluency) muhimroq.</p></div></div></div><div class='prose'><h3>Chuqurroq: Part 2 cue card qolipi</h3><p>Cue card'da 1 daqiqa tayyorgarlikda shu savollarga javob yoz: <strong>What? When? Where? Who? Why/How feel?</strong> - keyin shular bo'yicha gapir.</p><div class=\"exlist\"><div class=\"ex\"><b>Describe a place you like.</b><span>What place? Where? When go? Why like? How feel?</span></div></div><h3>Part 3 - javob qolipi</h3><p><strong>Fikr -> sabab -> misol -> muvozanat</strong>: \"I think... because... For example... However, some people...\".</p><h3>Talaffuz: 3 daraja</h3><table class=\"gtable\"><thead><tr><th>Daraja</th><th>Nima</th></tr></thead><tbody><tr><td>So'z urg'usi</td><td>REcord (ot) / reCORD (fe'l)</td></tr><tr><td>Gap urg'usi</td><td>muhim so'zlarni kuchli ayt</td></tr><tr><td>Linking</td><td>so'zlarni bog'la: \"an_apple\"</td></tr></tbody></table><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z\"/></svg></span><div><p>Ravonlik > mukammallik</p><p>Kichik xato uchun to'xtama. Fillers: \"Well...\", \"Let me think...\", \"That's interesting...\" - tabiiy vaqt yutadi.</p></div></div></div><figure class='svgfig'><svg viewBox='0 0 680 170' role='img' aria-label='IELTS Speaking uch qismi'><rect class='box' x='20' y='50' width='190' height='64' rx='8'/><text x='115' y='78' text-anchor='middle'>Part 1</text><text x='115' y='98' text-anchor='middle' class='muted'>tanishuv, 4-5 daq</text><path class='edga' d='M210 82 H245' marker-end='url(#arEn9a)'/><rect class='boxa' x='245' y='50' width='190' height='64' rx='8'/><text x='340' y='78' text-anchor='middle'>Part 2</text><text x='340' y='98' text-anchor='middle' class='muted'>cue card, 1-2 daq</text><path class='edga' d='M435 82 H470' marker-end='url(#arEn9a)'/><rect class='box' x='470' y='50' width='190' height='64' rx='8'/><text x='565' y='78' text-anchor='middle'>Part 3</text><text x='565' y='98' text-anchor='middle' class='muted'>munozara, 4-5 daq</text><text x='340' y='30' text-anchor='middle' class='accent'>Jami 11-14 daqiqa</text><defs><marker id='arEn9a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Speaking uch qismdan iborat: tanishuv, cue card monolog va munozara.</figcaption></figure><div class='prose'>\n<h3>Gapirishni qanday mashq qilish (yolg'iz)</h3>\n<p>Bu yerдаgi <strong>Gapir</strong> mashqlari mikrofoningni ishlatib, aytganingni matnga o'giradi va so'z talaffuzingni tekshiradi. Namuna tugmasini bosib to'g'ri ohangни eshit, keyin ovoz chiqarib takrorla (shadowing).</p>\n<h3>Interview uchun ramka</h3>\n<ul>\n<li><strong>Self-intro:</strong> ism -> rol -> tajriba -> nima izlayapsan. 3-4 jumla, yod ol.</li>\n<li><strong>STAR</strong> (loyiha savoli): <em>Situation, Task, Action, Result</em> - qisqa hikoya.</li>\n<li><strong>Fluency > perfection:</strong> to'xtamay gapir, kichik xatoga to'xtama.</li>\n</ul>\n<div class=\"callout\"><div><p><strong>Real muloqot:</strong> dastur talaffuzни tekshiradi, lekin haftada 1-2 marta jonli tutor (italki/Preply) bilan mock interview qil - dastur buni almashtira olmaydi.</p></div></div>\n</div>",
   "code": [],
   "tasks": [
    {
@@ -3369,6 +3426,27 @@
     "title": "Speaking band 8 (video)",
     "desc": "YouTube qidiruv",
     "host": "youtube.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://youglish.com/",
+    "title": "YouGlish",
+    "desc": "Har so'zni real videolarда qanday talaffuz qilinishini eshit.",
+    "host": "youglish.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://learnenglish.britishcouncil.org/skills/speaking",
+    "title": "British Council Speaking",
+    "desc": "Bosqichma-bosqich speaking mashqlari.",
+    "host": "learnenglish.britishcouncil.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.italki.com/",
+    "title": "italki",
+    "desc": "Jonli tutor bilan mock interview / suhbat (haftada 1-2 marta).",
+    "host": "italki.com"
    }
   ],
   "project": {
@@ -3607,6 +3685,62 @@
     ],
     "why": "For example - misol bilan javobni kengaytir (fluency band'i uchun foydali).",
     "hint": ""
+   },
+   {
+    "type": "speak",
+    "q": "Self-intro - ovoz chiqarib ayt:",
+    "say": "Hi, my name is Aziz and I am a full-stack developer.",
+    "lang": "en-US",
+    "why": "Interviewda birinchi jumla - ravon va ishonchli aytilishi kerak."
+   },
+   {
+    "type": "speak",
+    "q": "Tajribangni ayt:",
+    "say": "I have two years of experience with React and FastAPI.",
+    "lang": "en-US",
+    "why": "Aniq texnologiya + yillar bilan tajribani qisqa ber."
+   },
+   {
+    "type": "speak",
+    "q": "Ixtisosingni ayt:",
+    "say": "I specialize in geospatial applications using PostGIS and MapLibre.",
+    "lang": "en-US",
+    "why": "Nishani (specialization) aytish seni ko'p nomzoddan ajratadi."
+   },
+   {
+    "type": "speak",
+    "q": "Savol ber:",
+    "say": "Could you tell me more about the team structure?",
+    "lang": "en-US",
+    "why": "Yaxshi savol berish - qiziqish va tayyorgarlik belgisi."
+   },
+   {
+    "type": "speak",
+    "q": "Motivatsiyangni ayt:",
+    "say": "I am passionate about building products that solve real problems.",
+    "lang": "en-US",
+    "why": "Motivatsiyani qisqa, samimiy ayt."
+   },
+   {
+    "type": "speak",
+    "q": "Loyihaga o'tish:",
+    "say": "Let me walk you through my recent project.",
+    "lang": "en-US",
+    "why": "Demo/loyiha tushuntirishни shu jumla bilan boshla."
+   },
+   {
+    "type": "speak",
+    "q": "Remote istagini ayt:",
+    "say": "I am looking for a remote role where I can grow as an engineer.",
+    "lang": "en-US",
+    "why": "Nima izlayotganingni aniq ayt."
+   },
+   {
+    "type": "speak",
+    "q": "Yakunlash:",
+    "say": "Thank you for your time. I look forward to hearing from you.",
+    "lang": "en-US",
+    "why": "Suhbatni professional yakunlash - doim ijobiy taassurot qoldiradi."
    }
   ],
   "vocab": [
@@ -4557,6 +4691,20 @@
     "title": "Google Technical Writing",
     "desc": "Texnik yozuv uchun.",
     "host": "developers.google.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.pramp.com/",
+    "title": "Pramp",
+    "desc": "Bepul mock interview (jonli hamkor bilan).",
+    "host": "pramp.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://interviewing.io/",
+    "title": "interviewing.io",
+    "desc": "Anonim texnik mock interview amaliyoti.",
+    "host": "interviewing.io"
    }
   ],
   "project": {
@@ -4616,6 +4764,34 @@
     ],
     "correct": 0,
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   },
+   {
+    "type": "speak",
+    "q": "Kuchli tomoningni ayt:",
+    "say": "My strongest skill is turning complex geospatial data into simple, usable maps.",
+    "lang": "en-US",
+    "why": "Kuchli tomonni aniq va ishga bog'liq ayt."
+   },
+   {
+    "type": "speak",
+    "q": "Qiyin holatни tushuntir (STAR):",
+    "say": "In my last project, the map was slow, so I added vector tiles and it loaded three times faster.",
+    "lang": "en-US",
+    "why": "STAR: muammo -> harakat -> natija (raqam bilan)."
+   },
+   {
+    "type": "speak",
+    "q": "Maosh savoliga javob:",
+    "say": "Based on my experience and the market, I am looking for a competitive remote salary.",
+    "lang": "en-US",
+    "why": "Maosh savoliga xotirjam, tayyor javob ber."
+   },
+   {
+    "type": "speak",
+    "q": "Savol yo'qmi degan savolga:",
+    "say": "Yes, how do you measure success in the first six months?",
+    "lang": "en-US",
+    "why": "Doim tayyor kuchli savol bilan chiq."
    }
   ]
  },
