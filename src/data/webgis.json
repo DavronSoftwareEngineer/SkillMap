@@ -6077,5 +6077,340 @@
     "ex": "Demo ishlashi yetmaydi; tiklanishi va kuzatilishi ham kerak."
    }
   ]
+ },
+ {
+  "zoom": "z22",
+  "title": "Backend/FastAPI Production Lab",
+  "sub": "Python API",
+  "coord": "API / z22",
+  "eyebrow": "22 / FASTAPI / POSTGIS / PRODUCTION",
+  "mtitle": "FastAPI backend: JS/TS developer uchun production geospatial API",
+  "lede": "Bu modul Geospatial Full-Stack Academy'ning backend qismini chuqurlashtiradi: Python/FastAPI, SQLAlchemy/Alembic, PostGIS bbox query, auth/RBAC, pytest, Redis worker va job status endpointlari.",
+  "doc": "<div class='prose'>\n<h3>Nega bu modul kerak</h3>\n<p>Siz frontend va JS/TS tarafdan kuchlisiz, lekin geospatial backendda Python ekotizimi juda katta rol o'ynaydi. FastAPI API, Pydantic schema, SQLAlchemy session, Alembic migration, PostGIS query va Redis worker birga ishlaganda haqiqiy production backend hosil bo'ladi.</p>\n<h3>JS/TS dan Python/FastAPI ga o'tish xaritasi</h3>\n<div class=\"chips\"><span class=\"chip t\">TypeScript type -> Python typing</span><span class=\"chip t\">Zod -> Pydantic</span><span class=\"chip\">Express middleware -> FastAPI dependency</span><span class=\"chip\">Prisma migration -> Alembic</span><span class=\"chip\">Jest/Vitest -> pytest</span><span class=\"chip\">BullMQ -> Redis/RQ/Celery</span></div>\n<p>Eng muhim farq: Python'da runtime ekotizim geodata bilan kuchli. GDAL, Rasterio, GeoPandas, Shapely, Ultralytics kabi kutubxonalar backend va processing workerlar bilan tabiiy ulanadi.</p>\n<h3>Production API flow</h3>\n<div class=\"tree\">React + MapLibre\n  -> GET /api/features?bbox=minx,miny,maxx,maxy\n  -> FastAPI dependency: auth + role + validation\n  -> SQLAlchemy session\n  -> PostGIS ST_MakeEnvelope / ST_Intersects\n  -> GeoJSON FeatureCollection\n\nUpload flow\n  -> POST /api/uploads\n  -> file validation\n  -> Redis job enqueue\n  -> worker: GDAL/Rasterio/YOLO\n  -> GET /api/jobs/{id}</div>\n<h3>Professional definition of done</h3>\n<p>Backend \"ishladi\" degani yetmaydi. Har endpoint uchun contract, error response, auth behavior, test va log bo'lishi kerak. Har migration qayta ishlaydigan bo'lishi, har job retry/failure holatini ko'rsatishi kerak.</p>\n<div class=\"callout\"><div><p>Backend senior signali</p><p>Endpoint yozish oson; production API esa: validation, migration, test DB, idempotency, retry, observability va security bilan tugaydi.</p></div></div>\n<figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='FastAPI geospatial backend architecture'>\n<rect class='boxa' x='20' y='55' width='125' height='50' rx='8'/><text x='82' y='76' text-anchor='middle'>MapLibre</text><text x='82' y='92' text-anchor='middle' class='muted'>bbox</text>\n<path class='edga' d='M145 80 H190' marker-end='url(#arZ22a)'/>\n<rect class='box' x='190' y='55' width='125' height='50' rx='8'/><text x='252' y='76' text-anchor='middle'>FastAPI</text><text x='252' y='92' text-anchor='middle' class='muted'>deps</text>\n<path class='edga' d='M315 80 H360' marker-end='url(#arZ22a)'/>\n<rect class='box' x='360' y='55' width='125' height='50' rx='8'/><text x='422' y='76' text-anchor='middle'>PostGIS</text><text x='422' y='92' text-anchor='middle' class='muted'>spatial SQL</text>\n<path class='edge' d='M252 105 V140 H590 V108' marker-end='url(#arZ22a)'/>\n<rect class='boxa' x='525' y='55' width='150' height='50' rx='8'/><text x='600' y='76' text-anchor='middle'>Redis worker</text><text x='600' y='92' text-anchor='middle' class='muted'>GDAL / YOLO</text>\n<text x='350' y='165' text-anchor='middle' class='accent'>pytest + Alembic + structured logs + health checks</text>\n<defs><marker id='arZ22a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>FastAPI geospatial backend: bbox API, PostGIS query va worker pipeline birga ishlaydi.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "API project structure",
+     "p": "Backend boshidanoq migration, tests va workers bilan ajratiladi."
+    },
+    "title": "api/structure.txt",
+    "lang": "txt",
+    "code": "api/\n  app/\n    main.py\n    config.py\n    db.py\n    auth/\n      dependencies.py\n      security.py\n    features/\n      router.py\n      schemas.py\n      service.py\n      repository.py\n    uploads/\n      router.py\n      jobs.py\n    workers/\n      process_upload.py\n  migrations/\n  tests/\n    conftest.py\n    test_features.py\n    test_uploads.py\n  pyproject.toml"
+   },
+   {
+    "heading": {
+     "h": "Pydantic bbox validation",
+     "p": "Frontenddan kelgan bbox string API ichida toza modelga aylanadi."
+    },
+    "title": "app/features/schemas.py",
+    "lang": "python",
+    "code": "from pydantic import BaseModel, Field, field_validator\n\nclass BBox(BaseModel):\n    minx: float = Field(ge=-180, le=180)\n    miny: float = Field(ge=-90, le=90)\n    maxx: float = Field(ge=-180, le=180)\n    maxy: float = Field(ge=-90, le=90)\n\n    @field_validator(\"maxx\")\n    @classmethod\n    def maxx_after_minx(cls, value, info):\n        if \"minx\" in info.data and value <= info.data[\"minx\"]:\n            raise ValueError(\"maxx must be greater than minx\")\n        return value\n\n    @field_validator(\"maxy\")\n    @classmethod\n    def maxy_after_miny(cls, value, info):\n        if \"miny\" in info.data and value <= info.data[\"miny\"]:\n            raise ValueError(\"maxy must be greater than miny\")\n        return value"
+   },
+   {
+    "heading": {
+     "h": "PostGIS bbox endpoint",
+     "p": "Viewport ichidagi obyektlarni GeoJSON contract bilan qaytaradi."
+    },
+    "title": "app/features/router.py",
+    "lang": "python",
+    "code": "from fastapi import APIRouter, Depends, Query\nfrom sqlalchemy.ext.asyncio import AsyncSession\nfrom app.db import get_session\nfrom app.auth.dependencies import require_user\nfrom app.features.schemas import BBox\nfrom app.features.service import get_features_in_bbox\n\nrouter = APIRouter(prefix=\"/api/features\", tags=[\"features\"])\n\n@router.get(\"\")\nasync def list_features(\n    bbox: str = Query(..., description=\"minx,miny,maxx,maxy\"),\n    session: AsyncSession = Depends(get_session),\n    user = Depends(require_user),\n):\n    parts = [float(x) for x in bbox.split(\",\")]\n    box = BBox(minx=parts[0], miny=parts[1], maxx=parts[2], maxy=parts[3])\n    features = await get_features_in_bbox(session, box, user=user)\n    return {\"type\": \"FeatureCollection\", \"features\": features}"
+   },
+   {
+    "heading": {
+     "h": "Spatial repository query",
+     "p": "SQLAlchemy bilan PostGIS funksiyalarini aniq va testlanadigan qilib yoz."
+    },
+    "title": "app/features/repository.py",
+    "lang": "python",
+    "code": "from sqlalchemy import text\n\nasync def fetch_features_in_bbox(session, bbox, limit: int = 500):\n    sql = text(\"\"\"\n        SELECT jsonb_build_object(\n          'type', 'Feature',\n          'id', id,\n          'geometry', ST_AsGeoJSON(geom)::jsonb,\n          'properties', jsonb_build_object('name', name, 'category', category)\n        ) AS feature\n        FROM assets\n        WHERE geom && ST_MakeEnvelope(:minx, :miny, :maxx, :maxy, 4326)\n        ORDER BY id\n        LIMIT :limit\n    \"\"\")\n    rows = await session.execute(sql, {**bbox.model_dump(), \"limit\": limit})\n    return [row.feature for row in rows]"
+   },
+   {
+    "heading": {
+     "h": "Alembic migration",
+     "p": "Schema va spatial index kod bilan versiyalanadi."
+    },
+    "title": "migrations/versions/001_assets.py",
+    "lang": "python",
+    "code": "from alembic import op\nimport sqlalchemy as sa\nfrom geoalchemy2 import Geometry\n\ndef upgrade():\n    op.create_table(\n        \"assets\",\n        sa.Column(\"id\", sa.BigInteger(), primary_key=True),\n        sa.Column(\"name\", sa.Text(), nullable=False),\n        sa.Column(\"category\", sa.Text(), nullable=False),\n        sa.Column(\"geom\", Geometry(\"GEOMETRY\", srid=4326), nullable=False),\n    )\n    op.create_index(\"assets_geom_gix\", \"assets\", [\"geom\"], postgresql_using=\"gist\")\n\ndef downgrade():\n    op.drop_index(\"assets_geom_gix\", table_name=\"assets\")\n    op.drop_table(\"assets\")"
+   },
+   {
+    "heading": {
+     "h": "pytest integration tests",
+     "p": "Auth, bbox contract va validation test bilan yopiladi."
+    },
+    "title": "tests/test_features.py",
+    "lang": "python",
+    "code": "async def test_features_requires_auth(client):\n    res = await client.get(\"/api/features?bbox=69.1,41.2,69.4,41.4\")\n    assert res.status_code == 401\n\nasync def test_features_returns_feature_collection(auth_client, seeded_assets):\n    res = await auth_client.get(\"/api/features?bbox=69.1,41.2,69.4,41.4\")\n    assert res.status_code == 200\n    body = res.json()\n    assert body[\"type\"] == \"FeatureCollection\"\n    assert len(body[\"features\"]) >= 1\n\nasync def test_invalid_bbox_returns_422(auth_client):\n    res = await auth_client.get(\"/api/features?bbox=69.4,41.2,69.1,41.4\")\n    assert res.status_code in (400, 422)"
+   },
+   {
+    "heading": {
+     "h": "Redis job status flow",
+     "p": "Og'ir GDAL/YOLO ishlari HTTP request ichida kutib turmaydi."
+    },
+    "title": "app/uploads/jobs.py",
+    "lang": "python",
+    "code": "from redis import Redis\nfrom rq import Queue\nfrom app.workers.process_upload import process_upload\n\nredis = Redis.from_url(settings.REDIS_URL)\nqueue = Queue(\"processing\", connection=redis)\n\ndef enqueue_upload(file_path: str, user_id: int):\n    job = queue.enqueue(process_upload, file_path, user_id, job_timeout=900)\n    return {\"job_id\": job.id, \"status\": \"queued\"}\n\ndef get_job_status(job_id: str):\n    job = queue.fetch_job(job_id)\n    if not job:\n        return {\"status\": \"not_found\"}\n    return {\"status\": job.get_status(), \"result\": job.result}"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z22-1",
+    "html": "Python backend project structure yaratildi",
+    "crit": "app/, migrations/, tests/ va workers/ papkalari bor"
+   },
+   {
+    "id": "z22-2",
+    "html": "Pydantic schemas bilan bbox validation yozildi",
+    "crit": "invalid bbox testda 400/422 qaytaradi"
+   },
+   {
+    "id": "z22-3",
+    "html": "FastAPI auth dependency va RBAC guard qo'shildi",
+    "crit": "authsiz request 401, ruxsatsiz request 403 qaytaradi"
+   },
+   {
+    "id": "z22-4",
+    "html": "Alembic migration bilan assets table va GIST index yaratildi",
+    "crit": "fresh database migrationdan keyin spatial query ishlaydi"
+   },
+   {
+    "id": "z22-5",
+    "html": "PostGIS bbox endpoint GeoJSON FeatureCollection qaytardi",
+    "crit": "MapLibre frontend shu endpointdan layer render qila oladi"
+   },
+   {
+    "id": "z22-6",
+    "html": "pytest integration testlari yozildi",
+    "crit": "auth, bbox success, invalid bbox va empty result testlari o'tadi"
+   },
+   {
+    "id": "z22-7",
+    "html": "Upload endpoint file type/size validation bilan yozildi",
+    "crit": "noto'g'ri format va katta fayl reject qilinadi"
+   },
+   {
+    "id": "z22-8",
+    "html": "Redis/RQ yoki Celery worker bilan processing job ajratildi",
+    "crit": "upload request job_id qaytaradi, worker alohida bajaradi"
+   },
+   {
+    "id": "z22-9",
+    "html": "Job status endpoint yozildi",
+    "crit": "queued/started/failed/finished statuslar ko'rinadi"
+   },
+   {
+    "id": "z22-10",
+    "html": "Structured logging va request id qo'shildi",
+    "crit": "xato logda route, user_id, request_id va duration bor"
+   },
+   {
+    "id": "z22-11",
+    "html": "API README va OpenAPI screenshot tayyorlandi",
+    "crit": "boshqa developer backendni 30 daqiqada ishga tushira oladi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://fastapi.tiangolo.com/",
+    "title": "FastAPI docs",
+    "desc": "Asosiy backend framework.",
+    "host": "fastapi.tiangolo.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.pydantic.dev/latest/",
+    "title": "Pydantic docs",
+    "desc": "Schema va validation.",
+    "host": "docs.pydantic.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html",
+    "title": "SQLAlchemy asyncio",
+    "desc": "Async database session va query.",
+    "host": "docs.sqlalchemy.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://alembic.sqlalchemy.org/en/latest/",
+    "title": "Alembic docs",
+    "desc": "Database migrations.",
+    "host": "alembic.sqlalchemy.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://geoalchemy-2.readthedocs.io/",
+    "title": "GeoAlchemy2",
+    "desc": "SQLAlchemy bilan PostGIS geometry.",
+    "host": "geoalchemy-2.readthedocs.io"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.pytest.org/",
+    "title": "pytest docs",
+    "desc": "Backend testlar uchun.",
+    "host": "docs.pytest.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://python-rq.org/",
+    "title": "RQ docs",
+    "desc": "Redis queue va background jobs.",
+    "host": "python-rq.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.uvicorn.org/",
+    "title": "Uvicorn",
+    "desc": "ASGI server.",
+    "host": "uvicorn.org"
+   }
+  ],
+  "project": {
+   "tag": "FastAPI / PostGIS / Production Backend",
+   "title": "GeoPulse FastAPI Backend",
+   "desc": "Geospatial Full-Stack Academy uchun productionga yaqin FastAPI backend: auth, PostGIS, migrations, tests, worker va job status.",
+   "features": [
+    "FastAPI app structure with clean modules",
+    "Pydantic bbox and upload validation",
+    "Auth dependency and RBAC guard",
+    "SQLAlchemy/Alembic PostGIS migrations",
+    "GeoJSON FeatureCollection bbox endpoint",
+    "pytest integration test suite",
+    "Redis worker for GDAL/YOLO processing",
+    "Job status endpoint and structured logging"
+   ],
+   "rubric": [
+    "Fresh database migrationdan keyin API ishga tushadi.",
+    "Protected endpointlar 401/403 behavior bilan testlangan.",
+    "BBox endpoint GeoJSON contractga mos javob beradi.",
+    "PostGIS query GIST index bilan ishlaydi va benchmark yozilgan.",
+    "Upload processing HTTP'dan workerga ajratilgan.",
+    "pytest va CI ichida backend testlari o'tadi.",
+    "README, OpenAPI va run commands professional darajada."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "FastAPI dependency Express middlewarega qaysi jihatdan o'xshaydi?",
+    "a": [
+     "request oldidan auth/validation kabi logicni bajaradi",
+     "CSS yozadi",
+     "database o'chiradi",
+     "browserda xarita chizadi"
+    ],
+    "c": 0,
+    "w": "Dependency request lifecycle ichida auth, DB session, role check kabi logicni inject qiladi.",
+    "level": "easy"
+   },
+   {
+    "q": "Alembic nima uchun kerak?",
+    "a": [
+     "UI ranglari uchun",
+     "database schema o'zgarishlarini versiyalash uchun",
+     "YOLO model chizish uchun",
+     "Nginx log uchun"
+    ],
+    "c": 1,
+    "w": "Migration productionda schema o'zgarishini nazoratli qiladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Og'ir GDAL/YOLO processingni nima uchun Redis workerga chiqaramiz?",
+    "a": [
+     "HTTP requestni uzoq bloklamaslik va retry/status boshqarish uchun",
+     "font tanlash uchun",
+     "tokenni public qilish uchun",
+     "SQL ishlamasligi uchun"
+    ],
+    "c": 0,
+    "w": "Background job API latencyni ushlab turadi va failure/retry boshqaruvini beradi.",
+    "level": "scenario"
+   },
+   {
+    "q": "BBox endpoint production-ready bo'lishi uchun qaysi tekshiruv shart?",
+    "a": [
+     "auth, validation, GeoJSON contract va integration test",
+     "faqat console.log",
+     "faqat screenshot",
+     "faqat random response"
+    ],
+    "c": 0,
+    "w": "Endpoint contract va xavfsizlik test bilan yopilishi kerak.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "JS/TS developer uchun Pydantic nimaga yaqin?",
+    "options": [
+     "Zod schema validation",
+     "CSS reset",
+     "Git branch",
+     "Nginx port"
+    ],
+    "correct": 0,
+    "why": "Pydantic request/response data validation va serialization qiladi."
+   },
+   {
+    "type": "gap",
+    "q": "PostGIS geometry ustuni uchun PostgreSQL index turi: ___",
+    "answers": [
+     "GIST",
+     "GiST",
+     "gist"
+    ],
+    "hint": "G bilan boshlanadi",
+    "why": "GIST index spatial querylarni tezlashtiradi."
+   },
+   {
+    "type": "choice",
+    "q": "Upload endpoint darhol 10 daqiqa processing qilsa nima muammo?",
+    "options": [
+     "API request timeout va sekin UX",
+     "rang juda och",
+     "README qisqa",
+     "bbox yo'q"
+    ],
+    "correct": 0,
+    "why": "Og'ir processing worker/queuega ajratiladi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "dependency",
+    "uz": "FastAPI request ichida kerakli obyekt/tekshiruvni inject qilish mexanizmi",
+    "ex": "Auth dependency current userni qaytaradi."
+   },
+   {
+    "w": "migration",
+    "uz": "database schema o'zgarishini versiyalash",
+    "ex": "Alembic migration assets table yaratdi."
+   },
+   {
+    "w": "contract test",
+    "uz": "API javobi kelishilgan formatga mosligini tekshirish",
+    "ex": "GeoJSON contract test FeatureCollection qaytishini tekshiradi."
+   },
+   {
+    "w": "background job",
+    "uz": "HTTP requestdan tashqarida bajariladigan og'ir ish",
+    "ex": "COG processing background job sifatida yuradi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "API flow",
+    "rule": "Request -> dependency -> validation -> service -> repository -> response.",
+    "ex": "bbox request authdan o'tadi, Pydantic validationdan o'tadi, PostGISdan GeoJSON qaytadi."
+   },
+   {
+    "topic": "Worker flow",
+    "rule": "Upload -> validate -> enqueue -> process -> status -> result.",
+    "ex": "GeoTIFF upload job_id qaytaradi, worker COG yaratadi."
+   }
+  ]
  }
 ]
