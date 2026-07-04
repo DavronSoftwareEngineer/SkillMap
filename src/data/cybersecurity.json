@@ -2694,5 +2694,296 @@
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "CY13",
+  "title": "WebGIS Security Operations Lab",
+  "sub": "WebGIS security",
+  "coord": "SOC / AppSec / WebGIS",
+  "eyebrow": "13 / WEBGIS SECURITY / PROFESSIONAL",
+  "mtitle": "WebGIS platformani himoyalash: API, geo-data, audit, SOC va incident response",
+  "lede": "Bu modul cybersecurity kursini WebGIS yo'nalishingiz bilan bog'laydi: MapLibre/FastAPI/PostGIS platformani hujum, xato konfiguratsiya, data leak va incidentlarga qarshi tayyorlash.",
+  "doc": "<div class='prose'>\n<h3>Nega WebGIS security alohida muhim</h3>\n<p>WebGIS oddiy web ilova emas: unda xarita, koordinata, obyektlar, foydalanuvchi rollari, upload, processing worker va ba'zan sezgir joylashuv ma'lumoti bor. Shuning uchun xavfsizlik faqat login emas. <strong>API contract, role, audit log, data privacy, backup/restore va monitoring</strong> birga ishlashi kerak.</p>\n<h3>Himoya qilinadigan attack surface</h3>\n<div class=\"chips\"><span class=\"chip t\">/auth</span><span class=\"chip t\">/api/features bbox</span><span class=\"chip\">/upload GeoJSON/GeoTIFF</span><span class=\"chip\">/admin CRUD</span><span class=\"chip\">worker queue</span><span class=\"chip\">PostGIS</span><span class=\"chip\">tile endpoint</span><span class=\"chip\">Telegram alert</span></div>\n<p>Har endpoint uchun savol bitta: kim kira oladi, nima qila oladi, qanday input yubora oladi, noto'g'ri ishlatsa logda qanday iz qoladi?</p>\n<h3>4 bosqichli professional lab</h3>\n<div class=\"tree\">1. Threat model\n   assets, actors, entry points, abuse cases\n2. Security controls\n   auth, RBAC, validation, rate limit, audit log, secret handling\n3. Detection & SOC\n   log fields, Sigma-style rule, alert triage, severity\n4. Incident response\n   containment, evidence, recovery, executive report</div>\n<h3>WebGIS uchun maxsus risklar</h3>\n<p><strong>Location privacy:</strong> foydalanuvchi yoki obyekt joylashuvi oshkor bo'lishi mumkin. <strong>Upload risk:</strong> GeoJSON/GeoTIFF orqali katta fayl, zararli metadata yoki processing DoS bo'lishi mumkin. <strong>Tile scraping:</strong> tile endpointdan data ko'chirib olish yoki ortiqcha trafik qilish mumkin. <strong>Privilege abuse:</strong> admin bo'lmagan user obyekt o'chirishga harakat qiladi.</p>\n<div class=\"callout\"><div><p>Professional dalil</p><p>Har security qaror koddan tashqari dalil bilan yopiladi: threat model jadvali, audit log namunasi, test natijasi, alert rule va incident report.</p></div></div>\n<figure class='svgfig'><svg viewBox='0 0 700 180' role='img' aria-label='WebGIS security operations flow'>\n<rect class='boxa' x='20' y='55' width='120' height='50' rx='8'/><text x='80' y='76' text-anchor='middle'>Request</text><text x='80' y='92' text-anchor='middle' class='muted'>user / bot</text>\n<path class='edga' d='M140 80 H185' marker-end='url(#arCy13a)'/>\n<rect class='box' x='185' y='55' width='120' height='50' rx='8'/><text x='245' y='76' text-anchor='middle'>API guard</text><text x='245' y='92' text-anchor='middle' class='muted'>auth / RBAC</text>\n<path class='edga' d='M305 80 H350' marker-end='url(#arCy13a)'/>\n<rect class='box' x='350' y='55' width='120' height='50' rx='8'/><text x='410' y='76' text-anchor='middle'>Action</text><text x='410' y='92' text-anchor='middle' class='muted'>PostGIS / worker</text>\n<path class='edga' d='M470 80 H515' marker-end='url(#arCy13a)'/>\n<rect class='boxa' x='515' y='55' width='160' height='50' rx='8'/><text x='595' y='76' text-anchor='middle'>Audit + SOC</text><text x='595' y='92' text-anchor='middle' class='muted'>alert / IR</text>\n<text x='350' y='145' text-anchor='middle' class='accent'>protect -> log -> detect -> respond -> recover</text>\n<defs><marker id='arCy13a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>WebGIS security flow: himoya, audit, detection va incident response bir zanjir.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Threat model jadvali",
+     "p": "Har WebGIS endpoint uchun abuse case va control yoziladi."
+    },
+    "title": "docs/threat-model.md",
+    "lang": "md",
+    "code": "| Asset | Entry point | Abuse case | Control | Evidence |\n|---|---|---|---|---|\n| Geo objects | /api/features | Unauthorized export | RBAC + bbox limit | API test |\n| Upload worker | /upload | Huge file DoS | size/type limit + queue timeout | log + test |\n| Admin CRUD | /admin/assets | non-admin delete | role check + audit log | 403 test + audit row |\n| Tiles | /tiles/{z}/{x}/{y} | scraping/high traffic | rate limit + cache | Nginx logs |"
+   },
+   {
+    "heading": {
+     "h": "FastAPI RBAC guard",
+     "p": "Admin endpoint role tekshiruvisiz ishlamasligi kerak."
+    },
+    "title": "api/security.py",
+    "lang": "python",
+    "code": "from fastapi import Depends, HTTPException, status\n\ndef require_role(required: str):\n    def guard(user = Depends(get_current_user)):\n        if required not in user.roles:\n            raise HTTPException(\n                status_code=status.HTTP_403_FORBIDDEN,\n                detail=\"insufficient_role\",\n            )\n        return user\n    return guard\n\n@router.delete(\"/admin/assets/{asset_id}\")\ndef delete_asset(asset_id: int, user = Depends(require_role(\"admin\"))):\n    audit_log(user.id, \"asset.delete\", {\"asset_id\": asset_id})\n    return service.delete_asset(asset_id)"
+   },
+   {
+    "heading": {
+     "h": "Audit log schema",
+     "p": "Kim, qachon, nima qildi degan savolga javob beradi."
+    },
+    "title": "database/003_audit_log.sql",
+    "lang": "sql",
+    "code": "CREATE TABLE audit_log (\n  id BIGSERIAL PRIMARY KEY,\n  actor_id BIGINT,\n  action TEXT NOT NULL,\n  target_type TEXT,\n  target_id TEXT,\n  ip INET,\n  user_agent TEXT,\n  metadata JSONB NOT NULL DEFAULT '{}'::jsonb,\n  created_at TIMESTAMPTZ NOT NULL DEFAULT now()\n);\n\nCREATE INDEX audit_log_action_created_idx ON audit_log (action, created_at DESC);\nCREATE INDEX audit_log_actor_created_idx ON audit_log (actor_id, created_at DESC);"
+   },
+   {
+    "heading": {
+     "h": "SOC alert rule",
+     "p": "Admin endpointga ko'p 403 bo'lsa triage boshlanadi."
+    },
+    "title": "detections/webgis_admin_forbidden.yml",
+    "lang": "yaml",
+    "code": "title: Repeated Forbidden Admin Actions\nlogsource:\n  product: geopulse\n  service: api\ndetection:\n  selection:\n    status: 403\n    route|contains: \"/admin\"\n  condition: selection\nfields:\n  - actor_id\n  - ip\n  - route\n  - user_agent\nlevel: medium"
+   },
+   {
+    "heading": {
+     "h": "Incident report skeleti",
+     "p": "IR ishini texnik va rahbariyat tili bilan yopish."
+    },
+    "title": "docs/incident-report.md",
+    "lang": "md",
+    "code": "# Incident report\n\n## Executive summary\nNima bo'ldi, ta'siri qanday, hozir status qanday.\n\n## Timeline\n- detected_at:\n- contained_at:\n- recovered_at:\n\n## Evidence\nLoglar, screenshotlar, request id, affected assets.\n\n## Root cause\nTexnik sabab va jarayon sababi.\n\n## Actions\nContainment, eradication, recovery, prevention.\n\n## Lessons learned\nMonitoring, test, policy yoki architecture o'zgarishi."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "cy13-1",
+    "html": "WebGIS attack surface ro'yxati tuzildi",
+    "crit": "auth, bbox, upload, admin, worker, tile va DB entry pointlari bor"
+   },
+   {
+    "id": "cy13-2",
+    "html": "Threat model jadvali yozildi",
+    "crit": "asset, abuse case, control va evidence ustunlari to'ldirilgan"
+   },
+   {
+    "id": "cy13-3",
+    "html": "FastAPI RBAC guard va 403 test yozildi",
+    "crit": "admin bo'lmagan user protected endpointdan qaytadi"
+   },
+   {
+    "id": "cy13-4",
+    "html": "Upload security checklist bajarildi",
+    "crit": "file type, size, timeout, virus/metadata va queue limit yozilgan"
+   },
+   {
+    "id": "cy13-5",
+    "html": "Audit log jadvali va kamida 3 action eventi yozildi",
+    "crit": "actor, action, target, ip, metadata, created_at maydonlari bor"
+   },
+   {
+    "id": "cy13-6",
+    "html": "SOC alert rule va triage playbook tayyorlandi",
+    "crit": "alert severity, evidence, first response va escalation yozilgan"
+   },
+   {
+    "id": "cy13-7",
+    "html": "MITRE ATT&CK va OWASP API mapping qo'shildi",
+    "crit": "kamida 3 risk professional frameworkga bog'langan"
+   },
+   {
+    "id": "cy13-8",
+    "html": "Incident report namunasi yozildi",
+    "crit": "timeline, evidence, root cause, action va lessons learned bor"
+   },
+   {
+    "id": "cy13-9",
+    "html": "Backup/restore security drill bajarildi",
+    "crit": "restore ishladi, access va audit izlari tekshirildi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://owasp.org/www-project-api-security/",
+    "title": "OWASP API Security Top 10",
+    "desc": "API risklarni professional framework bilan baholash.",
+    "host": "owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "title": "OWASP Authorization Cheat Sheet",
+    "desc": "RBAC va authorization xatolarini kamaytirish.",
+    "host": "cheatsheetseries.owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://attack.mitre.org/",
+    "title": "MITRE ATT&CK",
+    "desc": "Threat mapping va detection fikrlash.",
+    "host": "attack.mitre.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.nist.gov/cyberframework",
+    "title": "NIST Cybersecurity Framework",
+    "desc": "Identify, Protect, Detect, Respond, Recover modeli.",
+    "host": "nist.gov"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.cisa.gov/resources-tools/resources/incident-response-plan-irp-basics",
+    "title": "CISA IR Plan Basics",
+    "desc": "Incident response reja asoslari.",
+    "host": "cisa.gov"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.python.org/3/library/secrets.html",
+    "title": "Python secrets",
+    "desc": "Secret/token yaratish va ishlatish.",
+    "host": "docs.python.org"
+   }
+  ],
+  "project": {
+   "tag": "Security / WebGIS / SOC",
+   "title": "GeoPulse Security Operations Pack",
+   "desc": "WebGIS platforma uchun threat model, RBAC, audit log, SOC alert, IR report va backup/restore security drill.",
+   "features": [
+    "Threat model va attack surface inventory",
+    "FastAPI RBAC guard va authorization tests",
+    "Upload/file security checklist",
+    "PostgreSQL audit log schema",
+    "SOC alert rule va triage playbook",
+    "MITRE/OWASP/NIST mapping",
+    "Incident report va executive summary",
+    "Backup/restore drill security evidence"
+   ],
+   "rubric": [
+    "Har risk uchun evidence va control bor.",
+    "Protected endpointlar test bilan himoyalangan.",
+    "Audit log real actionni yozadi.",
+    "SOC alert rule false positive/triage izohi bilan berilgan.",
+    "IR report texnik va non-technical auditoriyaga tushunarli.",
+    "Backup/restore natijasi recovery dalili bilan hujjatlangan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "WebGIS platformada attack surface nima?",
+    "a": [
+     "faqat UI rangi",
+     "kirish nuqtalari: API, upload, admin, tiles, worker, DB",
+     "faqat README",
+     "faqat kompyuter nomi"
+    ],
+    "c": 1,
+    "w": "Attack surface - hujum yoki noto'g'ri foydalanish kirishi mumkin bo'lgan nuqtalar to'plami.",
+    "level": "easy"
+   },
+   {
+    "q": "Audit logning eng katta foydasi nima?",
+    "a": [
+     "xaritani bezash",
+     "kim qachon nima qilganini dalil bilan ko'rsatish",
+     "CSS yozish",
+     "tokenni ochiq saqlash"
+    ],
+    "c": 1,
+    "w": "Audit log incident, compliance va debuggingda iz qoldiradi.",
+    "level": "practical"
+   },
+   {
+    "q": "Admin endpointga ketma-ket 403 alert chiqsa birinchi triage savoli qaysi?",
+    "a": [
+     "rang qanaqa",
+     "actor/ip kim, qaysi route, normalmi yoki abusemi",
+     "nechta CSS fayl",
+     "qaysi font"
+    ],
+    "c": 1,
+    "w": "SOC triage evidence bilan boshlanadi: actor, ip, route, vaqt, user_agent.",
+    "level": "scenario"
+   },
+   {
+    "q": "Location privacy riskini kamaytirishning bir yo'li?",
+    "a": [
+     "hamma koordinatani public qilish",
+     "role-based access va kerak bo'lsa generalization/masking",
+     "secretni commit qilish",
+     "auditni o'chirish"
+    ],
+    "c": 1,
+    "w": "Sezgir joylashuv data minimal access, masking/generalization va audit bilan himoyalanadi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "WebGIS security labda 'done' bo'lishi uchun nima kerak?",
+    "options": [
+     "threat model + control + evidence",
+     "faqat chiroyli nom",
+     "faqat screenshot",
+     "faqat bitta link"
+    ],
+    "correct": 0,
+    "why": "Security ishida dalil va tekshiruvsiz 'done' yo'q."
+   },
+   {
+    "type": "gap",
+    "q": "Kim, qachon, nima qildi degan savolga javob beradigan log turi: ___ log.",
+    "answers": [
+     "audit",
+     "Audit"
+    ],
+    "hint": "A bilan boshlanadi",
+    "why": "Audit log action izini saqlaydi."
+   },
+   {
+    "type": "choice",
+    "q": "Upload endpoint uchun eng to'g'ri control qaysi?",
+    "options": [
+     "file type/size limit, timeout, queue limit",
+     "cheksiz fayl qabul qilish",
+     "authsiz upload",
+     "loglarni o'chirish"
+    ],
+    "correct": 0,
+    "why": "Upload DoS va zararli input xavfini kamaytirish kerak."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "attack surface",
+    "uz": "hujum kirishi mumkin bo'lgan nuqtalar",
+    "ex": "Upload endpoint attack surface tarkibiga kiradi."
+   },
+   {
+    "w": "triage",
+    "uz": "alertni tez saralash va ustuvorlashtirish",
+    "ex": "SOC analyst alert triage qiladi."
+   },
+   {
+    "w": "containment",
+    "uz": "incident tarqalishini vaqtincha to'xtatish",
+    "ex": "Compromised token revoke qilish containment bo'ladi."
+   },
+   {
+    "w": "least privilege",
+    "uz": "foydalanuvchiga faqat kerakli ruxsat berish",
+    "ex": "Viewer role admin CRUD qila olmaydi."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Security evidence chain",
+    "rule": "Risk -> control -> test -> log -> report.",
+    "ex": "Admin delete risk -> RBAC -> 403 test -> audit row -> report."
+   },
+   {
+    "topic": "NIST lifecycle",
+    "rule": "Identify, Protect, Detect, Respond, Recover.",
+    "ex": "Threat model identify, RBAC protect, SOC detect, IR respond, backup recover."
+   }
+  ]
  }
 ]
