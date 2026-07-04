@@ -6412,5 +6412,328 @@
     "ex": "GeoTIFF upload job_id qaytaradi, worker COG yaratadi."
    }
   ]
+ },
+ {
+  "zoom": "z23",
+  "title": "MapLibre Frontend Production Lab",
+  "sub": "React map UX",
+  "coord": "Frontend / z23",
+  "eyebrow": "23 / MAPLIBRE / REACT TS / UX",
+  "mtitle": "MapLibre frontend: operator uchun production xarita interfeysi",
+  "lede": "Bu modul Geospatial Full-Stack Academy frontend qismini kuchaytiradi: React + TypeScript + MapLibre bilan layer toggle, filter/search, selected feature, bbox data loading, performance va frontend testlar.",
+  "doc": "<div class='prose'>\n<h3>Nega frontend xarita alohida lab bo'lishi kerak</h3>\n<p>Geospatial ilovada xarita shunchaki rasm emas. U operatorning asosiy ish joyi: qatlamlarni yoqadi/o'chiradi, obyekt qidiradi, filtrlaydi, detallarni ko'radi, xatoni sezadi va sekinlikni darhol his qiladi. Shu sabab React + MapLibre qismi ham backend kabi contract, state, performance va test bilan qurilishi kerak.</p>\n<h3>Production map UX flow</h3>\n<div class=\"tree\">Map load\n  -> style ready\n  -> layer registry\n  -> viewport bbox query\n  -> loading / empty / error states\n  -> feature click\n  -> details panel\n  -> filter/search changes\n  -> debounced refetch\n  -> URL state / shareable view</div>\n<h3>Map state modeli</h3>\n<p>Professional xaritada state tarqoq bo'lmasligi kerak. Layer visibility, selected feature, active filters, viewport bbox, loading/error va query cache alohida model bo'ladi. TypeScript tiplari frontend/backend contractni buzilishdan himoya qiladi.</p>\n<div class=\"chips\"><span class=\"chip t\">Layer registry</span><span class=\"chip t\">Feature types</span><span class=\"chip\">API client</span><span class=\"chip\">useViewportQuery</span><span class=\"chip\">debounced moveend</span><span class=\"chip\">selected feature panel</span><span class=\"chip\">accessibility</span></div>\n<h3>Performance yondashuvi</h3>\n<p>MapLibre sekinlashsa sabab ko'p bo'lishi mumkin: ortiqcha GeoJSON, har move'da refetch, keraksiz rerender, katta marker soni, tile style og'irligi yoki browser memory. Har safar o'lchov bilan ishlaysan: FPS, network count, payload size, render duration va layer count.</p>\n<div class=\"callout\"><div><p>Operator UX qoidasi</p><p>Xarita sekin yoki noaniq bo'lsa, operator noto'g'ri qaror qiladi. Shuning uchun loading, error, empty, selected va offline-ish holatlar dizaynning markazida turadi.</p></div></div>\n<figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='MapLibre frontend architecture'>\n<rect class='boxa' x='20' y='55' width='125' height='50' rx='8'/><text x='82' y='76' text-anchor='middle'>MapLibre</text><text x='82' y='92' text-anchor='middle' class='muted'>viewport</text>\n<path class='edga' d='M145 80 H190' marker-end='url(#arZ23a)'/>\n<rect class='box' x='190' y='55' width='125' height='50' rx='8'/><text x='252' y='76' text-anchor='middle'>React state</text><text x='252' y='92' text-anchor='middle' class='muted'>filters</text>\n<path class='edga' d='M315 80 H360' marker-end='url(#arZ23a)'/>\n<rect class='box' x='360' y='55' width='125' height='50' rx='8'/><text x='422' y='76' text-anchor='middle'>API client</text><text x='422' y='92' text-anchor='middle' class='muted'>bbox</text>\n<path class='edga' d='M485 80 H530' marker-end='url(#arZ23a)'/>\n<rect class='boxa' x='530' y='55' width='145' height='50' rx='8'/><text x='602' y='76' text-anchor='middle'>UI panels</text><text x='602' y='92' text-anchor='middle' class='muted'>details</text>\n<text x='350' y='155' text-anchor='middle' class='accent'>layer toggle + search + selected feature + tests + performance budget</text>\n<defs><marker id='arZ23a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Frontend map architecture: viewport state API bilan ulanadi, UI panel esa operator ishini boshqaradi.</figcaption></figure>\n</div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Map feature contract",
+     "p": "Backend GeoJSON response frontendda qat'iy TypeScript tipga aylanadi."
+    },
+    "title": "src/features/map/types.ts",
+    "lang": "ts",
+    "code": "export type AssetCategory = \"road\" | \"building\" | \"risk\" | \"sensor\";\n\nexport interface AssetProperties {\n  id: number;\n  name: string;\n  category: AssetCategory;\n  status: \"active\" | \"inactive\" | \"warning\";\n  updatedAt: string;\n}\n\nexport type AssetFeature = GeoJSON.Feature<GeoJSON.Geometry, AssetProperties>;\n\nexport interface FeatureCollectionResponse {\n  type: \"FeatureCollection\";\n  features: AssetFeature[];\n}"
+   },
+   {
+    "heading": {
+     "h": "Layer registry",
+     "p": "Layerlar tasodifiy emas, registry orqali boshqariladi."
+    },
+    "title": "src/features/map/layers.ts",
+    "lang": "ts",
+    "code": "export const MAP_LAYERS = [\n  { id: \"assets\", label: \"Assets\", source: \"assets\", defaultVisible: true },\n  { id: \"risk-zones\", label: \"Risk zones\", source: \"riskZones\", defaultVisible: true },\n  { id: \"detections\", label: \"AI detections\", source: \"detections\", defaultVisible: false },\n] as const;\n\nexport type MapLayerId = (typeof MAP_LAYERS)[number][\"id\"];\n\nexport function initialLayerVisibility(): Record<MapLayerId, boolean> {\n  return Object.fromEntries(MAP_LAYERS.map((l) => [l.id, l.defaultVisible])) as Record<MapLayerId, boolean>;\n}"
+   },
+   {
+    "heading": {
+     "h": "Typed API client",
+     "p": "Frontend bbox endpoint bilan aniq contract orqali gaplashadi."
+    },
+    "title": "src/features/map/api.ts",
+    "lang": "ts",
+    "code": "import type { FeatureCollectionResponse } from \"./types\";\n\nexport interface BBox {\n  minx: number;\n  miny: number;\n  maxx: number;\n  maxy: number;\n}\n\nexport async function fetchFeaturesInBBox(bbox: BBox, signal?: AbortSignal): Promise<FeatureCollectionResponse> {\n  const qs = new URLSearchParams({ bbox: [bbox.minx, bbox.miny, bbox.maxx, bbox.maxy].join(\",\") });\n  const res = await fetch(`/api/features?${qs}`, { signal });\n  if (!res.ok) throw new Error(`features_request_failed:${res.status}`);\n  return res.json();\n}"
+   },
+   {
+    "heading": {
+     "h": "Viewport query hook",
+     "p": "Map move tugagandan keyin debounced bbox request yuboriladi."
+    },
+    "title": "src/features/map/useViewportFeatures.ts",
+    "lang": "ts",
+    "code": "import { useEffect, useMemo, useState } from \"react\";\nimport type maplibregl from \"maplibre-gl\";\nimport { fetchFeaturesInBBox, type BBox } from \"./api\";\n\nexport function useViewportFeatures(map: maplibregl.Map | null) {\n  const [bbox, setBBox] = useState<BBox | null>(null);\n  const [state, setState] = useState({ loading: false, error: \"\", count: 0 });\n\n  useEffect(() => {\n    if (!map) return;\n    let timer: number | undefined;\n    const update = () => {\n      window.clearTimeout(timer);\n      timer = window.setTimeout(() => {\n        const b = map.getBounds();\n        setBBox({ minx: b.getWest(), miny: b.getSouth(), maxx: b.getEast(), maxy: b.getNorth() });\n      }, 250);\n    };\n    map.on(\"moveend\", update);\n    update();\n    return () => {\n      window.clearTimeout(timer);\n      map.off(\"moveend\", update);\n    };\n  }, [map]);\n\n  useEffect(() => {\n    if (!bbox) return;\n    const controller = new AbortController();\n    setState((s) => ({ ...s, loading: true, error: \"\" }));\n    fetchFeaturesInBBox(bbox, controller.signal)\n      .then((data) => setState({ loading: false, error: \"\", count: data.features.length }))\n      .catch((err) => {\n        if (err.name !== \"AbortError\") setState({ loading: false, error: err.message, count: 0 });\n      });\n    return () => controller.abort();\n  }, [bbox]);\n\n  return useMemo(() => ({ bbox, ...state }), [bbox, state]);\n}"
+   },
+   {
+    "heading": {
+     "h": "Selected feature panel",
+     "p": "Operator click qilgan obyektni aniq va ixcham ko'radi."
+    },
+    "title": "src/features/map/FeatureDetails.tsx",
+    "lang": "tsx",
+    "code": "import type { AssetFeature } from \"./types\";\n\nexport function FeatureDetails({ feature, onClose }: { feature: AssetFeature | null; onClose: () => void }) {\n  if (!feature) return null;\n  const p = feature.properties;\n  return (\n    <aside aria-label=\"Selected feature details\">\n      <button type=\"button\" onClick={onClose}>Close</button>\n      <h2>{p.name}</h2>\n      <dl>\n        <dt>Category</dt><dd>{p.category}</dd>\n        <dt>Status</dt><dd>{p.status}</dd>\n        <dt>Updated</dt><dd>{new Date(p.updatedAt).toLocaleString()}</dd>\n      </dl>\n    </aside>\n  );\n}"
+   },
+   {
+    "heading": {
+     "h": "Map UX test",
+     "p": "Layer toggle va selected feature flow regressiondan himoyalanadi."
+    },
+    "title": "src/features/map/MapPanel.test.tsx",
+    "lang": "tsx",
+    "code": "import { render, screen } from \"@testing-library/react\";\nimport userEvent from \"@testing-library/user-event\";\nimport { FeatureDetails } from \"./FeatureDetails\";\n\ntest(\"selected feature details can be closed\", async () => {\n  const user = userEvent.setup();\n  const onClose = vi.fn();\n  render(<FeatureDetails feature={{\n    type: \"Feature\",\n    geometry: { type: \"Point\", coordinates: [69.2, 41.3] },\n    properties: { id: 1, name: \"Sensor A\", category: \"sensor\", status: \"active\", updatedAt: \"2026-01-01T00:00:00Z\" },\n  }} onClose={onClose} />);\n\n  expect(screen.getByText(\"Sensor A\")).toBeInTheDocument();\n  await user.click(screen.getByRole(\"button\", { name: /close/i }));\n  expect(onClose).toHaveBeenCalled();\n});"
+   },
+   {
+    "heading": {
+     "h": "Performance budget",
+     "p": "Frontend xarita performance taxmin emas, raqam bilan nazorat qilinadi."
+    },
+    "title": "docs/map-performance-budget.md",
+    "lang": "md",
+    "code": "# Map performance budget\n\n| Metric | Target | Evidence |\n|---|---:|---|\n| Initial map interactive | < 3s | Lighthouse / manual timing |\n| Bbox request p95 | < 300ms | API logs |\n| GeoJSON payload | < 500KB | Network tab |\n| Moveend refetch | debounced 250ms | test / code |\n| Visible features as DOM markers | < 500 | use layers/clusters above |\n| Error state | visible | screenshot |\n| Empty state | visible | screenshot |"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "z23-1",
+    "html": "Map feature TypeScript contract yozildi",
+    "crit": "GeoJSON response typed va API client shu tipni qaytaradi"
+   },
+   {
+    "id": "z23-2",
+    "html": "Layer registry va layer toggle UI yaratildi",
+    "crit": "assets/risk/detections layer visibility state orqali boshqariladi"
+   },
+   {
+    "id": "z23-3",
+    "html": "Map viewport bbox query hook yozildi",
+    "crit": "moveend event debounced request yuboradi va oldingi request abort qilinadi"
+   },
+   {
+    "id": "z23-4",
+    "html": "Loading, empty va error state'lar UI'da ko'rindi",
+    "crit": "network xato va bo'sh result uchun alohida holat bor"
+   },
+   {
+    "id": "z23-5",
+    "html": "Search va filter panel qo'shildi",
+    "crit": "category/status filter API query yoki client state bilan ishlaydi"
+   },
+   {
+    "id": "z23-6",
+    "html": "Selected feature details panel yozildi",
+    "crit": "feature click qilinganda nom, kategoriya, status va update vaqti ko'rinadi"
+   },
+   {
+    "id": "z23-7",
+    "html": "Map performance budget yozildi",
+    "crit": "payload, p95, refetch debounce va layer count targetlari bor"
+   },
+   {
+    "id": "z23-8",
+    "html": "Large dataset strategy tanlandi",
+    "crit": "qachon GeoJSON, qachon clustering, qachon vector tile ishlatilishi yozilgan"
+   },
+   {
+    "id": "z23-9",
+    "html": "Map UX testlari yozildi",
+    "crit": "layer toggle, selected feature va error state test bilan yopilgan"
+   },
+   {
+    "id": "z23-10",
+    "html": "Operator dashboard walkthrough tayyorlandi",
+    "crit": "demo video/screenshotda search, filter, layer va details oqimi ko'rinadi"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://maplibre.org/maplibre-gl-js/docs/",
+    "title": "MapLibre GL JS docs",
+    "desc": "Map, source, layer, event va style API.",
+    "host": "maplibre.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://maplibre.org/maplibre-style-spec/",
+    "title": "MapLibre Style Spec",
+    "desc": "Layer style va expressionlar.",
+    "host": "maplibre.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://react.dev/reference/react",
+    "title": "React reference",
+    "desc": "Hooks va component API.",
+    "host": "react.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.typescriptlang.org/docs/",
+    "title": "TypeScript docs",
+    "desc": "Type contract va generics.",
+    "host": "typescriptlang.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://testing-library.com/docs/react-testing-library/intro/",
+    "title": "React Testing Library",
+    "desc": "User-flow testlar.",
+    "host": "testing-library.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://web.dev/articles/vitals",
+    "title": "Web Vitals",
+    "desc": "Frontend performance metrikalari.",
+    "host": "web.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.mapbox.com/help/troubleshooting/working-with-large-geojson-data/",
+    "title": "Large GeoJSON guidance",
+    "desc": "Katta GeoJSON bilan ishlash trade-offlari.",
+    "host": "docs.mapbox.com"
+   }
+  ],
+  "project": {
+   "tag": "React TS / MapLibre / Production UX",
+   "title": "GeoPulse Operator Map Console",
+   "desc": "Operator ishlatadigan professional MapLibre frontend: layer, filter, search, selected feature, bbox loading, performance budget va tests.",
+   "features": [
+    "Typed GeoJSON API client",
+    "Layer registry and visibility toggles",
+    "Viewport bbox query with debounce and abort",
+    "Loading, empty, error and success states",
+    "Search and filter panel",
+    "Selected feature details panel",
+    "Large dataset rendering strategy",
+    "Map UX tests and performance budget"
+   ],
+   "rubric": [
+    "Operator xaritada layerlarni yoqib/o'chira oladi.",
+    "Viewport o'zgarganda bbox data nazoratli refetch bo'ladi.",
+    "Feature click details panelni ochadi.",
+    "Error/empty/loading holatlar aniq ko'rinadi.",
+    "Katta data uchun GeoJSON vs cluster vs vector tile qarori yozilgan.",
+    "Kamida 3 frontend user-flow test bor.",
+    "Performance budget README yoki docs ichida dalil bilan yozilgan."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "MapLibre frontendda move eventda har pikselga request yuborish nimaga yomon?",
+    "a": [
+     "API va browserni ortiqcha yuklaydi",
+     "rangni yaxshilaydi",
+     "testni o'chiradi",
+     "PostGISni avtomatik tezlashtiradi"
+    ],
+    "c": 0,
+    "w": "Debounce va moveend event network yukini kamaytiradi.",
+    "level": "practical"
+   },
+   {
+    "q": "Layer registry nima uchun kerak?",
+    "a": [
+     "layerlarni markaziy, typed va boshqariladigan qilish uchun",
+     "faqat CSS uchun",
+     "database migration uchun",
+     "secret saqlash uchun"
+    ],
+    "c": 0,
+    "w": "Registry layer toggle, default visibility va UI labelni tartibli qiladi.",
+    "level": "easy"
+   },
+   {
+    "q": "1 million obyektni frontendda qanday strategiya bilan ko'rsatish kerak?",
+    "a": [
+     "hammasini DOM marker qilish",
+     "clustering/vector tiles/viewport query ishlatish",
+     "mapni o'chirish",
+     "authni olib tashlash"
+    ],
+    "c": 1,
+    "w": "Katta data browserga bo'lib, soddalashtirib yoki tile orqali beriladi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Selected feature panel professional bo'lishi uchun nima kerak?",
+    "a": [
+     "nom, status, kategoriya, update va close/focus behavior",
+     "faqat rang",
+     "faqat console.log",
+     "faqat random text"
+    ],
+    "c": 0,
+    "w": "Operator obyektni tez tushunishi va panelni boshqarishi kerak.",
+    "level": "practical"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Viewport query hookda eski request bilan nima qilish kerak?",
+    "options": [
+     "AbortController bilan bekor qilish",
+     "kutib turib hammasini render qilish",
+     "browserni yopish",
+     "errorni yashirish"
+    ],
+    "correct": 0,
+    "why": "Yangi viewport kelganda eski response state'ni buzmasligi kerak."
+   },
+   {
+    "type": "gap",
+    "q": "Xaritani surish tugagandan keyin requestni kechiktirib yuborish usuli: ___",
+    "answers": [
+     "debounce",
+     "Debounce",
+     "debounced"
+    ],
+    "hint": "d bilan boshlanadi",
+    "why": "Debounce ko'p requestlarni bitta nazoratli requestga kamaytiradi."
+   },
+   {
+    "type": "choice",
+    "q": "Loading/empty/error state nega muhim?",
+    "options": [
+     "operator nima bo'layotganini tushunishi uchun",
+     "faqat kod ko'paytirish uchun",
+     "API'ni sekinlatish uchun",
+     "testni qiyinlashtirish uchun"
+    ],
+    "correct": 0,
+    "why": "Professional UI foydalanuvchini noaniqlikda qoldirmaydi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "viewport query",
+    "uz": "xaritada ko'rinayotgan hudud bo'yicha so'rov",
+    "ex": "Viewport query faqat ekranda ko'rinayotgan obyektlarni oladi."
+   },
+   {
+    "w": "layer registry",
+    "uz": "xarita qatlamlari markaziy ro'yxati",
+    "ex": "Layer registry toggle UI bilan ulanadi."
+   },
+   {
+    "w": "debounce",
+    "uz": "tez-tez chaqirilgan ishni qisqa kutib bitta bajarish",
+    "ex": "Moveend request 250ms debounce qilindi."
+   },
+   {
+    "w": "performance budget",
+    "uz": "tezlik va hajm uchun oldindan belgilangan limit",
+    "ex": "GeoJSON payload 500KBdan oshmasligi kerak."
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Map UX flow",
+    "rule": "load -> query -> state -> select -> details -> filter -> refetch.",
+    "ex": "Map load bo'ladi, bbox query ketadi, feature tanlanadi, filter o'zgarsa refetch bo'ladi."
+   },
+   {
+    "topic": "Large data trade-off",
+    "rule": "small data -> GeoJSON; medium -> clustering; large -> vector tiles.",
+    "ex": "1M obyekt uchun vector tile yoki viewport query kerak."
+   }
+  ]
  }
 ]
