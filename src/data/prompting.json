@@ -2174,5 +2174,128 @@
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "P7",
+  "title": "AI Workflow Final Assessment",
+  "sub": "Final assessment",
+  "coord": "Final / Professional",
+  "eyebrow": "P7 / FINAL / JOB-READY",
+  "mtitle": "AI workflow final: prompt library, verification va privacy",
+  "lede": "Prompting kursi yakunida real ish uchun qayta ishlatiladigan AI workflow, prompt template, verification va privacy checklist bilan final qilinadi.",
+  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>AI'ni real ishda xavfsiz, tekshiriladigan va samarali ishlatish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final evidence checklist",
+     "p": "Yakuniy ish dalil bilan yopiladi."
+    },
+    "title": "prompt-workflow-template.md",
+    "lang": "md",
+    "code": "# AI workflow template\n\nTask:\nContext:\nInput format:\nOutput format:\nConstraints:\nVerification:\nPrivacy notes:\nFailure cases:"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "p7-1",
+    "html": "5 ta reusable prompt template yozildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "p7-2",
+    "html": "Har prompt uchun input/output contract belgilandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "p7-3",
+    "html": "Fact-check yoki test verification yozildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "p7-4",
+    "html": "Privacy va sensitive data checklist bajarildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "p7-5",
+    "html": "Before/after productivity case study yozildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.promptingguide.ai/",
+    "title": "Prompt Engineering Guide",
+    "desc": "Prompt patternlar.",
+    "host": "promptingguide.ai"
+   },
+   {
+    "type": "doc",
+    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+    "title": "OpenAI prompt engineering",
+    "desc": "Rasmiy tavsiyalar.",
+    "host": "platform.openai.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / Assessment / Job-ready",
+   "title": "AI Workflow Final Assessment: final defense",
+   "desc": "Kurs yakunida AI'ni real ishda xavfsiz, tekshiriladigan va samarali ishlatish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "features": [
+    "5 ta reusable prompt template yozildi",
+    "Har prompt uchun input/output contract belgilandi",
+    "Fact-check yoki test verification yozildi",
+    "Privacy va sensitive data checklist bajarildi",
+    "Before/after productivity case study yozildi"
+   ],
+   "rubric": [
+    "Natija qayta ishga tushadi yoki qayta bajariladi.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamida bitta test, checklist yoki verification dalili bor.",
+    "Kamchiliklar va keyingi qadamlar yozilgan.",
+    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Final assessmentning asosiy maqsadi nima?",
+    "a": [
+     "faqat darsni tugatish",
+     "real natijani dalil bilan himoya qilish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+    "a": [
+     "faqat gap",
+     "demo + kod/report + verification",
+     "faqat sertifikat rasmi",
+     "faqat uzun matn"
+    ],
+    "c": 1,
+    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+    "options": [
+     "tekshiruv dalili va README/report",
+     "faqat sarlavha",
+     "faqat screenshot",
+     "faqat reja"
+    ],
+    "correct": 0,
+    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

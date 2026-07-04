@@ -1974,5 +1974,141 @@
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "TG10",
+  "title": "Telegram Bot Final Assessment",
+  "sub": "Final assessment",
+  "coord": "Final / Professional",
+  "eyebrow": "TG10 / FINAL / JOB-READY",
+  "mtitle": "Production bot final: webhook, admin, payment, Mini App, monitoring",
+  "lede": "Telegram Bot kursi yakunida production bot webhook, admin roles, payment/subscription, Mini App va monitoring bilan himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>real production Telegram botni deploy, security va observability bilan chiqarish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final evidence checklist",
+     "p": "Yakuniy ish dalil bilan yopiladi."
+    },
+    "title": "bot-production-checklist.md",
+    "lang": "md",
+    "code": "# Bot production checklist\n\n- Webhook URL set\n- Secrets stored in env\n- Admin commands protected\n- Payment flow tested\n- Errors logged\n- Healthcheck endpoint works\n- README includes deploy steps"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "tg10-1",
+    "html": "Webhook production deploy ishladi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-2",
+    "html": "Admin role va moderation flow tayyorlandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-3",
+    "html": "Payment/subscription yoki order flow demo qilindi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-4",
+    "html": "Mini App yoki web dashboard botga ulandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-5",
+    "html": "Logging, error handling va healthcheck qo'shildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "tg10-6",
+    "html": "Bot security checklist bajarildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://core.telegram.org/bots/api",
+    "title": "Telegram Bot API",
+    "desc": "Rasmiy API.",
+    "host": "core.telegram.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://grammy.dev/guide/",
+    "title": "grammY guide",
+    "desc": "TS bot framework.",
+    "host": "grammy.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.telegram-mini-apps.com/",
+    "title": "Telegram Mini Apps",
+    "desc": "Mini App.",
+    "host": "docs.telegram-mini-apps.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / Assessment / Job-ready",
+   "title": "Telegram Bot Final Assessment: final defense",
+   "desc": "Kurs yakunida real production Telegram botni deploy, security va observability bilan chiqarish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "features": [
+    "Webhook production deploy ishladi",
+    "Admin role va moderation flow tayyorlandi",
+    "Payment/subscription yoki order flow demo qilindi",
+    "Mini App yoki web dashboard botga ulandi",
+    "Logging, error handling va healthcheck qo'shildi",
+    "Bot security checklist bajarildi"
+   ],
+   "rubric": [
+    "Natija qayta ishga tushadi yoki qayta bajariladi.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamida bitta test, checklist yoki verification dalili bor.",
+    "Kamchiliklar va keyingi qadamlar yozilgan.",
+    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Final assessmentning asosiy maqsadi nima?",
+    "a": [
+     "faqat darsni tugatish",
+     "real natijani dalil bilan himoya qilish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+    "a": [
+     "faqat gap",
+     "demo + kod/report + verification",
+     "faqat sertifikat rasmi",
+     "faqat uzun matn"
+    ],
+    "c": 1,
+    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+    "options": [
+     "tekshiruv dalili va README/report",
+     "faqat sarlavha",
+     "faqat screenshot",
+     "faqat reja"
+    ],
+    "correct": 0,
+    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

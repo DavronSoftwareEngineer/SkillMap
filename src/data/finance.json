@@ -3102,5 +3102,128 @@
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "F11",
+  "title": "Finance Final Assessment",
+  "sub": "Final assessment",
+  "coord": "Final / Professional",
+  "eyebrow": "F11 / FINAL / JOB-READY",
+  "mtitle": "Moliyaviy tizim finali: byudjet, zaxira, qarz va investitsiya reja",
+  "lede": "Moliya kursi yakunida shaxsiy pul boshqaruv tizimi 12 oylik reja, risk checklist va odat monitoringi bilan yopiladi.",
+  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>real hayotda ishlaydigan shaxsiy moliya tizimini qurish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final evidence checklist",
+     "p": "Yakuniy ish dalil bilan yopiladi."
+    },
+    "title": "finance-review-template.md",
+    "lang": "md",
+    "code": "# Monthly finance review\n\nIncome:\nFixed expenses:\nVariable expenses:\nSavings rate:\nEmergency fund progress:\nDebt status:\nNext month action:"
+   }
+  ],
+  "tasks": [
+   {
+    "id": "f11-1",
+    "html": "30 kunlik xarajat data tahlil qilindi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "f11-2",
+    "html": "12 oylik byudjet va zaxira fond reja yozildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "f11-3",
+    "html": "Qarz/foiz risk checklist bajarildi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "f11-4",
+    "html": "Omonat/investitsiya risk profili belgilandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "f11-5",
+    "html": "Oylik moliyaviy review template tayyorlandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://www.investopedia.com/personal-finance-4427760",
+    "title": "Investopedia Personal Finance",
+    "desc": "Moliya tushunchalari.",
+    "host": "investopedia.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://cbu.uz/",
+    "title": "CBU",
+    "desc": "Bank va stavkalar.",
+    "host": "cbu.uz"
+   }
+  ],
+  "project": {
+   "tag": "Final / Assessment / Job-ready",
+   "title": "Finance Final Assessment: final defense",
+   "desc": "Kurs yakunida real hayotda ishlaydigan shaxsiy moliya tizimini qurish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "features": [
+    "30 kunlik xarajat data tahlil qilindi",
+    "12 oylik byudjet va zaxira fond reja yozildi",
+    "Qarz/foiz risk checklist bajarildi",
+    "Omonat/investitsiya risk profili belgilandi",
+    "Oylik moliyaviy review template tayyorlandi"
+   ],
+   "rubric": [
+    "Natija qayta ishga tushadi yoki qayta bajariladi.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamida bitta test, checklist yoki verification dalili bor.",
+    "Kamchiliklar va keyingi qadamlar yozilgan.",
+    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Final assessmentning asosiy maqsadi nima?",
+    "a": [
+     "faqat darsni tugatish",
+     "real natijani dalil bilan himoya qilish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+    "a": [
+     "faqat gap",
+     "demo + kod/report + verification",
+     "faqat sertifikat rasmi",
+     "faqat uzun matn"
+    ],
+    "c": 1,
+    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+    "options": [
+     "tekshiruv dalili va README/report",
+     "faqat sarlavha",
+     "faqat screenshot",
+     "faqat reja"
+    ],
+    "correct": 0,
+    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]

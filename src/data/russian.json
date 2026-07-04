@@ -3499,5 +3499,128 @@
     "why": "Professional natija qayta tekshiriladigan va tushunarli bo'lishi kerak."
    }
   ]
+ },
+ {
+  "zoom": "Фин",
+  "title": "Russian Final Assessment",
+  "sub": "Final assessment",
+  "coord": "Final / Professional",
+  "eyebrow": "Фин / FINAL / JOB-READY",
+  "mtitle": "Rus tili final: ish, xizmat va kundalik muloqot himoyasi",
+  "lede": "Rus tili kursi yakunida ish va kundalik vaziyatlarda ravon gapirish, xatoni tuzatish va dialogni ushlab turish baholanadi.",
+  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>rus tilida ish va kundalik muloqotda tushunarli, ravon va amaliy gapirish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "code": [
+   {
+    "heading": {
+     "h": "Final evidence checklist",
+     "p": "Yakuniy ish dalil bilan yopiladi."
+    },
+    "title": "russian-final-script.md",
+    "lang": "md",
+    "code": "# Финальная речь\n\nЗдравствуйте. Меня зовут ...\nЯ работаю над ...\nМой проект помогает ...\nСамая сложная часть была ...\nВ будущем я хочу ..."
+   }
+  ],
+  "tasks": [
+   {
+    "id": "фин-1",
+    "html": "O'zingiz va ishingiz haqida ruscha nutq tayyorlandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "фин-2",
+    "html": "3 ta kundalik dialog mashq qilindi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "фин-3",
+    "html": "Kelishik va fe'l xatolari self-check qilindi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "фин-4",
+    "html": "10 ta professional ibora audio bilan takrorlandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   },
+   {
+    "id": "фин-5",
+    "html": "Mini speaking test yozib baholandi",
+    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://masterrussian.com/",
+    "title": "MasterRussian",
+    "desc": "Grammatika.",
+    "host": "masterrussian.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://forvo.com/languages/ru/",
+    "title": "Forvo Russian",
+    "desc": "Talaffuz.",
+    "host": "forvo.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / Assessment / Job-ready",
+   "title": "Russian Final Assessment: final defense",
+   "desc": "Kurs yakunida rus tilida ish va kundalik muloqotda tushunarli, ravon va amaliy gapirish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "features": [
+    "O'zingiz va ishingiz haqida ruscha nutq tayyorlandi",
+    "3 ta kundalik dialog mashq qilindi",
+    "Kelishik va fe'l xatolari self-check qilindi",
+    "10 ta professional ibora audio bilan takrorlandi",
+    "Mini speaking test yozib baholandi"
+   ],
+   "rubric": [
+    "Natija qayta ishga tushadi yoki qayta bajariladi.",
+    "README/report boshqa odamga tushunarli.",
+    "Kamida bitta test, checklist yoki verification dalili bor.",
+    "Kamchiliklar va keyingi qadamlar yozilgan.",
+    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Final assessmentning asosiy maqsadi nima?",
+    "a": [
+     "faqat darsni tugatish",
+     "real natijani dalil bilan himoya qilish",
+     "faqat rang tanlash",
+     "tasodifiy link yig'ish"
+    ],
+    "c": 1,
+    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+    "a": [
+     "faqat gap",
+     "demo + kod/report + verification",
+     "faqat sertifikat rasmi",
+     "faqat uzun matn"
+    ],
+    "c": 1,
+    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+    "options": [
+     "tekshiruv dalili va README/report",
+     "faqat sarlavha",
+     "faqat screenshot",
+     "faqat reja"
+    ],
+    "correct": 0,
+    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
+   }
+  ]
  }
 ]
