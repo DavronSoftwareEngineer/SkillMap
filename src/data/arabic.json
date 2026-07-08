@@ -1020,7 +1020,7 @@
  },
  {
   "zoom": "AR3",
-  "title": "AR3 / Ismiy jumla",
+  "title": "Ismiy jumla",
   "sub": "Nahv",
   "coord": "Nahv / AR3",
   "eyebrow": "03 / Ismiy jumla va olmoshlar",
@@ -1359,7 +1359,7 @@
  },
  {
   "zoom": "AR4",
-  "title": "AR4 / Jins, son, aniqlik",
+  "title": "Jins, son, aniqlik",
   "sub": "Nahv",
   "coord": "Nahv / AR4",
   "eyebrow": "04 / Ism: jins, son, aniqlik",
@@ -1700,7 +1700,7 @@
  },
  {
   "zoom": "AR5",
-  "title": "AR5 / Idofa va jarr",
+  "title": "Idofa va jarr",
   "sub": "Nahv",
   "coord": "Nahv / AR5",
   "eyebrow": "05 / Idofa va jarr harflari",
@@ -6953,7 +6953,7 @@
  },
  {
   "zoom": "AR15",
-  "title": "Balag'at va yakuniy loyiha",
+  "title": "Balag'at",
   "sub": "Professional yakun",
   "coord": "Professional yakun / AR15",
   "eyebrow": "15 / Balag'at va professional yakun",
