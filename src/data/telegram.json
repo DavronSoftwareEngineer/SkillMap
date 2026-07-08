@@ -1250,17 +1250,26 @@
   "coord": "Monetizatsiya / TG6",
   "eyebrow": "06 / To'lov",
   "mtitle": "Bot orqali buyurtma, to'lov va obuna oqimlari",
-  "lede": "Telegram bot biznes jarayonni avtomatlashtira oladi: katalog, order, invoice, payment status, subscription va refund flow. Bunda xavfsizlik va idempotency juda muhim.",
-  "doc": "<div class='prose'><h3>Bot bilan monetizatsiya</h3><p>Telegram bot biznes jarayonni avtomatlashtira oladi: katalog ko'rsatish, order yaratish, invoice yuborish, payment holatini kuzatish, subscription va refund. Bu oqimda ikki narsa hal qiluvchi: <strong>xavfsizlik</strong> (karta ma'lumotini o'zing saqlamaslik) va <strong>idempotency</strong> (bir to'lovni ikki marta hisoblamaslik).</p><h3>Telegram Payments oqimi</h3><p>Telegram Payments'da bot <code>sendInvoice</code> bilan hisob-faktura yuboradi. Foydalanuvchi to'lovni boshlaganda Telegram botga <code>pre_checkout_query</code> yuboradi - bot buni ~10 soniya ichida <code>answerPreCheckoutQuery</code> bilan tasdiqlashi kerak (bu yerda order hali amal qiladimi, narx to'g'rimi tekshiriladi). Tasdiqdan keyin to'lov amalga oshadi va bot <code>successful_payment</code> update oladi - aynan shu yerda order <code>paid</code> qilinadi. Karta ma'lumotini provider qayta ishlaydi; bot uni ko'rmaydi va saqlamaydi.</p><figure class='svgfig'><svg viewBox='0 0 700 200' role='img' aria-label='Telegram payment oqimi invoice pre checkout successful payment order paid'><rect class='box' x='16' y='40' width='150' height='48' rx='8'/><text x='91' y='69' text-anchor='middle'>sendInvoice</text><path class='edge' d='M166 64 H210' marker-end='url(#arTg6a)'/><rect class='boxa' x='210' y='40' width='170' height='48' rx='8'/><text x='295' y='63' text-anchor='middle'>pre_checkout</text><text x='295' y='80' text-anchor='middle' class='muted'>_query</text><path class='edge' d='M380 64 H424' marker-end='url(#arTg6b)'/><rect class='box' x='424' y='40' width='260' height='48' rx='8'/><text x='554' y='69' text-anchor='middle'>answerPreCheckoutQuery (ok)</text><path class='edga' d='M295 88 V126' marker-end='url(#arTg6c)'/><rect class='boxa' x='180' y='126' width='230' height='48' rx='8'/><text x='295' y='149' text-anchor='middle'>successful_payment</text><text x='295' y='166' text-anchor='middle' class='muted'>update</text><path class='edga' d='M410 150 H454' marker-end='url(#arTg6d)'/><rect class='box' x='454' y='126' width='230' height='48' rx='8'/><text x='569' y='155' text-anchor='middle'>order.status = paid (idempotent)</text><defs><marker id='arTg6a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6d' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Invoice -> pre_checkout tasdiq -> successful_payment -> order paid.</figcaption></figure><h3>Idempotency</h3><p>Payment update (webhook retry yoki tarmoq sababli) qayta kelishi mumkin. Shuning uchun order'ni <code>paid</code> qilish operatsiyasi idempotent bo'lishi shart. Amaliy usul - faqat <code>pending</code> holatdagi order'ni yangilash: <code>updateMany({ where: { id, status: 'pending' }, data: { status: 'paid' } })</code>. Ikkinchi marta kelsa order allaqachon <code>paid</code> bo'lgani uchun hech narsa o'zgarmaydi.</p><h3>Order lifecycle</h3><p>Order aniq statuslar bilan yashaydi: <code>pending -> paid -> delivered</code> yoki <code>pending -> canceled</code>, kerak bo'lsa <code>refunded</code>. Paid content yoki premium access esa alohida emas, balki order/subscription statusiga qarab beriladi - shunda access nazorati bitta manbadan boshqariladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Keng tarqalgan xato</p><p>Sezgir karta ma'lumotini bot DB'sida yoki log'da saqlash - bu xavfsizlik va compliance buzilishi. Bot faqat provider bergan <code>charge_id</code> va order statusini saqlaydi. Yana bir xato - <code>successful_payment</code> kelganda payload/order mosligini tekshirmaslik: har payment real order bilan bog'langanligini albatta tasdiqla.</p></div></div><p><strong>Amaliy maslahat:</strong> subscription muddati chat xabaridan mustaqil - uni <code>cron</code>/scheduled job bilan tekshirib, muddati tugagan foydalanuvchi huquqini avtomatik yangilab tur.</p></div>",
+  "lede": "Telegram bot biznes jarayonni avtomatlashtira oladi: katalog, order, invoice, payment status, subscription va refund flow. Raqamli mahsulot Telegram Stars (XTR) bilan, jismoniy tovar provider (Payme/Click) bilan sotiladi - xavfsizlik va idempotency juda muhim.",
+  "doc": "<div class='prose'><h3>Bot bilan monetizatsiya</h3><p>Telegram bot biznes jarayonni avtomatlashtira oladi: katalog ko'rsatish, order yaratish, invoice yuborish, payment holatini kuzatish, subscription va refund. Bu oqimda ikki narsa hal qiluvchi: <strong>xavfsizlik</strong> (karta ma'lumotini o'zing saqlamaslik) va <strong>idempotency</strong> (bir to'lovni ikki marta hisoblamaslik).</p><h3>Telegram Payments oqimi</h3><p>Telegram Payments'da bot <code>sendInvoice</code> bilan hisob-faktura yuboradi. Foydalanuvchi to'lovni boshlaganda Telegram botga <code>pre_checkout_query</code> yuboradi - bot buni ~10 soniya ichida <code>answerPreCheckoutQuery</code> bilan tasdiqlashi kerak (bu yerda order hali amal qiladimi, narx to'g'rimi tekshiriladi). Tasdiqdan keyin to'lov amalga oshadi va bot <code>successful_payment</code> update oladi - aynan shu yerda order <code>paid</code> qilinadi. Karta ma'lumotini provider qayta ishlaydi; bot uni ko'rmaydi va saqlamaydi.</p><figure class='svgfig'><svg viewBox='0 0 700 200' role='img' aria-label='Telegram payment oqimi invoice pre checkout successful payment order paid'><rect class='box' x='16' y='40' width='150' height='48' rx='8'/><text x='91' y='69' text-anchor='middle'>sendInvoice</text><path class='edge' d='M166 64 H210' marker-end='url(#arTg6a)'/><rect class='boxa' x='210' y='40' width='170' height='48' rx='8'/><text x='295' y='63' text-anchor='middle'>pre_checkout</text><text x='295' y='80' text-anchor='middle' class='muted'>_query</text><path class='edge' d='M380 64 H424' marker-end='url(#arTg6b)'/><rect class='box' x='424' y='40' width='260' height='48' rx='8'/><text x='554' y='69' text-anchor='middle'>answerPreCheckoutQuery (ok)</text><path class='edga' d='M295 88 V126' marker-end='url(#arTg6c)'/><rect class='boxa' x='180' y='126' width='230' height='48' rx='8'/><text x='295' y='149' text-anchor='middle'>successful_payment</text><text x='295' y='166' text-anchor='middle' class='muted'>update</text><path class='edga' d='M410 150 H454' marker-end='url(#arTg6d)'/><rect class='box' x='454' y='126' width='230' height='48' rx='8'/><text x='569' y='155' text-anchor='middle'>order.status = paid (idempotent)</text><defs><marker id='arTg6a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6d' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Invoice -> pre_checkout tasdiq -> successful_payment -> order paid.</figcaption></figure><h3>Ikki xil to'lov yo'li: Stars va provider</h3><p>Telegram qoidasi (2024-yildan): bot ichida sotiladigan <strong>raqamli mahsulot va xizmatlar</strong> (obuna, PDF, kurs, premium access) faqat <strong>Telegram Stars (XTR)</strong> bilan sotiladi. Bunda <code>sendInvoice</code>'da <code>currency: 'XTR'</code> bo'ladi, <code>provider_token</code> umuman berilmaydi va narx Stars donasida ko'rsatiladi. <strong>Jismoniy tovar</strong> (yetkazib beriladigan buyum) esa BotFather orqali ulanadigan payment provider bilan sotiladi - O'zbekistonda Payme va Click ham shu ro'yxatda; bunda <code>currency: 'UZS'</code> va narx tiyinda beriladi.</p><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='Mahsulot turi boyicha tolov yoli: raqamli Stars XTR, jismoniy provider token'><rect class='box' x='16' y='71' width='150' height='48' rx='8'/><text x='91' y='100' text-anchor='middle'>Mahsulot turi?</text><path class='edge' d='M166 83 H200 V48 H244' marker-end='url(#arTg6e)'/><rect class='boxa' x='244' y='24' width='210' height='48' rx='8'/><text x='349' y='47' text-anchor='middle'>Raqamli mahsulot</text><text x='349' y='64' text-anchor='middle' class='muted'>obuna, PDF, kurs, access</text><path class='edge' d='M454 48 H494' marker-end='url(#arTg6f)'/><rect class='box' x='494' y='24' width='190' height='48' rx='8'/><text x='589' y='47' text-anchor='middle'>Stars (XTR)</text><text x='589' y='64' text-anchor='middle' class='muted'>provider_token yo'q</text><path class='edga' d='M166 107 H200 V142 H244' marker-end='url(#arTg6g)'/><rect class='boxa' x='244' y='118' width='210' height='48' rx='8'/><text x='349' y='141' text-anchor='middle'>Jismoniy tovar</text><text x='349' y='158' text-anchor='middle' class='muted'>yetkazib beriladigan buyum</text><path class='edga' d='M454 142 H494' marker-end='url(#arTg6h)'/><rect class='box' x='494' y='118' width='190' height='48' rx='8'/><text x='589' y='141' text-anchor='middle'>Provider token</text><text x='589' y='158' text-anchor='middle' class='muted'>Payme/Click, UZS</text><defs><marker id='arTg6e' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6f' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6g' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs><defs><marker id='arTg6h' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Mahsulot turi to'lov yo'lini belgilaydi: raqamli -> Stars (XTR), jismoniy -> provider.</figcaption></figure><p>Ikkala yo'lda ham oqim bir xil: <code>pre_checkout_query -> successful_payment</code>. Farq qaytarishda: Stars to'lovi <code>refundStarPayment(user_id, telegram_payment_charge_id)</code> bilan qaytariladi - shuning uchun <code>successful_payment</code>'da aynan <code>telegram_payment_charge_id</code>'ni saqlash shart. Stars'da davriy obuna ham bor: <code>subscription_period: 2592000</code> (30 kun) bersang, Telegram to'lovni har oy o'zi yechib turadi.</p><h3>Idempotency</h3><p>Payment update (webhook retry yoki tarmoq sababli) qayta kelishi mumkin. Shuning uchun order'ni <code>paid</code> qilish operatsiyasi idempotent bo'lishi shart. Amaliy usul - faqat <code>pending</code> holatdagi order'ni yangilash: <code>updateMany({ where: { id, status: 'pending' }, data: { status: 'paid' } })</code>. Ikkinchi marta kelsa order allaqachon <code>paid</code> bo'lgani uchun hech narsa o'zgarmaydi.</p><h3>Order lifecycle</h3><p>Order aniq statuslar bilan yashaydi: <code>pending -> paid -> delivered</code> yoki <code>pending -> canceled</code>, kerak bo'lsa <code>refunded</code>. Paid content yoki premium access esa alohida emas, balki order/subscription statusiga qarab beriladi - shunda access nazorati bitta manbadan boshqariladi.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Keng tarqalgan xato</p><p>Sezgir karta ma'lumotini bot DB'sida yoki log'da saqlash - bu xavfsizlik va compliance buzilishi. Bot faqat provider bergan <code>charge_id</code> va order statusini saqlaydi. Yana bir xato - <code>successful_payment</code> kelganda payload/order mosligini tekshirmaslik: har payment real order bilan bog'langanligini albatta tasdiqla. Uchinchi xato - raqamli mahsulotni provider token bilan sotish: bu Telegram qoidasiga zid, raqamli mahsulot va xizmatlar faqat Stars (XTR) bilan sotiladi.</p></div></div><p><strong>Amaliy maslahat:</strong> subscription muddati chat xabaridan mustaqil - uni <code>cron</code>/scheduled job bilan tekshirib, muddati tugagan foydalanuvchi huquqini avtomatik yangilab tur.</p></div>",
   "code": [
    {
     "heading": {
-     "h": "Payment handlerlar",
-     "p": "sendInvoice, pre_checkout_query tasdig'i va successful_payment'da idempotent order yangilash."
+     "h": "Stars (XTR) bilan raqamli mahsulot",
+     "p": "Obuna Stars bilan sotiladi: XTR valyutasi, provider token yo'q, refund charge_id orqali."
     },
-    "title": "payment.ts",
+    "title": "payment-stars.ts",
     "lang": "typescript",
-    "code": "import { bot } from './bot';\nimport { db } from './db';\n\n// 1. Invoice yuborish - order oldindan 'pending' holatda DB'da yaratiladi.\nbot.command('buy', async (ctx) => {\n  const order = await db.order.create({\n    data: { userId: ctx.from!.id, status: 'pending', amount: 49900 },\n  });\n  await ctx.replyWithInvoice(\n    'Pro obuna', '1 oylik Pro dostup',\n    order.id, // payload: successful_payment'da order'ni topamiz\n    process.env.PROVIDER_TOKEN!, 'UZS',\n    [{ label: 'Pro (1 oy)', amount: 49900 }],\n  );\n});\n\n// 2. Pre-checkout: ~10s ichida javob berish shart, aks holda to'lov bekor bo'ladi.\nbot.on('pre_checkout_query', async (ctx) => {\n  const order = await db.order.findUnique({\n    where: { id: ctx.preCheckoutQuery.invoice_payload },\n  });\n  const ok = !!order && order.status === 'pending' &&\n    order.amount === ctx.preCheckoutQuery.total_amount;\n  // ok=false bo'lsa Telegram to'lovni to'xtatadi.\n  await ctx.answerPreCheckoutQuery(ok, ok ? undefined : 'Order eskirgan yoki narx notogri');\n});\n\n// 3. Muvaffaqiyatli to'lov: order'ni faqat 'pending' bo'lsa yangilaymiz (idempotent).\nbot.on('message:successful_payment', async (ctx) => {\n  const p = ctx.message.successful_payment;\n  const res = await db.order.updateMany({\n    where: { id: p.invoice_payload, status: 'pending' },\n    data: {\n      status: 'paid',\n      providerChargeId: p.provider_payment_charge_id, // faqat charge_id, karta emas\n      paidAt: new Date(),\n    },\n  });\n  // res.count === 0 -> takror update, hech narsa o'zgarmadi (duplicate xavfsiz).\n  if (res.count > 0) await ctx.reply('Tolov qabul qilindi. Rahmat!');\n});"
+    "code": "import { bot } from './bot';\nimport { db } from './db';\n\n// 1. Raqamli mahsulot (obuna) - faqat Stars (XTR). provider_token berilmaydi.\nbot.command('buy', async (ctx) => {\n  const order = await db.order.create({\n    data: { userId: ctx.from!.id, status: 'pending', amount: 250 }, // 250 Stars\n  });\n  await ctx.replyWithInvoice(\n    'Pro obuna', '1 oylik Pro dostup',\n    order.id, // payload: successful_payment'da order'ni topamiz\n    'XTR',    // Stars valyutasi - raqamli mahsulot uchun majburiy\n    [{ label: 'Pro (1 oy)', amount: 250 }],\n    { subscription_period: 2592000 }, // ixtiyoriy: 30 kunlik davriy obuna\n  );\n});\n\n// 2. Pre-checkout: ~10s ichida javob berish shart, aks holda to'lov bekor bo'ladi.\nbot.on('pre_checkout_query', async (ctx) => {\n  const order = await db.order.findUnique({\n    where: { id: ctx.preCheckoutQuery.invoice_payload },\n  });\n  const ok = !!order && order.status === 'pending' &&\n    order.amount === ctx.preCheckoutQuery.total_amount;\n  // ok=false bo'lsa Telegram to'lovni to'xtatadi.\n  await ctx.answerPreCheckoutQuery(ok, ok ? undefined : 'Order eskirgan yoki narx notogri');\n});\n\n// 3. Muvaffaqiyatli to'lov: order'ni faqat 'pending' bo'lsa yangilaymiz (idempotent).\nbot.on('message:successful_payment', async (ctx) => {\n  const p = ctx.message.successful_payment;\n  const res = await db.order.updateMany({\n    where: { id: p.invoice_payload, status: 'pending' },\n    data: {\n      status: 'paid',\n      // Stars refund uchun aynan telegram_payment_charge_id kerak (karta emas)\n      chargeId: p.telegram_payment_charge_id,\n      paidAt: new Date(),\n    },\n  });\n  // res.count === 0 -> takror update, hech narsa o'zgarmadi (duplicate xavfsiz).\n  if (res.count > 0) await ctx.reply('Tolov qabul qilindi. Rahmat!');\n});\n\n// 4. Qaytarish (support flow): Stars to'lovi charge_id orqali qaytariladi.\nbot.command('refund', async (ctx) => {\n  const order = await db.order.findFirst({\n    where: { userId: ctx.from!.id, status: 'paid' },\n  });\n  if (!order?.chargeId) return ctx.reply('Qaytariladigan tolov topilmadi');\n  await ctx.api.refundStarPayment(ctx.from!.id, order.chargeId);\n  await db.order.update({ where: { id: order.id }, data: { status: 'refunded' } });\n  await ctx.reply('Tolov qaytarildi');\n});"
+   },
+   {
+    "heading": {
+     "h": "Provider bilan jismoniy tovar",
+     "p": "Yetkazib beriladigan buyum BotFather'da ulangan provider (Payme/Click) bilan sotiladi."
+    },
+    "title": "payment-provider.ts",
+    "lang": "typescript",
+    "code": "import { bot } from './bot';\nimport { db } from './db';\n\n// Jismoniy tovar - provider token bilan (BotFather -> Payments -> Payme/Click).\n// Raqamli mahsulotga bu yo'l ishlatilmaydi - u faqat Stars (XTR) bilan sotiladi.\nbot.command('order_mug', async (ctx) => {\n  const order = await db.order.create({\n    data: { userId: ctx.from!.id, status: 'pending', amount: 14900000 }, // tiyinda\n  });\n  await ctx.replyWithInvoice(\n    'Brend krujka', 'Yetkazib berish bilan',\n    order.id,\n    'UZS', // real valyuta - faqat jismoniy tovar uchun\n    [{ label: 'Krujka', amount: 14900000 }],\n    {\n      provider_token: process.env.PAYME_PROVIDER_TOKEN!,\n      need_shipping_address: true, // jismoniy tovar - manzil kerak\n    },\n  );\n});\n\n// pre_checkout_query va successful_payment handlerlari Stars bilan bir xil.\n// Farq: bu yerda provider_payment_charge_id saqlanadi va karta ma'lumotini\n// provider qayta ishlaydi - bot uni ko'rmaydi ham, saqlamaydi ham."
    }
   ],
   "tasks": [
@@ -1283,6 +1292,11 @@
     "id": "tg6-4",
     "html": "Refund/cancel holati yozildi",
     "crit": "support flow bor"
+   },
+   {
+    "id": "tg6-5",
+    "html": "Raqamli mahsulot Stars (XTR) bilan sotildi",
+    "crit": "invoice'da XTR, provider_token yo'q; refund charge_id bilan ishlaydi"
    }
   ],
   "resources": [
@@ -1299,12 +1313,19 @@
     "title": "Bot API Payments",
     "desc": "Payment API obyektlari",
     "host": "core.telegram.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://core.telegram.org/bots/payments-stars",
+    "title": "Payments via Stars",
+    "desc": "Raqamli mahsulot uchun Stars (XTR) to'lovi",
+    "host": "core.telegram.org"
    }
   ],
   "project": {
    "tag": "Mini loyiha / Commerce",
    "title": "Paid Course Bot",
-   "desc": "Kurs yoki raqamli mahsulot uchun order, invoice va paid access flow.",
+   "desc": "Kurs yoki raqamli mahsulot uchun order, Stars (XTR) invoice va paid access flow.",
    "features": [
     "Product catalog",
     "Order model",
@@ -1313,6 +1334,7 @@
    ],
    "rubric": [
     "Payment update idempotent.",
+    "Raqamli mahsulot Stars (XTR) bilan, jismoniy tovar provider bilan sotiladi.",
     "Karta ma'lumoti saqlanmaydi.",
     "Paid access role/status orqali tekshiriladi.",
     "Cancel/refund holati dokumentatsiya qilingan.",
@@ -1322,11 +1344,12 @@
    "variants": [
     {
      "title": "Digital Product Sales Bot",
-     "desc": "PDF/kurs/servis sotadigan order va payment flow boti.",
+     "desc": "PDF/kurs/servis sotadigan order va payment flow boti - Stars (XTR) bilan.",
      "deliverables": [
-      "invoice flow",
+      "Stars (XTR) invoice flow",
       "order status model",
-      "success/failure handling"
+      "success/failure handling",
+      "refundStarPayment flow"
      ]
     },
     {
@@ -1375,6 +1398,30 @@
     ],
     "c": 0,
     "w": "Idempotent update duplicate paid actionni oldini oladi.",
+    "level": "scenario"
+   },
+   {
+    "q": "Botda PDF-kitob (raqamli mahsulot) sotmoqchisan. To'lovni qanday qabul qilasan?",
+    "a": [
+     "Payme provider token bilan, UZS'da",
+     "Telegram Stars (XTR) bilan, provider token'siz",
+     "Karta raqamini chatda so'rab",
+     "Bank o'tkazmasi cheki bilan"
+    ],
+    "c": 1,
+    "w": "2024-yildan beri bot ichidagi raqamli mahsulot va xizmatlar faqat Telegram Stars (XTR) bilan sotiladi; provider to'lovi (Payme/Click) jismoniy tovar uchun qoladi.",
+    "level": "practical"
+   },
+   {
+    "q": "Stars to'lovini qaytarish (refundStarPayment) uchun qaysi qiymat saqlangan bo'lishi kerak?",
+    "a": [
+     "order narxi",
+     "user username",
+     "telegram_payment_charge_id",
+     "provider_payment_charge_id"
+    ],
+    "c": 2,
+    "w": "refundStarPayment(user_id, telegram_payment_charge_id) bilan ishlaydi - successful_payment update'idan shu id saqlab qo'yiladi.",
     "level": "scenario"
    }
   ],
@@ -1435,6 +1482,16 @@
     ],
     "hint": "Vaqt bo'yicha ishlaydi.",
     "why": "Obuna muddati chat xabaridan mustaqil tekshiriladi."
+   },
+   {
+    "type": "gap",
+    "q": "Raqamli mahsulot uchun sendInvoice valyutasi ___ bo'ladi.",
+    "answers": [
+     "XTR",
+     "xtr"
+    ],
+    "hint": "Telegram Stars valyuta kodi.",
+    "why": "Raqamli mahsulot va xizmatlar faqat Telegram Stars (XTR) bilan sotiladi; provider to'lovi jismoniy tovar uchun."
    }
   ]
  },

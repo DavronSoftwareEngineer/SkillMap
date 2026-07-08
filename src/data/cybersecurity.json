@@ -1172,7 +1172,7 @@
     },
     "title": "trivy va docker bench",
     "lang": "bash",
-    "code": "# Ogohlantirish: faqat o'zing build qilgan yoki ruxsatli image/host.\n\n# 1) Image ichidagi zaifliklarni skan qilish:\ntrivy image myapp:latest\n\n# 2) Faqat HIGH va CRITICALga e'tibor qaratish:\ntrivy image --severity HIGH,CRITICAL myapp:latest\n\n# 3) Noto'g'ri konfiguratsiya (Dockerfile/manifest) tekshiruvi:\ntrivy config .\n\n# 4) Docker host holatini CIS bo'yicha baholash (docker-bench-security):\ndocker run --rm --net host --pid host --cap-add audit_control \\\n  -v /var/lib:/var/lib:ro -v /var/run/docker.sock:/var/run/docker.sock:ro \\\n  docker/docker-bench-security\n\n# Natijani o'qish: HIGH/CRITICAL package'ni yangi versiyaga ko'tar,\n# [WARN] bandlarni ticketga aylantir va qayta skan bilan tasdiqla."
+    "code": "# Ogohlantirish: faqat o'zing build qilgan yoki ruxsatli image/host.\n\n# 1) Image ichidagi zaifliklarni skan qilish:\ntrivy image myapp:latest\n\n# 2) Faqat HIGH va CRITICALga e'tibor qaratish:\ntrivy image --severity HIGH,CRITICAL myapp:latest\n\n# 3) Noto'g'ri konfiguratsiya (Dockerfile/manifest) tekshiruvi:\ntrivy config .\n\n# 4) Docker host holatini CIS bo'yicha baholash (docker-bench-security):\n# Eslatma: Hub'dagi tayyor image eskirgan; loyiha README'si repodagi\n# shell skriptni to'g'ridan-to'g'ri ishga tushirishni (yoki lokal build) tavsiya qiladi.\ndocker run --rm --net host --pid host --cap-add audit_control \\\n  -v /var/lib:/var/lib:ro -v /var/run/docker.sock:/var/run/docker.sock:ro \\\n  docker/docker-bench-security\n\n# Natijani o'qish: HIGH/CRITICAL package'ni yangi versiyaga ko'tar,\n# [WARN] bandlarni ticketga aylantir va qayta skan bilan tasdiqla."
    }
   ],
   "tasks": [
@@ -1390,7 +1390,7 @@
     },
     "title": "Ko'p muvaffaqiyatsiz login (brute force)",
     "lang": "yaml",
-    "code": "title: Ko'p muvaffaqiyatsiz login urinishlari\nid: 8f1c2a90-1b2c-4d5e-9f01-aa11bb22cc33   # qoida uchun unikal UUID\nstatus: experimental                       # experimental/test/stable\ndescription: Bitta manba IP qisqa vaqtda ko'p marta muvaffaqiyatsiz login qildi\nreferences:\n  - https://attack.mitre.org/techniques/T1110/   # MITRE ATT&CK: Brute Force\nauthor: SkillMap lab\nlogsource:                 # log qayerdan kelishi\n  product: linux           # mahsulot\n  service: auth            # auth/secure loglari\ndetection:\n  selection:               # qaysi eventlarni tanlaymiz\n    event: failed_login\n  timeframe: 5m            # vaqt oynasi\n  condition: selection | count() by src_ip >= 10   # bir IP'dan 10+ marta\nfields:                    # alertda ko'rsatiladigan maydonlar\n  - src_ip\n  - user\nfalsepositives:            # noto'g'ri signal sabablari\n  - Parolni unutgan haqiqiy foydalanuvchi\n  - Noto'g'ri sozlangan servis akkaunti\nlevel: high                # low/medium/high/critical"
+    "code": "title: Muvaffaqiyatsiz login urinishlari (asosiy event qoidasi)\nid: 8f1c2a90-1b2c-4d5e-9f01-aa11bb22cc33   # qoida uchun unikal UUID\nname: failed_logins                        # correlation shu nom orqali havola qiladi\nstatus: experimental                       # experimental/test/stable\ndescription: Muvaffaqiyatsiz login eventlarini tanlaydigan asosiy qoida\nreferences:\n  - https://attack.mitre.org/techniques/T1110/   # MITRE ATT&CK: Brute Force\nauthor: SkillMap lab\nlogsource:                 # log qayerdan kelishi\n  product: linux           # mahsulot\n  service: auth            # auth/secure loglari\ndetection:\n  selection:               # qaysi eventlarni tanlaymiz\n    event: failed_login\n  condition: selection     # v2 spec: sanash pastdagi correlationda\nfields:                    # alertda ko'rsatiladigan maydonlar\n  - src_ip\n  - user\nfalsepositives:            # noto'g'ri signal sabablari\n  - Parolni unutgan haqiqiy foydalanuvchi\n  - Noto'g'ri sozlangan servis akkaunti\nlevel: high                # low/medium/high/critical\n---\ntitle: Bitta IP'dan 5 daqiqada 10+ muvaffaqiyatsiz login\nid: 4b7d3f12-9c8e-4a06-b1d2-ee55ff66aa77   # correlation qoidasi uchun UUID\nstatus: experimental\ndescription: Bitta manba IP qisqa vaqtda ko'p marta muvaffaqiyatsiz login qildi\ncorrelation:\n  type: event_count        # event sonini sanaydigan correlation turi\n  rules:\n    - failed_logins        # yuqoridagi asosiy qoidaga havola\n  group-by:\n    - src_ip               # har bir manba IP bo'yicha guruhlash\n  timespan: 5m             # vaqt oynasi\n  condition:\n    gte: 10                # 10 va undan ko'p bo'lsa alert\nlevel: high"
    }
   ],
   "tasks": [
@@ -1422,7 +1422,7 @@
    {
     "id": "cy6-6",
     "html": "Bitta to'liq Sigma rule (failed login brute force) yozdim",
-    "crit": "logsource, detection, condition, falsepositives va level maydonlari bor"
+    "crit": "logsource, detection, condition, correlation, falsepositives va level maydonlari bor"
    }
   ],
   "resources": [
@@ -1583,7 +1583,7 @@
   "eyebrow": "07 / Hodisaga javob va yakuniy loyiha",
   "mtitle": "Incident response: vahima emas, playbook",
   "lede": "Breach bo'lganda eng muhim narsa - tartib. Prepare, detect, contain, eradicate, recover va lessons learned jarayoni oldindan tayyor bo'lishi kerak.",
-  "doc": "<div class='prose'><h3>Nega bu muhim</h3><p>Breach bo'lganda eng muhim narsa - tartib, tezlik emas. Vahima ostida qabul qilingan qaror (masalan log o'chirish) ko'pincha vaziyatni yomonlashtiradi. NIST SP 800-61 bo'yicha tuzilgan IR jarayoni oldindan tayyor bo'lsa, jamoa nima qilishni biladi va dalilni yo'qotmaydi.</p><h3>Qanday ishlaydi</h3><p>IR lifecycle bosqichlari: Prepare (kontakt, log, backup oldindan tayyor), Detect (alert yoki report orqali hodisani ko'rish), Contain (zararni cheklash - token revoke, host izolatsiya), Eradicate (sababni yo'qotish - patch, persistence olib tashlash), Recover (xizmatni tiklab kuzatish) va Lessons learned (jarayonni yaxshilash). Bu doiraviy jarayon: har hodisadan keyin tayyorgarlik yaxshilanadi.</p><table class='gtable'><thead><tr><th>Bosqich</th><th>Maqsad</th><th>Misol</th></tr></thead><tbody><tr><td>Prepare</td><td>oldindan tayyorgarlik</td><td>contacts, logs, backup</td></tr><tr><td>Detect</td><td>hodisani ko'rish</td><td>alert, report, anomaly</td></tr><tr><td>Contain</td><td>zararni cheklash</td><td>token revoke, isolate host</td></tr><tr><td>Eradicate</td><td>sababni yo'qotish</td><td>patch, remove persistence</td></tr><tr><td>Recover</td><td>xizmatni tiklash</td><td>restore, monitor</td></tr></tbody></table><figure class='svgfig'><svg viewBox='0 0 680 220' role='img' aria-label='Incident response sikli aylanasi: prepare, detect, contain, eradicate, recover, lessons learned'><circle cx='340' cy='110' r='78' class='edga'/><rect class='boxa' x='288' y='6' width='104' height='36' rx='8'/><text x='340' y='29' text-anchor='middle'>Prepare</text><rect class='box' x='470' y='58' width='104' height='36' rx='8'/><text x='522' y='81' text-anchor='middle'>Detect</text><rect class='box' x='470' y='150' width='104' height='36' rx='8'/><text x='522' y='173' text-anchor='middle'>Contain</text><rect class='box' x='288' y='190' width='104' height='36' rx='8'/><text x='340' y='213' text-anchor='middle'>Eradicate</text><rect class='box' x='106' y='150' width='104' height='36' rx='8'/><text x='158' y='173' text-anchor='middle'>Recover</text><rect class='boxa' x='96' y='58' width='124' height='36' rx='8'/><text x='158' y='81' text-anchor='middle'>Lessons</text><defs><marker id='arCy7a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>IR - doiraviy jarayon; lessons learned keyingi prepare'ni kuchaytiradi.</figcaption></figure><h3>Amaliy misol (ruxsatli lab)</h3><p>Credential leak playbookini mashq qil: (1) exposure va scope'ni tasdiqla, (2) secretni rotate/revoke qil, (3) loglardan uning ishlatilganini qidir, (4) ta'sirlangan tizimlarni aniqla, (5) root cause'ni tuzat (pipeline, repo, access), (6) takroriy urinishni kuzat, (7) lessons learned yoz. Har topilmani standart shablon bilan hujjatlashtir: Title, Severity, Scope, Impact, Evidence, Root cause, Fix, Verification.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 8v5'/><path d='M12 16h.01'/></svg></span><div><p>Keng tarqalgan xato</p><p>Shoshib log yoki dalilni o'chirish, yoki containment'dan oldin tizimni qayta yuklab yuborish. Bu timeline'ni va root cause'ni yo'qotadi. Avval dalilni saqla (vaqt, manba, hash), keyin harakat qil.</p></div></div><h3>Amaliy maslahat</h3><p>Dalil saqlashda har doim vaqt (UTC), manba, kim olgani va o'zgarmaganligini (hash) qayd et. IRT bir kishilik jamoa emas - security, IT operations, network, development, legal va HR rollari kerak bo'lishi mumkin. Playbook vahimani kamaytiradi, chunki qaror oldindan yozilgan.</p><h3>W3Schools mapping</h3><p>W3Schools Incident Response sahifasi incidentni adverse threat sifatida ta'riflaydi va IRT tarkibida security, IT operations, network, development, legal va HR kabi rollar bo'lishi mumkinligini ko'rsatadi. PICERL/NIST SP 800-61 yondashuvi preparationdan lessons learnedgacha tartibli javob beradi.</p></div>",
+  "doc": "<div class='prose'><h3>Nega bu muhim</h3><p>Breach bo'lganda eng muhim narsa - tartib, tezlik emas. Vahima ostida qabul qilingan qaror (masalan log o'chirish) ko'pincha vaziyatni yomonlashtiradi. SANS PICERL modeli bo'yicha tuzilgan IR jarayoni oldindan tayyor bo'lsa, jamoa nima qilishni biladi va dalilni yo'qotmaydi.</p><h3>Qanday ishlaydi</h3><p>IR lifecycle bosqichlari: Prepare (kontakt, log, backup oldindan tayyor), Detect (alert yoki report orqali hodisani ko'rish), Contain (zararni cheklash - token revoke, host izolatsiya), Eradicate (sababni yo'qotish - patch, persistence olib tashlash), Recover (xizmatni tiklab kuzatish) va Lessons learned (jarayonni yaxshilash). Bu doiraviy jarayon: har hodisadan keyin tayyorgarlik yaxshilanadi.</p><table class='gtable'><thead><tr><th>Bosqich</th><th>Maqsad</th><th>Misol</th></tr></thead><tbody><tr><td>Prepare</td><td>oldindan tayyorgarlik</td><td>contacts, logs, backup</td></tr><tr><td>Detect</td><td>hodisani ko'rish</td><td>alert, report, anomaly</td></tr><tr><td>Contain</td><td>zararni cheklash</td><td>token revoke, isolate host</td></tr><tr><td>Eradicate</td><td>sababni yo'qotish</td><td>patch, remove persistence</td></tr><tr><td>Recover</td><td>xizmatni tiklash</td><td>restore, monitor</td></tr></tbody></table><figure class='svgfig'><svg viewBox='0 0 680 220' role='img' aria-label='Incident response sikli aylanasi: prepare, detect, contain, eradicate, recover, lessons learned'><circle cx='340' cy='110' r='78' class='edga'/><rect class='boxa' x='288' y='6' width='104' height='36' rx='8'/><text x='340' y='29' text-anchor='middle'>Prepare</text><rect class='box' x='470' y='58' width='104' height='36' rx='8'/><text x='522' y='81' text-anchor='middle'>Detect</text><rect class='box' x='470' y='150' width='104' height='36' rx='8'/><text x='522' y='173' text-anchor='middle'>Contain</text><rect class='box' x='288' y='190' width='104' height='36' rx='8'/><text x='340' y='213' text-anchor='middle'>Eradicate</text><rect class='box' x='106' y='150' width='104' height='36' rx='8'/><text x='158' y='173' text-anchor='middle'>Recover</text><rect class='boxa' x='96' y='58' width='124' height='36' rx='8'/><text x='158' y='81' text-anchor='middle'>Lessons</text><defs><marker id='arCy7a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>IR - doiraviy jarayon; lessons learned keyingi prepare'ni kuchaytiradi.</figcaption></figure><h3>Amaliy misol (ruxsatli lab)</h3><p>Credential leak playbookini mashq qil: (1) exposure va scope'ni tasdiqla, (2) secretni rotate/revoke qil, (3) loglardan uning ishlatilganini qidir, (4) ta'sirlangan tizimlarni aniqla, (5) root cause'ni tuzat (pipeline, repo, access), (6) takroriy urinishni kuzat, (7) lessons learned yoz. Har topilmani standart shablon bilan hujjatlashtir: Title, Severity, Scope, Impact, Evidence, Root cause, Fix, Verification.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 8v5'/><path d='M12 16h.01'/></svg></span><div><p>Keng tarqalgan xato</p><p>Shoshib log yoki dalilni o'chirish, yoki containment'dan oldin tizimni qayta yuklab yuborish. Bu timeline'ni va root cause'ni yo'qotadi. Avval dalilni saqla (vaqt, manba, hash), keyin harakat qil.</p></div></div><h3>Amaliy maslahat</h3><p>Dalil saqlashda har doim vaqt (UTC), manba, kim olgani va o'zgarmaganligini (hash) qayd et. IRT bir kishilik jamoa emas - security, IT operations, network, development, legal va HR rollari kerak bo'lishi mumkin. Playbook vahimani kamaytiradi, chunki qaror oldindan yozilgan.</p><h3>W3Schools mapping</h3><p>W3Schools Incident Response sahifasi incidentni adverse threat sifatida ta'riflaydi va IRT tarkibida security, IT operations, network, development, legal va HR kabi rollar bo'lishi mumkinligini ko'rsatadi. PICERL (SANS) yondashuvi preparationdan lessons learnedgacha tartibli javob beradi; NIST SP 800-61r3 esa IR jarayonini CSF 2.0 funksiyalari atrofida qayta tuzgan.</p></div>",
   "code": [
    {
     "heading": {
@@ -1634,9 +1634,9 @@
   "resources": [
    {
     "type": "doc",
-    "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final",
-    "title": "NIST SP 800-61",
-    "desc": "Computer Security Incident Handling Guide",
+    "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+    "title": "NIST SP 800-61r3",
+    "desc": "Incident Response Recommendations (CSF 2.0 funksiyalari asosida)",
     "host": "csrc.nist.gov"
    },
    {
@@ -1657,7 +1657,7 @@
     "type": "doc",
     "url": "https://www.w3schools.com/cybersecurity/cybersecurity_incident_response.php",
     "title": "W3Schools - Incident Response",
-    "desc": "Incident, IRT and PICERL/NIST-SP 800-61 overview",
+    "desc": "Incident, IRT and PICERL (SANS) overview",
     "host": "w3schools.com"
    },
    {
@@ -2015,7 +2015,7 @@
     },
     "title": "Vulnerability ticket",
     "lang": "text",
-    "code": "Title: Outdated nginx image on public web gateway\nAsset: web-gateway-prod\nExposure: internet-facing\nSeverity: High\nEvidence: image nginx:1.23, advisory CVE-XXXX\nOwner: platform team\nFix: upgrade to nginx:1.26-alpine and rebuild image\nDue: 7 days\nVerification: image digest updated, scanner no longer reports CVE, smoke test passes"
+    "code": "Title: Outdated nginx image on public web gateway\nAsset: web-gateway-prod\nExposure: internet-facing\nSeverity: High\nEvidence: image nginx:1.23, advisory CVE-XXXX\nOwner: platform team\nFix: upgrade to nginx:1.28-alpine and rebuild image\nDue: 7 days\nVerification: image digest updated, scanner no longer reports CVE, smoke test passes"
    },
    {
     "heading": {
@@ -2824,7 +2824,7 @@
     "type": "doc",
     "url": "https://www.nist.gov/cyberframework",
     "title": "NIST Cybersecurity Framework",
-    "desc": "Identify, Protect, Detect, Respond, Recover modeli.",
+    "desc": "Govern, Identify, Protect, Detect, Respond, Recover modeli.",
     "host": "nist.gov"
    },
    {
@@ -2981,8 +2981,8 @@
    },
    {
     "topic": "NIST lifecycle",
-    "rule": "Identify, Protect, Detect, Respond, Recover.",
-    "ex": "Threat model identify, RBAC protect, SOC detect, IR respond, backup recover."
+    "rule": "Govern, Identify, Protect, Detect, Respond, Recover.",
+    "ex": "Security policy va ownership govern, threat model identify, RBAC protect, SOC detect, IR respond, backup recover."
    }
   ]
  },

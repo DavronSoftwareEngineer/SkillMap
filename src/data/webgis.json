@@ -7,7 +7,7 @@
   "eyebrow": "00 / Boshlang'ich brifing",
   "mtitle": "0 dan professional darajagacha: yo'l xaritasi",
   "lede": "Bu platforma seni <strong>WebGIS Engineer</strong> holatdan to'liq <strong>Geospatial Full-Stack Engineer</strong> darajasiga olib chiqadi. Pastdagi bo'limlar xaritaning zoom darajalari kabi tartiblangan - eng katta ko'rinishdan (asoslar) eng nozik detallargacha (deploy va portfolio).",
-  "doc": "<p>Maqsad bitta jumlada: <strong>React + TypeScript + MapLibre frontend, Python FastAPI API, PostgreSQL/PostGIS database, GDAL/Shapely/Rasterio/YOLO processing va Docker/Nginx/Redis deploy</strong> ni bitta production geospatial platformaga yig'ish.</p>\n<h3>Maqsadli stack (target stack)</h3>\n<div class=\"chips\">\n<span class=\"chip t\">React + TypeScript + Vite</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip t\">Python + FastAPI</span><span class=\"chip\">PostgreSQL + PostGIS</span>\n<span class=\"chip\">GDAL / Shapely / Rasterio</span><span class=\"chip\">YOLO</span>\n<span class=\"chip\">Docker Compose</span><span class=\"chip\">Nginx + Redis</span>\n</div>\n<p>Frontend xarita va UI uchun React/TypeScript ishlatiladi. Backendning asosiy API qismi Python/FastAPI bo'ladi, chunki geospatial processing, raster/vector pipeline va AI inference Python ekotizimida kuchli. PostGIS spatial database, MapLibre browserdagi xarita, Docker/Nginx/Redis esa production infratuzilma vazifasini bajaradi.</p>\n<h3>Bo'limlar (zoom darajalari)</h3>\n<p>Har bir bo'lim - xaritada bir zoom darajasi. Yuqoriroq daraja = chuqurroq detal:</p>\n<div class=\"chips\">\n<span class=\"chip\">z3 / React TS + MapLibre</span>\n<span class=\"chip\">z6 / FastAPI backend</span>\n<span class=\"chip\">z10 / PostGIS</span>\n<span class=\"chip\">z13 / Vector tiles</span>\n<span class=\"chip\">z16 / Docker &amp; deploy</span>\n<span class=\"chip\">z28 / GIS processing</span>\n<span class=\"chip\">z30 / AI-GIS</span>\n</div>\n<h3>Har kuni qanday o'rganasan</h3>\n<p>Kuniga 2-3 soat ajratsang yetarli. Eng muhim qoida: <strong>o'qigan narsangni darhol o'z WebGIS loyihangga qo'sh.</strong></p>\n<div class=\"chips\">\n<span class=\"chip\">30 daq / nazariya/docs</span>\n<span class=\"chip\">90 daq / kod yozish</span>\n<span class=\"chip\">30 daq / debugging</span>\n<span class=\"chip\">30 daq / README/note</span>\n</div>\n<div class=\"callout\"><div><p>Asosiy qaror</p><p>Kursning backend yo'li endi <strong>FastAPI + Python</strong>. Oldingi TypeScript backend flow asosiy yo'ldan olib tashlandi; geospatial va AI uchun Python/FastAPI ustuvor.</p></div></div>\n<h3>Butun tizim chizmasi</h3>\n<div class=\"tree\">\n[Browser]\n  React + TypeScript + MapLibre\n      |\n      | /api/search, /api/features, /api/upload\n      v\n[FastAPI + Python] -----> [Redis cache / queue]\n      |                         |\n      | SQL / spatial query     | background jobs\n      v                         v\n[PostgreSQL + PostGIS]     [GDAL / Rasterio / YOLO worker]\n      |\n      | vector tile source\n      v\n[Tegola] ---- /tiles/{z}/{x}/{y}.pbf ----> [MapLibre]\n</div>\n<p>Bu chizma kursdagi hamma modulning qayerga ulanishini ko'rsatadi: frontend xaritani boshqaradi, FastAPI API vazifasini bajaradi, PostGIS spatial data saqlaydi, worker esa og'ir processing va AI ishlarini bajaradi.</p>\n<figure class='svgfig'><svg viewBox='0 0 700 210' role='img' aria-label='WebGIS full-stack tizim: frontend, FastAPI, PostGIS va worker'>\n<rect class='boxa' x='20' y='30' width='150' height='50' rx='8'/><text x='95' y='60' text-anchor='middle'>React + MapLibre</text>\n<path class='edga' d='M170 55 H250' marker-end='url(#arZ0a)'/>\n<rect class='box' x='250' y='30' width='150' height='50' rx='8'/><text x='325' y='60' text-anchor='middle'>FastAPI</text>\n<path class='edga' d='M325 80 V120' marker-end='url(#arZ0a)'/>\n<rect class='box' x='250' y='120' width='150' height='50' rx='8'/><text x='325' y='150' text-anchor='middle'>PostGIS</text>\n<path class='edge' d='M400 55 H480' marker-end='url(#arZ0a)'/>\n<rect class='box' x='480' y='30' width='170' height='50' rx='8'/><text x='565' y='55' text-anchor='middle'>Worker</text><text x='565' y='72' text-anchor='middle' class='muted'>GDAL / YOLO</text>\n<path class='edge' d='M565 80 V145 H405' marker-end='url(#arZ0a)'/>\n<defs><marker id='arZ0a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Umumiy oqim: frontend so'rov yuboradi, FastAPI PostGIS va workerni boshqaradi.</figcaption></figure>",
+  "doc": "<p>Maqsad bitta jumlada: <strong>React + TypeScript + MapLibre frontend, Python FastAPI API, PostgreSQL/PostGIS database, GDAL/Shapely/Rasterio/YOLO processing va Docker/Nginx/Redis deploy</strong> ni bitta production geospatial platformaga yig'ish.</p>\n<h3>Maqsadli stack (target stack)</h3>\n<div class=\"chips\">\n<span class=\"chip t\">React + TypeScript + Vite</span><span class=\"chip t\">MapLibre GL JS</span>\n<span class=\"chip t\">Python + FastAPI</span><span class=\"chip\">PostgreSQL + PostGIS</span>\n<span class=\"chip\">GDAL / Shapely / Rasterio</span><span class=\"chip\">YOLO</span>\n<span class=\"chip\">Docker Compose</span><span class=\"chip\">Nginx + Redis</span>\n</div>\n<p>Frontend xarita va UI uchun React/TypeScript ishlatiladi. Backendning asosiy API qismi Python/FastAPI bo'ladi, chunki geospatial processing, raster/vector pipeline va AI inference Python ekotizimida kuchli. PostGIS spatial database, MapLibre browserdagi xarita, Docker/Nginx/Redis esa production infratuzilma vazifasini bajaradi.</p>\n<h3>Bo'limlar (zoom darajalari)</h3>\n<p>Har bir bo'lim - xaritada bir zoom darajasi. Yuqoriroq daraja = chuqurroq detal:</p>\n<div class=\"chips\">\n<span class=\"chip\">z2 / React TS + MapLibre</span>\n<span class=\"chip\">z4 / FastAPI backend</span>\n<span class=\"chip\">z5 / PostGIS</span>\n<span class=\"chip\">z7 / GIS processing</span>\n<span class=\"chip\">z8 / Vector tiles</span>\n<span class=\"chip\">z9 / Docker &amp; deploy</span>\n<span class=\"chip\">z11 / AI-GIS</span>\n</div>\n<h3>Har kuni qanday o'rganasan</h3>\n<p>Kuniga 2-3 soat ajratsang yetarli. Eng muhim qoida: <strong>o'qigan narsangni darhol o'z WebGIS loyihangga qo'sh.</strong></p>\n<div class=\"chips\">\n<span class=\"chip\">30 daq / nazariya/docs</span>\n<span class=\"chip\">90 daq / kod yozish</span>\n<span class=\"chip\">30 daq / debugging</span>\n<span class=\"chip\">30 daq / README/note</span>\n</div>\n<div class=\"callout\"><div><p>Asosiy qaror</p><p>Kursning backend yo'li endi <strong>FastAPI + Python</strong>. Oldingi TypeScript backend flow asosiy yo'ldan olib tashlandi; geospatial va AI uchun Python/FastAPI ustuvor.</p></div></div>\n<h3>Butun tizim chizmasi</h3>\n<div class=\"tree\">\n[Browser]\n  React + TypeScript + MapLibre\n      |\n      | /api/search, /api/features, /api/upload\n      v\n[FastAPI + Python] -----> [Redis cache / queue]\n      |                         |\n      | SQL / spatial query     | background jobs\n      v                         v\n[PostgreSQL + PostGIS]     [GDAL / Rasterio / YOLO worker]\n      |\n      | vector tile source\n      v\n[Tegola] ---- /tiles/{z}/{x}/{y}.pbf ----> [MapLibre]\n</div>\n<p>Bu chizma kursdagi hamma modulning qayerga ulanishini ko'rsatadi: frontend xaritani boshqaradi, FastAPI API vazifasini bajaradi, PostGIS spatial data saqlaydi, worker esa og'ir processing va AI ishlarini bajaradi.</p>\n<figure class='svgfig'><svg viewBox='0 0 700 210' role='img' aria-label='WebGIS full-stack tizim: frontend, FastAPI, PostGIS va worker'>\n<rect class='boxa' x='20' y='30' width='150' height='50' rx='8'/><text x='95' y='60' text-anchor='middle'>React + MapLibre</text>\n<path class='edga' d='M170 55 H250' marker-end='url(#arZ0a)'/>\n<rect class='box' x='250' y='30' width='150' height='50' rx='8'/><text x='325' y='60' text-anchor='middle'>FastAPI</text>\n<path class='edga' d='M325 80 V120' marker-end='url(#arZ0a)'/>\n<rect class='box' x='250' y='120' width='150' height='50' rx='8'/><text x='325' y='150' text-anchor='middle'>PostGIS</text>\n<path class='edge' d='M400 55 H480' marker-end='url(#arZ0a)'/>\n<rect class='box' x='480' y='30' width='170' height='50' rx='8'/><text x='565' y='55' text-anchor='middle'>Worker</text><text x='565' y='72' text-anchor='middle' class='muted'>GDAL / YOLO</text>\n<path class='edge' d='M565 80 V145 H405' marker-end='url(#arZ0a)'/>\n<defs><marker id='arZ0a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs>\n</svg><figcaption>Umumiy oqim: frontend so'rov yuboradi, FastAPI PostGIS va workerni boshqaradi.</figcaption></figure>",
   "code": [
    {
     "heading": {
@@ -2517,13 +2517,13 @@
     "heading": null,
     "title": "tegola.toml - asosiy konfiguratsiya",
     "lang": "toml",
-    "code": "[webserver]\nport = \":8080\"\n\n[[providers]]\nname = \"postgis\"\ntype = \"postgis\"\nhost = \"postgres\"\nport = 5432\ndatabase = \"gis\"\nuser = \"gis\"\npassword = \"secret\"\n\n[[maps]]\nname = \"osm\"\n\n  [[maps.layers]]\n  name = \"buildings\"\n  [maps.layers.provider]\n  sql = \"SELECT ST_AsBinary(geometry) AS geometry, id, name, height FROM buildings WHERE geometry && !BBOX!\""
+    "code": "[webserver]\nport = \":8080\"\n\n[[providers]]\nname = \"postgis\"\ntype = \"postgis\"\nhost = \"postgres\"\nport = 5432\ndatabase = \"gis\"\nuser = \"gis\"\npassword = \"secret\"\nsrid = 4326  # Tegola default 3857 deb oladi - bizning data 4326 (WGS84)\n\n[[maps]]\nname = \"osm\"\n\n  [[maps.layers]]\n  name = \"buildings\"\n  [maps.layers.provider]\n  sql = \"SELECT ST_AsBinary(geometry) AS geometry, id, name, height FROM buildings WHERE geometry && !BBOX!\""
    },
    {
     "heading": null,
     "title": "Zoom bo'yicha geometry soddalashtirish",
     "lang": "sql",
-    "code": "SELECT\n  ST_AsBinary(\n    CASE\n      WHEN !ZOOM! < 14 THEN ST_Simplify(geometry, 5)\n      ELSE geometry\n    END\n  ) AS geometry,\n  id, name, height\nFROM buildings\nWHERE geometry && !BBOX!"
+    "code": "SELECT\n  ST_AsBinary(\n    CASE\n      WHEN !ZOOM! < 14 THEN ST_Simplify(geometry, 0.001) -- 4326'da tolerance darajada (degree): 0.001 = taxminan 100 m\n      ELSE geometry\n    END\n  ) AS geometry,\n  id, name, height\nFROM buildings\nWHERE geometry && !BBOX!"
    },
    {
     "heading": null,
@@ -2830,7 +2830,7 @@
     "heading": null,
     "title": "api/Dockerfile",
     "lang": "dockerfile",
-    "code": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\nCOPY . .\nRUN npm run build\nEXPOSE 3000\nCMD [\"node\", \"dist/main.js\"]"
+    "code": "# Python bazaviy image (slim - kichik hajm)\nFROM python:3.12-slim\nWORKDIR /app\n# Avval dependency'lar - Docker layer cache samarali ishlashi uchun\nCOPY requirements.txt ./\nRUN pip install --no-cache-dir -r requirements.txt\n# Ilova kodi\nCOPY app ./app\nEXPOSE 8000\nCMD [\"uvicorn\", \"app.main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]"
    },
    {
     "heading": null,
@@ -3114,7 +3114,7 @@
    {
     "topic": "Nginx reverse proxy",
     "rule": "Tashqi so'rovni ichki xizmatga yo'naltiradi.",
-    "ex": "proxy_pass http://api:3000;"
+    "ex": "proxy_pass http://api:8000;"
    }
   ]
  },
@@ -3883,7 +3883,7 @@
     },
     "title": "docker-compose.yml",
     "lang": "yaml",
-    "code": "services:\n  api:\n    build: ./api\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/health\"]\n      interval: 30s\n      timeout: 5s\n      retries: 3\n      start_period: 10s"
+    "code": "services:\n  api:\n    build: ./api\n    healthcheck:\n      # slim Python image'da curl yo'q - python bilan tekshiramiz\n      test: [\"CMD\", \"python\", \"-c\", \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\"]\n      interval: 30s\n      timeout: 5s\n      retries: 3\n      start_period: 10s"
    },
    {
     "heading": {
@@ -4248,7 +4248,7 @@
     },
     "title": "make_cog.sh",
     "lang": "bash",
-    "code": "gdal_translate input.tif output_cog.tif \\\n  -of COG \\\n  -co COMPRESS=DEFLATE \\\n  -co PREDICTOR=2 \\\n  -co BLOCKSIZE=512 \\\n  -co OVERVIEWS=AUTO"
+    "code": "gdal_translate input.tif output_cog.tif \\\n  -of COG \\\n  -co COMPRESS=DEFLATE \\\n  -co PREDICTOR=YES \\\n  -co BLOCKSIZE=512 \\\n  -co OVERVIEWS=AUTO"
    },
    {
     "heading": {
@@ -4573,7 +4573,7 @@
     },
     "title": "test_features.py",
     "lang": "py",
-    "code": "import pytest\nfrom httpx import AsyncClient\n\n@pytest.mark.asyncio\nasync def test_features_bbox_returns_geojson(app):\n    async with AsyncClient(app=app, base_url=\"http://test\") as client:\n        res = await client.get(\"/features/bbox\", params={\"minx\":69.1,\"miny\":41.2,\"maxx\":69.4,\"maxy\":41.4})\n    assert res.status_code == 200\n    body = res.json()\n    assert body[\"type\"] == \"FeatureCollection\""
+    "code": "import pytest\nfrom httpx import ASGITransport, AsyncClient\n\n@pytest.mark.asyncio\nasync def test_features_bbox_returns_geojson(app):\n    async with AsyncClient(transport=ASGITransport(app=app), base_url=\"http://test\") as client:\n        res = await client.get(\"/features/bbox\", params={\"minx\":69.1,\"miny\":41.2,\"maxx\":69.4,\"maxy\":41.4})\n    assert res.status_code == 200\n    body = res.json()\n    assert body[\"type\"] == \"FeatureCollection\""
    },
    {
     "heading": {
@@ -4924,7 +4924,7 @@
     },
     "title": ".github/workflows/deploy.yml",
     "lang": "yaml",
-    "code": "name: deploy\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Build images\n        run: docker compose build\n      - name: Run tests\n        run: docker compose run --rm backend npm test\n      # keyin: serverga SSH + docker compose up -d"
+    "code": "name: deploy\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Build images\n        run: docker compose build\n      - name: Run tests\n        run: docker compose run --rm api pytest\n      # keyin: serverga SSH + docker compose up -d"
    }
   ],
   "tasks": [
