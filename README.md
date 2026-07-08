@@ -48,8 +48,8 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
   Kunlik seriya - `myacademy_streak`.
 - Tayyorlik paneli ham har kurs uchun **alohida** hisoblanadi.
 - Har kursning o'z urg'u rangi bor (English binafsha, Moliya yashil, Cybersecurity qizil,
-  Telegram ko'k, AI Prompt pushti, Frontend to'q sariq, Backend oltin sariq, Git lime yashil...) -
-  qaysi kursdaliging darrov bilinadi.
+  Telegram ko'k, AI Prompt pushti, Frontend to'q sariq, Backend oltin sariq, Git lime yashil,
+  Rus tili och ko'k, Arab tili moviy/cyan...) - qaysi kursdaliging darrov bilinadi.
 - Kurs kontenti lazy-load qilinadi - faqat ochilgan kursning JSON'i yuklanadi.
 - **URL hash-router:** har modul/bo'limning o'z havolasi bor - `#webgis/z5`, `#english/dash`.
   Sahifani yangilasang joyingda qolasan, havolani ulashsang boshqalar ham o'sha modulga tushadi.
@@ -101,12 +101,13 @@ public/
 - **Zaxira eslatmasi:** progress bor-u, zaxira 14 kundan eski (yoki umuman qilinmagan) bo'lsa, Dashboard'da eslatma chiqadi - ma'lumot yo'qolishining oldini oladi.
 - **Global qidiruv:** yon paneldagi *Qidiruv* - darslar, topshiriqlar, lug'at, grammatika va testlar bo'ylab qidirib, to'g'ridan-to'g'ri modulga o'tadi.
 - **Kitoblar:** har kursga o'qish tartibi bilan tavsiya kitoblar ro'yxati biriktirilgan - tegishli modulda kitob eslatmasi chiqadi (`data/courses.ts`, `components/Books.tsx`).
-- **Tinglash mashqi (English):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan - darhol tekshiriladi.
+- **Tinglash va talaffuz mashqlari (til kurslari):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan; `speak` turida sen talaffuz qilasan, brauzer nutqni tanib tekshiradi (English, Rus tili, Arab tili - `lib/speech.ts`).
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
 - **Geospatial kengaytirildi:** JS/TS biladiganlar uchun Python ko'prigi, professional tartib, arxitektura chizmalari, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlari qo'shildi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
-- **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas.
-- **Vizual diagrammalar:** dars matnlarida inline SVG sxemalar (oqim, arxitektura, jarayon) - 10 kurs bo'ylab 140+ diagramma. `.svgfig` CSS klassi orqali mavzuga (dark/light) ergashadi va responsive (`styles.css`). Diagramma qo'shish: doc HTML ichiga `<figure class='svgfig'><svg viewBox=...>...</svg><figcaption>..</figcaption></figure>` - ranglar uchun `.box/.boxa/.edge/.edga/.muted/.accent` klasslaridan foydalan (rang hardkod qilinmaydi).
+- **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas. Til kursiga qarab ovoz tili avtomatik: English `en-US`, Rus tili `ru-RU`, Arab tili `ar-SA`.
+- **Arab tili kursi:** Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan 12 modul (alifbo -> harakatlar -> nahv/sarf -> i'rob -> Qur'on matni tahlili -> hadis va yakuniy baholash). Barcha arabcha matn to'liq harakatli, transliteratsiya va tarjima bilan; arabcha satrlar `.ar-line` klassi orqali kattaroq va o'ngdan chapga ko'rsatiladi (`styles.css`).
+- **Vizual diagrammalar:** dars matnlarida inline SVG sxemalar (oqim, arxitektura, jarayon) - 11 kurs bo'ylab 160+ diagramma. `.svgfig` CSS klassi orqali mavzuga (dark/light) ergashadi va responsive (`styles.css`). Diagramma qo'shish: doc HTML ichiga `<figure class='svgfig'><svg viewBox=...>...</svg><figcaption>..</figcaption></figure>` - ranglar uchun `.box/.boxa/.edge/.edga/.muted/.accent` klasslaridan foydalan (rang hardkod qilinmaydi).
 
 ## Testlar va kontent validatsiyasi
 
