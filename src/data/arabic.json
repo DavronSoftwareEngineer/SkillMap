@@ -3921,5 +3921,3315 @@
     "why": "likulli-mri'in - hamzatul-vasl tushib o'qiladi; نَوَى illatli fe'l, oxiri alif maqsura (aa) bilan tugaydi."
    }
   ]
+ },
+ {
+  "zoom": "AR12",
+  "title": "Zaif fe'llar",
+  "sub": "Sarf pro",
+  "coord": "Sarf pro / AR12",
+  "eyebrow": "12 / Zaif fe'llar to'liq",
+  "mtitle": "Zaif fe'llar: mahmuz, muzoaf, misol, ajvaf, naqis",
+  "lede": "Qur'onda eng ko'p uchraydigan fe'llarning aksariyati <strong>zaif</strong> - o'zagida و، ي yoki hamza bor. Ular qisqarib, shaklini o'zgartiradi: قَالَ dan قُلْتُ، دَعَا dan لَمْ يَدْعُ. Bu modul zaif fe'llarni tizimli beradi.",
+  "doc": "<div class='prose'><h3>Nega zaif fe'llar alohida modul?</h3><p>Solim (sog') fe'lda uch o'zak undoshi ham \"kuchli\": كَتَبَ - k-t-b hech qayerda yo'qolmaydi. Ammo o'zakda <b>و</b> (vav), <b>ي</b> (ya) yoki <b>hamza</b> bo'lsa, fe'l ba'zi shakllarda qisqaradi yoki harf almashadi. Qur'onning eng chastotali fe'llari - قَالَ، كَانَ، رَأَى، جَاءَ، آمَنَ - hammasi zaif. قُلْ so'zida uch o'zak harfdan faqat ikkitasi ko'rinadi: shu sababli zaif fe'lni bilmagan o'quvchi lug'atdan ham topa olmaydi. Zaif harfning <b>o'zakdagi o'rni</b> fe'l turini belgilaydi:</p><table class='gtable'><thead><tr><th>Tur</th><th>Belgisi</th><th>Misollar</th><th>Muzori'</th></tr></thead><tbody><tr><td>mahmuz</td><td>o'zakda hamza</td><td>أَكَلَ (yedi)، أَخَذَ (oldi)، سَأَلَ (so'radi)</td><td>يَأْكُلُ، يَأْخُذُ، يَسْأَلُ؛ amr qisqargan: كُلْ، خُذْ، سَلْ</td></tr><tr><td>muzoaf</td><td>2- va 3-harf bir xil</td><td>مَدَّ (cho'zdi)، ظَنَّ (gumon qildi)</td><td>يَمُدُّ، يَظُنُّ</td></tr><tr><td>misol</td><td>1-harf و/ي</td><td>وَعَدَ (va'da berdi)، وَجَدَ (topdi)، وَصَلَ (yetdi)</td><td>و tushadi: يَعِدُ، يَجِدُ، يَصِلُ؛ amr: عِدْ، جِدْ، صِلْ</td></tr><tr><td>ajvaf</td><td>2-harf و/ي</td><td>قَالَ، بَاعَ (sotdi)، خَافَ</td><td>يَقُولُ، يَبِيعُ، يَخَافُ</td></tr><tr><td>naqis</td><td>3-harf و/ي</td><td>دَعَا، رَمَى (otdi)، رَضِيَ (rozi bo'ldi)</td><td>يَدْعُو، يَرْمِي، يَرْضَى</td></tr><tr><td>lafif</td><td>ikkita zaif harf</td><td>وَقَى (saqladi)</td><td>يَقِي؛ amr bir harf: قِ</td></tr></tbody></table><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='Zaif harf orni fel turini belgilaydi'><text x='350' y='30' text-anchor='middle'>Zaif harf (w / y) o'zakning qaysi o'rnida?</text><rect class='box' x='30' y='55' width='195' height='55' rx='8'/><text x='127' y='79' text-anchor='middle'>1-o'rin (fa)</text><text x='127' y='99' text-anchor='middle' class='muted'>wa'ada &#8594; ya'idu</text><rect class='boxa' x='252' y='55' width='195' height='55' rx='8'/><text x='349' y='79' text-anchor='middle'>2-o'rin (ayn)</text><text x='349' y='99' text-anchor='middle' class='muted'>qaala &#8594; qultu</text><rect class='box' x='474' y='55' width='195' height='55' rx='8'/><text x='571' y='79' text-anchor='middle'>3-o'rin (lam)</text><text x='571' y='99' text-anchor='middle' class='muted'>da'aa &#8594; lam yad'u</text><path class='edga' d='M127 110 V140' marker-end='url(#arAR12a)'/><path class='edga' d='M349 110 V140' marker-end='url(#arAR12a)'/><path class='edga' d='M571 110 V140' marker-end='url(#arAR12a)'/><text x='127' y='160' text-anchor='middle' class='accent'>MISOL: muzori'da tushadi</text><text x='349' y='160' text-anchor='middle' class='accent'>AJVAF: cho'ziq unli qisqaradi</text><text x='571' y='160' text-anchor='middle' class='accent'>NAQIS: jazmda tushadi</text><defs><marker id='arAR12a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Zaif harfning o'rni turni belgilaydi: 1-o'rin - misol, 2-o'rin - ajvaf, 3-o'rin - naqis.</figcaption></figure><h3>Ajvaf: قَالَ to'liq tuslanishi</h3><p>Ajvafda asosiy qonun bitta: <b>yopiq bo'g'in cho'ziq unlini ko'tarmaydi</b>. Qo'shimcha undosh bilan boshlansa (ـتُ، ـتَ، ـنَ...) yoki jazm oxirgi harfni sukunlasa, o'rtadagi cho'ziq unli qisqaradi: قَالَ &#8594; قُلْتُ، يَقُولُ &#8594; لَمْ يَقُلْ، amr - قُلْ.</p><table class='gtable'><thead><tr><th>Olmosh</th><th>Mozi</th><th>Muzori'</th><th>Jazm (لَمْ bilan)</th></tr></thead><tbody><tr><td>هُوَ</td><td>قَالَ (qaala)</td><td>يَقُولُ</td><td>لَمْ يَقُلْ</td></tr><tr><td>هِيَ</td><td>قَالَتْ (qaalat)</td><td>تَقُولُ</td><td>لَمْ تَقُلْ</td></tr><tr><td>أَنْتَ</td><td>قُلْتَ (qulta)</td><td>تَقُولُ</td><td>لَمْ تَقُلْ</td></tr><tr><td>أَنْتِ</td><td>قُلْتِ (qulti)</td><td>تَقُولِينَ</td><td>لَمْ تَقُولِي</td></tr><tr><td>أَنَا</td><td>قُلْتُ (qultu)</td><td>أَقُولُ</td><td>لَمْ أَقُلْ</td></tr><tr><td>هُمْ</td><td>قَالُوا (qaaluu)</td><td>يَقُولُونَ</td><td>لَمْ يَقُولُوا</td></tr><tr><td>هُنَّ</td><td>قُلْنَ (qulna)</td><td>يَقُلْنَ</td><td>لَمْ يَقُلْنَ</td></tr><tr><td>أَنْتُمْ</td><td>قُلْتُمْ (qultum)</td><td>تَقُولُونَ</td><td>لَمْ تَقُولُوا</td></tr><tr><td>نَحْنُ</td><td>قُلْنَا (qulnaa)</td><td>نَقُولُ</td><td>لَمْ نَقُلْ</td></tr></tbody></table><p>Amr: <b>قُلْ</b> (sen, e.)، <b>قُولِي</b> (sen, a.)، <b>قُولُوا</b> (sizlar). Xuddi shu naqsh bilan: بَاعَ - بِعْتُ، لَمْ يَبِعْ، بِعْ (i-turi)؛ خَافَ - خِفْتُ، لَمْ يَخَفْ، خَفْ (a-turi). Qisqargan unli muzori'dagi unlini takrorlaydi: yaquulu &#8594; qul (u), yabii'u &#8594; bi' (i), yakhaafu &#8594; khaf (a).</p><h3>Naqis: دَعَا to'liq tuslanishi</h3><p>Naqisda zaif harf <b>oxirida</b>: دَعَا (asli دَعَوَ، o'zak د-ع-و). Mozida هِيَ shaklida zaif harf tushadi (دَعَتْ)، هُمْ shaklida ـوْا bo'ladi (دَعَوْا - \"da'aw\"، solimdagi ـُوا bilan adashtirma). Jazmda oxirgi cho'ziq unli tushadi: لَمْ يَدْعُ.</p><table class='gtable'><thead><tr><th>Olmosh</th><th>Mozi</th><th>Muzori'</th><th>Jazm (لَمْ bilan)</th></tr></thead><tbody><tr><td>هُوَ</td><td>دَعَا (da'aa)</td><td>يَدْعُو</td><td>لَمْ يَدْعُ</td></tr><tr><td>هِيَ</td><td>دَعَتْ (da'at)</td><td>تَدْعُو</td><td>لَمْ تَدْعُ</td></tr><tr><td>أَنْتَ</td><td>دَعَوْتَ (da'awta)</td><td>تَدْعُو</td><td>لَمْ تَدْعُ</td></tr><tr><td>أَنْتِ</td><td>دَعَوْتِ (da'awti)</td><td>تَدْعِينَ</td><td>لَمْ تَدْعِي</td></tr><tr><td>أَنَا</td><td>دَعَوْتُ (da'awtu)</td><td>أَدْعُو</td><td>لَمْ أَدْعُ</td></tr><tr><td>هُمْ</td><td>دَعَوْا (da'aw)</td><td>يَدْعُونَ</td><td>لَمْ يَدْعُوا</td></tr><tr><td>هُنَّ</td><td>دَعَوْنَ (da'awna)</td><td>يَدْعُونَ</td><td>لَمْ يَدْعُونَ</td></tr><tr><td>أَنْتُمْ</td><td>دَعَوْتُمْ (da'awtum)</td><td>تَدْعُونَ</td><td>لَمْ تَدْعُوا</td></tr><tr><td>نَحْنُ</td><td>دَعَوْنَا (da'awnaa)</td><td>نَدْعُو</td><td>لَمْ نَدْعُ</td></tr></tbody></table><p>Amr: <b>اُدْعُ</b> (ud'u)، اُدْعِي، اُدْعُوا. ي-turi: رَمَى - رَمَتْ، رَمَوْا، لَمْ يَرْمِ، amr اِرْمِ. a-turi: رَضِيَ - رَضُوا (raduu!)، يَرْضَى، لَمْ يَرْضَ، amr اِرْضَ. Diqqat: هُنَّ shaklida ayollik نَ qo'shimchasi jazmda ham saqlanadi (لَمْ يَدْعُونَ) - u zaif harf emas, ega belgisi.</p><h3>Qur'onning yuqori chastotali zaif fe'llari</h3><p>Quyidagi ro'yxatni yodlab olsang, Qur'on fe'llarining katta qismini \"tanigan\" bo'lasan (tarjimalar - ma'no tarjimasi):</p><table class='gtable'><thead><tr><th>Fe'l</th><th>O'zak / tur</th><th>Oyat misoli</th><th>Manba</th></tr></thead><tbody><tr><td>قَالَ (aytdi)</td><td>ق-و-ل، ajvaf</td><td>قَالَ إِنِّي عَبْدُ اللّٰهِ</td><td>19:30</td></tr><tr><td>كَانَ (bo'ldi, edi)</td><td>ك-و-ن، ajvaf</td><td>وَكَانَ اللّٰهُ غَفُورًا رَحِيمًا</td><td>4:96</td></tr><tr><td>رَأَى (ko'rdi)</td><td>ر-أ-ي، mahmuz+naqis</td><td>رَأَى كَوْكَبًا</td><td>6:76</td></tr><tr><td>جَاءَ (keldi)</td><td>ج-ي-أ، ajvaf+mahmuz</td><td>إِذَا جَاءَ نَصْرُ اللّٰهِ</td><td>110:1</td></tr><tr><td>شَاءَ (xohladi)</td><td>ش-ي-أ، ajvaf+mahmuz</td><td>مَا شَاءَ اللّٰهُ</td><td>18:39</td></tr><tr><td>أَتَى (keldi)</td><td>أ-ت-ي، mahmuz+naqis</td><td>أَتَى أَمْرُ اللّٰهِ</td><td>16:1</td></tr><tr><td>هَدَى (hidoyat qildi)</td><td>ه-د-ي، naqis</td><td>وَالَّذِي قَدَّرَ فَهَدَى</td><td>87:3</td></tr><tr><td>دَعَا (duo qildi, chaqirdi)</td><td>د-ع-و، naqis</td><td>فَدَعَا رَبَّهُ</td><td>54:10</td></tr><tr><td>آمَنَ (iymon keltirdi)</td><td>أ-م-ن، mahmuz, IV bob</td><td>آمَنَ الرَّسُولُ</td><td>2:285</td></tr><tr><td>أَرَادَ (iroda qildi)</td><td>ر-و-د، ajvaf, IV bob</td><td>إِذَا أَرَادَ شَيْئًا</td><td>36:82</td></tr><tr><td>زَادَ (ziyoda qildi)</td><td>ز-ي-د، ajvaf</td><td>فَزَادَهُمُ اللّٰهُ مَرَضًا</td><td>2:10</td></tr><tr><td>مَاتَ (vafot etdi)</td><td>م-و-ت، ajvaf</td><td>أَفَإِنْ مَاتَ أَوْ قُتِلَ</td><td>3:144</td></tr><tr><td>خَافَ (qo'rqdi)</td><td>خ-و-ف، ajvaf</td><td>وَلِمَنْ خَافَ مَقَامَ رَبِّهِ</td><td>55:46</td></tr></tbody></table><p dir='rtl' class='ar-line'>قُلْ هُوَ اللّٰهُ أَحَدٌ</p><p><i>qul huwallaahu ahad</i> - \"Ayt: U - Alloh yagonadir\" (Ixlos surasi, 112:1, ma'no tarjimasi). Qur'onda <b>قُلْ</b> amri 300 martadan ko'p keladi - endi bilasanki, bu قَالَ ning qisqargan buyruq shakli.</p><p dir='rtl' class='ar-line'>اُدْعُ إِلَى سَبِيلِ رَبِّكَ بِالْحِكْمَةِ</p><p><i>ud'u ilaa sabiili rabbika bil-hikmati</i> - \"Rabbing yo'liga hikmat bilan chaqir\" (Nahl surasi, 16:125). <b>اُدْعُ</b> - naqis fe'l amri: oxirgi و tushgan, boshiga hamzatul-vasl kelgan.</p><h3>Lug'atda qanday topaman? \"Yashiringan\" o'zak harfi</h3><p>Arab lug'atlari (Hans Wehr, almaany) so'zni <b>o'zak bo'yicha</b> beradi. Zaif fe'lda esa o'zak harfi shaklda ko'rinmasligi mumkin: قُلْ da faqat ق va ل bor; يَعِدُ da و umuman yo'q; رَمَوْا da ي ko'rinmaydi. Topish strategiyasi: (1) ikki undoshli \"kalta\" fe'l ko'rsang, o'rtaga و/ي qo'yib ko'r (qul &#8594; q-w-l) yoki oxiriga zaif harf qo'shib ko'r (yad'u &#8594; d-'-w); (2) muzori' ...عِدُ، ...جِدُ kabi bo'lsa, boshiga و qo'shib ko'r (ya'idu &#8594; w-'-d); (3) ikkilanib qolsang corpus.quran.com da so'z ustiga bos - o'zak ko'rsatiladi, keyin shu o'zakni lug'atdan izla.</p><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Tipik xato</p><p>دَعَوْا (da'aw - naqis, \"ular chaqirdilar\") va كَتَبُوا (katabuu - solim) oxiri bir xil ko'rinadi, lekin o'qilishi har xil: naqisda ـوْا qisqa \"-aw\" diftong, solimda ـُوا cho'ziq \"-uu\". Harakatga qara: و ustida sukun bo'lsa - diftong.</p></div></div><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Amaliy maslahat</p><p>Zaif fe'lni yodlaganda doim <b>uch shaklni birga</b> yodla: mozi + muzori' + amr (قَالَ - يَقُولُ - قُلْ؛ دَعَا - يَدْعُو - اُدْعُ). Shunda qisqargan shaklni matnda ko'rganda o'zak o'zi \"tiklanadi\".</p></div></div></div>",
+  "code": [],
+  "tasks": [
+   {
+    "id": "ar12-1",
+    "html": "قَالَ fe'lini mozi, muzori' va jazmda (لَمْ bilan) to'liq tuslab jadval yozdim",
+    "crit": "قُلْتُ، لَمْ يَقُلْ، قُلْ qisqarishlari xatosiz"
+   },
+   {
+    "id": "ar12-2",
+    "html": "دَعَا va رَمَى fe'llarini tuslab, و-turi bilan ي-turini solishtirdim",
+    "crit": "دَعَوْا / لَمْ يَدْعُ / اُدْعُ va رَمَوْا / لَمْ يَرْمِ / اِرْمِ to'g'ri"
+   },
+   {
+    "id": "ar12-3",
+    "html": "13 ta yuqori chastotali zaif fe'lga oyat misoli bilan kartochka tayyorladim",
+    "crit": "har kartada o'zak, tur va sura:oyat ko'rsatilgan"
+   },
+   {
+    "id": "ar12-4",
+    "html": "Ixlos (112) va Nasr (110) suralaridagi zaif fe'llarni topib turini aniqladim",
+    "crit": "قُلْ (ajvaf amri) va جَاءَ (ajvaf+mahmuz) topilgan"
+   },
+   {
+    "id": "ar12-5",
+    "html": "5 ta qisqargan shaklning (قُلْ، خُذْ، يَعِدُ، لَمْ يَدْعُ، رَأَوْا) o'zagini corpus.quran.com da tekshirdim",
+    "crit": "o'zaklar to'g'ri tiklangan (قُلْ &#8594; ق-و-ل kabi)"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://corpus.quran.com/qurandictionary.jsp",
+    "title": "Quran Dictionary (corpus.quran.com)",
+    "desc": "O'zak bo'yicha fe'lning barcha Qur'oniy shakllari",
+    "host": "corpus.quran.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://en.wikipedia.org/wiki/Arabic_verbs",
+    "title": "Arabic verbs (Wikipedia)",
+    "desc": "Zaif fe'llar tuslanish jadvallari (weak verbs bo'limi)",
+    "host": "en.wikipedia.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.almaany.com",
+    "title": "Almaany lug'ati",
+    "desc": "O'zak bo'yicha izlash mashqi uchun onlayn lug'at",
+    "host": "www.almaany.com"
+   }
+  ],
+  "project": {
+   "tag": "AR12 amaliyot",
+   "title": "Zaif fe'llar ma'lumotnomasi",
+   "desc": "O'zing uchun doimiy foydalanadigan zaif fe'llar qo'llanmasini tuz: har tur uchun namunaviy tuslanish jadvali va Qur'oniy misollar bilan.",
+   "features": [
+    "Ajvaf jadvali: قَالَ، بَاعَ، خَافَ (mozi/muzori'/jazm/amr)",
+    "Naqis jadvali: دَعَا، رَمَى، رَضِيَ (mozi/muzori'/jazm/amr)",
+    "Misol uchun وَعَدَ، وَجَدَ - muzori' va amr shakllari",
+    "Mahmuz amrlari: كُلْ، خُذْ، سَلْ izohlari bilan",
+    "13 chastotali zaif fe'l - har biriga sura:oyat misoli",
+    "Har fe'lda o'zak va tur belgilangan",
+    "Qisqargan shakldan o'zakni tiklash algoritmi (sxema)",
+    "Hammasi corpus.quran.com da tekshirilgan"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "قَالَ fe'li zaif fe'llarning qaysi turiga kiradi?",
+    "a": [
+     "misol",
+     "naqis",
+     "ajvaf",
+     "muzoaf"
+    ],
+    "c": 2,
+    "w": "O'zagi ق-و-ل: zaif harf و o'rtada (2-o'rin), demak ajvaf (\"ichi bo'sh\") fe'l.",
+    "level": "easy"
+   },
+   {
+    "q": "لَمْ يَدْعُ shaklida qanday o'zgarish yuz bergan?",
+    "a": [
+     "jazm tufayli oxirgi zaif harf (و) tushgan",
+     "boshdagi ي tushgan",
+     "o'rtadagi cho'ziq unli qisqargan",
+     "hech narsa - bu to'liq shakl"
+    ],
+    "c": 0,
+    "w": "Naqis fe'lda jazm oxirgi cho'ziq unlini tushiradi: يَدْعُو &#8594; لَمْ يَدْعُ. Ajvafda esa o'rta unli qisqaradi (لَمْ يَقُلْ).",
+    "level": "practical"
+   },
+   {
+    "q": "\"Men aytdim\" ning to'g'ri arabchasi qaysi?",
+    "a": [
+     "قَوَلْتُ",
+     "قَالْتُ",
+     "قِلْتُ",
+     "قُلْتُ"
+    ],
+    "c": 3,
+    "w": "Undosh bilan boshlanuvchi ـتُ qo'shimchasi oldida ajvafning cho'ziq unlisi qisqaradi: qaala + tu = qultu (قُلْتُ). Unli muzori'dagi damma bo'yicha tanlanadi (يَقُولُ).",
+    "level": "practical"
+   },
+   {
+    "q": "Harakatsiz matnda لم يجد uchradi, ma'nosini bilmaysan. Lug'atdan qanday topasan?",
+    "a": [
+     "ي-ج-د o'zagini izlayman",
+     "muzori'da tushgan و ni tiklab, و-ج-د o'zagini izlayman",
+     "ج-د-د o'zagini izlayman",
+     "لم يجد ni bir so'z sifatida izlayman"
+    ],
+    "c": 1,
+    "w": "يَجِدُ - misol fe'l: 1-o'zak harfi و muzori'da tushadi. To'liq o'zak و-ج-د (وَجَدَ - topdi), \"lam yajid\" = \"topmadi\".",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "دَعَوْا (da'aw) shakli qanday ma'noni beradi?",
+    "options": [
+     "u duo qildi",
+     "ular (erkaklar) duo qildilar",
+     "ular (ayollar) duo qildilar",
+     "sen duo qilding"
+    ],
+    "correct": 1,
+    "why": "ـوْا - naqis fe'lda هُمْ shakli: zaif harf tushib, -aw diftongi qoladi (دَعَا + uu = دَعَوْا). Ayollar shakli - دَعَوْنَ."
+   },
+   {
+    "type": "choice",
+    "q": "وَعَدَ (va'da berdi) fe'lining muzori'si qaysi?",
+    "options": [
+     "يَوْعِدُ",
+     "يُوعَدُ",
+     "يَعِدُ",
+     "وَعَدَ"
+    ],
+    "correct": 2,
+    "why": "Misol fe'lda birinchi o'zak harfi و muzori'da tushadi: wa'ada &#8594; ya'idu (يَعِدُ). Xuddi shunday: وَجَدَ &#8594; يَجِدُ."
+   },
+   {
+    "type": "choice",
+    "q": "قَالَ fe'lining لَمْ bilan inkori (u aytmadi):",
+    "options": [
+     "لَمْ يَقُولُ",
+     "لَمْ يَقُلْ",
+     "لَمْ يَقَالُ",
+     "لَمْ قَالَ"
+    ],
+    "correct": 1,
+    "why": "لَمْ jazm qiladi, oxirgi harf sukunlanadi - yopiq bo'g'inda cho'ziq unli turolmaydi: yaquulu &#8594; lam yaqul (لَمْ يَقُلْ)."
+   },
+   {
+    "type": "choice",
+    "q": "مَدَّ (cho'zdi) fe'lidan \"men cho'zdim\":",
+    "options": [
+     "مَدَّتُ",
+     "مَدْتُ",
+     "مَدَدْتُ",
+     "مَادَدْتُ"
+    ],
+    "correct": 2,
+    "why": "Muzoaf fe'lda undosh qo'shimcha oldida shadda \"yechiladi\": madda &#8594; madadtu (مَدَدْتُ). Xuddi shunday ظَنَنْتُ (gumon qildim)."
+   },
+   {
+    "type": "choice",
+    "q": "أَخَذَ (oldi) fe'lining amr (buyruq) shakli:",
+    "options": [
+     "اُؤْخُذْ",
+     "أْخُذْ",
+     "اِئْخَذْ",
+     "خُذْ"
+    ],
+    "correct": 3,
+    "why": "Mahmuz fe'llarning bir guruhida amr qisqaradi - hamza butunlay tushadi: أَخَذَ &#8594; خُذْ، أَكَلَ &#8594; كُلْ، سَأَلَ &#8594; سَلْ."
+   },
+   {
+    "type": "gap",
+    "q": "Ixlos surasi ___ so'zi bilan boshlanadi (قَالَ ning amr shakli, \"ayt!\").",
+    "answers": [
+     "قُلْ",
+     "قل"
+    ],
+    "hint": "Ajvaf amri: cho'ziq unli qisqaradi, ikki harf qoladi.",
+    "why": "Amr jazm shaklidan yasaladi: yaquulu &#8594; qul. قُلْ هُوَ اللّٰهُ أَحَدٌ (112:1)."
+   },
+   {
+    "type": "gap",
+    "q": "\"U duo qilmadi\": لَمْ ___ (يَدْعُو ning jazmdagi qisqargan shakli).",
+    "answers": [
+     "يَدْعُ",
+     "يدع"
+    ],
+    "hint": "Naqisda jazm oxirgi cho'ziq unlini (و) tushiradi.",
+    "why": "yad'uu &#8594; lam yad'u: jazm belgisi - oxirgi zaif harfning tushishi (لَمْ يَدْعُ)."
+   },
+   {
+    "type": "gap",
+    "q": "خَافَ (qo'rqdi) fe'lidan \"men qo'rqdim\": ___",
+    "answers": [
+     "خِفْتُ",
+     "خفت"
+    ],
+    "hint": "Ajvaf a-turi: undosh qo'shimcha oldida cho'ziq unli kasraga qisqaradi.",
+    "why": "khaafa + tu = khiftu (خِفْتُ). Har ajvafning qisqarish unlisi o'ziga xos: qultu (u), bi'tu (i), khiftu (i)."
+   },
+   {
+    "type": "listen",
+    "q": "Eshit va yozib ol",
+    "say": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+    "lang": "ar-SA",
+    "answers": [
+     "قُلْ هُوَ اللَّهُ أَحَدٌ",
+     "قل هو الله أحد"
+    ],
+    "hint": "Ixlos surasining 1-oyati; birinchi so'z - ajvaf amri.",
+    "why": "قُلْ - قَالَ ning qisqargan amr shakli; oyat: 112:1 (ma'no tarjimasi: \"Ayt: U - Alloh yagonadir\")."
+   },
+   {
+    "type": "speak",
+    "q": "Talaffuz qil: اُدْعُ إِلَى سَبِيلِ رَبِّكَ (ud'u ilaa sabiili rabbika - Rabbing yo'liga chaqir, 16:125)",
+    "say": "اُدْعُ إِلَى سَبِيلِ رَبِّكَ",
+    "lang": "ar-SA",
+    "why": "اُدْعُ - naqis fe'l amri: oxirgi و tushgan, boshida damma bilan hamzatul-vasl. Ayn harfini bo'g'izdan talaffuz qil."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "رَأَى",
+    "ipa": "ra'aa",
+    "pos": "fe'l",
+    "uz": "ko'rdi",
+    "ex": "رَأَى كَوْكَبًا"
+   },
+   {
+    "w": "جَاءَ",
+    "ipa": "jaa'a",
+    "pos": "fe'l",
+    "uz": "keldi",
+    "ex": "إِذَا جَاءَ نَصْرُ اللَّهِ"
+   },
+   {
+    "w": "شَاءَ",
+    "ipa": "shaa'a",
+    "pos": "fe'l",
+    "uz": "xohladi",
+    "ex": "مَا شَاءَ اللَّهُ"
+   },
+   {
+    "w": "أَتَى",
+    "ipa": "ataa",
+    "pos": "fe'l",
+    "uz": "keldi, yetib keldi",
+    "ex": "أَتَى أَمْرُ اللَّهِ"
+   },
+   {
+    "w": "هَدَى",
+    "ipa": "hadaa",
+    "pos": "fe'l",
+    "uz": "hidoyat qildi, yo'lladi",
+    "ex": "وَالَّذِي قَدَّرَ فَهَدَى"
+   },
+   {
+    "w": "دَعَا",
+    "ipa": "da'aa",
+    "pos": "fe'l",
+    "uz": "duo qildi, chaqirdi",
+    "ex": "فَدَعَا رَبَّهُ"
+   },
+   {
+    "w": "آمَنَ",
+    "ipa": "aamana",
+    "pos": "fe'l",
+    "uz": "iymon keltirdi",
+    "ex": "آمَنَ الرَّسُولُ"
+   },
+   {
+    "w": "أَرَادَ",
+    "ipa": "araada",
+    "pos": "fe'l",
+    "uz": "xohladi, iroda qildi",
+    "ex": "إِذَا أَرَادَ شَيْئًا"
+   },
+   {
+    "w": "مَاتَ",
+    "ipa": "maata",
+    "pos": "fe'l",
+    "uz": "vafot etdi",
+    "ex": "أَفَإِنْ مَاتَ أَوْ قُتِلَ"
+   },
+   {
+    "w": "خَافَ",
+    "ipa": "khaafa",
+    "pos": "fe'l",
+    "uz": "qo'rqdi",
+    "ex": "وَلِمَنْ خَافَ مَقَامَ رَبِّهِ"
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Ajvaf qisqarishi",
+    "rule": "O'rta zaif harfli fe'lda undosh bilan boshlanuvchi qo'shimcha yoki jazm oldida cho'ziq unli qisqaradi; qisqa unli muzori'dagi unlini takrorlaydi.",
+    "ex": "قَالَ &#8594; قُلْتُ، لَمْ يَقُلْ، قُلْ؛ بَاعَ &#8594; بِعْتُ، لَمْ يَبِعْ، بِعْ؛ خَافَ &#8594; خِفْتُ، لَمْ يَخَفْ"
+   },
+   {
+    "topic": "Naqis qisqarishi",
+    "rule": "Oxirgi zaif harf: mozida هِيَ shaklida tushadi (دَعَتْ)، هُمْ shaklida ـوْا/ـَوْا diftong bo'ladi; jazm va amrda oxirgi cho'ziq unli tushadi.",
+    "ex": "دَعَا &#8594; دَعَوْا، لَمْ يَدْعُ، اُدْعُ؛ رَمَى &#8594; رَمَوْا، لَمْ يَرْمِ، اِرْمِ"
+   },
+   {
+    "topic": "Misol fe'lda و tushishi",
+    "rule": "Birinchi o'zak harfi و bo'lgan fe'llarning ko'pida muzori' va amrda و tushadi.",
+    "ex": "وَعَدَ &#8594; يَعِدُ، عِدْ؛ وَجَدَ &#8594; يَجِدُ، جِدْ؛ وَصَلَ &#8594; يَصِلُ، صِلْ"
+   },
+   {
+    "topic": "Muzoaf shaddasining yechilishi",
+    "rule": "Ikkilangan fe'lda undosh bilan boshlanuvchi qo'shimcha oldida shadda ochilib, o'zak harfi ikki marta yoziladi.",
+    "ex": "مَدَّ &#8594; مَدَدْتُ (cho'zdim)؛ ظَنَّ &#8594; ظَنَنْتُ (gumon qildim)"
+   },
+   {
+    "topic": "Mahmuz amrining qisqarishi",
+    "rule": "أَكَلَ، أَخَذَ، سَأَلَ fe'llarida amr shakli hamzasiz, qisqargan holda keladi.",
+    "ex": "كُلْ (ye!)، خُذْ (ol!)، سَلْ (so'ra!)"
+   }
+  ]
+ },
+ {
+  "zoom": "AR13",
+  "title": "Qur'on lug'ati PRO",
+  "sub": "Lug'at",
+  "coord": "Lug'at / AR13",
+  "eyebrow": "13 / 300 so'zlik chastota lug'ati",
+  "mtitle": "Qur'on lug'ati PRO: 300 so'zlik chastota zaxirasi",
+  "lede": "Bu modulning yuragi - <strong>300 ta yangi, eng ko'p uchraydigan Qur'on so'zidan iborat chastota lug'ati</strong>. Semantik guruhlar, SRS takrorlash rejasi va so'z oilalari usuli bilan bu zaxira 3-4 haftada yodlanadi va harakatsiz matnga o'tishning asosiy poydevori bo'ladi.",
+  "doc": "<div class='prose'><h3>Chastota tamoyili: nega aynan 300 so'z?</h3><p>Qur'onda so'zlar juda notekis taqsimlangan: bir hovuch zarra va yuklama (<b>وَ، فِي، مِنْ، إِنَّ</b>...) matnning katta qismini tashkil qiladi, eng faol fe'l va ismlar esa yuzlab marta takrorlanadi. corpus.quran.com ma'lumotlariga tayangan holda taxminiy baho berish mumkin: <strong>eng ko'p uchraydigan ~300 leksema Qur'on matnining taxminan ~70% ini qoplaydi</strong> (aniq raqam hisoblash usuliga - leksema yoki so'z shakli sanalishiga - qarab ozgina farq qiladi, shuning uchun ehtiyotkor \"taxminan\" deymiz). AR10 da bu yondashuv bilan tanishgan edingiz; ushbu modul o'sha g'oyani oxirigacha olib boradi: quyidagi lug'atda roppa-rosa 300 ta YANGI so'z berilgan - AR0-AR12 modullarida chiqqan so'zlar ataylab takrorlanmagan. 300 yangi so'z + avvalgi modullardagi yadro leksemalar birgalikda 400 dan oshadi: shu bazadan keyin sahifadagi notanish so'z qoidadan istisnoga aylanadi.</p><p>Muhim ogohlantirish: qamrov foizi \"so'z shakllari tanish chiqadi\" degani, \"har oyat o'z-o'zidan tushuniladi\" degani emas. I'rob, fe'l boblari va kontekst baribir kerak - lekin lug'at zaxirasi o'qish tezligini keskin oshiradi va tahlilga kuch qoldiradi.</p><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='SRS intervalli takrorlash sikli'><rect class='boxa' x='20' y='25' width='190' height='44' rx='8'/><text x='115' y='45' text-anchor='middle'>0-kun: tanishuv</text><text x='115' y='61' text-anchor='middle'>10-15 yangi so'z</text><rect class='box' x='255' y='25' width='190' height='44' rx='8'/><text x='350' y='52' text-anchor='middle'>1-kun: takror</text><rect class='box' x='490' y='25' width='190' height='44' rx='8'/><text x='585' y='52' text-anchor='middle'>3-kun: takror</text><rect class='box' x='20' y='120' width='190' height='44' rx='8'/><text x='115' y='147' text-anchor='middle'>7-kun: takror</text><rect class='box' x='255' y='120' width='190' height='44' rx='8'/><text x='350' y='147' text-anchor='middle'>21-kun: takror</text><rect class='boxa' x='490' y='120' width='190' height='44' rx='8'/><text x='585' y='140' text-anchor='middle'>uzoq muddatli</text><text x='585' y='156' text-anchor='middle'>xotira</text><path class='edge' d='M210 47 H250' marker-end='url(#arAR13a)'/><path class='edge' d='M445 47 H485' marker-end='url(#arAR13a)'/><path class='edge' d='M585 69 V95 H115 V115' marker-end='url(#arAR13a)'/><path class='edge' d='M210 142 H250' marker-end='url(#arAR13a)'/><path class='edge' d='M445 142 H485' marker-end='url(#arAR13a)'/><defs><marker id='arAR13a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>SRS (intervalli takrorlash): har so'z oshib boruvchi oraliqlarda kamida 5 marta takrorlanadi; esdan chiqqan so'z 0-kunga qaytadi.</figcaption></figure><h3>SRS bilan yodlash rejasi: kuniga 10-15 so'z</h3><p>300 so'z bir o'tirishda yodlanmaydi - <strong>kuniga 10-15 so'z</strong> me'yorida 20-30 kunlik reja tuziladi. Har so'z uchun kartochka (qog'oz yoki Anki): old tomonida harakatli arabcha so'z, orqasida transliteratsiya + tarjima + lug'atdagi misol ibora. Takror kunlari: 1, 3, 7, 21, so'ng oyda bir. Avval arabcha-o'zbekcha yo'nalishda (tanish), zaxira mustahkamlangach o'zbekcha-arabcha yo'nalishda (faol bilish) sinang.</p><table class='gtable'><thead><tr><th>Hafta</th><th>Yangi so'z</th><th>Takror ishi</th><th>Jami</th></tr></thead><tbody><tr><td>1</td><td>70-100</td><td>1-3-7 kun sikllari boshlanadi</td><td>~100</td></tr><tr><td>2</td><td>70-100</td><td>+ 1-hafta so'zlari</td><td>~200</td></tr><tr><td>3</td><td>70-100</td><td>+ 1-2-hafta so'zlari</td><td>~300</td></tr><tr><td>4</td><td>0 (mustahkamlash)</td><td>to'liq aylanish + oyatda qidirish testi</td><td>300</td></tr></tbody></table><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>So'zni yolg'iz yodlamang</p><p>Har so'zni lug'atdagi qisqa Qur'oniy iborasi bilan birga yodlang: <b>صَبْرٌ</b> ni alohida emas, <b>إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</b> ichida. Kontekst xotirani 2-3 barobar mustahkamlaydi va so'zning real qo'llanishini ko'rsatadi. Harakatli yozuvni saqlang - harakatsiz shaklga AR14 da o'tasiz.</p></div></div><h3>So'z oilalari: bitta o'zak - o'nlab so'z</h3><p>300 raqami qo'rqitmasin: arab tilida so'z o'zak + vazn tizimida yasaladi, shuning uchun bitta o'zakni bilsangiz, hosilalarini deyarli \"tekinga\" olasiz. Klassik misol - <b>ع-ل-م</b> (bilish) o'zagi:</p><p dir='rtl' class='ar-line'>عَلِمَ - عِلْمٌ - عَالِمٌ - عَلِيمٌ - مَعْلُومٌ - مُعَلِّمٌ - تَعْلِيمٌ - تَعَلَّمَ</p><table class='gtable'><thead><tr><th>So'z</th><th>Vazn</th><th>Ma'no</th></tr></thead><tbody><tr><td dir='rtl'><b>عَلِمَ</b></td><td>fa'ila (I bob mozi)</td><td>bildi</td></tr><tr><td dir='rtl'><b>عِلْمٌ</b></td><td>fi'l (masdar)</td><td>bilim</td></tr><tr><td dir='rtl'><b>عَالِمٌ</b></td><td>faa'il (ism foil)</td><td>biluvchi, olim</td></tr><tr><td dir='rtl'><b>عَلِيمٌ</b></td><td>fa'iil (mubolag'a sifati)</td><td>juda biluvchi (Alloh sifati)</td></tr><tr><td dir='rtl'><b>مَعْلُومٌ</b></td><td>maf'uul (ism maf'ul)</td><td>ma'lum, bilingan</td></tr><tr><td dir='rtl'><b>مُعَلِّمٌ</b></td><td>mufa''il (II bob ism foili)</td><td>o'rgatuvchi, muallim</td></tr><tr><td dir='rtl'><b>تَعْلِيمٌ</b></td><td>taf'iil (II bob masdari)</td><td>o'rgatish, ta'lim</td></tr><tr><td dir='rtl'><b>تَعَلَّمَ</b></td><td>tafa''ala (V bob)</td><td>o'rgandi</td></tr></tbody></table><p>Xuddi shu naqsh boshqa o'zaklarda ham ishlaydi: <b>غ-ف-ر</b> dan غَفَرَ (kechirdi), غَفُورٌ (ko'p kechiruvchi), مَغْفِرَةٌ (kechirim), اِسْتِغْفَارٌ (kechirim so'rash); <b>س-ج-د</b> dan سَجَدَ (sajda qildi), مَسْجِدٌ (sajda joyi), سُجُودٌ (sajda). Lug'atda yangi so'z ko'rganda avval o'zagini ajratib, tanish oila bor-yo'qligini tekshiring.</p><h3>Lug'at qanday tuzilgan</h3><p>300 so'z tasodifiy ro'yxat emas - <strong>semantik guruhlar</strong>da beriladi, chunki ma'no jihatdan bog'liq so'zlar birga yaxshiroq yodlanadi: zarralar va bog'lovchilar (35), olmoshlar (16), Alloh nomlari va sifatlari (22), iymon atamalari (24), oxirat (22), ibodat (17), halol-harom va axloq (16), vahiy va kitob (15), payg'ambarlar va insonlar (25), tabiat (15), tana a'zolari (7), harakat fe'llari (37), nutq fe'llari (10), sifatlar (20), vaqt-makon (8), mol-dunyo va sinov (11). Har guruhni alohida \"kun paketi\" sifatida olish mumkin. Fe'llar mozi shaklida (lug'aviy asos), ismlar tanvinli birlikda berilgan - corpus.quran.com da har birini oyatlar bo'yicha tekshirib ko'rishingiz mumkin.</p></div>",
+  "code": [],
+  "tasks": [
+   {
+    "id": "ar13-1",
+    "html": "Lug'atning birinchi 100 so'zini uch kunga bo'lib o'qib chiqdim va notanish so'zlarni belgilab oldim",
+    "crit": "100 so'z ko'rib chiqilgan, notanish so'zlar alohida ro'yxatga olingan"
+   },
+   {
+    "id": "ar13-2",
+    "html": "Anki yoki qog'oz kartochkalarda 300 so'zlik SRS to'plamini yaratib, birinchi kun paketini yodladim",
+    "crit": "har kartada harakatli arabcha + transliteratsiya + tarjima + misol ibora bor; kamida 10-15 so'z o'rganilgan"
+   },
+   {
+    "id": "ar13-3",
+    "html": "ع-ل-م va غ-ف-ر o'zaklaridan so'z oilasi jadvalini tuzib chiqdim",
+    "crit": "har o'zakdan kamida 5 hosila, vazni va ma'nosi ko'rsatilgan"
+   },
+   {
+    "id": "ar13-4",
+    "html": "Yod olgan so'zlarimni Yasin surasining birinchi sahifasidan qidirib topdim va sanadim",
+    "crit": "kamida 20 tanish so'z topilgan, oyat raqami bilan yozib olingan"
+   },
+   {
+    "id": "ar13-5",
+    "html": "Bir haftalik SRS jurnalini yuritdim: har kuni yangi so'zlar va takror sikllarini qayd etdim",
+    "crit": "7 kunlik jadvalda yangi/takror sonlari va esdan chiqqan so'zlar ro'yxati bor"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://corpus.quran.com",
+    "title": "Quranic Arabic Corpus",
+    "desc": "Har so'zning chastotasi, o'zagi va grammatik tahlili - lug'atni tekshirish uchun asosiy manba.",
+    "host": "corpus.quran.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.almaany.com",
+    "title": "Almaany lug'ati",
+    "desc": "Arabcha izohli va tarjima lug'at - so'z oilalari va vaznlarni tekshirish uchun.",
+    "host": "almaany.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://quran.com",
+    "title": "Quran.com",
+    "desc": "Yod olingan so'zlarni real oyatlarda qidirish va kontekstda ko'rish.",
+    "host": "quran.com"
+   }
+  ],
+  "project": {
+   "tag": "AR13 amaliyot",
+   "title": "300 so'zlik shaxsiy SRS lug'at tizimi",
+   "desc": "To'liq 300 so'zni SRS tizimiga joylab, 3-4 haftalik yodlash sikliga kirasiz va natijani real sura matnida o'lchaysiz - bu harakatsiz kitob o'qishga tayyorgarlikning lug'aviy poydevori.",
+   "features": [
+    "300 kartochka: harakatli so'z + transliteratsiya + tarjima + Qur'oniy misol ibora",
+    "16 semantik guruh bo'yicha kun paketlariga bo'lingan reja (kuniga 10-15 so'z)",
+    "1-3-7-21 kun intervalli takror jadvali va kundalik jurnal",
+    "Kamida 5 ta o'zakdan so'z oilasi jadvali (vazn + ma'no)",
+    "Haftalik o'z-o'zini test: arabcha-o'zbekcha va o'zbekcha-arabcha yo'nalishlarda",
+    "Qamrov o'lchovi: tanlangan qisqa surada tanish so'zlar foizini hisoblash",
+    "4-hafta yakunida 90% dan yuqori eslab qolish nazorati (esdan chiqqanlar 0-kunga qaytariladi)"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Ushbu modul lug'ati qanday tamoyil asosida tuzilgan?",
+    "a": [
+     "alifbo tartibida, har harfdan teng miqdorda",
+     "faqat fe'llardan, chunki ular eng muhim",
+     "chastota bo'yicha: eng ko'p uchraydigan so'zlar, semantik guruhlarga ajratilgan",
+     "tasodifiy tanlangan chiroyli so'zlardan"
+    ],
+    "c": 2,
+    "w": "Lug'at chastota tamoyilida tuzilgan: eng ko'p uchraydigan ~300 leksema matnning taxminan ~70% ini qoplaydi, semantik guruhlash esa yodlashni osonlashtiradi.",
+    "level": "easy"
+   },
+   {
+    "q": "عَلِيمٌ، قَدِيرٌ، سَمِيعٌ، بَصِيرٌ so'zlarini qaysi umumiy vazn birlashtiradi?",
+    "a": [
+     "فَعِيل - doimiy-kuchli sifat vazni",
+     "فَاعِل - ism foil vazni",
+     "مَفْعُول - ism maf'ul vazni",
+     "تَفْعِيل - II bob masdari"
+    ],
+    "c": 0,
+    "w": "Bularning bari fa'iil (فَعِيل) vaznida - doimiy, mustahkam sifatni bildiradi; Allohning ko'p go'zal ismlari shu vaznda.",
+    "level": "practical"
+   },
+   {
+    "q": "مُعَلِّمٌ so'zi qaysi bobdan yasalgan va nima ma'noni beradi?",
+    "a": [
+     "I bob ism foili - biluvchi",
+     "IV bob ism maf'uli - bildirilgan",
+     "X bob ism foili - bilim so'rovchi",
+     "II bob ism foili - o'rgatuvchi"
+    ],
+    "c": 3,
+    "w": "مُعَلِّمٌ - II bob (عَلَّمَ - o'rgatdi) ism foili: mu- prefiksi + o'rta harf shaddali kasra. Ma'nosi: o'rgatuvchi, muallim.",
+    "level": "practical"
+   },
+   {
+    "q": "Kuniga 15 so'z yodlayapsiz, lekin bir haftadan keyin eski so'zlarning yarmi esdan chiqayapti. Eng to'g'ri chora qaysi?",
+    "a": [
+     "yangi so'zlar sonini kuniga 30 taga oshirish",
+     "1-3-7-21 kunlik intervalli takrorni yo'lga qo'yish va har so'zni misol ibora bilan bog'lash",
+     "hammasini to'xtatib, ro'yxatni boshidan qayta o'qib chiqish",
+     "faqat o'zbekcha tarjimalarini yodlash"
+    ],
+    "c": 1,
+    "w": "Muammo takror tizimida: SRS intervallari (1-3-7-21 kun) va kontekstli ibora unutishni keskin kamaytiradi. Yangi so'zni ko'paytirish esa yukni og'irlashtiradi.",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Chastota yondashuvida birinchi navbatda qaysi qatlam yodlanadi?",
+    "options": [
+     "eng kam uchraydigan nodir so'zlar",
+     "zarralar, yuklamalar va eng faol fe'llar",
+     "faqat atoqli otlar",
+     "faqat uzun so'zlar"
+    ],
+    "correct": 1,
+    "why": "Zarralar va yuklamalar (وَ، فَ، إِلَّا، قَدْ...) hamda eng faol fe'llar matnda eng zich uchraydi - ularni bilish qamrovni tezda oshiradi."
+   },
+   {
+    "type": "choice",
+    "q": "غَفُورٌ so'zining vazni va ma'no ottenkasi qaysi?",
+    "options": [
+     "فَعُول - mubolag'a: ko'p kechiruvchi",
+     "فَاعِل - oddiy bajaruvchi: kechiruvchi",
+     "مَفْعُول - kechirilgan",
+     "فِعْل - masdar: kechirim"
+    ],
+    "correct": 0,
+    "why": "غَفُور - fa'uul mubolag'a vazni: sifatning kuchli, doimiy darajasini bildiradi (juda ko'p kechiruvchi)."
+   },
+   {
+    "type": "choice",
+    "q": "Qaysi juftlik ma'no jihatdan ZID (antonim) emas?",
+    "options": [
+     "اَلدُّنْيَا / اَلْآخِرَةُ",
+     "اَلْحَقُّ / اَلْبَاطِلُ",
+     "حَلَالٌ / حَرَامٌ",
+     "اَلْعَزِيزُ / اَلْحَكِيمُ"
+    ],
+    "correct": 3,
+    "why": "اَلْعَزِيزُ (qudratli) va اَلْحَكِيمُ (hikmatli) zid emas - ular Qur'onda ko'pincha juft keladigan ikki go'zal ism. Qolganlari antonim juftliklar."
+   },
+   {
+    "type": "choice",
+    "q": "يَوْمَئِذٍ so'zining tarkibi qanday?",
+    "options": [
+     "يَوْم + إِذٍ birikuvi: 'o'sha kuni'",
+     "yaxlit uch harfli o'zak ي-م-ذ",
+     "يَوْم ning siniq ko'pligi",
+     "fe'lning muzori' shakli"
+    ],
+    "correct": 0,
+    "why": "يَوْمَئِذٍ = يَوْم (kun) + إِذْ (o'shanda) + tanvin: 'o'sha kuni'. Qiyomat tasvirlarida juda ko'p uchraydi."
+   },
+   {
+    "type": "choice",
+    "q": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ (Hujurot 49:10) dagi إِنَّمَا qanday ma'no qo'shadi?",
+    "options": [
+     "so'roq ma'nosi",
+     "hasr - 'faqatgina, boshqa emas'",
+     "inkor ma'nosi",
+     "qasam ma'nosi"
+    ],
+    "correct": 1,
+    "why": "إِنَّمَا hasr (cheklash) yuklamasi: hukmni faqat aytilgan narsaga xoslaydi - 'mo'minlar faqat birodardirlar'."
+   },
+   {
+    "type": "gap",
+    "q": "Taxminiy hisob-kitoblarga ko'ra, eng chastotali ~300 leksema Qur'on matnining taxminan ___ foizini qoplaydi.",
+    "answers": [
+     "70",
+     "yetmish",
+     "~70",
+     "70%"
+    ],
+    "hint": "Uchdan ikkidan sal ko'proq.",
+    "why": "Ehtiyotkor baho: ~300 leksema matnning taxminan ~70% ini (uchdan ikkisidan ko'prog'ini) qoplaydi - aniq raqam hisoblash usuliga bog'liq."
+   },
+   {
+    "type": "gap",
+    "q": "SRS bo'yicha yangi so'z 1-, 3-, 7- va ___ -kunlarda takrorlanadi, so'ng oyda bir marta.",
+    "answers": [
+     "21",
+     "yigirma bir",
+     "21-"
+    ],
+    "hint": "Uch hafta.",
+    "why": "Oshib boruvchi intervallar (1-3-7-21 kun) unutish egri chizig'iga mos keladi va xotirani samarali mustahkamlaydi."
+   },
+   {
+    "type": "gap",
+    "q": "ع-ل-م o'zagidan 'o'rgatuvchi' ma'nosidagi so'z: ___ (arabcha yozing).",
+    "answers": [
+     "مُعَلِّمٌ",
+     "مُعَلِّم",
+     "معلم"
+    ],
+    "hint": "II bob ism foili: mu- bilan boshlanadi, o'rta harf shaddali.",
+    "why": "مُعَلِّمٌ - II bob (عَلَّمَ) ism foili: mufa''il vazni 'shu ishni qiluvchi' ma'nosini beradi."
+   },
+   {
+    "type": "listen",
+    "q": "Eshit va yozib ol",
+    "say": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+    "lang": "ar-SA",
+    "answers": [
+     "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+     "ان الله مع الصابرين",
+     "إن الله مع الصابرين"
+    ],
+    "hint": "Baqara 2:153 - sabr haqidagi mashhur ibora, 4 so'z.",
+    "why": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ - 'Albatta Alloh sabr qiluvchilar bilandir': lug'atdagi مَعَ va صَبْرٌ oilasi real oyatda."
+   },
+   {
+    "type": "speak",
+    "q": "Talaffuz qil: لَا إِلَٰهَ إِلَّا اللَّهُ (kalima tavhid)",
+    "say": "لَا إِلَٰهَ إِلَّا اللَّهُ",
+    "lang": "ar-SA",
+    "why": "Bu iborada lug'atning ikki yuqori chastotali birligi bor: إِلٰهٌ (iloh) va إِلَّا (istisno yuklamasi) - talaffuzda madd va shaddaga e'tibor bering."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "وَ",
+    "ipa": "va",
+    "pos": "bog'lovchi",
+    "uz": "va; (qasam: ...ga qasamki)",
+    "ex": "وَالشَّمْسِ وَضُحَاهَا (Shams 91:1)"
+   },
+   {
+    "w": "فَ",
+    "ipa": "fa",
+    "pos": "bog'lovchi",
+    "uz": "shunda, bas, darhol keyin",
+    "ex": "فَاذْكُرُونِي أَذْكُرْكُمْ (Baqara 2:152)"
+   },
+   {
+    "w": "ثُمَّ",
+    "ipa": "thumma",
+    "pos": "bog'lovchi",
+    "uz": "so'ngra, keyin",
+    "ex": "ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ (Takosur 102:8)"
+   },
+   {
+    "w": "أَوْ",
+    "ipa": "av",
+    "pos": "bog'lovchi",
+    "uz": "yoki",
+    "ex": "أَوْ كَصَيِّبٍ مِنَ السَّمَاءِ (Baqara 2:19)"
+   },
+   {
+    "w": "بَلْ",
+    "ipa": "bal",
+    "pos": "yuklama",
+    "uz": "balki, yo'q - aksincha",
+    "ex": "بَلْ هُوَ قُرْآنٌ مَجِيدٌ (Buruj 85:21)"
+   },
+   {
+    "w": "حَتَّى",
+    "ipa": "hattaa",
+    "pos": "yuklama",
+    "uz": "hatto; ...guncha",
+    "ex": "حَتَّىٰ مَطْلَعِ الْفَجْرِ (Qadr 97:5)"
+   },
+   {
+    "w": "إِذَا",
+    "ipa": "idhaa",
+    "pos": "shart ravishi",
+    "uz": "qachonki, ...ganda",
+    "ex": "إِذَا جَاءَ نَصْرُ اللَّهِ (Nasr 110:1)"
+   },
+   {
+    "w": "إِذْ",
+    "ipa": "idh",
+    "pos": "ravish",
+    "uz": "o'shanda; esla o'sha paytni",
+    "ex": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ (Baqara 2:30)"
+   },
+   {
+    "w": "إِنْ",
+    "ipa": "in",
+    "pos": "shart yuklamasi",
+    "uz": "agar",
+    "ex": "إِنْ كُنْتُمْ صَادِقِينَ (Baqara 2:23)"
+   },
+   {
+    "w": "لَوْ",
+    "ipa": "lav",
+    "pos": "shart yuklamasi",
+    "uz": "agar (bo'lganida edi - noreal shart)",
+    "ex": "لَوْ كَانُوا يَعْلَمُونَ (Baqara 2:102)"
+   },
+   {
+    "w": "لَوْلَا",
+    "ipa": "lavlaa",
+    "pos": "yuklama",
+    "uz": "agar ... bo'lmaganida; nega ...maydi",
+    "ex": "لَوْلَا أَنْتُمْ لَكُنَّا مُؤْمِنِينَ (Saba 34:31)"
+   },
+   {
+    "w": "لَمْ",
+    "ipa": "lam",
+    "pos": "inkor yuklamasi",
+    "uz": "...madi (muzori'ni mozi inkoriga aylantiradi)",
+    "ex": "لَمْ يَلِدْ وَلَمْ يُولَدْ (Ixlos 112:3)"
+   },
+   {
+    "w": "لَنْ",
+    "ipa": "lan",
+    "pos": "inkor yuklamasi",
+    "uz": "hech qachon ...maydi",
+    "ex": "لَنْ تَنَالُوا الْبِرَّ (Oli Imron 3:92)"
+   },
+   {
+    "w": "لَمَّا",
+    "ipa": "lammaa",
+    "pos": "ravish",
+    "uz": "qachonki, ...gach",
+    "ex": "وَلَمَّا جَاءَ مُوسَىٰ لِمِيقَاتِنَا (A'rof 7:143)"
+   },
+   {
+    "w": "قَدْ",
+    "ipa": "qad",
+    "pos": "yuklama",
+    "uz": "darhaqiqat (mozi bilan ta'kid)",
+    "ex": "قَدْ أَفْلَحَ الْمُؤْمِنُونَ (Mu'minun 23:1)"
+   },
+   {
+    "w": "سَوْفَ",
+    "ipa": "savfa",
+    "pos": "yuklama",
+    "uz": "keyinchalik ...adi (kelasi zamon)",
+    "ex": "فَسَوْفَ تَعْلَمُونَ (An'om 6:135)"
+   },
+   {
+    "w": "إِلَّا",
+    "ipa": "illaa",
+    "pos": "istisno yuklamasi",
+    "uz": "faqat; ...dan tashqari",
+    "ex": "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِلْعَالَمِينَ (Anbiyo 21:107)"
+   },
+   {
+    "w": "غَيْرُ",
+    "ipa": "ghayru",
+    "pos": "ot (istisno)",
+    "uz": "...dan boshqa, g'ayri",
+    "ex": "غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ (Fotiha 1:7)"
+   },
+   {
+    "w": "دُونَ",
+    "ipa": "duuna",
+    "pos": "zarf",
+    "uz": "...dan o'zga; quyida",
+    "ex": "مِنْ دُونِ اللَّهِ (Baqara 2:23)"
+   },
+   {
+    "w": "بَيْنَ",
+    "ipa": "bayna",
+    "pos": "zarf (makon)",
+    "uz": "orasida",
+    "ex": "بَيْنَهُمَا بَرْزَخٌ لَا يَبْغِيَانِ (Rahmon 55:20)"
+   },
+   {
+    "w": "عِنْدَ",
+    "ipa": "'inda",
+    "pos": "zarf (makon)",
+    "uz": "huzurida, oldida",
+    "ex": "فَلَهُمْ أَجْرُهُمْ عِنْدَ رَبِّهِمْ (Baqara 2:62)"
+   },
+   {
+    "w": "مَعَ",
+    "ipa": "ma'a",
+    "pos": "zarf",
+    "uz": "bilan birga",
+    "ex": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ (Baqara 2:153)"
+   },
+   {
+    "w": "قَبْلَ",
+    "ipa": "qabla",
+    "pos": "zarf (zamon)",
+    "uz": "oldin, avval",
+    "ex": "وَمَا أَرْسَلْنَا مِنْ قَبْلِكَ (Anbiyo 21:25)"
+   },
+   {
+    "w": "بَعْدَ",
+    "ipa": "ba'da",
+    "pos": "zarf (zamon)",
+    "uz": "keyin, so'ng",
+    "ex": "يُحْيِي الْأَرْضَ بَعْدَ مَوْتِهَا (Hadid 57:17)"
+   },
+   {
+    "w": "فَوْقَ",
+    "ipa": "favqa",
+    "pos": "zarf (makon)",
+    "uz": "ustida, yuqorisida",
+    "ex": "يَدُ اللَّهِ فَوْقَ أَيْدِيهِمْ (Fath 48:10)"
+   },
+   {
+    "w": "تَحْتَ",
+    "ipa": "tahta",
+    "pos": "zarf (makon)",
+    "uz": "ostida",
+    "ex": "تَجْرِي مِنْ تَحْتِهَا الْأَنْهَارُ (Baqara 2:25)"
+   },
+   {
+    "w": "كُلٌّ",
+    "ipa": "kullun",
+    "pos": "ot (miqdor)",
+    "uz": "har bir, hamma",
+    "ex": "كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ (Oli Imron 3:185)"
+   },
+   {
+    "w": "بَعْضٌ",
+    "ipa": "ba'dun",
+    "pos": "ot (miqdor)",
+    "uz": "ba'zi, bir qismi",
+    "ex": "بَعْضُكُمْ لِبَعْضٍ عَدُوٌّ (Baqara 2:36)"
+   },
+   {
+    "w": "لَعَلَّ",
+    "ipa": "la'alla",
+    "pos": "yuklama",
+    "uz": "shoyad, umidki",
+    "ex": "لَعَلَّكُمْ تَتَّقُونَ (Baqara 2:21)"
+   },
+   {
+    "w": "أَنْ",
+    "ipa": "an",
+    "pos": "masdar yuklamasi",
+    "uz": "...ish(i) (fe'lni otlashtiradi)",
+    "ex": "وَأَنْ تَصُومُوا خَيْرٌ لَكُمْ (Baqara 2:184)"
+   },
+   {
+    "w": "أَنَّ",
+    "ipa": "anna",
+    "pos": "yuklama",
+    "uz": "...ekani (ta'kid bilan)",
+    "ex": "وَاعْلَمُوا أَنَّ اللَّهَ سَمِيعٌ عَلِيمٌ (Baqara 2:244)"
+   },
+   {
+    "w": "لَيْسَ",
+    "ipa": "laysa",
+    "pos": "fe'l (jomid)",
+    "uz": "emas",
+    "ex": "لَيْسَ كَمِثْلِهِ شَيْءٌ (Sho'ro 42:11)"
+   },
+   {
+    "w": "إِنَّمَا",
+    "ipa": "innamaa",
+    "pos": "yuklama (hasr)",
+    "uz": "faqatgina",
+    "ex": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ (Hujurot 49:10)"
+   },
+   {
+    "w": "يَا",
+    "ipa": "yaa",
+    "pos": "nido yuklamasi",
+    "uz": "ey",
+    "ex": "يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ (Baqara 2:21)"
+   },
+   {
+    "w": "كَلَّا",
+    "ipa": "kallaa",
+    "pos": "rad yuklamasi",
+    "uz": "yo'q, aslo, hargiz",
+    "ex": "كَلَّا إِنَّ الْإِنْسَانَ لَيَطْغَىٰ (Alaq 96:6)"
+   },
+   {
+    "w": "نَحْنُ",
+    "ipa": "nahnu",
+    "pos": "olmosh",
+    "uz": "biz",
+    "ex": "نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ (Yusuf 12:3)"
+   },
+   {
+    "w": "أَنْتُمْ",
+    "ipa": "antum",
+    "pos": "olmosh",
+    "uz": "sizlar",
+    "ex": "وَلَا أَنْتُمْ عَابِدُونَ مَا أَعْبُدُ (Kofirun 109:3)"
+   },
+   {
+    "w": "هُمْ",
+    "ipa": "hum",
+    "pos": "olmosh",
+    "uz": "ular",
+    "ex": "وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ (Baqara 2:5)"
+   },
+   {
+    "w": "هُنَّ",
+    "ipa": "hunna",
+    "pos": "olmosh",
+    "uz": "ular (muannas)",
+    "ex": "هُنَّ لِبَاسٌ لَكُمْ (Baqara 2:187)"
+   },
+   {
+    "w": "إِيَّاكَ",
+    "ipa": "iyyaaka",
+    "pos": "olmosh (mansub)",
+    "uz": "faqat seni, sengagina",
+    "ex": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ (Fotiha 1:5)"
+   },
+   {
+    "w": "الَّذِي",
+    "ipa": "alladhii",
+    "pos": "nisbiy olmosh",
+    "uz": "...gan (muzakkar birlik)",
+    "ex": "الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ (Mulk 67:2)"
+   },
+   {
+    "w": "الَّتِي",
+    "ipa": "allatii",
+    "pos": "nisbiy olmosh",
+    "uz": "...gan (muannas birlik)",
+    "ex": "الَّتِي وَقُودُهَا النَّاسُ وَالْحِجَارَةُ (Baqara 2:24)"
+   },
+   {
+    "w": "الَّذِينَ",
+    "ipa": "alladhiina",
+    "pos": "nisbiy olmosh",
+    "uz": "...ganlar (ko'plik)",
+    "ex": "الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ (Baqara 2:25)"
+   },
+   {
+    "w": "أُولٰئِكَ",
+    "ipa": "ulaa'ika",
+    "pos": "ishora olmoshi",
+    "uz": "ana ular",
+    "ex": "أُولَٰئِكَ عَلَىٰ هُدًى مِنْ رَبِّهِمْ (Baqara 2:5)"
+   },
+   {
+    "w": "هٰؤُلَاءِ",
+    "ipa": "haa'ulaa'i",
+    "pos": "ishora olmoshi",
+    "uz": "mana bular",
+    "ex": "أَنْبِئُونِي بِأَسْمَاءِ هَٰؤُلَاءِ (Baqara 2:31)"
+   },
+   {
+    "w": "أَيْنَ",
+    "ipa": "ayna",
+    "pos": "so'roq olmoshi",
+    "uz": "qayerda",
+    "ex": "أَيْنَ شُرَكَائِيَ (Nahl 16:27)"
+   },
+   {
+    "w": "كَيْفَ",
+    "ipa": "kayfa",
+    "pos": "so'roq olmoshi",
+    "uz": "qanday",
+    "ex": "كَيْفَ تَكْفُرُونَ بِاللَّهِ (Baqara 2:28)"
+   },
+   {
+    "w": "مَتَى",
+    "ipa": "mataa",
+    "pos": "so'roq olmoshi",
+    "uz": "qachon",
+    "ex": "مَتَىٰ نَصْرُ اللَّهِ (Baqara 2:214)"
+   },
+   {
+    "w": "كَمْ",
+    "ipa": "kam",
+    "pos": "so'roq olmoshi",
+    "uz": "qancha",
+    "ex": "قَالَ كَمْ لَبِثْتُمْ (Mu'minun 23:112)"
+   },
+   {
+    "w": "مَاذَا",
+    "ipa": "maadhaa",
+    "pos": "so'roq olmoshi",
+    "uz": "nima, nimani",
+    "ex": "مَاذَا أَرَادَ اللَّهُ بِهَٰذَا مَثَلًا (Baqara 2:26)"
+   },
+   {
+    "w": "أَيُّ",
+    "ipa": "ayyu",
+    "pos": "so'roq olmoshi",
+    "uz": "qaysi",
+    "ex": "فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ (Rahmon 55:13)"
+   },
+   {
+    "w": "اَلْعَزِيزُ",
+    "ipa": "al-'aziizu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Aziz - qudratli, yengilmas",
+    "ex": "وَهُوَ الْعَزِيزُ الْحَكِيمُ (Hashr 59:24)"
+   },
+   {
+    "w": "اَلْحَكِيمُ",
+    "ipa": "al-hakiimu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Hakim - hikmat sohibi",
+    "ex": "إِنَّكَ أَنْتَ الْعَلِيمُ الْحَكِيمُ (Baqara 2:32)"
+   },
+   {
+    "w": "اَلْعَلِيمُ",
+    "ipa": "al-'aliimu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Alim - hamma narsani biluvchi",
+    "ex": "وَهُوَ السَّمِيعُ الْعَلِيمُ (Baqara 2:137)"
+   },
+   {
+    "w": "اَلْغَفُورُ",
+    "ipa": "al-ghafuuru",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "G'afur - ko'p kechiruvchi",
+    "ex": "وَهُوَ الْغَفُورُ الرَّحِيمُ (Yunus 10:107)"
+   },
+   {
+    "w": "اَلسَّمِيعُ",
+    "ipa": "as-samii'u",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Sami' - hamma narsani eshituvchi",
+    "ex": "إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ (Baqara 2:127)"
+   },
+   {
+    "w": "اَلْبَصِيرُ",
+    "ipa": "al-basiiru",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Basir - hamma narsani ko'ruvchi",
+    "ex": "وَاللَّهُ بَصِيرٌ بِمَا يَعْمَلُونَ (Baqara 2:96)"
+   },
+   {
+    "w": "قَدِيرٌ",
+    "ipa": "qadiirun",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Qodir - to'la qudratli",
+    "ex": "عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ (Baqara 2:20)"
+   },
+   {
+    "w": "اَلْخَبِيرُ",
+    "ipa": "al-khabiiru",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Xabir - ichdan xabardor",
+    "ex": "وَهُوَ اللَّطِيفُ الْخَبِيرُ (An'om 6:103)"
+   },
+   {
+    "w": "اَللَّطِيفُ",
+    "ipa": "al-latiifu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Latif - lutfli, eng nozik narsani ham biluvchi",
+    "ex": "اللَّهُ لَطِيفٌ بِعِبَادِهِ (Sho'ro 42:19)"
+   },
+   {
+    "w": "اَلْوَاحِدُ",
+    "ipa": "al-vaahidu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Vohid - yakka-yagona",
+    "ex": "وَهُوَ الْوَاحِدُ الْقَهَّارُ (Ra'd 13:16)"
+   },
+   {
+    "w": "أَحَدٌ",
+    "ipa": "ahadun",
+    "pos": "sifat; son",
+    "uz": "bir, yagona; birov",
+    "ex": "قُلْ هُوَ اللَّهُ أَحَدٌ (Ixlos 112:1)"
+   },
+   {
+    "w": "اَلصَّمَدُ",
+    "ipa": "as-samadu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Samad - hech kimga muhtoj emas, hamma Unga muhtoj",
+    "ex": "اَللَّهُ الصَّمَدُ (Ixlos 112:2)"
+   },
+   {
+    "w": "اَلْمَلِكُ",
+    "ipa": "al-maliku",
+    "pos": "ot (Alloh ismi)",
+    "uz": "Malik - podshoh, egalik qiluvchi",
+    "ex": "اَلْمَلِكُ الْقُدُّوسُ السَّلَامُ (Hashr 59:23)"
+   },
+   {
+    "w": "اَلْقُدُّوسُ",
+    "ipa": "al-qudduusu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Quddus - barcha nuqsondan pok",
+    "ex": "اَلْمَلِكُ الْقُدُّوسُ السَّلَامُ (Hashr 59:23)"
+   },
+   {
+    "w": "اَلتَّوَّابُ",
+    "ipa": "at-tavvaabu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Tavvob - tavbalarni ko'p qabul qiluvchi",
+    "ex": "إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ (Baqara 2:37)"
+   },
+   {
+    "w": "اَلْوَكِيلُ",
+    "ipa": "al-vakiilu",
+    "pos": "ot (Alloh ismi)",
+    "uz": "Vakil - ish topshiriladigan ishonchli homiy",
+    "ex": "حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ (Oli Imron 3:173)"
+   },
+   {
+    "w": "اَلْمَوْلَى",
+    "ipa": "al-mavlaa",
+    "pos": "ot (Alloh ismi)",
+    "uz": "Mavlo - xo'jayin, madadkor",
+    "ex": "نِعْمَ الْمَوْلَىٰ وَنِعْمَ النَّصِيرُ (Anfol 8:40)"
+   },
+   {
+    "w": "وَلِيٌّ",
+    "ipa": "valiyyun",
+    "pos": "ot",
+    "uz": "do'st, homiy, valiy",
+    "ex": "اَللَّهُ وَلِيُّ الَّذِينَ آمَنُوا (Baqara 2:257)"
+   },
+   {
+    "w": "اَلْأَعْلَى",
+    "ipa": "al-a'laa",
+    "pos": "sifat",
+    "uz": "eng oliy, eng yuksak",
+    "ex": "سَبِّحِ اسْمَ رَبِّكَ الْأَعْلَى (A'lo 87:1)"
+   },
+   {
+    "w": "اَلْعَلِيُّ",
+    "ipa": "al-'aliyyu",
+    "pos": "sifat (Alloh ismi)",
+    "uz": "Aliy - yuksak martabali",
+    "ex": "وَهُوَ الْعَلِيُّ الْعَظِيمُ (Baqara 2:255)"
+   },
+   {
+    "w": "إِلٰهٌ",
+    "ipa": "ilaahun",
+    "pos": "ot",
+    "uz": "iloh, ma'bud",
+    "ex": "لَا إِلَٰهَ إِلَّا اللَّهُ (Muhammad 47:19)"
+   },
+   {
+    "w": "سُبْحَانَ",
+    "ipa": "subhaana",
+    "pos": "ot (masdar)",
+    "uz": "pokdir (barcha nuqsondan xoli)",
+    "ex": "سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ (Saffot 37:180)"
+   },
+   {
+    "w": "إِيمَانٌ",
+    "ipa": "iimaanun",
+    "pos": "ot (masdar)",
+    "uz": "iymon, ishonch",
+    "ex": "حَبَّبَ إِلَيْكُمُ الْإِيمَانَ (Hujurot 49:7)"
+   },
+   {
+    "w": "إِسْلَامٌ",
+    "ipa": "islaamun",
+    "pos": "ot (masdar)",
+    "uz": "islom, Allohga bo'ysunish",
+    "ex": "إِنَّ الدِّينَ عِنْدَ اللَّهِ الْإِسْلَامُ (Oli Imron 3:19)"
+   },
+   {
+    "w": "تَقْوَى",
+    "ipa": "taqvaa",
+    "pos": "ot (masdar)",
+    "uz": "taqvo - Allohdan qo'rqib gunohdan saqlanish",
+    "ex": "فَإِنَّ خَيْرَ الزَّادِ التَّقْوَىٰ (Baqara 2:197)"
+   },
+   {
+    "w": "هُدًى",
+    "ipa": "hudan",
+    "pos": "ot (masdar)",
+    "uz": "hidoyat, to'g'ri yo'l ko'rsatish",
+    "ex": "هُدًى لِلْمُتَّقِينَ (Baqara 2:2)"
+   },
+   {
+    "w": "ذِكْرٌ",
+    "ipa": "dhikrun",
+    "pos": "ot (masdar)",
+    "uz": "zikr, eslash; eslatma",
+    "ex": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ (Ra'd 13:28)"
+   },
+   {
+    "w": "صَبْرٌ",
+    "ipa": "sabrun",
+    "pos": "ot (masdar)",
+    "uz": "sabr, chidam",
+    "ex": "وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ (Baqara 2:45)"
+   },
+   {
+    "w": "شُكْرٌ",
+    "ipa": "shukrun",
+    "pos": "ot (masdar)",
+    "uz": "shukr, minnatdorlik",
+    "ex": "اِعْمَلُوا آلَ دَاوُودَ شُكْرًا (Saba 34:13)"
+   },
+   {
+    "w": "تَوْبَةٌ",
+    "ipa": "tavbatun",
+    "pos": "ot (muannas)",
+    "uz": "tavba, qaytish",
+    "ex": "تُوبُوا إِلَى اللَّهِ تَوْبَةً نَصُوحًا (Tahrim 66:8)"
+   },
+   {
+    "w": "يَقِينٌ",
+    "ipa": "yaqiinun",
+    "pos": "ot",
+    "uz": "aniq ishonch; (majoz: o'lim)",
+    "ex": "وَاعْبُدْ رَبَّكَ حَتَّىٰ يَأْتِيَكَ الْيَقِينُ (Hijr 15:99)"
+   },
+   {
+    "w": "مَغْفِرَةٌ",
+    "ipa": "maghfiratun",
+    "pos": "ot (muannas)",
+    "uz": "mag'firat, kechirim",
+    "ex": "وَمَغْفِرَةٌ وَرِزْقٌ كَرِيمٌ (Anfol 8:4)"
+   },
+   {
+    "w": "كُفْرٌ",
+    "ipa": "kufrun",
+    "pos": "ot (masdar)",
+    "uz": "kufr, inkor qilish; noshukrlik",
+    "ex": "وَلَا يَرْضَىٰ لِعِبَادِهِ الْكُفْرَ (Zumar 39:7)"
+   },
+   {
+    "w": "شِرْكٌ",
+    "ipa": "shirkun",
+    "pos": "ot (masdar)",
+    "uz": "shirk - Allohga sherik keltirish",
+    "ex": "إِنَّ الشِّرْكَ لَظُلْمٌ عَظِيمٌ (Luqmon 31:13)"
+   },
+   {
+    "w": "كَافِرٌ",
+    "ipa": "kaafirun",
+    "pos": "ot (ism foil)",
+    "uz": "kofir, inkor qiluvchi",
+    "ex": "قُلْ يَا أَيُّهَا الْكَافِرُونَ (Kofirun 109:1)"
+   },
+   {
+    "w": "مُشْرِكٌ",
+    "ipa": "mushrikun",
+    "pos": "ot (ism foil)",
+    "uz": "mushrik, sherik keltiruvchi",
+    "ex": "وَمَا أَنَا مِنَ الْمُشْرِكِينَ (An'om 6:79)"
+   },
+   {
+    "w": "مُنَافِقٌ",
+    "ipa": "munaafiqun",
+    "pos": "ot (ism foil)",
+    "uz": "munofiq, ikkiyuzlamachi",
+    "ex": "إِنَّ الْمُنَافِقِينَ يُخَادِعُونَ اللَّهَ (Niso 4:142)"
+   },
+   {
+    "w": "حَقٌّ",
+    "ipa": "haqqun",
+    "pos": "ot",
+    "uz": "haq, haqiqat",
+    "ex": "اَلْحَقُّ مِنْ رَبِّكَ (Baqara 2:147)"
+   },
+   {
+    "w": "بَاطِلٌ",
+    "ipa": "baatilun",
+    "pos": "ot (ism foil)",
+    "uz": "botil, puch, asossiz",
+    "ex": "جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ (Isro 17:81)"
+   },
+   {
+    "w": "ظُلْمٌ",
+    "ipa": "zulmun",
+    "pos": "ot (masdar)",
+    "uz": "zulm, adolatsizlik",
+    "ex": "لَا ظُلْمَ الْيَوْمَ (G'ofir 40:17)"
+   },
+   {
+    "w": "فَضْلٌ",
+    "ipa": "fadlun",
+    "pos": "ot",
+    "uz": "fazl, marhamat, ortiqcha ne'mat",
+    "ex": "ذَٰلِكَ فَضْلُ اللَّهِ (Jum'a 62:4)"
+   },
+   {
+    "w": "نِعْمَةٌ",
+    "ipa": "ni'matun",
+    "pos": "ot (muannas)",
+    "uz": "ne'mat",
+    "ex": "وَاذْكُرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ (Baqara 2:231)"
+   },
+   {
+    "w": "غَيْبٌ",
+    "ipa": "ghaybun",
+    "pos": "ot",
+    "uz": "g'ayb, ko'zdan yashirin olam",
+    "ex": "يُؤْمِنُونَ بِالْغَيْبِ (Baqara 2:3)"
+   },
+   {
+    "w": "حِكْمَةٌ",
+    "ipa": "hikmatun",
+    "pos": "ot (muannas)",
+    "uz": "hikmat, donolik",
+    "ex": "يُؤْتِي الْحِكْمَةَ مَنْ يَشَاءُ (Baqara 2:269)"
+   },
+   {
+    "w": "أُمَّةٌ",
+    "ipa": "ummatun",
+    "pos": "ot (muannas)",
+    "uz": "ummat, jamoa",
+    "ex": "كُنْتُمْ خَيْرَ أُمَّةٍ (Oli Imron 3:110)"
+   },
+   {
+    "w": "عَرْشٌ",
+    "ipa": "'arshun",
+    "pos": "ot",
+    "uz": "arsh, taxt",
+    "ex": "وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ (Tavba 9:129)"
+   },
+   {
+    "w": "آخِرَةٌ",
+    "ipa": "aakhiratun",
+    "pos": "ot (muannas)",
+    "uz": "oxirat, keyingi hayot",
+    "ex": "وَلَلْآخِرَةُ خَيْرٌ لَكَ (Zuho 93:4)"
+   },
+   {
+    "w": "دُنْيَا",
+    "ipa": "dunyaa",
+    "pos": "ot (muannas)",
+    "uz": "dunyo, bu hayot",
+    "ex": "وَمَا الْحَيَاةُ الدُّنْيَا إِلَّا لَعِبٌ (An'om 6:32)"
+   },
+   {
+    "w": "قِيَامَةٌ",
+    "ipa": "qiyaamatun",
+    "pos": "ot (muannas)",
+    "uz": "qiyomat, qayta turish",
+    "ex": "إِلَىٰ يَوْمِ الْقِيَامَةِ (Niso 4:87)"
+   },
+   {
+    "w": "سَاعَةٌ",
+    "ipa": "saa'atun",
+    "pos": "ot (muannas)",
+    "uz": "(qiyomat) soati; payt",
+    "ex": "إِنَّ السَّاعَةَ آتِيَةٌ (Toha 20:15)"
+   },
+   {
+    "w": "جَنَّةٌ",
+    "ipa": "jannatun",
+    "pos": "ot (muannas)",
+    "uz": "jannat; bog'",
+    "ex": "وَأُدْخِلَ الْجَنَّةَ فَقَدْ فَازَ (Oli Imron 3:185)"
+   },
+   {
+    "w": "نَارٌ",
+    "ipa": "naarun",
+    "pos": "ot (muannas)",
+    "uz": "olov; do'zax",
+    "ex": "فَاتَّقُوا النَّارَ (Baqara 2:24)"
+   },
+   {
+    "w": "جَهَنَّمُ",
+    "ipa": "jahannamu",
+    "pos": "atoqli ot",
+    "uz": "jahannam",
+    "ex": "إِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًا (Naba 78:21)"
+   },
+   {
+    "w": "جَحِيمٌ",
+    "ipa": "jahiimun",
+    "pos": "ot",
+    "uz": "jahim, lovullagan olov",
+    "ex": "وَإِنَّ الْفُجَّارَ لَفِي جَحِيمٍ (Infitor 82:14)"
+   },
+   {
+    "w": "حِسَابٌ",
+    "ipa": "hisaabun",
+    "pos": "ot (masdar)",
+    "uz": "hisob-kitob",
+    "ex": "إِنَّ اللَّهَ سَرِيعُ الْحِسَابِ (Oli Imron 3:199)"
+   },
+   {
+    "w": "جَزَاءٌ",
+    "ipa": "jazaa'un",
+    "pos": "ot",
+    "uz": "jazo yoki mukofot, qaytim",
+    "ex": "جَزَاءً بِمَا كَانُوا يَعْمَلُونَ (Voqea 56:24)"
+   },
+   {
+    "w": "ثَوَابٌ",
+    "ipa": "thavaabun",
+    "pos": "ot",
+    "uz": "savob, mukofot",
+    "ex": "ثَوَابًا مِنْ عِنْدِ اللَّهِ (Oli Imron 3:195)"
+   },
+   {
+    "w": "عَذَابٌ",
+    "ipa": "'adhaabun",
+    "pos": "ot",
+    "uz": "azob",
+    "ex": "وَلَهُمْ عَذَابٌ أَلِيمٌ (Baqara 2:10)"
+   },
+   {
+    "w": "عِقَابٌ",
+    "ipa": "'iqaabun",
+    "pos": "ot (masdar)",
+    "uz": "jazolash, iqob",
+    "ex": "إِنَّ اللَّهَ شَدِيدُ الْعِقَابِ (Moida 5:2)"
+   },
+   {
+    "w": "مَوْتٌ",
+    "ipa": "mavtun",
+    "pos": "ot (masdar)",
+    "uz": "o'lim",
+    "ex": "خَلَقَ الْمَوْتَ وَالْحَيَاةَ (Mulk 67:2)"
+   },
+   {
+    "w": "حَيَاةٌ",
+    "ipa": "hayaatun",
+    "pos": "ot (muannas)",
+    "uz": "hayot",
+    "ex": "وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ (Baqara 2:179)"
+   },
+   {
+    "w": "أَجْرٌ",
+    "ipa": "ajrun",
+    "pos": "ot",
+    "uz": "ajr, mukofot",
+    "ex": "فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ (Tin 95:6)"
+   },
+   {
+    "w": "خَالِدٌ",
+    "ipa": "khaalidun",
+    "pos": "sifat (ism foil)",
+    "uz": "abadiy qoluvchi",
+    "ex": "وَهُمْ فِيهَا خَالِدُونَ (Baqara 2:25)"
+   },
+   {
+    "w": "فَوْزٌ",
+    "ipa": "favzun",
+    "pos": "ot (masdar)",
+    "uz": "yutuq, najot topish",
+    "ex": "ذَٰلِكَ هُوَ الْفَوْزُ الْعَظِيمُ (Tavba 9:72)"
+   },
+   {
+    "w": "خُسْرٌ",
+    "ipa": "khusrun",
+    "pos": "ot (masdar)",
+    "uz": "ziyon, yutqazish",
+    "ex": "إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ (Asr 103:2)"
+   },
+   {
+    "w": "نَعِيمٌ",
+    "ipa": "na'iimun",
+    "pos": "ot",
+    "uz": "ne'mat-farog'at",
+    "ex": "إِنَّ الْأَبْرَارَ لَفِي نَعِيمٍ (Infitor 82:13)"
+   },
+   {
+    "w": "مِيزَانٌ",
+    "ipa": "miizaanun",
+    "pos": "ot",
+    "uz": "tarozi, o'lchov",
+    "ex": "فَأَمَّا مَنْ ثَقُلَتْ مَوَازِينُهُ (Qori'a 101:6)"
+   },
+   {
+    "w": "يَوْمَئِذٍ",
+    "ipa": "yavma'idhin",
+    "pos": "ravish",
+    "uz": "o'sha kuni",
+    "ex": "يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا (Zalzala 99:4)"
+   },
+   {
+    "w": "صَلَاةٌ",
+    "ipa": "salaatun",
+    "pos": "ot (muannas)",
+    "uz": "namoz; duo",
+    "ex": "وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ (Baqara 2:43)"
+   },
+   {
+    "w": "زَكَاةٌ",
+    "ipa": "zakaatun",
+    "pos": "ot (muannas)",
+    "uz": "zakot; poklanish",
+    "ex": "وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ (Baqara 2:43)"
+   },
+   {
+    "w": "صِيَامٌ",
+    "ipa": "siyaamun",
+    "pos": "ot (masdar)",
+    "uz": "ro'za",
+    "ex": "كُتِبَ عَلَيْكُمُ الصِّيَامُ (Baqara 2:183)"
+   },
+   {
+    "w": "حَجٌّ",
+    "ipa": "hajjun",
+    "pos": "ot (masdar)",
+    "uz": "haj ziyorati",
+    "ex": "وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ (Oli Imron 3:97)"
+   },
+   {
+    "w": "دُعَاءٌ",
+    "ipa": "du'aa'un",
+    "pos": "ot (masdar)",
+    "uz": "duo, iltijo",
+    "ex": "إِنَّكَ سَمِيعُ الدُّعَاءِ (Oli Imron 3:38)"
+   },
+   {
+    "w": "عِبَادَةٌ",
+    "ipa": "'ibaadatun",
+    "pos": "ot (masdar)",
+    "uz": "ibodat, bandalik",
+    "ex": "لَا يَسْتَكْبِرُونَ عَنْ عِبَادَتِهِ (A'rof 7:206)"
+   },
+   {
+    "w": "عَبْدٌ",
+    "ipa": "'abdun",
+    "pos": "ot",
+    "uz": "banda, qul",
+    "ex": "سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ (Isro 17:1)"
+   },
+   {
+    "w": "سَجَدَ",
+    "ipa": "sajada",
+    "pos": "fe'l (I bob)",
+    "uz": "sajda qildi",
+    "ex": "وَاسْجُدْ وَاقْتَرِبْ (Alaq 96:19)"
+   },
+   {
+    "w": "رَكَعَ",
+    "ipa": "raka'a",
+    "pos": "fe'l (I bob)",
+    "uz": "ruku qildi, egildi",
+    "ex": "وَارْكَعُوا مَعَ الرَّاكِعِينَ (Baqara 2:43)"
+   },
+   {
+    "w": "سَبَّحَ",
+    "ipa": "sabbaha",
+    "pos": "fe'l (II bob)",
+    "uz": "tasbeh aytdi, poklab yod etdi",
+    "ex": "سَبَّحَ لِلَّهِ مَا فِي السَّمَاوَاتِ (Hadid 57:1)"
+   },
+   {
+    "w": "مَسْجِدٌ",
+    "ipa": "masjidun",
+    "pos": "ot (ism makon)",
+    "uz": "masjid, sajda qilinadigan joy",
+    "ex": "شَطْرَ الْمَسْجِدِ الْحَرَامِ (Baqara 2:144)"
+   },
+   {
+    "w": "قِبْلَةٌ",
+    "ipa": "qiblatun",
+    "pos": "ot (muannas)",
+    "uz": "qibla, yuzlanish tomoni",
+    "ex": "فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا (Baqara 2:144)"
+   },
+   {
+    "w": "خَاشِعٌ",
+    "ipa": "khaashi'un",
+    "pos": "sifat (ism foil)",
+    "uz": "xushu'li, bo'yin eggan",
+    "ex": "فِي صَلَاتِهِمْ خَاشِعُونَ (Mu'minun 23:2)"
+   },
+   {
+    "w": "دَعْوَةٌ",
+    "ipa": "da'vatun",
+    "pos": "ot (muannas)",
+    "uz": "chaqiriq; duo",
+    "ex": "أُجِيبُ دَعْوَةَ الدَّاعِ (Baqara 2:186)"
+   },
+   {
+    "w": "صَلَّى",
+    "ipa": "sallaa",
+    "pos": "fe'l (II bob)",
+    "uz": "namoz o'qidi",
+    "ex": "فَصَلِّ لِرَبِّكَ وَانْحَرْ (Kavsar 108:2)"
+   },
+   {
+    "w": "أَقَامَ",
+    "ipa": "aqaama",
+    "pos": "fe'l (IV bob)",
+    "uz": "turg'izdi; (namozni) to'kis ado etdi",
+    "ex": "وَيُقِيمُونَ الصَّلَاةَ (Baqara 2:3)"
+   },
+   {
+    "w": "أَعُوذُ",
+    "ipa": "a'uudhu",
+    "pos": "fe'l (muzori')",
+    "uz": "panoh so'rayman",
+    "ex": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ (Falaq 113:1)"
+   },
+   {
+    "w": "حَلَالٌ",
+    "ipa": "halaalun",
+    "pos": "sifat",
+    "uz": "halol, ruxsat etilgan",
+    "ex": "حَلَالًا طَيِّبًا (Baqara 2:168)"
+   },
+   {
+    "w": "حَرَامٌ",
+    "ipa": "haraamun",
+    "pos": "sifat",
+    "uz": "harom; muqaddas-daxlsiz",
+    "ex": "جَعَلَ اللَّهُ الْكَعْبَةَ الْبَيْتَ الْحَرَامَ (Moida 5:97)"
+   },
+   {
+    "w": "خَيْرٌ",
+    "ipa": "khayrun",
+    "pos": "ot; sifat",
+    "uz": "yaxshilik; yaxshiroq",
+    "ex": "مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ (Zalzala 99:7)"
+   },
+   {
+    "w": "شَرٌّ",
+    "ipa": "sharrun",
+    "pos": "ot",
+    "uz": "yomonlik",
+    "ex": "مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ (Zalzala 99:8)"
+   },
+   {
+    "w": "حَسَنَةٌ",
+    "ipa": "hasanatun",
+    "pos": "ot (muannas)",
+    "uz": "yaxshi amal; yaxshilik",
+    "ex": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً (Baqara 2:201)"
+   },
+   {
+    "w": "سَيِّئَةٌ",
+    "ipa": "sayyi'atun",
+    "pos": "ot (muannas)",
+    "uz": "yomon amal, gunoh",
+    "ex": "وَيَدْرَءُونَ بِالْحَسَنَةِ السَّيِّئَةَ (Ra'd 13:22)"
+   },
+   {
+    "w": "إِثْمٌ",
+    "ipa": "ithmun",
+    "pos": "ot",
+    "uz": "gunoh",
+    "ex": "فَلَا إِثْمَ عَلَيْهِ (Baqara 2:173)"
+   },
+   {
+    "w": "ذَنْبٌ",
+    "ipa": "dhanbun",
+    "pos": "ot",
+    "uz": "gunoh, ayb",
+    "ex": "يَغْفِرْ لَكُمْ مِنْ ذُنُوبِكُمْ (Nuh 71:4)"
+   },
+   {
+    "w": "مَعْرُوفٌ",
+    "ipa": "ma'ruufun",
+    "pos": "ot (ism maf'ul)",
+    "uz": "yaxshilik (shariat ma'qullagan ish)",
+    "ex": "وَأْمُرْ بِالْمَعْرُوفِ (Luqmon 31:17)"
+   },
+   {
+    "w": "مُنْكَرٌ",
+    "ipa": "munkarun",
+    "pos": "ot (ism maf'ul)",
+    "uz": "yomonlik (shariat rad etgan ish)",
+    "ex": "وَانْهَ عَنِ الْمُنْكَرِ (Luqmon 31:17)"
+   },
+   {
+    "w": "فَاحِشَةٌ",
+    "ipa": "faahishatun",
+    "pos": "ot (muannas)",
+    "uz": "fahsh, ochiq buzuqlik",
+    "ex": "إِنَّهُ كَانَ فَاحِشَةً (Isro 17:32)"
+   },
+   {
+    "w": "بِرٌّ",
+    "ipa": "birrun",
+    "pos": "ot (masdar)",
+    "uz": "ezgulik, yaxshilik",
+    "ex": "لَنْ تَنَالُوا الْبِرَّ حَتَّىٰ تُنْفِقُوا (Oli Imron 3:92)"
+   },
+   {
+    "w": "عَدْلٌ",
+    "ipa": "'adlun",
+    "pos": "ot (masdar)",
+    "uz": "adolat",
+    "ex": "إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ (Nahl 16:90)"
+   },
+   {
+    "w": "إِحْسَانٌ",
+    "ipa": "ihsaanun",
+    "pos": "ot (masdar)",
+    "uz": "ehson, go'zal amal qilish",
+    "ex": "يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ (Nahl 16:90)"
+   },
+   {
+    "w": "حُكْمٌ",
+    "ipa": "hukmun",
+    "pos": "ot",
+    "uz": "hukm, qaror",
+    "ex": "إِنِ الْحُكْمُ إِلَّا لِلَّهِ (Yusuf 12:40)"
+   },
+   {
+    "w": "أَمْرٌ",
+    "ipa": "amrun",
+    "pos": "ot",
+    "uz": "ish; buyruq",
+    "ex": "وَإِلَى اللَّهِ تُرْجَعُ الْأُمُورُ (Baqara 2:210)"
+   },
+   {
+    "w": "قُرْآنٌ",
+    "ipa": "qur'aanun",
+    "pos": "ot (masdar)",
+    "uz": "Qur'on; qiroat qilinadigan narsa",
+    "ex": "إِنَّهُ لَقُرْآنٌ كَرِيمٌ (Voqea 56:77)"
+   },
+   {
+    "w": "وَحْيٌ",
+    "ipa": "vahyun",
+    "pos": "ot (masdar)",
+    "uz": "vahiy",
+    "ex": "إِنْ هُوَ إِلَّا وَحْيٌ يُوحَىٰ (Najm 53:4)"
+   },
+   {
+    "w": "سُورَةٌ",
+    "ipa": "suuratun",
+    "pos": "ot (muannas)",
+    "uz": "sura",
+    "ex": "فَأْتُوا بِسُورَةٍ مِنْ مِثْلِهِ (Baqara 2:23)"
+   },
+   {
+    "w": "تَنْزِيلٌ",
+    "ipa": "tanziilun",
+    "pos": "ot (masdar, II bob)",
+    "uz": "bosqichma-bosqich nozil qilish",
+    "ex": "تَنْزِيلٌ مِنْ رَبِّ الْعَالَمِينَ (Voqea 56:80)"
+   },
+   {
+    "w": "فُرْقَانٌ",
+    "ipa": "furqaanun",
+    "pos": "ot",
+    "uz": "Furqon - haq bilan botilni ajratuvchi",
+    "ex": "نَزَّلَ الْفُرْقَانَ عَلَىٰ عَبْدِهِ (Furqon 25:1)"
+   },
+   {
+    "w": "تَوْرَاةٌ",
+    "ipa": "tavraatun",
+    "pos": "atoqli ot",
+    "uz": "Tavrot",
+    "ex": "وَأَنْزَلَ التَّوْرَاةَ وَالْإِنْجِيلَ (Oli Imron 3:3)"
+   },
+   {
+    "w": "إِنْجِيلٌ",
+    "ipa": "injiilun",
+    "pos": "atoqli ot",
+    "uz": "Injil",
+    "ex": "وَأَنْزَلَ التَّوْرَاةَ وَالْإِنْجِيلَ (Oli Imron 3:3)"
+   },
+   {
+    "w": "كَلِمَةٌ",
+    "ipa": "kalimatun",
+    "pos": "ot (muannas)",
+    "uz": "so'z, kalima",
+    "ex": "كَلِمَةً طَيِّبَةً كَشَجَرَةٍ طَيِّبَةٍ (Ibrohim 14:24)"
+   },
+   {
+    "w": "قَوْلٌ",
+    "ipa": "qavlun",
+    "pos": "ot (masdar)",
+    "uz": "so'z, gap",
+    "ex": "قَوْلٌ مَعْرُوفٌ وَمَغْفِرَةٌ (Baqara 2:263)"
+   },
+   {
+    "w": "حَدِيثٌ",
+    "ipa": "hadiithun",
+    "pos": "ot",
+    "uz": "so'z, hikoya; hadis",
+    "ex": "اَللَّهُ نَزَّلَ أَحْسَنَ الْحَدِيثِ (Zumar 39:23)"
+   },
+   {
+    "w": "نَبَأٌ",
+    "ipa": "naba'un",
+    "pos": "ot",
+    "uz": "muhim xabar",
+    "ex": "عَنِ النَّبَإِ الْعَظِيمِ (Naba 78:2)"
+   },
+   {
+    "w": "مَثَلٌ",
+    "ipa": "mathalun",
+    "pos": "ot",
+    "uz": "masal, o'xshatish",
+    "ex": "ضَرَبَ اللَّهُ مَثَلًا (Nahl 16:75)"
+   },
+   {
+    "w": "بَيَانٌ",
+    "ipa": "bayaanun",
+    "pos": "ot (masdar)",
+    "uz": "bayon, ochiq tushuntirish",
+    "ex": "هَٰذَا بَيَانٌ لِلنَّاسِ (Oli Imron 3:138)"
+   },
+   {
+    "w": "بُرْهَانٌ",
+    "ipa": "burhaanun",
+    "pos": "ot",
+    "uz": "burhon, qat'iy dalil",
+    "ex": "قَدْ جَاءَكُمْ بُرْهَانٌ مِنْ رَبِّكُمْ (Niso 4:174)"
+   },
+   {
+    "w": "سُلْطَانٌ",
+    "ipa": "sultaanun",
+    "pos": "ot",
+    "uz": "hujjat; hokimiyat",
+    "ex": "أَمْ لَكُمْ سُلْطَانٌ مُبِينٌ (Saffot 37:156)"
+   },
+   {
+    "w": "نَبِيٌّ",
+    "ipa": "nabiyyun",
+    "pos": "ot",
+    "uz": "nabiy, payg'ambar",
+    "ex": "وَكَانَ رَسُولًا نَبِيًّا (Maryam 19:51)"
+   },
+   {
+    "w": "مَلَكٌ",
+    "ipa": "malakun",
+    "pos": "ot",
+    "uz": "farishta",
+    "ex": "عَلَيْهَا مَلَائِكَةٌ غِلَاظٌ شِدَادٌ (Tahrim 66:6)"
+   },
+   {
+    "w": "جِنٌّ",
+    "ipa": "jinnun",
+    "pos": "ot (jamlovchi)",
+    "uz": "jin(lar)",
+    "ex": "وَمَا خَلَقْتُ الْجِنَّ وَالْإِنْسَ (Zoriyot 51:56)"
+   },
+   {
+    "w": "إِنْسَانٌ",
+    "ipa": "insaanun",
+    "pos": "ot",
+    "uz": "inson",
+    "ex": "خَلَقَ الْإِنْسَانَ مِنْ عَلَقٍ (Alaq 96:2)"
+   },
+   {
+    "w": "نَاسٌ",
+    "ipa": "naasun",
+    "pos": "ot (jamlovchi)",
+    "uz": "odamlar",
+    "ex": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ (Nos 114:1)"
+   },
+   {
+    "w": "بَشَرٌ",
+    "ipa": "basharun",
+    "pos": "ot (jamlovchi)",
+    "uz": "bashar, odamzod",
+    "ex": "إِنَّمَا أَنَا بَشَرٌ مِثْلُكُمْ (Kahf 18:110)"
+   },
+   {
+    "w": "شَيْطَانٌ",
+    "ipa": "shaytaanun",
+    "pos": "ot",
+    "uz": "shayton",
+    "ex": "إِنَّ الشَّيْطَانَ لَكُمْ عَدُوٌّ (Fotir 35:6)"
+   },
+   {
+    "w": "إِبْلِيسُ",
+    "ipa": "ibliisu",
+    "pos": "atoqli ot",
+    "uz": "Iblis",
+    "ex": "إِلَّا إِبْلِيسَ أَبَىٰ وَاسْتَكْبَرَ (Baqara 2:34)"
+   },
+   {
+    "w": "آدَمُ",
+    "ipa": "aadamu",
+    "pos": "atoqli ot",
+    "uz": "Odam (a.s.)",
+    "ex": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا (Baqara 2:31)"
+   },
+   {
+    "w": "نُوحٌ",
+    "ipa": "nuuhun",
+    "pos": "atoqli ot",
+    "uz": "Nuh (a.s.)",
+    "ex": "إِنَّا أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ (Nuh 71:1)"
+   },
+   {
+    "w": "إِبْرَاهِيمُ",
+    "ipa": "ibraahiimu",
+    "pos": "atoqli ot",
+    "uz": "Ibrohim (a.s.)",
+    "ex": "مِلَّةَ إِبْرَاهِيمَ حَنِيفًا (Oli Imron 3:95)"
+   },
+   {
+    "w": "مُوسَى",
+    "ipa": "muusaa",
+    "pos": "atoqli ot",
+    "uz": "Muso (a.s.)",
+    "ex": "وَإِذْ قَالَ مُوسَىٰ لِقَوْمِهِ (Baqara 2:54)"
+   },
+   {
+    "w": "عِيسَى",
+    "ipa": "'iisaa",
+    "pos": "atoqli ot",
+    "uz": "Iso (a.s.)",
+    "ex": "اَلْمَسِيحُ عِيسَى ابْنُ مَرْيَمَ (Niso 4:171)"
+   },
+   {
+    "w": "مَرْيَمُ",
+    "ipa": "maryamu",
+    "pos": "atoqli ot",
+    "uz": "Maryam (Iso a.s.ning onasi)",
+    "ex": "يَا مَرْيَمُ اقْنُتِي لِرَبِّكِ (Oli Imron 3:43)"
+   },
+   {
+    "w": "مُحَمَّدٌ",
+    "ipa": "muhammadun",
+    "pos": "atoqli ot",
+    "uz": "Muhammad (s.a.v.)",
+    "ex": "مُحَمَّدٌ رَسُولُ اللَّهِ (Fath 48:29)"
+   },
+   {
+    "w": "فِرْعَوْنُ",
+    "ipa": "fir'avnu",
+    "pos": "atoqli ot",
+    "uz": "Fir'avn",
+    "ex": "اِذْهَبْ إِلَىٰ فِرْعَوْنَ إِنَّهُ طَغَىٰ (Toha 20:24)"
+   },
+   {
+    "w": "أَبٌ",
+    "ipa": "abun",
+    "pos": "ot",
+    "uz": "ota",
+    "ex": "إِذْ قَالَ يُوسُفُ لِأَبِيهِ (Yusuf 12:4)"
+   },
+   {
+    "w": "أُمٌّ",
+    "ipa": "ummun",
+    "pos": "ot (muannas)",
+    "uz": "ona",
+    "ex": "فَأُمُّهُ هَاوِيَةٌ (Qori'a 101:9)"
+   },
+   {
+    "w": "اِبْنٌ",
+    "ipa": "ibnun",
+    "pos": "ot",
+    "uz": "o'g'il",
+    "ex": "وَآتَيْنَا عِيسَى ابْنَ مَرْيَمَ الْبَيِّنَاتِ (Baqara 2:87)"
+   },
+   {
+    "w": "أَخٌ",
+    "ipa": "akhun",
+    "pos": "ot",
+    "uz": "aka-uka, birodar",
+    "ex": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ (Hujurot 49:10)"
+   },
+   {
+    "w": "زَوْجٌ",
+    "ipa": "zavjun",
+    "pos": "ot",
+    "uz": "juft; turmush o'rtoq",
+    "ex": "اُسْكُنْ أَنْتَ وَزَوْجُكَ الْجَنَّةَ (Baqara 2:35)"
+   },
+   {
+    "w": "أَهْلٌ",
+    "ipa": "ahlun",
+    "pos": "ot (jamlovchi)",
+    "uz": "oila, xonadon ahli",
+    "ex": "أَهْلَ الْبَيْتِ (Ahzob 33:33)"
+   },
+   {
+    "w": "ذُرِّيَّةٌ",
+    "ipa": "dhurriyyatun",
+    "pos": "ot (muannas)",
+    "uz": "zurriyot, avlod",
+    "ex": "قَالَ وَمِنْ ذُرِّيَّتِي (Baqara 2:124)"
+   },
+   {
+    "w": "يَتِيمٌ",
+    "ipa": "yatiimun",
+    "pos": "ot",
+    "uz": "yetim",
+    "ex": "فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ (Zuho 93:9)"
+   },
+   {
+    "w": "مِسْكِينٌ",
+    "ipa": "miskiinun",
+    "pos": "ot",
+    "uz": "miskin, bechora",
+    "ex": "عَلَىٰ طَعَامِ الْمِسْكِينِ (Moun 107:3)"
+   },
+   {
+    "w": "جَبَلٌ",
+    "ipa": "jabalun",
+    "pos": "ot",
+    "uz": "tog'",
+    "ex": "وَالْجِبَالَ أَوْتَادًا (Naba 78:7)"
+   },
+   {
+    "w": "بَحْرٌ",
+    "ipa": "bahrun",
+    "pos": "ot",
+    "uz": "dengiz",
+    "ex": "مَرَجَ الْبَحْرَيْنِ يَلْتَقِيَانِ (Rahmon 55:19)"
+   },
+   {
+    "w": "نَهَرٌ",
+    "ipa": "naharun",
+    "pos": "ot",
+    "uz": "daryo, anhor",
+    "ex": "فِيهَا أَنْهَارٌ مِنْ مَاءٍ (Muhammad 47:15)"
+   },
+   {
+    "w": "شَجَرَةٌ",
+    "ipa": "shajaratun",
+    "pos": "ot (muannas)",
+    "uz": "daraxt",
+    "ex": "كَشَجَرَةٍ طَيِّبَةٍ (Ibrohim 14:24)"
+   },
+   {
+    "w": "نَجْمٌ",
+    "ipa": "najmun",
+    "pos": "ot",
+    "uz": "yulduz",
+    "ex": "وَالنَّجْمِ إِذَا هَوَىٰ (Najm 53:1)"
+   },
+   {
+    "w": "لَيْلٌ",
+    "ipa": "laylun",
+    "pos": "ot",
+    "uz": "kecha, tun",
+    "ex": "وَاللَّيْلِ إِذَا سَجَىٰ (Zuho 93:2)"
+   },
+   {
+    "w": "نَهَارٌ",
+    "ipa": "nahaarun",
+    "pos": "ot",
+    "uz": "kunduz",
+    "ex": "وَجَعَلْنَا النَّهَارَ مَعَاشًا (Naba 78:11)"
+   },
+   {
+    "w": "فَجْرٌ",
+    "ipa": "fajrun",
+    "pos": "ot",
+    "uz": "tong",
+    "ex": "وَالْفَجْرِ وَلَيَالٍ عَشْرٍ (Fajr 89:1-2)"
+   },
+   {
+    "w": "رِيحٌ",
+    "ipa": "riihun",
+    "pos": "ot (muannas)",
+    "uz": "shamol",
+    "ex": "وَأَرْسَلْنَا الرِّيَاحَ لَوَاقِحَ (Hijr 15:22)"
+   },
+   {
+    "w": "تُرَابٌ",
+    "ipa": "turaabun",
+    "pos": "ot",
+    "uz": "tuproq",
+    "ex": "خَلَقَكُمْ مِنْ تُرَابٍ (Rum 30:20)"
+   },
+   {
+    "w": "طِينٌ",
+    "ipa": "tiinun",
+    "pos": "ot",
+    "uz": "loy",
+    "ex": "وَخَلَقْتَهُ مِنْ طِينٍ (A'rof 7:12)"
+   },
+   {
+    "w": "دَابَّةٌ",
+    "ipa": "daabbatun",
+    "pos": "ot (muannas)",
+    "uz": "jonivor, jonzot",
+    "ex": "وَمَا مِنْ دَابَّةٍ فِي الْأَرْضِ (Hud 11:6)"
+   },
+   {
+    "w": "أَنْعَامٌ",
+    "ipa": "an'aamun",
+    "pos": "ot (ko'plik)",
+    "uz": "chorva hayvonlari",
+    "ex": "وَالْأَنْعَامَ خَلَقَهَا لَكُمْ (Nahl 16:5)"
+   },
+   {
+    "w": "طَيْرٌ",
+    "ipa": "tayrun",
+    "pos": "ot (jamlovchi)",
+    "uz": "qush(lar)",
+    "ex": "أَلَمْ يَرَوْا إِلَى الطَّيْرِ (Nahl 16:79)"
+   },
+   {
+    "w": "عَيْنٌ",
+    "ipa": "'aynun",
+    "pos": "ot (muannas)",
+    "uz": "ko'z; buloq",
+    "ex": "فِيهَا عَيْنٌ جَارِيَةٌ (G'oshiya 88:12)"
+   },
+   {
+    "w": "قَلْبٌ",
+    "ipa": "qalbun",
+    "pos": "ot",
+    "uz": "yurak, qalb",
+    "ex": "فِي قُلُوبِهِمْ مَرَضٌ (Baqara 2:10)"
+   },
+   {
+    "w": "وَجْهٌ",
+    "ipa": "vajhun",
+    "pos": "ot",
+    "uz": "yuz",
+    "ex": "فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ (Baqara 2:144)"
+   },
+   {
+    "w": "يَدٌ",
+    "ipa": "yadun",
+    "pos": "ot (muannas)",
+    "uz": "qo'l",
+    "ex": "تَبَّتْ يَدَا أَبِي لَهَبٍ (Masad 111:1)"
+   },
+   {
+    "w": "لِسَانٌ",
+    "ipa": "lisaanun",
+    "pos": "ot",
+    "uz": "til; nutq",
+    "ex": "بِلِسَانٍ عَرَبِيٍّ مُبِينٍ (Shuaro 26:195)"
+   },
+   {
+    "w": "صَدْرٌ",
+    "ipa": "sadrun",
+    "pos": "ot",
+    "uz": "ko'krak; ko'ngil",
+    "ex": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ (Sharh 94:1)"
+   },
+   {
+    "w": "بَصَرٌ",
+    "ipa": "basarun",
+    "pos": "ot",
+    "uz": "ko'rish, nigoh",
+    "ex": "فَارْجِعِ الْبَصَرَ (Mulk 67:3)"
+   },
+   {
+    "w": "رُوحٌ",
+    "ipa": "ruuhun",
+    "pos": "ot",
+    "uz": "ruh",
+    "ex": "قُلِ الرُّوحُ مِنْ أَمْرِ رَبِّي (Isro 17:85)"
+   },
+   {
+    "w": "عَمِلَ",
+    "ipa": "'amila",
+    "pos": "fe'l (I bob)",
+    "uz": "qildi, amal qildi",
+    "ex": "وَعَمِلُوا الصَّالِحَاتِ (Baqara 2:25)"
+   },
+   {
+    "w": "فَعَلَ",
+    "ipa": "fa'ala",
+    "pos": "fe'l (I bob)",
+    "uz": "qildi, bajardi",
+    "ex": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ (Fil 105:1)"
+   },
+   {
+    "w": "جَعَلَ",
+    "ipa": "ja'ala",
+    "pos": "fe'l (I bob)",
+    "uz": "qildi, aylantirdi, qo'ydi",
+    "ex": "جَعَلَ لَكُمُ الْأَرْضَ فِرَاشًا (Baqara 2:22)"
+   },
+   {
+    "w": "خَرَجَ",
+    "ipa": "kharaja",
+    "pos": "fe'l (I bob)",
+    "uz": "chiqdi",
+    "ex": "فَاخْرُجْ مِنْهَا فَإِنَّكَ رَجِيمٌ (Hijr 15:34)"
+   },
+   {
+    "w": "رَجَعَ",
+    "ipa": "raja'a",
+    "pos": "fe'l (I bob)",
+    "uz": "qaytdi",
+    "ex": "قَالَ رَبِّ ارْجِعُونِ (Mu'minun 23:99)"
+   },
+   {
+    "w": "نَصَرَ",
+    "ipa": "nasara",
+    "pos": "fe'l (I bob)",
+    "uz": "yordam berdi, g'alaba berdi",
+    "ex": "إِنْ تَنْصُرُوا اللَّهَ يَنْصُرْكُمْ (Muhammad 47:7)"
+   },
+   {
+    "w": "ضَرَبَ",
+    "ipa": "daraba",
+    "pos": "fe'l (I bob)",
+    "uz": "urdi; (masal) keltirdi",
+    "ex": "وَاضْرِبْ لَهُمْ مَثَلًا (Yasin 36:13)"
+   },
+   {
+    "w": "قَتَلَ",
+    "ipa": "qatala",
+    "pos": "fe'l (I bob)",
+    "uz": "o'ldirdi",
+    "ex": "وَلَا تَقْتُلُوا النَّفْسَ (Isro 17:33)"
+   },
+   {
+    "w": "كَسَبَ",
+    "ipa": "kasaba",
+    "pos": "fe'l (I bob)",
+    "uz": "qo'lga kiritdi; (amal) orttirdi",
+    "ex": "لَهَا مَا كَسَبَتْ (Baqara 2:286)"
+   },
+   {
+    "w": "عَبَدَ",
+    "ipa": "'abada",
+    "pos": "fe'l (I bob)",
+    "uz": "ibodat qildi",
+    "ex": "اُعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ (Baqara 2:21)"
+   },
+   {
+    "w": "رَزَقَ",
+    "ipa": "razaqa",
+    "pos": "fe'l (I bob)",
+    "uz": "rizq berdi",
+    "ex": "وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُونَ (Baqara 2:3)"
+   },
+   {
+    "w": "غَفَرَ",
+    "ipa": "ghafara",
+    "pos": "fe'l (I bob)",
+    "uz": "kechirdi",
+    "ex": "فَاغْفِرْ لَنَا ذُنُوبَنَا (Oli Imron 3:16)"
+   },
+   {
+    "w": "رَحِمَ",
+    "ipa": "rahima",
+    "pos": "fe'l (I bob)",
+    "uz": "rahm qildi",
+    "ex": "إِلَّا مَا رَحِمَ رَبِّي (Yusuf 12:53)"
+   },
+   {
+    "w": "نَظَرَ",
+    "ipa": "nazara",
+    "pos": "fe'l (I bob)",
+    "uz": "qaradi, nazar soldi",
+    "ex": "فَانْظُرْ إِلَىٰ آثَارِ رَحْمَتِ اللَّهِ (Rum 30:50)"
+   },
+   {
+    "w": "حَمَلَ",
+    "ipa": "hamala",
+    "pos": "fe'l (I bob)",
+    "uz": "ko'tardi; homilador bo'ldi",
+    "ex": "حَمَلَتْهُ أُمُّهُ كُرْهًا (Ahqof 46:15)"
+   },
+   {
+    "w": "حَفِظَ",
+    "ipa": "hafiza",
+    "pos": "fe'l (I bob)",
+    "uz": "saqladi, muhofaza qildi",
+    "ex": "يَحْفَظُونَهُ مِنْ أَمْرِ اللَّهِ (Ra'd 13:11)"
+   },
+   {
+    "w": "شَهِدَ",
+    "ipa": "shahida",
+    "pos": "fe'l (I bob)",
+    "uz": "guvoh bo'ldi, guvohlik berdi",
+    "ex": "فَمَنْ شَهِدَ مِنْكُمُ الشَّهْرَ (Baqara 2:185)"
+   },
+   {
+    "w": "ذَكَرَ",
+    "ipa": "dhakara",
+    "pos": "fe'l (I bob)",
+    "uz": "esladi, zikr qildi",
+    "ex": "اُذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا (Ahzob 33:41)"
+   },
+   {
+    "w": "شَكَرَ",
+    "ipa": "shakara",
+    "pos": "fe'l (I bob)",
+    "uz": "shukr qildi",
+    "ex": "لَئِنْ شَكَرْتُمْ لَأَزِيدَنَّكُمْ (Ibrohim 14:7)"
+   },
+   {
+    "w": "صَبَرَ",
+    "ipa": "sabara",
+    "pos": "fe'l (I bob)",
+    "uz": "sabr qildi",
+    "ex": "اِصْبِرُوا وَصَابِرُوا وَرَابِطُوا (Oli Imron 3:200)"
+   },
+   {
+    "w": "كَفَرَ",
+    "ipa": "kafara",
+    "pos": "fe'l (I bob)",
+    "uz": "kufr keltirdi, inkor qildi",
+    "ex": "إِنَّ الَّذِينَ كَفَرُوا (Baqara 2:6)"
+   },
+   {
+    "w": "ظَلَمَ",
+    "ipa": "zalama",
+    "pos": "fe'l (I bob)",
+    "uz": "zulm qildi",
+    "ex": "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا (A'rof 7:23)"
+   },
+   {
+    "w": "صَدَقَ",
+    "ipa": "sadaqa",
+    "pos": "fe'l (I bob)",
+    "uz": "rost so'zladi",
+    "ex": "قُلْ صَدَقَ اللَّهُ (Oli Imron 3:95)"
+   },
+   {
+    "w": "كَذَّبَ",
+    "ipa": "kadhdhaba",
+    "pos": "fe'l (II bob)",
+    "uz": "yolg'onga chiqardi",
+    "ex": "كَذَّبَتْ قَوْمُ نُوحٍ الْمُرْسَلِينَ (Shuaro 26:105)"
+   },
+   {
+    "w": "اِتَّبَعَ",
+    "ipa": "ittaba'a",
+    "pos": "fe'l (VIII bob)",
+    "uz": "ergashdi",
+    "ex": "فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ (Oli Imron 3:31)"
+   },
+   {
+    "w": "اِتَّقَى",
+    "ipa": "ittaqaa",
+    "pos": "fe'l (VIII bob)",
+    "uz": "taqvo qildi, saqlandi",
+    "ex": "وَمَنْ يَتَّقِ اللَّهَ (Taloq 65:2)"
+   },
+   {
+    "w": "اِسْتَكْبَرَ",
+    "ipa": "istakbara",
+    "pos": "fe'l (X bob)",
+    "uz": "kibr qildi, o'zini katta oldi",
+    "ex": "أَبَىٰ وَاسْتَكْبَرَ (Baqara 2:34)"
+   },
+   {
+    "w": "أَشْرَكَ",
+    "ipa": "ashraka",
+    "pos": "fe'l (IV bob)",
+    "uz": "shirk keltirdi",
+    "ex": "لَئِنْ أَشْرَكْتَ لَيَحْبَطَنَّ عَمَلُكَ (Zumar 39:65)"
+   },
+   {
+    "w": "أَخْرَجَ",
+    "ipa": "akhraja",
+    "pos": "fe'l (IV bob)",
+    "uz": "chiqardi",
+    "ex": "وَالَّذِي أَخْرَجَ الْمَرْعَىٰ (A'lo 87:4)"
+   },
+   {
+    "w": "أَرْسَلَ",
+    "ipa": "arsala",
+    "pos": "fe'l (IV bob)",
+    "uz": "yubordi, elchi qildi",
+    "ex": "إِنَّا أَرْسَلْنَاكَ شَاهِدًا وَمُبَشِّرًا (Ahzob 33:45)"
+   },
+   {
+    "w": "بَعَثَ",
+    "ipa": "ba'atha",
+    "pos": "fe'l (I bob)",
+    "uz": "yubordi; qayta tiriltirdi",
+    "ex": "بَعَثَ فِي الْأُمِّيِّينَ رَسُولًا (Jum'a 62:2)"
+   },
+   {
+    "w": "جَمَعَ",
+    "ipa": "jama'a",
+    "pos": "fe'l (I bob)",
+    "uz": "to'pladi, yig'di",
+    "ex": "اَلَّذِي جَمَعَ مَالًا وَعَدَّدَهُ (Humaza 104:2)"
+   },
+   {
+    "w": "ضَلَّ",
+    "ipa": "dalla",
+    "pos": "fe'l (I bob, muzoaf)",
+    "uz": "adashdi, yo'ldan ozdi",
+    "ex": "مَا ضَلَّ صَاحِبُكُمْ وَمَا غَوَىٰ (Najm 53:2)"
+   },
+   {
+    "w": "أَهْلَكَ",
+    "ipa": "ahlaka",
+    "pos": "fe'l (IV bob)",
+    "uz": "halok qildi",
+    "ex": "وَكَمْ أَهْلَكْنَا قَبْلَهُمْ مِنْ قَرْنٍ (Maryam 19:74)"
+   },
+   {
+    "w": "خَشِيَ",
+    "ipa": "khashiya",
+    "pos": "fe'l (I bob)",
+    "uz": "(hurmat aralash) qo'rqdi",
+    "ex": "مَنْ خَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ (Qof 50:33)"
+   },
+   {
+    "w": "تَابَ",
+    "ipa": "taaba",
+    "pos": "fe'l (I bob, ajvaf)",
+    "uz": "tavba qildi; (Alloh) tavbani qabul qildi",
+    "ex": "فَتَابَ عَلَيْهِ (Baqara 2:37)"
+   },
+   {
+    "w": "قَامَ",
+    "ipa": "qaama",
+    "pos": "fe'l (I bob, ajvaf)",
+    "uz": "turdi, qoim bo'ldi",
+    "ex": "قُمِ اللَّيْلَ إِلَّا قَلِيلًا (Muzzammil 73:2)"
+   },
+   {
+    "w": "نَادَى",
+    "ipa": "naadaa",
+    "pos": "fe'l (III bob)",
+    "uz": "chaqirdi, nido qildi",
+    "ex": "وَنَادَيْنَاهُ مِنْ جَانِبِ الطُّورِ (Maryam 19:52)"
+   },
+   {
+    "w": "اِسْتَجَابَ",
+    "ipa": "istajaaba",
+    "pos": "fe'l (X bob)",
+    "uz": "(duoni) qabul qildi; javob berdi",
+    "ex": "فَاسْتَجَبْنَا لَهُ فَنَجَّيْنَاهُ وَأَهْلَهُ (Anbiyo 21:76)"
+   },
+   {
+    "w": "أَمَرَ",
+    "ipa": "amara",
+    "pos": "fe'l (I bob, mahmuz)",
+    "uz": "buyurdi",
+    "ex": "أَمَرَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ (Yusuf 12:40)"
+   },
+   {
+    "w": "نَهَى",
+    "ipa": "nahaa",
+    "pos": "fe'l (I bob, noqis)",
+    "uz": "qaytardi, man qildi",
+    "ex": "وَنَهَى النَّفْسَ عَنِ الْهَوَىٰ (Nozi'ot 79:40)"
+   },
+   {
+    "w": "تَلَا",
+    "ipa": "talaa",
+    "pos": "fe'l (I bob, noqis)",
+    "uz": "tilovat qildi, o'qidi",
+    "ex": "يَتْلُو صُحُفًا مُطَهَّرَةً (Bayyina 98:2)"
+   },
+   {
+    "w": "بَيَّنَ",
+    "ipa": "bayyana",
+    "pos": "fe'l (II bob)",
+    "uz": "bayon qildi, ochiqladi",
+    "ex": "قَدْ بَيَّنَّا لَكُمُ الْآيَاتِ (Oli Imron 3:118)"
+   },
+   {
+    "w": "أَوْحَى",
+    "ipa": "avhaa",
+    "pos": "fe'l (IV bob, noqis)",
+    "uz": "vahiy qildi",
+    "ex": "بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا (Zalzala 99:5)"
+   },
+   {
+    "w": "بَشَّرَ",
+    "ipa": "bashshara",
+    "pos": "fe'l (II bob)",
+    "uz": "xushxabar berdi",
+    "ex": "فَبَشِّرْهُ بِمَغْفِرَةٍ وَأَجْرٍ كَرِيمٍ (Yasin 36:11)"
+   },
+   {
+    "w": "أَنْذَرَ",
+    "ipa": "andhara",
+    "pos": "fe'l (IV bob)",
+    "uz": "ogohlantirdi",
+    "ex": "إِنَّا أَنْذَرْنَاكُمْ عَذَابًا قَرِيبًا (Naba 78:40)"
+   },
+   {
+    "w": "كَلَّمَ",
+    "ipa": "kallama",
+    "pos": "fe'l (II bob)",
+    "uz": "gapirdi, so'zladi",
+    "ex": "وَكَلَّمَ اللَّهُ مُوسَىٰ تَكْلِيمًا (Niso 4:164)"
+   },
+   {
+    "w": "كَبِيرٌ",
+    "ipa": "kabiirun",
+    "pos": "sifat",
+    "uz": "katta, ulkan",
+    "ex": "هُوَ الْعَلِيُّ الْكَبِيرُ (Hajj 22:62)"
+   },
+   {
+    "w": "صَغِيرٌ",
+    "ipa": "saghiirun",
+    "pos": "sifat",
+    "uz": "kichik",
+    "ex": "وَكُلُّ صَغِيرٍ وَكَبِيرٍ مُسْتَطَرٌ (Qamar 54:53)"
+   },
+   {
+    "w": "كَثِيرٌ",
+    "ipa": "kathiirun",
+    "pos": "sifat",
+    "uz": "ko'p",
+    "ex": "وَبَثَّ مِنْهُمَا رِجَالًا كَثِيرًا (Niso 4:1)"
+   },
+   {
+    "w": "قَلِيلٌ",
+    "ipa": "qaliilun",
+    "pos": "sifat",
+    "uz": "oz, kam",
+    "ex": "قَلِيلًا مَا تَشْكُرُونَ (A'rof 7:10)"
+   },
+   {
+    "w": "عَظِيمٌ",
+    "ipa": "'aziimun",
+    "pos": "sifat",
+    "uz": "ulug', buyuk",
+    "ex": "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ (Qalam 68:4)"
+   },
+   {
+    "w": "كَرِيمٌ",
+    "ipa": "kariimun",
+    "pos": "sifat",
+    "uz": "karamli, ulug'vor, saxiy",
+    "ex": "وَقُلْ لَهُمَا قَوْلًا كَرِيمًا (Isro 17:23)"
+   },
+   {
+    "w": "قَرِيبٌ",
+    "ipa": "qariibun",
+    "pos": "sifat",
+    "uz": "yaqin",
+    "ex": "فَإِنِّي قَرِيبٌ (Baqara 2:186)"
+   },
+   {
+    "w": "بَعِيدٌ",
+    "ipa": "ba'iidun",
+    "pos": "sifat",
+    "uz": "uzoq",
+    "ex": "إِنَّهُمْ يَرَوْنَهُ بَعِيدًا (Ma'orij 70:6)"
+   },
+   {
+    "w": "شَدِيدٌ",
+    "ipa": "shadiidun",
+    "pos": "sifat",
+    "uz": "qattiq, kuchli",
+    "ex": "إِنَّ بَطْشَ رَبِّكَ لَشَدِيدٌ (Buruj 85:12)"
+   },
+   {
+    "w": "أَلِيمٌ",
+    "ipa": "aliimun",
+    "pos": "sifat",
+    "uz": "alamli, og'riqli",
+    "ex": "فَبَشِّرْهُمْ بِعَذَابٍ أَلِيمٍ (Oli Imron 3:21)"
+   },
+   {
+    "w": "مُبِينٌ",
+    "ipa": "mubiinun",
+    "pos": "sifat (ism foil)",
+    "uz": "ochiq-oydin, ravshan",
+    "ex": "إِنَّهُ لَكُمْ عَدُوٌّ مُبِينٌ (Baqara 2:168)"
+   },
+   {
+    "w": "حَسَنٌ",
+    "ipa": "hasanun",
+    "pos": "sifat",
+    "uz": "chiroyli, yaxshi",
+    "ex": "يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا (Baqara 2:245)"
+   },
+   {
+    "w": "طَيِّبٌ",
+    "ipa": "tayyibun",
+    "pos": "sifat",
+    "uz": "pok, yoqimli, toza",
+    "ex": "بَلْدَةٌ طَيِّبَةٌ وَرَبٌّ غَفُورٌ (Saba 34:15)"
+   },
+   {
+    "w": "خَبِيثٌ",
+    "ipa": "khabiithun",
+    "pos": "sifat",
+    "uz": "nopok, iflos",
+    "ex": "اَلْخَبِيثَاتُ لِلْخَبِيثِينَ (Nur 24:26)"
+   },
+   {
+    "w": "صَالِحٌ",
+    "ipa": "saalihun",
+    "pos": "sifat (ism foil)",
+    "uz": "solih, yaroqli, yaxshi",
+    "ex": "مَنْ عَمِلَ صَالِحًا فَلِنَفْسِهِ (Fussilat 41:46)"
+   },
+   {
+    "w": "أَوَّلُ",
+    "ipa": "avvalu",
+    "pos": "sifat",
+    "uz": "birinchi, avvalgi",
+    "ex": "هُوَ الْأَوَّلُ وَالْآخِرُ (Hadid 57:3)"
+   },
+   {
+    "w": "أَكْبَرُ",
+    "ipa": "akbaru",
+    "pos": "sifat (tafzil)",
+    "uz": "eng katta, kattaroq",
+    "ex": "وَلَذِكْرُ اللَّهِ أَكْبَرُ (Ankabut 29:45)"
+   },
+   {
+    "w": "أَحْسَنُ",
+    "ipa": "ahsanu",
+    "pos": "sifat (tafzil)",
+    "uz": "eng go'zal, eng yaxshi",
+    "ex": "فِي أَحْسَنِ تَقْوِيمٍ (Tin 95:4)"
+   },
+   {
+    "w": "جَدِيدٌ",
+    "ipa": "jadiidun",
+    "pos": "sifat",
+    "uz": "yangi",
+    "ex": "أَإِنَّا لَفِي خَلْقٍ جَدِيدٍ (Ra'd 13:5)"
+   },
+   {
+    "w": "أَمِينٌ",
+    "ipa": "amiinun",
+    "pos": "sifat",
+    "uz": "ishonchli, omonatdor",
+    "ex": "إِنِّي لَكُمْ رَسُولٌ أَمِينٌ (Shuaro 26:107)"
+   },
+   {
+    "w": "حِينٌ",
+    "ipa": "hiinun",
+    "pos": "ot (zamon)",
+    "uz": "payt, muddat",
+    "ex": "فَسُبْحَانَ اللَّهِ حِينَ تُمْسُونَ (Rum 30:17)"
+   },
+   {
+    "w": "أَجَلٌ",
+    "ipa": "ajalun",
+    "pos": "ot",
+    "uz": "ajal, belgilangan muddat",
+    "ex": "فَإِذَا جَاءَ أَجَلُهُمْ (A'rof 7:34)"
+   },
+   {
+    "w": "شَهْرٌ",
+    "ipa": "shahrun",
+    "pos": "ot",
+    "uz": "oy (vaqt birligi)",
+    "ex": "شَهْرُ رَمَضَانَ (Baqara 2:185)"
+   },
+   {
+    "w": "سَنَةٌ",
+    "ipa": "sanatun",
+    "pos": "ot (muannas)",
+    "uz": "yil",
+    "ex": "أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا (Ankabut 29:14)"
+   },
+   {
+    "w": "سَبِيلٌ",
+    "ipa": "sabiilun",
+    "pos": "ot",
+    "uz": "yo'l",
+    "ex": "اُدْعُ إِلَىٰ سَبِيلِ رَبِّكَ (Nahl 16:125)"
+   },
+   {
+    "w": "دَارٌ",
+    "ipa": "daarun",
+    "pos": "ot (muannas)",
+    "uz": "uy-maskan, diyor",
+    "ex": "وَلَدَارُ الْآخِرَةِ خَيْرٌ (Yusuf 12:109)"
+   },
+   {
+    "w": "قَرْيَةٌ",
+    "ipa": "qaryatun",
+    "pos": "ot (muannas)",
+    "uz": "qishloq, shahar-manzil",
+    "ex": "وَاسْأَلِ الْقَرْيَةَ (Yusuf 12:82)"
+   },
+   {
+    "w": "بَلَدٌ",
+    "ipa": "baladun",
+    "pos": "ot",
+    "uz": "shahar, yurt",
+    "ex": "لَا أُقْسِمُ بِهَٰذَا الْبَلَدِ (Balad 90:1)"
+   },
+   {
+    "w": "مَالٌ",
+    "ipa": "maalun",
+    "pos": "ot",
+    "uz": "mol-mulk, boylik",
+    "ex": "مَا أَغْنَىٰ عَنْهُ مَالُهُ (Masad 111:2)"
+   },
+   {
+    "w": "فِتْنَةٌ",
+    "ipa": "fitnatun",
+    "pos": "ot (muannas)",
+    "uz": "fitna, sinov",
+    "ex": "إِنَّمَا أَمْوَالُكُمْ وَأَوْلَادُكُمْ فِتْنَةٌ (Tag'obun 64:15)"
+   },
+   {
+    "w": "مُصِيبَةٌ",
+    "ipa": "musiibatun",
+    "pos": "ot (muannas)",
+    "uz": "musibat",
+    "ex": "مَا أَصَابَ مِنْ مُصِيبَةٍ (Tag'obun 64:11)"
+   },
+   {
+    "w": "رِزْقٌ",
+    "ipa": "rizqun",
+    "pos": "ot",
+    "uz": "rizq",
+    "ex": "رِزْقًا لِلْعِبَادِ (Qof 50:11)"
+   },
+   {
+    "w": "صَدَقَةٌ",
+    "ipa": "sadaqatun",
+    "pos": "ot (muannas)",
+    "uz": "sadaqa",
+    "ex": "خُذْ مِنْ أَمْوَالِهِمْ صَدَقَةً (Tavba 9:103)"
+   },
+   {
+    "w": "أَنْفَقَ",
+    "ipa": "anfaqa",
+    "pos": "fe'l (IV bob)",
+    "uz": "infoq qildi, (yaxshilikka) sarfladi",
+    "ex": "أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ (Baqara 2:254)"
+   },
+   {
+    "w": "عَدُوٌّ",
+    "ipa": "'aduvvun",
+    "pos": "ot",
+    "uz": "dushman",
+    "ex": "فَإِنَّ اللَّهَ عَدُوٌّ لِلْكَافِرِينَ (Baqara 2:98)"
+   },
+   {
+    "w": "عَهْدٌ",
+    "ipa": "'ahdun",
+    "pos": "ot",
+    "uz": "ahd, va'dalashuv",
+    "ex": "وَأَوْفُوا بِالْعَهْدِ (Isro 17:34)"
+   },
+   {
+    "w": "أَمَانَةٌ",
+    "ipa": "amaanatun",
+    "pos": "ot (muannas)",
+    "uz": "omonat",
+    "ex": "إِنَّا عَرَضْنَا الْأَمَانَةَ (Ahzob 33:72)"
+   },
+   {
+    "w": "وَعْدٌ",
+    "ipa": "va'dun",
+    "pos": "ot (masdar)",
+    "uz": "va'da",
+    "ex": "إِنَّ وَعْدَ اللَّهِ حَقٌّ (Luqmon 31:33)"
+   },
+   {
+    "w": "شَيْءٌ",
+    "ipa": "shay'un",
+    "pos": "ot",
+    "uz": "narsa",
+    "ex": "وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ (Baqara 2:29)"
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "فَاعِل vazni (ism foil)",
+    "rule": "O'zakdan ish bajaruvchini yasaydi: birinchi o'zak harfidan keyin alif, ikkinchi harfda kasra. Bu vaznni tanigan o'quvchi notanish so'z ma'nosini lug'atsiz taxmin qila oladi.",
+    "ex": "ظَلَمَ (zulm qildi) -> ظَالِمٌ (zolim); خَشَعَ -> خَاشِعٌ (xushu'li); صَلَحَ -> صَالِحٌ (solih)"
+   },
+   {
+    "topic": "فَعِيل vazni (doimiy sifat)",
+    "rule": "Doimiy, mustahkam sifatni bildiradi - vaqtinchalik holat emas. Allohning ko'p go'zal ismlari shu vaznda keladi.",
+    "ex": "عَلِيمٌ (juda biluvchi), قَدِيرٌ (to'la qudratli), سَمِيعٌ (eshituvchi), بَصِيرٌ (ko'ruvchi)"
+   },
+   {
+    "topic": "تَفْعِيل vazni (II bob masdari)",
+    "rule": "II bob fe'lining masdari ta- prefiksi va uchinchi harfdan oldingi ii cho'ziqligi bilan yasaladi; jarayonni bildiradi.",
+    "ex": "عَلَّمَ -> تَعْلِيمٌ (o'rgatish); نَزَّلَ -> تَنْزِيلٌ (bosqichma-bosqich nozil qilish); سَبَّحَ -> تَسْبِيحٌ (tasbeh aytish)"
+   }
+  ]
+ },
+ {
+  "zoom": "AR14",
+  "title": "Matn praktikumi",
+  "sub": "O'qish",
+  "coord": "O'qish / AR14",
+  "eyebrow": "14 / Uzun matn bilan ishlash",
+  "mtitle": "Matn praktikumi: Oyatul-Kursiy, tafsir uslubidagi nasr va harakatsiz matn",
+  "lede": "Grammatika bilish - hali o'qish emas. Bu darsda <strong>uch xil matn ustida besh bosqichli ish tartibini</strong> qo'llaymiz: oyat, klassik uslubdagi nasr va harakatsiz matn.",
+  "doc": "<div class='prose'><h3>Besh bosqichli o'qish ish tartibi</h3><p>Uzun matnga duch kelganda tayyor tartib bilan ishlash sarosimani yo'qotadi: <strong>1) tez ko'z yugurtirish</strong> - mavzuni va tanish so'zlarni ilg'ash (lug'atsiz!); <strong>2) jumla chegaralarini topish</strong> - fe'llar, mubtadolar, atf vovlari va وَ، فَ، ثُمَّ bog'lovchilari bo'yicha matnni jumlalarga bo'lish; <strong>3) i'rob tahlili</strong> - har jumlada foil/mubtado (marfu'), maf'ul (mansub), majrurlarni belgilash; <strong>4) tarjima</strong> - avval so'zma-so'z, keyin silliq o'zbekcha; <strong>5) mulohaza</strong> - xulosa chiqarish, savol qo'yish, parallel matnlar bilan solishtirish. Har bosqich yozma iz qoldirsin - daftar shart.</p><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='Besh bosqichli oqish ish tartibi diagrammasi'><rect class='boxa' x='25' y='20' width='190' height='42' rx='8'/><text x='120' y='46' text-anchor='middle'>1. Tez ko'z yugurtirish</text><rect class='box' x='255' y='20' width='190' height='42' rx='8'/><text x='350' y='46' text-anchor='middle'>2. Jumla chegaralari</text><rect class='box' x='485' y='20' width='190' height='42' rx='8'/><text x='580' y='46' text-anchor='middle'>3. I'rob tahlili</text><path class='edge' d='M215 41 H250' marker-end='url(#arAR14a)'/><path class='edge' d='M445 41 H480' marker-end='url(#arAR14a)'/><rect class='box' x='140' y='120' width='170' height='42' rx='8'/><text x='225' y='146' text-anchor='middle'>4. Tarjima</text><rect class='boxa' x='390' y='120' width='210' height='42' rx='8'/><text x='495' y='146' text-anchor='middle'>5. Mulohaza va xulosa</text><path class='edge' d='M580 62 C580 98 225 90 225 115' marker-end='url(#arAR14a)'/><path class='edge' d='M310 141 H385' marker-end='url(#arAR14a)'/><defs><marker id='arAR14a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Besh bosqich: har biri yozma natija beradi; mulohaza bosqichi keyingi matnga savol bilan kirishga o'rgatadi.</figcaption></figure><h3>Matn 1: Oyatul-Kursiy (Baqara 2:255)</h3><p dir='rtl' class='ar-line'>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ</p><p>Ma'no tarjimasi (birinchi yarmi): \"Alloh - Undan o'zga hech bir iloh yo'q; U Tirik, barchani tutib turuvchidir. Uni mudroq ham, uyqu ham olmaydi. Osmonlardagi va yerdagi narsalar Unikidir. Uning huzurida Uning iznisiz kim ham shafoat qila olardi?\" Birinchi yarmining tahlili:</p><table class='gtable'><thead><tr><th>So'z</th><th>O'zak</th><th>Tahlil</th><th>Ma'no</th></tr></thead><tbody><tr><td dir='rtl'><b>اللَّهُ</b></td><td>-</td><td>mubtado, marfu'</td><td>Alloh</td></tr><tr><td dir='rtl'><b>لَا إِلَٰهَ</b></td><td>أ ل ه</td><td>jinsni inkor etuvchi لَا + ismi (fathaga qurilgan, tanvinsiz)</td><td>hech bir iloh yo'q</td></tr><tr><td dir='rtl'><b>إِلَّا هُوَ</b></td><td>-</td><td>istisno yuklamasi + marfu' munfasil olmosh</td><td>faqat U</td></tr><tr><td dir='rtl'><b>الْحَيُّ</b></td><td>ح ي ي</td><td>xabar, marfu'</td><td>Tirik</td></tr><tr><td dir='rtl'><b>الْقَيُّومُ</b></td><td>ق و م</td><td>ikkinchi xabar, mubolag'a vazni, marfu'</td><td>barchani tutib turuvchi</td></tr><tr><td dir='rtl'><b>لَا تَأْخُذُهُ</b></td><td>أ خ ذ</td><td>inkor لَا + I bob muzori' marfu' + هُ maf'ul</td><td>Uni tutmaydi</td></tr><tr><td dir='rtl'><b>سِنَةٌ</b></td><td>و س ن</td><td>foil, marfu' tanvin (birinchi o'zak harfi و tushgan)</td><td>mudroq</td></tr><tr><td dir='rtl'><b>وَلَا نَوْمٌ</b></td><td>ن و م</td><td>atf: foilga bog'langan, marfu'</td><td>uyqu ham</td></tr><tr><td dir='rtl'><b>لَهُ</b></td><td>-</td><td>muqaddam xabar: jarr لِ + olmosh</td><td>Unikidir</td></tr><tr><td dir='rtl'><b>مَا فِي السَّمَاوَاتِ</b></td><td>س م و</td><td>ism mavsul (kechiktirilgan mubtado) + jarr birikmasi</td><td>osmonlardagi narsalar</td></tr><tr><td dir='rtl'><b>وَمَا فِي الْأَرْضِ</b></td><td>أ ر ض</td><td>atf: oldingi mavsulga bog'langan</td><td>va yerdagilar</td></tr><tr><td dir='rtl'><b>مَنْ ذَا الَّذِي</b></td><td>-</td><td>so'roq olmoshi + ishora + ism mavsul (ritorik savol)</td><td>kim u...?</td></tr><tr><td dir='rtl'><b>يَشْفَعُ عِنْدَهُ</b></td><td>ش ف ع</td><td>I bob muzori' marfu' + zarf</td><td>Uning huzurida shafoat qiladi</td></tr><tr><td dir='rtl'><b>إِلَّا بِإِذْنِهِ</b></td><td>أ ذ ن</td><td>istisno + jarr birikmasi</td><td>faqat Uning izni bilan</td></tr></tbody></table><div class='callout'><span class='ic'><svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='8' x2='12' y2='12'/><line x1='12' y1='16' x2='12.01' y2='16'/></svg></span><div><p>Sizning topshirig'ingiz: ikkinchi yarmi</p><p><b>يَعْلَمُ</b> dan <b>الْعَظِيمُ</b> gacha bo'lgan qismni o'zingiz shu jadval formatida tahlil qiling. Maslahatlar: <b>يُحِيطُونَ</b> - IV bob (أَحَاطَ, ajvaf); <b>شَاءَ</b> - ajvaf mozi; <b>وَسِعَ</b> - fe'l, undan keyingi marfu' so'z foil; <b>يَئُودُهُ</b> - o'zagi أ و د (\"og'ir kelmoq\"). Tayyor bo'lgach corpus.quran.com bilan solishtiring.</p></div></div><h3>Matn 2: tafsir uslubidagi namuna matn</h3><p>Quyidagi parcha hech bir muallifga tegishli emas - klassik tafsir/sharh uslubiga taqlid qilib shu kurs uchun tuzilgan <strong>namuna matn</strong>:</p><p dir='rtl' class='ar-line'>اِعْلَمْ أَنَّ هٰذِهِ الْآيَةَ مِنْ أَعْظَمِ آيَاتِ الْقُرْآنِ، لِأَنَّهَا جَمَعَتْ أُصُولَ التَّوْحِيدِ كُلَّهَا. فَقَدْ وَصَفَ اللّٰهُ نَفْسَهُ فِيهَا بِالْحَيَاةِ الْكَامِلَةِ وَالْقِيَامِ عَلَى كُلِّ شَيْءٍ. وَمَنْ تَدَبَّرَ مَعَانِيَهَا عَرَفَ عَظَمَةَ رَبِّهِ وَازْدَادَ إِيمَانًا. ثُمَّ خُتِمَتِ الْآيَةُ بِاسْمَيْنِ عَظِيمَيْنِ يَدُلَّانِ عَلَى الْعُلُوِّ وَالْكَمَالِ.</p><p>Tarjima: \"Bilginki, bu oyat Qur'onning eng ulug' oyatlaridandir, chunki u tavhid asoslarining barchasini jamlagan. Alloh unda O'zini komil hayot va har narsani tutib turish bilan vasf qildi. Kim uning ma'nolarini teran o'ylasa, Robbining ulug'ligini taniydi va iymoni ziyoda bo'ladi. So'ngra oyat yuksaklik va komillikka dalolat qiluvchi ikki ulug' ism bilan yakunlandi.\" Tahlil tayanchlari: <b>اِعْلَمْ</b> - amr, klassik sharh matnlarining tipik ochilishi; <b>أَنَّ</b> dan keyin ismi mansub (<b>الْآيَةَ</b>); <b>جَمَعَتْ</b> - mozi muannas; <b>تَدَبَّرَ</b> - V bob; <b>اِزْدَادَ</b> - VIII bob ajvaf (ز ي د; ta harfi د ga aylangan); <b>إِيمَانًا</b> - tamyiz, mansub; <b>خُتِمَتْ</b> - majhul mozi; <b>بِاسْمَيْنِ عَظِيمَيْنِ</b> - ikkilik, بِ dan keyin jarr (ـَيْنِ); <b>يَدُلَّانِ</b> - muzoaf muzori', ikkilik.</p><h3>Matn 3: harakatsiz versiya va tiklash strategiyasi</h3><p dir='rtl' class='ar-line'>اعلم أن هذه الآية من أعظم آيات القرآن، لأنها جمعت أصول التوحيد كلها. فقد وصف الله نفسه فيها بالحياة الكاملة والقيام على كل شيء. ومن تدبر معانيها عرف عظمة ربه وازداد إيمانا. ثم ختمت الآية باسمين عظيمين يدلان على العلو والكمال.</p><p>Haqiqiy kitoblar shunday bosiladi. Tiklash strategiyasi: <strong>1) tanish so'zlar</strong> - yuqori chastotali so'zlar (الله، القرآن، كل) harakatsiz ham darhol o'qiladi; <strong>2) i'rob qoidalari</strong> - pozitsiya harakatni aytib beradi: أن dan keyin nasb (الآيةَ), بِ dan keyin jarr (باسمينِ), foil marfu'; <strong>3) so'z vaznlari</strong> - تدبر ni ko'rib تَفَعَّلَ vaznini, ازداد ni ko'rib اِفْتَعَلَ ni taniysiz; <strong>4) qolgan notanish so'zni o'zak bo'yicha lug'atdan tekshirish</strong>. Avval taxmin, keyin tekshiruv - shu tartib malakani o'stiradi.</p><h3>Muhokama: xulosa va parallel oyatlar</h3><p>Mulohaza bosqichida o'zingizga savol bering: matn nimani da'vo qilyapti, qaysi grammatik vosita bu da'voni kuchaytiryapti? So'ngra parallel matn qidiring: 2:255 ning ochilishi <b>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ</b> Oli Imron boshida aynan takrorlanadi (3:2); Toha surasida esa shu juftlik jarr holatida keladi: <b>وَعَنَتِ الْوُجُوهُ لِلْحَيِّ الْقَيُّومِ</b> (20:111) - لِ jarr harfi tufayli الْحَيِّ الْقَيُّومِ kasra oldi, 2:255 dagi marfu' shakl bilan solishtiring. Yakun <b>وَهُوَ الْعَلِيُّ الْعَظِيمُ</b> esa Sho'ro surasida ham bor (42:4). Parallel oyat topish uchun corpus.quran.com da so'zning barcha uchrashlarini oching. Xulosani bir jumlada yozing: shu odat matnni \"o'qib chiqdim\" dan \"o'ylab o'qidim\" darajasiga ko'taradi.</p></div>",
+  "code": [],
+  "tasks": [
+   {
+    "id": "ar14-1",
+    "html": "Oyatul-Kursiyning ikkinchi yarmini (يَعْلَمُ dan الْعَظِيمُ gacha) jadval formatida mustaqil tahlil qildim",
+    "crit": "har so'z uchun o'zak, bob, i'rob va ma'no yozilgan; corpus.quran.com bilan solishtirilib farqlar belgilangan"
+   },
+   {
+    "id": "ar14-2",
+    "html": "Besh bosqichli ish tartibini namuna tafsir matniga to'liq qo'llab, har bosqich natijasini daftarga yozdim",
+    "crit": "5 bosqichning har biri uchun alohida yozma natija bor (tanish so'zlar, jumla chegaralari, i'rob, tarjima, xulosa)"
+   },
+   {
+    "id": "ar14-3",
+    "html": "Harakatsiz namuna matnni yozib olib, barcha harakatlarni o'zim tikladim",
+    "crit": "tiklangan matn harakatli asl bilan solishtirilgan, xatolar va ularning sababi (i'rob/vazn/kontekst) izohlangan"
+   },
+   {
+    "id": "ar14-4",
+    "html": "Parallel oyatlarni (3:2, 20:111, 42:4) ochib, 2:255 bilan i'rob farqlarini jadvalda solishtirdim",
+    "crit": "الْحَيُّ الْقَيُّومُ marfu' va لِلْحَيِّ الْقَيُّومِ majrur farqi sababi bilan tushuntirilgan"
+   },
+   {
+    "id": "ar14-5",
+    "html": "Oyatul-Kursiy bo'yicha mulohaza-hisobot yozdim: 3 xulosa va 3 ochiq savol",
+    "crit": "har xulosa matndagi aniq so'z/konstruksiyaga tayanadi, savollar keyingi o'rganish uchun aniq"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://corpus.quran.com/wordbyword.jsp",
+    "title": "Corpus: Word by Word Quran",
+    "desc": "2:255 tahlilingizni tekshirish va parallel uchrashlarni topish uchun.",
+    "host": "corpus.quran.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://quran.com/2/255",
+    "title": "Oyatul-Kursiy (Quran.com)",
+    "desc": "Oyat matni, ma'no tarjimalari va audio tilovat.",
+    "host": "quran.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.almaany.com",
+    "title": "Almaany lug'ati",
+    "desc": "Notanish so'zlarni o'zak bo'yicha tekshirish uchun arabcha lug'at.",
+    "host": "almaany.com"
+   }
+  ],
+  "project": {
+   "tag": "AR14 amaliyot",
+   "title": "Matn praktikumi portfeli: oyat + nasr + harakatsiz matn",
+   "desc": "Uch matn turini besh bosqichli ish tartibi bilan to'liq ishlab, tahlil daftari va mulohaza-hisobotdan iborat portfel yig'asiz - bu harakatsiz kitob o'qishga o'tishning mashq maydoni.",
+   "features": [
+    "Oyatul-Kursiy (2:255) to'liq so'zma-so'z jadvali: darsdagi yarmi + o'zingiz qilgan yarmi",
+    "Ikkinchi yarim tahlili corpus.quran.com bilan solishtirilib, farqlar izohlangan",
+    "Namuna tafsir matni bo'yicha 5 bosqich hujjatlashtirilgan (skan/foto yoki matn)",
+    "Harakatsiz matnning siz harakatlagan versiyasi + xatolar tahlili",
+    "Parallel oyatlar jadvali: 3:2, 20:111, 42:4 - o'xshashlik va i'rob farqi",
+    "Mulohaza-hisobot: 3 xulosa (dalil bilan) va 3 ochiq savol",
+    "Barcha iqtiboslar sura:oyat raqami bilan, arabcha matnlar to'liq harakatli"
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Oyatul-Kursiy qaysi sura va oyat?",
+    "a": [
+     "Fotiha 1:5",
+     "Baqara 2:255",
+     "Oli Imron 3:2",
+     "Yasin 36:1"
+    ],
+    "c": 1,
+    "w": "Oyatul-Kursiy - Baqara surasining 255-oyati; 3:2 esa uning ochilishiga parallel keladigan boshqa oyat.",
+    "level": "easy"
+   },
+   {
+    "q": "Besh bosqichli ish tartibida i'rob tahlilidan keyin qaysi bosqich keladi?",
+    "a": [
+     "tarjima",
+     "tez ko'z yugurtirish",
+     "jumla chegaralarini topish",
+     "lug'at yodlash"
+    ],
+    "c": 0,
+    "w": "Tartib: ko'z yugurtirish, jumla chegaralari, i'rob tahlili, tarjima, mulohaza. I'robsiz tarjima taxminga aylanadi.",
+    "level": "practical"
+   },
+   {
+    "q": "Harakatsiz matnda \"ان هذه الآية...\" parchasida الآية so'zining oxirini qanday tiklaysiz?",
+    "a": [
+     "har doim damma - chunki ism",
+     "sukun - chunki so'z oxiri",
+     "fatha - chunki أَنَّ o'z ismini nasb qiladi",
+     "kasra - chunki ال artikli bor"
+    ],
+    "c": 2,
+    "w": "إِنَّ/أَنَّ guruhi ismini nasb qiladi: أَنَّ هٰذِهِ الْآيَةَ. I'rob qoidasi harakatsiz matnda harakatni aytib beradi.",
+    "level": "practical"
+   },
+   {
+    "q": "O'quvchi 2:255 dagi يَئُودُهُ so'zini lug'atdan topa olmayapti. To'g'ri yo'l qaysi?",
+    "a": [
+     "so'zni ي harfi ostidan izlash - birinchi harf shu",
+     "bu so'z lug'atlarda yo'q, faqat tarjimadan qarash kerak",
+     "so'zni to'rt harfli o'zak deb izlash",
+     "muzori' prefiksini olib tashlab, ajvaf-mahmuz o'zak أ و د ni izlash"
+    ],
+    "c": 3,
+    "w": "يَـ prefiks; qolgan ئُودُ shakli آدَ يَئُودُ (أ و د - og'ir kelmoq) fe'lini beradi. Zaif fe'llarda o'zak harfi 'yashirinadi' (AR12).",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "Oyatul-Kursiydagi سِنَةٌ (mudroq) so'zining o'zagi qaysi?",
+    "options": [
+     "س ن ن",
+     "و س ن",
+     "س ي ن",
+     "ن و م"
+    ],
+    "correct": 1,
+    "why": "سِنَةٌ misol fe'l o'zagi و س ن dan: birinchi o'zak harfi و tushib qolgan. Shu sababli lug'atda وسن ostida turadi."
+   },
+   {
+    "type": "choice",
+    "q": "لَا إِلَٰهَ إِلَّا هُوَ da إِلَٰهَ nega fathada va tanvinsiz?",
+    "options": [
+     "maf'ul bo'lgani uchun",
+     "jarr harfidan keyin kelgani uchun",
+     "jinsni inkor etuvchi لَا ning ismi fathaga qurilgani uchun",
+     "bu xato, aslida damma bo'lishi kerak"
+    ],
+    "correct": 2,
+    "why": "Jinsni inkor etuvchi لَا (laa an-naafiya lil-jins) ismini tanvinsiz fathaga quradi: لَا إِلَٰهَ - 'hech bir iloh yo'q'."
+   },
+   {
+    "type": "choice",
+    "q": "2:255 dagi يُحِيطُونَ fe'li qaysi bobdan?",
+    "options": [
+     "I bob",
+     "II bob",
+     "IV bob",
+     "X bob"
+    ],
+    "correct": 2,
+    "why": "أَحَاطَ (IV bob, ajvaf ح و ط) fe'lining muzori'si: yu- prefiksi + kasra IV bob belgisi. Ma'nosi: qamrab olmoq."
+   },
+   {
+    "type": "choice",
+    "q": "لَهُ مَا فِي السَّمَاوَاتِ jumlasida لَهُ qanday vazifada?",
+    "options": [
+     "muqaddam (oldinga chiqqan) xabar",
+     "mubtado",
+     "maf'ul",
+     "foil"
+    ],
+    "correct": 0,
+    "why": "Jarr birikmasi xabar sifatida oldinga chiqqan, مَا (mavsul) esa kechiktirilgan mubtado: 'osmonlardagi narsalar Unikidir'."
+   },
+   {
+    "type": "choice",
+    "q": "Harakatsiz matn bilan ishlashda eng birinchi qadam qaysi?",
+    "options": [
+     "har so'zni lug'atdan qarab chiqish",
+     "hamma harakatni tavakkal qo'yib ko'rish",
+     "matnni tarjimasidan o'qish",
+     "tanish yuqori chastotali so'zlar va vaznlarni belgilash"
+    ],
+    "correct": 3,
+    "why": "Avval tanish so'zlar va so'z vaznlari (naqshlari) belgilanadi - shundan keyin i'rob qoidalari qolgan harakatlarni ochib beradi."
+   },
+   {
+    "type": "gap",
+    "q": "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ jumlasida foil (marfu') - ___ so'zi.",
+    "answers": [
+     "كُرْسِيُّهُ",
+     "كرسيه",
+     "kursiyyuhu"
+    ],
+    "hint": "Fe'ldan keyin kelgan, oxiri dammali so'z.",
+    "why": "وَسِعَ fe'lidan keyingi marfu' so'z foil: كُرْسِيُّهُ (Uning kursiysi); السَّمَاوَاتِ esa maf'ul."
+   },
+   {
+    "type": "gap",
+    "q": "Harakatsiz matnda أَنَّ dan keyin kelgan ismning oxiri ___ holatida tiklanadi.",
+    "answers": [
+     "nasb",
+     "mansub",
+     "fatha"
+    ],
+    "hint": "إِنَّ guruhining ta'siri (AR8).",
+    "why": "أَنَّ/إِنَّ o'z ismini nasb qiladi: أَنَّ هٰذِهِ الْآيَةَ - shuning uchun harakatsiz الآية ni fatha bilan o'qiymiz."
+   },
+   {
+    "type": "gap",
+    "q": "Oyatul-Kursiy yakuni: وَهُوَ الْعَلِيُّ ___ (2:255).",
+    "answers": [
+     "الْعَظِيمُ",
+     "العظيم",
+     "al-'aziymu"
+    ],
+    "hint": "Shu juftlik 42:4 da ham keladi.",
+    "why": "وَهُوَ الْعَلِيُّ الْعَظِيمُ - 'U yuksak va ulug'dir'; ikkala sifat ham marfu', chunki هُوَ mubtadosining xabarlari."
+   },
+   {
+    "type": "listen",
+    "q": "Eshit va yozib ol",
+    "say": "الْحَيُّ الْقَيُّومُ",
+    "lang": "ar-SA",
+    "answers": [
+     "الْحَيُّ الْقَيُّومُ",
+     "الحي القيوم"
+    ],
+    "hint": "2:255 va 3:2 dagi mashhur juftlik.",
+    "why": "الْحَيُّ الْقَيُّومُ - 'Tirik, barchani tutib turuvchi': ikkala so'zda shadda bor (yy va yyuu), yozuvda ham aks etadi."
+   },
+   {
+    "type": "speak",
+    "q": "Talaffuz qil: laa ta'khudzuhu sinatun va laa navm",
+    "say": "لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+    "lang": "ar-SA",
+    "why": "Hamza sukuni (تَأْخُذُ) va tanvinlarni aniq talaffuz qilish - oyatni to'g'ri o'qishning kaliti (2:255)."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "الْقَيُّومُ",
+    "ipa": "al-qayyuum",
+    "pos": "sifat (mubolag'a)",
+    "uz": "barchani tutib turuvchi",
+    "ex": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ (Baqara 2:255)"
+   },
+   {
+    "w": "سِنَةٌ",
+    "ipa": "sinatun",
+    "pos": "ot",
+    "uz": "mudroq",
+    "ex": "لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ (Baqara 2:255)"
+   },
+   {
+    "w": "نَوْمٌ",
+    "ipa": "navmun",
+    "pos": "ot",
+    "uz": "uyqu",
+    "ex": "وَجَعَلْنَا نَوْمَكُمْ سُبَاتًا (Naba 78:9)"
+   },
+   {
+    "w": "شَفَعَ",
+    "ipa": "shafa'a",
+    "pos": "fe'l (I bob)",
+    "uz": "shafoat qildi, oraga tushdi",
+    "ex": "مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ (Baqara 2:255)"
+   },
+   {
+    "w": "أَحَاطَ",
+    "ipa": "ahaata",
+    "pos": "fe'l (IV bob, ajvaf)",
+    "uz": "qamrab oldi",
+    "ex": "وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ (Baqara 2:255)"
+   },
+   {
+    "w": "وَسِعَ",
+    "ipa": "vasi'a",
+    "pos": "fe'l (I bob, misol)",
+    "uz": "qamradi, sig'dirdi",
+    "ex": "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ (Baqara 2:255)"
+   },
+   {
+    "w": "كُرْسِيٌّ",
+    "ipa": "kursiyyun",
+    "pos": "ot",
+    "uz": "kursiy",
+    "ex": "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ (Baqara 2:255)"
+   },
+   {
+    "w": "آدَ",
+    "ipa": "aada (ya'uudu)",
+    "pos": "fe'l (I bob, mahmuz-ajvaf)",
+    "uz": "og'ir keldi",
+    "ex": "وَلَا يَئُودُهُ حِفْظُهُمَا (Baqara 2:255)"
+   },
+   {
+    "w": "تَدَبَّرَ",
+    "ipa": "tadabbara",
+    "pos": "fe'l (V bob)",
+    "uz": "teran o'yladi, tadabbur qildi",
+    "ex": "أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ (Niso 4:82)"
+   },
+   {
+    "w": "عَظَمَةٌ",
+    "ipa": "'azamatun",
+    "pos": "ot (masdar)",
+    "uz": "ulug'lik",
+    "ex": "عَرَفَ عَظَمَةَ رَبِّهِ (namuna matndan)"
+   }
+  ],
+  "grammar": [
+   {
+    "topic": "Jinsni inkor etuvchi لَا",
+    "rule": "لَا butun jinsni inkor qilganda ismi tanvinsiz fathaga quriladi, xabari ko'pincha tushiriladi.",
+    "ex": "لَا إِلَٰهَ إِلَّا هُوَ - hech bir iloh yo'q, faqat U bor (Baqara 2:255)"
+   },
+   {
+    "topic": "Muqaddam xabar",
+    "rule": "Jarr birikmasi xabar sifatida mubtadodan oldin kelsa, egalik-xoslash urg'usi kuchayadi.",
+    "ex": "لَهُ مَا فِي السَّمَاوَاتِ - osmonlardagi narsalar Unikidir (Baqara 2:255)"
+   },
+   {
+    "topic": "Nafiy + إِلَّا (hasr)",
+    "rule": "Inkor jumladan keyin إِلَّا kelsa ma'no faqat istisno qilingan narsaga chegaralanadi.",
+    "ex": "وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ (Baqara 2:255)"
+   },
+   {
+    "topic": "Harakatsiz matnda i'robni tiklash",
+    "rule": "Harakat tavakkal emas, qoidadan tiklanadi: أَنَّ dan keyin nasb, jarr harfidan keyin kasra, foil marfu'.",
+    "ex": "ان هذه الآية → أَنَّ هٰذِهِ الْآيَةَ (namuna matn)"
+   }
+  ]
+ },
+ {
+  "zoom": "AR15",
+  "title": "Balag'at & PRO Final",
+  "sub": "Final assessment",
+  "coord": "Final / AR15",
+  "eyebrow": "15 / Balag'at va professional yakun",
+  "mtitle": "Balag'at asoslari va professional yakuniy baholash: mulohaza darajasiga chiqish",
+  "lede": "Grammatika matnni TO'G'RI o'qishni beradi, <strong>balag'at</strong> esa matn NEGA aynan shunday aytilganini ochadi. Bu modulda bayon, ma'oniy va badi' ilmlarining asosiy san'atlarini Qur'oniy misollarda o'rganasiz va butun professional trekni katta yakuniy loyiha bilan himoya qilasiz.",
+  "doc": "<div class='prose'><h3>Balag'at nima va nega professional o'quvchiga kerak</h3><p>Balag'at - so'zni o'rniga, holatga va maqsadga eng mos shaklda aytish ilmi. Klassik ulamolar uni uch bo'limga ajratgan: <b>bayon</b> (fikrni tasvirlash yo'llari: o'xshatish, metafora, ko'chma ma'no), <b>ma'oniy</b> (so'z tartibi va jumla qurilishining ma'noga ta'siri) va <b>badi'</b> (nutq bezaklari). Tafsir kitoblari oyatning nozik ma'nolarini aynan shu atamalar bilan izohlaydi - ularni bilmay turib tafsirni chuqur o'qib bo'lmaydi. Bu kursdagi oxirgi pog'ona: harflardan boshlagan yo'lingiz endi matn USTIDA mulohaza yuritish darajasiga chiqadi.</p><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='Balagat ilmining uch bolimi va asosiy sanatlari'><rect class='box' x='280' y='12' width='140' height='36' rx='8'/><text x='350' y='35' text-anchor='middle'>BALAG'AT</text><rect class='box' x='30' y='96' width='190' height='36' rx='8'/><text x='125' y='119' text-anchor='middle'>Bayon: tasvir</text><rect class='box' x='255' y='96' width='190' height='36' rx='8'/><text x='350' y='119' text-anchor='middle'>Ma'oniy: tartib</text><rect class='box' x='480' y='96' width='190' height='36' rx='8'/><text x='575' y='119' text-anchor='middle'>Badi': bezak</text><text x='125' y='160' text-anchor='middle' class='small'>tashbih, isti'ora, majoz, kinoya</text><text x='350' y='160' text-anchor='middle' class='small'>taqdim, hasr, iltifot</text><text x='575' y='160' text-anchor='middle' class='small'>saj' (favosil), jinos</text><path class='edge' d='M310 48 L145 92' marker-end='url(#arAR15a)'/><path class='edge' d='M350 48 L350 92' marker-end='url(#arAR15a)'/><path class='edge' d='M390 48 L555 92' marker-end='url(#arAR15a)'/><defs><marker id='arAR15a' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z'/></marker></defs></svg><figcaption>Balag'at daraxti: bayon (nima BILAN aytilgan), ma'oniy (qaysi TARTIBDA aytilgan), badi' (qanday OHANGDA aytilgan).</figcaption></figure><h3>Bayon ilmi: tashbih, isti'ora, majoz, kinoya</h3><p><b>Tashbih</b> (o'xshatish) - bir narsani boshqasiga كَ yoki كَأَنَّ vositasi bilan ochiq o'xshatish:</p><p dir='rtl' class='ar-line'>وَالَّذِينَ كَفَرُوا أَعْمَالُهُمْ كَسَرَابٍ بِقِيعَةٍ</p><p><i>vallaziyna kafaruu a'maaluhum ka-saraabin bi-qii'a</i> - \"Kofirlarning amallari sahrodagi sarobga o'xshaydi\" (24:39, ma'no tarjimasi). Yana: <b>كَأَنَّهُمْ جَرَادٌ مُنْتَشِرٌ</b> - \"go'yo ular yoyilgan chigirtkalardek\" (54:7). <b>Isti'ora</b> (metafora) - o'xshatish vositasi tashlab yuborilgan, ko'chirilgan tasvir:</p><p dir='rtl' class='ar-line'>وَاشْتَعَلَ الرَّأْسُ شَيْبًا</p><p><i>vashta'alar-ra'su shayban</i> - \"bosh oqlik bilan alangalandi\" (19:4): oq soch olovga o'xshatilgan, lekin \"olov kabi\" deyilmagan - alanga fe'li to'g'ridan-to'g'ri boshga ko'chirilgan. <b>Majoz</b> (ko'chma ma'no): <b>وَاسْأَلِ الْقَرْيَةَ</b> - \"qishloqdan so'ra\" (12:82), ya'ni qishloq AHLIDAN so'ra: joy nomi aholisi o'rnida ishlatilgan (majozi mursal). <b>Kinoya</b> - maqsadni to'g'ridan-to'g'ri aytmay, belgisini aytish: <b>وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ</b> - \"qo'lingni bo'yningga bog'langan qilma\" (17:29) - baxillikdan kinoya; <b>يَعَضُّ الظَّالِمُ عَلَىٰ يَدَيْهِ</b> - \"zolim qo'llarini tishlaydi\" (25:27) - qattiq pushaymon kinoyasi.</p><h3>Ma'oniy ilmi: taqdim, hasr, iltifot</h3><p><b>Taqdim/ta'xir</b> - odatdagi tartibdan chiqib, so'zni oldinga olish urg'u beradi:</p><p dir='rtl' class='ar-line'>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p><p><i>iyyaaka na'budu va iyyaaka nasta'iin</i> (1:5). Odatiy tartib نَعْبُدُكَ bo'lardi; maf'ul إِيَّاكَ ning fe'ldan OLDIN kelishi \"FAQAT Senga ibodat qilamiz\" degan xoslash ma'nosini beradi. <b>Hasr</b> (cheklash) ko'pincha إِنَّمَا bilan: <b>إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ</b> - \"mo'minlar faqat birodarlardir\" (49:10); <b>إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ</b> (35:28) - bu yerda hasr VA taqdim birga: Allohdan chin qo'rquv faqat biluvchilarga xos. AR11 dagi niyat hadisi ham aynan shu san'at bilan boshlanadi. <b>Iltifot</b> - nutq davomida shaxsning almashishi: Fatiha g'oyib shaklda boshlanadi - <b>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</b> \"hamd Allohga\" (1:2), so'ng birdan murojaatga o'tadi - <b>إِيَّاكَ نَعْبُدُ</b> \"Senga ibodat qilamiz\" (1:5): sanab kelingan sifatlar bandani Rabbi bilan yuzma-yuz suhbatga olib kiradi. Yana misol: 36:22 da \"meni yaratgan\" dan \"sizlar qaytarilasiz\" ga o'tish.</p><h3>Badi' qisqacha: saj' (favosil) va jinos</h3><p><b>Saj'</b> - jumla oxirlarining ohangdosh tugashi; Qur'onda oyat oxirlari <b>favosil</b> deyiladi: <b>وَالضُّحَىٰ ۝ وَاللَّيْلِ إِذَا سَجَىٰ ۝ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ</b> (93:1-3) - uchala oyat ham cho'ziq \"-aa\" bilan tugaydi. <b>Jinos</b> - shakli o'xshash, ma'nosi har xil so'zlar o'yini: <b>وَيَوْمَ تَقُومُ السَّاعَةُ يُقْسِمُ الْمُجْرِمُونَ مَا لَبِثُوا غَيْرَ سَاعَةٍ</b> (30:55) - birinchi السَّاعَةُ Qiyomat, ikkinchi سَاعَةٍ esa qisqa vaqt (bir soat).</p><div class='callout'><b>Adab eslatmasi.</b> Qur'on uchun ulamolar odatda insoniy nutq atamasi bo'lgan \"saj'\" o'rniga <b>favosil</b> atamasini afzal ko'rgan. Balag'at tahlilida ohang: kamtarona - biz san'atni TANIYMIZ, yakuniy ma'noni esa mo''tabar tafsirlar bilan solishtiramiz.</div><h3>Professional final: himoya tartibi</h3><p>Quyidagi loyihadan BITTA variantni tanlang (A - sura, B - tafsir uslubidagi harakatsiz parcha, C - hadislar). Ish tartibi AR14 workflow bo'yicha: ko'z yugurtirish -> jumla chegaralari -> i'rob -> tarjima -> mulohaza, ustiga esa balag'at qavati qo'shiladi: matndan kamida 4 san'atni topib, atamasi va manbasi bilan izohlaysiz. Ish rubric bo'yicha baholanadi va 5-7 daqiqalik og'zaki himoya bilan yakunlanadi.</p><h3>Kurs bo'ylab self-check ro'yxati</h3><p>Har band uchun DALIL ko'rsating (jadval, audio, portfolio):</p><ul><li>AR0-AR2: istalgan harakatli matnni ravon o'qiyman - dalil: yangi sahifa tilovati audiosi.</li><li>AR3-AR5, AR8: jumlada mubtado-xabar, foil-maf'ul va majrurlarni ajrataman - dalil: i'rob jadvali.</li><li>AR6-AR7, AR9, AR12: I-X boblar va zaif fe'llarni taniyman, lug'atdan o'zak bo'yicha topaman - dalil: 20 fe'l tahlili.</li><li>AR10, AR13: chastota lug'atim faol - dalil: flashcards statistikasi va oyat ichida tanish.</li><li>AR11, AR14: harakatsiz parchani harakatlab tarjima qilaman - dalil: portfolio.</li><li>AR15: matndan balag'at san'atlarini topib izohlayman - dalil: final hisobot va himoya audiosi.</li></ul></div>",
+  "code": [],
+  "tasks": [
+   {
+    "id": "ar15-1",
+    "html": "Bayon ilmining 4 san'atini (tashbih, isti'ora, majoz, kinoya) Qur'oniy misollar bilan jadval qilib yozdim",
+    "crit": "har san'atga ta'rif va kamida bitta aniq misol sura:oyat bilan keltirilgan"
+   },
+   {
+    "id": "ar15-2",
+    "html": "Fatiha surasidagi taqdim (1:5) va iltifot (1:2 -> 1:5) san'atlarini o'z so'zim bilan izohlab yozdim",
+    "crit": "odatiy tartib bilan solishtirilgan; shaxs almashishi joyi aniq ko'rsatilgan"
+   },
+   {
+    "id": "ar15-3",
+    "html": "quran.com qidiruvidan إِنَّمَا bilan boshlangan 5 oyat topib, har birida nima cheklanayotganini izohladim",
+    "crit": "5 oyat sura:oyat bilan; har birida hasr ostidagi so'z ajratib ko'rsatilgan"
+   },
+   {
+    "id": "ar15-4",
+    "html": "Professional final loyihaning bitta variantini boshidan oxirigacha bajarib topshirdim",
+    "crit": "tanlangan variantning barcha deliverable lari rubric bo'yicha dalil bilan yopilgan"
+   },
+   {
+    "id": "ar15-5",
+    "html": "Kurs bo'ylab self-check ro'yxatini har band uchun dalil ko'rsatib to'ldirdim va himoya audiosini yozdim",
+    "crit": "6 band ham dalil bilan yopilgan; 5-7 daqiqalik og'zaki himoya audiosi bor"
+   }
+  ],
+  "resources": [
+   {
+    "type": "doc",
+    "url": "https://corpus.quran.com",
+    "title": "Quranic Arabic Corpus",
+    "desc": "Final tahlilni tekshirish uchun so'zma-so'z grammatik tahlil - i'rob javoblaringizni shu yerda solishtiring.",
+    "host": "corpus.quran.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://en.wikipedia.org/wiki/Balagha",
+    "title": "Balagha (Arabic rhetoric)",
+    "desc": "Balag'at ilmining tarixi va bo'limlari haqida umumiy ma'lumot - bayon, ma'oniy, badi' atamalarining kelib chiqishi.",
+    "host": "en.wikipedia.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://sunnah.com/nawawi40",
+    "title": "An-Nawawi's 40 Hadith",
+    "desc": "Final Variant C uchun manba: 40 hadis to'plami arabcha matn va tarjima bilan.",
+    "host": "sunnah.com"
+   }
+  ],
+  "project": {
+   "tag": "Final / PRO / AR15",
+   "title": "Professional final: to'liq matn tahlili va balag'at izohli himoya",
+   "desc": "Professional trek yakuni - AR11 finalidan kattaroq miqyos: butun matnni (sura, tafsir uslubidagi parcha yoki 3 hadis) i'rob + balag'at + tarjima + mulohaza qavatlari bilan tahlil qilib, rubric bo'yicha dalillangan portfolio va og'zaki himoya topshirasiz.",
+   "features": [
+    "Bayon va ma'oniy san'atlari jadvali Qur'oniy misollar bilan tuzildi",
+    "Tanlangan final variant boshidan oxirigacha bajarildi",
+    "Matndan kamida 4 balag'at san'ati topilib, atamasi bilan izohlandi",
+    "To'liq i'rob tahlili corpus.quran.com yoki lug'at bilan solishtirildi",
+    "Tilovat va 5-7 daqiqalik og'zaki himoya audio yozildi",
+    "Mulohaza-hisobot: xulosalar, savollar, parallel oyat/hadislar",
+    "Kurs bo'ylab self-check ro'yxati dalil bilan yopildi"
+   ],
+   "rubric": [
+    "Arabcha matn to'liq harakatli va xatosiz ko'chirilgan; har iqtibos sura:oyat yoki hadis to'plami va raqami bilan keltirilgan.",
+    "I'rob tahlili to'liq: har jumlada foil/maf'ul yoki mubtado-xabar, jarr va idofa birikmalari ko'rsatilgan; corpus.quran.com yoki lug'at bilan solishtirilgan.",
+    "Kamida 4 balag'at san'ati (tashbih, isti'ora, majoz, kinoya, taqdim, hasr, iltifot, favosil, jinos ichidan) matndan topilgan va nega shu san'at ekani asoslangan.",
+    "Tarjima ma'no tarjimasi sifatida berilgan va kamida bitta mo''tabar tarjima/tafsir bilan solishtirilib, farqlar izohlangan.",
+    "Mulohaza-hisobot bor: matndan chiqarilgan xulosalar, tug'ilgan savollar va kamida bitta parallel oyat yoki hadis bilan bog'lanish.",
+    "Tilovat va og'zaki himoya audiosi bor: madd, shadda, so'z oxiri harakatlari to'g'ri; himoya 5-7 daqiqada ishning mag'zini ochadi.",
+    "Kurs self-check ro'yxatining barcha bandlari dalil (jadval, audio, portfolio) bilan yopilgan."
+   ],
+   "variants": [
+    {
+     "title": "Variant A: Qisqa surani to'liq professional tahlil qilish",
+     "desc": "Ad-Duha (93), Ash-Sharh (94) yoki At-Tin (95) suralaridan birini boshidan oxirigacha tahlil qilasiz: i'rob + balag'at + tarjima + mulohaza.",
+     "deliverables": [
+      "Har so'z uchun o'zak + bob + i'rob + ma'no jadvali (butun sura bo'yicha)",
+      "Balag'at izohi: suradagi kamida 4 san'at (masalan qasam uslubi, favosil ohangi, taqdim, kinoya) atamasi bilan",
+      "To'liq harakatli matn, ma'no tarjimasi va corpus.quran.com bilan solishtirish natijalari",
+      "Mulohaza-hisobot va suraning to'liq tilovat + himoya audiosi"
+     ]
+    },
+    {
+     "title": "Variant B: Tafsir uslubidagi harakatsiz parcha portfoliosi",
+     "desc": "Tafsir uslubidagi harakatsiz namuna parchani (5-6 jumla, AR14 dagi kabi) mustaqil harakatlab, tarjima qilib, portfolio yig'asiz.",
+     "deliverables": [
+      "Harakatsiz matnning siz to'liq harakatlagan nusxasi va har munozarali harakat uchun asos (i'rob/wazn/kontekst)",
+      "Parchaning ma'no tarjimasi va undagi tafsir formulalari (قَوْلُهُ تَعَالَى، أَيْ) izohi",
+      "20 so'zlik shaxsiy lug'at-daftar: harakatli so'z + o'zak + translit + ma'no",
+      "Parchada uchragan balag'at san'atlari izohi va o'qish audiosi bilan hisobot"
+     ]
+    },
+    {
+     "title": "Variant C: Uch hadis tahlili (isnod, matn, xulosa)",
+     "desc": "Navaviyning 40 hadisidan 3 tasini sunnah.com dan olib, isnod/matn tuzilishi, i'rob va mazmun bo'yicha tahlil qilasiz.",
+     "deliverables": [
+      "3 hadis to'liq harakatlangan matni, manbalari bilan (to'plam va raqam); isnod va matn qismlari ajratilgan",
+      "Har hadisda kamida 6 kalit so'z tahlili (o'zak + bob + i'rob) va jumla tuzilishi sxemasi",
+      "Balag'at kuzatuvlari: hadislardagi hasr, taqdim, tashbih kabi san'atlar (masalan إِنَّمَا bilan boshlanish)",
+      "Har hadisdan chiqarilgan xulosa, parallel oyat bilan bog'lash va o'qish audiosi"
+     ]
+    }
+   ]
+  },
+  "quiz": [
+   {
+    "q": "Tashbih bilan isti'oraning asosiy farqi nimada?",
+    "a": [
+     "Tashbih faqat she'rda, isti'ora faqat nasrda ishlatiladi",
+     "Isti'ora faqat inson haqida bo'ladi",
+     "Tashbihda o'xshatish vositasi (كَ، كَأَنَّ) ochiq keladi, isti'orada u tushib qoladi",
+     "Farqi yo'q, ikkalasi bir san'atning ikki nomi"
+    ],
+    "c": 2,
+    "w": "أَعْمَالُهُمْ كَسَرَابٍ (24:39) da كَ ochiq turibdi - tashbih; وَاشْتَعَلَ الرَّأْسُ شَيْبًا (19:4) da olovga o'xshatish vositasiz, fe'l bevosita ko'chirilgan - isti'ora.",
+    "level": "easy"
+   },
+   {
+    "q": "وَاسْأَلِ الْقَرْيَةَ - \"qishloqdan so'ra\" (12:82) iborasida qaysi san'at bor?",
+    "a": [
+     "Majoz: qishloq (joy) uning aholisi o'rnida aytilgan",
+     "Jinos: ikki o'xshash so'z o'ynatilgan",
+     "Saj': oyat oxiri ohangdosh tugagan",
+     "Iltifot: shaxs almashgan"
+    ],
+    "c": 0,
+    "w": "Qishloqning o'zidan so'rab bo'lmaydi - maqsad qishloq AHLI. Joy nomi aholisi o'rnida kelishi majozi mursal deyiladi; so'z o'yini ham, ohang ham, shaxs almashishi ham bu yerda yo'q.",
+    "level": "practical"
+   },
+   {
+    "q": "O'quvchi Fatihani tahlil qilyapti: 1:2 da Alloh haqida \"g'oyib\" shaklda (الْحَمْدُ لِلَّهِ), 1:5 da esa to'g'ridan-to'g'ri murojaat (إِيَّاكَ نَعْبُدُ) kelganini payqadi. Bu qaysi san'at va qanday ta'sir beradi?",
+    "a": [
+     "Hasr - ma'no faqat bitta narsaga cheklanadi",
+     "Kinoya - maqsad belgisi orqali yashirin aytiladi",
+     "Tashbih - Alloh sifatlari o'xshatish orqali tasvirlanadi",
+     "Iltifot - g'oyibdan murojaatga o'tish o'quvchini maqtovdan jonli suhbatga olib kiradi"
+    ],
+    "c": 3,
+    "w": "Shaxs shaklining ataylab almashishi iltifot deyiladi: Rabbning sifatlari sanalgach, banda go'yo huzurga kirib bevosita \"Senga\" deb murojaat qiladi. (1:5 dagi taqdim esa alohida, qo'shimcha san'at.)",
+    "level": "scenario"
+   }
+  ],
+  "exercises": [
+   {
+    "type": "choice",
+    "q": "وَاشْتَعَلَ الرَّأْسُ شَيْبًا - \"bosh oqlik bilan alangalandi\" (19:4). Qaysi san'at?",
+    "options": [
+     "Tashbih",
+     "Isti'ora",
+     "Kinoya",
+     "Jinos"
+    ],
+    "correct": 1,
+    "why": "Oq soch olovga o'xshatilgan, lekin كَ kabi vosita YO'Q - alangalanish fe'li to'g'ridan-to'g'ri boshga ko'chirilgan. Vositasiz ko'chirilgan tasvir isti'ora deyiladi."
+   },
+   {
+    "type": "choice",
+    "q": "إِيَّاكَ نَعْبُدُ (1:5) da odatiy نَعْبُدُكَ tartibi o'zgarib, maf'ul oldinga chiqqan. Bu taqdim qanday ma'no qo'shadi?",
+    "options": [
+     "Faqat she'riy ohang uchun, ma'noga ta'siri yo'q",
+     "Fe'lni kelasi zamonga o'tkazadi",
+     "Xoslash: \"FAQAT Senga ibodat qilamiz\" degan hasr ma'nosi",
+     "Jumlani so'roq gapga aylantiradi"
+    ],
+    "correct": 2,
+    "why": "Ma'oniy ilmida maf'ulning fe'ldan oldin kelishi (taqdim) cheklash-xoslash beradi: ibodat faqat Allohga xos qilinadi. Zamon ham, gap turi ham o'zgarmaydi."
+   },
+   {
+    "type": "choice",
+    "q": "وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ - \"qo'lingni bo'yningga bog'langan qilma\" (17:29). Bu ibora nimadan kinoya?",
+    "options": [
+     "Jismoniy kishandan",
+     "Baxillik (xasislik)dan",
+     "Kuchsizlikdan",
+     "Sukut saqlashdan"
+    ],
+    "correct": 1,
+    "why": "Oyat davomida \"uni butunlay yozib ham yuborma\" (isrofdan kinoya) keladi - juftlik xayrlashda o'rta yo'lni buyuradi: bog'langan qo'l - bermaslik, ya'ni baxillik belgisi."
+   },
+   {
+    "type": "gap",
+    "q": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ (49:10) dagi إِنَّمَا yuklamasi ma'oniy ilmida ___ san'atini hosil qiladi.",
+    "answers": [
+     "hasr",
+     "xoslash",
+     "cheklash"
+    ],
+    "hint": "\"Faqat, -gina\" ma'nosini beruvchi cheklash san'ati - AR11 dagi niyat hadisi ham shu bilan boshlanadi.",
+    "why": "إِنَّمَا hukmni faqat aytilgan narsaga cheklaydi - bu hasr (xoslash): mo'minlar o'rtasidagi asl rishta FAQAT birodarlikdir."
+   },
+   {
+    "type": "listen",
+    "q": "Eshit va yozib ol (Fatiha 1:5 - taqdim va iltifot namunasi)",
+    "say": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+    "lang": "ar-SA",
+    "answers": [
+     "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+     "اياك نعبد واياك نستعين",
+     "إياك نعبد وإياك نستعين"
+    ],
+    "hint": "Ikki marta takrorlanadigan olmosh + ikki muzori' fe'l; إِيَّاكَ da shaddali يّ bor.",
+    "why": "Oyatda maf'ul إِيَّاكَ ikki marta fe'ldan oldin kelgan (taqdim = hasr), Fatiha shu yerda g'oyibdan murojaatga o'tadi (iltifot)."
+   },
+   {
+    "type": "speak",
+    "q": "Talaffuz qil: hasr namunasi - \"Mo'minlar faqat birodarlardir\" (49:10)",
+    "say": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ",
+    "lang": "ar-SA",
+    "why": "إِنَّ dagi shadda va الْمُؤْمِنُونَ dagi hamza+madd aniq chiqsin; إِنَّمَا ni bir nafasda o'qish hasr ohangini beradi."
+   }
+  ],
+  "vocab": [
+   {
+    "w": "بَلَاغَةٌ",
+    "ipa": "balaagha",
+    "pos": "ot",
+    "uz": "balag'at; so'zni maqsadga eng mos shaklda aytish ilmi",
+    "ex": "عِلْمُ الْبَلَاغَةِ ثَلَاثَةُ أَقْسَامٍ"
+   },
+   {
+    "w": "تَشْبِيهٌ",
+    "ipa": "tashbiih",
+    "pos": "ot (masdar, II bob)",
+    "uz": "o'xshatish; كَ yoki كَأَنَّ bilan ochiq qiyoslash",
+    "ex": "أَعْمَالُهُمْ كَسَرَابٍ"
+   },
+   {
+    "w": "اِسْتِعَارَةٌ",
+    "ipa": "isti'aara",
+    "pos": "ot (masdar, X bob)",
+    "uz": "isti'ora, metafora; vositasiz ko'chirilgan tasvir",
+    "ex": "وَاشْتَعَلَ الرَّأْسُ شَيْبًا"
+   },
+   {
+    "w": "مَجَازٌ",
+    "ipa": "majaaz",
+    "pos": "ot",
+    "uz": "majoz, ko'chma ma'no; so'zning asl ma'nodan boshqa ma'noda kelishi",
+    "ex": "وَاسْأَلِ الْقَرْيَةَ"
+   },
+   {
+    "w": "كِنَايَةٌ",
+    "ipa": "kinaaya",
+    "pos": "ot",
+    "uz": "kinoya; maqsadni belgisi orqali bilvosita aytish",
+    "ex": "يَعَضُّ الظَّالِمُ عَلَىٰ يَدَيْهِ"
+   },
+   {
+    "w": "حَصْرٌ",
+    "ipa": "hasr",
+    "pos": "ot (masdar)",
+    "uz": "hasr, cheklash-xoslash; ko'pincha إِنَّمَا bilan",
+    "ex": "إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ"
+   },
+   {
+    "w": "اِلْتِفَاتٌ",
+    "ipa": "iltifaat",
+    "pos": "ot (masdar, VIII bob)",
+    "uz": "iltifot; nutq davomida shaxs shaklining almashishi",
+    "ex": "الْحَمْدُ لِلَّهِ... إِيَّاكَ نَعْبُدُ"
+   },
+   {
+    "w": "جِنَاسٌ",
+    "ipa": "jinaas",
+    "pos": "ot",
+    "uz": "jinos; shakli o'xshash, ma'nosi har xil so'zlar o'yini",
+    "ex": "تَقُومُ السَّاعَةُ... غَيْرَ سَاعَةٍ"
+   }
+  ]
  }
 ]

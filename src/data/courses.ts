@@ -279,7 +279,7 @@ export const COURSES: CourseMeta[] = [
       { n: 4, accent: D, title: "80% of Qur'anic Words", author: "Abdulazeez Abdulraheem", note: "Chastota bo'yicha Qur'on lug'ati - AR10 moduli uchun asosiy yodlash manbasi, bepul tarqatiladi." },
       { n: 5, accent: E, title: "A Dictionary of Modern Written Arabic", author: "Hans Wehr", isbn: "9780879500030", note: "O'zak bo'yicha izlanadigan asosiy lug'at - mustaqil matn o'qishga o'tishda (AR11) zarur ko'nikma." },
     ],
-    moduleBooks: { AR0: 1, AR3: 2, AR9: 3, AR10: 4, AR11: 5 },
+    moduleBooks: { AR0: 1, AR3: 2, AR9: 3, AR10: 4, AR11: 5, AR12: 2, AR13: 4, AR14: 3, AR15: 5 },
   },
   {
     id: "prompting",

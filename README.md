@@ -70,7 +70,7 @@ src/
     english.json       English kurs (14 modul: A0->B2 + 4 ko'nikma + Exam + Idm)
     finance.json       Moliya kursi (12 modul: F0->F11)
     russian.json       Rus tili kursi (12 modul: Алф->Фин)
-    arabic.json        Arab tili kursi (12 modul: AR0->AR11; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
+    arabic.json        Arab tili kursi (16 modul: AR0->AR11 asosiy + AR12->AR15 professional trek; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
     prompting.json     AI Prompt kursi (9 modul; RAG/tool-calling + Playground bilan)
     courses.ts         kurslar registri (brand + kitoblar + lazy-load)
   types.ts
@@ -106,7 +106,7 @@ public/
 - **Geospatial kengaytirildi:** JS/TS biladiganlar uchun Python ko'prigi, professional tartib, arxitektura chizmalari, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlari qo'shildi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
 - **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas. Til kursiga qarab ovoz tili avtomatik: English `en-US`, Rus tili `ru-RU`, Arab tili `ar-SA`.
-- **Arab tili kursi:** Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan 12 modul (alifbo -> harakatlar -> nahv/sarf -> i'rob -> Qur'on matni tahlili -> hadis va yakuniy baholash). Barcha arabcha matn to'liq harakatli, transliteratsiya va tarjima bilan; arabcha satrlar `.ar-line` klassi orqali kattaroq va o'ngdan chapga ko'rsatiladi (`styles.css`).
+- **Arab tili kursi:** Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan 16 modul: asosiy kurs (alifbo -> harakatlar -> nahv/sarf -> i'rob -> Qur'on matni tahlili -> hadis va o'rta yakuniy baholash) + **professional trek** (zaif fe'llar to'liq, 300 so'zlik chastota lug'ati, Oyatul-Kursiy va tafsir uslubidagi matn praktikumi, balag'at asoslari va professional yakuniy loyiha). Barcha arabcha matn to'liq harakatli, transliteratsiya va tarjima bilan; arabcha satrlar `.ar-line` klassi orqali kattaroq va o'ngdan chapga ko'rsatiladi (`styles.css`).
 - **Vizual diagrammalar:** dars matnlarida inline SVG sxemalar (oqim, arxitektura, jarayon) - 11 kurs bo'ylab 160+ diagramma. `.svgfig` CSS klassi orqali mavzuga (dark/light) ergashadi va responsive (`styles.css`). Diagramma qo'shish: doc HTML ichiga `<figure class='svgfig'><svg viewBox=...>...</svg><figcaption>..</figcaption></figure>` - ranglar uchun `.box/.boxa/.edge/.edga/.muted/.accent` klasslaridan foydalan (rang hardkod qilinmaydi).
 
 ## Testlar va kontent validatsiyasi
