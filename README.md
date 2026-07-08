@@ -4,7 +4,7 @@
 
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
-Bitta ilova, **o'nta mustaqil kurs**:
+Bitta ilova, **o'n bitta mustaqil kurs**:
 - **Geospatial** - WebGIS Full-Stack (React TS, MapLibre, FastAPI/Python, PostGIS, GDAL/Rasterio/YOLO, Docker/Nginx/Redis)
 - **Frontend** - 0 dan Senior gacha (HTML, CSS, JS, TS, React)
 - **Backend** - 0 dan Senior gacha (Node.js, TypeScript, DB, API, DevOps)
@@ -14,6 +14,7 @@ Bitta ilova, **o'nta mustaqil kurs**:
 - **English** - 0 dan IELTS gacha (A1->B2 + Listening/Reading/Writing/Speaking)
 - **Moliya** - Moliyaviy savodxonlik (byudjet -> jamg'arma -> qarz -> xavfsizlik -> investitsiya)
 - **Rus tili** - 0 -> B1 (kirill alifbosi, kelishiklar, fe'l aspekti, suhbat; talaffuz audiosi bilan)
+- **Arab tili** - 0 dan professionalgacha (alifbo, tajvid asoslari, nahv, sarf; Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan)
 - **AI Prompt** - AI bilan ishlash (prompting, aniqlik, rol, few-shot, xavfsizlik; interaktiv Playground bilan)
 
 React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
@@ -43,7 +44,7 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 - Yon panel tepasidagi kurs almashtirgich bilan kurslar orasida o'tasan.
 - Har kursning **progressi va test natijalari alohida** saqlanadi:
   `webgis_*`, `frontend_*`, `backend_*`, `git_*`, `telegram_*`, `cybersecurity_*`,
-  `english_*`, `finance_*`, `russian_*`, `prompting_*` (progress / quiz / srs - localStorage).
+  `english_*`, `finance_*`, `russian_*`, `arabic_*`, `prompting_*` (progress / quiz / srs - localStorage).
   Kunlik seriya - `myacademy_streak`.
 - Tayyorlik paneli ham har kurs uchun **alohida** hisoblanadi.
 - Har kursning o'z urg'u rangi bor (English binafsha, Moliya yashil, Cybersecurity qizil,
@@ -69,6 +70,7 @@ src/
     english.json       English kurs (14 modul: A0->B2 + 4 ko'nikma + Exam + Idm)
     finance.json       Moliya kursi (12 modul: F0->F11)
     russian.json       Rus tili kursi (12 modul: Алф->Фин)
+    arabic.json        Arab tili kursi (12 modul: AR0->AR11; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
     prompting.json     AI Prompt kursi (9 modul; RAG/tool-calling + Playground bilan)
     courses.ts         kurslar registri (brand + kitoblar + lazy-load)
   types.ts

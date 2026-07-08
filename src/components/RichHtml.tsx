@@ -34,9 +34,10 @@ export function RichHtml({ html, className }: { html: string; className?: string
       head.appendChild(btn);
     });
 
-    // English darslaridagi misol gaplarga talaffuz tugmasi
-    if ((courseId === "english" || courseId === "russian") && canSpeak()) {
-      const sLang = courseId === "russian" ? "ru-RU" : "en-US";
+    // Til darslaridagi misol gaplarga talaffuz tugmasi
+    if ((courseId === "english" || courseId === "russian" || courseId === "arabic") && canSpeak()) {
+      const sLang =
+        courseId === "russian" ? "ru-RU" : courseId === "arabic" ? "ar-SA" : "en-US";
       root.querySelectorAll<HTMLElement>(".ex b").forEach((b) => {
         if (b.querySelector(".speakbtn-mini")) return;
         const text = b.textContent || "";

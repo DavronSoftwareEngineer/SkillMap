@@ -1964,6 +1964,14 @@ table.vocab td {
   --teal-deep: #3f6fd0;
 }
 
+/* Arab tili kursi - moviy (cyan) urg'u */
+.course-arabic {
+  --teal: #1fb6cf;
+  --teal-deep: #128aa0;
+}
+/* Arabcha matn satrlari: kattaroq shrift, o'ngdan chapga */
+.prose .ar-line { font-size: 1.55em; line-height: 2.1; direction: rtl; text-align: right; }
+
 /* Flashcards */
 .fc-actions.srs { display: flex; gap: 10px; margin-top: 16px; }
 .fc-grade { flex: 1; cursor: pointer; padding: 13px 10px; border-radius: 11px; font-weight: 600; font-size: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 7px; }

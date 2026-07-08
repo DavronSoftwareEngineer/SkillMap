@@ -55,7 +55,7 @@ export interface Exercise {
   hint?: string;
   why: string;
   say?: string; // "listen": ovoz o'qiydigan matn | "speak": talaffuz qilinadigan (nishon) matn
-  lang?: string; // "listen"/"speak" uchun til (en-US / ru-RU)
+  lang?: string; // "listen"/"speak" uchun til (en-US / ru-RU / ar-SA)
 }
 export interface Vocab {
   w: string;

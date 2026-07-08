@@ -28,8 +28,9 @@ function SpeakBtn({ text, lang, label }: { text: string; lang: string; label: st
 
 export function Flashcards() {
   const { course, courseId, srs, gradeVocab, resetSrs } = useStore();
-  const isLang = courseId === "english" || courseId === "russian";
-  const speakLang = courseId === "russian" ? "ru-RU" : "en-US";
+  const isLang = courseId === "english" || courseId === "russian" || courseId === "arabic";
+  const speakLang =
+    courseId === "russian" ? "ru-RU" : courseId === "arabic" ? "ar-SA" : "en-US";
 
   const allVocab = useMemo(() => {
     const list: Vocab[] = [];

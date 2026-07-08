@@ -27,6 +27,7 @@ const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
   english: () => import("./english.json"),
   finance: () => import("./finance.json"),
   russian: () => import("./russian.json"),
+  arabic: () => import("./arabic.json"),
   prompting: () => import("./prompting.json"),
 };
 
@@ -256,6 +257,29 @@ export const COURSES: CourseMeta[] = [
       { n: 3, accent: C, title: "The New Penguin Russian Course", author: "Nicholas Brown", isbn: "9780140120417", note: "Ingliz tilida tushuntiruvchi to'liq kurs - grammatikani tizimli o'rganishga yaxshi." },
     ],
     moduleBooks: { "Алф": 1, "А2": 2, "Б1": 3 },
+  },
+  {
+    id: "arabic",
+    name: "Arab tili",
+    brandTitle: "Arab tili Akademiyasi",
+    brandSub: "0 -> Professional / Alifbo / Nahv / Sarf / Qur'on matni",
+    labels: {
+      doc: "Dars",
+      code: "Namunalar",
+      ex: "Mashq",
+      task: "Topshiriqlar",
+      quiz: "Test",
+      vid: "Manbalar",
+      proj: "Amaliyot",
+    },
+    books: [
+      { n: 1, accent: A, title: "Alif Baa", author: "Brustad, Al-Batal, Al-Tonsi", isbn: "9781589016322", note: "Alifbo va tovushlar poydevori - AR0-AR2 modullari bilan birga, yozuv va talaffuzni mustahkamlaydi." },
+      { n: 2, accent: B, title: "Madinah Arabic Reader (Durus al-lug'a)", author: "Dr. V. Abdur Rahim", note: "Qur'on arabchasiga mo'ljallangan klassik kurs - grammatika modullari (AR3 dan boshlab) bilan parallel o'qi." },
+      { n: 3, accent: C, title: "Arabic Through the Qur'an", author: "Alan Jones", isbn: "9780946621675", note: "Grammatikani to'g'ridan-to'g'ri Qur'on matni orqali o'rgatadi - sarf/nahv modullaridan keyin boshla." },
+      { n: 4, accent: D, title: "80% of Qur'anic Words", author: "Abdulazeez Abdulraheem", note: "Chastota bo'yicha Qur'on lug'ati - AR10 moduli uchun asosiy yodlash manbasi, bepul tarqatiladi." },
+      { n: 5, accent: E, title: "A Dictionary of Modern Written Arabic", author: "Hans Wehr", isbn: "9780879500030", note: "O'zak bo'yicha izlanadigan asosiy lug'at - mustaqil matn o'qishga o'tishda (AR11) zarur ko'nikma." },
+    ],
+    moduleBooks: { AR0: 1, AR3: 2, AR9: 3, AR10: 4, AR11: 5 },
   },
   {
     id: "prompting",
