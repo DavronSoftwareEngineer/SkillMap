@@ -103,6 +103,90 @@ export function validateModules(courseId: string, modules: Module[]): string[] {
       if (!isNonEmptyString(v.w)) err(where, `vocab[${vi}].w bo'sh`);
       if (!isNonEmptyString(v.uz)) err(where, `vocab[${vi}].uz bo'sh`);
     });
+
+    const assessment = m.project?.assessment;
+    if (assessment) {
+      if (!isNonEmptyString(assessment.id)) err(where, "assessment.id bo'sh");
+      if (!isNonEmptyString(assessment.version)) err(where, "assessment.version bo'sh");
+      if (!isNonEmptyString(assessment.title)) err(where, "assessment.title bo'sh");
+      if (!Array.isArray(assessment.criteria) || assessment.criteria.length === 0) {
+        err(where, "assessment.criteria bo'sh");
+      }
+      if (!Array.isArray(assessment.evidence) || assessment.evidence.length === 0) {
+        err(where, "assessment.evidence bo'sh");
+      }
+
+      const evidenceIds = new Set<string>();
+      assessment.evidence.forEach((item, ei) => {
+        if (!isNonEmptyString(item.id)) err(where, `assessment.evidence[${ei}].id bo'sh`);
+        else if (evidenceIds.has(item.id)) err(where, `assessment evidence id "${item.id}" takrorlangan`);
+        else evidenceIds.add(item.id);
+        if (!isNonEmptyString(item.label)) err(where, `assessment.evidence[${ei}].label bo'sh`);
+        if (item.kind !== "url" && item.kind !== "text") {
+          err(where, `assessment.evidence[${ei}].kind noma'lum`);
+        }
+      });
+
+      const criterionIds = new Set<string>();
+      let totalPoints = 0;
+      assessment.criteria.forEach((criterion, ci) => {
+        if (!isNonEmptyString(criterion.id)) err(where, `assessment.criteria[${ci}].id bo'sh`);
+        else if (criterionIds.has(criterion.id)) err(where, `assessment criterion id "${criterion.id}" takrorlangan`);
+        else criterionIds.add(criterion.id);
+        if (!isNonEmptyString(criterion.title)) err(where, `assessment.criteria[${ci}].title bo'sh`);
+        if (!Number.isInteger(criterion.points) || criterion.points <= 0) {
+          err(where, `assessment.criteria[${ci}].points musbat butun son emas`);
+        } else totalPoints += criterion.points;
+        if (
+          !Number.isInteger(criterion.minimumPoints) ||
+          criterion.minimumPoints < 0 ||
+          criterion.minimumPoints > criterion.points
+        ) {
+          err(where, `assessment.criteria[${ci}].minimumPoints chegaradan tashqarida`);
+        }
+        if (!Array.isArray(criterion.indicators) || !criterion.indicators.every(isNonEmptyString)) {
+          err(where, `assessment.criteria[${ci}].indicators yaroqsiz`);
+        }
+        (criterion.evidence || []).forEach((evidenceId) => {
+          if (!evidenceIds.has(evidenceId)) {
+            err(where, `assessment criterion "${criterion.id}" noma'lum evidence "${evidenceId}"ga ishora qiladi`);
+          }
+        });
+      });
+      if (totalPoints !== 100) err(where, `assessment jami ${totalPoints} ball, 100 bo'lishi kerak`);
+      if (
+        !Number.isInteger(assessment.passScore) ||
+        assessment.passScore <= 0 ||
+        assessment.passScore > totalPoints
+      ) {
+        err(where, "assessment.passScore chegaradan tashqarida");
+      }
+
+      const criticalIds = new Set<string>();
+      if (!Array.isArray(assessment.criticalFails) || assessment.criticalFails.length === 0) {
+        err(where, "assessment.criticalFails bo'sh");
+      }
+      (assessment.criticalFails || []).forEach((item, fi) => {
+        if (!isNonEmptyString(item.id)) err(where, `assessment.criticalFails[${fi}].id bo'sh`);
+        else if (criticalIds.has(item.id)) err(where, `assessment critical fail id "${item.id}" takrorlangan`);
+        else criticalIds.add(item.id);
+        if (!isNonEmptyString(item.title)) err(where, `assessment.criticalFails[${fi}].title bo'sh`);
+      });
+
+      if (!assessment.defense || assessment.defense.durationMinutes <= 0) {
+        err(where, "assessment.defense.durationMinutes yaroqsiz");
+      } else {
+        if (assessment.defense.liveChangeMinutes <= 0) {
+          err(where, "assessment.defense.liveChangeMinutes yaroqsiz");
+        }
+        if (!Array.isArray(assessment.defense.format) || !assessment.defense.format.every(isNonEmptyString)) {
+          err(where, "assessment.defense.format yaroqsiz");
+        }
+        if (!Array.isArray(assessment.defense.questions) || !assessment.defense.questions.every(isNonEmptyString)) {
+          err(where, "assessment.defense.questions yaroqsiz");
+        }
+      }
+    }
   });
 
   return errors;

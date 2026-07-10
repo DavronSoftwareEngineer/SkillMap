@@ -3,7 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { COURSES, loadCourseModules } from "./courses";
 import { validateModules, validateCourseMeta } from "../lib/content";
-import type { Module } from "../types";
+import type { Module, ProfessionalAssessment } from "../types";
 
 const v = validateModules;
 
@@ -32,6 +32,27 @@ describe("kontent validatsiyasi - xatolarni ushlaydi", () => {
     resources: [],
     project: null,
     quiz: [],
+  };
+
+  const validAssessment: ProfessionalAssessment = {
+    id: "assessment-v1",
+    version: "1.0",
+    title: "Professional assessment",
+    summary: "Dalil asosidagi baholash",
+    passScore: 80,
+    assessorRequired: true,
+    criteria: [{
+      id: "delivery",
+      title: "Delivery",
+      description: "Ishlaydigan loyiha",
+      points: 100,
+      minimumPoints: 60,
+      indicators: ["Loyiha ishlaydi"],
+      evidence: ["repo"],
+    }],
+    evidence: [{ id: "repo", label: "Repository", description: "Source", kind: "url", required: true }],
+    criticalFails: [{ id: "broken", title: "Ishlamaydi", description: "Loyiha ishga tushmaydi" }],
+    defense: { durationMinutes: 30, liveChangeMinutes: 10, format: ["Demo"], questions: ["Nega?"] },
   };
 
   it("chegaradan tashqari quiz javobi xato", () => {
@@ -68,6 +89,40 @@ describe("kontent validatsiyasi - xatolarni ushlaydi", () => {
       exercises: [{ type: "choice" as const, q: "?", options: ["a", "b"], correct: 5, why: "w" }],
     };
     expect(v("x", [bad]).join("\n")).toContain("correct");
+  });
+
+  it("professional assessment jami 100 ball bo'lishi shart", () => {
+    const bad = {
+      ...base,
+      project: {
+        tag: "Final",
+        title: "Capstone",
+        desc: "Final loyiha",
+        features: ["Demo"],
+        assessment: {
+          ...validAssessment,
+          criteria: [{ ...validAssessment.criteria[0], points: 90 }],
+        },
+      },
+    };
+    expect(v("x", [bad]).join("\n")).toContain("jami 90 ball");
+  });
+
+  it("assessment mezoni faqat mavjud evidence'ga ishora qiladi", () => {
+    const bad = {
+      ...base,
+      project: {
+        tag: "Final",
+        title: "Capstone",
+        desc: "Final loyiha",
+        features: ["Demo"],
+        assessment: {
+          ...validAssessment,
+          criteria: [{ ...validAssessment.criteria[0], evidence: ["unknown"] }],
+        },
+      },
+    };
+    expect(v("x", [bad]).join("\n")).toContain("noma'lum evidence");
   });
 
   it("toza modul xatosiz o'tadi", () => {

@@ -5,6 +5,7 @@ import { CodeBlock } from "./CodeBlock";
 import { Quiz } from "./Quiz";
 import { Exercises } from "./Exercises";
 import { BookCover } from "./Books";
+import { ProjectAssessment } from "./ProjectAssessment";
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="#0B1014" strokeWidth={3}>
@@ -36,7 +37,7 @@ export function ModuleView({
   onGo: (i: number) => void;
   onBooks: () => void;
 }) {
-  const { course, isDone, toggleTask } = useStore();
+  const { course, courseId, isDone, toggleTask } = useStore();
   const modules = course.modules;
   const L = course.labels;
   const m = modules[index];
@@ -163,7 +164,7 @@ export function ModuleView({
           </div>
         )}
 
-        {tab === "proj" && m.project && (
+        {tab === "proj" && m.project && (<>
           <div className="project">
             <div className="phead">
               <span className="tag">{m.project.tag}</span>
@@ -209,7 +210,10 @@ export function ModuleView({
               )}
             </div>
           </div>
-        )}
+          {m.project.assessment && (
+            <ProjectAssessment courseId={courseId} assessment={m.project.assessment} />
+          )}
+        </>)}
         </div>
       </section>
 

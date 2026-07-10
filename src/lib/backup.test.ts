@@ -69,6 +69,20 @@ describe("backup", () => {
     applyBackup(text);
     expect(JSON.parse(localStorage.getItem("finance_srs")!)).toEqual({ word: { box: 2, due: 123 } });
   });
+
+  it("professional assessment dalillarini ham zaxiraga oladi", () => {
+    const assessment = {
+      "geopulse-professional-v1": {
+        evidence: { repository: "https://github.com/acme/geopulse" },
+        reviewer: "Senior GIS Engineer",
+      },
+    };
+    localStorage.setItem("webgis_assessment", JSON.stringify(assessment));
+    const text = JSON.stringify(buildBackup(new Date(2026, 6, 10)));
+    localStorage.clear();
+    applyBackup(text);
+    expect(JSON.parse(localStorage.getItem("webgis_assessment")!)).toEqual(assessment);
+  });
 });
 
 describe("backup eslatmasi", () => {

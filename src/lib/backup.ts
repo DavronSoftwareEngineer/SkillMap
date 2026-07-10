@@ -1,7 +1,7 @@
-// Barcha progress/test/lug'at/streak ma'lumotini bitta JSON faylga eksport/import.
+// Progress, test, lug'at, assessment va streak ma'lumotini bitta JSON faylga eksport/import.
 import { COURSES } from "../data/courses";
 
-const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs"];
+const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs", "_assessment"];
 const GLOBAL_KEYS = ["active_course", "myacademy_streak", "myacademy_theme"];
 
 // Oxirgi eksport sanasi - eslatma uchun (zaxira fayliga kirmaydi).

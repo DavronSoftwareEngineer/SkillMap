@@ -27,12 +27,64 @@ export interface Resource {
   desc: string;
   host: string;
 }
+export interface AssessmentEvidence {
+  id: string;
+  label: string;
+  description: string;
+  kind: "url" | "text";
+  placeholder?: string;
+  required: boolean;
+  minimumLength?: number;
+}
+export interface AssessmentCriterion {
+  id: string;
+  title: string;
+  description: string;
+  points: number;
+  minimumPoints: number;
+  indicators: string[];
+  evidence: string[];
+}
+export interface AssessmentCriticalFail {
+  id: string;
+  title: string;
+  description: string;
+}
+export interface AssessmentDefense {
+  durationMinutes: number;
+  liveChangeMinutes: number;
+  format: string[];
+  questions: string[];
+}
+export interface ProfessionalAssessment {
+  id: string;
+  version: string;
+  title: string;
+  summary: string;
+  passScore: number;
+  assessorRequired: boolean;
+  criteria: AssessmentCriterion[];
+  evidence: AssessmentEvidence[];
+  criticalFails: AssessmentCriticalFail[];
+  defense: AssessmentDefense;
+}
+export interface AssessmentRecord {
+  evidence: Record<string, string>;
+  scores: Record<string, number>;
+  criticalFails: Record<string, boolean>;
+  reviewer: string;
+  notes: string;
+  defenseCompleted: boolean;
+  submittedAt: string | null;
+  reviewedAt: string | null;
+}
 export interface Project {
   tag: string;
   title: string;
   desc: string;
   features: string[];
   rubric?: string[];
+  assessment?: ProfessionalAssessment;
   variants?: {
     title: string;
     desc: string;
