@@ -4774,7 +4774,7 @@
    },
    {
     "type": "speak",
-    "q": "Qiyin holatни tushuntir (STAR):",
+    "q": "Qiyin holatni tushuntir (STAR):",
     "say": "In my last project, the map was slow, so I added vector tiles and it loaded three times faster.",
     "lang": "en-US",
     "why": "STAR: muammo -> harakat -> natija (raqam bilan)."
@@ -4800,10 +4800,10 @@
   "title": "English Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "Final / FINAL / JOB-READY",
-  "mtitle": "English final: tech interview, project pitch va IELTS-style readiness",
-  "lede": "English kursi yakunida texnik project pitch, CV/LinkedIn, interview answers va writing/speaking practice bilan final qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>IT ish, documentation va interview uchun ingliz tilida ishonchli muloqot qilish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "Final / TECH ENGLISH / PERFORMANCE",
+  "mtitle": "Technical English final: unseen tasks va live interview",
+  "lede": "English kursi yakunida oldindan yodlangan pitch emas, unseen listening/reading, vaqtli writing, texnik project explanation va jonli savol-javob tashqi baholovchi bilan tekshiriladi.",
+  "doc": "<div class='prose'><h3>Natijani halol talqin qilish</h3><p>Bu assessment <strong>IT ishida ingliz tilidan foydalanish performance'ini</strong> tekshiradi. U rasmiy CEFR darajasi yoki IELTS band sertifikati emas; bunday natija faqat vakolatli standart imtihon orqali tasdiqlanadi.</p><h3>To'rt ko'nikma, unseen material</h3><div class=\"chips\"><span class=\"chip t\">listening</span><span class=\"chip t\">reading</span><span class=\"chip\">timed writing</span><span class=\"chip\">live speaking</span><span class=\"chip\">interaction</span><span class=\"chip\">technical mediation</span></div><p>Assessor materialni assessment boshlanishida beradi. Lug'at, translator yoki AI faqat aniq ruxsat etilgan bosqichda ishlatiladi; live/unseen qism mustaqil bajariladi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>70/100 umumiy ball va har bir listening, reading, writing hamda speaking minimumi talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -4819,27 +4819,27 @@
    {
     "id": "final-1",
     "html": "2 daqiqalik project pitch yozildi va aytildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "pitch notesiz yoki faqat 5 ta keyword bilan aytiladi; assessor kamida 3 kutilmagan follow-up beradi"
    },
    {
     "id": "final-2",
     "html": "CV/LinkedIn summary inglizcha tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "summary 120-180 so'z, aniq role/impact bilan; assessor grammar va clarity bo'yicha feedback beradi"
    },
    {
     "id": "final-3",
     "html": "10 ta interview answer STAR formatda yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "kamida 5 javob live interviewda unseen follow-up bilan tekshiriladi; yodlangan matn o'qilmaydi"
    },
    {
     "id": "final-4",
     "html": "Technical README inglizchaga moslandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "README boshqa muhandis setup, architecture va limitationni noto'g'ri talqinsiz tushunadigan darajada"
    },
    {
     "id": "final-5",
     "html": "Speaking self-review checklist to'ldirildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "assessor fluency, intelligibility, interaction, grammar va vocabularyni alohida rubric bilan baholaydi"
    }
   ],
   "resources": [
@@ -4856,26 +4856,185 @@
     "title": "Cambridge English",
     "desc": "Practice.",
     "host": "cambridgeenglish.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.coe.int/en/web/common-european-framework-reference-languages",
+    "title": "CEFR official resource",
+    "desc": "Language activity, descriptor va proficiency talqini.",
+    "host": "coe.int"
+   },
+   {
+    "type": "doc",
+    "url": "https://ielts.org/take-a-test/preparation-resources/sample-test-questions",
+    "title": "IELTS official sample questions",
+    "desc": "Listening, reading, writing va speaking format namunalari.",
+    "host": "ielts.org"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
    "title": "English Final Assessment: final defense",
-   "desc": "Kurs yakunida IT ish, documentation va interview uchun ingliz tilida ishonchli muloqot qilish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "desc": "Unseen material, vaqtli topshiriq va jonli interview orqali technical English performance'ini dalil bilan ko'rsating.",
    "features": [
     "2 daqiqalik project pitch yozildi va aytildi",
     "CV/LinkedIn summary inglizcha tayyorlandi",
     "10 ta interview answer STAR formatda yozildi",
     "Technical README inglizchaga moslandi",
-    "Speaking self-review checklist to'ldirildi"
+    "Speaking tashqi assessor rubrici bilan baholandi",
+    "Unseen listening va reading task vaqt chegarasida bajarildi",
+    "Jonli follow-up va technical mediation bajarildi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "english-tech-performance-v1",
+    "version": "1.0",
+    "title": "Technical English Performance Assessment",
+    "summary": "Listening, reading, writing, speaking va interactionni unseen material, vaqt chegarasi va tashqi assessor orqali tekshiradi; bu rasmiy CEFR/IELTS sertifikati emas.",
+    "passScore": 70,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "listening",
+      "title": "Listening comprehension",
+      "description": "Unseen meeting, technical explanation yoki incident update'dan asosiy fikr, detail, stance va actionlarni ajratadi.",
+      "points": 15,
+      "minimumPoints": 9,
+      "indicators": [
+       "Birinchi tinglashda gist va speaker purpose aniqlanadi.",
+       "Ikkinchi tinglashdan keyin muhim detail, raqam va action item to'g'ri qayd etiladi.",
+       "Inference fakt bilan aralashtirilmaydi; tushunilmagan joy ochiq belgilanadi."
+      ],
+      "evidence": ["listening-pack", "assessor-sheet"]
+     },
+     {
+      "id": "reading",
+      "title": "Technical reading",
+      "description": "Unseen documentation, issue yoki design note'dan maqsad, constraint, risk va kerakli amalni vaqt ichida topadi.",
+      "points": 15,
+      "minimumPoints": 9,
+      "indicators": [
+       "Gist va information structure tez aniqlanadi.",
+       "Specific detail va writer claim matn daliliga bog'lanadi.",
+       "Technical instruction qisqa, aniq o'z so'zi bilan qayta ifodalanadi."
+      ],
+      "evidence": ["reading-pack", "assessor-sheet"]
+     },
+     {
+      "id": "writing",
+      "title": "Timed workplace writing",
+      "description": "Unseen vaziyat bo'yicha technical email, incident summary yoki design decisionni aniq audience va vaqt chegarasida yozadi.",
+      "points": 20,
+      "minimumPoints": 12,
+      "indicators": [
+       "Task barcha talabini, purpose va audience'ni qoplaydi.",
+       "Paragraph/cohesion mantiqiy; action, owner va deadline tushunarli.",
+       "Grammar/spelling xatolari ma'noni buzmaydi va terminology izchil."
+      ],
+      "evidence": ["timed-writing", "assessor-sheet"]
+     },
+     {
+      "id": "speaking",
+      "title": "Technical speaking",
+      "description": "Project, bug yoki trade-offni structure, intelligibility va yetarli til diapazoni bilan jonli tushuntiradi.",
+      "points": 20,
+      "minimumPoints": 12,
+      "indicators": [
+       "Pitch muammo, rol, qaror, natija va limitationni bog'laydi.",
+       "Pronunciation/pace tinglovchiga ortiqcha kuch talab qilmaydi.",
+       "Unknown wordda paraphrase qiladi, yodlangan scriptga qaytmaydi."
+      ],
+      "evidence": ["speaking-recording", "assessor-sheet"]
+     },
+     {
+      "id": "interaction",
+      "title": "Live interaction va interview",
+      "description": "Kutilmagan savolni tushunadi, clarification so'raydi, javobni rivojlantiradi va professional turn-takingni saqlaydi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Savol noaniq bo'lsa mos clarification yoki confirmation ishlatiladi.",
+       "STAR/project follow-up misol va natija bilan javoblanadi.",
+       "Agree/disagree va correction professional, tabiiy shaklda bajariladi."
+      ],
+      "evidence": ["live-interview", "assessor-sheet"]
+     },
+     {
+      "id": "technical-mediation",
+      "title": "Technical mediation",
+      "description": "Murakkab texnik ma'lumotni boshqa audience uchun qisqartiradi yoki tushuntiradi, ma'noni buzmaydi.",
+      "points": 8,
+      "minimumPoints": 4,
+      "indicators": [
+       "Engineer matni non-technical stakeholder uchun aniq qayta ifodalanadi.",
+       "Risk, uncertainty va trade-off saqlanadi.",
+       "Termin kerak bo'lsa qisqa ta'rif yoki misol bilan ochiladi."
+      ],
+      "evidence": ["mediation-task", "assessor-sheet"]
+     },
+     {
+      "id": "language-control",
+      "title": "Language control va range",
+      "description": "Vocabulary, grammar, cohesion va pronunciation vazifani mustaqil bajarish uchun yetarli va tushunarli.",
+      "points": 5,
+      "minimumPoints": 3,
+      "indicators": [
+       "Technical va workplace vocabulary contextga mos.",
+       "Complex idea sabab, contrast va condition bilan bog'lanadi.",
+       "Xato bo'lsa self-correction kommunikatsiyani buzmaydi."
+      ],
+      "evidence": ["assessor-sheet", "timed-writing", "speaking-recording"]
+     },
+     {
+      "id": "integrity",
+      "title": "Independent performance va integrity",
+      "description": "Unseen/live qismlar ruxsatsiz script, translator yoki AI yordamisiz bajarilgan; preparation log shaffof.",
+      "points": 5,
+      "minimumPoints": 3,
+      "indicators": [
+       "Assessor identity, timing va allowed toolsni qayd etgan.",
+       "Live follow-up oldindan yodlangan javobdan tashqaridagi mustaqillikni ko'rsatadi.",
+       "AI/tutor yordami preparation logda aniq ko'rsatilgan."
+      ],
+      "evidence": ["assessor-sheet", "ai-use-log", "live-interview"]
+     }
+    ],
+    "evidence": [
+     {"id": "listening-pack", "label": "Timed listening pack", "description": "Unseen audio source, vaqt, notes, answers va assessor key/feedback.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "reading-pack", "label": "Timed reading pack", "description": "Unseen technical text, savollar, vaqt va tekshirilgan javoblar.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "timed-writing", "label": "Timed writing sample", "description": "Prompt, start/end time, original draft va assessor feedback; AI bilan qayta yozilmagan.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "speaking-recording", "label": "Project speaking recording", "description": "2-4 daqiqa project explanation va kutilmagan follow-up savollar.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "live-interview", "label": "Live interview recording/record", "description": "STAR, clarification, disagreement va spontaneous technical interaction.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "mediation-task", "label": "Technical mediation task", "description": "Engineer materialini stakeholder uchun og'zaki yoki yozma qayta tushuntirish.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "assessor-sheet", "label": "External assessor rubric", "description": "Har skill bali, minimum, observation, feedback, assessor ismi va sana.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "ai-use-log", "label": "Preparation va AI-use log", "description": "Mashq/tutor/AI yordami hamda unseen/live qismdagi allowed tools.", "kind": "url", "placeholder": "https://...", "required": true}
+    ],
+    "criticalFails": [
+     {"id": "scripted-live", "title": "Live javob o'rniga script o'qildi", "description": "Speaking/interview mustaqil interaction emas, oldindan yozilgan matnni o'qish bilan bajarilgan."},
+     {"id": "unauthorized-tools", "title": "Unseen taskda ruxsatsiz AI/translator", "description": "Listening, reading, timed writing yoki live interviewda assessor ruxsat bermagan yordam ishlatilgan."},
+     {"id": "fabricated-evidence", "title": "Soxta recording, timing yoki assessor dalili", "description": "Audio/video, vaqt, score, identity yoki feedback noto'g'ri ko'rsatilgan."},
+     {"id": "plagiarized-writing", "title": "Writing/plagiarism integrity buzilishi", "description": "Timed sample boshqa manbadan olingan yoki keyin almashtirib qo'yilgan."},
+     {"id": "missing-core-skill", "title": "Asosiy skill baholanmagan", "description": "Listening, reading, writing yoki speakingdan biri unseen/timed/live formatda tekshirilmagan."}
+    ],
+    "defense": {
+     "durationMinutes": 35,
+     "liveChangeMinutes": 15,
+     "format": [
+      "8 daqiqa: unseen listening va qisqa note/action summary.",
+      "8 daqiqa: unseen technical reading va evidence-based answers.",
+      "10 daqiqa: project explanation va technical follow-up.",
+      "9 daqiqa: behavioral interview, clarification va disagreement task.",
+      "15 daqiqa: alohida timed writing yoki unseen mediation task."
+     ],
+     "questions": [
+      "Explain one technical decision, then adapt it for a non-technical manager.",
+      "What evidence shows your solution worked, and what remains uncertain?",
+      "Ask for clarification before answering an intentionally ambiguous requirement.",
+      "Respond to a reviewer who disagrees with your architecture choice.",
+      "Summarize the unseen incident update into owner, action and deadline.",
+      "Correct one statement after the assessor gives new information."
+     ]
+    }
+   }
   },
   "quiz": [
    {
