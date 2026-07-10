@@ -2245,10 +2245,10 @@
   "title": "Telegram Bot Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / TG10",
-  "eyebrow": "10 / FINAL / JOB-READY",
-  "mtitle": "Production bot final: webhook, admin, payment, Mini App, monitoring",
-  "lede": "Telegram Bot kursi yakunida production bot webhook, admin roles, payment/subscription, Mini App va monitoring bilan himoya qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>real production Telegram botni deploy, security va observability bilan chiqarish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "10 / FINAL / PRODUCTION",
+  "mtitle": "Production Telegram platform: bot, API, Mini App va operations",
+  "lede": "Telegram Bot kursi yakunida TypeScript + grammY + Fastify + PostgreSQL + Redis arxitekturasi payment/order, Mini App, observability va failure recovery bilan tashqi reviewer oldida himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Yakuniy production sinov</h3><p>Maqsad: <strong>real biznes oqimiga ega Telegram bot va Mini Appni xavfsiz, takrorlanuvchi va kuzatiladigan servis sifatida chiqarish</strong>. Bot javob berishi yetarli emas; duplicate update, payment idempotency, role bypass, queue retry va deploy rollback ham tekshiriladi.</p><h3>Maqsadli stack</h3><div class=\"chips\"><span class=\"chip t\">TypeScript + grammY</span><span class=\"chip t\">Fastify</span><span class=\"chip\">PostgreSQL</span><span class=\"chip\">Redis queue/cache</span><span class=\"chip\">Prisma yoki Drizzle</span><span class=\"chip\">Docker + OpenTelemetry</span></div><div class=\"callout\"><div><p>Bitirish mezoni</p><p>80/100 ball, har mezon minimumi, barcha majburiy dalillar, jonli himoya va critical-fail yo'qligi birga talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -2264,32 +2264,32 @@
    {
     "id": "tg10-1",
     "html": "Webhook production deploy ishladi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "HTTPS webhook secret bilan tekshiriladi; duplicate update bir marta qayta ishlanadi; rollback qadami hujjatlangan"
    },
    {
     "id": "tg10-2",
     "html": "Admin role va moderation flow tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "oddiy user admin command/APIga kira olmaydi; audit log actor, action, target va vaqtni saqlaydi"
    },
    {
     "id": "tg10-3",
     "html": "Payment/subscription yoki order flow demo qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "successful_payment/order callback serverda verify qilinadi; duplicate callback ikkinchi entitlement yaratmaydi"
    },
    {
     "id": "tg10-4",
     "html": "Mini App yoki web dashboard botga ulandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "Telegram initData serverda verify qilinadi; expired/tampered payload 401/403 bilan rad etiladi"
    },
    {
     "id": "tg10-5",
     "html": "Logging, error handling va healthcheck qo'shildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "correlation id, error rate, latency va queue holati log/metric/trace orqali topiladi; alert dalili bor"
    },
    {
     "id": "tg10-6",
     "html": "Bot security checklist bajarildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "token/secret repoda yo'q; rate limit, input validation, RBAC va webhook auth integration test bilan yopilgan"
    },
    {
     "id": "tg10-7",
@@ -2318,6 +2318,34 @@
     "title": "Telegram Mini Apps",
     "desc": "Mini App.",
     "host": "docs.telegram-mini-apps.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://core.telegram.org/bots/webapps",
+    "title": "Telegram Mini Apps official docs",
+    "desc": "initData, WebApp API va server-side validation.",
+    "host": "core.telegram.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://core.telegram.org/bots/payments-stars",
+    "title": "Telegram Stars payments",
+    "desc": "Digital goods payment flow, refunds va subscription qoidalari.",
+    "host": "core.telegram.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://fastify.dev/docs/latest/",
+    "title": "Fastify documentation",
+    "desc": "Typed API, validation, lifecycle va production server.",
+    "host": "fastify.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://opentelemetry.io/docs/languages/js/",
+    "title": "OpenTelemetry JavaScript",
+    "desc": "Bot, API va worker trace/metric instrumentation.",
+    "host": "opentelemetry.io"
    }
   ],
   "project": {
@@ -2333,14 +2361,159 @@
     "Bot security checklist bajarildi",
     "Qaror-hisobot va README: nima, nega, qanday tekshirilgani yozilgan"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda.",
-    "Boshqa dasturchi loyihani hujjat asosida davom ettira oladi."
-   ]
+   "assessment": {
+    "id": "telegram-production-final-v1",
+    "version": "1.0",
+    "title": "Telegram Production Engineer Final Assessment",
+    "summary": "Bot, Fastify API, PostgreSQL/Redis, Mini App va payment/order oqimini production evidence, tashqi reviewer va jonli failure drill bilan tekshiradi.",
+    "passScore": 80,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "product-ux",
+      "title": "Mahsulot oqimi va Telegram UX",
+      "description": "Bot va Mini App bitta aniq biznes vazifasini loading, error, retry va cancellation holatlari bilan bajaradi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Command, inline keyboard va Mini App navigation ortga qaytish bilan tushunarli.",
+       "Slow API, expired session, payment cancel va empty state foydalanuvchiga aniq ko'rsatiladi.",
+       "Admin va oddiy user oqimlari aralashmaydi."
+      ],
+      "evidence": ["repository", "live-bot", "mini-app", "demo-video"]
+     },
+     {
+      "id": "bot-architecture",
+      "title": "TypeScript va grammY arxitekturasi",
+      "description": "Update routing, middleware, context, conversation/state va domain service chegaralari testlanadigan tuzilishga ega.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Handlerlar biznes logikani service/repository qatlamidan ajratadi.",
+       "Typed context va validation noma'lum payloadni xavfsiz rad etadi.",
+       "Graceful shutdown webhook, worker va database connectionni to'g'ri yopadi."
+      ],
+      "evidence": ["repository", "architecture", "ci-run"]
+     },
+     {
+      "id": "api-data",
+      "title": "Fastify API va transactional data",
+      "description": "Fastify contract, PostgreSQL schema va ORM migrationlari tenant/user/order yaxlitligini saqlaydi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Schema validation va yagona error contract bot/Mini App bilan mos.",
+       "Migration va seed bo'sh database'da bitta buyruq bilan ishlaydi.",
+       "Transaction/concurrency testi duplicate order yoki entitlementni to'xtatadi."
+      ],
+      "evidence": ["repository", "ci-run", "architecture"]
+     },
+     {
+      "id": "payments-orders",
+      "title": "Payment, subscription va order correctness",
+      "description": "Payment/order lifecycle server-side verification, idempotency, reconciliation va refund/cancel holatlari bilan boshqarilgan.",
+      "points": 15,
+      "minimumPoints": 9,
+      "indicators": [
+       "Entitlement faqat tasdiqlangan successful payment/orderdan keyin yaratiladi.",
+       "Duplicate update/callback ikkinchi charge yoki entitlement yaratmaydi.",
+       "Pending, failed, refunded/canceled va reconciliation holatlari hisobotda bor."
+      ],
+      "evidence": ["payment-report", "repository", "ci-run"]
+     },
+     {
+      "id": "security",
+      "title": "Webhook, Mini App va access security",
+      "description": "Bot token, webhook, initData, RBAC va sensitive data oqimi amaliy negative testlar bilan himoyalangan.",
+      "points": 13,
+      "minimumPoints": 8,
+      "indicators": [
+       "Webhook secret token va Mini App initData serverda verify qilinadi.",
+       "Tampered/expired payload hamda admin bypass integration testlari bor.",
+       "Secretlar environment/deployment secretida; loglarda token yoki payment data yo'q."
+      ],
+      "evidence": ["repository", "security-report", "ci-run"]
+     },
+     {
+      "id": "reliability",
+      "title": "Redis queue, retry va idempotency",
+      "description": "Uzoq ishlar HTTP/update handlerdan ajratilgan; retry, backoff va dead-letter holati kuzatiladi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Queue job idempotency key va bounded retry bilan ishlaydi.",
+       "Telegram/API timeout, Redis unavailable va worker restart failure drillda sinalgan.",
+       "Backpressure va rate limit foydalanuvchi tajribasini buzmasdan boshqariladi."
+      ],
+      "evidence": ["repository", "operations-runbook", "ci-run"]
+     },
+     {
+      "id": "observability-deploy",
+      "title": "Deploy, OpenTelemetry va operations",
+      "description": "Docker deploy, health/readiness, structured log, metric, trace, alert va rollback real runbook bilan ishlaydi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Bot update -> Fastify -> database/worker oqimi correlation id yoki trace bilan kuzatiladi.",
+       "Latency, error rate, queue depth va webhook failure uchun metric/alert bor.",
+       "Deploy rollback va database backup/restore mashqi dalil bilan bajarilgan."
+      ],
+      "evidence": ["live-bot", "operations-runbook", "architecture"]
+     },
+     {
+      "id": "quality-defense",
+      "title": "Test, hujjat va jonli himoya",
+      "description": "Muhim oqimlar avtomatik testlanadi va nomzod arxitektura hamda yangi change requestni mustaqil himoya qiladi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Unit, integration va end-to-end testlar CI gate sifatida ishlaydi.",
+       "README, ADR, API contract, runbook va AI-use log bir-biriga mos.",
+       "Tasodifiy command, webhook yoki failure change jonli test bilan bajarilgan."
+      ],
+      "evidence": ["repository", "ci-run", "ai-use-log", "demo-video"]
+     }
+    ],
+    "evidence": [
+     {"id": "repository", "label": "Production bot repository", "description": "Bot, Fastify API, Mini App, migration, tests, Docker va README mavjud repository.", "kind": "url", "placeholder": "https://github.com/...", "required": true},
+     {"id": "live-bot", "label": "Ishlaydigan bot/deployment", "description": "Reviewer uchun test user va xavfsiz test ma'lumotlari bilan ishlaydigan bot yoki preview.", "kind": "url", "placeholder": "https://t.me/...", "required": true},
+     {"id": "mini-app", "label": "Mini App deployment", "description": "HTTPS Mini App asosiy business flow, error va expired-session holatlari bilan.", "kind": "url", "placeholder": "https://app.example.com", "required": true},
+     {"id": "ci-run", "label": "CI pipeline natijasi", "description": "Lint, typecheck, unit/integration/e2e test, migration va Docker build o'tgan run.", "kind": "url", "placeholder": "https://github.com/.../actions/runs/...", "required": true},
+     {"id": "architecture", "label": "Arxitektura va ADR", "description": "Bot, Fastify, PostgreSQL, Redis, Mini App, payment va trust boundary diagrammasi.", "kind": "url", "placeholder": "https://github.com/.../docs/architecture.md", "required": true},
+     {"id": "payment-report", "label": "Payment/order verification report", "description": "Success, duplicate, failed, refund/cancel, reconciliation va entitlement testlari.", "kind": "url", "placeholder": "https://github.com/.../docs/payment-report.md", "required": true},
+     {"id": "security-report", "label": "Security verification report", "description": "Webhook secret, initData, RBAC, rate limit va sensitive-log negative testlari.", "kind": "url", "placeholder": "https://github.com/.../docs/security.md", "required": true},
+     {"id": "operations-runbook", "label": "Operations runbook", "description": "Deploy, observability, incident, queue recovery, rollback va backup/restore dalili.", "kind": "url", "placeholder": "https://github.com/.../docs/runbook.md", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va ownership log", "description": "AI/tashqi yordam, tekshiruv va nomzodning mustaqil hissasi.", "kind": "url", "placeholder": "https://github.com/.../docs/ai-use.md", "required": true},
+     {"id": "demo-video", "label": "Qisqa demo video", "description": "5-8 daqiqada user flow, payment/order, Mini App va failure recovery.", "kind": "url", "placeholder": "https://...", "required": false}
+    ],
+    "criticalFails": [
+     {"id": "secret-exposure", "title": "Bot/payment secreti oshkor qilingan", "description": "Bot token, provider token, webhook secret yoki database credential repository/log/client bundle ichida qolgan."},
+     {"id": "payment-integrity", "title": "Payment/order integrity buzilgan", "description": "Tasdiqlanmagan yoki duplicate callback ikkinchi charge, order yoki entitlement yaratadi."},
+     {"id": "webapp-bypass", "title": "Mini App initData yoki admin bypass", "description": "Tampered/expired initData qabul qilinadi yoki oddiy user admin amali/ma'lumotiga kira oladi."},
+     {"id": "sensitive-card-data", "title": "Taqiqlangan payment data saqlangan", "description": "Bot yoki backend zarur bo'lmagan card/payment credentialni saqlaydi yoki loglaydi."},
+     {"id": "fabricated-evidence", "title": "Soxta payment, load yoki test dalili", "description": "Transaction, metric, CI, demo yoki mualliflik natijasi noto'g'ri ko'rsatilgan."},
+     {"id": "unreproducible", "title": "Loyiha qayta ko'tarilmaydi", "description": "Reviewer hujjat orqali servislarni ishga tushira olmaydi yoki asosiy bot/payment flow ishlamaydi."}
+    ],
+    "defense": {
+     "durationMinutes": 45,
+     "liveChangeMinutes": 15,
+     "format": [
+      "5 daqiqa: mahsulot muammosi, user/admin oqimi va acceptance criteria.",
+      "12 daqiqa: bot, Mini App va payment/order end-to-end demo.",
+      "10 daqiqa: arxitektura, transaction, idempotency va security nazoratlari.",
+      "8 daqiqa: OpenTelemetry trace, failure drill, rollback va recovery.",
+      "10 daqiqa: reviewer savollari; keyin tasodifiy command/webhook change."
+     ],
+     "questions": [
+      "Telegram bir update'ni qayta yuborsa, qaysi qatlam duplicate side effectni to'xtatadi?",
+      "Payment tasdiqlanmasdan entitlement yaratilmasligini transaction va testdan ko'rsating.",
+      "Mini App initData qayerda va qanday verify qilinadi; expired payloadni jonli rad eting.",
+      "Redis yoki worker ishlamasa update yo'qoladimi, qayta ishlanadimi yoki DLQga o'tadimi?",
+      "Bitta user flow uchun botdan databasegacha trace/correlation idni toping.",
+      "Reviewer bergan yangi command yoki webhook failure holatini test bilan jonli qo'shing."
+     ]
+    }
+   }
   },
   "quiz": [
    {
