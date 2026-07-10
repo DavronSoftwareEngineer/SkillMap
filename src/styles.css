@@ -2151,6 +2151,55 @@ table.vocab td {
 }
 
 /* Kitob ro'yxati - muqova (foto + fallback karta) */
+.booklegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 10px;
+}
+.booklegend span,
+.bookaccess {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.booklegend span::before,
+.bookaccess::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.booklegend .free,
+.bookaccess.free {
+  color: #6ee7a8;
+  border-color: rgba(110, 231, 168, 0.28);
+  background: rgba(110, 231, 168, 0.08);
+}
+.booklegend .library,
+.bookaccess.library {
+  color: #f4a23c;
+  border-color: rgba(244, 162, 60, 0.3);
+  background: rgba(244, 162, 60, 0.08);
+}
+.booklegend .official,
+.bookaccess.official {
+  color: #8fb8ff;
+  border-color: rgba(143, 184, 255, 0.3);
+  background: rgba(143, 184, 255, 0.08);
+}
+.bookaccess.unavailable {
+  color: var(--fg-faint);
+}
 .booklist {
   display: flex;
   flex-direction: column;
@@ -2158,13 +2207,31 @@ table.vocab td {
   margin: 12px 0 16px;
 }
 .bookcard {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) minmax(154px, 184px);
   gap: 14px;
-  align-items: stretch;
+  align-items: center;
+  min-height: 138px;
   background: var(--ink-2);
   border: 1px solid var(--line);
-  border-radius: 11px;
+  border-radius: 8px;
   padding: 12px 14px;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, background-color 0.15s;
+}
+.bookcard:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+.bookcard.unavailable {
+  cursor: default;
+  opacity: 0.72;
 }
 .bookcover {
   position: relative;
@@ -2245,6 +2312,295 @@ table.vocab td {
   font-size: 12.5px;
   color: var(--fg-dim);
   line-height: 1.4;
+}
+.bookaction {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px;
+  grid-template-rows: auto auto;
+  align-content: center;
+  gap: 7px 9px;
+  min-width: 0;
+  border-left: 1px solid var(--line-soft);
+  padding-left: 14px;
+}
+.bookaccess {
+  grid-column: 1;
+  min-width: 0;
+}
+.booksource {
+  grid-column: 1;
+  min-width: 0;
+  color: var(--fg-faint);
+  font-size: 11px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.bookopen {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--bc, var(--teal));
+  background: var(--surface);
+  font-size: 18px;
+  line-height: 1;
+}
+.bookcard:hover .bookopen {
+  border-color: var(--bc, var(--teal));
+  background: color-mix(in srgb, var(--bc, var(--teal)) 10%, var(--surface));
+}
+
+/* SkillMap ichidagi elektron kitob reader */
+.bookreader {
+  min-width: 0;
+}
+.reader-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  border: 0;
+  padding: 7px 2px;
+  background: transparent;
+  color: var(--fg-dim);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.reader-back span {
+  color: var(--teal);
+  font-size: 18px;
+}
+.reader-back:hover {
+  color: var(--fg);
+}
+.reader-back:focus-visible,
+.reader-modes button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+.reader-head {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+.reader-head .bookcover {
+  width: 90px;
+  height: 128px;
+}
+.reader-head .bc-num {
+  display: none;
+}
+.reader-bookmeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.reader-bookmeta h2 {
+  max-width: 30ch;
+  margin: 10px 0 3px;
+  color: var(--fg);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+.reader-bookmeta > b {
+  color: var(--bc, var(--teal));
+  font-size: 14px;
+}
+.reader-bookmeta p {
+  max-width: 76ch;
+  margin: 8px 0 0;
+  color: var(--fg-dim);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.reader-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.reader-modes {
+  display: inline-flex;
+  gap: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 3px;
+  background: var(--ink-2);
+}
+.reader-modes button {
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  background: transparent;
+  color: var(--fg-faint);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.reader-modes button.active {
+  background: var(--surface-2);
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--teal) 45%, var(--line));
+}
+.reader-source {
+  min-width: 0;
+  color: var(--fg-faint);
+  font-size: 11px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.google-book-stage,
+.source-book-stage {
+  position: relative;
+  width: 100%;
+  height: min(74vh, 780px);
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f5f7f8;
+}
+.google-book-canvas,
+.source-book-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.source-book-stage {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+.reader-frame-note {
+  border-top: 1px solid var(--line);
+  padding: 8px 12px;
+  background: var(--ink-2);
+  color: var(--fg-faint);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.reader-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  background: var(--ink-2);
+  color: var(--fg);
+  text-align: center;
+}
+.reader-state span {
+  max-width: 50ch;
+  color: var(--fg-dim);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.reader-loader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--line);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: reader-spin 0.8s linear infinite;
+}
+.google-attribution {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+  border-radius: 5px;
+  padding: 4px 7px;
+  background: rgba(11, 16, 20, 0.78);
+  color: #fff;
+  font-size: 10px;
+  pointer-events: none;
+}
+@keyframes reader-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 680px) {
+  .bookcard {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 11px;
+    min-height: 118px;
+    padding: 10px;
+  }
+  .bookcard .bookcover {
+    width: 64px;
+    height: 92px;
+  }
+  .bookaction {
+    grid-column: 2;
+    align-self: auto;
+    border-top: 1px solid var(--line-soft);
+    border-left: 0;
+    padding-top: 8px;
+    padding-left: 0;
+  }
+  .bookmeta b {
+    font-size: 14px;
+  }
+  .bookmeta .note {
+    font-size: 12px;
+  }
+  .reader-head {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .reader-head .bookcover {
+    width: 64px;
+    height: 92px;
+  }
+  .reader-bookmeta h2 {
+    margin-top: 7px;
+    font-size: 24px;
+  }
+  .reader-bookmeta p {
+    grid-column: 1 / -1;
+    font-size: 12px;
+  }
+  .reader-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .reader-modes {
+    display: flex;
+    width: 100%;
+  }
+  .reader-modes button {
+    flex: 1;
+  }
+  .reader-source {
+    text-align: left;
+  }
+  .google-book-stage,
+  .source-book-stage {
+    height: 68vh;
+    min-height: 480px;
+  }
 }
 
 /* Modul ichidagi "Bu modulga oid kitob" eslatmasi */
@@ -2423,6 +2779,23 @@ table.vocab td {
 }
 .gtable tr:hover td {
   background: rgba(255, 255, 255, 0.02);
+}
+@media (max-width: 680px) {
+  .gtable {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .gtable::-webkit-scrollbar {
+    height: 7px;
+  }
+  .gtable::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
 }
 
 /* Talaffuz tugmalari */

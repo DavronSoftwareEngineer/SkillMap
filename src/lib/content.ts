@@ -2,6 +2,7 @@
 // Har xato "kursId/zoom: xabar" ko'rinishida qaytadi; bo'sh massiv = hammasi joyida.
 import type { Module } from "../types";
 import type { CourseMeta } from "../data/courses";
+import { getBookLink } from "./books";
 
 const EXERCISE_TYPES = ["gap", "choice", "listen", "speak"];
 
@@ -192,11 +193,31 @@ export function validateModules(courseId: string, modules: Module[]): string[] {
   return errors;
 }
 
-// Kurs metasi: moduleBooks ko'rsatkichlari mavjud modul va kitobga ishora qilishini tekshiradi.
+// Kurs metasi: kitob katalogi va moduleBooks ko'rsatkichlarini tekshiradi.
 export function validateCourseMeta(meta: CourseMeta, modules: Module[]): string[] {
   const errors: string[] = [];
   const zooms = new Set(modules.map((m) => m.zoom));
-  const bookNs = new Set((meta.books || []).map((b) => b.n));
+  const books = meta.books || [];
+  const bookNs = new Set<number>();
+
+  books.forEach((book, index) => {
+    const where = `${meta.id}: books[${index}]`;
+    if (!Number.isInteger(book.n) || book.n < 1) errors.push(`${where}: n yaroqsiz`);
+    else if (bookNs.has(book.n)) errors.push(`${where}: n ${book.n} takrorlangan`);
+    else bookNs.add(book.n);
+
+    if (!isNonEmptyString(book.title)) errors.push(`${where}: title bo'sh`);
+    if (!isNonEmptyString(book.author)) errors.push(`${where}: author bo'sh`);
+    if (!isNonEmptyString(book.note)) errors.push(`${where}: note bo'sh`);
+    if (book.isbn && !/^(?:\d{10}|\d{13})$/.test(book.isbn)) {
+      errors.push(`${where}: ISBN faqat 10 yoki 13 raqam bo'lishi kerak`);
+    }
+
+    const link = getBookLink(book);
+    if (!link) errors.push(`${where}: qonuniy elektron manba topilmadi`);
+    else if (!/^https:\/\//.test(link.url)) errors.push(`${where}: kitob manbasi HTTPS emas`);
+  });
+
   Object.entries(meta.moduleBooks || {}).forEach(([zoom, n]) => {
     if (!zooms.has(zoom)) errors.push(`${meta.id}: moduleBooks "${zoom}" moduli mavjud emas`);
     if (!bookNs.has(n)) errors.push(`${meta.id}: moduleBooks "${zoom}" -> ${n}-kitob mavjud emas`);

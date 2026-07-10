@@ -141,3 +141,31 @@ describe("kontent validatsiyasi - xatolarni ushlaydi", () => {
     expect(v("x", [base])).toEqual([]);
   });
 });
+
+describe("kitob katalogi validatsiyasi", () => {
+  const meta = {
+    id: "books-test",
+    name: "Books",
+    brandTitle: "Books",
+    brandSub: "Books",
+    labels: {},
+  };
+
+  it("ISBNsiz va katalogda yo'q kitobni ushlaydi", () => {
+    const errors = validateCourseMeta({
+      ...meta,
+      books: [{ n: 1, title: "Unknown", author: "Author", accent: "#fff", note: "Note" }],
+    }, []);
+
+    expect(errors.join("\n")).toContain("qonuniy elektron manba topilmadi");
+  });
+
+  it("noto'g'ri ISBNni ushlaydi", () => {
+    const errors = validateCourseMeta({
+      ...meta,
+      books: [{ n: 1, title: "Book", author: "Author", isbn: "12-x", accent: "#fff", note: "Note" }],
+    }, []);
+
+    expect(errors.join("\n")).toContain("ISBN faqat 10 yoki 13 raqam");
+  });
+});

@@ -4,7 +4,7 @@ import { RichHtml } from "./RichHtml";
 import { CodeBlock } from "./CodeBlock";
 import { Quiz } from "./Quiz";
 import { Exercises } from "./Exercises";
-import { BookCover } from "./Books";
+import { BookCover } from "./BookCover";
 import { ProjectAssessment } from "./ProjectAssessment";
 
 const CheckIcon = () => (
