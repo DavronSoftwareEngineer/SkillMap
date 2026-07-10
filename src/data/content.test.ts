@@ -17,6 +17,18 @@ describe("kontent validatsiyasi - barcha kurslar", () => {
   });
 });
 
+describe("professional final - barcha kurslar", () => {
+  COURSES.forEach((meta) => {
+    it(`${meta.id} kursida bitta tashqi baholanadigan final bor`, async () => {
+      const modules = await loadCourseModules(meta.id);
+      const finals = modules.filter((module) => module.project?.assessment);
+
+      expect(finals, `${meta.id}: professional assessment soni`).toHaveLength(1);
+      expect(finals[0].project?.assessment?.assessorRequired).toBe(true);
+    });
+  });
+});
+
 describe("kontent validatsiyasi - xatolarni ushlaydi", () => {
   const base: Module = {
     zoom: "t1",

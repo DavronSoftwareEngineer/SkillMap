@@ -814,13 +814,13 @@
  },
  {
   "zoom": "P3",
-  "title": "Misol & bosqich",
+   "title": "Misol & tekshiruv",
   "sub": "Few-shot",
   "coord": "Examples / P3",
-  "eyebrow": "03 / Misol bilan o'rgatish & bosqichma-bosqich",
-  "mtitle": "Misol ber, bosqichma-bosqich o'ylat",
-  "lede": "Modelga <strong>misol ko'rsatsang</strong> (few-shot), u naqshni nusxa qiladi. Murakkab vazifada <strong>\"bosqichma-bosqich o'yla\"</strong> (chain-of-thought) desang, aniqroq bo'ladi.",
-  "doc": "<div class='prose'><h3>NEGA muhim: ko'rsatish - aytishdan kuchli</h3><p>Ba'zan vazifani so'z bilan tushuntirish qiyin, lekin <strong>misol</strong> ko'rsatish oson. Model naqshni g'oyat yaxshi nusxa qiladi. Murakkab mantiqda esa modelni \"o'ylashga\" majbur qilsang, xato keskin kamayadi.</p><h3>QANDAY ishlaydi: few-shot mexanizmi</h3><p>Zero / one / few-shot - misollar soni bilan farqlanadi:</p><div class=\"exlist\"><div class=\"ex\"><b>Zero-shot</b><span>misolsiz, faqat vazifa</span></div><div class=\"ex\"><b>One-shot</b><span>bitta misol bilan</span></div><div class=\"ex\"><b>Few-shot</b><span>bir necha misol bilan - naqsh aniq</span></div></div><p>\"kirish -> chiqish\" namunalarini berganingda, model shu naqshni kontekstdan o'qiydi va yangi kirish uchun <strong>xuddi shu formatda</strong> davom ettiradi. U qoidani so'zsiz, misoldan \"payqaydi\".</p><figure class='svgfig'><svg viewBox='0 0 680 190' role='img' aria-label='Few-shot: bir necha kirish chiqish misoli, songra yangi kirish uchun model chiqishni bashorat qiladi'><rect class='box' x='20' y='20' width='250' height='36' rx='6'/><text x='30' y='43' class='muted'>Text: \"I love this!\"</text><path class='edge' d='M275 38 H320' marker-end='url(#arP3a)'/><rect class='boxa' x='320' y='20' width='150' height='36' rx='6'/><text x='395' y='43' text-anchor='middle'>Positive</text><rect class='box' x='20' y='66' width='250' height='36' rx='6'/><text x='30' y='89' class='muted'>Text: \"It's okay.\"</text><path class='edge' d='M275 84 H320' marker-end='url(#arP3a)'/><rect class='boxa' x='320' y='66' width='150' height='36' rx='6'/><text x='395' y='89' text-anchor='middle'>Neutral</text><rect class='box' x='20' y='120' width='250' height='40' rx='6'/><text x='30' y='145' class='accent'>Text: \"The worst.\"</text><path class='edga' d='M275 140 H320' marker-end='url(#arP3b)'/><rect class='boxa' x='320' y='120' width='150' height='40' rx='6'/><text x='395' y='145' text-anchor='middle'>? (bashorat)</text><text x='560' y='90' text-anchor='middle' class='muted'>misollar</text><text x='560' y='108' text-anchor='middle' class='muted'>naqshni</text><text x='560' y='126' text-anchor='middle' class='muted'>beradi</text><defs><marker id='arP3a' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker><marker id='arP3b' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Few-shot: kirish->chiqish misollari naqsh beradi, model yangi kirish uchun shuni davom ettiradi.</figcaption></figure><h3>QANDAY ishlaydi: chain-of-thought</h3><p>Model javobni token-token yozadi. \"Think step by step\" desang, u avval <strong>oraliq qadamlarni</strong> yozadi, va keyingi tokenlar shu qadamlarga tayanadi - shuning uchun yakuniy javob aniqroq chiqadi. Qadamlarsiz model to'g'ridan-to'g'ri javobga \"sakraydi\" va adashadi. Eslatma: zamonaviy reasoning modellar (2025+) qadamlarni sukut bo'yicha o'z ichida o'ylab chiqadi, shuning uchun ularga \"step by step\" deyish uncha muhim emas - lekin bu usul klassik modellarda va fikrlashni ko'rinadigan qilishda hali ham foydali.</p><div class=\"exlist\"><div class=\"ex\"><b>Solve this. Think step by step, then give the final answer.</b><span>qadamlar + yakuniy javob</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 130' role='img' aria-label='Chain-of-thought: savol, oraliq qadam 1, qadam 2, yakuniy javob'><rect class='box' x='15' y='45' width='120' height='44' rx='8'/><text x='75' y='72' text-anchor='middle'>Savol</text><path class='edga' d='M135 67 H185' marker-end='url(#arP3c)'/><rect class='boxa' x='185' y='45' width='120' height='44' rx='8'/><text x='245' y='72' text-anchor='middle'>Qadam 1</text><path class='edga' d='M305 67 H355' marker-end='url(#arP3c)'/><rect class='boxa' x='355' y='45' width='120' height='44' rx='8'/><text x='415' y='72' text-anchor='middle'>Qadam 2</text><path class='edga' d='M475 67 H525' marker-end='url(#arP3c)'/><rect class='box' x='525' y='45' width='140' height='44' rx='8'/><text x='595' y='72' text-anchor='middle'>Yakuniy javob</text><text x='340' y='115' text-anchor='middle' class='muted'>oraliq qadamlar xatoni kamaytiradi</text><defs><marker id='arP3c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Chain-of-thought: model oraliq qadamlarni yozib, yakuniy javobga izchil keladi.</figcaption></figure><h3>Amaliy maslahat: delimiter</h3><p>Matn va ko'rsatma aralashmasin uchun ajratgich ishlat: <code class='inline'>\"\"\"</code>, <code class='inline'>###</code>, yoki teglar. Bu modelga \"qayer ko'rsatma, qayer ma'lumot\"ni aniq ko'rsatadi va prompt injection xavfini ham kamaytiradi.</p><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Keng tarqalgan xato</p><p>Sifatsiz yoki ziddiyatli misollar berish. Model misolni ko'r-ko'rona nusxa qiladi - agar misolda xato bo'lsa, xatoni ham takrorlaydi. 2-3 ta <strong>toza, izchil</strong> misol o'nlab chalkash misoldan yaxshiroq.</p></div></div><div class=\"callout\"><span class=\"ic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/></svg></span><div><p>Amaliy maslahat</p><p>Few-shot - eng kuchli texnikalardan. \"Shuning kabi qil\" deb 2-3 sifatli misol ber, natija keskin yaxshilanadi. Oddiy vazifada esa misolsiz (zero-shot) ishlab, keraksiz token sarflama.</p></div></div></div>",
+   "eyebrow": "03 / Misol bilan o'rgatish & tekshiriladigan javob",
+   "mtitle": "Avval sodda so'ra, kerak bo'lsa misol ber",
+   "lede": "Avval <strong>aniq zero-shot prompt</strong> bilan baseline ol. Eval natijasi yetarli bo'lmasa sifatli misol qo'sh; reasoning modeldan yashirin fikrlash zanjirini emas, <strong>yakun, taxmin va tekshiruv</strong>ni so'ra.",
+   "doc": "<div class='prose'><h3>NEGA muhim: murakkab prompt har doim kuchli emas</h3><p>Zamonaviy reasoning modellar bilan eng yaxshi boshlanish - vazifa, kontekst, cheklov va muvaffaqiyat mezonini <strong>sodda va to'g'ridan-to'g'ri</strong> yozish. Avval zero-shot baseline ol, keyin eval qaysi xatoni ko'rsatsa, faqat o'sha muammo uchun misol yoki qoida qo'sh.</p><div class=\"exlist\"><div class=\"ex\"><b>1. Success criteria</b><span>to'g'ri natija nimaga o'xshaydi?</span></div><div class=\"ex\"><b>2. Zero-shot baseline</b><span>eng sodda promptni sinovdan o'tkaz</span></div><div class=\"ex\"><b>3. Eval</b><span>typical, edge va adversarial holatlarni o'lcha</span></div><div class=\"ex\"><b>4. Few-shot</b><span>faqat eval zarurat ko'rsatsa misol qo'sh</span></div></div><figure class='svgfig'><svg viewBox='0 0 680 150' role='img' aria-label='Promptni eval asosida yaxshilash sikli'><rect class='box' x='15' y='50' width='130' height='44' rx='8'/><text x='80' y='77' text-anchor='middle'>Vazifa</text><path class='edga' d='M145 72 H190' marker-end='url(#arP3c)'/><rect class='boxa' x='190' y='50' width='130' height='44' rx='8'/><text x='255' y='77' text-anchor='middle'>Baseline</text><path class='edga' d='M320 72 H365' marker-end='url(#arP3c)'/><rect class='box' x='365' y='50' width='130' height='44' rx='8'/><text x='430' y='77' text-anchor='middle'>Eval</text><path class='edga' d='M495 72 H540' marker-end='url(#arP3c)'/><rect class='boxa' x='540' y='50' width='125' height='44' rx='8'/><text x='602' y='77' text-anchor='middle'>Tuzatish</text><path class='edge' d='M602 102 C580 135 280 140 255 102' marker-end='url(#arP3c)'/><defs><marker id='arP3c' markerWidth='9' markerHeight='9' refX='7' refY='3' orient='auto'><path d='M0 0 L7 3 L0 6 Z' fill='currentColor'/></marker></defs></svg><figcaption>Prompt o'zgarishi taxmin bilan emas, eval natijasi bilan boshqariladi.</figcaption></figure><h3>Few-shot qachon kerak?</h3><p>Format, tasnif chegarasi yoki tashkilot uslubini faqat so'z bilan aniq ifodalash qiyin bo'lsa, 2-3 ta <strong>toza va xilma-xil kirish -> chiqish</strong> misoli ber. Misollar test to'plamini almashtirmaydi: yangi, ko'rsatilmagan holatlarda ham natijani tekshir.</p><h3>Reasoning modeldan nimani so'rash kerak?</h3><p>Yashirin chain-of-thoughtni ko'rsatishni talab qilma. <strong>Yakuniy javob, muhim taxminlar, qisqa asos, manba va mustaqil tekshiruv</strong> so'ra. Bu javobni audit qilishga yordam beradi, lekin ichki fikrlash jarayonini oshkor qilishga tayanmaydi.</p><div class=\"exlist\"><div class=\"ex\"><b>Give the final answer, key assumptions, and one independent verification.</b><span>qisqa va tekshiriladigan chiqish</span></div></div><h3>Delimiter - struktura, xavfsizlik devori emas</h3><p><code class='inline'>###</code>, XML teg yoki uchlik qo'shtirnoq ko'rsatma bilan untrusted datani ajratadi. Ammo delimiterning o'zi prompt injectionni to'xtatmaydi; input validation, eng kam tool ruxsati, server-side tekshiruv va xavfli amal uchun inson tasdig'i ham kerak.</p><div class=\"callout\"><div><p>Keng tarqalgan xato</p><p>Bir nechta chiroyli misolda ishlagan promptni production-ready deb hisoblash. Sifat alohida development va holdout eval to'plamida, model yoki prompt o'zgarganda qayta o'lchanadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -833,12 +833,12 @@
    },
    {
     "heading": {
-     "h": "Bosqichma-bosqich",
-     "p": "Murakkab mantiq uchun."
+      "h": "Tekshiriladigan reasoning chiqishi",
+      "p": "Yakun, taxmin va mustaqil tekshiruv."
     },
-    "title": "Chain-of-thought",
+     "title": "Reasoning-model prompt",
     "lang": "text",
-    "code": "A shop sells pens for 3000 so'm each.\nI buy 4 pens and pay with 20000 so'm.\nThink step by step, then give the change."
+     "code": "A shop sells pens for 3000 so'm each.\nI buy 4 pens and pay with 20000 so'm.\nReturn: final change, key assumptions, and one independent arithmetic check.\nDo not provide hidden chain-of-thought."
    }
   ],
   "tasks": [
@@ -854,18 +854,18 @@
    },
    {
     "id": "pr3-3",
-    "html": "\"Think step by step\" ni mantiqiy vazifada sinadim",
-    "crit": "javob aniqroq bo'ldi"
+     "html": "Reasoning javobida yakun, taxmin va tekshiruvni ajratdim",
+     "crit": "yashirin fikrlash emas, qisqa tekshiriladigan asos bor"
    },
    {
     "id": "pr3-4",
     "html": "Delimiter (\"\"\" yoki ###) ishlatdim",
-    "crit": "matn va ko'rsatma ajratilgan"
+     "crit": "matn va ko'rsatma ajratilgan; delimiter xavfsizlik devori emasligi yozilgan"
    },
    {
     "id": "pr3-5",
-    "html": "Playgroundda few-shot vs zero-shot ni taqqosladim",
-    "crit": "farqni ko'rding"
+     "html": "Zero-shot va few-shotni bir xil eval to'plamida taqqosladim",
+     "crit": "natija score, xato turi va token/latency bilan solishtirilgan"
    }
   ],
   "resources": [
@@ -878,10 +878,10 @@
    },
    {
     "type": "doc",
-    "url": "https://www.promptingguide.ai/techniques/cot",
-    "title": "Chain-of-thought",
-    "desc": "Bosqichma-bosqich fikrlash",
-    "host": "promptingguide.ai"
+     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices",
+     "title": "OpenAI reasoning best practices",
+     "desc": "Reasoning modellar uchun sodda prompt va tekshiriladigan chiqish.",
+     "host": "developers.openai.com"
    },
    {
     "type": "doc",
@@ -914,7 +914,7 @@
    "variants": [
     {
      "title": "Few-shot tasnif - Work Assistant",
-     "desc": "Misol & bosqich texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
+      "desc": "Few-shot va tekshiruv texnikasini ishdagi real vazifaga mos prompt assistantga aylantir.",
      "deliverables": [
       "System/role prompt",
       "3 test input",
@@ -946,15 +946,15 @@
     "level": "easy"
    },
    {
-    "q": "\"Think step by step\" qachon foydali?",
+     "q": "Reasoning model bilan eng to'g'ri boshlanish qaysi?",
     "a": [
-     "salomlashda",
-     "murakkab mantiq/matematikada",
-     "qisqa javobda",
-     "tarjimada"
+      "yashirin fikrlash zanjirini to'liq talab qilish",
+      "sodda, aniq zero-shot prompt va o'lchanadigan success criteria",
+      "iloji boricha ko'p misol joylash",
+      "faqat uzun rol tavsifi yozish"
     ],
     "c": 1,
-    "w": "Oraliq qadamlar xatoni kamaytiradi.",
+     "w": "Rasmiy tavsiya: avval sodda va aniq so'ra; natijani eval bilan o'lcha.",
     "level": "practical"
    },
    {
@@ -997,15 +997,15 @@
    },
    {
     "type": "choice",
-    "q": "Matematik masalada aniqlik uchun qo'shasan:",
+     "q": "Matematik javobni audit qilish uchun nimani so'raysan?",
     "options": [
-     "\"be fast\"",
-     "\"think step by step\"",
-     "\"be short\"",
-     "\"in English\""
+      "faqat tez javob",
+      "yakun, muhim taxmin va mustaqil tekshiruv",
+      "yashirin chain-of-thoughtni to'liq chiqarish",
+      "faqat ingliz tilida yozish"
     ],
     "correct": 1,
-    "why": "Bosqichma-bosqich - kamroq xato."
+     "why": "Tekshiriladigan yakun va mustaqil check xatoni ko'rishga yordam beradi."
    },
    {
     "type": "choice",
@@ -1045,11 +1045,11 @@
     "ex": "Few-shot improves accuracy."
    },
    {
-    "w": "chain-of-thought",
+     "w": "reasoning summary",
     "ipa": "",
     "pos": "",
-    "uz": "bosqichma-bosqich fikrlash",
-    "ex": "Ask it to think step by step."
+     "uz": "qisqa asos va tekshiruv xulosasi",
+     "ex": "Give the answer, assumptions, and a concise verification."
    },
    {
     "w": "delimiter",
@@ -1080,9 +1080,9 @@
     "ex": "Text: ... -> Label:"
    },
    {
-    "topic": "Chain-of-thought",
-    "rule": "\"Think step by step\".",
-    "ex": "Murakkab mantiq uchun"
+     "topic": "Reasoning output",
+     "rule": "Yashirin fikrlashni emas, yakun, taxmin va tekshiruvni so'ra.",
+     "ex": "Final answer + assumptions + independent check"
    },
    {
     "topic": "Delimiter",
@@ -2177,125 +2177,474 @@
  },
  {
   "zoom": "P7",
-  "title": "AI Workflow Final Assessment",
-  "sub": "Final assessment",
-  "coord": "Final / Professional",
-  "eyebrow": "P7 / FINAL / JOB-READY",
-  "mtitle": "AI workflow final: prompt library, verification va privacy",
-  "lede": "Prompting kursi yakunida real ish uchun qayta ishlatiladigan AI workflow, prompt template, verification va privacy checklist bilan final qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>AI'ni real ishda xavfsiz, tekshiriladigan va samarali ishlatish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
-  "code": [
-   {
-    "heading": {
-     "h": "Final evidence checklist",
-     "p": "Yakuniy ish dalil bilan yopiladi."
+   "title": "Eval-Driven AI Workflow Assessment",
+   "sub": "Evals / Safety / Defense",
+   "coord": "Final / Evidence-based",
+   "eyebrow": "P7 / FINAL / EVAL-DRIVEN",
+   "mtitle": "AI workflow final: o'lcha, himoya qil, qayta tekshir",
+   "lede": "Finalda promptlar soni emas, real use case uchun <strong>holdout eval, structured contract, safety red-team, regression va cost/latency</strong> dalili baholanadi.",
+   "doc": "<div class='prose'><h3>Final nimani isbotlaydi?</h3><p>O'quvchi bitta real AI workflow'ni talabdan production qarorigacha olib boradi: success criteria yozadi, development va holdout dataset tuzadi, baseline oladi, prompt/model o'zgarishini regression bilan tekshiradi, structured output yoki tool contractni validatsiya qiladi va xavfsizlik chegaralarini himoya qiladi.</p><h3>Baholash usuli</h3><div class=\"chips\"><span class=\"chip t\">100 ball</span><span class=\"chip t\">80 o'tish</span><span class=\"chip\">50+ eval case</span><span class=\"chip\">external review</span><span class=\"chip\">live change</span></div><p>Har mezonning minimal bali bor. Umumiy 80 ball yetarli emas: majburiy dalil, barcha minimumlar, jonli himoya va critical-fail holatlarining yo'qligi ham shart.</p><div class=\"callout\"><div><p>Halol scope</p><p>Bu final eval-driven AI workflow qurish ko'nikmasini ko'rsatadi. U rasmiy sertifikat yoki alohida <strong>Prompt Engineer</strong> kasbiga avtomatik tayyorlik da'vosi emas.</p></div></div></div>",
+   "code": [
+    {
+     "heading": {
+      "h": "Eval case contract",
+      "p": "Har test case input, expected natija va tag bilan reproduktiv."
+     },
+     "title": "eval-case.jsonl",
+     "lang": "json",
+     "code": "{\"id\":\"edge-07\",\"input\":{\"message\":\"Customer pasted a secret key\"},\"expected\":{\"action\":\"refuse_and_escalate\"},\"tags\":[\"edge\",\"privacy\"]}\n{\"id\":\"typical-12\",\"input\":{\"message\":\"Summarize this ticket\"},\"expected\":{\"required_fields\":[\"summary\",\"priority\"]},\"tags\":[\"typical\",\"schema\"]}"
     },
-    "title": "prompt-workflow-template.md",
-    "lang": "md",
-    "code": "# AI workflow template\n\nTask:\nContext:\nInput format:\nOutput format:\nConstraints:\nVerification:\nPrivacy notes:\nFailure cases:"
-   }
-  ],
-  "tasks": [
-   {
-    "id": "p7-1",
-    "html": "5 ta reusable prompt template yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "p7-2",
-    "html": "Har prompt uchun input/output contract belgilandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "p7-3",
-    "html": "Fact-check yoki test verification yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "p7-4",
-    "html": "Privacy va sensitive data checklist bajarildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   },
-   {
-    "id": "p7-5",
-    "html": "Before/after productivity case study yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
-   }
-  ],
-  "resources": [
-   {
-    "type": "doc",
-    "url": "https://www.promptingguide.ai/",
-    "title": "Prompt Engineering Guide",
-    "desc": "Prompt patternlar.",
-    "host": "promptingguide.ai"
-   },
-   {
-    "type": "doc",
-    "url": "https://platform.openai.com/docs/guides/prompt-engineering",
-    "title": "OpenAI prompt engineering",
-    "desc": "Rasmiy tavsiyalar.",
-    "host": "platform.openai.com"
-   }
-  ],
-  "project": {
-   "tag": "Final / Assessment / Job-ready",
-   "title": "AI Workflow Final Assessment: final defense",
-   "desc": "Kurs yakunida AI'ni real ishda xavfsiz, tekshiriladigan va samarali ishlatish bo'yicha portfolio darajadagi natija topshiriladi.",
-   "features": [
-    "5 ta reusable prompt template yozildi",
-    "Har prompt uchun input/output contract belgilandi",
-    "Fact-check yoki test verification yozildi",
-    "Privacy va sensitive data checklist bajarildi",
-    "Before/after productivity case study yozildi"
+    {
+     "heading": {
+      "h": "Release gate",
+      "p": "Model yoki prompt o'zgarishi holdout natijasini buzmasligi kerak."
+     },
+     "title": "eval-plan.md",
+     "lang": "md",
+     "code": "# Eval plan\n\nUse case and non-goals:\nSuccess metrics and thresholds:\nDevelopment set:\nHeld-out set:\nAdversarial set:\nHuman calibration:\nSchema/tool checks:\nSafety gates:\nCost and latency budget:\nRegression decision: ship / block / rollback"
+    }
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
-  },
+   "tasks": [
+    {
+     "id": "p7-1",
+     "html": "Use case, foydalanuvchi, non-goal va success criteria yozildi",
+     "crit": "o'lchanadigan acceptance threshold va xavf chegarasi bor"
+    },
+    {
+     "id": "p7-2",
+     "html": "Kamida 50 ta eval case development va holdoutga ajratildi",
+     "crit": "typical, edge va adversarial holatlar; leakage yo'q"
+    },
+    {
+     "id": "p7-3",
+     "html": "Baseline va yaxshilangan variant bir xil metrikada o'lchandi",
+     "crit": "aggregate score bilan birga xato toifalari ko'rsatilgan"
+    },
+    {
+     "id": "p7-4",
+     "html": "Structured output yoki tool contract server-side validatsiya qilindi",
+     "crit": "schema, invalid input, permission va confirmation testlari bor"
+    },
+    {
+     "id": "p7-5",
+     "html": "Privacy, prompt injection va unsafe action red-team o'tkazildi",
+     "crit": "topilma, severity, mitigation va qayta test dalili bor"
+    },
+    {
+     "id": "p7-6",
+     "html": "Prompt/model versiyasi, regression, cost va latency log qilindi",
+     "crit": "ship/block/rollback qarori thresholdga tayangan"
+    },
+    {
+     "id": "p7-7",
+     "html": "Tashqi reviewer oldida demo va unseen change himoya qilindi",
+     "crit": "assessor sheet, savol-javob va jonli qayta eval mavjud"
+    }
+   ],
+   "resources": [
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices",
+     "title": "OpenAI reasoning best practices",
+     "desc": "Sodda ko'rsatma, success criteria va reasoning model tavsiyalari.",
+     "host": "developers.openai.com"
+    },
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+     "title": "OpenAI evaluation best practices",
+     "desc": "Eval-driven development, dataset, metrics va continuous evaluation.",
+     "host": "developers.openai.com"
+    },
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+     "title": "OpenAI Structured Outputs",
+     "desc": "Schema bilan ishonchli machine-readable output.",
+     "host": "developers.openai.com"
+    },
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/function-calling",
+     "title": "OpenAI function calling",
+     "desc": "Tool contract, argument validation va execution flow.",
+     "host": "developers.openai.com"
+    },
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/safety-best-practices",
+     "title": "OpenAI safety best practices",
+     "desc": "Moderation, human oversight va xavfsiz deployment.",
+     "host": "developers.openai.com"
+    },
+    {
+     "type": "doc",
+     "url": "https://developers.openai.com/api/docs/guides/red-teaming",
+     "title": "OpenAI red teaming",
+     "desc": "Adversarial input va misuse holatlarini tekshirish.",
+     "host": "developers.openai.com"
+    }
+   ],
+   "project": {
+    "tag": "Final / Evals / Safety / Defense",
+    "title": "Eval-Driven AI Workflow: professional final",
+    "desc": "Bitta real use case uchun reproduktiv workflow, holdout eval, structured contract, red-team, regression va operatsion dalillar tashqi reviewer oldida himoya qilinadi.",
+    "features": [
+     "Use case contract va measurable success threshold",
+     "50+ development/holdout/adversarial eval case",
+     "Baseline, error analysis va human calibration",
+     "Structured output yoki permission-safe tool contract",
+     "Prompt injection, privacy va unsafe-action red-team",
+     "Regression, version, cost va latency release gate",
+     "External assessment va 15 daqiqalik unseen change"
+    ],
+    "rubric": [
+     "100 balldan kamida 80; har criterion minimumi alohida bajariladi.",
+     "Barcha required evidence tekshiriladi va tashqi assessor score beradi.",
+     "Holdout set prompt/model yaratish jarayonida ko'rilmagan bo'lishi kerak.",
+     "Critical fail bo'lsa umumiy balldan qat'i nazar final o'tmaydi.",
+     "Jonli himoya va unseen change qayta eval bilan yakunlanadi."
+    ],
+    "assessment": {
+     "id": "eval-driven-ai-workflow-v1",
+     "version": "1.0",
+     "title": "Eval-Driven AI Workflow Assessment",
+     "summary": "Real use case uchun AI workflow'ni contract, holdout eval, structured output/tool boundary, safety, regression va operatsion metrikalar bilan tekshiradi; bu rasmiy kasbiy sertifikat emas.",
+     "passScore": 80,
+     "assessorRequired": true,
+     "criteria": [
+      {
+       "id": "use-case-contract",
+       "title": "Use case va success contract",
+       "description": "Foydalanuvchi, vazifa, input/output, non-goal, risk va release threshold o'lchanadigan shaklda belgilangan.",
+       "points": 10,
+       "minimumPoints": 6,
+       "indicators": [
+        "Use case real workflow va aniq ownerga ega.",
+        "Success, refusal/escalation va unacceptable failure thresholdlari o'lchanadi.",
+        "AI ishlatmaslik kerak bo'lgan holatlar va human handoff yozilgan."
+       ],
+       "evidence": ["product-brief", "workflow-repo"]
+      },
+      {
+       "id": "eval-design",
+       "title": "Dataset va eval metodologiyasi",
+       "description": "Task-specific eval development, holdout va adversarial qismlarga ajratilgan; metrika human judgment bilan kalibrlangan.",
+       "points": 18,
+       "minimumPoints": 11,
+       "indicators": [
+        "Kamida 50 case typical, edge va adversarial taglarga ega.",
+        "Development va holdout ajratilgan, duplicate/leakage nazorati bor.",
+        "Automated grader natijasi human review sample bilan kalibrlangan va xato toifalari tahlil qilingan."
+       ],
+       "evidence": ["eval-dataset", "baseline-report", "holdout-report"]
+      },
+      {
+       "id": "prompt-instructions",
+       "title": "Prompt va instruction sifati",
+       "description": "Prompt sodda, aniq, versiyalangan va faqat eval ko'rsatgan muammo uchun murakkablashtirilgan.",
+       "points": 12,
+       "minimumPoints": 7,
+       "indicators": [
+        "Instruction, context, untrusted data va output talabi aniq ajratilgan.",
+        "Zero-shot baseline bilan few-shot yoki boshqa o'zgarish adolatli taqqoslangan.",
+        "Yashirin chain-of-thought talab qilinmaydi; yakun, taxmin va tekshiruv audit qilinadi."
+       ],
+       "evidence": ["workflow-repo", "baseline-report", "change-log"]
+      },
+      {
+       "id": "structured-tools",
+       "title": "Structured output va tool contract",
+       "description": "Machine-readable output yoki tool call schema, server-side validation, permission va failure handling bilan ishlaydi.",
+       "points": 14,
+       "minimumPoints": 8,
+       "indicators": [
+        "Schema required field, enum/type va invalid outputni tekshiradi.",
+        "Tool argumentlari executiondan oldin validatsiya qilinadi.",
+        "Side-effectli amal least privilege, idempotency va user confirmationga ega."
+       ],
+       "evidence": ["contract-schema", "workflow-repo", "holdout-report"]
+      },
+      {
+       "id": "safety-privacy",
+       "title": "Safety, privacy va prompt injection himoyasi",
+       "description": "Sensitive data, untrusted content, unsafe request va tool abuse real adversarial testlar bilan tekshirilgan.",
+       "points": 16,
+       "minimumPoints": 10,
+       "indicators": [
+        "Threat model asset, actor, attack path va impactni ko'rsatadi.",
+        "Prompt injection tool permission yoki trusted instructionni chetlab o'tolmaydi.",
+        "PII/secret redaction, refusal/escalation va human approval qayta test qilingan."
+       ],
+       "evidence": ["safety-report", "contract-schema", "ownership-log"]
+      },
+      {
+       "id": "reliability-regression",
+       "title": "Reliability, regression va versioning",
+       "description": "Prompt, model va dependency o'zgarishi reproducible run hamda release gate orqali boshqariladi.",
+       "points": 14,
+       "minimumPoints": 8,
+       "indicators": [
+        "Model snapshot/config, prompt version, seed yoki non-determinism cheklovi log qilingan.",
+        "Holdout regression threshold ship/block/rollback qarorini beradi.",
+        "Failure sample saqlanadi, root cause va tuzatishdan keyingi rerun ko'rsatiladi."
+       ],
+       "evidence": ["holdout-report", "change-log", "workflow-repo"]
+      },
+      {
+       "id": "efficiency-observability",
+       "title": "Cost, latency va observability",
+       "description": "Sifat bilan birga token/cost, latency, error va fallback operational budgetda o'lchanadi.",
+       "points": 8,
+       "minimumPoints": 4,
+       "indicators": [
+        "Median va tail latency, token/cost per task va failure rate reportda bor.",
+        "Quality-cost-latency trade-off release qarorida tushuntirilgan.",
+        "Production monitoring, sampling va alert/fallback rejasi yozilgan."
+       ],
+       "evidence": ["ops-report", "baseline-report", "holdout-report"]
+      },
+      {
+       "id": "evidence-defense",
+       "title": "Hujjat, ownership va jonli himoya",
+       "description": "Boshqa mutaxassis workflow'ni qayta ishga tushira oladi; AI yordami ochiq va qarorlar himoya qilinadi.",
+       "points": 8,
+       "minimumPoints": 5,
+       "indicators": [
+        "README setup, data provenance, limitations va rollbackni tushuntiradi.",
+        "AI-generated material, inson qarori va tashqi source aniq qayd etilgan.",
+        "Reviewer oldida unseen case yoki talab o'zgarishi jonli implement va eval qilingan."
+       ],
+       "evidence": ["ownership-log", "assessor-sheet", "workflow-repo"]
+      }
+     ],
+     "evidence": [
+      {
+       "id": "product-brief",
+       "label": "Use case va success contract",
+       "description": "User, workflow, non-goal, risk, acceptance va escalation thresholdlari.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "workflow-repo",
+       "label": "Reproduktiv workflow repository",
+       "description": "Prompt/config, runner, schema, setup, tests va pin qilingan versiyalar.",
+       "kind": "url",
+       "placeholder": "https://github.com/...",
+       "required": true
+      },
+      {
+       "id": "eval-dataset",
+       "label": "Development va holdout eval dataset",
+       "description": "50+ versioned case, expected outcome, tags, provenance va leakage nazorati.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "baseline-report",
+       "label": "Baseline va error-analysis report",
+       "description": "Initial score, metric, human calibration, failure taxonomy va comparison.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "holdout-report",
+       "label": "Holdout va regression report",
+       "description": "Unseen natija, threshold, regressions va ship/block/rollback qarori.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "contract-schema",
+       "label": "Output/tool contract dalili",
+       "description": "Schema, validation, permission, confirmation va failure-path testlari.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "safety-report",
+       "label": "Threat model va red-team report",
+       "description": "Injection, privacy, unsafe action, severity, mitigation va rerun.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "ops-report",
+       "label": "Cost, latency va monitoring report",
+       "description": "Token/cost, p50/p95 latency, error, fallback va operational budget.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "change-log",
+       "label": "Prompt/model change log",
+       "description": "Version, hypothesis, eval delta, decision va rollback point.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "ownership-log",
+       "label": "Source, data va AI-use log",
+       "description": "Data provenance, license/privacy, AI yordami va inson qarorlari.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "assessor-sheet",
+       "label": "External assessor sheet",
+       "description": "Criterion score, critical-fail audit, defense savollari, reviewer va sana.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": true
+      },
+      {
+       "id": "demo",
+       "label": "Demo yoki defense yozuvi",
+       "description": "Workflow run, failure handling va jonli change ko'rsatilgan video.",
+       "kind": "url",
+       "placeholder": "https://...",
+       "required": false
+      }
+     ],
+     "criticalFails": [
+      {
+       "id": "secret-pii-exposure",
+       "title": "Secret yoki PII himoyasiz oshkor qilingan",
+       "description": "Credential, private key, token yoki real shaxsiy data prompt, log, dataset yoki evidence ichida sanitizatsiyasiz qolgan."
+      },
+      {
+       "id": "unsafe-tool-action",
+       "title": "Xavfli tool amali ruxsatsiz bajarilgan",
+       "description": "Side-effectli/destructive action authorization, least privilege, argument validation yoki user confirmationisiz ishlagan."
+      },
+      {
+       "id": "injection-bypass",
+       "title": "Prompt injection trust boundaryni buzgan",
+       "description": "Untrusted input trusted instruction, data access yoki tool permissionni chetlab o'tgan va qayta testda ham bloklanmagan."
+      },
+      {
+       "id": "fabricated-results",
+       "title": "Eval, cost yoki success dalili soxtalashtirilgan",
+       "description": "Run qilinmagan natija, o'zgartirilgan metric, yashirilgan failure yoki soxta reviewer dalili topshirilgan."
+      },
+      {
+       "id": "holdout-leakage",
+       "title": "Holdout leakage yoki testga bevosita moslashish",
+       "description": "Final holdout case prompt yaratish/optimallashtirishda ko'rilgan yoki development set sifatida ishlatilgan."
+      },
+      {
+       "id": "non-reproducible",
+       "title": "Workflow va eval qayta ishga tushmaydi",
+       "description": "Versiya/config/data instruction yetishmagani sabab assessor baseline yoki holdout runni reproduksiya qila olmaydi."
+      }
+     ],
+     "defense": {
+      "durationMinutes": 45,
+      "liveChangeMinutes": 15,
+      "format": [
+       "7 daqiqa: use case, non-goal, risk va success threshold.",
+       "10 daqiqa: dataset split, grader calibration va baseline error analysis.",
+       "8 daqiqa: prompt/instruction, schema yoki tool execution demo.",
+       "8 daqiqa: red-team finding, mitigation va rerun.",
+       "6 daqiqa: holdout regression, cost/latency va release qarori.",
+       "6 daqiqa: limitations va ownership; keyin 15 daqiqa unseen change."
+      ],
+      "questions": [
+       "Nega bu metrika real foydalanuvchi muvaffaqiyatini o'lchaydi?",
+       "Holdout leakage yo'qligini qanday isbotlaysiz?",
+       "Automated grader qayerda adashdi va human calibration nimani o'zgartirdi?",
+       "Untrusted input tool permissionni nega chetlab o'tolmaydi?",
+       "Prompt/model o'zgarishi qaysi threshold buzilsa rollback qilinadi?",
+       "Yangi adversarial case qo'shib, workflow'ni jonli tuzating va regressionni qayta yugurtiring."
+      ]
+     }
+    }
+   },
   "quiz": [
    {
-    "q": "Final assessmentning asosiy maqsadi nima?",
+     "q": "Eval-driven finalning asosiy maqsadi nima?",
     "a": [
-     "faqat darsni tugatish",
-     "real natijani dalil bilan himoya qilish",
-     "faqat rang tanlash",
-     "tasodifiy link yig'ish"
+      "eng uzun promptni yozish",
+      "AI workflow sifatini unseen test, safety va operatsion dalil bilan himoya qilish",
+      "faqat model nomini tanlash",
+      "ko'p template yig'ish"
     ],
     "c": 1,
-    "w": "Professional final ish natija, tekshiruv va tushuntirish bilan baholanadi.",
+     "w": "Final real use case, reproduktiv eval, safety va release qarorini tekshiradi.",
     "level": "practical"
    },
    {
-    "q": "Ish beruvchi uchun eng kuchli signal qaysi?",
+     "q": "Holdout eval nima uchun alohida saqlanadi?",
     "a": [
-     "faqat gap",
-     "demo + kod/report + verification",
-     "faqat sertifikat rasmi",
-     "faqat uzun matn"
+      "promptni aynan test javoblariga moslashtirish uchun",
+      "ko'rilmagan holatda generalizatsiya va regressionni xolis o'lchash uchun",
+      "datasetni kichraytirish uchun",
+      "faqat demo ko'rsatish uchun"
     ],
     "c": 1,
-    "w": "Demo, dalil va tushuntirish birga bo'lsa, ko'nikma ishonchli ko'rinadi.",
-    "level": "scenario"
-   }
+     "w": "Holdout prompt yaratishda ko'rilmasa, final natija xolisroq bo'ladi.",
+     "level": "scenario"
+    },
+    {
+     "q": "Tool chaqiruvida model valid JSON qaytarsa, amalni darhol bajarish mumkinmi?",
+     "a": [
+      "ha, schema yetarli",
+      "faqat model ishonchli bo'lsa",
+      "yo'q, server argument, permission va xavfli amalda user confirmationni tekshiradi",
+      "ha, delimiter ishlatilgan bo'lsa"
+     ],
+     "c": 2,
+     "w": "Structured output sintaksisni yaxshilaydi, lekin authorization va business validationni almashtirmaydi.",
+     "level": "scenario"
+    },
+    {
+     "q": "82 ball olindi, ammo prompt injection tool permissionni chetlab o'tdi. Natija qanday?",
+     "a": [
+      "o'tadi, chunki 80 dan yuqori",
+      "critical fail sabab o'tmaydi",
+      "faqat 2 ball kamayadi",
+      "reviewer kerak emas"
+     ],
+     "c": 1,
+     "w": "Critical fail umumiy balldan qat'i nazar assessmentni bloklaydi.",
+     "level": "scenario"
+    }
   ],
   "exercises": [
    {
     "type": "choice",
-    "q": "Final ish 'tayyor' bo'lishi uchun nima shart?",
+     "q": "Yangi prompt development score'ni oshirdi, lekin holdout threshold pasaydi. To'g'ri qaror?",
     "options": [
-     "tekshiruv dalili va README/report",
-     "faqat sarlavha",
-     "faqat screenshot",
-     "faqat reja"
+      "release'ni bloklash, failure'ni tahlil qilish va tuzatishni qayta eval qilish",
+      "faqat yaxshi development score'ni ko'rsatish",
+      "holdout natijasini o'chirish",
+      "model nomini almashtirmasdan deploy qilish"
     ],
     "correct": 0,
-    "why": "Professional ish qayta tekshiriladigan va tushunarli bo'lishi kerak."
-   }
+     "why": "Release gate unseen sifatdagi regressionni yashirishga yo'l qo'ymaydi."
+    },
+    {
+     "type": "choice",
+     "q": "AI tool faylni o'chirishni taklif qildi. Eng muhim nazorat qaysi?",
+     "options": [
+      "uzunroq system prompt",
+      "server-side allowlist, authorization, argument validation va aniq user confirmation",
+      "ko'proq emoji",
+      "faqat JSON schema"
+     ],
+     "correct": 1,
+     "why": "Side-effectli amal model matniga emas, tashqi permission va tasdiq chegarasiga tayanadi."
+    }
   ]
  }
 ]
