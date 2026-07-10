@@ -2991,10 +2991,10 @@
   "title": "Security Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "CY14 / FINAL / JOB-READY",
-  "mtitle": "Security final defense: SOC, IR, AppSec, GRC va portfolio",
-  "lede": "Cybersecurity kursi yakunida SOC triage, incident response, vulnerability management, GRC evidence va executive report bilan final defense qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>security analyst / AppSec junior-middle darajasidagi ishlarni dalil bilan bajarish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "CY14 / FINAL / BLUE TEAM",
+  "mtitle": "Security Analyst final defense: detect, respond, verify",
+  "lede": "Cybersecurity kursi yakunida izolyatsiyalangan labda SOC triage, incident response, vulnerability remediation, framework mapping va executive report tashqi reviewer oldida himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Rolga yo'naltirilgan final</h3><p>Asosiy chiqish roli: <strong>Junior Security Analyst / Blue Team</strong>. AppSec va GRC alohida kasb egallandi degani emas; ular analyst ishini kuchaytiradigan evidence bloklari sifatida baholanadi.</p><h3>Xavfsiz topshirish muhiti</h3><div class=\"chips\"><span class=\"chip t\">isolated lab</span><span class=\"chip t\">authorized scope</span><span class=\"chip\">sanitized evidence</span><span class=\"chip\">repeatable detection</span><span class=\"chip\">live defense</span></div><p>Faqat o'zingizga tegishli yoki yozma ruxsat berilgan lab target ishlatiladi. Real credential, shaxsiy ma'lumot va himoyasiz production tizimga tegilmaydi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Natija 80/100 ball, har mezon minimumi, barcha majburiy dalillar, jonli himoya va critical-fail yo'qligi bilan tasdiqlanadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -3010,32 +3010,32 @@
    {
     "id": "cy14-1",
     "html": "SOC alert triage report yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "alert source, timestamp, severity, hypothesis, MITRE mapping va disposition bilan kamida 3 alert hujjatlashtirilgan"
    },
    {
     "id": "cy14-2",
     "html": "Incident response timeline va containment/recovery qadamlari tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "timeline raw log daliliga bog'langan; containment, eradication, recovery va lessons learned ajratilgan"
    },
    {
     "id": "cy14-3",
     "html": "3 ta vulnerability finding ticket va remediation bilan yopildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "har finding severity, reproducible proof, owner, fix va qayta verification daliliga ega"
    },
    {
     "id": "cy14-4",
     "html": "OWASP/MITRE/NIST mapping final reportga qo'shildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "har mapping uchun control yoki evidence havolasi berilgan; framework nomi shunchaki ro'yxat qilinmagan"
    },
    {
     "id": "cy14-5",
     "html": "Executive summary va technical appendix tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "executive qism biznes ta'sirini, technical appendix esa raw evidence va querylarni ko'rsatadi"
    },
    {
     "id": "cy14-6",
     "html": "Security portfolio case study yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "labni boshqa reviewer README/runbook orqali qayta ko'tarib, detectionni takrorlay oladi"
    }
   ],
   "resources": [
@@ -3059,27 +3059,195 @@
     "title": "OWASP Top 10",
     "desc": "Web risklar.",
     "host": "owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+    "title": "NIST SP 800-61 Rev. 3",
+    "desc": "Incident response lifecycle va CSF 2.0 bilan integratsiya.",
+    "host": "csrc.nist.gov"
+   },
+   {
+    "type": "doc",
+    "url": "https://owasp.org/www-project-application-security-verification-standard/",
+    "title": "OWASP ASVS",
+    "desc": "Application security control va verification talablari.",
+    "host": "owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center",
+    "title": "NICE Framework",
+    "desc": "Cybersecurity work role, task va competency mapping.",
+    "host": "nist.gov"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
    "title": "Security Final Assessment: final defense",
-   "desc": "Kurs yakunida security analyst / AppSec junior-middle darajasidagi ishlarni dalil bilan bajarish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "desc": "Junior Security Analyst / Blue Team rolidagi detection, incident response va remediation ishlarini izolyatsiyalangan labda dalil bilan himoya qiling.",
    "features": [
     "SOC alert triage report yozildi",
     "Incident response timeline va containment/recovery qadamlari tayyorlandi",
     "3 ta vulnerability finding ticket va remediation bilan yopildi",
     "OWASP/MITRE/NIST mapping final reportga qo'shildi",
     "Executive summary va technical appendix tayyorlandi",
-    "Security portfolio case study yozildi"
+    "Security portfolio case study yozildi",
+    "Izolyatsiyalangan lab boshqa reviewer tomonidan qayta ishga tushirildi",
+    "Jonli alert triage va tasodifiy detection change bajarildi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "cyber-blue-team-final-v1",
+    "version": "1.0",
+    "title": "Blue Team Professional Final Assessment",
+    "summary": "Security Analyst ishini authorized lab, takrorlanuvchi detection, incident evidence, tashqi reviewer va jonli himoya orqali tekshiradi.",
+    "passScore": 80,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "lab-safety",
+      "title": "Lab scope, safety va evidence handling",
+      "description": "Target ownership, ruxsat, data sanitization va xavfsiz test chegaralari yozma ravishda boshqarilgan.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Scope ichida asset, ruxsat etilgan test va taqiqlangan amallar aniq.",
+       "Real secret va PII evidence paketidan sanitizatsiya qilingan.",
+       "Lab rollback/snapshot va emergency stop qadami mavjud."
+      ],
+      "evidence": ["lab-repository", "scope-safety"]
+     },
+     {
+      "id": "soc-detection",
+      "title": "SOC triage va detection engineering",
+      "description": "Alertlar raw telemetrydan tekshiriladi, MITRE bilan xaritalanadi va takrorlanuvchi detection rule bilan yaxshilanadi.",
+      "points": 20,
+      "minimumPoints": 12,
+      "indicators": [
+       "Kamida 3 alert uchun source, time, severity, hypothesis va disposition bor.",
+       "Kamida 2 detection rule test event bilan true/false positive bo'yicha tekshirilgan.",
+       "MITRE technique mapping dalilga asoslangan va tuning qarori yozilgan."
+      ],
+      "evidence": ["soc-pack", "lab-repository"]
+     },
+     {
+      "id": "incident-response",
+      "title": "Incident response va host triage",
+      "description": "Incident timeline, scope, containment, eradication va recovery qarorlari log/host evidence bilan bog'langan.",
+      "points": 16,
+      "minimumPoints": 9,
+      "indicators": [
+       "Timeline vaqt zonasi va evidence reference bilan qayta tekshiriladi.",
+       "Containment biznes ta'siri va evidence preservation bilan asoslangan.",
+       "Recovery verification hamda lessons learned action ownerga ega."
+      ],
+      "evidence": ["incident-report", "soc-pack"]
+     },
+     {
+      "id": "vulnerability-appsec",
+      "title": "Vulnerability va AppSec verification",
+      "description": "Topilmalar severity bilan emas, reproducible proof, xavf, fix va qayta test bilan yopiladi.",
+      "points": 15,
+      "minimumPoints": 9,
+      "indicators": [
+       "Kamida 3 finding aniq asset, proof va business impactga ega.",
+       "Auth/RBAC va input validation uchun negative testlar mavjud.",
+       "Remediationdan keyin qayta verification va residual risk yozilgan."
+      ],
+      "evidence": ["vulnerability-report", "lab-repository"]
+     },
+     {
+      "id": "identity-hardening",
+      "title": "Identity, endpoint va cloud hardening",
+      "description": "Least privilege, credential lifecycle va endpoint/cloud konfiguratsiyasi evidence bilan tekshirilgan.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Role matrix va privileged actionlar deny/allow testiga ega.",
+       "Secret rotation/revocation hamda endpoint hardening checklist bajarilgan.",
+       "Kamida bitta misconfiguration aniqlanib, tuzatilib, qayta tekshirilgan."
+      ],
+      "evidence": ["vulnerability-report", "grc-evidence"]
+     },
+     {
+      "id": "governance-mapping",
+      "title": "NIST, MITRE va OWASP evidence mapping",
+      "description": "Framework bandlari mavjud control, detection yoki artefaktga kuzatiladigan tarzda bog'langan.",
+      "points": 10,
+      "minimumPoints": 5,
+      "indicators": [
+       "NIST CSF functionlari real owner va evidence bilan xaritalangan.",
+       "MITRE technique detection coverage va gap bilan ko'rsatilgan.",
+       "OWASP/ASVS mapping verification natijasiga ishora qiladi."
+      ],
+      "evidence": ["grc-evidence", "soc-pack", "vulnerability-report"]
+     },
+     {
+      "id": "reporting",
+      "title": "Executive va technical communication",
+      "description": "Rahbariyat va muhandis uchun bir xil voqeani mos chuqurlik, aniq risk va action bilan tushuntiradi.",
+      "points": 9,
+      "minimumPoints": 5,
+      "indicators": [
+       "Executive summary risk, impact, status va keyingi qarorni qisqa beradi.",
+       "Technical appendix query, timeline va raw evidence reference saqlaydi.",
+       "Severity va remediation priority bir-biriga mantiqan mos."
+      ],
+      "evidence": ["executive-report", "incident-report"]
+     },
+     {
+      "id": "reproducibility-defense",
+      "title": "Reproducibility, integrity va jonli himoya",
+      "description": "Reviewer labni qayta ko'taradi; nomzod dalil, qaror va yangi detection o'zgarishini mustaqil himoya qiladi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "README/runbook bilan lab va test event takrorlanadi.",
+       "AI va tashqi yordam logi muallif hissasini shaffof ko'rsatadi.",
+       "Tasodifiy alert triage yoki detection change jonli bajarilgan."
+      ],
+      "evidence": ["lab-repository", "ai-use-log", "demo-video"]
+     }
+    ],
+    "evidence": [
+     {"id": "lab-repository", "label": "Security lab repository", "description": "Docker/VM lab, config, detection rules, sample events, test va qayta ishga tushirish README'si.", "kind": "url", "placeholder": "https://github.com/...", "required": true},
+     {"id": "scope-safety", "label": "Authorized scope va safety plan", "description": "Asset ownership/ruxsat, taqiqlangan amallar, sanitization va rollback hujjati.", "kind": "url", "placeholder": "https://github.com/.../docs/scope.md", "required": true},
+     {"id": "soc-pack", "label": "SOC triage va detection pack", "description": "Kamida 3 triage case, 2 detection rule, test event, MITRE mapping va tuning natijasi.", "kind": "url", "placeholder": "https://github.com/.../soc-pack", "required": true},
+     {"id": "incident-report", "label": "Incident response report", "description": "Timeline, scope, evidence, containment, eradication, recovery va lessons learned.", "kind": "url", "placeholder": "https://github.com/.../incident-report.md", "required": true},
+     {"id": "vulnerability-report", "label": "Vulnerability remediation pack", "description": "3 finding, reproducible proof, fix commit/ticket va qayta verification.", "kind": "url", "placeholder": "https://github.com/.../vulnerability-report.md", "required": true},
+     {"id": "grc-evidence", "label": "Framework evidence matrix", "description": "NIST CSF, MITRE ATT&CK va OWASP/ASVS bandlarini real dalilga bog'laydi.", "kind": "url", "placeholder": "https://github.com/.../evidence-matrix.md", "required": true},
+     {"id": "executive-report", "label": "Executive security brief", "description": "Risk, biznes ta'siri, current status, owner va 7/30 kunlik action plan.", "kind": "url", "placeholder": "https://github.com/.../executive-brief.md", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va integrity log", "description": "AI/tashqi yordam, tekshirish qadami va nomzodning mustaqil hissasi.", "kind": "url", "placeholder": "https://github.com/.../ai-use.md", "required": true},
+     {"id": "demo-video", "label": "Sanitizatsiya qilingan demo video", "description": "5-8 daqiqalik lab, alert triage, detection va incident flow; real secret/PII ko'rsatilmaydi.", "kind": "url", "placeholder": "https://...", "required": false}
+    ],
+    "criticalFails": [
+     {"id": "unauthorized-testing", "title": "Ruxsatsiz yoki scope'dan tashqari test", "description": "Nomzod o'ziga tegishli bo'lmagan targetga yozma ruxsatsiz scan, exploit yoki disruption qilgan."},
+     {"id": "sensitive-exposure", "title": "Secret, PII yoki real incident data oshkor qilingan", "description": "Credential, shaxsiy ma'lumot yoki maxfiy log evidence/repositoryda sanitizatsiyasiz qolgan."},
+     {"id": "fabricated-evidence", "title": "Soxta dalil yoki mualliflik", "description": "Alert, log, detection natijasi, commit yoki muallif hissasi noto'g'ri ko'rsatilgan."},
+     {"id": "destructive-handling", "title": "Evidence buzilgan yoki zararli containment", "description": "Asoslanmagan destructive action evidence'ni yo'qotgan yoki lab/assetga keraksiz zarar yetkazgan."},
+     {"id": "critical-access-bypass", "title": "Critical auth/RBAC bypass ochiq qolgan", "description": "Admin/tenant data bypass ma'lum bo'lsa-da containment yoki aniq risk acceptance yo'q."},
+     {"id": "unreproducible-lab", "title": "Lab va detection qayta bajarilmaydi", "description": "Reviewer ko'rsatma bo'yicha labni ko'tara olmaydi yoki test event detectionni takrorlamaydi."}
+    ],
+    "defense": {
+     "durationMinutes": 45,
+     "liveChangeMinutes": 15,
+     "format": [
+      "5 daqiqa: authorized scope, lab arxitekturasi va safety boundary.",
+      "12 daqiqa: alert triage, detection rule va MITRE mapping demosi.",
+      "10 daqiqa: incident timeline, containment va recovery qarorlari.",
+      "8 daqiqa: vulnerability fix/verification va framework evidence.",
+      "10 daqiqa: executive brief va reviewer savollari; keyin tasodifiy live change."
+     ],
+     "questions": [
+      "Bu alertni true positive yoki false positive deb belgilash uchun qaysi dalil yetishmayapti?",
+      "Detection rule qaysi benign activityda false positive beradi va qanday tuning qilasiz?",
+      "Containment qarori evidence preservation va biznes davomiyligiga qanday ta'sir qildi?",
+      "MITRE technique mappingni raw eventdan ko'rsating; taxmin bilan faktni ajrating.",
+      "Remediationdan keyin aynan qaysi test finding yopilganini isbotlaydi?",
+      "Reviewer bergan yangi test event uchun detection yoki triage queryni jonli o'zgartiring."
+     ]
+    }
+   }
   },
   "quiz": [
    {
