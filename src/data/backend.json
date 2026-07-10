@@ -2610,10 +2610,10 @@
   "title": "Backend Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "BE13 / FINAL / JOB-READY",
-  "mtitle": "Backend final defense: API, DB, auth, tests, deploy va system design",
-  "lede": "Backend kursi yakunida production API, database, auth, tests, observability va system design himoya qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>production-ready backend API qurish va system design qarorlarini tushuntirish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "BE13 / FINAL / PRODUCTION API",
+  "mtitle": "Backend final: multi-tenant API, consistency va operations",
+  "lede": "Backend kursi yakunida TypeScript/NestJS, PostgreSQL va Redis bilan multi-tenant order yoki service API qurilib, transactional consistency, security, tests, observability va recovery tashqi reviewer oldida himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Rolga mos final</h3><p>Asosiy chiqish roli: <strong>Junior Backend Engineer</strong>. Final loyiha kamida ikki tenant, user/admin rollari, order yoki service lifecycle, audit va async jobga ega bo'ladi.</p><h3>Production gate</h3><div class=\"chips\"><span class=\"chip t\">typed API contract</span><span class=\"chip t\">tenant isolation</span><span class=\"chip\">transaction + idempotency</span><span class=\"chip\">integration tests</span><span class=\"chip\">load + observability</span><span class=\"chip\">backup/restore</span></div><p>Endpoint ishlashi yetarli emas: concurrent request, duplicate callback, migration failure va dependency outage nazorat ostida bo'lishi kerak.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>80/100 ball, har mezon minimumi, barcha majburiy dalillar, jonli himoya va critical-fail yo'qligi talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -2629,32 +2629,32 @@
    {
     "id": "be13-1",
     "html": "REST API auth/RBAC bilan ishladi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "oddiy user admin endpointga, bir tenant boshqa tenant ma'lumotiga kira olmaydi; integration test bilan isbotlangan"
    },
    {
     "id": "be13-2",
     "html": "PostgreSQL schema, migration va seed tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "fresh database migrate/seed qiladi; forward va rollback strategiyasi hamda constraintlar hujjatlangan"
    },
    {
     "id": "be13-3",
     "html": "Unit/integration testlar o'tdi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "domain unit, repository/API integration va asosiy e2e flow CI'da bir xil natija beradi"
    },
    {
     "id": "be13-4",
     "html": "Redis/cache yoki queue flow ko'rsatildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "duplicate job/request bir side effect yaratadi; Redis unavailable va retry/DLQ holati test qilingan"
    },
    {
     "id": "be13-5",
     "html": "Docker/CI/CD checklist tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "lint, typecheck, test, migration va image build muvaffaqiyatsiz bo'lsa deploy bloklanadi; rollback qadami bor"
    },
    {
     "id": "be13-6",
     "html": "System design diagram va bottleneck tahlili yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "load test p95/error rate, database query plan va bottleneck bo'yicha o'lchangan qaror yozilgan"
    }
   ],
   "resources": [
@@ -2678,27 +2678,198 @@
     "title": "Docker docs",
     "desc": "Deploy.",
     "host": "docs.docker.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.nestjs.com/",
+    "title": "NestJS documentation",
+    "desc": "Module, validation, security, testing va lifecycle.",
+    "host": "docs.nestjs.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://owasp.org/www-project-application-security-verification-standard/",
+    "title": "OWASP ASVS",
+    "desc": "API auth, access control va input verification talablari.",
+    "host": "owasp.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://opentelemetry.io/docs/languages/js/",
+    "title": "OpenTelemetry JavaScript",
+    "desc": "API, database va worker telemetrysi.",
+    "host": "opentelemetry.io"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
    "title": "Backend Final Assessment: final defense",
-   "desc": "Kurs yakunida production-ready backend API qurish va system design qarorlarini tushuntirish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "desc": "Ikki tenant, RBAC, order/service lifecycle, async job va auditga ega TypeScript/NestJS backendni production dalillari bilan himoya qiling.",
    "features": [
     "REST API auth/RBAC bilan ishladi",
     "PostgreSQL schema, migration va seed tayyorlandi",
     "Unit/integration testlar o'tdi",
     "Redis/cache yoki queue flow ko'rsatildi",
     "Docker/CI/CD checklist tayyorlandi",
-    "System design diagram va bottleneck tahlili yozildi"
+    "System design diagram va bottleneck tahlili yozildi",
+    "Tenant isolation, idempotency va migration rollback sinovdan o'tdi",
+    "Backupdan toza database restore qilindi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "backend-production-final-v1",
+    "version": "1.0",
+    "title": "Backend Production Final Assessment",
+    "summary": "Multi-tenant API'ni contract, data consistency, access control, failure handling, operations evidence va jonli himoya orqali tekshiradi.",
+    "passScore": 80,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "domain-contract",
+      "title": "Domain model va API contract",
+      "description": "Order/service lifecycle, invariant, error contract va versioning typed schema bilan aniq ifodalangan.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "State transition va business invariantlar service qatlamida tekshiriladi.",
+       "OpenAPI/schema request, response va error formatiga mos.",
+       "Pagination, filtering, idempotency va backward compatibility qarori yozilgan."
+      ],
+      "evidence": ["repository", "live-api", "architecture"]
+     },
+     {
+      "id": "data-consistency",
+      "title": "PostgreSQL schema va consistency",
+      "description": "Constraint, transaction, migration va concurrency real business invariantni database darajasida ham saqlaydi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "FK, unique/check constraint va indexlar query/use-case bilan asoslangan.",
+       "Concurrent request duplicate order yoki noto'g'ri balance/state yaratmaydi.",
+       "Fresh migrate/seed va rollback/forward-fix mashqi dalil bilan bajarilgan."
+      ],
+      "evidence": ["repository", "data-report", "ci-run"]
+     },
+     {
+      "id": "auth-security",
+      "title": "Auth, tenant isolation va API security",
+      "description": "Authentication, RBAC/ownership, tenant boundary va input nazoratlari negative testlar bilan yopilgan.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Boshqa tenant ID'sini yuborish data leakage bermaydi.",
+       "Admin/user/owner authorization endpoint va service darajasida testlangan.",
+       "Secret, rate limit, validation va security log talablari bajarilgan."
+      ],
+      "evidence": ["repository", "security-report", "ci-run"]
+     },
+     {
+      "id": "reliability",
+      "title": "Idempotency, queue va failure handling",
+      "description": "Duplicate request/job, timeout, retry va dependency outage aniqlangan holatga olib keladi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Idempotency key parallel requestlarda bir side effectni kafolatlaydi.",
+       "Redis/worker outage bounded retry, backoff va DLQ/recovery bilan sinalgan.",
+       "Timeout, circuit/bulkhead yoki graceful degradation qarori hujjatlangan."
+      ],
+      "evidence": ["repository", "failure-report", "operations-runbook"]
+     },
+     {
+      "id": "testing-quality",
+      "title": "Automated testing va CI quality gate",
+      "description": "Domain, database, API va asosiy user flow testlari real infrastructure bilan regressiyani ushlaydi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Unit test invariantlarni, integration test PostgreSQL/Redis contractini tekshiradi.",
+       "Auth, tenant isolation, race condition va failure case CI'da bajariladi.",
+       "Lint, typecheck, migration va image build muvaffaqiyatsiz bo'lsa pipeline bloklanadi."
+      ],
+      "evidence": ["repository", "ci-run", "test-report"]
+     },
+     {
+      "id": "performance-scale",
+      "title": "Query performance, cache va scale",
+      "description": "Load profili, p95/error rate va query plan orqali bottleneck o'lchanib, cache/queue qarori asoslangan.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Realistik dataset bilan load test va baseline natijasi bor.",
+       "EXPLAIN ANALYZE/BUFFERS orqali sekin query va index ta'siri ko'rsatilgan.",
+       "Cache key, TTL, invalidation va stampede xavfi hujjatlangan."
+      ],
+      "evidence": ["performance-report", "data-report", "architecture"]
+     },
+     {
+      "id": "operations",
+      "title": "Deploy, observability va recovery",
+      "description": "Container deploy, health/readiness, telemetry, alert, rollback va database restore real runbook bilan ishlaydi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Request ID/trace API -> DB/worker oqimini bog'laydi.",
+       "Latency, error rate, saturation va queue depth metric/alertga ega.",
+       "Rollback hamda toza databasega backup restore mashqi bajarilgan."
+      ],
+      "evidence": ["live-api", "operations-runbook", "performance-report"]
+     },
+     {
+      "id": "design-defense",
+      "title": "System design, hujjat va jonli himoya",
+      "description": "Nomzod architecture trade-off, data flow va o'z hissasini kod ustida himoya qiladi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "C4/data flow, ADR, API contract va runbook bir-biriga mos.",
+       "AI/tashqi yordam logi mustaqil ownershipni ko'rsatadi.",
+       "Tasodifiy endpoint, migration yoki failure change test bilan jonli bajarilgan."
+      ],
+      "evidence": ["architecture", "repository", "ai-use-log", "demo-video"]
+     }
+    ],
+    "evidence": [
+     {"id": "repository", "label": "Backend repository", "description": "Source, migration, tests, Docker, API contract, README va commit tarixi.", "kind": "url", "placeholder": "https://github.com/...", "required": true},
+     {"id": "live-api", "label": "Deployed API va OpenAPI", "description": "Reviewer ishlata oladigan HTTPS preview va API documentation.", "kind": "url", "placeholder": "https://api.example.com/docs", "required": true},
+     {"id": "ci-run", "label": "CI pipeline natijasi", "description": "Lint, typecheck, unit/integration/e2e, migration va image build o'tgan run.", "kind": "url", "placeholder": "https://github.com/.../actions/runs/...", "required": true},
+     {"id": "architecture", "label": "Architecture va ADR", "description": "Tenant boundary, sync/async data flow, trust boundary va trade-offlar.", "kind": "url", "placeholder": "https://github.com/.../docs/architecture.md", "required": true},
+     {"id": "data-report", "label": "Data va migration report", "description": "Schema, constraints, transactions, concurrency, query plan va migration rehearsal.", "kind": "url", "placeholder": "https://github.com/.../docs/data-report.md", "required": true},
+     {"id": "security-report", "label": "Security verification report", "description": "RBAC, ownership, tenant isolation, validation va rate-limit negative testlari.", "kind": "url", "placeholder": "https://github.com/.../docs/security.md", "required": true},
+     {"id": "failure-report", "label": "Failure-mode report", "description": "Duplicate request, timeout, Redis/worker outage, retry va recovery natijalari.", "kind": "url", "placeholder": "https://github.com/.../docs/failure-report.md", "required": true},
+     {"id": "test-report", "label": "Test strategy va natija", "description": "Test pyramid, critical path, coverage gap va reproducible test commandlar.", "kind": "url", "placeholder": "https://github.com/.../docs/test-report.md", "required": true},
+     {"id": "performance-report", "label": "Load va performance report", "description": "Dataset, workload, p95/error rate, query plan va bottleneck qarori.", "kind": "url", "placeholder": "https://github.com/.../docs/performance.md", "required": true},
+     {"id": "operations-runbook", "label": "Operations runbook", "description": "Deploy, telemetry, incident, rollback, backup/restore va RPO/RTO dalili.", "kind": "url", "placeholder": "https://github.com/.../docs/runbook.md", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va ownership log", "description": "AI/tashqi yordam, tekshiruv va nomzodning mustaqil hissasi.", "kind": "url", "placeholder": "https://github.com/.../docs/ai-use.md", "required": true},
+     {"id": "demo-video", "label": "Qisqa demo video", "description": "5-8 daqiqada user flow, admin/tenant boundary va failure recovery.", "kind": "url", "placeholder": "https://...", "required": false}
+    ],
+    "criticalFails": [
+     {"id": "tenant-leak", "title": "Tenant isolation buzilgan", "description": "Bir tenant foydalanuvchisi boshqa tenant ma'lumoti yoki amaliga kira oladi."},
+     {"id": "auth-bypass", "title": "Critical auth/RBAC bypass", "description": "Oddiy yoki anonymous user admin/owner endpointini ishlata oladi."},
+     {"id": "data-corruption", "title": "Transaction/data integrity buzilgan", "description": "Concurrent yoki duplicate request noto'g'ri state, duplicate charge/order yoki data loss yaratadi."},
+     {"id": "secret-exposure", "title": "Secret yoki shaxsiy data oshkor qilingan", "description": "Credential/token repository, client response yoki log ichida himoyasiz qolgan."},
+     {"id": "fabricated-evidence", "title": "Soxta load/test/deploy dalili", "description": "Metric, test, CI, incident yoki mualliflik natijasi noto'g'ri ko'rsatilgan."},
+     {"id": "unreproducible", "title": "Loyiha yoki migration qayta ishlamaydi", "description": "Reviewer toza muhitda servis va database'ni ko'tara olmaydi yoki asosiy flow ishlamaydi."}
+    ],
+    "defense": {
+     "durationMinutes": 45,
+     "liveChangeMinutes": 15,
+     "format": [
+      "5 daqiqa: domain, tenant/user rollari va acceptance criteria.",
+      "12 daqiqa: API flow, transaction va tenant isolation demosi.",
+      "10 daqiqa: tests, concurrency, Redis/worker failure va recovery.",
+      "8 daqiqa: load/query plan, telemetry, deploy va restore dalili.",
+      "10 daqiqa: system design savollari; keyin tasodifiy live change."
+     ],
+     "questions": [
+      "Ikki parallel request bir order yaratishini qaysi database/API mexanizmi kafolatlaydi?",
+      "Tenant IDni client yuborsa, nima uchun unga ishonmaysiz va boundary qayerda tekshiriladi?",
+      "Migration productionda yarim yo'lda to'xtasa rollback yoki forward-fix rejangiz qanday?",
+      "Redis/worker unavailable bo'lsa userga qanday javob, jobga qanday state beriladi?",
+      "P95 oshgan requestni trace va EXPLAIN orqali qaysi bottleneckka bog'laysiz?",
+      "Reviewer bergan endpoint yoki constraint o'zgarishini migration va test bilan jonli kiriting."
+     ]
+    }
+   }
   },
   "quiz": [
    {
