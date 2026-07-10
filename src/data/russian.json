@@ -3505,10 +3505,10 @@
   "title": "Russian Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "Фин / FINAL / JOB-READY",
-  "mtitle": "Rus tili final: ish, xizmat va kundalik muloqot himoyasi",
-  "lede": "Rus tili kursi yakunida ish va kundalik vaziyatlarda ravon gapirish, xatoni tuzatish va dialogni ushlab turish baholanadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>rus tilida ish va kundalik muloqotda tushunarli, ravon va amaliy gapirish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "Фин / RUSSIAN / FOUNDATION",
+  "mtitle": "Rus tili final: unseen dialog va workplace foundation",
+  "lede": "Rus tili kursi yakunida unseen audio/matn, kundalik va ish role-play, qisqa yozuv, kelishik hamda fe'l aspekti tashqi assessor bilan tekshiriladi.",
+  "doc": "<div class='prose'><h3>Natijani halol talqin qilish</h3><p>Bu assessment <strong>A1/A2 workplace foundation performance</strong>ni tekshiradi. U B1 professional fluency yoki rasmiy CEFR/TRKI sertifikati emas; bunday daraja ko'proq guided practice va vakolatli imtihon talab qiladi.</p><h3>Unseen va jonli format</h3><div class=\"chips\"><span class=\"chip t\">listening</span><span class=\"chip t\">reading</span><span class=\"chip\">live role-play</span><span class=\"chip\">short writing</span><span class=\"chip\">cases + aspect</span><span class=\"chip\">pronunciation</span></div><p>Assessor vaziyat va materialni assessment boshida beradi. Yodlangan nutq faqat warm-up; asosiy ball spontaneous interaction va tushunishga beriladi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>70/100 umumiy ball va listening, reading, writing hamda speaking/interaction minimumlari talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -3524,27 +3524,27 @@
    {
     "id": "фин-1",
     "html": "O'zingiz va ishingiz haqida ruscha nutq tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "60-90 soniya notesiz tanishtirishdan keyin assessor kamida 3 kutilmagan savol beradi"
    },
    {
     "id": "фин-2",
     "html": "3 ta kundalik dialog mashq qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "dialoglar yoddan o'qilmaydi; boshqa vaqt/joy/miqdor bilan jonli role-playda moslashtiriladi"
    },
    {
     "id": "фин-3",
     "html": "Kelishik va fe'l xatolari self-check qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "assessor unseen gaplarda nominative/accusative/prepositional va aspekt xatolarini alohida qayd etadi"
    },
    {
     "id": "фин-4",
     "html": "10 ta professional ibora audio bilan takrorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "iboralar alohida takror emas, request, clarification va status update dialogida tushunarli ishlatiladi"
    },
    {
     "id": "фин-5",
     "html": "Mini speaking test yozib baholandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "speaking tashqi assessor tomonidan intelligibility, task completion, interaction va control bo'yicha baholanadi"
    }
   ],
   "resources": [
@@ -3561,26 +3561,183 @@
     "title": "Forvo Russian",
     "desc": "Talaffuz.",
     "host": "forvo.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://gramota.ru/",
+    "title": "Грамота.ру",
+    "desc": "Normativ lug'at, grammatika va rus tili ma'lumotnomasi.",
+    "host": "gramota.ru"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.coe.int/en/web/common-european-framework-reference-languages",
+    "title": "CEFR official resource",
+    "desc": "Language activity va proficiency descriptorlarini halol talqin qilish.",
+    "host": "coe.int"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
    "title": "Russian Final Assessment: final defense",
-   "desc": "Kurs yakunida rus tilida ish va kundalik muloqotda tushunarli, ravon va amaliy gapirish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "desc": "Unseen material va jonli role-play orqali rus tilidagi A1/A2 workplace foundation performance'ini dalil bilan ko'rsating.",
    "features": [
     "O'zingiz va ishingiz haqida ruscha nutq tayyorlandi",
-    "3 ta kundalik dialog mashq qilindi",
-    "Kelishik va fe'l xatolari self-check qilindi",
-    "10 ta professional ibora audio bilan takrorlandi",
-    "Mini speaking test yozib baholandi"
+    "3 ta unseen kundalik/ish role-play bajarildi",
+    "Kelishik va fe'l aspekti tashqi assessor bilan tekshirildi",
+    "Unseen listening va reading task bajarildi",
+    "Qisqa workplace message vaqt ichida yozildi",
+    "Speaking tashqi assessor rubrici bilan baholandi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "russian-foundation-performance-v1",
+    "version": "1.0",
+    "title": "Russian Workplace Foundation Assessment",
+    "summary": "Listening, reading, short writing, speaking va role-playni unseen/live formatda tekshiradi; bu rasmiy CEFR yoki TRKI sertifikati emas.",
+    "passScore": 70,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "listening",
+      "title": "Unseen listening",
+      "description": "Kundalik yoki ishga oid qisqa audio/dialogdan kim, qayerda, nima, vaqt va kerakli amalni tushunadi.",
+      "points": 16,
+      "minimumPoints": 9,
+      "indicators": [
+       "Birinchi tinglashda vaziyat va asosiy maqsad topiladi.",
+       "Ikkinchi tinglashda ism, vaqt, miqdor va action detail qayd etiladi.",
+       "Tushunilmagan joy taxmin emas, clarification ehtiyoji sifatida belgilanadi."
+      ],
+      "evidence": ["listening-pack", "assessor-sheet"]
+     },
+     {
+      "id": "reading",
+      "title": "Practical reading",
+      "description": "Unseen xabar, e'lon, ish topshirig'i yoki qisqa instruktsiyadan kerakli ma'lumotni topadi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Text purpose va audience aniqlanadi.",
+       "Sana, joy, talab va keyingi qadam to'g'ri olinadi.",
+       "Notanish so'z context orqali taxmin qilinadi yoki ochiq belgilanadi."
+      ],
+      "evidence": ["reading-pack", "assessor-sheet"]
+     },
+     {
+      "id": "speaking",
+      "title": "Prepared va spontaneous speaking",
+      "description": "O'zi, ishi va loyihasi haqida tushunarli gapiradi, keyin unseen savollarga mos javob beradi.",
+      "points": 20,
+      "minimumPoints": 12,
+      "indicators": [
+       "60-90 soniya nutq subject, work va projectni mantiqan bog'laydi.",
+       "Kamida 3 follow-up javobi scriptdan tashqaridagi mustaqil tilni ko'rsatadi.",
+       "Pauza va xatolarga qaramay asosiy ma'no tushunarli qoladi."
+      ],
+      "evidence": ["speaking-recording", "assessor-sheet"]
+     },
+     {
+      "id": "interaction",
+      "title": "Live role-play va interaction",
+      "description": "Request, clarification, status update va service dialogida navbatni ushlab, maqsadga erishadi.",
+      "points": 16,
+      "minimumPoints": 9,
+      "indicators": [
+       "Salomlashish, request, confirmation va closing vaziyatga mos.",
+       "Tushunmasa qayta so'raydi yoki sekinroq aytishni iltimos qiladi.",
+       "Assessor vaqt/joy/miqdorni o'zgartirganda javob moslashtiriladi."
+      ],
+      "evidence": ["roleplay-recording", "assessor-sheet"]
+     },
+     {
+      "id": "writing",
+      "title": "Short workplace writing",
+      "description": "Qisqa xabar, request yoki status update'ni audience, purpose va kerakli detail bilan yozadi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Kimga, nima uchun va qaysi action kerakligi tushunarli.",
+       "Sana/vaqt/joy hamda polite form vaziyatga mos.",
+       "Xatolar communicationni buzmaydi va task to'liq bajariladi."
+      ],
+      "evidence": ["timed-writing", "assessor-sheet"]
+     },
+     {
+      "id": "grammar-control",
+      "title": "Cases, verb va sentence control",
+      "description": "Kurs scope'idagi kelishik, hozirgi/o'tgan/kelasi zamon va aspect ma'noni yetkazish uchun yetarli ishlatiladi.",
+      "points": 10,
+      "minimumPoints": 5,
+      "indicators": [
+       "Nominative, accusative va prepositional asosiy vazifalarda farqlanadi.",
+       "Subject-verb agreement va tense/time marker mos.",
+       "Perfective/imperfective tanlovi kamida asosiy completed/process farqini beradi."
+      ],
+      "evidence": ["timed-writing", "speaking-recording", "assessor-sheet"]
+     },
+     {
+      "id": "pronunciation",
+      "title": "Pronunciation va intelligibility",
+      "description": "Urg'u, tovush va pace tinglovchiga asosiy xabarni tushunishga imkon beradi.",
+      "points": 6,
+      "minimumPoints": 3,
+      "indicators": [
+       "Muhim so'zlarda urg'u ma'noni yashirmaydi.",
+       "Qiyin tovushlar communicationni buzadigan darajada almashmaydi.",
+       "Pace va chunking dialog uchun yetarli."
+      ],
+      "evidence": ["speaking-recording", "roleplay-recording", "assessor-sheet"]
+     },
+     {
+      "id": "integrity",
+      "title": "Independent performance",
+      "description": "Unseen/live qismlar ruxsatsiz script, translator yoki AI yordamisiz bajarilgan.",
+      "points": 4,
+      "minimumPoints": 2,
+      "indicators": [
+       "Assessor timing, allowed tools va identityni qayd etgan.",
+       "Follow-up va changed scenario spontaneous javobni ko'rsatadi.",
+       "Preparation/tutor/AI yordami logda shaffof."
+      ],
+      "evidence": ["assessor-sheet", "ai-use-log", "roleplay-recording"]
+     }
+    ],
+    "evidence": [
+     {"id": "listening-pack", "label": "Unseen listening pack", "description": "Audio, vaqt, notes, answers va assessor feedback.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "reading-pack", "label": "Unseen reading pack", "description": "Xabar/instruktsiya, savollar, vaqt va tekshirilgan javoblar.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "timed-writing", "label": "Timed workplace message", "description": "Unseen prompt, original 80-120 so'zlik javob, vaqt va feedback.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "speaking-recording", "label": "Speaking va follow-up recording", "description": "Prepared introduction va kamida 3 unseen savol-javob.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "roleplay-recording", "label": "Live role-play recording", "description": "Request, clarification, status update va changed scenario.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "assessor-sheet", "label": "External assessor rubric", "description": "Har skill bali, observation, xato namunasi, feedback, assessor va sana.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "ai-use-log", "label": "Preparation va AI-use log", "description": "Practice/tutor/AI yordami va unseen/live qismdagi allowed tools.", "kind": "url", "placeholder": "https://...", "required": true}
+    ],
+    "criticalFails": [
+     {"id": "scripted-live", "title": "Live task scriptdan o'qildi", "description": "Speaking yoki role-play spontaneous interaction o'rniga oldindan yozilgan matn bilan bajarilgan."},
+     {"id": "unauthorized-tools", "title": "Unseen taskda ruxsatsiz translator/AI", "description": "Listening, reading, writing yoki live role-playda assessor ruxsat bermagan yordam ishlatilgan."},
+     {"id": "fabricated-evidence", "title": "Soxta recording, timing yoki assessor dalili", "description": "Audio/video, score, identity, vaqt yoki feedback noto'g'ri ko'rsatilgan."},
+     {"id": "missing-core-skill", "title": "Asosiy skill tekshirilmagan", "description": "Listening, reading, writing yoki speaking/interactiondan biri unseen/timed/live formatda baholanmagan."},
+     {"id": "replaced-writing", "title": "Timed writing almashtirilgan", "description": "Original vaqtli javob keyin tutor/AI bilan qayta yozilib, original sifatida topshirilgan."}
+    ],
+    "defense": {
+     "durationMinutes": 30,
+     "liveChangeMinutes": 15,
+     "format": [
+      "6 daqiqa: unseen audio va qisqa javob/action note.",
+      "6 daqiqa: unseen message/instruction va detail questions.",
+      "8 daqiqa: o'zi/ishi/project haqida nutq va follow-up.",
+      "10 daqiqa: request, clarification va status-update role-play.",
+      "15 daqiqa: timed workplace message yoki changed scenario."
+     ],
+     "questions": [
+      "Расскажите о своей работе простыми словами.",
+      "Что вы сделали вчера и что будете делать завтра?",
+      "Уточните непонятное задание и подтвердите срок.",
+      "Объясните проблему коллеге и попросите помощь.",
+      "Перенесите встречу после того, как assessor изменит время.",
+      "Кратко напишите статус: что готово, что мешает, что дальше."
+     ]
+    }
+   }
   },
   "quiz": [
    {
