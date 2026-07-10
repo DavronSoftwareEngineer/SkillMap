@@ -1970,10 +1970,10 @@
   "title": "Release Engineering Final",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "GT13 / FINAL / JOB-READY",
-  "mtitle": "Git final defense: PR, review, CI, release, hotfix va rollback",
-  "lede": "Git kursi yakunida real jamoa workflow simulyatsiyasi: branch, PR, conflict, review, release, hotfix va rollback bajariladi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>professional team workflow va release engineeringni amalda ko'rsatish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "GT13 / FINAL / TEAM WORKFLOW",
+  "mtitle": "Git team workflow final: protected main, release va recovery",
+  "lede": "Git kursi yakunida branch, PR review, protected main, CI gate, versioned release, hotfix, rollback va reflog recovery haqiqiy repository tarixida tashqi reviewer bilan bajariladi.",
+  "doc": "<div class='prose'><h3>Halol yakuniy daraja</h3><p>Bu assessment <strong>professional Git collaborator va release workflow foydalanuvchisi</strong> darajasini tekshiradi. U mustaqil Release Engineer unvonini bermaydi; buning uchun katta tizim, deployment platforma va uzoq muddatli operational tajriba kerak.</p><h3>Simulyatsiya</h3><div class=\"chips\"><span class=\"chip t\">protected main</span><span class=\"chip t\">real PR review</span><span class=\"chip\">required CI</span><span class=\"chip\">SemVer release</span><span class=\"chip\">hotfix + rollback</span><span class=\"chip\">reflog recovery</span></div><p>Reviewer kamida bitta change request va bitta failure scenario beradi. Nomzod tarixni buzmasdan, audit izini saqlagan holda yechim chiqaradi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>80/100 ball, har mezon minimumi, barcha majburiy dalillar, jonli himoya va critical-fail yo'qligi talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -1989,32 +1989,32 @@
    {
     "id": "gt13-1",
     "html": "Feature branch va PR/MR ochildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "issue/acceptance criteria bilan bog'langan focused commitlar va protected main'ga PR orqali merge dalili bor"
    },
    {
     "id": "gt13-2",
     "html": "Conflict va rebase/amend holati to'g'ri hal qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "conflict mazmuni tekshirilgan; rebase/amend faqat xavfsiz branchda; oldin/keyin graph dalili saqlangan"
    },
    {
     "id": "gt13-3",
     "html": "Code review commentlariga javob berildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "reviewer kamida 2 actionable comment bergan; javob, code change va resolution izlari mavjud"
    },
    {
     "id": "gt13-4",
     "html": "CI status va branch protection tushuntirildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "required status check va approval bo'lmasa merge bloklanadi; failure run ham dalil sifatida saqlangan"
    },
    {
     "id": "gt13-5",
     "html": "Release tag va changelog yozildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "SemVer qarori, changelog, immutable tag va release artifact/source commit bir-biriga mos"
    },
    {
     "id": "gt13-6",
     "html": "Hotfix va rollback scenario bajarildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "hotfix review/CI'dan o'tadi; rollback yoki revert audit izini saqlaydi; postmortem yozilgan"
    }
   ],
   "resources": [
@@ -2038,27 +2038,198 @@
     "title": "Semantic Versioning",
     "desc": "Release versioning.",
     "host": "semver.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+    "title": "GitHub protected branches",
+    "desc": "Required review, status check va protected main qoidalari.",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews",
+    "title": "GitHub pull request reviews",
+    "desc": "Review state, requested changes va approval oqimi.",
+    "host": "docs.github.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
+    "title": "GitHub releases",
+    "desc": "Tag, release notes va artifact lifecycle.",
+    "host": "docs.github.com"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
-   "title": "Release Engineering Final: final defense",
-   "desc": "Kurs yakunida professional team workflow va release engineeringni amalda ko'rsatish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "title": "Git Team Workflow Final Assessment",
+   "desc": "Protected main repositoryda real PR review, required CI, SemVer release, hotfix, rollback va recovery simulyatsiyasini dalil bilan topshiring.",
    "features": [
     "Feature branch va PR/MR ochildi",
     "Conflict va rebase/amend holati to'g'ri hal qilindi",
     "Code review commentlariga javob berildi",
     "CI status va branch protection tushuntirildi",
     "Release tag va changelog yozildi",
-    "Hotfix va rollback scenario bajarildi"
+    "Hotfix va rollback scenario bajarildi",
+    "Reflog orqali yo'qolgan commit xavfsiz tiklandi",
+    "Reviewer change requesti audit izi bilan yopildi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "git-team-workflow-final-v1",
+    "version": "1.0",
+    "title": "Professional Git Team Workflow Assessment",
+    "summary": "Commit history, PR review, protected branch, CI, release, hotfix va recoveryni real repository evidence hamda jonli simulyatsiya bilan tekshiradi.",
+    "passScore": 80,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "history-quality",
+      "title": "Commit va history sifati",
+      "description": "Commitlar focused, tushunarli, traceable va bisect/revert uchun foydali tarix yaratadi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Har commit bitta mantiqiy change va issue/acceptance criterionga bog'langan.",
+       "Secret, generated noise va unrelated formatting tarixga kirmagan.",
+       "Interactive rebase faqat private branchda audit izini buzmasdan ishlatilgan."
+      ],
+      "evidence": ["repository", "history-report"]
+     },
+     {
+      "id": "pr-review",
+      "title": "Branch, PR va code review",
+      "description": "Change kichik PR orqali, reviewer feedback va resolution izlari bilan protected main'ga kiradi.",
+      "points": 16,
+      "minimumPoints": 10,
+      "indicators": [
+       "PR description scope, risk, test va rollbackni ko'rsatadi.",
+       "Kamida 2 actionable review comment code change yoki asoslangan javob bilan yopilgan.",
+       "Approval va required checksiz merge imkonsiz."
+      ],
+      "evidence": ["pull-request", "review-evidence", "protection-report"]
+     },
+     {
+      "id": "conflict-recovery",
+      "title": "Conflict, rewrite va recovery",
+      "description": "Conflict semantic jihatdan hal qilinadi; noto'g'ri reset/rebase holati reflog va xavfsiz branch orqali tiklanadi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Conflict yechilgach ikkala change intenti va testlar saqlangan.",
+       "Shared historyda force push o'rniga revert yoki kelishilgan strategiya ishlatilgan.",
+       "Yo'qolgan commit reflogdan yangi branchga tiklangan va dalil saqlangan."
+      ],
+      "evidence": ["recovery-report", "repository"]
+     },
+     {
+      "id": "ci-governance",
+      "title": "CI gate va repository governance",
+      "description": "Branch protection, least privilege va CI failure releasega zarar yetkazmaydigan nazorat yaratadi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Lint/test/build required check sifatida merge'ni bloklaydi.",
+       "Failure run root cause va fix run bilan birga evidence paketida bor.",
+       "Workflow token permission, secret va untrusted PR xavfi ko'rib chiqilgan."
+      ],
+      "evidence": ["ci-run", "protection-report", "repository"]
+     },
+     {
+      "id": "release",
+      "title": "Version, changelog va release",
+      "description": "SemVer, changelog, tag, artifact va source commit kuzatiladigan release hosil qiladi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Version bump breaking/feature/fix ta'siri bilan asoslangan.",
+       "Release notes user-facing change, migration va known issue'ni ajratadi.",
+       "Tag/release artifact aynan green source commitdan yaratilgan."
+      ],
+      "evidence": ["release-evidence", "ci-run", "repository"]
+     },
+     {
+      "id": "hotfix-rollback",
+      "title": "Hotfix, rollback va incident izi",
+      "description": "Production regression auditni chetlab o'tmasdan tez tuzatiladi yoki xavfsiz revert qilinadi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Hotfix minimal scope, test, approval va release note bilan chiqadi.",
+       "Rollback/revert target commitni to'g'ri tanlaydi va data/config ta'sirini hisobga oladi.",
+       "Postmortem timeline, root cause va prevention actionga ega."
+      ],
+      "evidence": ["hotfix-report", "release-evidence", "pull-request"]
+     },
+     {
+      "id": "collaboration",
+      "title": "Jamoa kommunikatsiyasi va audit",
+      "description": "Issue, PR, review, release va incident qarorlari keyingi muhandis tushunadigan iz qoldiradi.",
+      "points": 8,
+      "minimumPoints": 4,
+      "indicators": [
+       "Decision va unresolved risk yozma ravishda ownerga ega.",
+       "PR/review ohangi aniq, professional va action-oriented.",
+       "Repository contribution/release runbook yangi a'zoga yetarli."
+      ],
+      "evidence": ["review-evidence", "workflow-runbook"]
+     },
+     {
+      "id": "live-defense",
+      "title": "Jonli workflow himoyasi",
+      "description": "Nomzod yangi conflict, failed check yoki rollback topshirig'ini buyruq va graphni tushuntirib bajaradi.",
+      "points": 8,
+      "minimumPoints": 5,
+      "indicators": [
+       "Har destructive buyruqdan oldin scope va recovery tekshiriladi.",
+       "AI/tashqi yordam logi mustaqil ownershipni ko'rsatadi.",
+       "Tasodifiy scenario audit izini saqlagan holda yakunlanadi."
+      ],
+      "evidence": ["repository", "recovery-report", "ai-use-log", "demo-video"]
+     }
+    ],
+    "evidence": [
+     {"id": "repository", "label": "Team workflow repository", "description": "Issues, branches, commits, PRlar, tags, releases, workflow va protected main tarixiga ega repo.", "kind": "url", "placeholder": "https://github.com/...", "required": true},
+     {"id": "pull-request", "label": "Feature/hotfix pull request", "description": "Scope, risk, test, rollback, review va green checks bilan merge qilingan PR.", "kind": "url", "placeholder": "https://github.com/.../pull/...", "required": true},
+     {"id": "review-evidence", "label": "Code review evidence", "description": "Kamida 2 actionable comment, response/change va resolved threadlar.", "kind": "url", "placeholder": "https://github.com/.../pull/.../files", "required": true},
+     {"id": "ci-run", "label": "Failure va success CI runs", "description": "Bitta failed run root cause bilan va keyingi successful required-check run.", "kind": "url", "placeholder": "https://github.com/.../actions/runs/...", "required": true},
+     {"id": "protection-report", "label": "Branch protection evidence", "description": "Required review/status check, force-push/deletion restriction va permission izohi.", "kind": "url", "placeholder": "https://github.com/.../docs/protection.md", "required": true},
+     {"id": "release-evidence", "label": "Versioned release", "description": "SemVer decision, changelog, immutable tag, release notes va artifact/source link.", "kind": "url", "placeholder": "https://github.com/.../releases/tag/...", "required": true},
+     {"id": "hotfix-report", "label": "Hotfix va rollback report", "description": "Incident timeline, minimal fix, verification, release/revert va postmortem.", "kind": "url", "placeholder": "https://github.com/.../docs/hotfix.md", "required": true},
+     {"id": "recovery-report", "label": "Conflict/reflog recovery lab", "description": "Before/after graph, commands, xavf va yo'qolgan commitni tiklash dalili.", "kind": "url", "placeholder": "https://github.com/.../docs/recovery.md", "required": true},
+     {"id": "history-report", "label": "History quality report", "description": "Commit scope, rewrite qarori, bisect/revert va audit tahlili.", "kind": "url", "placeholder": "https://github.com/.../docs/history.md", "required": true},
+     {"id": "workflow-runbook", "label": "Contribution/release runbook", "description": "Branch, PR, review, CI, release, hotfix va rollback amaliyoti.", "kind": "url", "placeholder": "https://github.com/.../CONTRIBUTING.md", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va ownership log", "description": "AI/tashqi yordam, tekshirish va nomzodning mustaqil hissasi.", "kind": "url", "placeholder": "https://github.com/.../docs/ai-use.md", "required": true},
+     {"id": "demo-video", "label": "Qisqa workflow demo", "description": "PR, conflict, failed CI, release va recoverydan 5-8 daqiqalik dalil.", "kind": "url", "placeholder": "https://...", "required": false}
+    ],
+    "criticalFails": [
+     {"id": "secret-in-history", "title": "Secret Git tarixida qolgan", "description": "Credential/token commit qilingan va revoke/rotate hamda history remediation bajarilmagan."},
+     {"id": "unauthorized-force-push", "title": "Shared/protected branchga ruxsatsiz force push", "description": "Kelishuvsiz history rewrite jamoa commitlarini yo'qotgan yoki audit izini buzgan."},
+     {"id": "bypassed-gate", "title": "Review yoki CI gate chetlab o'tilgan", "description": "Required approval/check o'chirilgan yoki admin bypass bilan tekshiruvsiz merge/release qilingan."},
+     {"id": "unrecoverable-loss", "title": "Tiklanmagan commit/data loss", "description": "Destructive buyruq ishni yo'qotgan va reflog/backup/recovery urinishi dalillanmagan."},
+     {"id": "fabricated-evidence", "title": "Soxta review, CI yoki release dalili", "description": "Comment, approval, run, tag, artifact yoki mualliflik noto'g'ri ko'rsatilgan."},
+     {"id": "rollback-failure", "title": "Rollback/hotfix qayta bajarilmaydi", "description": "Reviewer runbook orqali release rollback yoki hotfix flow'ni takrorlay olmaydi."}
+    ],
+    "defense": {
+     "durationMinutes": 40,
+     "liveChangeMinutes": 20,
+     "format": [
+      "5 daqiqa: workflow policy, protected main va release model.",
+      "10 daqiqa: commit graph, PR review va required CI evidence.",
+      "10 daqiqa: conflict/rebase qarori, reflog recovery va audit.",
+      "7 daqiqa: SemVer release, hotfix, rollback va postmortem.",
+      "8 daqiqa: reviewer savollari; keyin tasodifiy 20 daqiqalik workflow scenario."
+     ],
+     "questions": [
+      "Bu commitni revert, reset yoki rebase qilishdan qaysi biri to'g'ri va shared historyga ta'siri qanday?",
+      "Conflict markerini olib tashlashdan tashqari ikkala change intentini qanday tekshirdingiz?",
+      "Required CI/checkni admin bypass qilish qachon mumkin va audit izini qanday saqlaysiz?",
+      "Bu release nima uchun major/minor/patch ekanini user-facing impactdan asoslang.",
+      "Yo'qolgan commitni reflogdan yangi branchga tiklab, oldin/keyin graphni ko'rsating.",
+      "Reviewer bergan failed check yoki rollback scenariysini tarixni buzmasdan jonli yakunlang."
+     ]
+    }
+   }
   },
   "quiz": [
    {
