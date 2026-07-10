@@ -2780,10 +2780,10 @@
   "title": "Frontend Final Assessment",
   "sub": "Final assessment",
   "coord": "Final / Professional",
-  "eyebrow": "FE13 / FINAL / JOB-READY",
-  "mtitle": "Frontend final defense: React TS, design system, tests, performance va a11y",
-  "lede": "Frontend kursi yakunida real dashboard/app, component architecture, testlar, performance va accessibility bilan himoya qilinadi.",
-  "doc": "<div class='prose'><h3>Yakuniy professional sinov</h3><p>Bu modul kursni yopadi. Maqsad: <strong>production frontend UI qurish, testlash va foydalanuvchi tajribasini tushuntirish</strong>. O'quvchi faqat darsni o'qiganini emas, real ish natijasini dalil bilan topshirishini ko'rsatadi.</p><h3>Topshirish formati</h3><div class=\"chips\"><span class=\"chip t\">demo</span><span class=\"chip t\">README/report</span><span class=\"chip\">test/checklist</span><span class=\"chip\">review</span><span class=\"chip\">next roadmap</span></div><p>Har final ishda 4 narsa bo'lishi shart: nima qilindi, qanday tekshirildi, qanday xato/topilmalar bor, keyin nima yaxshilanadi.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>Professional daraja - natijani qayta ishga tushirish, tekshirish va boshqa odamga tushuntirish mumkin bo'lgan holat.</p></div></div></div>",
+  "eyebrow": "FE13 / FINAL / PRODUCT UI",
+  "mtitle": "Frontend final: product briefdan production dashboardgacha",
+  "lede": "Frontend kursi yakunida React + TypeScript service operations dashboard real product brief, responsive design, accessibility, tests, performance va deploy evidence bilan tashqi reviewer oldida himoya qilinadi.",
+  "doc": "<div class='prose'><h3>Rolga mos final</h3><p>Asosiy chiqish roli: <strong>Junior Frontend Engineer</strong>. Nomzodga tayyor maket emas, muammo, foydalanuvchi va acceptance criteria beriladi; u information architecture, component system va interactionlarni o'zi asoslaydi.</p><h3>Tekshiriladigan oqim</h3><div class=\"chips\"><span class=\"chip t\">React + TypeScript</span><span class=\"chip t\">responsive UI</span><span class=\"chip\">loading/empty/error</span><span class=\"chip\">WCAG 2.2</span><span class=\"chip\">user-flow tests</span><span class=\"chip\">Core Web Vitals</span></div><p>Chiroyli screenshot yetarli emas: keyboard, screen reader semantics, slow/error API, long content va mobile viewport real holatda ishlashi kerak.</p><div class=\"callout\"><div><p>Bitirish mezoni</p><p>80/100 ball, har mezon minimumi, barcha majburiy dalillar, jonli himoya va critical-fail yo'qligi talab qilinadi.</p></div></div></div>",
   "code": [
    {
     "heading": {
@@ -2799,32 +2799,32 @@
    {
     "id": "fe13-1",
     "html": "Real dashboard yoki app demo qilindi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "briefdagi kamida 3 asosiy user flow desktop va mobile'da real API/mock contract bilan ishlaydi"
    },
    {
     "id": "fe13-2",
     "html": "Component structure va shared UI izohlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "component ownership, state boundary va shared UI qarorlari diagramma/ADR bilan tushuntirilgan"
    },
    {
     "id": "fe13-3",
     "html": "Form, loading, empty, error state'lar bor",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "validation, submit/retry, slow, empty, 4xx/5xx va offline/degraded holatlar UI shift/yo'qolgan input bermaydi"
    },
    {
     "id": "fe13-4",
     "html": "Kamida 3 ta frontend test o'tdi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "unit/componentdan tashqari kamida 2 critical user-flow integration/e2e testi CI'da ishlaydi"
    },
    {
     "id": "fe13-5",
     "html": "Performance va accessibility checklist bajarildi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "keyboard va axe/manual a11y tekshiruvi, mobile/desktop visual check va Core Web Vitals report dalil bilan berilgan"
    },
    {
     "id": "fe13-6",
     "html": "Deploy link va README tayyorlandi",
-    "crit": "demo, report yoki checklistda dalil bilan yopilgan"
+    "crit": "HTTPS preview, reproducible build, environment contract, README va rollback/known-limitations yozilgan"
    }
   ],
   "resources": [
@@ -2848,27 +2848,199 @@
     "title": "React Testing Library",
     "desc": "Testlar.",
     "host": "testing-library.com"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "title": "WCAG 2.2",
+    "desc": "Accessibility success criteria va conformance.",
+    "host": "w3.org"
+   },
+   {
+    "type": "doc",
+    "url": "https://web.dev/articles/vitals",
+    "title": "Core Web Vitals",
+    "desc": "LCP, INP, CLS va real user performance.",
+    "host": "web.dev"
+   },
+   {
+    "type": "doc",
+    "url": "https://www.typescriptlang.org/docs/",
+    "title": "TypeScript documentation",
+    "desc": "Typed domain, narrowing va safe API contract.",
+    "host": "typescriptlang.org"
    }
   ],
   "project": {
    "tag": "Final / Assessment / Job-ready",
    "title": "Frontend Final Assessment: final defense",
-   "desc": "Kurs yakunida production frontend UI qurish, testlash va foydalanuvchi tajribasini tushuntirish bo'yicha portfolio darajadagi natija topshiriladi.",
+   "desc": "Product briefdan boshlab responsive, accessible va testlangan React + TypeScript service operations dashboardni production evidence bilan topshiring.",
    "features": [
     "Real dashboard yoki app demo qilindi",
     "Component structure va shared UI izohlandi",
     "Form, loading, empty, error state'lar bor",
     "Kamida 3 ta frontend test o'tdi",
     "Performance va accessibility checklist bajarildi",
-    "Deploy link va README tayyorlandi"
+    "Deploy link va README tayyorlandi",
+    "Keyboard, screen reader semantics va mobile viewport tekshirildi",
+    "Slow/error API hamda long-content holatlari sinovdan o'tdi"
    ],
-   "rubric": [
-    "Natija qayta ishga tushadi yoki qayta bajariladi.",
-    "README/report boshqa odamga tushunarli.",
-    "Kamida bitta test, checklist yoki verification dalili bor.",
-    "Kamchiliklar va keyingi qadamlar yozilgan.",
-    "Ish suhbatida 2-5 daqiqada tushuntira oladigan holatda."
-   ]
+   "assessment": {
+    "id": "frontend-product-final-v1",
+    "version": "1.0",
+    "title": "Frontend Product Final Assessment",
+    "summary": "Product briefni usable, accessible, resilient va performant React ilovaga aylantirishni artefaktlar, tashqi reviewer va jonli UI change bilan tekshiradi.",
+    "passScore": 80,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "product-requirements",
+      "title": "Product thinking va user flow",
+      "description": "Muammo, foydalanuvchi vazifasi, acceptance criteria va information architecture UI qarorlariga kuzatiladi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Kamida 3 critical user flow va success/failure acceptance criteria bor.",
+       "UI hierarchy tez-tez bajariladigan operator ishini qo'llab-quvvatlaydi.",
+       "Analytics/event yoki usability check orqali kamida bitta qaror tekshirilgan."
+      ],
+      "evidence": ["product-brief", "live-demo", "usability-report"]
+     },
+     {
+      "id": "ui-responsive",
+      "title": "Semantic, responsive UI va design system",
+      "description": "HTML semantics, layout constraints, component states va tokenlar turli kontent/viewportda izchil ishlaydi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Mobile, tablet va desktopda gorizontal overflow yoki overlap yo'q.",
+       "Long text, empty data, validation va loading layoutni siljitmaydi.",
+       "Shared controls barcha interactive state va variantlari bilan hujjatlangan."
+      ],
+      "evidence": ["repository", "live-demo", "component-catalog", "visual-report"]
+     },
+     {
+      "id": "react-architecture",
+      "title": "React, TypeScript va data architecture",
+      "description": "State ownership, server/client data, side effect va component boundary typed hamda testlanadigan tuzilishga ega.",
+      "points": 16,
+      "minimumPoints": 10,
+      "indicators": [
+       "Domain/API tiplari unsafe cast va tarqalgan any'larsiz ishlaydi.",
+       "Async request cancellation, stale response va cache invalidation boshqarilgan.",
+       "Render profiling asosida state/component boundary qarori tushuntirilgan."
+      ],
+      "evidence": ["repository", "architecture", "performance-report"]
+     },
+     {
+      "id": "resilient-interactions",
+      "title": "Form, async va failure-state UX",
+      "description": "Input, mutation va API oqimlari validation, retry, cancellation va foydalanuvchi ma'lumotini saqlash bilan xavfsiz.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Client/server validation xatosi field va summary darajasida tushunarli.",
+       "Double submit va stale mutation duplicate side effect yaratmaydi.",
+       "Slow, offline, 401/403, 404 va 5xx holatlarida recovery action bor."
+      ],
+      "evidence": ["live-demo", "test-report", "repository"]
+     },
+     {
+      "id": "accessibility",
+      "title": "WCAG 2.2 accessibility",
+      "description": "Keyboard, focus, semantics, name/role/value, contrast va status announcement manual hamda automated audit bilan yopilgan.",
+      "points": 14,
+      "minimumPoints": 9,
+      "indicators": [
+       "Barcha asosiy flow keyboard-only bilan yakunlanadi va focus ko'rinadi.",
+       "Form error, modal/dialog, table va dynamic status semantic jihatdan to'g'ri.",
+       "Automated auditga qo'shimcha manual screen-reader checklist bajarilgan."
+      ],
+      "evidence": ["accessibility-report", "live-demo", "test-report"]
+     },
+     {
+      "id": "testing",
+      "title": "User-centered testing va CI",
+      "description": "Testlar implementation detail emas, foydalanuvchi xatti-harakati va muhim regressionlarni tekshiradi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Component test form/error/accessibility holatini user kabi tekshiradi.",
+       "Kamida 2 critical user flow integration yoki e2e darajada ishlaydi.",
+       "CI lint, typecheck, test va production buildni majburiy gate qiladi."
+      ],
+      "evidence": ["repository", "ci-run", "test-report"]
+     },
+     {
+      "id": "performance",
+      "title": "Performance va runtime quality",
+      "description": "Bundle, render, image/font va network bottleneck o'lchov bilan topilib, real UX ta'siri kamaytirilgan.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "LCP, INP va CLS desktop/mobile profili qayd etilgan.",
+       "Bundle route/component bo'yicha tahlil qilinib, og'ir dependency qarori asoslangan.",
+       "Large list yoki tez interaction profilingda jank bermaydi."
+      ],
+      "evidence": ["performance-report", "live-demo", "repository"]
+     },
+     {
+      "id": "delivery-defense",
+      "title": "Delivery, hujjat va jonli himoya",
+      "description": "Reproducible build, environment contract, qarorlar va ownership tashqi reviewer oldida himoya qilinadi.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Preview/deploy, README, ADR va known limitations bir-biriga mos.",
+       "AI/tashqi yordam logi muallif hissasi va tekshiruvni ko'rsatadi.",
+       "Tasodifiy responsive, accessibility yoki API-state change jonli test bilan bajarilgan."
+      ],
+      "evidence": ["repository", "ci-run", "architecture", "ai-use-log", "demo-video"]
+     }
+    ],
+    "evidence": [
+     {"id": "repository", "label": "Frontend repository", "description": "React/TS source, tests, config, commit tarixi va reproducible README.", "kind": "url", "placeholder": "https://github.com/...", "required": true},
+     {"id": "live-demo", "label": "HTTPS preview/deployment", "description": "Reviewer barcha asosiy user flow va error-state'larni ochishi mumkin bo'lgan demo.", "kind": "url", "placeholder": "https://app.example.com", "required": true},
+     {"id": "product-brief", "label": "Product brief va acceptance criteria", "description": "Muammo, user role, critical flow, cheklov va measurable success.", "kind": "url", "placeholder": "https://github.com/.../docs/brief.md", "required": true},
+     {"id": "component-catalog", "label": "Component/state katalogi", "description": "Shared UI variant, loading, empty, error, disabled va long-content holatlari.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "ci-run", "label": "CI pipeline natijasi", "description": "Lint, typecheck, unit/component/e2e va production build o'tgan run.", "kind": "url", "placeholder": "https://github.com/.../actions/runs/...", "required": true},
+     {"id": "test-report", "label": "Test strategy va natija", "description": "Critical flow, mock boundary, regression va test gaplari.", "kind": "url", "placeholder": "https://github.com/.../docs/test-report.md", "required": true},
+     {"id": "accessibility-report", "label": "WCAG 2.2 audit", "description": "Automated natija, keyboard/screen-reader manual checklist va tuzatilgan findings.", "kind": "url", "placeholder": "https://github.com/.../docs/a11y.md", "required": true},
+     {"id": "performance-report", "label": "Performance report", "description": "Mobile/desktop Core Web Vitals, bundle/profile bottleneck va oldin/keyin natija.", "kind": "url", "placeholder": "https://github.com/.../docs/performance.md", "required": true},
+     {"id": "visual-report", "label": "Responsive visual report", "description": "Mobile, tablet, desktop, long content va error-state screenshots/regression.", "kind": "url", "placeholder": "https://github.com/.../docs/visual-report.md", "required": true},
+     {"id": "architecture", "label": "Frontend architecture va ADR", "description": "State, data fetching, routing, component ownership va trade-offlar.", "kind": "url", "placeholder": "https://github.com/.../docs/architecture.md", "required": true},
+     {"id": "usability-report", "label": "Usability check", "description": "Kamida 2 kishilik task-based check yoki aniq heuristic review va topilmalar.", "kind": "url", "placeholder": "https://github.com/.../docs/usability.md", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va ownership log", "description": "AI/tashqi yordam, tekshirish va nomzodning mustaqil hissasi.", "kind": "url", "placeholder": "https://github.com/.../docs/ai-use.md", "required": true},
+     {"id": "demo-video", "label": "Qisqa demo video", "description": "5-8 daqiqada main flow, mobile, keyboard, error va performance holati.", "kind": "url", "placeholder": "https://...", "required": false}
+    ],
+    "criticalFails": [
+     {"id": "main-flow-broken", "title": "Asosiy user flow ishlamaydi", "description": "Reviewer asosiy vazifani demo yoki fresh buildda yakunlay olmaydi."},
+     {"id": "keyboard-blocker", "title": "Keyboard/accessibility blocker", "description": "Asosiy amal keyboard bilan bajarilmaydi, focus yo'qoladi yoki muhim control accessible name/role'siz."},
+     {"id": "sensitive-exposure", "title": "Secret yoki shaxsiy data clientda oshkor", "description": "Credential/token bundle, repository, browser storage yoki logda himoyasiz qolgan."},
+     {"id": "destructive-mutation", "title": "Double submit/data corruption", "description": "Oddiy double click/retry duplicate yoki qaytarib bo'lmaydigan noto'g'ri mutation yaratadi."},
+     {"id": "fabricated-evidence", "title": "Soxta performance/a11y/test dalili", "description": "Metric, audit, screenshot, CI yoki mualliflik natijasi noto'g'ri ko'rsatilgan."},
+     {"id": "unreproducible", "title": "Fresh build ishlamaydi", "description": "Reviewer hujjat orqali loyihani build/run qila olmaydi yoki environment contract yetishmaydi."}
+    ],
+    "defense": {
+     "durationMinutes": 45,
+     "liveChangeMinutes": 15,
+     "format": [
+      "5 daqiqa: brief, user role, acceptance criteria va IA qarori.",
+      "12 daqiqa: desktop/mobile main flow va slow/error holatlari demosi.",
+      "10 daqiqa: React/TS architecture, state/data va test strategiyasi.",
+      "8 daqiqa: keyboard/a11y, performance profiling va deploy evidence.",
+      "10 daqiqa: reviewer savollari; keyin tasodifiy UI/API-state change."
+     ],
+     "questions": [
+      "Bu state qaysi component/domain chegarasiga tegishli va nega?",
+      "Slow requestdan oldingi response keyin kelsa stale UI'ni qanday to'xtatasiz?",
+      "Asosiy flowni mouse'siz bajaring va dynamic statusni screen readerga qanday yetkazishingizni ko'rsating.",
+      "LCP yoki INP bottleneckini profiler/network dalilidan toping, taxmin bilan aralashtirmang.",
+      "Double submit duplicate mutation bermasligini testdan ko'rsating.",
+      "Reviewer bergan long-content, accessibility yoki error-state o'zgarishini test bilan jonli kiriting."
+     ]
+    }
+   }
   },
   "quiz": [
    {
