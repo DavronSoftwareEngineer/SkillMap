@@ -6954,11 +6954,11 @@
  {
   "zoom": "AR15",
   "title": "So'z san'ati",
-  "sub": "Professional yakun",
-  "coord": "Professional yakun / AR15",
+  "sub": "Qur'oniy matn tahlili yakuni",
+  "coord": "Qur'oniy arab tili / AR15",
   "eyebrow": "15 / Qur'on so'z san'ati va yakun",
-  "mtitle": "Qur'on so'z san'ati (balog'at) va professional yakuniy baholash",
-  "lede": "Grammatika matnni TO'G'RI o'qishni beradi, <strong>balag'at</strong> esa matn NEGA aynan shunday aytilganini ochadi. Bu modulda bayon, ma'oniy va badi' ilmlarining asosiy san'atlarini Qur'oniy misollarda o'rganasiz va butun professional trekni katta yakuniy loyiha bilan himoya qilasiz.",
+  "mtitle": "Qur'on so'z san'ati va dalil asosidagi matn tahlili finali",
+  "lede": "Grammatika matnni to'g'ri o'qishga, <strong>balag'at</strong> esa ifoda vositalarini kuzatishga yordam beradi. Bu final Qur'oniy arab tili matn tahlilini tekshiradi; u umumiy professional arab tili, mustaqil tafsir yoki fatvo vakolatini bermaydi.",
   "doc": "<div class='prose'><h3>Balag'at nima va nega professional o'quvchiga kerak</h3><p>Balag'at - so'zni o'rniga, holatga va maqsadga eng mos shaklda aytish ilmi. Klassik ulamolar uni uch bo'limga ajratgan: <b>bayon</b> (fikrni tasvirlash yo'llari: o'xshatish, metafora, ko'chma ma'no), <b>ma'oniy</b> (so'z tartibi va jumla qurilishining ma'noga ta'siri) va <b>badi'</b> (nutq bezaklari). Tafsir kitoblari oyatning nozik ma'nolarini aynan shu atamalar bilan izohlaydi - ularni bilmay turib tafsirni chuqur o'qib bo'lmaydi. Bu kursdagi oxirgi pog'ona: harflardan boshlagan yo'lingiz endi matn USTIDA mulohaza yuritish darajasiga chiqadi.</p><figure class='svgfig'><svg viewBox='0 0 700 190' role='img' aria-label='Balagat ilmining uch bolimi va asosiy sanatlari'><rect class='box' x='280' y='12' width='140' height='36' rx='8'/><text x='350' y='35' text-anchor='middle'>BALAG'AT</text><rect class='box' x='30' y='96' width='190' height='36' rx='8'/><text x='125' y='119' text-anchor='middle'>Bayon: tasvir</text><rect class='box' x='255' y='96' width='190' height='36' rx='8'/><text x='350' y='119' text-anchor='middle'>Ma'oniy: tartib</text><rect class='box' x='480' y='96' width='190' height='36' rx='8'/><text x='575' y='119' text-anchor='middle'>Badi': bezak</text><text x='125' y='160' text-anchor='middle' class='small'>tashbih, isti'ora, majoz, kinoya</text><text x='350' y='160' text-anchor='middle' class='small'>taqdim, hasr, iltifot</text><text x='575' y='160' text-anchor='middle' class='small'>saj' (favosil), jinos</text><path class='edge' d='M310 48 L145 92' marker-end='url(#arAR15a)'/><path class='edge' d='M350 48 L350 92' marker-end='url(#arAR15a)'/><path class='edge' d='M390 48 L555 92' marker-end='url(#arAR15a)'/><defs><marker id='arAR15a' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z'/></marker></defs></svg><figcaption>Balag'at daraxti: bayon (nima BILAN aytilgan), ma'oniy (qaysi TARTIBDA aytilgan), badi' (qanday OHANGDA aytilgan).</figcaption></figure><h3>Bayon ilmi: tashbih, isti'ora, majoz, kinoya</h3><p><b>Tashbih</b> (o'xshatish) - bir narsani boshqasiga كَ yoki كَأَنَّ vositasi bilan ochiq o'xshatish:</p><p dir='rtl' class='ar-line'>وَالَّذِينَ كَفَرُوا أَعْمَالُهُمْ كَسَرَابٍ بِقِيعَةٍ</p><p><i>vallaziyna kafaruu a'maaluhum ka-saraabin bi-qii'a</i> - \"Kofirlarning amallari sahrodagi sarobga o'xshaydi\" (24:39, ma'no tarjimasi). Yana: <b>كَأَنَّهُمْ جَرَادٌ مُنْتَشِرٌ</b> - \"go'yo ular yoyilgan chigirtkalardek\" (54:7). <b>Isti'ora</b> (metafora) - o'xshatish vositasi tashlab yuborilgan, ko'chirilgan tasvir:</p><p dir='rtl' class='ar-line'>وَاشْتَعَلَ الرَّأْسُ شَيْبًا</p><p><i>vashta'alar-ra'su shayban</i> - \"bosh oqlik bilan alangalandi\" (19:4): oq soch olovga o'xshatilgan, lekin \"olov kabi\" deyilmagan - alanga fe'li to'g'ridan-to'g'ri boshga ko'chirilgan. <b>Majoz</b> (ko'chma ma'no): <b>وَاسْأَلِ الْقَرْيَةَ</b> - \"qishloqdan so'ra\" (12:82), ya'ni qishloq AHLIDAN so'ra: joy nomi aholisi o'rnida ishlatilgan (majozi mursal). <b>Kinoya</b> - maqsadni to'g'ridan-to'g'ri aytmay, belgisini aytish: <b>وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ</b> - \"qo'lingni bo'yningga bog'langan qilma\" (17:29) - baxillikdan kinoya; <b>يَعَضُّ الظَّالِمُ عَلَىٰ يَدَيْهِ</b> - \"zolim qo'llarini tishlaydi\" (25:27) - qattiq pushaymon kinoyasi.</p><h3>Ma'oniy ilmi: taqdim, hasr, iltifot</h3><p><b>Taqdim/ta'xir</b> - odatdagi tartibdan chiqib, so'zni oldinga olish urg'u beradi:</p><p dir='rtl' class='ar-line'>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p><p><i>iyyaaka na'budu va iyyaaka nasta'iin</i> (1:5). Odatiy tartib نَعْبُدُكَ bo'lardi; maf'ul إِيَّاكَ ning fe'ldan OLDIN kelishi \"FAQAT Senga ibodat qilamiz\" degan xoslash ma'nosini beradi. <b>Hasr</b> (cheklash) ko'pincha إِنَّمَا bilan: <b>إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ</b> - \"mo'minlar faqat birodarlardir\" (49:10); <b>إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ</b> (35:28) - bu yerda hasr VA taqdim birga: Allohdan chin qo'rquv faqat biluvchilarga xos. AR11 dagi niyat hadisi ham aynan shu san'at bilan boshlanadi. <b>Iltifot</b> - nutq davomida shaxsning almashishi: Fatiha g'oyib shaklda boshlanadi - <b>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</b> \"hamd Allohga\" (1:2), so'ng birdan murojaatga o'tadi - <b>إِيَّاكَ نَعْبُدُ</b> \"Senga ibodat qilamiz\" (1:5): sanab kelingan sifatlar bandani Rabbi bilan yuzma-yuz suhbatga olib kiradi. Yana misol: 36:22 da \"meni yaratgan\" dan \"sizlar qaytarilasiz\" ga o'tish.</p><h3>Badi' qisqacha: saj' (favosil) va jinos</h3><p><b>Saj'</b> - jumla oxirlarining ohangdosh tugashi; Qur'onda oyat oxirlari <b>favosil</b> deyiladi: <b>وَالضُّحَىٰ ۝ وَاللَّيْلِ إِذَا سَجَىٰ ۝ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ</b> (93:1-3) - uchala oyat ham cho'ziq \"-aa\" bilan tugaydi. <b>Jinos</b> - shakli o'xshash, ma'nosi har xil so'zlar o'yini: <b>وَيَوْمَ تَقُومُ السَّاعَةُ يُقْسِمُ الْمُجْرِمُونَ مَا لَبِثُوا غَيْرَ سَاعَةٍ</b> (30:55) - birinchi السَّاعَةُ Qiyomat, ikkinchi سَاعَةٍ esa qisqa vaqt (bir soat).</p><div class='callout'><b>Adab eslatmasi.</b> Qur'on uchun ulamolar odatda insoniy nutq atamasi bo'lgan \"saj'\" o'rniga <b>favosil</b> atamasini afzal ko'rgan. Balag'at tahlilida ohang: kamtarona - biz san'atni TANIYMIZ, yakuniy ma'noni esa mo''tabar tafsirlar bilan solishtiramiz.</div><h3>Professional final: himoya tartibi</h3><p>Quyidagi loyihadan BITTA variantni tanlang (A - sura, B - tafsir uslubidagi harakatsiz parcha, C - hadislar). Ish tartibi AR14 workflow bo'yicha: ko'z yugurtirish -> jumla chegaralari -> i'rob -> tarjima -> mulohaza, ustiga esa balag'at qavati qo'shiladi: matndan kamida 4 san'atni topib, atamasi va manbasi bilan izohlaysiz. Ish rubric bo'yicha baholanadi va 5-7 daqiqalik og'zaki himoya bilan yakunlanadi.</p><h3>Kurs bo'ylab self-check ro'yxati</h3><p>Har band uchun DALIL ko'rsating (jadval, audio, portfolio):</p><ul><li>AR0-AR2: istalgan harakatli matnni ravon o'qiyman - dalil: yangi sahifa tilovati audiosi.</li><li>AR3-AR5, AR8: jumlada mubtado-xabar, foil-maf'ul va majrurlarni ajrataman - dalil: i'rob jadvali.</li><li>AR6-AR7, AR9, AR12: I-X boblar va zaif fe'llarni taniyman, lug'atdan o'zak bo'yicha topaman - dalil: 20 fe'l tahlili.</li><li>AR10, AR13: chastota lug'atim faol - dalil: flashcards statistikasi va oyat ichida tanish.</li><li>AR11, AR14: harakatsiz parchani harakatlab tarjima qilaman - dalil: portfolio.</li><li>AR15: matndan balag'at san'atlarini topib izohlayman - dalil: final hisobot va himoya audiosi.</li></ul></div>",
   "code": [],
   "tasks": [
@@ -7003,18 +7003,32 @@
     "desc": "Balag'at ilmining tarixi va bo'limlari haqida umumiy ma'lumot - bayon, ma'oniy, badi' atamalarining kelib chiqishi.",
     "host": "en.wikipedia.org"
    },
-   {
-    "type": "doc",
-    "url": "https://sunnah.com/nawawi40",
-    "title": "An-Nawawi's 40 Hadith",
-    "desc": "Final Variant C uchun manba: 40 hadis to'plami arabcha matn va tarjima bilan.",
-    "host": "sunnah.com"
-   }
+                      {
+                          "type": "doc",
+                          "url": "https://sunnah.com/nawawi40",
+                          "title": "An-Nawawi's 40 Hadith",
+                          "desc": "Final Variant C uchun manba: 40 hadis to'plami arabcha matn va tarjima bilan.",
+                          "host": "sunnah.com"
+                      },
+                      {
+                          "type": "doc",
+                          "url": "https://tanzil.net/docs/",
+                          "title": "Tanzil Quran text documentation",
+                          "desc": "Qur'on matni, imlo va verified text manbasi haqida hujjat.",
+                          "host": "tanzil.net"
+                      },
+                      {
+                          "type": "doc",
+                          "url": "https://quran.com/",
+                          "title": "Quran.com",
+                          "desc": "Oyat matni, qiroat audiosi va tarjimalarni solishtirish uchun.",
+                          "host": "quran.com"
+                      }
   ],
   "project": {
-   "tag": "Final / PRO / AR15",
-   "title": "Professional final: to'liq matn tahlili va balag'at izohli himoya",
-   "desc": "Professional trek yakuni - AR11 finalidan kattaroq miqyos: butun matnni (sura, tafsir uslubidagi parcha yoki 3 hadis) i'rob + balag'at + tarjima + mulohaza qavatlari bilan tahlil qilib, rubric bo'yicha dalillangan portfolio va og'zaki himoya topshirasiz.",
+   "tag": "Final / Quranic Arabic / AR15",
+   "title": "Qur'oniy arab tili finali: matn tahlili va balag'at himoyasi",
+   "desc": "Sura, tafsir uslubidagi parcha yoki 3 hadisni sarf, i'rob, lug'at, tarjima taqqoslash va balag'at qavatlari bilan tahlil qilib, manba va og'zaki himoya dalillarini topshiring.",
    "features": [
     "Bayon va ma'oniy san'atlari jadvali Qur'oniy misollar bilan tuzildi",
     "Tanlangan final variant boshidan oxirigacha bajarildi",
@@ -7024,15 +7038,160 @@
     "Mulohaza-hisobot: xulosalar, savollar, parallel oyat/hadislar",
     "Kurs bo'ylab self-check ro'yxati dalil bilan yopildi"
    ],
-   "rubric": [
-    "Arabcha matn to'liq harakatli va xatosiz ko'chirilgan; har iqtibos sura:oyat yoki hadis to'plami va raqami bilan keltirilgan.",
-    "I'rob tahlili to'liq: har jumlada foil/maf'ul yoki mubtado-xabar, jarr va idofa birikmalari ko'rsatilgan; corpus.quran.com yoki lug'at bilan solishtirilgan.",
-    "Kamida 4 balag'at san'ati (tashbih, isti'ora, majoz, kinoya, taqdim, hasr, iltifot, favosil, jinos ichidan) matndan topilgan va nega shu san'at ekani asoslangan.",
-    "Tarjima ma'no tarjimasi sifatida berilgan va kamida bitta mo''tabar tarjima/tafsir bilan solishtirilib, farqlar izohlangan.",
-    "Mulohaza-hisobot bor: matndan chiqarilgan xulosalar, tug'ilgan savollar va kamida bitta parallel oyat yoki hadis bilan bog'lanish.",
-    "Tilovat va og'zaki himoya audiosi bor: madd, shadda, so'z oxiri harakatlari to'g'ri; himoya 5-7 daqiqada ishning mag'zini ochadi.",
-    "Kurs self-check ro'yxatining barcha bandlari dalil (jadval, audio, portfolio) bilan yopilgan."
-   ],
+   "assessment": {
+    "id": "quranic-arabic-analysis-v1",
+    "version": "1.0",
+    "title": "Quranic Arabic Text Analysis Assessment",
+    "summary": "Qur'oniy/hadis matnini o'qish, sarf, i'rob, lug'at, tarjima va balag'at bo'yicha unseen task, tashqi ustoz rubrici va og'zaki himoya bilan tekshiradi; umumiy professional Arabic yoki mustaqil tafsir vakolati emas.",
+    "passScore": 75,
+    "assessorRequired": true,
+    "criteria": [
+     {
+      "id": "reading-recitation",
+      "title": "O'qish va tilovat aniqligi",
+      "description": "Harakatli matnni madd, shadda, hamza va so'z oxiri bilan tushunarli o'qiydi; xatoni eshitib tuzatadi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Matn verified manbadan xatosiz ko'chirilgan.",
+       "Madd, shadda va asosiy waqf o'qishni buzmaydi.",
+       "Assessor ko'rsatgan xatoni qayta o'qishda tuzatadi."
+      ],
+      "evidence": ["source-text", "recitation-audio", "assessor-sheet"]
+     },
+     {
+      "id": "morphology",
+      "title": "Sarf va o'zak tahlili",
+      "description": "Ism/fe'l turini, o'zakni, vazn/bobni va zaif fe'l o'zgarishini lug'at bilan tekshiradi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Kalit so'zlar uchun o'zak, lemma, shakl va ma'no ajratilgan.",
+       "Fe'l zamon/shaxs/bob hamda zaiflik turi to'g'ri ko'rsatilgan.",
+       "Taxmin lug'at/corpus bilan solishtirilib, farq qayd etilgan."
+      ],
+      "evidence": ["morphology-table", "source-bibliography", "assessor-sheet"]
+     },
+     {
+      "id": "syntax-irab",
+      "title": "Nahv va i'rob",
+      "description": "Jumla chegarasi, amil, sintaktik rol va raf'/nasb/jarr belgisini izchil asoslaydi.",
+      "points": 18,
+      "minimumPoints": 11,
+      "indicators": [
+       "Ismiy/fe'liy jumla va subordinate/relative bo'laklar ajratilgan.",
+       "Mubtado-xabar, foil-maf'ul, jarr/idofa va sifat-mawsuf rollari ko'rsatilgan.",
+       "Harakat tanlovi amil va i'rob belgisi bilan asoslangan, corpus bilan tekshirilgan."
+      ],
+      "evidence": ["irab-analysis", "source-text", "assessor-sheet"]
+     },
+     {
+      "id": "lexical-context",
+      "title": "Lug'at va kontekst",
+      "description": "So'zning lug'aviy diapazoni, collocation va matndagi ma'nosini bitta tarjimaga qamab qo'ymay tahlil qiladi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Kalit so'zlar kamida ikki ishonchli lug'at/corpus manbasi bilan tekshirilgan.",
+       "Literal ma'no, kontekst ma'nosi va ehtimoliy alternativ ajratilgan.",
+       "Parallel qo'llanish da'voni kuchaytirish uchun aniq reference bilan berilgan."
+      ],
+      "evidence": ["morphology-table", "translation-report", "source-bibliography"]
+     },
+     {
+      "id": "translation",
+      "title": "Ma'no tarjimasi va taqqoslash",
+      "description": "O'z tarjimasini grammar/lexicon daliliga bog'laydi va mo'tabar tarjima/tafsir farqlarini kamtarona izohlaydi.",
+      "points": 12,
+      "minimumPoints": 7,
+      "indicators": [
+       "Tarjima asosiy syntactic relation va referentlarni saqlaydi.",
+       "Kamida ikki tarjima yoki ustoz tavsiya qilgan tafsir bilan farq taqqoslangan.",
+       "Noaniqlik va shaxsiy taxmin yakuniy diniy hukm sifatida berilmagan."
+      ],
+      "evidence": ["translation-report", "source-bibliography", "assessor-sheet"]
+     },
+     {
+      "id": "balagha",
+      "title": "Balag'at kuzatuvi",
+      "description": "Bayon, ma'oniy yoki badi' vositasini matndan topib, linguistic evidence va kontekst bilan ehtiyotkor izohlaydi.",
+      "points": 14,
+      "minimumPoints": 8,
+      "indicators": [
+       "Kamida 4 kuzatuv atama, matn segmenti va ta'rif bilan berilgan.",
+       "Tashbih/isti'ora/majoz yoki taqdim/hasr/iltifot farqi asoslangan.",
+       "San'atning ta'siri manba yoki ustoz feedbacki bilan tekshirilgan."
+      ],
+      "evidence": ["balagha-report", "source-bibliography", "assessor-sheet"]
+     },
+     {
+      "id": "method-sources",
+      "title": "Manba, adab va metod",
+      "description": "Qur'on/hadis reference, matn versiyasi, tarjima/tafsir va shaxsiy mulohaza chegarasi shaffof.",
+      "points": 10,
+      "minimumPoints": 6,
+      "indicators": [
+       "Har oyat sura:oyat, hadis esa to'plam/raqam bilan keltirilgan.",
+       "Qur'on matni verified source bilan belgima-belgi tekshirilgan.",
+       "Til tahlili, manba xulosasi va shaxsiy mulohaza alohida belgilangan."
+      ],
+      "evidence": ["source-bibliography", "analysis-portfolio", "ai-use-log"]
+     },
+     {
+      "id": "defense-integrity",
+      "title": "Unseen tahlil, himoya va integrity",
+      "description": "Nomzod tanish bo'lmagan qisqa harakatsiz matnni ustoz oldida tahlil qiladi va portfolio qarorlarini mustaqil himoya qiladi.",
+      "points": 8,
+      "minimumPoints": 5,
+      "indicators": [
+       "Unseen matnda jumla, o'zak, taxminiy harakat va ma'no workflow bilan chiqariladi.",
+       "Assessor savolida xato tan olinib, manba orqali tuzatish yo'li ko'rsatiladi.",
+       "AI/tashqi yordam va muallif hissasi logda shaffof."
+      ],
+      "evidence": ["defense-record", "assessor-sheet", "ai-use-log", "analysis-portfolio"]
+     }
+    ],
+    "evidence": [
+     {"id": "source-text", "label": "Verified source text", "description": "Tanlangan matn, aniq reference, verified source va siz qo'shgan harakatlar farqi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "analysis-portfolio", "label": "To'liq analysis portfolio", "description": "Variant deliverablelari, annotated text, xulosa va revision tarixi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "morphology-table", "label": "Sarf/lug'at jadvali", "description": "O'zak, lemma, bob/vazn, shakl, ma'no va source reference.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "irab-analysis", "label": "I'rob va jumla tahlili", "description": "Role, amil, i'rob belgisi, harakat asosi va corpus/ustoz comparison.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "translation-report", "label": "Tarjima comparison report", "description": "O'z ma'no tarjimasi, kamida ikki comparison va farqlar izohi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "balagha-report", "label": "Balag'at report", "description": "Kamida 4 kuzatuv: matn, atama, asos, ta'sir va tekshiruv manbasi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "recitation-audio", "label": "Tilovat/o'qish audiosi", "description": "Matnni o'qish va assessor ko'rsatgan xatoni tuzatish namunasi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "source-bibliography", "label": "Manba va reference jadvali", "description": "Qur'on/hadis, corpus, lug'at, tarjima, tafsir va ustoz tavsiyasi.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "defense-record", "label": "Og'zaki va unseen himoya", "description": "Portfolio himoyasi hamda assessor bergan qisqa harakatsiz matn tahlili.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "assessor-sheet", "label": "Ustoz/assessor rubrici", "description": "Har mezon bali, xato namunasi, feedback, assessor ismi va sana.", "kind": "url", "placeholder": "https://...", "required": true},
+     {"id": "ai-use-log", "label": "AI-use va ownership log", "description": "AI/tashqi yordam, tekshiruv va unseen qismdagi allowed tools.", "kind": "url", "placeholder": "https://...", "required": true}
+    ],
+    "criticalFails": [
+     {"id": "fabricated-citation", "title": "Soxta yoki noto'g'ri Qur'on/hadis reference", "description": "Matn/reference to'qilgan, jiddiy o'zgartirilgan yoki source tekshiruvsiz haqiqiy deb ko'rsatilgan."},
+     {"id": "unsupported-authority", "title": "Asossiz diniy hukm yoki tafsir vakolati da'vosi", "description": "Til kuzatuvi mo'tabar manbasiz yakuniy aqidaviy/fiqhiy hukm sifatida taqdim etilgan."},
+     {"id": "plagiarism", "title": "Tahlil ko'chirilgan yoki mualliflik soxtalashtirilgan", "description": "I'rob, tarjima, balag'at yoki himoya boshqa manbadan attribution'siz olingan."},
+     {"id": "unauthorized-ai", "title": "Unseen taskda ruxsatsiz AI/translator", "description": "Assessor oldidagi mustaqil matn tahlilida ruxsat etilmagan yordam ishlatilgan."},
+     {"id": "missing-unseen", "title": "Unseen harakatsiz matn baholanmagan", "description": "Faqat oldindan tayyorlangan portfolio topshirilib, mustaqil transfer tekshirilmagan."},
+     {"id": "source-text-error", "title": "Source matnidagi jiddiy xato tuzatilmagan", "description": "Verified source bilan solishtirganda arabcha matn/reference ma'noga ta'sir qiluvchi xatoga ega va correction yo'q."}
+    ],
+    "defense": {
+     "durationMinutes": 35,
+     "liveChangeMinutes": 15,
+     "format": [
+      "7 daqiqa: tanlangan matn, source va analysis workflow.",
+      "10 daqiqa: sarf, i'rob va translation comparison.",
+      "8 daqiqa: balag'at kuzatuvlari va manba chegarasi.",
+      "5 daqiqa: tilovat/o'qish va xatoni tuzatish.",
+      "5 daqiqa: assessor savollari; keyin 15 daqiqa unseen harakatsiz matn."
+     ],
+     "questions": [
+      "Bu harakatni qaysi amil va i'rob belgisi bilan asoslayapsiz?",
+      "So'zning o'zagi, vazni va matndagi ma'nosi qanday bog'langan?",
+      "Ikki tarjima nega farq qiladi va grammar qaysi variantlarni ko'tara oladi?",
+      "Bu balag'at atamasini matnning qaysi aniq elementi isbotlaydi?",
+      "Til kuzatuvi bilan tafsir/hukm o'rtasidagi chegarani ko'rsating.",
+      "Assessor bergan unseen matnda jumla, sarf, taxminiy i'rob va ma'noni workflow bilan chiqaring."
+     ]
+    }
+   },
    "variants": [
     {
      "title": "Variant A: Qisqa surani to'liq professional tahlil qilish",
