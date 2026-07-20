@@ -18,7 +18,7 @@ oladi. Administrator esa obyektlarni boshqaradi va tizim holatini kuzatadi.
 ```text
 React + MapLibre UI
         |
-Node.js / TypeScript API
+Python / FastAPI API
         |
 PostgreSQL + PostGIS
         |
@@ -32,7 +32,7 @@ Docker Compose + Nginx + CI/CD
 ### 1-oy: mahsulot poydevori
 
 - React dashboard: login, obyektlar ro'yxati, qidiruv va filtrlash.
-- TypeScript API: obyektlar uchun CRUD, pagination va input validation.
+- FastAPI API: Pydantic contract bilan CRUD, pagination va input validation.
 - PostgreSQL sxemasi, migrationlar va seed ma'lumotlar.
 - Auth: foydalanuvchi, admin va moderator rollari.
 - Git ishlash tartibi: feature branch, pull request, code review checklist.

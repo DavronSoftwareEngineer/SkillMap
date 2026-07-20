@@ -11,6 +11,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     "Bu modul barcha kurslardagi bilimni bitta <strong>deploy qilingan geospatial platforma</strong>ga yig'adi: React xarita, FastAPI API, PostGIS, Telegram bildirishnoma va production infratuzilmasi.",
   doc: `
     <p><strong>GeoPulse</strong> hududiy obyektlar, hodisalar yoki infratuzilmani kuzatish uchun platforma. Foydalanuvchi xaritada obyektlarni qidiradi va filtrlaydi; administrator ma'lumotni boshqaradi; foydalanuvchilar esa muhim hodisalar haqida Telegram orqali bildirishnoma oladi.</p>
+    <div class="callout"><div><p>Ishlaydigan starter lab</p><p>Kurs repositorysidagi <code>labs/geopulse</code> papkasidan boshla. Unda PostGIS seed, FastAPI bbox API, React/MapLibre viewport loader, Nginx gateway, backend/frontend testlari, smoke test va professional evidence shablonlari bor. Starter final yechim emas; har milestone shu vertikal slice ustida quriladi.</p></div></div>
     <h3>Mahsulot arxitekturasi</h3>
     <div class="chips">
       <span class="chip t">React + MapLibre UI</span><span class="chip">Python + FastAPI API</span>
@@ -36,6 +37,12 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   `,
   code: [
     {
+      heading: { h: "Starter labni ishga tushirish", p: "Baseline boshqa kompyuterda README orqali qayta ko'tarilishi kerak." },
+      title: "labs/geopulse",
+      lang: "bash",
+      code: `cd labs/geopulse\ncp .env.example .env\ndocker compose up --build\nbash scripts/smoke-test.sh`,
+    },
+    {
       heading: { h: "Boshlang'ich arxitektura", p: "Barcha servislar lokal development uchun bitta buyruq bilan turishi kerak." },
       title: "docker-compose.yml skeleti",
       lang: "yaml",
@@ -50,7 +57,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   ],
   tasks: [
     { id: "fg-1", html: "GeoPulse uchun bitta aniq muammo va foydalanuvchi rolini tanladim", crit: "README'da muammo, user va admin oqimi 5-10 qatorda yozilgan" },
-    { id: "fg-2", html: "React dashboard va FastAPI API uchun alohida papkalar yaratdim", crit: "web/ va api/ mustaqil ishga tushadi" },
+    { id: "fg-2", html: "<code>labs/geopulse</code> starterni clean environmentda ishga tushirdim", crit: "PostGIS, FastAPI, React/MapLibre va Nginx ko'tariladi; smoke test o'tadi" },
     { id: "fg-3", html: "Auth, validation va user/admin role'larini qo'shdim", crit: "admin bo'lmagan foydalanuvchi boshqaruv endpointiga kira olmaydi" },
     { id: "fg-4", html: "PostgreSQL/PostGIS migration va real yoki namunaviy geodata seed qildim", crit: "yangi database bo'sh holatdan bitta buyruq bilan to'ladi" },
     { id: "fg-5", html: "MapLibre xaritasida layer, filtr va bbox qidiruv ishladi", crit: "xaritani surishda faqat ko'rinayotgan hudud ma'lumoti olinadi" },

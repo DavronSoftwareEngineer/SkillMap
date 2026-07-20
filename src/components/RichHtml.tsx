@@ -1,10 +1,19 @@
 import { useEffect, useRef } from "react";
 import { highlight } from "../lib/highlight";
+import { annotateGlossaryTerms, type GlossaryTerm } from "../lib/lesson";
 import { copyText } from "../lib/storage";
 import { speak, canSpeak } from "../lib/speech";
 import { useStore } from "../store";
 
-export function RichHtml({ html, className }: { html: string; className?: string }) {
+export function RichHtml({
+  html,
+  className,
+  glossary = [],
+}: {
+  html: string;
+  className?: string;
+  glossary?: GlossaryTerm[];
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const { toast, courseId } = useStore();
 
@@ -56,7 +65,9 @@ export function RichHtml({ html, className }: { html: string; className?: string
         b.appendChild(btn);
       });
     }
-  }, [html, toast, courseId]);
+
+    annotateGlossaryTerms(root, glossary);
+  }, [html, toast, courseId, glossary]);
 
   return <div ref={ref} className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 }

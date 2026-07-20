@@ -30,6 +30,22 @@ npm run build    # dist/ ga yig'ish
 npm test         # lib mantiqi testlari (vitest)
 ```
 
+## GeoPulse professional laboratoriyasi
+
+`labs/geopulse/` - kursdagi nazariyani haqiqiy productionga yaqin tizimda bajarish uchun
+ishlaydigan boshlang'ich loyiha. Unda React/TypeScript/MapLibre frontend, FastAPI backend,
+PostGIS ma'lumotlar bazasi, Nginx gateway, testlar, smoke-test va GitHub Actions pipeline bor.
+
+```bash
+cd labs/geopulse
+docker compose up --build --wait
+./scripts/smoke-test.sh
+docker compose down --volumes
+```
+
+Windows PowerShell'da smoke-test uchun `./scripts/smoke-test.ps1` ishlatiladi. Bosqichlar,
+dalillar va professional baholash mezonlari [lab qo'llanmasida](labs/geopulse/README.md) yozilgan.
+
 ## Deploy (Netlify / Vercel)
 
 Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
@@ -60,8 +76,11 @@ Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 ```
 src/
   data/
-    webgis.json        Geospatial kurs (33 modul, z0->z32: JS/TS -> Python ko'prigi + FastAPI/PostGIS/AI-GIS/Senior + Production Lab Track + Advanced (AWS/K8s, Queue, MLOps, 3D reconstruction, Edge/GeoDjango) + Final; z32 Karyera oxirida)
-    webgis-flagship.ts GeoPulse flagship moduli (webgis'ga runtime'da qo'shiladi)
+    webgis.json        Geospatial kursning z0->z32 asosiy modullari
+    webgis-foundations.ts Spatial fundamentals va professional GeoPython modullari
+    webgis-modern.ts   OGC API, cloud-native raster/vector, GeoAI, 3D va field reliability
+    webgis-flagship.ts Mustaqil reviewerli GeoPulse flagship assessment
+    webgis-enhancements.ts Qo'shimcha modullarni asosiy ketma-ketlikka biriktiradi
     frontend.json      Frontend kursi (14 modul: FE0->FE13)
     backend.json       Backend kursi (14 modul: BE0->BE13)
     git.json           Git & GitHub kursi (14 modul: GT0->GT13)
@@ -103,7 +122,8 @@ public/
 - **Kitoblar:** har kursga o'qish tartibi bilan tavsiya kitoblar ro'yxati biriktirilgan - tegishli modulda kitob eslatmasi chiqadi (`data/courses.ts`, `components/Books.tsx`).
 - **Tinglash va talaffuz mashqlari (til kurslari):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan; `speak` turida sen talaffuz qilasan, brauzer nutqni tanib tekshiradi (English, Rus tili, Arab tili - `lib/speech.ts`).
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
-- **Geospatial kengaytirildi:** JS/TS biladiganlar uchun Python ko'prigi, professional tartib, arxitektura chizmalari, FastAPI/PostGIS/GDAL/YOLO misollari, Senior performance/security/testing/system-design bloklari va production checklistlari qo'shildi.
+- **Geospatial professional trek:** 44 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, GeoAI, 3D Tiles, offline field sync, observability/security/testing/system design va mustaqil GeoPulse flagship assessment bor.
+- **Bajariladigan capstone:** `labs/geopulse/` ichida frontend, API, PostGIS, Nginx, Docker, testlar va CI bilan real starter repository berilgan; talaba uni milestone'lar bo'yicha production portfolio darajasiga olib chiqadi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
 - **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas. Til kursiga qarab ovoz tili avtomatik: English `en-US`, Rus tili `ru-RU`, Arab tili `ar-SA`.
 - **Arab tili kursi:** Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan 16 modul: asosiy kurs (alifbo -> harakatlar -> nahv/sarf -> i'rob -> Qur'on matni tahlili -> hadis va o'rta yakuniy baholash) + **professional trek** (zaif fe'llar to'liq, 300 so'zlik chastota lug'ati, Oyatul-Kursiy va tafsir uslubidagi matn praktikumi, balag'at asoslari va professional yakuniy loyiha). Barcha arabcha matn to'liq harakatli, transliteratsiya va tarjima bilan; arabcha satrlar `.ar-line` klassi orqali kattaroq va o'ngdan chapga ko'rsatiladi (`styles.css`).

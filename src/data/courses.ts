@@ -1,5 +1,6 @@
 import type { Module, Book } from "../types";
 import { WEBGIS_FLAGSHIP_MODULE } from "./webgis-flagship";
+import { WEBGIS_ENHANCEMENT_MODULES_AFTER } from "./webgis-enhancements";
 
 export interface CourseMeta {
   id: string;
@@ -35,7 +36,16 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
   const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
   const data = await loader();
   const modules = data.default as Module[];
-  return id === "webgis" ? [...modules, WEBGIS_FLAGSHIP_MODULE] : modules;
+  if (id !== "webgis") return modules;
+
+  const ordered: Module[] = [];
+  modules.forEach((module) => {
+    // Flagship rehearsal modulidan keyin, career modulidan oldin yakunlanadi.
+    if (module.zoom === "z32") ordered.push(WEBGIS_FLAGSHIP_MODULE);
+    ordered.push(module);
+    ordered.push(...(WEBGIS_ENHANCEMENT_MODULES_AFTER[module.zoom] || []));
+  });
+  return ordered;
 }
 
 // Urg'u ranglari (kartalar uchun) - aylanib ishlatiladi.
@@ -71,7 +81,32 @@ export const COURSES: CourseMeta[] = [
       { n: 7, accent: A, title: "Python Crash Course", author: "Eric Matthes", isbn: "9781718502703", note: "Python/FastAPI va GIS processing modullariga kirishdan oldin Python poydevorini mustahkamlaydi." },
       { n: 8, accent: B, title: "Geographic Data Science with Python", author: "Sergio J. Rey, Dani Arribas-Bel, Levi J. Wolf", note: "Ochiq onlayn darslik: GeoPandas, PySAL, spatial analysis va reproduktiv notebooklar bilan geospatial data science amaliyoti." },
     ],
-    moduleBooks: { z0: 1, z2: 3, z3: 7, z4: 7, z5: 4, z8: 5, z6: 7, z7: 8, z11: 8, z12: 6, z14: 6, z15: 4, z16: 6, z17: 6, z18: 6 },
+    moduleBooks: {
+      z0: 1,
+      s1: 4,
+      z2: 3,
+      z3: 7,
+      py1: 7,
+      py2: 8,
+      z4: 7,
+      z5: 4,
+      z6: 7,
+      z7: 8,
+      z8: 5,
+      cn1: 5,
+      z11: 8,
+      z12: 6,
+      z14: 6,
+      z15: 4,
+      rs1: 8,
+      z16: 6,
+      z17: 6,
+      z18: 6,
+      ai1: 8,
+      ops1: 6,
+      d3: 8,
+      f1: 6,
+    },
   },
   {
     id: "frontend",

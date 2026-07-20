@@ -6792,8 +6792,8 @@
   "coord": "Cloud / z26",
   "eyebrow": "26 / AWS / KUBERNETES / CLOUD NATIVE",
   "mtitle": "Geospatial platformani AWS va Kubernetes'da ishga tushirish",
-  "lede": "Docker Compose bitta serverда yaxshi, lekin global ish AWS + Kubernetes talab qiladi: EC2/ECS/EKS, S3 tile/imagery, RDS PostGIS, autoscaling va zero-downtime deploy. Bu modul lokal Compose'дан bulut-native arxitekturaga o'tkazadi.",
-  "doc": "<div class='prose'>\n<h3>Nega bu modul kerak</h3>\n<p>Real geospatial ish e'lonlarida deyarli har doim <strong>AWS/Kubernetes</strong> talab bor. Docker'ni bilishing yetarli emas - uni bulutда orkestратsiya qilish, imagery'ni S3'да saqlash va PostGIS'ni RDS'да boshqarishni bilishing kerak.</p>\n<h3>Asosiy tushunchalar</h3>\n<ul>\n<li><strong>S3</strong> - tile, COG raster, dron rasm va model artefaktlari uchun obyekt xotira.</li>\n<li><strong>RDS + PostGIS</strong> - boshqariladigan PostgreSQL, backup va replica bilan.</li>\n<li><strong>ECS/EKS</strong> - konteynerlarni ishga tushirish. EKS = Kubernetes, ECS = AWS-native.</li>\n<li><strong>Kubernetes obyektlari</strong> - Deployment (pod nusxalari), Service (tarmoq), Ingress (tashqi kirish), HPA (autoscale).</li>\n</ul>\n<div class=\"chips\"><span class=\"chip t\">S3</span><span class=\"chip t\">RDS PostGIS</span><span class=\"chip\">EKS</span><span class=\"chip\">Ingress</span><span class=\"chip\">HPA autoscale</span></div>\n<div class=\"callout\"><div><p><strong>Muhim:</strong> secretlar (DB parol, API kalit) hech qachon image ichiga yozilmaydi - Kubernetes Secret yoki AWS Secrets Manager ishlatiladi.</p></div></div>\n</div>",
+  "lede": "Docker Compose bitta serverda yaxshi, lekin global ish AWS + Kubernetes talab qiladi: EC2/ECS/EKS, S3 tile/imagery, RDS PostGIS, autoscaling va zero-downtime deploy. Bu modul lokal Compose'dan bulut-native arxitekturaga o'tkazadi.",
+  "doc": "<div class='prose'>\n<h3>Nega bu modul kerak</h3>\n<p>Real geospatial ish e'lonlarida deyarli har doim <strong>AWS/Kubernetes</strong> talab bor. Docker'ni bilishing yetarli emas - uni bulutda orkestratsiya qilish, imagery'ni S3'da saqlash va PostGIS'ni RDS'da boshqarishni bilishing kerak.</p>\n<h3>Asosiy tushunchalar</h3>\n<ul>\n<li><strong>S3</strong> - tile, COG raster, dron rasm va model artefaktlari uchun obyekt xotira.</li>\n<li><strong>RDS + PostGIS</strong> - boshqariladigan PostgreSQL, backup va replica bilan.</li>\n<li><strong>ECS/EKS</strong> - konteynerlarni ishga tushirish. EKS = Kubernetes, ECS = AWS-native.</li>\n<li><strong>Kubernetes obyektlari</strong> - Deployment (pod nusxalari), Service (tarmoq), Ingress (tashqi kirish), HPA (autoscale).</li>\n</ul>\n<div class=\"chips\"><span class=\"chip t\">S3</span><span class=\"chip t\">RDS PostGIS</span><span class=\"chip\">EKS</span><span class=\"chip\">Ingress</span><span class=\"chip\">HPA autoscale</span></div>\n<div class=\"callout\"><div><p><strong>Muhim:</strong> secretlar (DB parol, API kalit) hech qachon image ichiga yozilmaydi - Kubernetes Secret yoki AWS Secrets Manager ishlatiladi.</p></div></div>\n</div>",
   "code": [
    {
     "heading": {
@@ -6883,7 +6883,7 @@
     "Secretlar Secrets Manager / K8s Secret'da"
    ],
    "rubric": [
-    "Ilova bulutда domen orqali ochiladi.",
+    "Ilova bulutda domen orqali ochiladi.",
     "PostGIS RDS'da, imagery S3'da ishlaydi.",
     "kubectl bilan pod/replica holati ko'rsatiladi.",
     "Autoscale yuk ostida ishlagani dalil bilan ko'rsatilgan."
@@ -6903,7 +6903,7 @@
     "level": "easy"
    },
    {
-    "q": "Dron imagery va COG rasterni qayerда saqlash to'g'ri?",
+    "q": "Dron imagery va COG rasterni qayerda saqlash to'g'ri?",
     "a": [
      "konteyner image ichida",
      "PostgreSQL matn ustunida",
@@ -6923,7 +6923,7 @@
      "TLS sertifikat yaratadi"
     ],
     "c": 0,
-    "w": "HPA metrikaga (masalan CPU) qarab replica sonini o'zgartiradi - peak yukни ushlaydi.",
+    "w": "HPA metrikaga (masalan CPU) qarab replica sonini o'zgartiradi - peak yukni ushlaydi.",
     "level": "scenario"
    }
   ]
@@ -6976,7 +6976,7 @@
    {
     "id": "asy-4",
     "html": "Retry va idempotency qo'shildi (bir task ikki marta xavfsiz)",
-    "crit": "qayta ishlashда dublikat natija yaratilmaydi"
+    "crit": "qayta ishlashda dublikat natija yaratilmaydi"
    },
    {
     "id": "asy-5",
@@ -7026,7 +7026,7 @@
     "WebSocket bilan jonli xarita yangilanishi"
    ],
    "rubric": [
-    "Og'ir ish HTTP so'rovни bloklamaydi.",
+    "Og'ir ish HTTP so'rovni bloklamaydi.",
     "Job holati kuzatiladi.",
     "Retry ma'lumotni buzmaydi (idempotent).",
     "Natija xaritaga jonli yetib boradi."
@@ -7038,7 +7038,7 @@
     "a": [
      "chunki Python sekin",
      "chunki uzoq ish so'rovni timeout qiladi va serverni bloklaydi",
-     "chunki YOLO faqat browserда ishlaydi",
+     "chunki YOLO faqat browserda ishlaydi",
      "chunki HTTP rasm qo'llab-quvvatlamaydi"
     ],
     "c": 1,
@@ -7061,12 +7061,12 @@
     "q": "Idempotency nega muhim?",
     "a": [
      "kodni tez qiladi",
-     "xotirани kamaytiradi",
+     "xotirani kamaytiradi",
      "bir task retry'da ikki marta ishlansa natija buzilmasin",
      "CSS uchun kerak"
     ],
     "c": 2,
-    "w": "Retry/at-least-once yetkazishда bir task takror bajarilishi mumkin - natija bir xil qolishi shart.",
+    "w": "Retry/at-least-once yetkazishda bir task takror bajarilishi mumkin - natija bir xil qolishi shart.",
     "level": "scenario"
    }
   ]
@@ -7079,7 +7079,7 @@
   "eyebrow": "28 / MLOPS / MODEL SERVING / MONITORING",
   "mtitle": "YOLO modelni deploy, monitor va scale qilish",
   "lede": "Modelni o'qitish - ishning 20%. Qolgan 80% - uni production'da serve qilish: versiyalash, GPU/ONNX inference, batch pipeline, drift monitoring va retrain. Ish e'lonlari aynan shu 'production ML' qismini talab qiladi.",
-  "doc": "<div class='prose'>\n<h3>Train qilish yetarli emas</h3>\n<p>Ish e'loni aytadi: <em>\"deploy, monitor, and scale object detection models in production\"</em>. Ya'ni modelni ishlab chiqarishда barqaror serve qilish, natijani kuzatish va sifat pasaysa qayta o'qitish kerak.</p>\n<h3>MLOps hayot sikli</h3>\n<ul>\n<li><strong>Serving</strong> - modelни API sifatida (TorchServe, yoki ONNX Runtime + FastAPI). GPU'да tez inference.</li>\n<li><strong>Versioning</strong> - har model versiyasi kuzatiladi (model registry), rollback mumkin.</li>\n<li><strong>Batch vs online</strong> - katta imagery uchun batch, jonli so'rov uchun online.</li>\n<li><strong>Monitoring</strong> - latency, confidence taqsimoti, <strong>data drift</strong> (kirish rasm taqsimoti o'zgarsa).</li>\n<li><strong>Retrain loop</strong> - yangi belgilangan data bilan qayta o'qitish va A/B taqqoslash.</li>\n</ul>\n<div class=\"chips\"><span class=\"chip t\">serve</span><span class=\"chip t\">version</span><span class=\"chip\">monitor</span><span class=\"chip\">drift</span><span class=\"chip\">retrain</span></div>\n</div>",
+  "doc": "<div class='prose'>\n<h3>Train qilish yetarli emas</h3>\n<p>Ish e'loni aytadi: <em>\"deploy, monitor, and scale object detection models in production\"</em>. Ya'ni modelni ishlab chiqarishda barqaror serve qilish, natijani kuzatish va sifat pasaysa qayta o'qitish kerak.</p>\n<h3>MLOps hayot sikli</h3>\n<ul>\n<li><strong>Serving</strong> - modelni API sifatida (TorchServe, yoki ONNX Runtime + FastAPI). GPU'da tez inference.</li>\n<li><strong>Versioning</strong> - har model versiyasi kuzatiladi (model registry), rollback mumkin.</li>\n<li><strong>Batch vs online</strong> - katta imagery uchun batch, jonli so'rov uchun online.</li>\n<li><strong>Monitoring</strong> - latency, confidence taqsimoti, <strong>data drift</strong> (kirish rasm taqsimoti o'zgarsa).</li>\n<li><strong>Retrain loop</strong> - yangi belgilangan data bilan qayta o'qitish va A/B taqqoslash.</li>\n</ul>\n<div class=\"chips\"><span class=\"chip t\">serve</span><span class=\"chip t\">version</span><span class=\"chip\">monitor</span><span class=\"chip\">drift</span><span class=\"chip\">retrain</span></div>\n</div>",
   "code": [
    {
     "heading": {
@@ -7114,12 +7114,12 @@
    {
     "id": "mlo-3",
     "html": "GPU inference yoki batch pipeline sinab ko'rildi",
-    "crit": "katta partiya rasm batch'да ishlanadi"
+    "crit": "katta partiya rasm batch'da ishlanadi"
    },
    {
     "id": "mlo-4",
     "html": "Inference metrikasi (latency, confidence, empty rate) yig'ildi",
-    "crit": "Prometheus/Grafana'да ko'rinadi"
+    "crit": "Prometheus/Grafana'da ko'rinadi"
    },
    {
     "id": "mlo-5",
@@ -7160,7 +7160,7 @@
   "project": {
    "tag": "MLOps / Serving / Monitoring",
    "title": "YOLO production serving",
-   "desc": "Modelni ONNX'ga eksport, API sifatida serve, versiyalash, metrikани yig'ish va drift/retrain rejasi.",
+   "desc": "Modelni ONNX'ga eksport, API sifatida serve, versiyalash, metrikani yig'ish va drift/retrain rejasi.",
    "features": [
     "ONNX/TorchServe inference API",
     "Model versiyalash + rollback",
@@ -7177,7 +7177,7 @@
   },
   "quiz": [
    {
-    "q": "Model production'да data drift nima?",
+    "q": "Model production'da data drift nima?",
     "a": [
      "kirish ma'lumot taqsimoti o'zgarib, model sifati pasayishi",
      "kod xatosi",
@@ -7204,12 +7204,12 @@
     "q": "Katta partiya (minglab) rasmni eng samarali qanday ishlash kerak?",
     "a": [
      "bittalab HTTP so'rov bilan",
-     "brauzerда qo'lda",
+     "brauzerda qo'lda",
      "batch inference pipeline bilan",
-     "Excel'да"
+     "Excel'da"
     ],
     "c": 2,
-    "w": "Katta hajm uchun batch pipeline - GPU'ни to'liq ishlatib, birlik narxini pasaytiradi.",
+    "w": "Katta hajm uchun batch pipeline - GPU'ni to'liq ishlatib, birlik narxini pasaytiradi.",
     "level": "scenario"
    }
   ]
@@ -7249,7 +7249,7 @@
     },
     "title": "make_cog.sh",
     "lang": "bash",
-    "code": "# COG: bulutда qism-qism o'qiladigan raster\ngdal_translate ortho.tif ortho_cog.tif \\\n  -of COG -co COMPRESS=DEFLATE -co OVERVIEWS=AUTO\n\n# XYZ tile piramidasi (MapLibre uchun)\ngdal2tiles.py --zoom=10-20 --processes=8 ortho_cog.tif tiles/"
+    "code": "# COG: bulutda qism-qism o'qiladigan raster\ngdal_translate ortho.tif ortho_cog.tif \\\n  -of COG -co COMPRESS=DEFLATE -co OVERVIEWS=AUTO\n\n# XYZ tile piramidasi (MapLibre uchun)\ngdal2tiles.py --zoom=10-20 --processes=8 ortho_cog.tif tiles/"
    }
   ],
   "tasks": [
@@ -7265,7 +7265,7 @@
    },
    {
     "id": "r3d-3",
-    "html": "3D mesh yoki DSM MapLibre/3D viewer'да ko'rsatildi",
+    "html": "3D mesh yoki DSM MapLibre/3D viewer'da ko'rsatildi",
     "crit": "relyef vizual ko'rinadi"
    },
    {
@@ -7380,8 +7380,8 @@
   "coord": "Edge / z30",
   "eyebrow": "30 / EDGE / OFFLINE / GEODJANGO",
   "mtitle": "Dala uchun offline/edge va Django geo-stack",
-  "lede": "Dala operatorlari ko'pincha internetsiz ishlaydi - model va xarita edge'да, offline ishlashi kerak. Yana ko'p geo kompaniya FastAPI o'rniga Django/GeoDjango ishlatadi - shuni ham bilib qo'yasan.",
-  "doc": "<div class='prose'>\n<h3>Edge & Offline</h3>\n<p>Ish e'loni aytadi: <em>\"perform well offline and on the edge\"</em>. Demining operatori sahroda, internetsiz - model qurilmaда, xarita keshда ishlashi shart.</p>\n<ul>\n<li><strong>Model quantization</strong> - ONNX/TFLite bilan kichik, tez model (edge qurilma uchun).</li>\n<li><strong>Offline-first PWA</strong> - service worker bilan xarita tile va data keshlanadi (loyihada <code>pwa.ts</code> asosi bor).</li>\n<li><strong>Sync</strong> - internet qaytгач lokal o'zgarishlar serverga sinxronlanadi.</li>\n</ul>\n<h3>GeoDjango (ixtiyoriy, lekin ish e'lonlarida bor)</h3>\n<p>JD ko'pincha <strong>Python (Django/FastAPI)</strong> deydi. Django + GeoDjango spatial ORM beradi: <code>PointField</code>, spatial query'lar ORM darajasida.</p>\n<div class=\"chips\"><span class=\"chip t\">quantization</span><span class=\"chip t\">offline PWA</span><span class=\"chip\">sync</span><span class=\"chip\">GeoDjango</span></div>\n</div>",
+  "lede": "Dala operatorlari ko'pincha internetsiz ishlaydi - model va xarita edge'da, offline ishlashi kerak. Yana ko'p geo kompaniya FastAPI o'rniga Django/GeoDjango ishlatadi - shuni ham bilib qo'yasan.",
+  "doc": "<div class='prose'>\n<h3>Edge & Offline</h3>\n<p>Ish e'loni aytadi: <em>\"perform well offline and on the edge\"</em>. Demining operatori sahroda, internetsiz - model qurilmada, xarita keshda ishlashi shart.</p>\n<ul>\n<li><strong>Model quantization</strong> - ONNX/TFLite bilan kichik, tez model (edge qurilma uchun).</li>\n<li><strong>Offline-first PWA</strong> - service worker bilan xarita tile va data keshlanadi (loyihada <code>pwa.ts</code> asosi bor).</li>\n<li><strong>Sync</strong> - internet qaytgach lokal o'zgarishlar serverga sinxronlanadi.</li>\n</ul>\n<h3>GeoDjango (ixtiyoriy, lekin ish e'lonlarida bor)</h3>\n<p>JD ko'pincha <strong>Python (Django/FastAPI)</strong> deydi. Django + GeoDjango spatial ORM beradi: <code>PointField</code>, spatial query'lar ORM darajasida.</p>\n<div class=\"chips\"><span class=\"chip t\">quantization</span><span class=\"chip t\">offline PWA</span><span class=\"chip\">sync</span><span class=\"chip\">GeoDjango</span></div>\n</div>",
   "code": [
    {
     "heading": {
@@ -7395,7 +7395,7 @@
    {
     "heading": {
      "h": "Offline-first: tile va data keshlash",
-     "p": "Service worker xarita tile va API javobини keshlaydi - internetsiz ishlaydi."
+     "p": "Service worker xarita tile va API javobini keshlaydi - internetsiz ishlaydi."
     },
     "title": "public/sw-geo.js",
     "lang": "js",
@@ -7406,22 +7406,22 @@
    {
     "id": "edg-1",
     "html": "Model ONNX/TFLite bilan quantize qilinib, hajmi/tezligi o'lchandi",
-    "crit": "kichik model edge'да tezroq ishlaydi - dalil bor"
+    "crit": "kichik model edge'da tezroq ishlaydi - dalil bor"
    },
    {
     "id": "edg-2",
     "html": "Offline-first PWA: xarita tile va data keshlandi",
-    "crit": "internet o'chirilganда xarita ochiladi"
+    "crit": "internet o'chirilganda xarita ochiladi"
    },
    {
     "id": "edg-3",
-    "html": "Offline o'zgarishlarни online qaytgач sync qilish yozildi",
+    "html": "Offline o'zgarishlarni online qaytgach sync qilish yozildi",
     "crit": "lokal yozuvlar serverga yuboriladi, konflikt hal qilinadi"
    },
    {
     "id": "edg-4",
     "html": "GeoDjango bilan spatial model va radius qidiruv qilindi",
-    "crit": "distance_lte query ORM'да ishlaydi"
+    "crit": "distance_lte query ORM'da ishlaydi"
    },
    {
     "id": "edg-5",
@@ -7505,70 +7505,70 @@
    {
     "q": "Nega edge qurilma uchun model quantization kerak?",
     "a": [
-     "modelni kichik va tez qilib, cheklangan qurilmaда ishlatish uchun",
+     "modelni kichik va tez qilib, cheklangan qurilmada ishlatish uchun",
      "aniqlikni oshirish uchun",
      "rangni yaxshilash uchun",
      "internet talab qilish uchun"
     ],
     "c": 0,
-    "w": "Quantization model hajmi/hisobini kamaytiradi - edge/offline qurilmaда ishlashга imkon beradi.",
+    "w": "Quantization model hajmi/hisobini kamaytiradi - edge/offline qurilmada ishlashga imkon beradi.",
     "level": "scenario"
    }
   ]
  },
  {
   "zoom": "z31",
-  "title": "Senior Final Assessment",
-  "sub": "Graduation",
-  "coord": "Final / z31",
-  "eyebrow": "31 / FINAL / SENIOR-READY",
-  "mtitle": "Geospatial Full-Stack Academy yakuniy imtihoni",
-  "lede": "Bu modul kursni yopadi: final demo, code review, system design, performance defense, security review va portfolio presentation bilan senior-ready daraja baholanadi.",
-  "doc": "<div class='prose'>\n<h3>Final assessment nima</h3>\n<p>Bu oddiy quiz emas. Bu ishga kirish yoki mijoz oldida himoya qilishga yaqin sinov. Siz bitta geospatial platformani tushuntirasiz, kodini ko'rsatasiz, performance raqamlarini himoya qilasiz, security savollariga javob berasiz va keyingi roadmapni aytasiz.</p>\n<h3>Baholash bloklari</h3>\n<div class=\"chips\"><span class=\"chip t\">Live demo</span><span class=\"chip t\">Code review</span><span class=\"chip\">System design</span><span class=\"chip\">Performance defense</span><span class=\"chip\">Security review</span><span class=\"chip\">Ops runbook</span><span class=\"chip\">Portfolio pitch</span></div>\n<h3>Daraja mezoni</h3>\n<p><strong>Junior-ready:</strong> feature qo'sha oladi. <strong>Middle-ready:</strong> frontend/backend/data pipeline'ni mustaqil bog'laydi. <strong>Senior-ready:</strong> trade-off qiladi, performance va securityni isbotlaydi, production incidentga tayyor.</p>\n<div class=\"callout\"><div><p>Bitirish sharti</p><p>Demo ishlashi yetmaydi. Dalil kerak: test output, benchmark, architecture diagram, runbook, model card, security report va README.</p></div></div>\n</div>",
+  "title": "Final Defense Preparation",
+  "sub": "Evidence va rehearsal",
+  "coord": "Defense prep / z31",
+  "eyebrow": "31 / DEFENSE / EVIDENCE",
+  "mtitle": "GeoPulse professional himoyasiga tayyorgarlik",
+  "lede": "Bu modul kursni yopmaydi. U keyingi GeoPulse flagship assessment uchun dalillarni yig'adi, rehearsal o'tkazadi va tashqi reviewer oldidagi jonli himoyaga tayyorlaydi.",
+  "doc": "<div class='prose'>\n<h3>Defense rehearsal nima</h3>\n<p>Bu oddiy quiz emas va hali yakuniy baholash ham emas. Bu ishga kirish yoki mijoz oldidagi himoyaga yaqin mashq. Siz geospatial platformani tushuntirasiz, kodini ko'rsatasiz, performance raqamlarini himoya qilasiz, security savollariga javob berasiz va reviewer feedbackini flagship assessmentdan oldin yopasiz.</p>\n<h3>Tayyorgarlik bloklari</h3>\n<div class=\"chips\"><span class=\"chip t\">Live demo</span><span class=\"chip t\">Code review</span><span class=\"chip\">System design</span><span class=\"chip\">Performance defense</span><span class=\"chip\">Security review</span><span class=\"chip\">Ops runbook</span><span class=\"chip\">Portfolio pitch</span></div>\n<h3>Daraja mezoni</h3>\n<p><strong>Junior-ready:</strong> feature qo'sha oladi. <strong>Middle-ready:</strong> frontend/backend/data pipeline'ni mustaqil bog'laydi. <strong>Senior-ready:</strong> trade-off qiladi, performance va securityni isbotlaydi, production incidentga tayyor.</p>\n<div class=\"callout\"><div><p>Flagship assessmentga kirish sharti</p><p>Demo ishlashi yetmaydi. Dalil kerak: test output, benchmark, architecture diagram, runbook, model card, security report, README va rehearsal feedbacki.</p></div></div>\n</div>",
   "code": [
    {
     "heading": {
-     "h": "Final defense checklist",
-     "p": "Bitirishdan oldin barcha dalillar bir joyga yig'iladi."
+     "h": "Defense rehearsal checklist",
+     "p": "Flagship assessmentdan oldin barcha dalillar bir joyga yig'iladi."
     },
-    "title": "docs/final-assessment.md",
+    "title": "docs/defense-rehearsal.md",
     "lang": "md",
-    "code": "# Final assessment\n\n## Demo\n- live URL\n- 5 minute walkthrough\n- key user flows\n\n## Engineering evidence\n- tests\n- performance benchmark\n- processing report\n- model card\n- security report\n- runbook\n\n## System design\n- architecture diagram\n- scale assumptions\n- bottlenecks\n- trade-offs\n\n## Career package\n- README\n- portfolio case study\n- interview story"
+    "code": "# Defense rehearsal\n\n## Demo\n- live URL\n- 5 minute walkthrough\n- key user flows\n\n## Engineering evidence\n- tests\n- performance benchmark\n- processing report\n- model card\n- security report\n- runbook\n\n## System design\n- architecture diagram\n- scale assumptions\n- bottlenecks\n- trade-offs\n\n## Reviewer feedback\n- finding\n- owner\n- deadline\n- closure evidence\n\n## Career package\n- README\n- portfolio case study\n- interview story"
    }
   ],
   "tasks": [
    {
-    "id": "z27-1",
+    "id": "z31-1",
     "html": "Final live demo tayyorlandi",
     "crit": "5 daqiqalik walkthrough frontend, API, data va deployni ko'rsatadi"
    },
    {
-    "id": "z27-2",
+    "id": "z31-2",
     "html": "Code review checklistdan o'tkazildi",
     "crit": "frontend/backend/processing bo'yicha kamida 10 finding yoki improvement yozilgan"
    },
    {
-    "id": "z27-3",
+    "id": "z31-3",
     "html": "System design defense yozildi",
     "crit": "scale assumptions, bottleneck, cache, queue, storage va trade-off bor"
    },
    {
-    "id": "z27-4",
+    "id": "z31-4",
     "html": "Performance defense tayyorlandi",
     "crit": "bbox p95, tile size, processing duration va before/after benchmark bor"
    },
    {
-    "id": "z27-5",
+    "id": "z31-5",
     "html": "Security review yakunlandi",
     "crit": "RBAC, audit, secrets, backup/restore va incident drill evidence bor"
    },
    {
-    "id": "z27-6",
+    "id": "z31-6",
     "html": "Portfolio case study yozildi",
     "crit": "muammo, yechim, stack, qarorlar, natijalar va keyingi qadamlar bor"
    },
    {
-    "id": "z27-7",
+    "id": "z31-7",
     "html": "Interview pitch tayyorlandi",
     "crit": "loyihani 2 daqiqa va 10 daqiqa formatda tushuntira olasan"
    }
@@ -7590,9 +7590,9 @@
    }
   ],
   "project": {
-   "tag": "Final / Portfolio / Senior-ready",
-   "title": "Geospatial Full-Stack Academy Final Defense",
-   "desc": "Butun kurs natijasini live demo, engineering evidence va portfolio case study sifatida himoya qilish.",
+   "tag": "Preparation / Evidence / Rehearsal",
+   "title": "GeoPulse Final Defense Rehearsal",
+   "desc": "Tashqi flagship assessmentdan oldin live demo, engineering evidence va portfolio hikoyasini sinovdan o'tkazish.",
    "features": [
     "live demo",
     "code review",
@@ -7666,7 +7666,7 @@
    {
     "topic": "Final proof",
     "rule": "demo + tests + benchmark + security + runbook + case study.",
-    "ex": "Final assessmentda har claim dalil bilan yopiladi."
+    "ex": "Rehearsalda har claim dalil bilan tekshiriladi, yakuniy assessmentda esa mustaqil reviewer tomonidan baholanadi."
    }
   ]
  },

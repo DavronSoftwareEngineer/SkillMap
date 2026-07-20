@@ -1,11 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useStore } from "../store";
-import { RichHtml } from "./RichHtml";
+import { buildLessonGlossary, prepareLessonHtml } from "../lib/lesson";
 import { CodeBlock } from "./CodeBlock";
 import { Quiz } from "./Quiz";
 import { Exercises } from "./Exercises";
 import { BookCover } from "./BookCover";
 import { ProjectAssessment } from "./ProjectAssessment";
+import { LessonReader } from "./LessonReader";
+
+const TECH_COURSES = new Set([
+  "webgis",
+  "frontend",
+  "backend",
+  "telegram",
+  "cybersecurity",
+  "git",
+  "prompting",
+]);
+
+function getLessonLevel(index: number, total: number) {
+  const position = total > 1 ? index / (total - 1) : 0;
+  if (position < 0.3) return "Poydevor";
+  if (position < 0.72) return "Amaliy";
+  return "Professional";
+}
 
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="#0B1014" strokeWidth={3}>
@@ -51,6 +69,16 @@ export function ModuleView({
     setTab("doc");
   }, [index, course.id]);
 
+  const lesson = useMemo(
+    () => prepareLessonHtml(m.doc, `${course.id}-${m.zoom}`),
+    [course.id, m.doc, m.zoom],
+  );
+  const glossary = useMemo(
+    () => buildLessonGlossary(m.vocab || [], m.doc, TECH_COURSES.has(courseId)),
+    [courseId, m.doc, m.vocab],
+  );
+  const lessonLevel = getLessonLevel(index, modules.length);
+
   const doneCount = m.tasks.filter((t) => isDone(t.id)).length;
   const donePct = m.tasks.length ? Math.round((doneCount / m.tasks.length) * 100) : 0;
 
@@ -76,18 +104,19 @@ export function ModuleView({
           <p className="mlede" dangerouslySetInnerHTML={{ __html: m.lede }} />
         </div>
         <aside className="module-status-card" aria-label="Modul holati">
-          <span className="msc-kicker">Learning workspace</span>
+          <span className="msc-kicker">O'quv holati</span>
           <b>{m.zoom}</b>
           <span>{m.sub}</span>
           <div className="msc-bar">
             <i style={{ width: donePct + "%" }} />
           </div>
           <div className="msc-row">
-            <span>{doneCount}/{m.tasks.length} task</span>
+            <span>{doneCount}/{m.tasks.length} topshiriq</span>
             <span>{donePct}%</span>
           </div>
           <div className="msc-mini">
-            <span>{tabs.length} bo'lim</span>
+            <span>{lesson.readingMinutes} daqiqa</span>
+            <span>{lesson.sections.length || 1} mavzu</span>
             {m.quiz.length > 0 && <span>{m.quiz.length} test</span>}
           </div>
         </aside>
@@ -97,11 +126,11 @@ export function ModuleView({
         <button className="modbook" style={{ ["--bc" as string]: refBook.accent }} onClick={onBooks}>
           <BookCover book={refBook} />
           <span className="mb-tx">
-            <small>Kitob Bu modulga oid kitob</small>
+            <small>Bu modul uchun tavsiya etiladi</small>
             <b>{refBook.title}</b>
             <span>{refBook.author}</span>
           </span>
-          <span className="mb-go">Kitoblar -&gt;</span>
+          <span className="mb-go">Kitobni ko'rish -&gt;</span>
         </button>
       )}
 
@@ -116,7 +145,14 @@ export function ModuleView({
         </div>
 
         <div className="panel active" key={tab}>
-        {tab === "doc" && <RichHtml className="prose" html={m.doc} />}
+        {tab === "doc" && (
+          <LessonReader
+            lesson={lesson}
+            tasks={m.tasks}
+            glossary={glossary}
+            level={lessonLevel}
+          />
+        )}
 
         {tab === "code" && (
           <div>
