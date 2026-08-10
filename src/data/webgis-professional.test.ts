@@ -3,16 +3,31 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { loadCourseModules } from "./courses";
+import { COURSES, COURSE_GROUPS, loadCourseModules } from "./courses";
 
 const ENHANCEMENT_IDS = ["g0", "s1", "py1", "py2", "cn1", "rs1", "ai1", "ops1", "d3", "f1"];
 
 describe("WebGIS professional learning path", () => {
+  it("positions one main career track, supporting skills, and personal development", () => {
+    const groupedIds = COURSE_GROUPS.flatMap((group) => [...group.ids]);
+
+    expect(COURSE_GROUPS[0]).toEqual({ label: "Main Career Track", ids: ["webgis"] });
+    expect(COURSE_GROUPS[1].ids).toEqual([
+      "frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting",
+    ]);
+    expect(COURSE_GROUPS[2].ids).toEqual(["finance", "russian", "arabic"]);
+    expect(new Set(groupedIds).size).toBe(COURSES.length);
+    expect(new Set(groupedIds)).toEqual(new Set(COURSES.map((course) => course.id)));
+    expect(COURSES.find((course) => course.id === "webgis")?.brandSub).toBe(
+      "React TS / MapLibre / FastAPI / PostGIS / GDAL / GeoAI / Docker",
+    );
+  });
+
   it("keeps prerequisites, defense, flagship, and career in a coherent order", async () => {
     const modules = await loadCourseModules("webgis");
     const ids = modules.map((module) => module.zoom);
 
-    expect(modules).toHaveLength(44);
+    expect(modules).toHaveLength(45);
     expect(new Set(ids).size).toBe(ids.length);
     expect(ids.indexOf("g0")).toBeGreaterThan(ids.indexOf("z0"));
     expect(ids.indexOf("s1")).toBeGreaterThan(ids.indexOf("z1"));
@@ -23,6 +38,8 @@ describe("WebGIS professional learning path", () => {
     expect(ids.indexOf("ai1")).toBeGreaterThan(ids.indexOf("z18"));
     expect(ids.indexOf("d3")).toBeGreaterThan(ids.indexOf("z29"));
     expect(ids.indexOf("f1")).toBeGreaterThan(ids.indexOf("z30"));
+    expect(ids.indexOf("GI1")).toBeGreaterThan(ids.indexOf("z31"));
+    expect(ids.indexOf("GI1")).toBeLessThan(ids.indexOf("z32"));
     expect(ids.indexOf("FG")).toBeGreaterThan(ids.indexOf("z31"));
     expect(ids.indexOf("FG")).toBeLessThan(ids.indexOf("z32"));
   });
@@ -74,5 +91,21 @@ describe("WebGIS professional learning path", () => {
     ].forEach((relativePath) => {
       expect(fs.existsSync(path.join(root, relativePath)), relativePath).toBe(true);
     });
+  });
+
+  it("covers the professional geospatial stack without promoting YOLO above GeoAI", async () => {
+    const modules = await loadCourseModules("webgis");
+    const content = modules.map((module) => JSON.stringify(module)).join("\n");
+
+    [
+      "MapLibre", "viewport", "PMTiles", "GeoParquet", "TiTiler", "xarray/rioxarray",
+      "ST_DWithin", "geometry", "geography", "PyTorch", "land-cover", "change detection",
+      "satellite embeddings", "spatial split", "model card", "OpenTelemetry", "Celery",
+      "idempotency", "backup/restore", "licensing", "provenance", "ADR",
+    ].forEach((term) => expect(content, term).toContain(term));
+
+    const meta = COURSES.find((course) => course.id === "webgis");
+    expect(meta?.brandSub).not.toContain("YOLO");
+    expect(content).toContain("YOLO");
   });
 });

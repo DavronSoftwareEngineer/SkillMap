@@ -2083,8 +2083,8 @@ table.vocab td {
 
 /* Course switcher */
 .course-switch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
   background: var(--ink-2);
   border: 1px solid var(--line);
@@ -2156,6 +2156,30 @@ table.vocab td {
   flex-wrap: wrap;
   gap: 8px;
   margin: 14px 0 10px;
+}
+.course-group {
+  display: block;
+}
+.course-group + .course-group {
+  border-top: 1px solid var(--line);
+  padding-top: 7px;
+}
+.course-group-label {
+  display: block;
+  margin: 1px 4px 6px;
+  color: var(--fg-dim);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.course-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.course-group:first-child .course-group-grid {
+  grid-template-columns: 1fr;
 }
 .booklegend span,
 .bookaccess {

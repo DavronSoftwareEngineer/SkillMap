@@ -1,6 +1,9 @@
 import type { Module, Book } from "../types";
 import { WEBGIS_FLAGSHIP_MODULE } from "./webgis-flagship";
 import { WEBGIS_ENHANCEMENT_MODULES_AFTER } from "./webgis-enhancements";
+import { BACKEND_ENHANCEMENTS_AFTER } from "./backend-enhancements";
+import { BACKEND_FULLSTACK_ENHANCEMENTS_AFTER, FRONTEND_ENHANCEMENTS_AFTER } from "./fullstack-bridges";
+import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
 
 export interface CourseMeta {
   id: string;
@@ -36,6 +39,31 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
   const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
   const data = await loader();
   const modules = data.default as Module[];
+  if (id === "backend") {
+    const ordered: Module[] = [];
+    modules.forEach((module) => {
+      ordered.push(module);
+      ordered.push(...(BACKEND_ENHANCEMENTS_AFTER[module.zoom] || []));
+      ordered.push(...(BACKEND_FULLSTACK_ENHANCEMENTS_AFTER[module.zoom] || []));
+    });
+    return ordered;
+  }
+  if (id === "frontend") {
+    const ordered: Module[] = [];
+    modules.forEach((module) => {
+      ordered.push(module);
+      ordered.push(...(FRONTEND_ENHANCEMENTS_AFTER[module.zoom] || []));
+    });
+    return ordered;
+  }
+  if (id === "telegram") {
+    const ordered: Module[] = [];
+    modules.forEach((module) => {
+      ordered.push(module);
+      ordered.push(...(TELEGRAM_ENHANCEMENTS_AFTER[module.zoom] || []));
+    });
+    return ordered;
+  }
   if (id !== "webgis") return modules;
 
   const ordered: Module[] = [];
@@ -47,6 +75,15 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
   });
   return ordered;
 }
+
+export const COURSE_GROUPS = [
+  { label: "Main Career Track", ids: ["webgis"] },
+  {
+    label: "Supporting Skills",
+    ids: ["frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting"],
+  },
+  { label: "Personal Development", ids: ["finance", "russian", "arabic"] },
+] as const;
 
 // Urg'u ranglari (kartalar uchun) - aylanib ishlatiladi.
 const A = "#34d6c0",
@@ -61,7 +98,7 @@ export const COURSES: CourseMeta[] = [
     id: "webgis",
     name: "Geospatial",
     brandTitle: "Geospatial Full-Stack Academy",
-    brandSub: "React TS / MapLibre / FastAPI / PostGIS / GDAL / YOLO / Docker",
+    brandSub: "React TS / MapLibre / FastAPI / PostGIS / GDAL / GeoAI / Docker",
     labels: {
       doc: "Hujjat",
       code: "Kod misollari",

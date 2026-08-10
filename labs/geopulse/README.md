@@ -11,6 +11,10 @@ tasks.
 
 ## Baseline architecture
 
+The target remains a modular monolith. Long-running GDAL/GeoAI and notification
+jobs may move to one Redis + Celery worker; adding microservices, Kafka, or
+Kubernetes requires measured load and an ADR, not fashion.
+
 ```text
 Browser
   |
@@ -145,8 +149,11 @@ all pass.
 
 Choose one primary track; the other may remain an elective.
 
-- GeoAI: spatial split, baseline, per-region metrics, error gallery, threshold
-  decision, georeferenced output, and model card.
+- GeoAI: PyTorch baseline for detection, semantic segmentation, raster/land-cover
+  classification, change detection, or satellite embeddings. YOLO is one
+  detection/segmentation tool, not the track name. Require spatial split,
+  reproducible config/seed, dataset license and provenance, per-region metrics,
+  error gallery, threshold decision, georeferenced output, and model card.
 - 3D: source manifest, reproducible reconstruction, independent checkpoint
   RMSE, PDAL QA, tiled viewer, and provenance.
 

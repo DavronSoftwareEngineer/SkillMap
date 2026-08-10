@@ -10,7 +10,8 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
   lede:
     "Bu modul barcha kurslardagi bilimni bitta <strong>deploy qilingan geospatial platforma</strong>ga yig'adi: React xarita, FastAPI API, PostGIS, Telegram bildirishnoma va production infratuzilmasi.",
   doc: `
-    <p><strong>GeoPulse</strong> hududiy obyektlar, hodisalar yoki infratuzilmani kuzatish uchun platforma. Foydalanuvchi xaritada obyektlarni qidiradi va filtrlaydi; administrator ma'lumotni boshqaradi; foydalanuvchilar esa muhim hodisalar haqida Telegram orqali bildirishnoma oladi.</p>
+    <p><strong>GeoPulse</strong> hududiy obyektlar, hodisalar yoki infratuzilmani kuzatish uchun modular monolith platforma. React/MapLibre frontend, FastAPI domen modullari va PostGIS bitta tushunarli deploy unit atrofida qoladi; faqat og'ir GDAL/GeoAI hamda notification ishlari Redis + Celery background workerga ajratiladi.</p>
+    <div class="callout"><div><p>Architecture rule</p><p>Har katta qaror uchun ADR yoz: context, constraints, decision, rejected alternatives, trade-off, consequences va revisit trigger. Kubernetes, Kafka yoki microservice faqat o'lchangan talab modular monolithdan kuchliroq yechim talab qilsa ko'rib chiqiladi.</p></div></div>
     <div class="callout"><div><p>Ishlaydigan starter lab</p><p>Kurs repositorysidagi <code>labs/geopulse</code> papkasidan boshla. Unda PostGIS seed, FastAPI bbox API, React/MapLibre viewport loader, Nginx gateway, backend/frontend testlari, smoke test va professional evidence shablonlari bor. Starter final yechim emas; har milestone shu vertikal slice ustida quriladi.</p></div></div>
     <h3>Mahsulot arxitekturasi</h3>
     <div class="chips">
@@ -25,7 +26,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     <p>GeoJSON, raster/vector farqi, CRS/EPSG, MapLibre layerlar va viewport bo'yicha qidiruvni amalda ishlat. PostGIS spatial query hamda GIST index bilan katta data uchun tezlikni o'lcha. GDAL/Rasterio orqali COG pipeline qur, window read natijasini tekshir. OSM licensing, data quality va location privacy'ni hujjatlashtir.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Interaktiv xarita, spatial qidiruv va real geodata bilan ishlaydigan, tezkor WebGIS interfeysi.</p></div></div>
     <h3>3-oy: production tayyorgarligi</h3>
-    <p>YOLO uchun kichik, hujjatlashtirilgan dataset bilan baseline va evaluation tayyorla. Telegram subscription va notification flow, background queue, Docker Compose, Nginx, CI/CD, structured logging, Prometheus metriclari, health check, audit log va amalda sinalgan backup/restore qo'shiladi.</p>
+    <p>GeoAI use-case uchun PyTorch baseline tayyorla; YOLOni object detection/segmentation varianti sifatida ishlatish mumkin. Spatial split, georeferenced output, per-region metrics, model card, dataset license/provenance va reproducible experiment majburiy. Telegram subscription va notification flow, Redis + Celery queue, retry/idempotency, Docker Compose, Nginx, CI/CD, structured logging, OpenTelemetry tracing, error tracking, rate limiting, secrets management, health check, audit log va amalda sinalgan backup/restore qo'shiladi.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Ommaga ko'rsatish mumkin bo'lgan deploy qilingan mahsulot: demo, README, arxitektura sxemasi va testlar bilan.</p></div></div>
     <h3>System design savollari</h3>
     <div class="chips">
@@ -67,7 +68,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     { id: "fg-9", html: "Docker Compose, health check va Nginx reverse proxy sozladim", crit: "yangi kompyuterda bitta buyruq bilan lokal servislar ko'tariladi" },
     { id: "fg-10", html: "Demo, README va arxitektura sxemasini tayyorladim", crit: "boshqa dasturchi loyihani hujjat orqali ishga tushira oladi" },
     { id: "fg-11", html: "GDAL/Rasterio bilan rasterdan COG yaratish va window read pipeline yozdim", crit: "pipeline qayta ishga tushiriladi; metadata, overview va window read avtomatik tekshiriladi" },
-    { id: "fg-12", html: "YOLO baseline modelini alohida validation/test to'plamida baholadim", crit: "precision, recall, mAP, confusion matrix va xato tahlili hisobotda bor" },
+    { id: "fg-12", html: "GeoAI baseline modelini spatially alohida validation/test to'plamida baholadim", crit: "YOLO detection/segmentation yoki boshqa tanlangan model uchun per-region metric, model card va xato tahlili bor" },
     { id: "fg-13", html: "Prometheus metriclari, structured log va kamida bitta alert qo'shdim", crit: "request latency, error rate va worker holati dashboard yoki query orqali ko'rinadi" },
     { id: "fg-14", html: "Audit log hamda backup/restore runbookini real mashqda tekshirdim", crit: "toza database backupdan tiklanadi va vaqt/natija dalil sifatida saqlanadi" },
   ],
@@ -89,7 +90,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
       "React + MapLibre xarita, qidiruv va filtrlar",
       "FastAPI API, auth, role va validation",
       "PostgreSQL + PostGIS spatial query va index",
-      "GDAL/Rasterio COG pipeline va YOLO evaluation",
+      "GDAL/Rasterio COG pipeline va GeoAI evaluation (YOLO variant sifatida)",
       "Telegram subscription va notification",
       "Docker Compose, Nginx, CI/CD va observability",
       "Testlar, audit log, backup/restore va batafsil README",
@@ -156,14 +157,14 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
         },
         {
           id: "processing-ai",
-          title: "Raster/COG va YOLO evaluation",
+          title: "Raster/COG va GeoAI evaluation",
           description: "Qayta ishlatiladigan geoprocessing pipeline hamda model natijasini halol baholash mavjud.",
           points: 10,
           minimumPoints: 5,
           indicators: [
             "GDAL/Rasterio pipeline valid COG, overview va metadata hosil qiladi.",
-            "YOLO train/validation/test ajratilishi va dataset versiyasi qayd etilgan.",
-            "Precision, recall, mAP va xato tahlili use-case thresholdiga bog'langan.",
+            "Model train/validation/test spatial split va dataset versiyasi qayd etilgan; YOLO detection/segmentation vositalaridan biri sifatida qoladi.",
+            "Per-region metric, georeferenced output, model card va xato tahlili use-case thresholdiga bog'langan.",
           ],
           evidence: ["repository", "performance-report", "model-report"],
         },

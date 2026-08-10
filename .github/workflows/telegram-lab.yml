@@ -1,0 +1,29 @@
+name: Telegram lab quality gate
+
+on:
+  pull_request:
+    paths: ["labs/telegram-bot/**", ".github/workflows/telegram-lab.yml"]
+  push:
+    paths: ["labs/telegram-bot/**", ".github/workflows/telegram-lab.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/telegram-bot/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test
+  compose-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cp labs/telegram-bot/.env.example labs/telegram-bot/.env
+      - run: docker compose -f labs/telegram-bot/compose.yaml config --quiet

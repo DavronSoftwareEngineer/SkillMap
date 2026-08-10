@@ -171,8 +171,8 @@ const RASTER_CLOUD_MODULE: Module = {
 
 const GEOAI_FOUNDATION_MODULE: Module = {
   zoom: "ai1",
-  title: "GeoAI Foundation Models",
-  sub: "Detection / segmentation / leakage",
+  title: "GeoAI & Remote Sensing",
+  sub: "PyTorch / detection / segmentation / change",
   coord: "GeoAI / future-ready",
   eyebrow: "GEOAI / FOUNDATION MODELS / VALIDATION",
   mtitle: "YOLO nomidan yuqoriga: halol va geografik barqaror GeoAI",
@@ -185,6 +185,7 @@ const GEOAI_FOUNDATION_MODULE: Module = {
       <div class="ex"><b>Segmentation</b><span>Maydon, bino izi, suv yoki yo'l maskasi kerak bo'lsa IoU/Dice va boundary sifati o'lchanadi.</span></div>
       <div class="ex"><b>Foundation embeddings</b><span>Label kam bo'lganda pretrained geospatial representation ustida klassifikatsiya yoki retrieval quriladi.</span></div>
     </div>
+    <p><strong>PyTorch poydevori:</strong> tensor, Dataset/DataLoader, train/eval rejimi, loss, optimizer, checkpoint va deterministic seed kichik raster klassifikatori bilan o'rganiladi. YOLO object detection uchun bitta vosita; land-cover classification, semantic segmentation, change detection va satellite embeddings esa GeoAI'ning teng huquqli yo'nalishlari.</p>
     <h3>Geographic leakage</h3>
     <p>Yonma-yon tile'larni random train/testga bo'lish modelga deyarli bir xil hududni ko'rsatishi mumkin. Split AOI, vaqt, sensor yoki region bo'yicha group qilinadi. Test hududi train hududidan fazoviy mustaqil bo'lishi kerak.</p>
     <h3>Evaluation contract</h3>
@@ -211,6 +212,12 @@ const GEOAI_FOUNDATION_MODULE: Module = {
       lang: "md",
       code: `| threshold | precision | recall | misses/100 | reviews/100 |\n| ---: | ---: | ---: | ---: | ---: |\n| 0.25 | 0.61 | 0.93 | 7 | 152 |\n| 0.50 | 0.82 | 0.78 | 22 | 95 |\n\nDecision: 0.25 + mandatory operator review, because a miss costs more than an extra review.`,
     },
+    {
+      heading: { h: "Reproducible PyTorch baseline", p: "Land-cover patch klassifikatori seed va immutable config bilan qayta bajariladi." },
+      title: "train_landcover.py",
+      lang: "py",
+      code: `import random\nimport numpy as np\nimport torch\n\nSEED = 42\nrandom.seed(SEED)\nnp.random.seed(SEED)\ntorch.manual_seed(SEED)\ntorch.use_deterministic_algorithms(True)\n\nmodel.train()\nfor image, label in train_loader:\n    optimizer.zero_grad()\n    loss = criterion(model(image), label)\n    loss.backward()\n    optimizer.step()\n\ntorch.save({"model": model.state_dict(), "seed": SEED}, "artifacts/baseline.pt")`,
+    },
   ],
   tasks: [
     { id: "ai1-1", html: "Use-case uchun detection, segmentation yoki embedding yondashuvini tanladim", crit: "Output turi, label hajmi, latency va xato narxi bilan ADR yozilgan" },
@@ -221,6 +228,10 @@ const GEOAI_FOUNDATION_MODULE: Module = {
     { id: "ai1-6", html: "Thresholdni operator workload va xato narxi bilan tanladim", crit: "Decision table, abstain holati va review siyosati mavjud" },
     { id: "ai1-7", html: "Inference outputni georeference qilib MapLibre'da ko'rsatdim", crit: "Pixel/tile offset va CRS regression testi o'tadi" },
     { id: "ai1-8", html: "Model card va monitoring triggerlarini yozdim", crit: "Limitation, drift signal, rollback va retrain condition bor" },
+    { id: "ai1-9", html: "PyTorch bilan reproducible raster classification baseline yozdim", crit: "Config, seed, dependency lock, dataset checksum va qayta ishga tushirish buyrug'i saqlangan" },
+    { id: "ai1-10", html: "Land-cover classification yoki semantic segmentationni mustaqil regionda baholadim", crit: "Per-region confusion matrix hamda IoU/F1 yoki balanced accuracy reporti bor" },
+    { id: "ai1-11", html: "Ikki sana bilan change-detection tajribasi o'tkazdim", crit: "Coregistration, cloud/nodata mask, threshold va false-change tahlili test bilan tekshirilgan" },
+    { id: "ai1-12", html: "Satellite embeddings provenance va licensing manifestini yozdim", crit: "Model/dataset versiyasi, source, license, AOI, sana va downstream cheklovlar qayd etilgan" },
   ],
   resources: [
     { type: "doc", url: "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/", title: "AlphaEarth Foundations", desc: "Multi-source geospatial embeddings va mapping use-caselari.", host: "deepmind.google" },
@@ -228,12 +239,13 @@ const GEOAI_FOUNDATION_MODULE: Module = {
     { type: "doc", url: "https://docs.ogc.org/is/23-024r3/23-024r3.html", title: "OGC Training Data Markup Language for AI", desc: "Geospatial ML training data metadata standardi.", host: "docs.ogc.org" },
     { type: "doc", url: "https://docs.ultralytics.com/guides/model-evaluation-insights/", title: "Model evaluation insights", desc: "Detection metriclari va error analysis.", host: "docs.ultralytics.com" },
     { type: "doc", url: "https://scikit-learn.org/stable/modules/cross_validation.html", title: "Cross-validation strategies", desc: "Group split va leakage nazorati.", host: "scikit-learn.org" },
+    { type: "doc", url: "https://pytorch.org/docs/stable/", title: "PyTorch documentation", desc: "Tensor, Dataset/DataLoader, training va reproducibility uchun rasmiy hujjat.", host: "pytorch.org" },
   ],
   project: {
     tag: "GeoAI / Independent Evaluation",
-    title: "Geographically Robust Detection or Segmentation Study",
-    desc: "Bir use-case uchun modelni spatially independent test setda baholab, human review va production threshold bilan yakunla.",
-    features: ["dataset card", "spatial split", "baseline comparison", "per-region metrics", "error gallery", "threshold cost", "georeferenced layer", "model card"],
+    title: "Geographically Robust GeoAI Study",
+    desc: "Detection, segmentation, land-cover, change detection yoki satellite embedding use-case'ini spatially independent test setda baholab, human review va production threshold bilan yakunla.",
+    features: ["PyTorch baseline", "dataset card", "spatial split", "baseline comparison", "per-region metrics", "error gallery", "georeferenced layer", "model card", "license/provenance"],
     rubric: [
       "Train/test geografik overlap yo'q",
       "Metriclar use-case va xato narxiga bog'langan",

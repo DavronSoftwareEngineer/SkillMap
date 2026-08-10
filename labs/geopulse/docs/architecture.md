@@ -26,7 +26,11 @@ Browser --HTTPS--> Gateway -+--> FastAPI --> PostGIS
 
 ## Evolution boundaries
 
-- Heavy processing moves to a queue worker, not into the request handler.
+- Heavy processing moves to a Redis + Celery queue worker, not into the request handler;
+  retry and idempotency are part of its contract.
+- FastAPI remains a modular monolith until an ADR demonstrates a boundary that
+  needs independent scaling or ownership. Kafka, Kubernetes, and microservices
+  are not baseline requirements.
 - Public read-only tiles may move to PMTiles/object storage.
 - Frequently changing or protected layers remain dynamic.
 - Raster assets use COG + STAC rather than database blobs.

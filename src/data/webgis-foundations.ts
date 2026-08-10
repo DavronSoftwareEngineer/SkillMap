@@ -246,8 +246,8 @@ const GEOPYTHON_MODULE: Module = {
     "Bu modul oddiy Python kodini NumPy, GeoPandas, Shapely, Rasterio va PyProj bilan professional geoprocessing pipeline'ga aylantiradi.",
   doc: `
     <h3>O'quv natijalari</h3>
-    <p>Sen vectorized hisob va Python loop farqini o'lchaysan, CRSni pipeline contractda saqlaysan, raster window bilan memoryni boshqarasan, nodata va dtype xatosini topasan hamda bir xil input uchun takrorlanuvchi output hosil qilasan.</p>
-    <div class="chips"><span class="chip t">NumPy array/dtype</span><span class="chip">GeoPandas</span><span class="chip">Shapely 2</span><span class="chip t">PyProj</span><span class="chip">Rasterio window</span><span class="chip">nodata/mask</span><span class="chip t">chunking</span><span class="chip">provenance</span></div>
+    <p>Sen vectorized hisob va Python loop farqini o'lchaysan, CRSni pipeline contractda saqlaysan, raster window bilan memoryni boshqarasan, nodata va dtype xatosini topasan hamda bir xil input uchun takrorlanuvchi output hosil qilasan. Ko'p o'lchamli vaqt qatori uchun xarray/rioxarray, chunked compute uchun esa o'lchangan ehtiyoj bo'lsa Dask ishlatiladi.</p>
+    <div class="chips"><span class="chip t">NumPy array/dtype</span><span class="chip">GeoPandas</span><span class="chip">Shapely 2</span><span class="chip t">PyProj</span><span class="chip">Rasterio window</span><span class="chip">xarray/rioxarray</span><span class="chip">nodata/resampling</span><span class="chip t">chunking</span><span class="chip">provenance</span></div>
     <h3>Raster tuzoqlari</h3>
     <p>Pixel qiymati real dunyo koordinatasi emas. Transform, CRS, band, dtype, nodata va mask birga tekshiriladi. Float hisobni uint8 ga erta aylantirish yoki nodata'ni oddiy nol deb olish natijani buzadi.</p>
     <h3>Pipeline contract</h3>
@@ -273,6 +273,12 @@ const GEOPYTHON_MODULE: Module = {
       lang: "json",
       code: `{"input":{"path":"assets.gpkg","sha256":"..."},"output":{"path":"assets-clean.gpkg","crs":"EPSG:4326"},"tool":{"name":"geo-clean","version":"0.1.0"},"checks":{"invalid_before":17,"invalid_after":0}}`,
     },
+    {
+      heading: { h: "xarray/rioxarray time series", p: "Coordinate-aware raster cube CRS, nodata va resampling qarorini saqlaydi." },
+      title: "timeseries.py",
+      lang: "py",
+      code: `import xarray as xr\nimport rioxarray\nfrom rasterio.enums import Resampling\n\ncube = xr.concat(\n    [rioxarray.open_rasterio(path, masked=True) for path in scenes],\n    dim="time",\n)\nassert cube.rio.crs is not None\naligned = cube.rio.reproject_match(reference, resampling=Resampling.bilinear)\nmonthly = aligned.groupby("time.month").mean(skipna=True)`,
+    },
   ],
   tasks: [
     { id: "py2-1", html: "NumPy dtype va nodata xatosini tajribada ko'rsatdim", crit: "Noto'g'ri va to'g'ri natija raqam hamda test bilan solishtirilgan" },
@@ -282,6 +288,8 @@ const GEOPYTHON_MODULE: Module = {
     { id: "py2-5", html: "Chunked processing va atomic output yozdim", crit: "Yarim yo'lda xato bo'lsa eski valid output buzilmaydi" },
     { id: "py2-6", html: "Har output uchun provenance manifest yaratdim", crit: "Checksum, tool version, CRS va command mavjud" },
     { id: "py2-7", html: "Golden fixture bilan regression test yozdim", crit: "Kichik deterministic dataset va kutilgan geometry/statistika mavjud" },
+    { id: "py2-8", html: "xarray/rioxarray bilan coordinate-aware raster time series qurdim", crit: "CRS, dimensions, nodata va chunk strategiyasi test orqali tekshirilgan" },
+    { id: "py2-9", html: "Continuous va categorical raster resampling usullarini taqqosladim", crit: "Bilinear/cubic va nearest tanlovining xato ta'siri raqam va golden fixture bilan ko'rsatilgan" },
   ],
   resources: [
     { type: "doc", url: "https://numpy.org/doc/stable/user/absolute_beginners.html", title: "NumPy fundamentals", desc: "Array, dtype va vectorized hisob.", host: "numpy.org" },
@@ -289,6 +297,7 @@ const GEOPYTHON_MODULE: Module = {
     { type: "doc", url: "https://shapely.readthedocs.io/en/stable/", title: "Shapely documentation", desc: "Geometry operation va validity.", host: "shapely.readthedocs.io" },
     { type: "doc", url: "https://rasterio.readthedocs.io/en/stable/topics/windowed-rw.html", title: "Rasterio windowed reading", desc: "Katta raster uchun window va block amaliyoti.", host: "rasterio.readthedocs.io" },
     { type: "doc", url: "https://pyproj4.github.io/pyproj/stable/", title: "PyProj documentation", desc: "Python coordinate transforms.", host: "pyproj4.github.io" },
+    { type: "doc", url: "https://corteva.github.io/rioxarray/stable/", title: "rioxarray documentation", desc: "xarray raster cube, CRS, clipping va reprojection.", host: "corteva.github.io" },
   ],
   project: {
     tag: "GeoPython / Reproducible Pipeline",

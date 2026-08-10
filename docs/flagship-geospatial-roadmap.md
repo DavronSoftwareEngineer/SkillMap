@@ -15,6 +15,8 @@ oladi. Administrator esa obyektlarni boshqaradi va tizim holatini kuzatadi.
 
 ## Tavsiya etilgan arxitektura
 
+Asosiy shakl — **modular monolith + background worker + PostGIS**. FastAPI ichidagi domen modullari bitta deploy unit bo'lib qoladi; faqat uzoq GDAL/GeoAI va notification ishlari Redis + Celery workerga uzatiladi. Kubernetes, Kafka va microservice majburiy emas.
+
 ```text
 React + MapLibre UI
         |
@@ -22,7 +24,7 @@ Python / FastAPI API
         |
 PostgreSQL + PostGIS
         |
-Telegram Bot / background worker
+Redis + Celery background worker / Telegram Bot
         |
 Docker Compose + Nginx + CI/CD
 ```
@@ -33,7 +35,7 @@ Docker Compose + Nginx + CI/CD
 
 - React dashboard: login, obyektlar ro'yxati, qidiruv va filtrlash.
 - FastAPI API: Pydantic contract bilan CRUD, pagination va input validation.
-- PostgreSQL sxemasi, migrationlar va seed ma'lumotlar.
+- PostgreSQL/PostGIS sxemasi, Alembic migrationlar va seed ma'lumotlar.
 - Auth: foydalanuvchi, admin va moderator rollari.
 - Git ishlash tartibi: feature branch, pull request, code review checklist.
 
@@ -46,7 +48,8 @@ Docker Compose + Nginx + CI/CD
 - MapLibre xaritasi, markerlar, layerlar va viewport bo'yicha qidiruv.
 - PostGIS geometry/geography, spatial query va GIST index.
 - Geocoding, routing yoki spatial analysisdan bitta real use case.
-- Katta data uchun clustering, server pagination yoki vector tiles.
+- Katta data uchun clustering, bbox loading, MVT/PMTiles va MapLibre performance budget.
+- COG/STAC/TiTiler hamda GeoParquet; S3-compatible object storage yoki MinIO bilan range-read tekshiruvi.
 - OpenStreetMap licensing, data quality va joylashuv maxfiyligi.
 
 **Natija:** tez ishlaydigan interaktiv xarita va spatial qidiruv.
@@ -55,14 +58,18 @@ Docker Compose + Nginx + CI/CD
 
 - Telegram bot: hudud yoki hodisa bo'yicha subscription va bildirishnoma.
 - Background job/queue va kerak bo'lsa WebSocket orqali jonli yangilanish.
+- Redis + Celery joblari uchun retry, idempotency va dead-letter/recovery siyosati.
 - Docker Compose, Nginx reverse proxy va environment konfiguratsiyasi.
 - CI/CD: lint, test, build va deploy bosqichlari.
-- Structured logging, error tracking, health check va backup rejasi.
+- Structured logging, metrics, OpenTelemetry tracing, error tracking, health check, rate limiting, secrets management va sinovdan o'tgan backup/restore.
+- PyTorch GeoAI baseline: YOLO detection/segmentation variantlaridan biri; land-cover, change detection yoki satellite embeddings use-case'i uchun spatial split, georeferenced output, per-region metrics, model card va dataset license/provenance.
 - README, demo video/screenshot va arxitektura sxemasi.
 
 **Natija:** ommaga ko'rsatiladigan, deploy qilingan portfolio mahsuloti.
 
 ## Sifat talablari
+
+Har katta arxitektura qarori uchun ADR talab qilinadi: context, constraints, decision, rejected alternatives, trade-off, consequences va revisit trigger. AI yaratgan kod, query, test va model natijasi muallif tomonidan mustaqil tekshiriladi; bajarilmagan funksiya yoki o'lchanmagan benchmark tayyor deb ko'rsatilmaydi.
 
 ### Xavfsizlik
 

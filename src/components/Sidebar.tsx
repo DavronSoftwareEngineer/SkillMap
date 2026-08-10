@@ -1,4 +1,4 @@
-import { COURSES } from "../data/courses";
+import { COURSES, COURSE_GROUPS } from "../data/courses";
 import { useStore } from "../store";
 
 const RING_C = 2 * Math.PI * 10;
@@ -54,14 +54,25 @@ export function Sidebar({
       <div className={"scrim" + (open ? " show" : "")} onClick={onClose} />
       <aside className={"side" + (open ? " open" : "")}>
         <div className="course-switch">
-          {COURSES.map((c) => (
-            <button
-              key={c.id}
-              className={c.id === courseId ? "active" : ""}
-              onClick={() => chooseCourse(c.id)}
-            >
-              {c.name}
-            </button>
+          {COURSE_GROUPS.map((group) => (
+            <section className="course-group" key={group.label} aria-label={group.label}>
+              <span className="course-group-label">{group.label}</span>
+              <div className="course-group-grid">
+                {group.ids.map((id) => {
+                  const c = COURSES.find((course) => course.id === id);
+                  if (!c) return null;
+                  return (
+                    <button
+                      key={c.id}
+                      className={c.id === courseId ? "active" : ""}
+                      onClick={() => chooseCourse(c.id)}
+                    >
+                      {c.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
           ))}
         </div>
 

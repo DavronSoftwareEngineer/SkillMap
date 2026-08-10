@@ -4,18 +4,11 @@
 
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
-Bitta ilova, **o'n bitta mustaqil kurs**:
-- **Geospatial** - WebGIS Full-Stack (React TS, MapLibre, FastAPI/Python, PostGIS, GDAL/Rasterio/YOLO, Docker/Nginx/Redis)
-- **Frontend** - 0 dan Senior gacha (HTML, CSS, JS, TS, React)
-- **Backend** - 0 dan Senior gacha (Node.js, TypeScript, DB, API, DevOps)
-- **Git & GitHub** - 0 dan Senior gacha (Git, GitHub, GitLab, branching, rebase, CI/CD, jamoa workflow)
-- **Telegram Bot** - Bot API, Webhook, Mini Apps, Payments (Node.js/TS)
-- **Cybersecurity** - defensive security, network, web, cloud, SOC, IR va GRC
-- **English** - 0 dan IELTS gacha (A1->B2 + Listening/Reading/Writing/Speaking)
-- **Moliya** - Moliyaviy savodxonlik (byudjet -> jamg'arma -> qarz -> xavfsizlik -> investitsiya)
-- **Rus tili** - 0 -> B1 (kirill alifbosi, kelishiklar, fe'l aspekti, suhbat; talaffuz audiosi bilan)
-- **Arab tili** - 0 dan professionalgacha (alifbo, tajvid asoslari, nahv, sarf; Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan)
-- **AI Prompt** - AI bilan ishlash (prompting, aniqlik, rol, few-shot, xavfsizlik; interaktiv Playground bilan)
+Bitta ilova, aniq ierarxiyadagi **o'n ikkita kurs**:
+
+- **Main Career Track — Geospatial Full-Stack Engineering:** React TS / MapLibre / FastAPI / PostGIS / GDAL / GeoAI / Docker. YOLO GeoAI ichidagi object detection va segmentation vositalaridan biri.
+- **Supporting Skills:** Frontend va Backend alohida chuqur kurslar; full-stack product loyihalari shu ikki kurs ichiga taqsimlangan. Git & GitHub, Telegram Bot, Cybersecurity, English va AI Prompting asosiy geospatial yo'lni mahsulot, delivery, xavfsizlik va muloqot tomondan kuchaytiradi.
+- **Personal Development:** Moliya, Rus tili va Arab tili professional trekdan mustaqil shaxsiy rivojlanish yo'nalishlari.
 
 React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
 
@@ -34,7 +27,7 @@ npm test         # lib mantiqi testlari (vitest)
 
 `labs/geopulse/` - kursdagi nazariyani haqiqiy productionga yaqin tizimda bajarish uchun
 ishlaydigan boshlang'ich loyiha. Unda React/TypeScript/MapLibre frontend, FastAPI backend,
-PostGIS ma'lumotlar bazasi, Nginx gateway, testlar, smoke-test va GitHub Actions pipeline bor.
+PostGIS ma'lumotlar bazasi, Nginx gateway, testlar, smoke-test va GitHub Actions pipeline bor. Maqsadli arxitektura — **modular monolith + Redis/Celery background worker + PostGIS**; microservice, Kubernetes yoki Kafka faqat o'lchangan ehtiyoj bo'lsa ADR orqali ko'rib chiqiladi.
 
 ```bash
 cd labs/geopulse
@@ -45,6 +38,32 @@ docker compose down --volumes
 
 Windows PowerShell'da smoke-test uchun `./scripts/smoke-test.ps1` ishlatiladi. Bosqichlar,
 dalillar va professional baholash mezonlari [lab qo'llanmasida](labs/geopulse/README.md) yozilgan.
+
+## Backend Reliability Lab
+
+`labs/backend-api/` — Backend supporting-skill kursi uchun alohida Node.js Docker Compose starter. U GeoPulse'ning default backend'i emas; GeoPulse FastAPI-first arxitekturada qoladi. Lab Node API,
+PostgreSQL va Redis readiness tekshiruvini hamda in-memory idempotency contractini ishga tushiradi.
+Durable queue, auth, telemetry va migrationlar tayyor deb da'vo qilinmaydi — ular evidence bilan
+bajariladigan milestone sifatida [lab qo'llanmasida](labs/backend-api/README.md) yozilgan.
+
+Backend kursining mustaqil Node.js/TypeScript production yo'li va yakuniy portfolio talablari
+[Professional Backend roadmap](docs/backend-professional-roadmap.md)da berilgan. GeoPulse'ning optional
+webhook/worker integration moduli Geospatial kursining yakunida; uning asosiy stacki FastAPI/Python bo'lib qoladi.
+
+## Telegram Production Lab
+
+`labs/telegram-bot/` Telegram kursining executable companion'i. U webhook secret,
+duplicate update idempotency va Mini App invalid-session contractlarini testlaydi; unga mos
+GitHub Actions quality gate ham bor. grammY handler, persistent database/queue va haqiqiy
+Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence milestone'laridir.
+
+## Frontend + Backend ichidagi Full-Stack loyihalar
+
+Full-stack productlar alohida sidebar kursi emas. Frontend kursidagi API integration moduli React
+client, loading/empty/error UX va typed contractni beradi; Backend kursidagi TeamOps Board va
+OrderFlow modullari Node/PostgreSQL/Redis, idempotency, worker va recovery'ni beradi. Yakuniy
+capstone'larda shu ikkisi bir mahsulot sifatida topshiriladi. Bu GeoPulse'dan alohida
+Node.js/TypeScript portfolio dalili; GeoPulse esa FastAPI/PostGIS geospatial flagship bo'lib qoladi.
 
 ## Deploy (Netlify / Vercel)
 
@@ -83,8 +102,10 @@ src/
     webgis-enhancements.ts Qo'shimcha modullarni asosiy ketma-ketlikka biriktiradi
     frontend.json      Frontend kursi (14 modul: FE0->FE13)
     backend.json       Backend kursi (14 modul: BE0->BE13)
+    fullstack-bridges.ts Frontend/Backend ichiga biriktirilgan full-stack project modullari
     git.json           Git & GitHub kursi (14 modul: GT0->GT13)
-    telegram.json      Telegram Bot kursi (11 modul: TG0->TG10; TG9 advanced arxitektura, TG10 yakuniy capstone)
+    telegram.json      Telegram Bot kursi (11 asosiy modul: TG0->TG10; TG9 advanced arxitektura, TG10 yakuniy capstone)
+    telegram-enhancements.ts Telegram production failure-drill moduli (TL1)
     cybersecurity.json Cybersecurity kursi (15 modul: CY0->CY14)
     english.json       English kurs (14 modul: A0->B2 + 4 ko'nikma + Exam + Idm)
     finance.json       Moliya kursi (12 modul: F0->F11)
@@ -122,8 +143,10 @@ public/
 - **Kitoblar:** har kursga o'qish tartibi bilan tavsiya kitoblar ro'yxati biriktirilgan - tegishli modulda kitob eslatmasi chiqadi (`data/courses.ts`, `components/Books.tsx`).
 - **Tinglash va talaffuz mashqlari (til kurslari):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan; `speak` turida sen talaffuz qilasan, brauzer nutqni tanib tekshiradi (English, Rus tili, Arab tili - `lib/speech.ts`).
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
-- **Geospatial professional trek:** 44 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, GeoAI, 3D Tiles, offline field sync, observability/security/testing/system design va mustaqil GeoPulse flagship assessment bor.
+- **Geospatial professional trek:** 44 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython/xarray, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, PyTorch asosidagi GeoAI (YOLO, segmentation, land-cover, change detection, satellite embeddings), offline field sync, observability/security/testing/system design va mustaqil GeoPulse flagship assessment bor.
 - **Bajariladigan capstone:** `labs/geopulse/` ichida frontend, API, PostGIS, Nginx, Docker, testlar va CI bilan real starter repository berilgan; talaba uni milestone'lar bo'yicha production portfolio darajasiga olib chiqadi.
+- **Frontend + Backend ichidagi Full-Stack loyihalar:** TeamOps Board va OrderFlow orqali React/Node/PostgreSQL/Redis productlarini qurish; finalda deploy, CI, reliability evidence va external defense talab qilinadi.
+- **Telegram production lab:** webhook secret, duplicate update va Mini App invalid-session uchun executable contract testlari; keyingi milestone'lar 429 retry, persistent storage va real HMAC verificationni talab qiladi.
 - **Quiz klaviaturasi:** raqam tugmalari birinchi javob berilmagan savol variantini tanlaydi.
 - **Talaffuz / audio:** flashcard va dars misollaridagi Audio tugmasi so'z/jumlani brauzer ovozi (Web Speech API) bilan o'qiydi - o'rnatish shart emas. Til kursiga qarab ovoz tili avtomatik: English `en-US`, Rus tili `ru-RU`, Arab tili `ar-SA`.
 - **Arab tili kursi:** Qur'on va islomiy adabiyotlarni o'qishga yo'naltirilgan 16 modul: asosiy kurs (alifbo -> harakatlar -> nahv/sarf -> i'rob -> Qur'on matni tahlili -> hadis va o'rta yakuniy baholash) + **professional trek** (zaif fe'llar to'liq, 300 so'zlik chastota lug'ati, Oyatul-Kursiy va tafsir uslubidagi matn praktikumi, balag'at asoslari va professional yakuniy loyiha). Barcha arabcha matn to'liq harakatli, transliteratsiya va tarjima bilan; arabcha satrlar `.ar-line` klassi orqali kattaroq va o'ngdan chapga ko'rsatiladi (`styles.css`).
