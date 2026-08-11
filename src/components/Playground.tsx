@@ -16,6 +16,13 @@ function lsSet(k: string, v: string) {
     /* ignore */
   }
 }
+function lsRemove(k: string) {
+  try {
+    sessionStorage.removeItem(k);
+  } catch {
+    /* ignore */
+  }
+}
 
 const DEFAULT_MODEL: Record<Provider, string> = {
   anthropic: "claude-sonnet-4-6",
@@ -63,6 +70,11 @@ export function Playground() {
   const onKeyChange = (v: string) => {
     setKey(v);
     lsSet(provider === "anthropic" ? "ai_key_anthropic" : "ai_key_openai", v);
+  };
+
+  const clearKey = () => {
+    setKey("");
+    lsRemove(provider === "anthropic" ? "ai_key_anthropic" : "ai_key_openai");
   };
 
   const send = async () => {
@@ -143,9 +155,9 @@ export function Playground() {
       </p>
 
       <div className="pg-warn">
-        <b>Maxfiylik:</b> API kalit faqat joriy brauzer sessiyasida turadi va sahifa yopilganda
-        o'chadi. Prompt va kalit faqat tanlangan AI provayderiga yuboriladi. Ommaviy kompyuterda
-        ishlatmang. Kalitni {provider === "anthropic" ? "console.anthropic.com" : "platform.openai.com"} dan olasiz.
+        <b>BYOK maxfiyligi:</b> loyiha API kalitini qabul qilmaydi va saqlamaydi. Kalit faqat joriy
+        brauzer sessiyasida turadi, sahifa yopilganda o'chadi; prompt va kalit bevosita tanlangan AI
+        provayderiga yuboriladi. Ommaviy kompyuterda ishlatmang va kalitga usage limit qo'ying.
       </div>
 
       <div className="pg-row">
@@ -161,13 +173,16 @@ export function Playground() {
 
       <div className="pg-grid2">
         <label className="pg-field">
-          <span>API kalit</span>
+          <span>Shaxsiy API kalit (BYOK)</span>
           <input
             type="password"
             placeholder={provider === "anthropic" ? "sk-ant-..." : "sk-..."}
             value={key}
             onChange={(e) => onKeyChange(e.target.value)}
           />
+          <button type="button" className="pg-chip" onClick={clearKey}>
+            Shu provayder kalitini o'chirish
+          </button>
         </label>
         <label className="pg-field">
           <span>Model</span>

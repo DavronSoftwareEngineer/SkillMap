@@ -17,3 +17,6 @@ __pycache__/
 vite.config.js
 vite.config.d.ts
 .codex-vite-*.log
+debug.log
+playwright-report/
+test-results/

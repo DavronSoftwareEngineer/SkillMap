@@ -4,6 +4,8 @@ import { WEBGIS_ENHANCEMENT_MODULES_AFTER } from "./webgis-enhancements";
 import { BACKEND_ENHANCEMENTS_AFTER } from "./backend-enhancements";
 import { BACKEND_FULLSTACK_ENHANCEMENTS_AFTER, FRONTEND_ENHANCEMENTS_AFTER } from "./fullstack-bridges";
 import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
+import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-enhancements";
+import { PROFESSIONAL_POLISH } from "./professional-polish";
 
 export interface CourseMeta {
   id: string;
@@ -46,7 +48,7 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
       ordered.push(...(BACKEND_ENHANCEMENTS_AFTER[module.zoom] || []));
       ordered.push(...(BACKEND_FULLSTACK_ENHANCEMENTS_AFTER[module.zoom] || []));
     });
-    return ordered;
+    return [...ordered, ...(PROFESSIONAL_POLISH[id] || [])];
   }
   if (id === "frontend") {
     const ordered: Module[] = [];
@@ -54,7 +56,7 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
       ordered.push(module);
       ordered.push(...(FRONTEND_ENHANCEMENTS_AFTER[module.zoom] || []));
     });
-    return ordered;
+    return [...ordered, ...(PROFESSIONAL_POLISH[id] || [])];
   }
   if (id === "telegram") {
     const ordered: Module[] = [];
@@ -63,6 +65,19 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
       ordered.push(...(TELEGRAM_ENHANCEMENTS_AFTER[module.zoom] || []));
     });
     return ordered;
+  }
+  if (id === "english") {
+    const ordered: Module[] = [ENGLISH_PLACEMENT_MODULE];
+    modules.forEach((module) => {
+      ordered.push(module);
+      // Job portfolio bilan bevosita bog'liq: duplicate emas, geospatial
+      // mahsulotni inglizcha himoya qilish uchun maxsus amaliy ko'prik.
+      if (module.zoom === "Job") ordered.push(GEOSPATIAL_ENGLISH_MODULE);
+    });
+    return ordered;
+  }
+  if (PROFESSIONAL_POLISH[id]) {
+    return [...modules, ...PROFESSIONAL_POLISH[id]];
   }
   if (id !== "webgis") return modules;
 
@@ -266,7 +281,7 @@ export const COURSES: CourseMeta[] = [
     id: "english",
     name: "English",
     brandTitle: "English Academy",
-    brandSub: "0 -> IELTS / Listening / Reading / Writing / Speaking",
+    brandSub: "CEFR / IELTS / Technical & Geospatial English",
     labels: {
       doc: "Dars",
       code: "Namunalar",

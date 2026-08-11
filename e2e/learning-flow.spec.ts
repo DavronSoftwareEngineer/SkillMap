@@ -17,3 +17,14 @@ test("direct module links keep the selected course", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Professional Telegram Bot Academy" })).toBeVisible();
   await expect(page.getByText("Telegram Mini App bilan botni full-stack mahsulotga aylantirish")).toBeVisible();
 });
+
+test("professional curriculum extensions are reachable by stable module links", async ({ page }) => {
+  await page.goto("/#english/Diag");
+  await expect(page.getByRole("heading", { name: "Qayerdan boshlashni aniqlang" })).toBeVisible();
+
+  await page.goto("/#english/GeoEN");
+  await expect(page.getByRole("heading", { name: "Geo loyihani inglizcha tushuntiring" })).toBeVisible();
+
+  await page.goto("/#frontend/FE14");
+  await expect(page.getByRole("heading", { name: "Frontendni brauzerda isbotlang" })).toBeVisible();
+});

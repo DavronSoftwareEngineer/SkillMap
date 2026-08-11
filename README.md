@@ -60,6 +60,11 @@ Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence
 ## Quality, sync va deploy preparation
 
 - Root GitHub Actions gate TypeScript/unit test/build hamda Playwright E2E oqimlarini tekshiradi.
+- `npm run test:e2e` Vite test serverini o'zi boshqarib, test tugashi bilan yopadi; Windows va CI'da
+  orphan process qoldirmaydi.
+- AI Playground **BYOK** modelida ishlaydi: loyiha API kalitni qabul qilmaydi yoki saqlamaydi; kalit
+  faqat browserning joriy sessiyasida turadi va tanlangan provayderga bevosita yuboriladi. Production
+  server secret yoki umumiy loyiha kaliti sifatida ishlatilmaydi.
 - `services/skillmap-sync/` local-first progress uchun optional cloud-sync contractini hujjatlashtiradi;
   real identity provider, database va privacy qarorisiz u yoqilmaydi.
 - GeoPulse public deploy uchun [deployment runbook](labs/geopulse/docs/deployment-runbook.md) bor;
