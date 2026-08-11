@@ -57,6 +57,14 @@ duplicate update idempotency va Mini App invalid-session contractlarini testlayd
 GitHub Actions quality gate ham bor. grammY handler, persistent database/queue va haqiqiy
 Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence milestone'laridir.
 
+## Quality, sync va deploy preparation
+
+- Root GitHub Actions gate TypeScript/unit test/build hamda Playwright E2E oqimlarini tekshiradi.
+- `services/skillmap-sync/` local-first progress uchun optional cloud-sync contractini hujjatlashtiradi;
+  real identity provider, database va privacy qarorisiz u yoqilmaydi.
+- GeoPulse public deploy uchun [deployment runbook](labs/geopulse/docs/deployment-runbook.md) bor;
+  hosting va secretlar qo'yilmaguncha u live deployment emas.
+
 ## Frontend + Backend ichidagi Full-Stack loyihalar
 
 Full-stack productlar alohida sidebar kursi emas. Frontend kursidagi API integration moduli React

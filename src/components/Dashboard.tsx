@@ -38,6 +38,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         total,
         tpct: total ? Math.round((done / total) * 100) : 0,
         quiz: qz ? Math.round((qz.best / qz.total) * 100) : null,
+        project: m.project,
       };
     });
     const totalTasks = mods.reduce((a, m) => a + m.total, 0);
@@ -53,7 +54,8 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
       .filter((m) => m.tpct < 100)
       .sort((a, b) => a.tpct - b.tpct || (a.quiz ?? 101) - (b.quiz ?? 101))
       .slice(0, 3);
-    return { mods, totalTasks, doneTasks, overall, quizAvg, fullMods, next, weak };
+    const projects = mods.filter((m) => m.project);
+    return { mods, totalTasks, doneTasks, overall, quizAvg, fullMods, next, weak, projects };
   }, [progress, quizScores, MODULES]);
 
   let level: string;
@@ -214,6 +216,25 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           </button>
         ))}
       </div>
+
+      {d.projects.length > 0 && (
+        <>
+          <h3 className="dash-h">Project roadmap</h3>
+          <div className="project-roadmap">
+            {d.projects.map((module, order) => (
+              <button className="project-roadmap-card" key={module.zoom} onClick={() => onGo(module.i)}>
+                <span>{String(order + 1).padStart(2, "0")}</span>
+                <div>
+                  <b>{module.project!.title}</b>
+                  <small>{module.zoom} / {module.project!.tag}</small>
+                  <p>{module.project!.desc}</p>
+                </div>
+                <em>{module.tpct}%</em>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
 
       <h3 className="dash-h">Modullar bo'yicha</h3>
       <div className="dash-mods">

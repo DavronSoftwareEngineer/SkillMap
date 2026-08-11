@@ -7,6 +7,7 @@ import { Exercises } from "./Exercises";
 import { BookCover } from "./BookCover";
 import { ProjectAssessment } from "./ProjectAssessment";
 import { LessonReader } from "./LessonReader";
+import { sanitizeCourseHtml } from "../lib/sanitize";
 
 const TECH_COURSES = new Set([
   "webgis",
@@ -101,7 +102,7 @@ export function ModuleView({
         <div className="module-hero-copy">
           <div className="eyebrow">{m.eyebrow}</div>
           <h2 className="mtitle">{m.mtitle}</h2>
-          <p className="mlede" dangerouslySetInnerHTML={{ __html: m.lede }} />
+          <p className="mlede" dangerouslySetInnerHTML={{ __html: sanitizeCourseHtml(m.lede) }} />
         </div>
         <aside className="module-status-card" aria-label="Modul holati">
           <span className="msc-kicker">O'quv holati</span>
@@ -174,7 +175,7 @@ export function ModuleView({
                     <CheckIcon />
                   </div>
                   <div className="tx">
-                    <span dangerouslySetInnerHTML={{ __html: t.html }} />
+                    <span dangerouslySetInnerHTML={{ __html: sanitizeCourseHtml(t.html) }} />
                     {t.crit && <small className="crit">{t.crit}</small>}
                   </div>
                 </div>

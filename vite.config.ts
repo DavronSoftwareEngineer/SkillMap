@@ -21,6 +21,7 @@ export default defineConfig({
       "**/.claude/**",
       "**/.agents/**",
       "**/.git/**",
+      "**/e2e/**",
     ],
   },
 });

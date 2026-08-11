@@ -39,7 +39,7 @@ export const CORE_TECH_GLOSSARY: GlossaryTerm[] = [
 
 export function prepareLessonHtml(html: string, idPrefix: string): PreparedLesson {
   const template = document.createElement("template");
-  template.innerHTML = html;
+  template.innerHTML = sanitizeCourseHtml(html);
 
   const wordCount = countWords(template.content.textContent || "");
   const headings = Array.from(template.content.querySelectorAll<HTMLHeadingElement>("h3"));
@@ -180,3 +180,4 @@ function findWholeTerm(text: string, term: string): { index: number; length: num
   if (!match) return null;
   return { index: match.index + match[1].length, length: match[2].length };
 }
+import { sanitizeCourseHtml } from "./sanitize";

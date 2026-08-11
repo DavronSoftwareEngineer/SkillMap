@@ -1,0 +1,26 @@
+name: SkillMap quality gate
+
+on:
+  pull_request:
+    paths-ignore: ["labs/geopulse/**", "labs/telegram-bot/**", "labs/backend-api/**"]
+  push:
+    branches: [master]
+    paths-ignore: ["labs/geopulse/**", "labs/telegram-bot/**", "labs/backend-api/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e

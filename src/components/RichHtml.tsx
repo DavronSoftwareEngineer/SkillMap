@@ -4,6 +4,7 @@ import { annotateGlossaryTerms, type GlossaryTerm } from "../lib/lesson";
 import { copyText } from "../lib/storage";
 import { speak, canSpeak } from "../lib/speech";
 import { useStore } from "../store";
+import { sanitizeCourseHtml } from "../lib/sanitize";
 
 export function RichHtml({
   html,
@@ -69,5 +70,5 @@ export function RichHtml({
     annotateGlossaryTerms(root, glossary);
   }, [html, toast, courseId, glossary]);
 
-  return <div ref={ref} className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div ref={ref} className={className} dangerouslySetInnerHTML={{ __html: sanitizeCourseHtml(html) }} />;
 }

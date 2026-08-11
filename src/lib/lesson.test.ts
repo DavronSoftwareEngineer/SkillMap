@@ -5,6 +5,7 @@ import {
   buildLessonGlossary,
   prepareLessonHtml,
 } from "./lesson";
+import { sanitizeCourseHtml } from "./sanitize";
 
 describe("dars o'qish oqimi", () => {
   it("qisqa darsni bo'limlarga ajratadi va hammasini ochiq qoldiradi", () => {
@@ -69,5 +70,14 @@ describe("dars o'qish oqimi", () => {
       "PostgreSQL spatial kengaytmasi.",
     );
     expect(root.querySelector("code")?.innerHTML).toBe("PostGIS");
+  });
+
+  it("xavfli HTML va javascript URLni renderdan oldin olib tashlaydi", () => {
+    const safe = sanitizeCourseHtml('<p onclick="alert(1)">Salom</p><script>alert(1)</script><a href="javascript:alert(1)">x</a>');
+
+    expect(safe).toContain("Salom");
+    expect(safe).not.toContain("script");
+    expect(safe).not.toContain("onclick");
+    expect(safe).not.toContain("javascript:");
   });
 });
