@@ -6,6 +6,8 @@ import { BACKEND_FULLSTACK_ENHANCEMENTS_AFTER, FRONTEND_ENHANCEMENTS_AFTER } fro
 import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
 import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-enhancements";
 import { PROFESSIONAL_POLISH } from "./professional-polish";
+import { SYSTEM_DESIGN_COURSE_MODULES } from "./system-design-course";
+import { TECHNICAL_FOUNDER_COURSE_MODULES } from "./technical-founder-course";
 
 export interface CourseMeta {
   id: string;
@@ -35,6 +37,8 @@ const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
   russian: () => import("./russian.json"),
   arabic: () => import("./arabic.json"),
   prompting: () => import("./prompting.json"),
+  systemdesign: async () => ({ default: SYSTEM_DESIGN_COURSE_MODULES }),
+  founder: async () => ({ default: TECHNICAL_FOUNDER_COURSE_MODULES }),
 };
 
 export async function loadCourseModules(id: string): Promise<Module[]> {
@@ -95,7 +99,7 @@ export const COURSE_GROUPS = [
   { label: "Main Career Track", ids: ["webgis"] },
   {
     label: "Supporting Skills",
-    ids: ["frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting"],
+    ids: ["frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting", "systemdesign", "founder"],
   },
   { label: "Personal Development", ids: ["finance", "russian", "arabic"] },
 ] as const;
@@ -159,6 +163,66 @@ export const COURSES: CourseMeta[] = [
       d3: 8,
       f1: 6,
     },
+  },
+  {
+    id: "systemdesign",
+    name: "System Design",
+    brandTitle: "System Design & Production Academy",
+    brandSub: "Web Architecture / Data / Reliability / Security / GeoOps",
+    labels: {
+      doc: "Dars",
+      code: "Amaliy misollar",
+      ex: "Mashq",
+      task: "Topshiriqlar",
+      quiz: "Test",
+      vid: "Manbalar",
+      proj: "Capstone",
+    },
+    books: [
+      { n: 1, accent: A, title: "Designing Data-Intensive Applications", author: "Martin Kleppmann", isbn: "9781449373320", note: "Data, queue, consistency va scale trade-offlari uchun asosiy kitob." },
+      { n: 2, accent: B, title: "Site Reliability Engineering", author: "Betsy Beyer va boshqalar", note: "Google SRE tajribasi: SLO, incident va reliability. Rasmiy onlayn manbasi mavjud." },
+      { n: 3, accent: C, title: "Fundamentals of Software Architecture", author: "Mark Richards, Neal Ford", isbn: "9781492043454", note: "Arxitektura uslublari, trade-off va texnik qarorlar uchun." },
+    ],
+    moduleBooks: {
+      SD0: 3,
+      sd1: 1,
+      "SD-FE": 3,
+      "SD-BE": 3,
+      "SD-DB": 1,
+      SD2: 1,
+      "SD-DIST": 1,
+      "SD-PERF": 2,
+      SD3: 2,
+      "SD-SEC": 2,
+      "SD-DEL": 3,
+      "SD-REC": 2,
+      "SD-STYLE": 3,
+      "SD-GEO": 1,
+      SDF: 2,
+    },
+  },
+  {
+    id: "founder",
+    name: "Technical Founder",
+    brandTitle: "Technical Founder & Business Academy",
+    brandSub: "Discovery / Product / Sales / Pricing / Operations / AI Governance",
+    labels: {
+      doc: "Dars",
+      code: "Amaliy shablonlar",
+      ex: "Mashq",
+      task: "Topshiriqlar",
+      quiz: "Test",
+      vid: "Manbalar",
+      proj: "Founder Capstone",
+    },
+    books: [
+      { n: 1, accent: A, title: "The Mom Test", author: "Rob Fitzpatrick", isbn: "9781492180746", note: "Customer interviewda maqtov emas, real muammo va xatti-harakat dalilini olish uchun." },
+      { n: 2, accent: B, title: "The Lean Startup", author: "Eric Ries", isbn: "9780307887894", note: "Assumption, experiment va build-measure-learn sikli uchun klassik asos." },
+      { n: 3, accent: C, title: "Value Proposition Design", author: "Alexander Osterwalder va boshqalar", isbn: "9781118968055", note: "ICP, customer job/pain va value propositionni professional shakllantirish uchun." },
+      { n: 4, accent: D, title: "The SaaS Playbook", author: "Rob Walling", isbn: "9781735053356", note: "B2B SaaS positioning, pricing va growth bo'yicha amaliy fikrlash." },
+      { n: 5, accent: E, title: "High Output Management", author: "Andrew S. Grove", isbn: "9780679762881", note: "Manager cadence, leverage va jamoa operatsiyasini tushunish uchun." },
+    ],
+    moduleBooks: { TF0: 5, TF1: 3, TF2: 1, TF3: 3, TF4: 2, TF5: 2, TF6: 4, TF7: 4, TF8: 4, TF9: 5, TF10: 4, TF11: 2, TF12: 5, TFF: 4 },
   },
   {
     id: "frontend",

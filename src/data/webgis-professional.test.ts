@@ -13,7 +13,7 @@ describe("WebGIS professional learning path", () => {
 
     expect(COURSE_GROUPS[0]).toEqual({ label: "Main Career Track", ids: ["webgis"] });
     expect(COURSE_GROUPS[1].ids).toEqual([
-      "frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting",
+      "frontend", "backend", "git", "telegram", "cybersecurity", "english", "prompting", "systemdesign", "founder",
     ]);
     expect(COURSE_GROUPS[2].ids).toEqual(["finance", "russian", "arabic"]);
     expect(new Set(groupedIds).size).toBe(COURSES.length);
@@ -42,6 +42,69 @@ describe("WebGIS professional learning path", () => {
     expect(ids.indexOf("GI1")).toBeLessThan(ids.indexOf("z32"));
     expect(ids.indexOf("FG")).toBeGreaterThan(ids.indexOf("z31"));
     expect(ids.indexOf("FG")).toBeLessThan(ids.indexOf("z32"));
+  });
+
+  it("keeps system design as a standalone supporting course without duplicating it in WebGIS", async () => {
+    const webgis = await loadCourseModules("webgis");
+    const systemDesign = await loadCourseModules("systemdesign");
+
+    expect(webgis.some((module) => module.zoom === "sd1")).toBe(false);
+    expect(systemDesign.map((module) => module.zoom)).toEqual([
+      "SD0", "sd1", "SD-FE", "SD-BE", "SD-DB", "SD2", "SD-DIST", "SD-PERF", "SD3",
+      "SD-SEC", "SD-DEL", "SD-REC", "SD-STYLE", "SD-GEO", "SDF",
+    ]);
+    expect(systemDesign.find((module) => module.zoom === "SDF")?.project?.assessment?.assessorRequired).toBe(true);
+  });
+
+  it("requires deep theory, failure drills, ADRs, and evidence in every system design module", async () => {
+    const modules = await loadCourseModules("systemdesign");
+
+    modules.forEach((module) => {
+      expect(module.doc.length, `${module.zoom}: deep theory`).toBeGreaterThan(1_000);
+      expect(module.code.length, `${module.zoom}: implementation + evidence examples`).toBeGreaterThanOrEqual(2);
+      expect(module.tasks.length, `${module.zoom}: hands-on + failure work`).toBeGreaterThanOrEqual(6);
+      expect(module.resources.length, `${module.zoom}: authoritative references`).toBeGreaterThanOrEqual(3);
+      expect(module.project?.rubric?.length, `${module.zoom}: delivery rubric`).toBeGreaterThanOrEqual(5);
+      expect(module.quiz.length, `${module.zoom}: scenario verification`).toBeGreaterThanOrEqual(2);
+      expect(module.doc).toContain("failure lab");
+      expect(module.doc).toContain("arxitektura qarori");
+      expect(module.doc).toContain("labs/geopulse/docs/system-design-labs.md");
+    });
+  });
+
+  it("ships a standalone, evidence-based technical founder academy", async () => {
+    const modules = await loadCourseModules("founder");
+
+    expect(modules.map((module) => module.zoom)).toEqual([
+      "TF0", "TF1", "TF2", "TF3", "TF4", "TF5", "TF6", "TF7", "TF8", "TF9", "TF10", "TF11", "TF12", "TFF",
+    ]);
+    modules.forEach((module) => {
+      expect(module.doc.length, `${module.zoom}: professional theory`).toBeGreaterThan(1_000);
+      expect(module.code.length, `${module.zoom}: practical templates`).toBeGreaterThanOrEqual(2);
+      expect(module.tasks.length, `${module.zoom}: evidence tasks`).toBeGreaterThanOrEqual(6);
+      expect(module.resources.length, `${module.zoom}: authoritative resources`).toBeGreaterThanOrEqual(3);
+      expect(module.project?.rubric?.length, `${module.zoom}: delivery rubric`).toBeGreaterThanOrEqual(5);
+      expect(module.quiz.length, `${module.zoom}: scenario verification`).toBeGreaterThanOrEqual(2);
+      expect(module.doc).toContain("failure");
+      expect(module.doc).toContain("arxitektura qarori");
+    });
+    expect(modules.find((module) => module.zoom === "TFF")?.project?.assessment?.assessorRequired).toBe(true);
+  });
+
+  it("ships one executable GeoPulse milestone and review gate for every system design module", () => {
+    const root = process.cwd();
+    const guidePath = path.join(root, "labs/geopulse/docs/system-design-labs.md");
+    const reviewPath = path.join(root, "labs/geopulse/docs/architecture-review-checklist.md");
+    const guide = fs.readFileSync(guidePath, "utf8");
+
+    expect(fs.existsSync(reviewPath)).toBe(true);
+    ["SD0", "sd1", "SD-FE", "SD-BE", "SD-DB", "SD2", "SD-DIST", "SD-PERF", "SD3", "SD-SEC", "SD-DEL", "SD-REC", "SD-STYLE", "SD-GEO", "SDF"].forEach((id) => {
+      expect(guide, `${id} milestone`).toContain(`| ${id} |`);
+    });
+    expect(guide).toContain("failure drill");
+    expect(guide).toContain("ADR");
+    expect(fs.existsSync(path.join(root, "labs/geopulse/docs/founder-labs.md"))).toBe(true);
+    expect(fs.readFileSync(path.join(root, "labs/geopulse/docs/founder-labs.md"), "utf8")).toContain("TF11");
   });
 
   it("requires substantial evidence in every new module", async () => {

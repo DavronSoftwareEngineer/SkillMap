@@ -47,6 +47,10 @@ const LINKS_BY_TITLE: Record<string, BookLink> = {
     "https://geographicdata.science/book/index.html",
     "Open textbook",
   ),
+  "Site Reliability Engineering": FREE(
+    "https://sre.google/sre-book/table-of-contents/",
+    "Google SRE rasmiy onlayn kitobi",
+  ),
   "The Road to React": OFFICIAL("https://www.roadtoreact.com/", "Muallif sayti"),
   "Refactoring UI": OFFICIAL("https://www.refactoringui.com/", "Mualliflar sayti"),
   "Telegram Bot API": FREE("https://core.telegram.org/bots/api", "Telegram Docs"),

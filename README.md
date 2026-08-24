@@ -4,10 +4,10 @@
 
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
-Bitta ilova, aniq ierarxiyadagi **o'n ikkita kurs**:
+Bitta ilova, aniq ierarxiyadagi **o'n to'rtta kurs**:
 
 - **Main Career Track — Geospatial Full-Stack Engineering:** React TS / MapLibre / FastAPI / PostGIS / GDAL / GeoAI / Docker. YOLO GeoAI ichidagi object detection va segmentation vositalaridan biri.
-- **Supporting Skills:** Frontend va Backend alohida chuqur kurslar; full-stack product loyihalari shu ikki kurs ichiga taqsimlangan. Git & GitHub, Telegram Bot, Cybersecurity, English va AI Prompting asosiy geospatial yo'lni mahsulot, delivery, xavfsizlik va muloqot tomondan kuchaytiradi.
+- **Supporting Skills:** Frontend va Backend alohida chuqur kurslar; full-stack product loyihalari shu ikki kurs ichiga taqsimlangan. System Design & Production Academy web arxitektura, data, reliability, security va operations fikrlashini alohida chuqurlashtiradi; uning GeoOps capstone'i Geospatial flagship bilan bog'lanadi. Technical Founder & Business Academy customer discovery, product management, B2B sales, pricing, cash-flow, trust va AI governance'ni GeoOps paid-pilot capstone'i bilan bog'laydi. Git & GitHub, Telegram Bot, Cybersecurity, English va AI Prompting asosiy geospatial yo'lni mahsulot, delivery, xavfsizlik va muloqot tomondan kuchaytiradi.
 - **Personal Development:** Moliya, Rus tili va Arab tili professional trekdan mustaqil shaxsiy rivojlanish yo'nalishlari.
 
 React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
@@ -38,6 +38,7 @@ docker compose down --volumes
 
 Windows PowerShell'da smoke-test uchun `./scripts/smoke-test.ps1` ishlatiladi. Bosqichlar,
 dalillar va professional baholash mezonlari [lab qo'llanmasida](labs/geopulse/README.md) yozilgan.
+System Design hamda Technical Founder kurslari uchun mos ravishda [architecture labs](labs/geopulse/docs/system-design-labs.md) va [founder labs](labs/geopulse/docs/founder-labs.md) mavjud. Founder laboratoriyasi real customer evidence, paid pilot, unit economics va data trustni tekshiradi; u soxta traction yoki yuridik/soliq maslahatini tayyor deb ko'rsatmaydi.
 
 ## Backend Reliability Lab
 
@@ -111,6 +112,9 @@ src/
     webgis.json        Geospatial kursning z0->z32 asosiy modullari
     webgis-foundations.ts Spatial fundamentals va professional GeoPython modullari
     webgis-modern.ts   OGC API, cloud-native raster/vector, GeoAI, 3D va field reliability
+    webgis-system-design.ts System Design kursining GeoOps request/architecture moduli
+    system-design-course.ts System Design & Production Academy (SD0 -> SDF)
+    technical-founder-course.ts Technical Founder & Business Academy (TF0 -> TFF)
     webgis-flagship.ts Mustaqil reviewerli GeoPulse flagship assessment
     webgis-enhancements.ts Qo'shimcha modullarni asosiy ketma-ketlikka biriktiradi
     frontend.json      Frontend kursi (14 modul: FE0->FE13)
@@ -156,7 +160,8 @@ public/
 - **Kitoblar:** har kursga o'qish tartibi bilan tavsiya kitoblar ro'yxati biriktirilgan - tegishli modulda kitob eslatmasi chiqadi (`data/courses.ts`, `components/Books.tsx`).
 - **Tinglash va talaffuz mashqlari (til kurslari):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan; `speak` turida sen talaffuz qilasan, brauzer nutqni tanib tekshiradi (English, Rus tili, Arab tili - `lib/speech.ts`).
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
-- **Geospatial professional trek:** 44 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython/xarray, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, PyTorch asosidagi GeoAI (YOLO, segmentation, land-cover, change detection, satellite embeddings), offline field sync, observability/security/testing/system design va mustaqil GeoPulse flagship assessment bor.
+- **Geospatial professional trek:** 45 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython/xarray, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, PyTorch asosidagi GeoAI (YOLO, segmentation, land-cover, change detection, satellite embeddings), offline field sync, observability/security/testing va mustaqil GeoPulse flagship assessment bor.
+- **System Design & Production Academy:** 15 modulda talabdan architecture briefgacha, frontend/backend/database boundarylari, PostGIS-cache-queue, distributed/realtime flow, performance/capacity, reliability, security, CI/CD, recovery, architecture styles, GeoOps/WebGIS case study va tashqi architecture defense o'rganiladi.
 - **Bajariladigan capstone:** `labs/geopulse/` ichida frontend, API, PostGIS, Nginx, Docker, testlar va CI bilan real starter repository berilgan; talaba uni milestone'lar bo'yicha production portfolio darajasiga olib chiqadi.
 - **Frontend + Backend ichidagi Full-Stack loyihalar:** TeamOps Board va OrderFlow orqali React/Node/PostgreSQL/Redis productlarini qurish; finalda deploy, CI, reliability evidence va external defense talab qilinadi.
 - **Telegram production lab:** webhook secret, duplicate update va Mini App invalid-session uchun executable contract testlari; keyingi milestone'lar 429 retry, persistent storage va real HMAC verificationni talab qiladi.

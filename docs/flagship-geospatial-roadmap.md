@@ -29,6 +29,14 @@ Redis + Celery background worker / Telegram Bot
 Docker Compose + Nginx + CI/CD
 ```
 
+## System Design Lab: bitta requestdan production tizimgacha
+
+GeoPulse'ni faqat texnologiyalar ro'yxati sifatida emas, bitta aniq user flow orqali qur: operator xaritada task yaratadi, API ruxsat va inputni tekshiradi, PostGIS transaction bilan saqlaydi, notification yoki katta import esa queue orqali workerni oladi. Frontend loading, empty, error va degraded holatlarni yashirmaydi.
+
+Boshlang'ich arxitektura **modular monolith + PostGIS + Redis/Celery worker + MinIO/object storage** bo'ladi. Bu kichik jamoa uchun ownership va deployni tushunarli saqlaydi. Microservice, Kafka yoki Kubernetes faqat metric bilan isbotlangan mustaqil scale/release talabi bo'lsa ADR orqali qayta ko'rib chiqiladi.
+
+Har arxitektura qaroridan oldin quyidagilar yoziladi: user va acceptance criteria, data owner/classification, synchronous yoki asynchronous oqim, failure mode, SLI/SLO, security boundary, backup/restore va revisit trigger. Google SRE uslubida reliability SLI/SLO bilan o'lchanadi; maqsad "hech qachon xato bo'lmaydi" emas, balki xato aniqlanib, data yo'qolmasdan, recovery amalda sinalishidir.
+
 ## Uch oylik yo'l xaritasi
 
 ### 1-oy: mahsulot poydevori

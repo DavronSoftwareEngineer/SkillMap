@@ -9,6 +9,11 @@ The learner extends the same repository through every milestone. Evidence is
 kept beside the code so that the final assessment can verify more than checked
 tasks.
 
+System Design & Production Academy uchun 15 ta executable milestone, failure
+drill va evidence formati [system-design lab guide](docs/system-design-labs.md)
+hamda [architecture review checklist](docs/architecture-review-checklist.md)da
+berilgan.
+
 ## Baseline architecture
 
 The target remains a modular monolith. Long-running GDAL/GeoAI and notification
