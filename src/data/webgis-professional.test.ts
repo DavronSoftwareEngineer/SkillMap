@@ -69,6 +69,7 @@ describe("WebGIS professional learning path", () => {
       expect(module.doc).toContain("failure lab");
       expect(module.doc).toContain("arxitektura qarori");
       expect(module.doc).toContain("labs/geopulse/docs/system-design-labs.md");
+      expect(module.doc).toContain("visual-map");
     });
   });
 
@@ -87,6 +88,7 @@ describe("WebGIS professional learning path", () => {
       expect(module.quiz.length, `${module.zoom}: scenario verification`).toBeGreaterThanOrEqual(2);
       expect(module.doc).toContain("failure");
       expect(module.doc).toContain("arxitektura qarori");
+      expect(module.doc).toContain("visual-map");
     });
     expect(modules.find((module) => module.zoom === "TFF")?.project?.assessment?.assessorRequired).toBe(true);
   });

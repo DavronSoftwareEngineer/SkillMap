@@ -285,6 +285,28 @@ const CAPSTONE_MODULE: Module = {
 
 type Deepening = { failure: string; decision: string; review: string };
 
+function systemVisual(zoom: string): string {
+  const flows: Record<string, [string, string, string, string, string]> = {
+    SD0: ["User goal", "Acceptance criteria", "Boundary", "Measure", "Scope before stack"],
+    sd1: ["Browser", "API contract", "Domain rule", "PostGIS", "User feedback"],
+    "SD-FE": ["Intent", "Request identity", "Loading state", "Render", "Stale-safe UI"],
+    "SD-BE": ["Request", "Auth + tenant", "Use case", "Transaction", "Response"],
+    "SD-DB": ["Write", "Validate", "Index/query", "Backup", "Restore proof"],
+    SD2: ["API accept", "Durable job", "Worker", "Idempotent result", "Status/event"],
+    "SD-DIST": ["Client change", "Sync contract", "Conflict rule", "Event/retry", "Converged state"],
+    "SD-PERF": ["Measure", "Find bottleneck", "Optimize one layer", "Re-measure", "Keep/regress"],
+    SD3: ["SLI", "SLO", "Alert", "Incident", "Learning"],
+    "SD-SEC": ["Identity", "Authorization", "Data boundary", "Audit", "Review"],
+    "SD-DEL": ["Test", "Build", "Migration gate", "Deploy", "Rollback/observe"],
+    "SD-REC": ["Backup", "Isolated restore", "Smoke test", "RTO/RPO", "Runbook update"],
+    "SD-STYLE": ["Domain modules", "Single deploy", "Measured bottleneck", "Extract only if needed", "Ownership"],
+    "SD-GEO": ["Base snapshot", "Operational data", "Live feed", "Tile/cache policy", "Map UX"],
+    SDF: ["User flow", "Working demo", "Failure drill", "Evidence", "Defense"],
+  };
+  const [a, b, c, d, note] = flows[zoom] || flows.SD0;
+  return `<div class="visual-map"><div class="visual-map-title">System view <span>FLOW + BOUNDARY</span></div><div class="visual-flow"><div class="visual-node"><b>${a}</b><small>boshlang'ich signal</small></div><div class="visual-node is-key"><b>${b}</b><small>asosiy contract</small></div><div class="visual-node is-decision"><b>${c}</b><small>qaror nuqtasi</small></div><div class="visual-node is-risk"><b>${d}</b><small>tekshiruv/recovery</small></div></div><p class="visual-map-note">${note}: oqimdagi har qadam uchun owner, failure holati va o'lchov bo'lishi kerak.</p></div>`;
+}
+
 const DEEPENING: Record<string, Deepening> = {
   SD0: {
     failure: "Product owner 'xarita qiling' deydi, lekin user, success metric va data owner aniqlanmagan. Scope-ni rad etish yoki discovery savollari bilan qayta yozish kerak.",
@@ -382,6 +404,8 @@ function deepenModule(module: Module): Module {
   return {
     ...module,
     doc: `${module.doc}
+      <h3>Visual architecture map</h3>
+      ${systemVisual(module.zoom)}
       <h3>Executable GeoPulse lab</h3>
       <p>Bu mavzu faqat o'qilmaydi: <code>labs/geopulse/docs/system-design-labs.md</code> ichidagi <strong>${module.zoom}</strong> milestone bilan bitta ishlaydigan repositoryda bajariladi. Har milestone'da command/test, failure drill, ADR va evidence report majburiy.</p>
       <h3>Professional deep-dive: failure lab</h3>

@@ -925,6 +925,120 @@ pre::-webkit-scrollbar-thumb {
   color: var(--fg-faint);
 }
 
+/* Visual learning maps inside professional course content */
+.visual-map {
+  max-width: var(--lesson-copy-width);
+  margin: 18px 0 24px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
+}
+.visual-map-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+  color: var(--fg);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.visual-map-title span {
+  color: var(--fg-faint);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.visual-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+.visual-node {
+  position: relative;
+  min-width: 0;
+  padding: 11px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+}
+.visual-node:not(:last-child)::after {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -8px;
+  width: 8px;
+  height: 1px;
+  background: var(--teal);
+  content: "";
+}
+.visual-node:not(:last-child)::before {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 3px);
+  right: -8px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 4px solid var(--teal);
+  content: "";
+}
+.visual-node b,
+.visual-node small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.visual-node b { color: var(--fg); font-size: 12px; line-height: 1.3; }
+.visual-node small { margin-top: 5px; color: var(--fg-dim); font-size: 10.5px; line-height: 1.35; }
+.visual-node.is-key { border-color: color-mix(in srgb, var(--teal) 60%, var(--line)); }
+.visual-node.is-risk { border-color: color-mix(in srgb, var(--orange) 60%, var(--line)); }
+.visual-node.is-decision { border-color: color-mix(in srgb, var(--purple) 60%, var(--line)); }
+.visual-lanes {
+  display: grid;
+  gap: 8px;
+}
+.visual-lane {
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+.visual-lane > b {
+  color: var(--fg-dim);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.visual-lane-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+}
+.visual-chip {
+  min-width: 0;
+  padding: 8px;
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--teal) 12%, var(--surface));
+  color: var(--fg);
+  font-size: 10.5px;
+  line-height: 1.3;
+  text-align: center;
+}
+.visual-lane:nth-child(2) .visual-chip { background: color-mix(in srgb, var(--purple) 12%, var(--surface)); }
+.visual-lane:nth-child(3) .visual-chip { background: color-mix(in srgb, var(--orange) 12%, var(--surface)); }
+.visual-map-note { margin: 12px 0 0; color: var(--fg-dim); font-size: 11px; line-height: 1.45; }
+
+@media (max-width: 700px) {
+  .visual-map { padding: 13px; }
+  .visual-flow { grid-template-columns: 1fr; gap: 15px; }
+  .visual-node:not(:last-child)::after { top: auto; right: auto; bottom: -15px; left: 50%; width: 1px; height: 15px; }
+  .visual-node:not(:last-child)::before { top: auto; right: auto; bottom: -15px; left: calc(50% - 3px); border-top: 4px solid var(--teal); border-right: 3px solid transparent; border-bottom: 0; border-left: 3px solid transparent; }
+  .visual-lane { grid-template-columns: 1fr; gap: 5px; }
+  .visual-lane-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 /* Pager */
 .pager {
   display: flex;
