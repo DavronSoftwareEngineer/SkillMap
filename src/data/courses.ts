@@ -5,6 +5,7 @@ import { BACKEND_ENHANCEMENTS_AFTER } from "./backend-enhancements";
 import { BACKEND_FULLSTACK_ENHANCEMENTS_AFTER, FRONTEND_ENHANCEMENTS_AFTER } from "./fullstack-bridges";
 import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
 import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-enhancements";
+import { ENGLISH_PRO_WORK_LABS } from "./english-pro-work-labs";
 import { PROFESSIONAL_POLISH } from "./professional-polish";
 import { SYSTEM_DESIGN_COURSE_MODULES } from "./system-design-course";
 import { TECHNICAL_FOUNDER_COURSE_MODULES } from "./technical-founder-course";
@@ -76,7 +77,7 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
       ordered.push(module);
       // Job portfolio bilan bevosita bog'liq: duplicate emas, geospatial
       // mahsulotni inglizcha himoya qilish uchun maxsus amaliy ko'prik.
-      if (module.zoom === "Job") ordered.push(GEOSPATIAL_ENGLISH_MODULE);
+      if (module.zoom === "Job") ordered.push(GEOSPATIAL_ENGLISH_MODULE, ...ENGLISH_PRO_WORK_LABS);
     });
     return ordered;
   }

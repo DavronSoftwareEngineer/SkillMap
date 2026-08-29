@@ -25,6 +25,9 @@ test("professional curriculum extensions are reachable by stable module links", 
   await page.goto("/#english/GeoEN");
   await expect(page.getByRole("heading", { name: "Geo loyihani inglizcha tushuntiring" })).toBeVisible();
 
+  await page.goto("/#english/WorkLab");
+  await expect(page.getByRole("heading", { name: "Ishdagi Englishni har hafta ishlab ko'ring" })).toBeVisible();
+
   await page.goto("/#frontend/FE14");
   await expect(page.getByRole("heading", { name: "Frontendni brauzerda isbotlang" })).toBeVisible();
 });
