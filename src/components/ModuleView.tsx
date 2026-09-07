@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { useStore } from "../store";
 import { buildLessonGlossary, prepareLessonHtml } from "../lib/lesson";
 import { CodeBlock } from "./CodeBlock";
@@ -8,6 +8,8 @@ import { BookCover } from "./BookCover";
 import { ProjectAssessment } from "./ProjectAssessment";
 import { LessonReader } from "./LessonReader";
 import { sanitizeCourseHtml } from "../lib/sanitize";
+import { LabBoundary } from "./LabBoundary";
+const EnglishWorkLab = lazy(() => import("./EnglishWorkLab"));
 
 const TECH_COURSES = new Set([
   "webgis",
@@ -84,6 +86,7 @@ export function ModuleView({
   const donePct = m.tasks.length ? Math.round((doneCount / m.tasks.length) * 100) : 0;
 
   const tabs = [
+    { p: "lab", label: "Amaliy lab", show: courseId === "english" && ["AudioLab", "WriteLab", "WorkLab"].includes(m.zoom), badge: "" },
     { p: "doc", label: L.doc, show: true, badge: "" },
     { p: "code", label: L.code, show: m.code.length > 0, badge: "" },
     { p: "ex", label: L.ex, show: (m.exercises?.length || 0) > 0, badge: `${m.exercises?.length || 0}` },
@@ -146,6 +149,7 @@ export function ModuleView({
         </div>
 
         <div className="panel active" key={tab}>
+        {tab === "lab" && <LabBoundary key={m.zoom}><Suspense fallback={<p>Laboratoriya yuklanmoqda...</p>}><EnglishWorkLab key={m.zoom} mode={m.zoom} /></Suspense></LabBoundary>}
         {tab === "doc" && (
           <LessonReader
             lesson={lesson}

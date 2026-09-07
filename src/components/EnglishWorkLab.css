@@ -1,0 +1,15 @@
+.english-worklab { max-width: 900px; margin: 20px auto; color: var(--fg); }
+.english-worklab h3, .english-worklab h4 { margin: 16px 0; }
+.english-worklab p, .english-worklab li { line-height: 1.65; }
+.lab-field { display: grid; gap: 8px; margin: 16px 0; font-weight: 600; }
+.lab-field small { color: var(--fg-dim); font-weight: 400; }
+.english-worklab textarea, .english-worklab input, .english-worklab select { width: 100%; box-sizing: border-box; padding: 12px; color: var(--fg); background: var(--ink); border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.english-worklab textarea { resize: vertical; }
+.english-worklab fieldset { min-width: 0; margin: 20px 0; padding: 16px; border: 1px solid var(--line); border-radius: 12px; }
+.english-worklab legend { padding: 0 8px; font-weight: 700; }
+.lab-source, .lab-disclosure { padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.lab-source a { color: var(--teal); text-decoration: underline; }
+.lab-criterion { padding-top: 12px; border-bottom: 1px solid var(--line); }
+.lab-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.english-worklab button { border: 1px solid var(--teal); background: var(--surface); color: var(--fg); padding: 12px; border-radius: 8px; cursor: pointer; }
+.english-worklab :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }

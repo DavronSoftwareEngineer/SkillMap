@@ -925,6 +925,9 @@ pre::-webkit-scrollbar-thumb {
   color: var(--fg-faint);
 }
 
+.storage-warning { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 9999; padding: 16px; background: var(--surface); color: var(--fg); border: 2px solid var(--amber); border-radius: 10px; }
+.storage-warning button { margin-left: 12px; padding: 8px; }
+
 /* Visual learning maps inside professional course content */
 .visual-map {
   max-width: var(--lesson-copy-width);

@@ -1,7 +1,10 @@
 // Progress, test, lug'at, assessment va streak ma'lumotini bitta JSON faylga eksport/import.
 import { COURSES } from "../data/courses";
+import { isObject, validBackupValue } from "./backup-validation";
+import { RESTORED_EVENT } from "./storage";
 
-const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs", "_assessment"];
+const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs", "_assessment", "_worklabs"];
+export const RECOVERY_KEY = "skillmap_pre_import_recovery";
 const GLOBAL_KEYS = ["active_course", "myacademy_streak", "myacademy_theme"];
 
 // Oxirgi eksport sanasi - eslatma uchun (zaxira fayliga kirmaydi).
@@ -104,11 +107,26 @@ export function hasAnyProgress(): boolean {
 // JSON matnini tekshirib, localStorage'ga yozadi. Xato bo'lsa throw qiladi.
 export function applyBackup(text: string): void {
   const parsed = JSON.parse(text) as Partial<Backup>;
-  if (!parsed || (parsed.app !== "SkillMap" && parsed.app !== "MyAcademy") || typeof parsed.data !== "object") {
+  if (!parsed || (parsed.app !== "SkillMap" && parsed.app !== "MyAcademy") || parsed.version !== 1 || !isObject(parsed.data)) {
     throw new Error("Bu SkillMap zaxira fayli emas.");
   }
   const valid = new Set(allKeys());
-  Object.entries(parsed.data as Record<string, unknown>).forEach(([k, v]) => {
-    if (valid.has(k)) localStorage.setItem(k, JSON.stringify(v));
-  });
+  const entries = Object.entries(parsed.data).filter(([k]) => valid.has(k));
+  for (const [k, v] of entries) {
+    if (!validBackupValue(k, v, COURSES.map(c => c.id))) throw new Error(`Zaxiradagi ${k} tuzilishi noto'g'ri. Hech narsa o'zgartirilmadi.`);
+  }
+  const previous = entries.map(([key]) => [key, localStorage.getItem(key)] as const);
+  // Persist recovery BEFORE the first mutation; abort if there is no room.
+  localStorage.setItem(RECOVERY_KEY, JSON.stringify({ createdAt: new Date().toISOString(), entries: previous }));
+  try {
+    for (const [k, v] of entries) localStorage.setItem(k, JSON.stringify(v));
+  } catch {
+    let restored = true;
+    for (const [k, raw] of previous) {
+      try { if (raw === null) localStorage.removeItem(k); else localStorage.setItem(k, raw); }
+      catch { restored = false; }
+    }
+    throw new Error(restored ? "Import saqlanmadi. Oldingi ma'lumot qaytarildi." : "Import va qaytarish to'liq bajarilmadi. Sahifani yopmang; skillmap_pre_import_recovery zaxirasini eksport qiling.");
+  }
+  window.dispatchEvent(new Event(RESTORED_EVENT));
 }

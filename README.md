@@ -185,3 +185,7 @@ xato kontent deploy'ga chiqmaydi.
 `src/data/` dagi tegishli kurs JSON'ini tahrirla (masalan `webgis.json`, `frontend.json`) - har modul:
 doc (HTML), code[], tasks[] (id+html+crit), quiz[] (q/a/c/w), resources[], project.
 Yangi kurs qo'shish uchun `src/data/courses.ts` da registrga meta + loader yozasan.
+
+## Reliability and English practical labs
+
+English `WriteLab`, `AudioLab`, and `WorkLab` now include an **Amaliy lab** tab with locally saved writing, listening notes, speaking evidence, manual feedback, and Markdown export. Backup validation/recovery and course-loading error states are documented in [reliability and labs](docs/reliability-english-labs.md). These are self-review tools, not automatic AI assessment or a verified certificate.

@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useToast } from "../store";
 import { calculateAssessment, emptyAssessmentRecord, isEvidenceValid } from "../lib/assessment";
-import { loadJSON, saveJSON } from "../lib/storage";
+import { loadJSON, saveJSON, RESTORED_EVENT } from "../lib/storage";
 import type { AssessmentRecord, ProfessionalAssessment } from "../types";
 
 type AssessmentRecords = Record<string, AssessmentRecord>;
@@ -67,6 +67,11 @@ export function ProjectAssessment({
     loadJSON<AssessmentRecords>(storageKey, {}),
   );
   const record = normalizeRecord(records[assessment.id]);
+  useEffect(() => {
+    const reload = () => setRecords(loadJSON<AssessmentRecords>(storageKey, {}));
+    window.addEventListener(RESTORED_EVENT, reload);
+    return () => window.removeEventListener(RESTORED_EVENT, reload);
+  }, [storageKey]);
   const result = useMemo(
     () => calculateAssessment(assessment, record),
     [assessment, record],
@@ -290,11 +295,11 @@ export function ProjectAssessment({
             <input
               value={record.reviewer}
               placeholder="Masalan: Senior GIS Engineer, kompaniya"
-              onChange={(event) => updateRecord((current) => ({
+              onChange={(event) => { const value = event.currentTarget.value; updateRecord((current) => ({
                 ...current,
-                reviewer: event.currentTarget.value,
+                reviewer: value,
                 reviewedAt: null,
-              }))}
+              })); }}
             />
           </label>
 
@@ -323,11 +328,11 @@ export function ProjectAssessment({
                 <input
                   type="checkbox"
                   checked={Boolean(record.criticalFails[item.id])}
-                  onChange={(event) => updateRecord((current) => ({
+                  onChange={(event) => { const checked = event.currentTarget.checked; updateRecord((current) => ({
                     ...current,
-                    criticalFails: { ...current.criticalFails, [item.id]: event.currentTarget.checked },
+                    criticalFails: { ...current.criticalFails, [item.id]: checked },
                     reviewedAt: null,
-                  }))}
+                  })); }}
                 />
                 <span><b>{item.title}</b><small>{item.description}</small></span>
               </label>
@@ -338,11 +343,11 @@ export function ProjectAssessment({
             <input
               type="checkbox"
               checked={record.defenseCompleted}
-              onChange={(event) => updateRecord((current) => ({
+              onChange={(event) => { const checked = event.currentTarget.checked; updateRecord((current) => ({
                 ...current,
-                defenseCompleted: event.currentTarget.checked,
+                defenseCompleted: checked,
                 reviewedAt: null,
-              }))}
+              })); }}
             />
             <span><b>Jonli himoya o'tkazildi</b><small>Demo, savol-javob va tasodifiy o'zgarish reviewer oldida bajarildi.</small></span>
           </label>
@@ -352,7 +357,7 @@ export function ProjectAssessment({
             <textarea
               value={record.notes}
               placeholder="Kuchli tomonlar, kamchiliklar va qayta topshirish talablari"
-              onChange={(event) => updateRecord((current) => ({ ...current, notes: event.currentTarget.value }))}
+              onChange={(event) => { const value = event.currentTarget.value; updateRecord((current) => ({ ...current, notes: value })); }}
             />
           </label>
 

@@ -7,8 +7,6 @@ import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
 import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-enhancements";
 import { ENGLISH_PRO_WORK_LABS } from "./english-pro-work-labs";
 import { PROFESSIONAL_POLISH } from "./professional-polish";
-import { SYSTEM_DESIGN_COURSE_MODULES } from "./system-design-course";
-import { TECHNICAL_FOUNDER_COURSE_MODULES } from "./technical-founder-course";
 
 export interface CourseMeta {
   id: string;
@@ -38,8 +36,8 @@ const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
   russian: () => import("./russian.json"),
   arabic: () => import("./arabic.json"),
   prompting: () => import("./prompting.json"),
-  systemdesign: async () => ({ default: SYSTEM_DESIGN_COURSE_MODULES }),
-  founder: async () => ({ default: TECHNICAL_FOUNDER_COURSE_MODULES }),
+  systemdesign: async () => ({ default: (await import("./system-design-course")).SYSTEM_DESIGN_COURSE_MODULES }),
+  founder: async () => ({ default: (await import("./technical-founder-course")).TECHNICAL_FOUNDER_COURSE_MODULES }),
 };
 
 export async function loadCourseModules(id: string): Promise<Module[]> {

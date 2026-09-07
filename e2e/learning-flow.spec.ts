@@ -4,7 +4,7 @@ test("learner can switch courses and reach a project roadmap", async ({ page }) 
   await page.goto("/#webgis");
   await expect(page.getByRole("heading", { name: "Geospatial Full-Stack Academy" })).toBeVisible();
 
-  await page.getByRole("button", { name: "Backend" }).click();
+  await page.getByRole("button", { name: "Backend", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Professional Backend Academy" })).toBeVisible();
 
   await page.getByRole("button", { name: /Tayyorlik paneli Dashboard/ }).click();

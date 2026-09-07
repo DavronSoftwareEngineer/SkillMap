@@ -26,7 +26,7 @@ interface PendingTarget {
 }
 
 export default function App() {
-  const { progress, course, courseId, courseLoading, setCourse } = useStore();
+  const { progress, course, courseId, courseLoading, courseError, retryCourse, setCourse } = useStore();
 
   // Boshlang'ich ko'rinish URL hash'dan: #kurs/dash -> dash, #kurs/z5 -> z5 (modullar yuklangach).
   const initialRoute = useMemo(
@@ -198,6 +198,8 @@ export default function App() {
             onClose={() => setMenuOpen(false)}
           />
           <main className="main" key={courseId}>
+            {courseError && <section className="dash" role="alert"><h2>Kurs yuklanmadi</h2><p>{courseError}</p><button onClick={retryCourse}>Qayta urinish</button><button onClick={() => window.location.reload()}>Sahifani yangilash</button></section>}
+            {!courseLoading && !courseError && modules.length === 0 && <section className="dash"><h2>Kontent mavjud emas</h2><p>Bu kurs uchun darslar hali joylanmagan.</p></section>}
             {courseLoading && (
               <div className="dash">
                 <div className="eyebrow">{course.name}</div>
@@ -205,13 +207,13 @@ export default function App() {
                 <p className="mlede">Darslar tayyorlanmoqda. Bir lahza...</p>
               </div>
             )}
-            {!courseLoading && view === "dash" && <Dashboard onGo={goModule} />}
-            {!courseLoading && view === "flash" && <Flashcards />}
-            {!courseLoading && view === "ref" && <Reference />}
-            {!courseLoading && view === "search" && <Search onGo={goModule} />}
-            {!courseLoading && view === "play" && <Playground />}
-            {!courseLoading && view === "books" && <Books />}
-            {!courseLoading && typeof view === "number" && modules.length > 0 && (
+            {!courseLoading && !courseError && view === "dash" && <Dashboard onGo={goModule} />}
+            {!courseLoading && !courseError && view === "flash" && <Flashcards />}
+            {!courseLoading && !courseError && view === "ref" && <Reference />}
+            {!courseLoading && !courseError && view === "search" && <Search onGo={goModule} />}
+            {!courseLoading && !courseError && view === "play" && <Playground />}
+            {!courseLoading && !courseError && view === "books" && <Books />}
+            {!courseLoading && !courseError && typeof view === "number" && modules.length > 0 && (
               <ModuleView index={safeIndex} onGo={goModule} onBooks={() => goView("books")} />
             )}
           </main>

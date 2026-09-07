@@ -7,13 +7,20 @@ export function loadJSON<T>(key: string, fallback: T): T {
   }
 }
 
-export function saveJSON(key: string, value: unknown): void {
+export const RESTORED_EVENT = "skillmap:restored";
+export const STORAGE_ERROR_EVENT = "skillmap:storage-error";
+
+export function saveJSONChecked(key: string, value: unknown): boolean {
   try {
     localStorage.setItem(key, JSON.stringify(value));
+    return true;
   } catch {
-    /* storage unavailable - ignore */
+    window.dispatchEvent(new CustomEvent(STORAGE_ERROR_EVENT, { detail: { key } }));
+    return false;
   }
 }
+
+export function saveJSON(key: string, value: unknown): void { saveJSONChecked(key, value); }
 
 export async function copyText(text: string): Promise<void> {
   try {

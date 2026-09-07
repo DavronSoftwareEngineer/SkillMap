@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import type { ReactNode } from "react";
-import { loadJSON, saveJSON } from "./lib/storage";
+import { loadJSON, saveJSON, STORAGE_ERROR_EVENT, RESTORED_EVENT } from "./lib/storage";
 import type { QuizScore } from "./types";
 import { COURSES, COURSE_BY_ID, loadCourseModules } from "./data/courses";
 import type { Course } from "./data/courses";
@@ -36,6 +36,12 @@ export function useToast(): ToastFn {
 }
 
 function ToastProvider({ children }: { children: ReactNode }) {
+  const [storageError, setStorageError] = useState(false);
+  useEffect(() => {
+    const onError = () => setStorageError(true);
+    window.addEventListener(STORAGE_ERROR_EVENT, onError);
+    return () => window.removeEventListener(STORAGE_ERROR_EVENT, onError);
+  }, []);
   const [msg, setMsg] = useState<string | null>(null);
   const timer = useRef<number | undefined>(undefined);
 
@@ -48,6 +54,7 @@ function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastCtx.Provider value={toast}>
       {children}
+      {storageError && <div role="alert" className="storage-warning">O'zgarish saqlanmadi. Brauzer xotirasi yoki ruxsatini tekshiring. Sahifani yangilashdan oldin yozgan matningizni nusxalang. <button onClick={() => setStorageError(false)}>Yopish</button></div>}
       <div className={"toast" + (msg ? " show" : "")}>{msg}</div>
     </ToastCtx.Provider>
   );
@@ -89,6 +96,11 @@ function ThemeProvider({ children }: { children: ReactNode }) {
     () => setThemeState((t) => (t === "dark" ? "light" : "dark")),
     []
   );
+  useEffect(() => {
+    const reload = () => setThemeState(loadJSON("myacademy_theme", "dark"));
+    window.addEventListener(RESTORED_EVENT, reload);
+    return () => window.removeEventListener(RESTORED_EVENT, reload);
+  }, []);
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
   return <ThemeCtx.Provider value={value}>{children}</ThemeCtx.Provider>;
@@ -100,6 +112,8 @@ interface StoreValue {
   courseId: string;
   course: Course;
   courseLoading: boolean;
+  courseError: string | null;
+  retryCourse: () => void;
   setCourse: (id: string) => void;
   progress: Progress;
   quizScores: QuizScores;
@@ -151,11 +165,15 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
   const [lastBackup, setLastBackup] = useState<string | null>(() => loadLastBackup());
   const [modulesMap, setModulesMap] = useState<Record<string, Course["modules"]>>({});
   const [courseLoading, setCourseLoading] = useState(true);
+  const [courseError, setCourseError] = useState<string | null>(null);
+  const [loadAttempt, setLoadAttempt] = useState(0);
+  const retryCourse = useCallback(() => setLoadAttempt(n => n + 1), []);
 
   useEffect(() => saveJSON("active_course", courseId), [courseId]);
 
   useEffect(() => {
     let cancelled = false;
+    setCourseError(null);
     if (modulesMap[courseId]) {
       setCourseLoading(false);
       return;
@@ -168,12 +186,15 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
         setCourseLoading(false);
       })
       .catch(() => {
-        if (!cancelled) setCourseLoading(false);
+        if (!cancelled) {
+          setCourseLoading(false);
+          setCourseError("Kurs yuklanmadi. Internetni tekshiring va qayta urinib ko'ring.");
+        }
       });
     return () => {
       cancelled = true;
     };
-  }, [courseId, modulesMap]);
+  }, [courseId, modulesMap, loadAttempt]);
 
   const setCourse = useCallback((id: string) => setCourseId(id), []);
 
@@ -269,6 +290,8 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
       courseId,
       course: { ...(COURSE_BY_ID[courseId] || COURSES[0]), modules: modulesMap[courseId] || [] },
       courseLoading,
+      courseError,
+      retryCourse,
       setCourse,
       progress: progressMap[courseId] || {},
       quizScores: quizMap[courseId] || {},
@@ -288,6 +311,8 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
       courseId,
       modulesMap,
       courseLoading,
+      courseError,
+      retryCourse,
       setCourse,
       progressMap,
       quizMap,
