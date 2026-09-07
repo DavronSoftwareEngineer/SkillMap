@@ -1,4 +1,4 @@
-const BLOCKED_TAGS = "script,style,iframe,object,embed,link,meta,base,form,input,button";
+const BLOCKED_TAGS = "script,style,iframe,object,embed,link,meta,base,form,input,button,foreignObject,animate,animateMotion,animateTransform,set";
 const SAFE_LINK = /^(?:https?:|mailto:|tel:|#|\/)/i;
 
 // Kurs kontenti hozir repository ichidan keladi. Bu qatlam keyinchalik import/CMS
@@ -15,10 +15,14 @@ export function sanitizeCourseHtml(html: string): string {
       if (name.startsWith("on") || name === "srcdoc" || name === "style") {
         element.removeAttribute(attribute.name);
       }
-      if ((name === "href" || name === "src") && value && !SAFE_LINK.test(value)) {
+      if ((name === "href" || name.endsWith(":href") || name === "src") && value && !SAFE_LINK.test(value.replace(/[\u0000-\u0020]/g, ''))) {
         element.removeAttribute(attribute.name);
       }
+      if (name === 'srcset' || name === 'ping') element.removeAttribute(attribute.name);
     });
+    if (element.tagName.toLowerCase() === 'a' && element.getAttribute('target') === '_blank') {
+      element.setAttribute('rel', 'noopener noreferrer');
+    }
   });
 
   return template.innerHTML;

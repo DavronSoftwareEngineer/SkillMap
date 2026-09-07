@@ -19,6 +19,12 @@ test("direct module links keep the selected course", async ({ page }) => {
 });
 
 test("professional curriculum extensions are reachable by stable module links", async ({ page }) => {
+  await page.goto("/#systemdesign/SD-DB");
+  await expect(page.getByRole("button", { name: "01 Oddiy misoldan tizimga", exact: true })).toBeVisible();
+  await expect(page.getByText(/Ikki kassir bir xil oxirgi chiptani/)).toBeVisible();
+  await page.getByText(/Ikki kassir bir xil oxirgi chiptani/).scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "test-results/system-design-database.png" });
+
   await page.goto("/#english/Diag");
   await expect(page.getByRole("heading", { name: "Qayerdan boshlashni aniqlang" })).toBeVisible();
 

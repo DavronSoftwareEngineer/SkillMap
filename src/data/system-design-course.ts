@@ -1,5 +1,8 @@
 import type { Module, ProfessionalAssessment } from "../types";
 import { SYSTEM_DESIGN_WEB_FLOW_MODULE } from "./webgis-system-design";
+import { SYSTEM_DESIGN_TRACK } from './learning/system-design';
+import { guideHtml, guideCommand } from './learning/system-design-guides';
+import viewportReference from './learning/viewport-reference.ts?raw';
 
 const SYSTEM_DESIGN_ASSESSMENT: ProfessionalAssessment = {
   id: "geoops-system-design-v1",
@@ -403,7 +406,7 @@ function deepenModule(module: Module): Module {
 
   return {
     ...module,
-    doc: `${module.doc}
+    doc: `${guideHtml(module.zoom)}${module.doc}
       <h3>Visual architecture map</h3>
       ${systemVisual(module.zoom)}
       <h3>Executable GeoPulse lab</h3>
@@ -418,6 +421,14 @@ function deepenModule(module: Module): Module {
       <div class="callout"><div><p>${deep.review}</p><p>Javob diagram, query plan, test, metric yoki runbook daliliga tayangan bo'lishi kerak.</p></div></div>`,
     code: [
       ...module.code,
+      {
+        heading: { h: "Kichik laboratoriya: tekshirish komandasi", p: "Avval expected natijani ayting, so‘ng ishga tushiring. README shartni o‘zgartirish vazifasini beradi." },
+        title: `${module.zoom} — lab`, lang: "powershell", code: guideCommand(module.zoom),
+      },
+      ...(module.zoom === 'SD-FE' ? [{
+        heading: { h: 'Latest request wins', p: 'Fake fetch bilan race, stale error va cleanup tekshirilgan. React adapterini mustaqil yozing.' },
+        title: 'viewport-reference.ts', lang: 'typescript', code: viewportReference,
+      }] : []),
       {
         heading: { h: "GeoPulse lab gate", p: "Baseline buzilmaganini va dalil qayerga yozilishini tekshir." },
         title: "PowerShell",
@@ -449,13 +460,7 @@ function deepenModule(module: Module): Module {
     },
     quiz: [
       ...module.quiz,
-      {
-        q: `${module.title} modulida professional qarorni nima isbotlaydi?`,
-        a: ["Texnologiya nomi", "AI javobi", "Test, metric, ADR va recovery dalili", "Faqat diagram"],
-        c: 2,
-        w: "Professional qaror o'lchanadigan va qayta tekshiriladigan dalil bilan himoya qilinadi.",
-        level: "scenario",
-      },
+      SYSTEM_DESIGN_TRACK.cases.find(item => item.modules.includes(module.zoom))!.check,
     ],
   };
 }

@@ -24,8 +24,8 @@ const STATUS_COPY = {
     detail: "Umumiy ball yoki kamida bitta mezon minimumi bajarilmadi.",
   },
   passed: {
-    label: "Professional assessment o'tdi",
-    detail: "Ball, mezon minimumlari, jonli himoya va integrity gate bajarildi.",
+    label: "Qayd etilgan baholash mezonlardan o‘tdi",
+    detail: "Kiritilgan ball va belgilar mezonlarga mos. Reviewer shaxsi, havola mazmuni va real bajarilish platforma tomonidan tasdiqlanmagan.",
   },
   "critical-fail": {
     label: "Critical fail",
@@ -140,6 +140,7 @@ export function ProjectAssessment({
           <span className="assessment-kicker">PROFESSIONAL ASSESSMENT / {assessment.version}</span>
           <h3 id={`${assessment.id}-title`}>{assessment.title}</h3>
           <p>{assessment.summary}</p>
+          <p>Bu mahalliy evidence va review daftari, mustaqil sertifikatsiya emas. Reviewer ismi va ballari qo‘lda kiritiladi; haqiqiy tekshiruvni reviewer bilan alohida o‘tkazing.</p>
         </div>
         <div className="assessment-metrics" aria-label="Baholash chegaralari">
           <span><b>{result.totalPoints}</b><small>jami ball</small></span>

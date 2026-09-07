@@ -41,6 +41,13 @@ const COURSE_LOADERS: Record<string, () => Promise<CourseModuleImport>> = {
 };
 
 export async function loadCourseModules(id: string): Promise<Module[]> {
+  const [{ applyLearningQuality }, modules] = await Promise.all([
+    import('./learning'), loadBaseCourseModules(id),
+  ]);
+  return applyLearningQuality(COURSE_LOADERS[id] ? id : 'webgis', modules);
+}
+
+export async function loadBaseCourseModules(id: string): Promise<Module[]> {
   const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
   const data = await loader();
   const modules = data.default as Module[];

@@ -251,9 +251,10 @@ function SpeakItem({ ex, idx }: { ex: Exercise; idx: number }) {
           Eshitildi: <i>{heard}</i>
         </div>
       )}
-      {state === "ok" && <div className="exc-fb ok">Zo'r talaffuz ✓</div>}
-      {state === "close" && <div className="exc-fb no">Yaqin - so'zlarni aniqroq ayt, yana urin</div>}
-      {state === "no" && <div className="exc-fb no">Mos kelmadi - namunani tinglab, sekin takrorla</div>}
+      <p className="exc-hint">Bu vosita transkripsiyada maqsad so‘zlarini qidiradi; talaffuz, accent, urg‘u yoki nutq ravonligini baholamaydi. Audio recordingni tinglab, self-review va inson feedbacki bilan tekshiring.</p>
+      {state === "ok" && <div className="exc-fb ok">Maqsad so‘zlari transkripsiyada topildi ✓</div>}
+      {state === "close" && <div className="exc-fb no">Maqsad so‘zlarining bir qismi topildi; transkripsiyani tekshiring</div>}
+      {state === "no" && <div className="exc-fb no">Transkripsiya mos kelmadi. Mikrofon, tanilgan matn va namunani tekshiring</div>}
       {state && ex.why && <div className="exc-why">{ex.why}</div>}
     </div>
   );

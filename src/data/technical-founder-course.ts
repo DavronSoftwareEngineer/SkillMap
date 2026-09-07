@@ -1,4 +1,6 @@
 import type { Module, ProfessionalAssessment, Resource } from "../types";
+import { BUSINESS_TRACKS } from './learning/business';
+import { FOUNDER_REVIEW } from './learning/founder-review';
 
 const FOUNDER_ASSESSMENT: ProfessionalAssessment = {
   id: "technical-founder-capstone-v1",
@@ -88,8 +90,8 @@ function moduleFrom(spec: FounderSpec): Module {
     resources: spec.resources,
     project: { tag: "Founder Lab", title: `${spec.title} — GeoOps evidence`, desc: spec.deliverable, features: ["real evidence", "decision record", "metric", "failure drill", "review"], rubric: ["Aniq ICP yoki owner", "Assumption test qilinadi", "Commercial/data risk ko'rsatilgan", "Metric qarorga ulanadi", "AI natijasi mustaqil tekshirilgan"] },
     quiz: [
-      { q: `${spec.title}: professional qarorning eng kuchli dalili qaysi?`, a: ["AI yozgan reja", "Ko'p feature", "Mijoz harakati, metric va documented trade-off", "Chiroyli pitch"], c: 2, w: "Founder qarori evidence va qayta ko'rish triggeri bilan himoya qilinadi.", level: "scenario" },
-      { q: "Qachon keyingi bosqichga o'tish to'g'ri?", a: ["Hammasi ideal bo'lganda", "Assumption uchun yetarli evidence va aniq next decision bo'lganda", "Raqib feature chiqarganda", "AI shunday deganda"], c: 1, w: "Bosqich evidence bilan boshqariladi; perfection yoki shovqin bilan emas.", level: "practical" },
+      BUSINESS_TRACKS.founder.cases.find(item => item.modules.includes(spec.zoom))!.check,
+      FOUNDER_REVIEW[spec.zoom],
     ],
   };
 }

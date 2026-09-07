@@ -9,6 +9,8 @@ import { ProjectAssessment } from "./ProjectAssessment";
 import { LessonReader } from "./LessonReader";
 import { sanitizeCourseHtml } from "../lib/sanitize";
 import { LabBoundary } from "./LabBoundary";
+import { LearningPractice } from './LearningPractice';
+import { ModuleWorkshop } from './ModuleWorkshop';
 const EnglishWorkLab = lazy(() => import("./EnglishWorkLab"));
 
 const TECH_COURSES = new Set([
@@ -150,14 +152,16 @@ export function ModuleView({
 
         <div className="panel active" key={tab}>
         {tab === "lab" && <LabBoundary key={m.zoom}><Suspense fallback={<p>Laboratoriya yuklanmoqda...</p>}><EnglishWorkLab key={m.zoom} mode={m.zoom} /></Suspense></LabBoundary>}
-        {tab === "doc" && (
+        {tab === "doc" && (<>
           <LessonReader
             lesson={lesson}
             tasks={m.tasks}
             glossary={glossary}
             level={lessonLevel}
           />
-        )}
+          {m.workshop && !['founder','systemdesign'].includes(courseId) && <ModuleWorkshop item={m.workshop} />}
+          {m.learningCases && <LearningPractice cases={m.learningCases} />}
+        </>)}
 
         {tab === "code" && (
           <div>
@@ -174,7 +178,12 @@ export function ModuleView({
             {m.tasks.map((t) => {
               const done = isDone(t.id);
               return (
-                <div key={t.id} className={"task" + (done ? " checked" : "")} onClick={() => toggleTask(t.id)}>
+                <div key={t.id} role="checkbox" aria-checked={done} tabIndex={0} className={"task" + (done ? " checked" : "")} onClick={() => toggleTask(t.id)} onKeyDown={event => {
+                  if (event.key === ' ' || event.key === 'Enter') {
+                    event.preventDefault();
+                    toggleTask(t.id);
+                  }
+                }}>
                   <div className="box">
                     <CheckIcon />
                   </div>

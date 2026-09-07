@@ -122,6 +122,8 @@ export interface Grammar {
   ex: string;
 }
 export interface Module {
+  workshop?: import('./data/learning/workshop-types').ModuleWorkshop;
+  learningCases?: import('./data/learning/types').LearningCase[];
   zoom: string;
   title: string;
   sub: string;

@@ -23,7 +23,7 @@ function snippet(text: string, q: string): string {
 }
 
 export function Search({ onGo }: { onGo: (i: number) => void }) {
-  const { course, courseId } = useStore();
+  const { course } = useStore();
   const [q, setQ] = useState("");
 
   // Har modul uchun qidiriladigan matnni oldindan tayyorlaymiz.
@@ -34,14 +34,15 @@ export function Search({ onGo }: { onGo: (i: number) => void }) {
       fields: [
         { kind: "Dars", text: stripHtml(m.doc) },
         { kind: "Sarlavha", text: m.title + " " + m.sub + " " + m.mtitle },
-        { kind: "Topshiriq", text: m.tasks.map((t) => stripHtml(t.html)).join(" / ") },
+        { kind: "Topshiriq", text: m.tasks.map((t) => stripHtml(t.html) + ' ' + (t.crit || '')).join(" / ") },
+        { kind: "Amaliyot", text: m.workshop ? Object.values(m.workshop).join(' / ') : '' },
+        { kind: "Bosqichli amaliyot", text: (m.learningCases || []).map(c => [c.title,c.scenario,...c.worked,c.guided,c.expected,c.transfer,...c.rubric,c.recall].join(' ')).join(' / ') },
         { kind: "Lug'at", text: (m.vocab || []).map((v) => `${v.w} ${v.uz} ${v.ex}`).join(" / ") },
         { kind: "Grammatika", text: (m.grammar || []).map((g) => `${g.topic} ${g.rule} ${g.ex}`).join(" / ") },
         { kind: "Test", text: m.quiz.map((qq) => qq.q).join(" / ") },
       ].filter((f) => f.text.trim().length > 0),
     }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [courseId]);
+  }, [course.modules]);
 
   const hits: Hit[] = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -67,6 +68,7 @@ export function Search({ onGo }: { onGo: (i: number) => void }) {
       </p>
 
       <input
+        aria-label="Kurs bo‘ylab qidirish"
         className="ref-search"
         placeholder="Kamida 2 harf yoz (masalan: PostGIS, present perfect, byudjet...)"
         value={q}

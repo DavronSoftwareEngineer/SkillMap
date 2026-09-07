@@ -18,12 +18,19 @@ import type { Streak } from "./lib/streak";
 import { EMPTY_STREAK, dayKey, registerActivity } from "./lib/streak";
 import { applyBackup, downloadBackup, loadLastBackup } from "./lib/backup";
 import { parseHash } from "./lib/router";
+import { validBackupValue } from "./lib/backup-validation";
 
 type Progress = Record<string, boolean>;
 type QuizScores = Record<string, QuizScore>;
 
 const STREAK_KEY = "myacademy_streak";
 const COURSE_IDS = COURSES.map((c) => c.id);
+
+// Valid JSON may still have an invalid shape. Keep the raw storage for recovery.
+function readLearningState<T>(key: string, fallback: T): T {
+  const value = loadJSON<unknown>(key, fallback);
+  return validBackupValue(key, value, COURSE_IDS) ? value as T : fallback;
+}
 
 /* ------------------------------ Toast ------------------------------ */
 // Alohida kontekst: toast chiqishi asosiy store iste'molchilarini re-render qilmaydi.
@@ -148,20 +155,20 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
   });
   const [progressMap, setProgressMap] = useState<Record<string, Progress>>(() => {
     const o: Record<string, Progress> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_progress", {})));
+    COURSES.forEach((c) => (o[c.id] = readLearningState(c.id + "_progress", {})));
     return o;
   });
   const [quizMap, setQuizMap] = useState<Record<string, QuizScores>>(() => {
     const o: Record<string, QuizScores> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_quiz", {})));
+    COURSES.forEach((c) => (o[c.id] = readLearningState(c.id + "_quiz", {})));
     return o;
   });
   const [srsMap, setSrsMap] = useState<Record<string, SrsState>>(() => {
     const o: Record<string, SrsState> = {};
-    COURSES.forEach((c) => (o[c.id] = loadJSON(c.id + "_srs", {})));
+    COURSES.forEach((c) => (o[c.id] = readLearningState(c.id + "_srs", {})));
     return o;
   });
-  const [streak, setStreak] = useState<Streak>(() => loadJSON(STREAK_KEY, EMPTY_STREAK));
+  const [streak, setStreak] = useState<Streak>(() => readLearningState(STREAK_KEY, EMPTY_STREAK));
   const [lastBackup, setLastBackup] = useState<string | null>(() => loadLastBackup());
   const [modulesMap, setModulesMap] = useState<Record<string, Course["modules"]>>({});
   const [courseLoading, setCourseLoading] = useState(true);
@@ -261,14 +268,14 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
     const q: Record<string, QuizScores> = {};
     const s: Record<string, SrsState> = {};
     COURSES.forEach((c) => {
-      p[c.id] = loadJSON(c.id + "_progress", {});
-      q[c.id] = loadJSON(c.id + "_quiz", {});
-      s[c.id] = loadJSON(c.id + "_srs", {});
+      p[c.id] = readLearningState(c.id + "_progress", {});
+      q[c.id] = readLearningState(c.id + "_quiz", {});
+      s[c.id] = readLearningState(c.id + "_srs", {});
     });
     setProgressMap(p);
     setQuizMap(q);
     setSrsMap(s);
-    setStreak(loadJSON(STREAK_KEY, EMPTY_STREAK));
+    setStreak(readLearningState(STREAK_KEY, EMPTY_STREAK));
     setLastBackup(loadLastBackup());
     setCourseId(loadJSON<string>("active_course", COURSES[0].id));
   }, []);

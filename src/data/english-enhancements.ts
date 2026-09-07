@@ -35,7 +35,7 @@ export const ENGLISH_PLACEMENT_MODULE: Module = {
     { q: "Nega listening, writing va speakingni ham tekshirish kerak?", a: ["Bitta grammar testi hammasini o'lchaydi", "Skilllar har doim bir xil rivojlanadi", "Har skill darajasi har xil bo'lishi mumkin", "Faqat IELTS uchun"], c: 2, w: "Til profili notekis bo'lishi mumkin; to'rtta skill alohida dalil bilan tekshiriladi.", level: "scenario" },
   ],
   exercises: [
-    { type: "choice", q: "I have worked with geospatial data for two years.", options: ["Men geodata bilan ikki yil ishladim.", "Men geodata bilan ikki yil ishlayapman.", "Men geodata bilan ikki yil ishlaganman."], correct: 1, why: "Present perfect continuous / present perfect experience hozirgacha davom etgan tajribani ifodalaydi." },
+    { type: "choice", q: "I have worked with geospatial data for two years. (Hali shu sohada ishlayapman.)", options: ["Men geodata bilan ikki yil ishladim.", "Men geodata bilan ikki yil ishlayapman.", "Men geodata bilan ikki yil ishlaganman."], correct: 1, why: "Have worked — present perfect simple. For two years va berilgan kontekst ish hozirgacha davom etishini bildiradi. Continuous shakl: have been working." },
     { type: "gap", q: "I ___ a web map last month.", answers: ["built", "created", "developed"], why: "Last month tugallangan o'tgan vaqt, shuning uchun past simple ishlatiladi." },
     { type: "speak", q: "Boshlang'ich tajribangni ayt.", say: "I build web maps and work with spatial data.", lang: "en-US", why: "Qisqa, aniq gapni yozib ko'ring; keyin pace va tushunarliligini baholang." },
   ],

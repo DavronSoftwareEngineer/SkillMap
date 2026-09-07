@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Provider = "anthropic" | "openai";
 
@@ -59,6 +59,9 @@ export function Playground() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [answer, setAnswer] = useState("");
+  const request = useRef<AbortController | null>(null);
+  const timer = useRef<number | undefined>(undefined);
+  useEffect(() => () => { request.current?.abort(); request.current = null; window.clearTimeout(timer.current); }, []);
 
   const switchProvider = (p: Provider) => {
     setProvider(p);
@@ -78,6 +81,7 @@ export function Playground() {
   };
 
   const send = async () => {
+    if (request.current) return;
     setError("");
     setAnswer("");
     if (!key.trim()) {
@@ -89,11 +93,16 @@ export function Playground() {
       return;
     }
     setLoading(true);
+    const controller = new AbortController();
+    request.current = controller;
+    const timeout = window.setTimeout(() => controller.abort(), 60_000);
+    timer.current = timeout;
     try {
       let text = "";
       if (provider === "anthropic") {
         const res = await fetch("https://api.anthropic.com/v1/messages", {
           method: "POST",
+          signal: controller.signal,
           headers: {
             "content-type": "application/json",
             "x-api-key": key.trim(),
@@ -115,6 +124,7 @@ export function Playground() {
       } else {
         const res = await fetch("https://api.openai.com/v1/chat/completions", {
           method: "POST",
+          signal: controller.signal,
           headers: {
             "content-type": "application/json",
             Authorization: "Bearer " + key.trim(),
@@ -132,8 +142,13 @@ export function Playground() {
         if (!res.ok) throw new Error(data?.error?.message || JSON.stringify(data));
         text = data?.choices?.[0]?.message?.content || "";
       }
-      setAnswer(text || "(bo'sh javob)");
+      if (request.current === controller && !controller.signal.aborted) setAnswer(text || "(bo'sh javob)");
     } catch (e) {
+      if (request.current !== controller) return;
+      if (controller.signal.aborted) {
+        setError("So‘rov bekor qilindi yoki 60 soniyalik kutish vaqti tugadi. Qayta urinishingiz mumkin.");
+        return;
+      }
       const msg = e instanceof Error ? e.message : String(e);
       setError(
         "Xatolik: " +
@@ -141,7 +156,11 @@ export function Playground() {
           "  -  Kalit, model nomi yoki internet aloqasini tekshiring. (CORS/401 bo'lsa kalit noto'g'ri bo'lishi mumkin.)"
       );
     } finally {
-      setLoading(false);
+      window.clearTimeout(timeout);
+      if (request.current === controller) {
+        request.current = null;
+        setLoading(false);
+      }
     }
   };
 
@@ -155,17 +174,18 @@ export function Playground() {
       </p>
 
       <div className="pg-warn">
-        <b>BYOK maxfiyligi:</b> loyiha API kalitini qabul qilmaydi va saqlamaydi. Kalit faqat joriy
-        brauzer sessiyasida turadi, sahifa yopilganda o'chadi; prompt va kalit bevosita tanlangan AI
+        <b>BYOK maxfiyligi:</b> SkillMap serveriga kalit yuborilmaydi. Kalit ushbu tabning
+        sessionStorage xotirasida saqlanadi va shu origin skriptlariga ochiq. Umumiy qurilmada
+        tabni yopishga tayanmay, kalitni o‘chirish tugmasidan foydalaning. Prompt va kalit bevosita tanlangan AI
         provayderiga yuboriladi. Ommaviy kompyuterda ishlatmang va kalitga usage limit qo'ying.
       </div>
 
       <div className="pg-row">
         <div className="pg-seg">
-          <button className={provider === "anthropic" ? "active" : ""} onClick={() => switchProvider("anthropic")}>
+          <button disabled={loading} className={provider === "anthropic" ? "active" : ""} onClick={() => switchProvider("anthropic")}>
             Anthropic (Claude)
           </button>
-          <button className={provider === "openai" ? "active" : ""} onClick={() => switchProvider("openai")}>
+          <button disabled={loading} className={provider === "openai" ? "active" : ""} onClick={() => switchProvider("openai")}>
             OpenAI (GPT)
           </button>
         </div>
@@ -230,7 +250,8 @@ export function Playground() {
         {loading ? "Yuborilmoqda..." : "Yubor ->"}
       </button>
 
-      {error && <div className="pg-error">{error}</div>}
+      {loading && <button onClick={() => request.current?.abort()}>So‘rovni bekor qilish</button>}
+      {error && <div role="alert" className="pg-error">{error}</div>}
 
       {answer && (
         <div className="pg-answer">

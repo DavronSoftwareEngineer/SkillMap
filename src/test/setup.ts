@@ -7,5 +7,5 @@ import { cleanup } from "@testing-library/react";
 afterEach(() => {
   cleanup();
   // Har test mustaqil bo'lsin: store/backup localStorage'ga yozadi.
-  localStorage.clear();
+  if (typeof localStorage !== 'undefined') localStorage.clear();
 });

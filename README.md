@@ -4,13 +4,33 @@
 
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
-Bitta ilova, aniq ierarxiyadagi **o'n to'rtta kurs**:
+Bitta ilova, aniq ierarxiyadagi **o'n uchta kurs**:
 
 - **Main Career Track — Geospatial Full-Stack Engineering:** React TS / MapLibre / FastAPI / PostGIS / GDAL / GeoAI / Docker. YOLO GeoAI ichidagi object detection va segmentation vositalaridan biri.
 - **Supporting Skills:** Frontend va Backend alohida chuqur kurslar; full-stack product loyihalari shu ikki kurs ichiga taqsimlangan. System Design & Production Academy web arxitektura, data, reliability, security va operations fikrlashini alohida chuqurlashtiradi; uning GeoOps capstone'i Geospatial flagship bilan bog'lanadi. Technical Founder & Business Academy customer discovery, product management, B2B sales, pricing, cash-flow, trust va AI governance'ni GeoOps paid-pilot capstone'i bilan bog'laydi. Git & GitHub, Telegram Bot, Cybersecurity, English va AI Prompting asosiy geospatial yo'lni mahsulot, delivery, xavfsizlik va muloqot tomondan kuchaytiradi.
 - **Personal Development:** Moliya, Rus tili va Arab tili professional trekdan mustaqil shaxsiy rivojlanish yo'nalishlari.
 
 React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
+
+## Bosqichli o‘quv amaliyoti
+
+System Design uchun [kichik executable laboratoriya](labs/system-design/README.md)
+Python standart kutubxonasida transaction, parallel request, outbox replay,
+tenant boundary va backup/restore tushunchalarini mashq qilishga imkon beradi.
+15 modulning har birida oddiy misol, atamalar, expected natija va mustaqil o‘zgarish
+bor. PostGIS/production transferi keyingi alohida bosqich sifatida ko‘rsatilgan.
+
+Barcha kurslarda ishlangan vaziyat, yordamli mashq, yashirin namunaviy javob,
+mustaqil transfer topshirig‘i, review mezonlari va 1/7 kunlik qayta eslash savoli bor.
+224 modulning har biriga o‘ziga xos amaliy vaziyat bog‘langan: 195 yangi qisqa workshop,
+Founder va System Design’da esa 29 avval chuqurlashtirilgan individual case.
+69 katta bosqichli case faqat o‘zining boshlang‘ich modulida ko‘rsatiladi; boshqa
+modullarda bir xil matn takrorlanmaydi. Mavjud module/task ID va storage keylar saqlanadi.
+Yangi topshiriqlar sabab umumiy bajarilish foizi kamayishi mumkin; oldingi belgilar o‘chmaydi.
+
+Kontent `src/data/learning/` ichida, UI esa `LearningPractice` va `ModuleWorkshop` komponentlarida.
+Avtomatik savol balli va qo‘lda kiritilgan reviewer bahosi mustaqil sertifikat emas.
+[Ta’lim sifati bo‘yicha o‘zgarishlar va keyingi tekshiruvlar](docs/learning-quality-roadmap.md).
 
 ## Ishga tushirish
 
