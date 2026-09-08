@@ -25,5 +25,6 @@ export function validBackupValue(key: string, value: unknown, courseIds: string[
     return false;
   }));
   if (key.endsWith("_worklabs")) return dictionary(value, v => strings(v));
+  if (key.endsWith("_practice")) return dictionary(value, v => isObject(v) && Object.entries(v).every(([field,item]) => ['attempt','reason','transfer','evidence','review','recall'].includes(field) && typeof item === 'string' && item.length <= 30000));
   return false;
 }

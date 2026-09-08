@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useToast } from "../store";
 import { calculateAssessment, emptyAssessmentRecord, isEvidenceValid } from "../lib/assessment";
-import { loadJSON, saveJSON, RESTORED_EVENT } from "../lib/storage";
+import { saveJSON, RESTORED_EVENT } from "../lib/storage";
+import { readRecords } from "../lib/record-storage";
 import type { AssessmentRecord, ProfessionalAssessment } from "../types";
 
 type AssessmentRecords = Record<string, AssessmentRecord>;
@@ -64,11 +65,11 @@ export function ProjectAssessment({
   const toast = useToast();
   const storageKey = `${courseId}_assessment`;
   const [records, setRecords] = useState<AssessmentRecords>(() =>
-    loadJSON<AssessmentRecords>(storageKey, {}),
+    readRecords<AssessmentRecord>(storageKey).records,
   );
   const record = normalizeRecord(records[assessment.id]);
   useEffect(() => {
-    const reload = () => setRecords(loadJSON<AssessmentRecords>(storageKey, {}));
+    const reload = () => setRecords(readRecords<AssessmentRecord>(storageKey).records);
     window.addEventListener(RESTORED_EVENT, reload);
     return () => window.removeEventListener(RESTORED_EVENT, reload);
   }, [storageKey]);
@@ -79,6 +80,10 @@ export function ProjectAssessment({
   const statusCopy = STATUS_COPY[result.status];
 
   const updateRecord = (updater: (current: AssessmentRecord) => AssessmentRecord) => {
+    if (!readRecords<AssessmentRecord>(storageKey).writable) {
+      toast("Saqlangan assessment buzilgan. Asl ma’lumot o‘zgarmadi; backup eksport qilib tiklang.");
+      return;
+    }
     setRecords((currentRecords) => {
       const nextRecord = updater(normalizeRecord(currentRecords[assessment.id]));
       const nextRecords = { ...currentRecords, [assessment.id]: nextRecord };
@@ -135,6 +140,7 @@ export function ProjectAssessment({
 
   return (
     <section className="assessment" aria-labelledby={`${assessment.id}-title`}>
+      {!readRecords<AssessmentRecord>(storageKey).writable && <p role="alert">Saqlangan assessment buzilgan. Asl ma’lumot o‘zgartirilmadi. Backup eksport qilib, to‘g‘ri zaxiradan tiklang; hozir tahrirlar saqlanmaydi.</p>}
       <header className="assessment-head">
         <div>
           <span className="assessment-kicker">PROFESSIONAL ASSESSMENT / {assessment.version}</span>

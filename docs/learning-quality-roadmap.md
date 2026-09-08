@@ -1,5 +1,10 @@
 # SkillMap: ta’lim sifatini kuchaytirish
 
+**2026-09-08 yangilanishi:** quyidagi oldingi bosqichning test sonlari tarixiy.
+Hozirgi o‘zgarishlar va natijalar [yangi hisobotda](course-practicum-review-2026-09-08.md):
+13 kursga kursga xos practicum, 224 modulga saqlanadigan mustaqil ish daftari,
+184 unit test, 26 brauzer testi va 19 Python laboratoriya testi.
+
 2026-09-07. Maqsad — barcha kurslarni professional o‘quv dasturi sifatida 9.5/10 mezoniga yaqinlashtirish. Quyidagi implementatsiya yakunlandi; 9.5 mustaqil ta’lim natijasi sifatida hali tasdiqlanmagan.
 
 ## Amalga oshirilgan qatlam

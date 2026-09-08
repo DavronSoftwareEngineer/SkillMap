@@ -14,6 +14,19 @@ React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
 
 ## Bosqichli o‘quv amaliyoti
 
+13 kursning har birining birinchi modulida **kichik misoldan yakuniy loyihagacha**
+alohida amaliy yo‘l bor: tayyorgarlik, yechilgan misol va sababi, bajarish qadamlari,
+kutilgan natija, xato ssenariysi, mustaqil o‘zgarish va topshiriladigan dalillar.
+224 modulda **Mustaqil ish** bo‘limi birinchi urinish, tuzatish, transfer, dalil,
+review va qayta eslashni alohida saqlaydi. Yozuvlar shu brauzerda saqlanadi,
+JSON backupga kiradi va modul bo‘yicha Markdown eksport qilinadi.
+Saqlash xatosida eksport qiling: saqlanmagan draft sahifa yopilgach yo‘qolishi mumkin.
+
+[Kichik hisoblash va tekshirish laboratoriyasi](labs/learning-foundations/README.md)
+nodata, koordinata, spatial split, cash-flow, ruxsat va faktga tayangan AI output
+misollarini Python bilan bajarishga imkon beradi.
+[2026-09-08: kurslar kesimidagi o‘zgarish va tekshiruv hisoboti](docs/course-practicum-review-2026-09-08.md).
+
 System Design uchun [kichik executable laboratoriya](labs/system-design/README.md)
 Python standart kutubxonasida transaction, parallel request, outbox replay,
 tenant boundary va backup/restore tushunchalarini mashq qilishga imkon beradi.

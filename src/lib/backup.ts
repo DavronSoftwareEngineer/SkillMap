@@ -3,7 +3,7 @@ import { COURSES } from "../data/courses";
 import { isObject, validBackupValue } from "./backup-validation";
 import { RESTORED_EVENT } from "./storage";
 
-const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs", "_assessment", "_worklabs"];
+const SUFFIXES = ["_progress", "_quiz", "_vocab", "_srs", "_assessment", "_worklabs", "_practice"];
 export const RECOVERY_KEY = "skillmap_pre_import_recovery";
 const GLOBAL_KEYS = ["active_course", "myacademy_streak", "myacademy_theme"];
 

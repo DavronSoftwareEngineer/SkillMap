@@ -11,6 +11,8 @@ import { sanitizeCourseHtml } from "../lib/sanitize";
 import { LabBoundary } from "./LabBoundary";
 import { LearningPractice } from './LearningPractice';
 import { ModuleWorkshop } from './ModuleWorkshop';
+import { CoursePracticum } from './CoursePracticum';
+import { PracticeNotebook } from './PracticeNotebook';
 const EnglishWorkLab = lazy(() => import("./EnglishWorkLab"));
 
 const TECH_COURSES = new Set([
@@ -88,6 +90,7 @@ export function ModuleView({
   const donePct = m.tasks.length ? Math.round((doneCount / m.tasks.length) * 100) : 0;
 
   const tabs = [
+    { p: "practice", label: "Mustaqil ish", show: !!m.workshop, badge: "" },
     { p: "lab", label: "Amaliy lab", show: courseId === "english" && ["AudioLab", "WriteLab", "WorkLab"].includes(m.zoom), badge: "" },
     { p: "doc", label: L.doc, show: true, badge: "" },
     { p: "code", label: L.code, show: m.code.length > 0, badge: "" },
@@ -151,8 +154,10 @@ export function ModuleView({
         </div>
 
         <div className="panel active" key={tab}>
+        {tab === 'practice' && <PracticeNotebook key={courseId+'/'+m.zoom} courseId={courseId} module={m} previous={prev} />}
         {tab === "lab" && <LabBoundary key={m.zoom}><Suspense fallback={<p>Laboratoriya yuklanmoqda...</p>}><EnglishWorkLab key={m.zoom} mode={m.zoom} /></Suspense></LabBoundary>}
         {tab === "doc" && (<>
+          {index === 0 && <CoursePracticum courseId={courseId} />}
           <LessonReader
             lesson={lesson}
             tasks={m.tasks}
