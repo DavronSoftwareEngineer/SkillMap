@@ -2,6 +2,7 @@
 
 ## Qo'shimcha yo'l xaritasi
 
+- [MockAtlas: 7 ta korporativ platforma amaliyoti — faqat sun’iy data](docs/corporate-gis-learning-roadmap.md)
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
 Bitta ilova, aniq ierarxiyadagi **o'n uchta kurs**:

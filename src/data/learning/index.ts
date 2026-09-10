@@ -6,6 +6,7 @@ import { BUSINESS_TRACKS } from './business';
 import { SYSTEM_DESIGN_TRACK } from './system-design';
 import type { LearningTrack } from './types';
 import { MODULE_WORKSHOPS } from './module-workshops';
+import { applyCorporateLearning } from './corporate-platform';
 
 export const LEARNING_TRACKS: Record<string, LearningTrack> = {
   ...ENGINEERING_TRACKS, ...DELIVERY_TRACKS, ...LANGUAGE_TRACKS,
@@ -21,7 +22,7 @@ export function applyLearningQuality(courseId: string, modules: Module[]): Modul
     const learningCases = track.cases.filter(item => item.modules[0] === module.zoom);
     const owned = learningCases.filter(item => item.modules[0] === module.zoom);
     const introduction = index === 0 ? `<h3>O‘quv yo‘li: poydevordan mustaqil ishga</h3><p>${escape(track.scope)}</p><p><strong>Kirish talabi:</strong> ${escape(track.prerequisite)}</p><p>Har bosqich: ishlangan misol → yordamli mashq → boshqa shartdagi mustaqil ish → mezon bo‘yicha review → 1 va 7 kundan keyin qayta eslash. Har modulda o‘ziga xos amaliyot bor. Katta case o‘zining boshlang‘ich modulida ochiladi; quyidagi havolalar orqali unga qaytish mumkin.</p><ol>${track.cases.map(item => `<li><a href="#${courseId}/${encodeURIComponent(item.modules[0])}">${escape(item.title)}</a></li>`).join('')}</ol><p><strong>Finalga olib boring:</strong> ${escape(track.finalEvidence)}</p><p>Checkbox yoki test balli mustaqil malaka sertifikati emas. Final revieweriga birinchi urinish, tuzatish va natija dalilini ko‘rsating.</p>` : '';
-    return {
+    return applyCorporateLearning(courseId, {
       ...module,
       workshop: MODULE_WORKSHOPS[courseId]?.[module.zoom],
       doc: introduction + module.doc,
@@ -40,6 +41,6 @@ export function applyLearningQuality(courseId: string, modules: Module[]): Modul
         desc: 'Amaliy yo‘l uchun asosiy manba. Mahsulot hujjati versiyasini ishlatayotgan muhitingiz bilan tekshiring.',
         host: new URL(source.url).hostname,
       }))] : module.resources,
-    };
+    });
   });
 }

@@ -1,5 +1,10 @@
 # SkillMap: ta’lim sifatini kuchaytirish
 
+**2026-09-10:** mavjud modullarga [7 ta mock-only korporativ platforma case](corporate-gis-learning-roadmap.md)
+qo‘shildi: markaziy release, React SDK, tile arxiv, rollback, worker fencing,
+token lifecycle va golden record. Yangi kurs/ID yoki real korxona data’si yo‘q.
+Reference unit testlar bilan haqiqiy infratuzilma integratsiyalari aniq ajratilgan.
+
 **2026-09-08 yangilanishi:** quyidagi oldingi bosqichning test sonlari tarixiy.
 Hozirgi o‘zgarishlar va natijalar [yangi hisobotda](course-practicum-review-2026-09-08.md):
 13 kursga kursga xos practicum, 224 modulga saqlanadigan mustaqil ish daftari,
