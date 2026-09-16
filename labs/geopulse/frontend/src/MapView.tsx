@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import maplibregl, { type GeoJSONSource, type Map as MapLibreMap } from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
+import type { GeoJSONSource, Map as MapLibreMap } from "maplibre-gl";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 
 import { fetchFeatures } from "./api";
 import type { FeatureCollection, LoadState } from "./types";
+
+// v6 uses an external ESM worker; Vite must bundle and publish its URL too.
+maplibregl.setWorkerUrl(workerUrl);
 
 const EMPTY_COLLECTION: FeatureCollection = {
   type: "FeatureCollection",

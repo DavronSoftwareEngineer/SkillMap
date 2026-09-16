@@ -2,6 +2,8 @@
 
 ## Qo'shimcha yo'l xaritasi
 
+- [Geospatial bozor talablari va ta’lim qamrovi — 2026-09-16](docs/market-readiness-audit-2026-09-16.md)
+- [2026-09-16: audit xatolari, tuzatishlar va tekshiruvlar](docs/audit-fixes-2026-09-16.md)
 - [MockAtlas: 7 ta korporativ platforma amaliyoti — faqat sun’iy data](docs/corporate-gis-learning-roadmap.md)
 - [GeoPulse flagship loyiha va 3 oylik reja](docs/flagship-geospatial-roadmap.md)
 
@@ -22,6 +24,10 @@ kutilgan natija, xato ssenariysi, mustaqil o‘zgarish va topshiriladigan dalill
 review va qayta eslashni alohida saqlaydi. Yozuvlar shu brauzerda saqlanadi,
 JSON backupga kiradi va modul bo‘yicha Markdown eksport qilinadi.
 Saqlash xatosida eksport qiling: saqlanmagan draft sahifa yopilgach yo‘qolishi mumkin.
+Progress, quiz va SRS yozuvlari HTTPS/localhost'da Web Locks orqali tablararo
+navbat bilan saqlanadi. Eski brauzer yoki oddiy LAN HTTP'da Web Locks bo'lmasa,
+eng yangi qiymat o'qiladi, lekin aynan bir vaqtdagi yozuvlar uchun atomiklik
+kafolatlanmaydi: bitta tabdan foydalaning yoki HTTPS orqali oching.
 
 [Kichik hisoblash va tekshirish laboratoriyasi](labs/learning-foundations/README.md)
 nodata, koordinata, spatial split, cash-flow, ruxsat va faktga tayangan AI output
@@ -38,13 +44,20 @@ Barcha kurslarda ishlangan vaziyat, yordamli mashq, yashirin namunaviy javob,
 mustaqil transfer topshirig‘i, review mezonlari va 1/7 kunlik qayta eslash savoli bor.
 224 modulning har biriga o‘ziga xos amaliy vaziyat bog‘langan: 195 yangi qisqa workshop,
 Founder va System Design’da esa 29 avval chuqurlashtirilgan individual case.
-69 katta bosqichli case faqat o‘zining boshlang‘ich modulida ko‘rsatiladi; boshqa
+74 katta bosqichli case faqat o‘zining boshlang‘ich modulida ko‘rsatiladi; boshqa
 modullarda bir xil matn takrorlanmaydi. Mavjud module/task ID va storage keylar saqlanadi.
 Yangi topshiriqlar sabab umumiy bajarilish foizi kamayishi mumkin; oldingi belgilar o‘chmaydi.
 
 Kontent `src/data/learning/` ichida, UI esa `LearningPractice` va `ModuleWorkshop` komponentlarida.
 Avtomatik savol balli va qo‘lda kiritilgan reviewer bahosi mustaqil sertifikat emas.
 [Ta’lim sifati bo‘yicha o‘zgarishlar va keyingi tekshiruvlar](docs/learning-quality-roadmap.md).
+
+Geospatial kursidagi `cn1`, `py2`, `z19`, `z26`, `z32` bo‘limlariga enterprise
+interoperability, raster cube, analytical lineage, cloud permissions va
+vakansiya → portfolio dalili bo‘yicha 5 chuqur amaliyot qo‘shilgan.
+[Sun’iy ma’lumotli reference laboratoriyasi](labs/market-readiness/README.md)
+Python standart kutubxonasida ishlaydi. Vendor/cloud/distributed yo‘llar
+rolga qarab tanlanadi; hammasi har bir vakansiya uchun majburiy emas.
 
 ## Ishga tushirish
 
@@ -192,6 +205,8 @@ public/
 - **Zaxira eslatmasi:** progress bor-u, zaxira 14 kundan eski (yoki umuman qilinmagan) bo'lsa, Dashboard'da eslatma chiqadi - ma'lumot yo'qolishining oldini oladi.
 - **Global qidiruv:** yon paneldagi *Qidiruv* - darslar, topshiriqlar, lug'at, grammatika va testlar bo'ylab qidirib, to'g'ridan-to'g'ri modulga o'tadi.
 - **Kitoblar:** har kursga o'qish tartibi bilan tavsiya kitoblar ro'yxati biriktirilgan - tegishli modulda kitob eslatmasi chiqadi (`data/courses.ts`, `components/Books.tsx`).
+  Rasmiy manba va Google Books yangi tabda ochiladi; uchinchi tomon iframe yoki
+  skripti yuklanmaydi. Preview/to'liq matn huquqi manbaga bog'liq.
 - **Tinglash va talaffuz mashqlari (til kurslari):** `listen` turidagi mashq jumlani ovoz bilan o'qiydi, sen eshitganingni yozasan; `speak` turida sen talaffuz qilasan, brauzer nutqni tanib tekshiradi (English, Rus tili, Arab tili - `lib/speech.ts`).
 - **Offline / PWA:** ilova service worker bilan internetsiz ishlaydi va telefonga "o'rnatiladi" (`public/sw.js`, `manifest.webmanifest`).
 - **Geospatial professional trek:** 45 modulda spatial fundamentals, JS/TS'dan Python ko'prigi, GeoPython/xarray, FastAPI/PostGIS, MapLibre, GDAL/COG/STAC, OGC API/GeoParquet/PMTiles, PyTorch asosidagi GeoAI (YOLO, segmentation, land-cover, change detection, satellite embeddings), offline field sync, observability/security/testing va mustaqil GeoPulse flagship assessment bor.

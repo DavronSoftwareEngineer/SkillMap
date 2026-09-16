@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - "labs/geopulse/**"
+      - "scripts/test-geopulse-map.mjs"
       - ".github/workflows/geopulse-lab.yml"
   push:
     paths:
       - "labs/geopulse/**"
+      - "scripts/test-geopulse-map.mjs"
       - ".github/workflows/geopulse-lab.yml"
 
 permissions:
@@ -43,6 +45,12 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      - run: npm ci --no-audit --no-fund
+        working-directory: .
+      - run: npx playwright install --with-deps chromium
+        working-directory: .
+      - run: node scripts/test-geopulse-map.mjs
+        working-directory: .
 
   compose-contract:
     runs-on: ubuntu-latest

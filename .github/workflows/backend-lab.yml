@@ -1,0 +1,35 @@
+name: Backend lab quality gate
+
+on:
+  pull_request:
+    paths: ["labs/backend-api/**", ".github/workflows/backend-lab.yml"]
+  push:
+    paths: ["labs/backend-api/**", ".github/workflows/backend-lab.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm test --prefix labs/backend-api/api
+  compose-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose -f labs/backend-api/compose.yaml config --quiet
+      - run: docker compose -f labs/backend-api/compose.yaml up --build --detach --wait --wait-timeout 120
+      - run: |
+          curl --fail http://127.0.0.1:8090/health/live
+          curl --fail http://127.0.0.1:8090/health/ready
+      - name: Logs on failure
+        if: failure()
+        run: docker compose -f labs/backend-api/compose.yaml logs --no-color
+      - name: Stop isolated lab
+        if: always()
+        run: docker compose -f labs/backend-api/compose.yaml down --volumes

@@ -60,16 +60,9 @@ export function BookReader({ book, onBack }: { book: Book; onBack: () => void })
         <GoogleBookViewer isbn={book.isbn} title={book.title} />
       ) : (
         <div className="source-book-stage">
-          <iframe
-            src={link.url}
-            title={`${book.title} ichki reader`}
-            className="source-book-frame"
-            loading="eager"
-            referrerPolicy="strict-origin-when-cross-origin"
-            sandbox="allow-downloads allow-forms allow-modals allow-same-origin allow-scripts"
-          />
           <div className="reader-frame-note">
-            Kontent rasmiy manbadan yuklanadi. Publisher embedni bloklasa, ISBN mavjud kitobda Google Preview rejimini tanlang.
+            <p>Kitob manbasi yangi tabda ochiladi. Ayrim manbalar ro'yxatdan o'tish yoki xarid talab qilishi mumkin.</p>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">Rasmiy manbada ochish (yangi tab)</a>
           </div>
         </div>
       )}

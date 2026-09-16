@@ -19,6 +19,7 @@ import { EMPTY_STREAK, dayKey, registerActivity } from "./lib/streak";
 import { applyBackup, downloadBackup, loadLastBackup } from "./lib/backup";
 import { parseHash } from "./lib/router";
 import { validBackupValue } from "./lib/backup-validation";
+import { updateLearningState } from "./lib/learning-storage";
 
 type Progress = Record<string, boolean>;
 type QuizScores = Record<string, QuizScore>;
@@ -207,52 +208,44 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
 
   // Har qanday o'rganish harakatida kunlik odat (streak) qayd etiladi.
   const bumpStreak = useCallback(() => {
-    setStreak((s) => {
-      const next = registerActivity(s, dayKey(new Date()));
-      if (next !== s) saveJSON(STREAK_KEY, next);
-      return next;
-    });
+    updateLearningState(STREAK_KEY, EMPTY_STREAK,
+      s => registerActivity(s, dayKey(new Date())), setStreak);
   }, []);
 
   const toggleTask = useCallback((id: string) => {
-    setProgressMap((m) => {
-      const cur = { ...(m[courseId] || {}) };
+    updateLearningState<Progress>(courseId + "_progress", {}, current => {
+      const cur = { ...current };
       if (cur[id]) delete cur[id];
       else cur[id] = true;
-      saveJSON(courseId + "_progress", cur);
-      return { ...m, [courseId]: cur };
-    });
+      return cur;
+    }, cur => setProgressMap(m => ({ ...m, [courseId]: cur })));
     bumpStreak();
   }, [courseId, bumpStreak]);
 
   const isDone = useCallback((id: string) => !!progressMap[courseId]?.[id], [progressMap, courseId]);
 
   const recordQuiz = useCallback((zoom: string, best: number, total: number) => {
-    setQuizMap((m) => {
-      const cur = { ...(m[courseId] || {}) };
+    updateLearningState<QuizScores>(courseId + "_quiz", {}, current => {
+      const cur = { ...current };
       const prev = cur[zoom]?.best ?? -1;
       if (best >= prev) cur[zoom] = { best, total };
-      saveJSON(courseId + "_quiz", cur);
-      return { ...m, [courseId]: cur };
-    });
+      return cur;
+    }, cur => setQuizMap(m => ({ ...m, [courseId]: cur })));
     bumpStreak();
   }, [courseId, bumpStreak]);
 
   const gradeVocab = useCallback((word: string, g: Grade) => {
-    setSrsMap((m) => {
-      const cur = { ...(m[courseId] || {}) };
+    updateLearningState<SrsState>(courseId + "_srs", {}, current => {
+      const cur = { ...current };
       cur[word] = gradeCard(cur[word], g, Date.now());
-      saveJSON(courseId + "_srs", cur);
-      return { ...m, [courseId]: cur };
-    });
+      return cur;
+    }, cur => setSrsMap(m => ({ ...m, [courseId]: cur })));
     bumpStreak();
   }, [courseId, bumpStreak]);
 
   const resetSrs = useCallback(() => {
-    setSrsMap((m) => {
-      saveJSON(courseId + "_srs", {});
-      return { ...m, [courseId]: {} };
-    });
+    updateLearningState<SrsState>(courseId + "_srs", {}, () => ({}),
+      cur => setSrsMap(m => ({ ...m, [courseId]: cur })));
   }, [courseId]);
 
   const exportBackup = useCallback(() => {
@@ -263,7 +256,7 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
   }, [toast]);
 
   // Import qilingach localStorage'dan qaytadan o'qiymiz (sahifani yangilamasdan).
-  const reloadFromStorage = useCallback(() => {
+  const reloadFromStorage = useCallback((restoreCourse = false) => {
     const p: Record<string, Progress> = {};
     const q: Record<string, QuizScores> = {};
     const s: Record<string, SrsState> = {};
@@ -277,13 +270,25 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
     setSrsMap(s);
     setStreak(readLearningState(STREAK_KEY, EMPTY_STREAK));
     setLastBackup(loadLastBackup());
-    setCourseId(loadJSON<string>("active_course", COURSES[0].id));
+    if (restoreCourse) setCourseId(readLearningState("active_course", COURSES[0].id));
   }, []);
+
+  useEffect(() => {
+    const sync = (event: StorageEvent) => {
+      if (event.storageArea !== localStorage) return;
+      if (event.key === null || event.key === STREAK_KEY ||
+        COURSE_IDS.some(id => ['_progress', '_quiz', '_srs'].some(suffix => event.key === id + suffix))) {
+        reloadFromStorage();
+      }
+    };
+    window.addEventListener('storage', sync);
+    return () => window.removeEventListener('storage', sync);
+  }, [reloadFromStorage]);
 
   const importBackup = useCallback((text: string) => {
     try {
       applyBackup(text);
-      reloadFromStorage();
+      reloadFromStorage(true);
       toast("Zaxira tiklandi");
     } catch (e) {
       toast(e instanceof Error ? e.message : "Faylni o'qib bo'lmadi");

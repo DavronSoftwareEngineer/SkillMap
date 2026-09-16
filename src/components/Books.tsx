@@ -42,8 +42,8 @@ export function Books() {
       <div className="eyebrow">Kitoblar / O'qish ro'yxati</div>
       <h2 className="mtitle">{course.name} - tavsiya etilgan kitoblar</h2>
       <p className="mlede">
-        Har bir karta SkillMap ichki readerida ochiladi. Ochiq kitoblar to'liq o'qiladi;
-        mualliflik huquqi bilan himoyalangan nashrlarda kutubxona, Google Preview yoki rasmiy manba ko'rsatiladi.
+        Kartada kitob tafsilotlari va manba tanlovi ochiladi. O'qish uchun rasmiy sayt yoki Google Books yangi tabda ochiladi;
+        to'liq matn va preview mavjudligi manba ruxsatiga bog'liq.
       </p>
       <div className="booklegend" aria-label="Elektron kitob access turlari">
         {freeCount > 0 && <span className="free">{freeCount} bepul</span>}

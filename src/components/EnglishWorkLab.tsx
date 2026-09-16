@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { loadJSON, RESTORED_EVENT, saveJSONChecked } from "../lib/storage";
+import { RESTORED_EVENT, saveJSONChecked } from "../lib/storage";
+import { readRecords } from "../lib/record-storage";
 import { exportLab, safeEvidenceUrl, WRITING_CRITERIA, writingResult } from "../lib/worklabs";
-import type { LabRecord, LabRecords } from "../lib/worklabs";
+import type { LabRecord } from "../lib/worklabs";
 import { AUDIO_LESSONS } from "../data/english-audio-library";
 import "./EnglishWorkLab.css";
 
 const KEY = "english_worklabs";
+const read = () => readRecords<LabRecord>(KEY);
+const damaged = "Saqlanmadi — saqlangan ma'lumot yaroqsiz. Asl yozuv o'zgarmadi; matnni eksport qiling va yaroqli backupdan tiklang.";
 // Failed writes survive in-app navigation until export/retry or a page reload.
 const unsaved = new Map<string, LabRecord>();
 window.addEventListener(RESTORED_EVENT, () => unsaved.clear());
@@ -19,24 +22,32 @@ const SCENARIOS = [
 ];
 
 function LabForm({ id, mode }: { id: string; mode: string }) {
-  const [record, setRecord] = useState<LabRecord>(() => unsaved.get(id) || loadJSON<LabRecords>(KEY, {})[id] || {});
-  const [status, setStatus] = useState(unsaved.has(id) ? "Saqlanmadi — matnni eksport qiling" : "");
+  const [record, setRecord] = useState<LabRecord>(() => unsaved.get(id) || read().records[id] || {});
+  const [status, setStatus] = useState(unsaved.has(id) ? "Saqlanmadi — matnni eksport qiling" : !read().writable ? damaged : "");
   useEffect(() => {
-    const reload = () => { setRecord(loadJSON<LabRecords>(KEY, {})[id] || {}); setStatus("Zaxiradan yangilandi"); };
+    const reload = () => { const source = read(); setRecord(source.records[id] || {}); setStatus(source.writable ? "Zaxiradan yangilandi" : damaged); };
     window.addEventListener(RESTORED_EVENT, reload);
     return () => window.removeEventListener(RESTORED_EVENT, reload);
   }, [id]);
   useEffect(() => {
-    if (status !== "Saqlanmagan o'zgarishlar" && status !== "Saqlanmadi — matnni eksport qiling") return;
+    if (!status.startsWith("Saqlanmadi")) return;
     const warn = (e: BeforeUnloadEvent) => { e.preventDefault(); e.returnValue = ""; };
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
   }, [status]);
   function update(key: string, value: string) {
-    const next = { ...record, [key]: value };
+    const source = read();
+    if (!source.writable) {
+      const draft = { ...record, [key]: value };
+      setRecord(draft); unsaved.set(id, draft); setStatus(damaged);
+      return;
+    }
+    const latest = source.records[id] || {};
+    // Preserve other fields saved since this form was opened.
+    const next = { ...latest, ...(unsaved.get(id) || {}), [key]: value };
     setRecord(next);
     // Merge the latest persisted records so other labs are not overwritten.
-    const ok = saveJSONChecked(KEY, { ...loadJSON<LabRecords>(KEY, {}), [id]: next });
+    const ok = saveJSONChecked(KEY, { ...source.records, [id]: next });
     if (ok) unsaved.delete(id); else unsaved.set(id, next);
     setStatus(ok ? "Shu brauzerda saqlandi" : "Saqlanmadi — matnni eksport qiling");
   }

@@ -5,6 +5,17 @@ import { applyBackup } from "../lib/backup";
 import { writingResult } from "../lib/worklabs";
 
 describe("English work lab", () => {
+  it.each(['null','[]','{"writing-main":{"draft":42}}','{broken'])("recovers without overwriting malformed records: %s", raw => {
+    // Import event also clears in-memory drafts between independent scenarios.
+    act(() => window.dispatchEvent(new Event('skillmap:restored')));
+    localStorage.setItem('english_worklabs',raw);
+    render(<EnglishWorkLab mode="WriteLab" />);
+    expect(screen.getByText(/saqlangan ma'lumot yaroqsiz/)).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText(/Birinchi draft/),{target:{value:'Recoverable local draft'}});
+    expect(screen.getByLabelText(/Birinchi draft/)).toHaveValue('Recoverable local draft');
+    expect(localStorage.getItem('english_worklabs')).toBe(raw);
+    act(() => window.dispatchEvent(new Event('skillmap:restored')));
+  });
   it("persists writing on edit and restores after remount", () => {
     const view = render(<EnglishWorkLab mode="WriteLab" />);
     fireEvent.change(screen.getByLabelText(/Birinchi draft/), { target: { value: "The import is blocked by an unknown CRS." } });

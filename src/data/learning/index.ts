@@ -7,10 +7,12 @@ import { SYSTEM_DESIGN_TRACK } from './system-design';
 import type { LearningTrack } from './types';
 import { MODULE_WORKSHOPS } from './module-workshops';
 import { applyCorporateLearning } from './corporate-platform';
+import { MARKET_CASES, MARKET_SOURCES } from './market-readiness';
 
 export const LEARNING_TRACKS: Record<string, LearningTrack> = {
   ...ENGINEERING_TRACKS, ...DELIVERY_TRACKS, ...LANGUAGE_TRACKS,
   ...BUSINESS_TRACKS, systemdesign: SYSTEM_DESIGN_TRACK,
+  webgis: { ...ENGINEERING_TRACKS.webgis, cases: [...ENGINEERING_TRACKS.webgis.cases, ...MARKET_CASES] },
 };
 
 const escape = (value: string) => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -36,11 +38,11 @@ export function applyLearningQuality(courseId: string, modules: Module[]): Modul
         html: `${escape(item.title)}: mustaqil transfer topshirig‘i`,
         crit: `${item.transfer} Qabul mezonlari: ${item.rubric.join(' ')}`,
       }))],
-      resources: index === 0 ? [...module.resources, ...track.sources.filter(source => !module.resources.some(r => r.url === source.url)).map(source => ({
+      resources: [...module.resources, ...(courseId === 'webgis' ? MARKET_SOURCES.filter(s => s.module === module.zoom && !module.resources.some(r => r.url === s.url)).map(s => ({type:'doc' as const, url:s.url,title:s.title,desc:'Bozor talabidan amaliy kontraktgacha: rasmiy manbani versiya bilan tekshiring.',host:new URL(s.url).hostname})) : []), ...(index === 0 ? track.sources.filter(source => !module.resources.some(r => r.url === source.url)).map(source => ({
         type: 'doc' as const, url: source.url, title: source.title,
         desc: 'Amaliy yo‘l uchun asosiy manba. Mahsulot hujjati versiyasini ishlatayotgan muhitingiz bilan tekshiring.',
         host: new URL(source.url).hostname,
-      }))] : module.resources,
+      })) : [])],
     });
   });
 }
