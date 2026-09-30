@@ -11,7 +11,7 @@ const pool = new pg.Pool({ connectionString }); const key = 'ab'.repeat(32);
 
 test('real PostgreSQL: sessions, ownership, CAS, encryption, validation and revocation', async t => {
   await pool.query('DROP TABLE IF EXISTS skillmap_auth_limits,skillmap_progress,skillmap_sessions,skillmap_users CASCADE');
-  await pool.query(readFileSync('server/database/migrations/0001_accounts.sql', 'utf8'));
+  await pool.query(readFileSync('netlify/database/migrations/0001_accounts.sql', 'utf8'));
   let count = 0;
   async function call(path: string, method = 'GET', data?: unknown, cookie = '', origin = 'https://skillmap.example') {
     const response = await handleRequest(new Request('https://skillmap.example/sync' + path, {

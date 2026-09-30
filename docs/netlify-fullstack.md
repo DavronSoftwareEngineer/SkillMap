@@ -1,16 +1,42 @@
-# SkillMap — Netlify Functions va tashqi PostgreSQL
+# SkillMap — Netlify Functions va Netlify Database
 
-React frontend va TypeScript backend bitta repositoryda. Backend Netlify
-Functions orqali ishlaydi; baza tashqi PostgreSQL xizmatida (masalan Neon Free)
-saqlanadi. Netlify hisob tarifini almashtirish talab qilinmaydi.
+React frontend va TypeScript backend bitta repositoryda. Production backend
+Netlify Functions orqali ishlaydi; PostgreSQL Netlify Database ichida saqlanadi.
+@netlify/database joriy deployning bazasini tanlaydi; pg parametrli query va
+transactionlarni bajaradi. Neon uchun alohida hisob ochish talab qilinmaydi.
 
-## Deploy xatosi va tuzatish
+## Netlify bazasi tayyor bo‘lganda
 
-03b9ee9 deploy logida createSiteDatabase uchun 403 qaytdi:
-database feature not available for this account.
-Netlify Database faqat credit-based hisoblarda mavjud. Avtomatik provisioningni
-ishga tushiruvchi @netlify/database dependency olib tashlandi.
-Sxema server/database/migrations ichida; yangi build bazani yaratishga urinmaydi.
+Netlify → Data & storage → Database oynasida Your database is ready! va
+production branch ko‘rinishi baza yaratilganini bildiradi. Oldingi deploydagi
+createSiteDatabase 403 xatosi baza mavjud emasligi yoki hisob ruxsatiga tegishli;
+faqat yangi muvaffaqiyatli deploy xato bartaraf etilganini tasdiqlaydi.
+
+Repositoryda @netlify/database dependency va netlify/database/migrations ichida
+0001_accounts.sql bor. Netlify mavjud bazani ishlatadi va hali qo‘llanmagan
+migrationsni deploy e’lon qilinishidan oldin avtomatik bajaradi. SQLni qo‘lda
+qayta bajarish kerak emas. SkillMap jadvallari boshqa loyiha jadvallarini o‘chirmaydi.
+
+1. Netlify → Environment variables orqali SYNC_ENCRYPTION_KEY qo‘shing.
+   Qiymat kriptografik tasodifiy 64 belgili hex bo‘lsin. Mavjud production kaliti
+   bo‘lsa uni saqlang; yangisini yozish oldingi cloud snapshotlarni ochishni buzadi.
+2. Yangi kalitni o‘z terminalingizda quyidagicha yarating:
+
+       node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+
+3. Kalitni production kontekstda Functions runtime uchun saqlang. VITE_ prefiksini
+   ishlatmang. Kalitni GitHubga yoki chatga yubormang, maxfiy joyda zaxiralang.
+4. GitHub master push orqali deployni boshlang. Netlify avtomatik NETLIFY_DB_URL
+   beradi; URL yoki database parolini qo‘lda kiritish kerak emas.
+5. Deploy Published bo‘lgandan keyin quyidagi hisob va snapshot tekshiruvini bajaring.
+
+Preview branchlar Netlify tomonidan alohida yaratiladi. SYNC_ENCRYPTION_KEY faqat
+productionda berilgan bo‘lsa previewda hisob/cloud 503 sozlash xabarini beradi.
+Preview sinovi uchun alohida kalit kerak. Netlify managed URL tashqi URLlardan
+ustun turadi, shunda preview production bazasiga tasodifan ulanmaydi.
+
+Netlify Database credit-based hisoblarda mavjud va o‘z usage/kredit xarajatlariga
+ega. Baza yaratish mavjud tarifni yoki bepul limitni o‘z-o‘zidan tasdiqlamaydi.
 
 ## Lokal ishga tushirish
 
@@ -37,29 +63,14 @@ Brauzer: http://127.0.0.1:4173. Hisob va cloud → Yangi hisob.
 API 8788 portda; Vite /sync so‘rovlarini unga uzatadi.
 Docker down konteynerni to‘xtatadi; progressni saqlash uchun --volumes ishlatmang.
 
-## Tashqi PostgreSQLni ulash — Neon misoli
+## Muqobil tashqi PostgreSQL
 
-1. Neon hisobingizda Free loyiha va alohida skillmap bazasini yarating.
-   Netlify va Neon har biri o‘z xizmat/usage limitlariga ega.
-2. Shu bazaning SQL Editor oynasida server/database/migrations/0001_accounts.sql
-   faylini bir marta bajaring. Faqat yangi SkillMap bazasidan foydalaning;
-   boshqa mavjud loyiha bazasini tanlamang.
-3. Connect oynasidan pooled PostgreSQL connection stringni oling. Ichida
-   login/parol bor — chatga yoki GitHubga yubormang.
-4. Netlify → Project configuration → Environment variables orqali
-   SKILLMAP_DATABASE_URL ga shu connection stringni kiriting. Faqat production
-   kontekst va Functions runtime uchun mavjud bo‘lsin. Localhost URLni qo‘ymang.
-5. Yuqoridagi randomBytes buyrug‘i bilan doimiy SYNC_ENCRYPTION_KEY yarating va
-   production kontekst/Functions runtime uchun qo‘shing. Lokal demo kalitini ishlatmang.
-6. O‘zgarishlardan keyin production deployni qayta boshlang.
-
-DATABASE_URL fallback sifatida qo‘llab-quvvatlanadi. Mavjud Netlify managed baza
-bo‘lsa NETLIFY_DB_URL ham ishlaydi, lekin loyiha uni yaratmaydi va sxemani avtomatik
-qo‘llamaydi. Uzoq bazalar verified TLS bilan ulanadi. Baza hali ulanmagan bo‘lsa
-frontend va function deploy bo‘ladi; hisob/cloud endpointlari 503 sozlash xabarini beradi.
-
-Preview deploylar production bazasiga yozmasligi uchun URL va keyni production
-kontekstga cheklang. Preview uchun alohida baza va alohida shifrlash kaliti kerak.
+Production uchun tanlangan yo‘l Netlify Database. Agar boshqa hostingda tashqi
+PostgreSQL kerak bo‘lsa, managed Netlify URL yo‘qligida SKILLMAP_DATABASE_URL yoki
+DATABASE_URL ishlatiladi. Shu alohida yangi bazaga migrationsni qo‘lda qo‘llash,
+preview bazasini ajratish va URLni runtime secret sifatida saqlash zarur.
+Lokal testlar faqat loopback skillmap_local yoki skillmap_test bazalarini qabul qiladi.
+Uzoq bazalar verified TLS bilan ulanadi. Runtime hech qachon jadvallarni o‘zi yaratmaydi.
 
 ## GitHub → Netlify
 
@@ -113,6 +124,6 @@ database manzillari test scriptda rad etiladi. GitHub CI ham shu tekshiruvni baj
 GeoPulse FastAPI/PostGIS laboratoriyasi alohida loyiha bo‘lib qoladi.
 
 Rasmiy manbalar: [Functions](https://docs.netlify.com/build/functions/configuration/),
-[Netlify Database plan talabi](https://docs.netlify.com/build/data-and-storage/netlify-database/),
-[Neon Free](https://neon.com/blog/new-usage-based-pricing),
-[Neon TLS](https://neon.com/blog/avoid-mitm-attacks-with-psql-postgres-16).
+[Netlify Database setup](https://docs.netlify.com/build/data-and-storage/netlify-database/getting-started/),
+[avtomatik migrations](https://docs.netlify.com/build/data-and-storage/netlify-database/migrations/),
+[database URL API](https://docs.netlify.com/build/data-and-storage/netlify-database/api/).

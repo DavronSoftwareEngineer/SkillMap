@@ -2,8 +2,8 @@
 
 The implemented service is `server/api.ts`, deployed through
 `netlify/functions/skillmap.ts`. PostgreSQL migrations live in
-`server/database/migrations`. The runtime uses `pg` directly; Netlify Database
-auto-provisioning is disabled to support accounts without that feature.
+`netlify/database/migrations`. Netlify applies them before publishing a deploy.
+The runtime uses `pg` and the deploy-specific URL resolved by `@netlify/database`.
 
 See [local setup, Netlify deployment and limitations](../../docs/netlify-fullstack.md).
 
@@ -13,5 +13,6 @@ See [local setup, Netlify deployment and limitations](../../docs/netlify-fullsta
 - The browser explicitly uploads/restores data. Local progress continues offline.
 - AI keys and device preferences are excluded. Manually entered reviewer grades remain unverified.
 
-The production `SKILLMAP_DATABASE_URL` and stable `SYNC_ENCRYPTION_KEY` are external deployment inputs.
-The code being deployed does not by itself confirm that those inputs are configured.
+Netlify Database provides the deployment's database URL; a stable `SYNC_ENCRYPTION_KEY`
+must be configured for Functions. The code being deployed does not by itself confirm
+that the database, migrations and encryption key are ready.

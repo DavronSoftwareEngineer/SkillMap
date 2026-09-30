@@ -28,7 +28,7 @@ Import mavjud qaydni almashtiradi va avvalgi holat uchun recovery saqlaydi.
 ## Netlify
 
 GitHub repo, build npm run build, publish dist. Hisob va cloud uchun tashqi
-PostgreSQL URL va SYNC_ENCRYPTION_KEY sozlanadi. Cloudga tugma orqali saqlanmagan
+Netlify Database avtomatik ulanadi; SYNC_ENCRYPTION_KEY sozlanadi. Cloudga tugma orqali saqlanmagan
 mahalliy yozuvlar brauzer o‘chirilganda faqat JSON zaxira bilan tiklanadi.
 
 ## Dalil chegaralari

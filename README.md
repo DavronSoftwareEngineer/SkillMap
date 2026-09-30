@@ -23,7 +23,7 @@ Quiz va amaliy dalillar alohida ko‘rsatiladi; checkboxlardan malaka darajasi c
 qayd qilish va feedback formasi qo‘shildi. Yozuvlar shu brauzerda saqlanadi, JSON
 zaxiraga kiradi va eksport fayli boshqa qurilmada import qilinadi.
 
-Netlify uchun TypeScript Functions va PostgreSQL asosidagi hisob/cloud backend qo‘shildi.
+Netlify uchun TypeScript Functions va Netlify Database/PostgreSQL asosidagi hisob/cloud backend qo‘shildi.
 “Hisob va cloud” orqali login, ro‘yxatdan o‘tish, parol almashtirish, cloudga saqlash
 va boshqa qurilmada tiklash ishlaydi. Sync tugmalar orqali bajariladi; avtomatik emas.
 Reviewer baholari tahrirlanadigan qaydlardir; reviewer shaxsi yoki kurs samarasi tasdiqlanmaydi.
@@ -148,7 +148,7 @@ Node.js/TypeScript portfolio dalili; GeoPulse esa FastAPI/PostGIS geospatial fla
 
 Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 
-- **Netlify:** `netlify.toml` tayyor. Git ulang yoki `npm run build` qilib `dist/` ni drag-drop qiling. SPA redirect avtomatik.
+- **Netlify:** hisob/cloud uchun Git repositoryni ulang: Functions va Database migrations ham deploy qilinadi. `SYNC_ENCRYPTION_KEY`ni sozlang ([qo‘llanma](docs/netlify-fullstack.md)). Faqat `dist/` drag-drop frontendni joylaydi. SPA redirect avtomatik.
 - **Vercel:** `vercel.json` tayyor. Repo'ni import qiling - build buyrug'i va chiqish papkasi o'qiladi.
 
 `vite.config.ts` da `base: "./"` - ildizda ham, subkatalogda (masalan GitHub Pages) ham ishlaydi.

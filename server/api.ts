@@ -1,5 +1,6 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes, randomUUID, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
 import pg from 'pg';
+import { getConnectionString } from '@netlify/database';
 import type { Pool, PoolClient } from 'pg';
 import { MAX_CLOUD_BYTES, validCloudData } from '../src/lib/cloud-data';
 
@@ -13,7 +14,10 @@ class HttpError extends Error { constructor(public status: number, message: stri
 let database: Pool | undefined;
 function pool() {
   if (database) return database;
-  const connectionString = process.env.SKILLMAP_DATABASE_URL ?? process.env.DATABASE_URL ?? process.env.NETLIFY_DB_URL;
+  // Netlify resolves the database for this deploy, including isolated preview branches.
+  let managedConnectionString: string | undefined;
+  try { managedConnectionString = getConnectionString(); } catch { /* Local/external PostgreSQL below. */ }
+  const connectionString = managedConnectionString ?? process.env.SKILLMAP_DATABASE_URL ?? process.env.DATABASE_URL;
   if (!connectionString) throw new HttpError(503, 'Cloud bazasi hali ulanmagan. Serverdagi database URLni sozlash kerak.');
   const target = new URL(connectionString);
   if (!['postgres:', 'postgresql:'].includes(target.protocol)) throw new HttpError(503, 'Cloud database sozlamasi noto‘g‘ri.');
