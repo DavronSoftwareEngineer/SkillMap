@@ -1,5 +1,5 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes, randomUUID, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
-import { getDatabase } from '@netlify/database';
+import pg from 'pg';
 import type { Pool, PoolClient } from 'pg';
 import { MAX_CLOUD_BYTES, validCloudData } from '../src/lib/cloud-data';
 
@@ -12,7 +12,16 @@ type Options = { pool?: Pool; key?: string; ip?: string };
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 let database: Pool | undefined;
 function pool() {
-  return database ??= getDatabase(process.env.SKILLMAP_DATABASE_URL ? { connectionString: process.env.SKILLMAP_DATABASE_URL } : undefined).pool as unknown as Pool;
+  if (database) return database;
+  const connectionString = process.env.SKILLMAP_DATABASE_URL ?? process.env.DATABASE_URL ?? process.env.NETLIFY_DB_URL;
+  if (!connectionString) throw new HttpError(503, 'Cloud bazasi hali ulanmagan. Serverdagi database URLni sozlash kerak.');
+  const target = new URL(connectionString);
+  if (!['postgres:', 'postgresql:'].includes(target.protocol)) throw new HttpError(503, 'Cloud database sozlamasi noto‘g‘ri.');
+  // Managed external databases require verified TLS; localhost remains suitable for Docker tests.
+  if (!['localhost', '127.0.0.1', '[::1]'].includes(target.hostname)) target.searchParams.set('sslmode', 'verify-full');
+  database = new pg.Pool({ connectionString: target.toString(), max: 3, connectionTimeoutMillis: 15000, idleTimeoutMillis: 30000 });
+  database.on('error', () => console.error('SkillMap idle database connection failed'));
+  return database;
 }
 const digest = (value: string) => createHash('sha256').update(value).digest('hex');
 const response = (status: number, data: unknown, cookie?: string) => new Response(JSON.stringify(data), {
@@ -97,8 +106,8 @@ export async function handleRequest(request: Request, options: Options = {}): Pr
     if (method !== 'GET' && request.headers.get('origin') !== url.origin) throw new HttpError(403, 'So‘rov manbasi mos emas.');
     const authenticatedRoute = !['/login', '/register'].includes(route);
     if (authenticatedRoute && (!token || !/^[a-f0-9]{64}$/.test(token))) throw new HttpError(401, 'Avval hisobga kiring.');
-    const key = encryptionKey(options.key ?? process.env.SYNC_ENCRYPTION_KEY);
     const db = options.pool ?? pool();
+    const key = encryptionKey(options.key ?? process.env.SYNC_ENCRYPTION_KEY);
     const cookie = (value: string, age = 604800) => cookieName + '=' + value + '; Path=/; HttpOnly; SameSite=Strict; Max-Age=' + age + (local ? '' : '; Secure');
     if (['/register', '/login', '/password', '/account'].includes(route)) await authLimit(db, options.ip ?? 'unknown');
     const data = method === 'GET' || route === '/logout' ? {} : await body(request, route === '/progress' ? MAX_CLOUD_BYTES : 8192);

@@ -11,7 +11,7 @@ const pool = new pg.Pool({ connectionString }); const key = 'ab'.repeat(32);
 
 test('real PostgreSQL: sessions, ownership, CAS, encryption, validation and revocation', async t => {
   await pool.query('DROP TABLE IF EXISTS skillmap_auth_limits,skillmap_progress,skillmap_sessions,skillmap_users CASCADE');
-  await pool.query(readFileSync('netlify/database/migrations/0001_accounts.sql', 'utf8'));
+  await pool.query(readFileSync('server/database/migrations/0001_accounts.sql', 'utf8'));
   let count = 0;
   async function call(path: string, method = 'GET', data?: unknown, cookie = '', origin = 'https://skillmap.example') {
     const response = await handleRequest(new Request('https://skillmap.example/sync' + path, {
@@ -24,6 +24,18 @@ test('real PostgreSQL: sessions, ownership, CAS, encryption, validation and revo
       const result = await handleRequest(new Request('https://skillmap.example/sync/me'));
       assert.equal(result.status, 401); assert.equal(result.headers.get('cache-control'), 'no-store');
       assert.equal((await call('/register', 'POST', { username: 'alice', password: 'safe password 123' }, '', 'https://evil.example')).status, 403);
+    });
+    await t.test('unconfigured deployment returns a setup error without provisioning a database', async () => {
+      const names = ['SKILLMAP_DATABASE_URL', 'DATABASE_URL', 'NETLIFY_DB_URL'];
+      const previous = names.map(name => process.env[name]);
+      try {
+        names.forEach(name => delete process.env[name]);
+        const result = await handleRequest(new Request('https://skillmap.example/sync/register', {
+          method: 'POST', headers: { Origin: 'https://skillmap.example', 'Content-Type': 'application/json' }, body: '{}',
+        }), { key });
+        assert.equal(result.status, 503);
+        assert.match((await result.json()).error, /Cloud bazasi hali ulanmagan/);
+      } finally { names.forEach((name, index) => { if (previous[index] === undefined) delete process.env[name]; else process.env[name] = previous[index]; }); }
     });
     const alice = await call('/register', 'POST', { username: 'alice', password: 'safe password 123' });
     const bob = await call('/register', 'POST', { username: 'bob', password: 'safe password 456' });

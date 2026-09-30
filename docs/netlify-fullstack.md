@@ -1,125 +1,118 @@
-# SkillMap hisob va cloud — Netlify
+# SkillMap — Netlify Functions va tashqi PostgreSQL
 
-React frontend, TypeScript Netlify Function va PostgreSQL bir repositoryda.
-Frontend offline o‘qish va mahalliy progress bilan ishlaydi. Cloud alohida tugmalar
-orqali saqlanadi/tiklanadi. Davriy polling yoki cron yo‘q.
+React frontend va TypeScript backend bitta repositoryda. Backend Netlify
+Functions orqali ishlaydi; baza tashqi PostgreSQL xizmatida (masalan Neon Free)
+saqlanadi. Netlify hisob tarifini almashtirish talab qilinmaydi.
+
+## Deploy xatosi va tuzatish
+
+03b9ee9 deploy logida createSiteDatabase uchun 403 qaytdi:
+database feature not available for this account.
+Netlify Database faqat credit-based hisoblarda mavjud. Avtomatik provisioningni
+ishga tushiruvchi @netlify/database dependency olib tashlandi.
+Sxema server/database/migrations ichida; yangi build bazani yaratishga urinmaydi.
 
 ## Lokal ishga tushirish
 
-Node 22.12+ (22 LTSning eng yangi versiyasi tavsiya), npm va Docker kerak.
+Node 22.12+ (Node 22 LTSning eng yangi versiyasi tavsiya), npm va Docker kerak.
 
-```powershell
-npm ci --no-audit --no-fund
-docker compose -p skillmap-fullstack-local -f compose.fullstack.yml up -d --wait
-Copy-Item .env.example .env
-```
+    npm ci --no-audit --no-fund
+    docker compose -p skillmap-fullstack-local -f compose.fullstack.yml up -d --wait
+    Copy-Item .env.example .env
 
-`.env` ichida lokal database URL tayyor. `SYNC_ENCRYPTION_KEY`ga quyidagi buyruq
-chiqargan 64 belgili kalitni yozing:
+.env ichida lokal database URL tayyor. SYNC_ENCRYPTION_KEY uchun 64 belgili kalit yarating:
 
-```powershell
-node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
-npm run db:migrate:local
-npm run dev:api
-```
+    node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+
+Qiymatni .env ga yozing, keyin:
+
+    npm run db:migrate:local
+    npm run dev:api
 
 Ikkinchi terminalda:
 
-```powershell
-npm run dev -- --host 127.0.0.1 --port 4173 --strictPort
-```
+    npm run dev -- --host 127.0.0.1 --port 4173 --strictPort
 
-Brauzer: http://127.0.0.1:4173. “Hisob va cloud” → “Yangi hisob”.
-Login 3–32 ta lotin harfi/raqam/underscore, parol 12–128 belgi.
-Backend 8788 portda, Vite `/sync` so‘rovlarini unga uzatadi. Productionga
-Docker yoki lokal database URL yuborilmaydi. `docker compose ... down` konteynerni
-to‘xtatadi; `--volumes` qo‘shmang, agar progress bazasini saqlamoqchi bo‘lsangiz.
+Brauzer: http://127.0.0.1:4173. Hisob va cloud → Yangi hisob.
+API 8788 portda; Vite /sync so‘rovlarini unga uzatadi.
+Docker down konteynerni to‘xtatadi; progressni saqlash uchun --volumes ishlatmang.
+
+## Tashqi PostgreSQLni ulash — Neon misoli
+
+1. Neon hisobingizda Free loyiha va alohida skillmap bazasini yarating.
+   Netlify va Neon har biri o‘z xizmat/usage limitlariga ega.
+2. Shu bazaning SQL Editor oynasida server/database/migrations/0001_accounts.sql
+   faylini bir marta bajaring. Faqat yangi SkillMap bazasidan foydalaning;
+   boshqa mavjud loyiha bazasini tanlamang.
+3. Connect oynasidan pooled PostgreSQL connection stringni oling. Ichida
+   login/parol bor — chatga yoki GitHubga yubormang.
+4. Netlify → Project configuration → Environment variables orqali
+   SKILLMAP_DATABASE_URL ga shu connection stringni kiriting. Faqat production
+   kontekst va Functions runtime uchun mavjud bo‘lsin. Localhost URLni qo‘ymang.
+5. Yuqoridagi randomBytes buyrug‘i bilan doimiy SYNC_ENCRYPTION_KEY yarating va
+   production kontekst/Functions runtime uchun qo‘shing. Lokal demo kalitini ishlatmang.
+6. O‘zgarishlardan keyin production deployni qayta boshlang.
+
+DATABASE_URL fallback sifatida qo‘llab-quvvatlanadi. Mavjud Netlify managed baza
+bo‘lsa NETLIFY_DB_URL ham ishlaydi, lekin loyiha uni yaratmaydi va sxemani avtomatik
+qo‘llamaydi. Uzoq bazalar verified TLS bilan ulanadi. Baza hali ulanmagan bo‘lsa
+frontend va function deploy bo‘ladi; hisob/cloud endpointlari 503 sozlash xabarini beradi.
+
+Preview deploylar production bazasiga yozmasligi uchun URL va keyni production
+kontekstga cheklang. Preview uchun alohida baza va alohida shifrlash kaliti kerak.
 
 ## GitHub → Netlify
 
-1. Kodni GitHubga commit/push qiling. Netlify’da mavjud projectni shu repo bilan
-   ulang yoki Import from Git → GitHub orqali project oching.
-2. Build command: `npm run build`; publish directory: `dist`; base: repository root.
-   `netlify.toml` Functions directory va Node 22 sozlamasini beradi.
-3. Project configuration → Environment variables orqali yangi, doimiy
-   `SYNC_ENCRYPTION_KEY` qo‘shing. Yuqoridagi randomBytes buyrug‘i bilan yarating.
-   Functions runtime uchun mavjud bo‘lsin. Maxfiy qiymatni `.env` yoki GitHubga
-   commit qilmang; `VITE_` prefiksi ishlatmang. Lokal demo kalitini productionga ko‘chirmang.
-4. Netlify Database credit-based plan bilan ishlaydi. SDK va
-   `netlify/database/migrations/0001_accounts.sql` deploy vaqtida database
-   provision/migratsiyasini ishga tushiradi. Data & Storage → Database’da tayyorligini
-   tekshiring. Netlify o‘zi `NETLIFY_DB_URL`ni beradi; productionda
-   `SKILLMAP_DATABASE_URL`ni qo‘ymang.
-5. Deploy tugagach, haqiqiy `.netlify.app` manzilida ikkita alohida brauzer/profil
-   bilan ro‘yxatdan o‘tish → saqlash → kirish → tiklashni tekshiring. Function
-   loglarida xato bo‘lmasin. GitHub CI PostgreSQL integratsiya va brauzer sinovlarini bajaradi.
+Repo branch master; base repository root; build npm run build; publish dist.
+netlify.toml Node 22 va netlify/functions directoryni belgilaydi.
+.env, .npm-cache va .netlify Gitga kirmaydi. Hech bir backend secretga VITE_ prefiksi
+qo‘ymang. Dist papkasini drag-and-drop qilish Functionsni deploy qilmaydi.
 
-`dist` papkasining o‘zini drag-and-drop qilish Functions/database bilan full-stack
-deployni bajarmaydi. Git integrationdan foydalaning.
+Login qilinmagan /sync/me so‘rovi 401 JSON qaytarsa function yo‘li ishlayapti.
+Baza ishlashini bilish uchun ikki browser profilida hisob yaratish → saqlash →
+kirish → tiklashni bajaring. 401ning o‘zi baza tayyorligini tasdiqlamaydi.
 
-## Saqlash qoidalari
+## Saqlash va himoyalar
 
-- Progress, quiz, lug‘at/SRS, amaliy ish, assessment, o‘quvchi qaydlari va streak cloudga kiradi.
-  AI kalitlari, theme, faol kurs va hisob sessiyasi progress JSONga kirmaydi.
-- Cloud butun snapshot sifatida saqlanadi. “Bu brauzerni cloudga saqlash” cloud
-  nusxani almashtiradi. “Cloud bilan bu brauzerni almashtirish” barcha kurslarning
-  mahalliy qaydlarini cloud snapshot bilan almashtiradi. Avval JSON zaxira oling.
-- Ikki qurilma bitta revisiondan saqlasa, faqat bittasi yutadi. Ikkinchisiga 409
-  qaytadi. Yangilangan nusxani ko‘rib, kerakli o‘zgarishlarni qo‘lda birlashtiring.
-  Avtomatik field merge mavjud emas.
-- Tiklashdan oldin backenddan revision qayta tekshiriladi. So‘rov davomida mahalliy
-  progress o‘zgarsa, tiklash rad etiladi. Oldingi storage recovery sifatida saqlanadi.
-- Qo‘lda kiritilgan reviewer bahosi cloudga ko‘chishi uni tasdiqlangan bahoga aylantirmaydi.
-  Haqiqiy o‘quvchi pilotini tashkilotchi alohida o‘tkazadi.
-- Parolni almashtirish barcha sessiyalarni bekor qiladi. Hisobni o‘chirish joriy
-  parolni talab qiladi, database progress va sessiyalarni cascade bilan o‘chiradi.
-  Brauzerdagi lokal nusxa qoladi. Email/OAuth/password recovery hozir mavjud emas.
+Progress, quiz, lug‘at/SRS, amaliy ish, assessment, o‘quvchi qaydlari va streak cloudga
+kiradi. AI kalitlari, theme, faol kurs va hisob sessiyasi snapshotga kirmaydi.
+Cloud tugmalar orqali saqlanadi/tiklanadi; davriy polling yoki cron yo‘q.
+Butun snapshot almashtiriladi — avval JSON zaxira oling. Eski revision bilan
+parallel yozish 409 qaytaradi; avtomatik field merge mavjud emas.
+Tiklash paytida local progress o‘zgarsa, tiklash rad etiladi va recovery saqlanadi.
+Reviewer bahosi cloudga ko‘chishi uni tasdiqlangan bahoga aylantirmaydi.
 
-## Backend himoyalari
+Async scrypt, 7 kunlik opaque hashed sessiyalar, HttpOnly/SameSite=Strict/Secure cookie,
+Origin tekshiruvi, parametrli SQL, account ID tekshiruvi, 2 MB limit va schema whitelist.
+Progress AES-256-GCM bilan user IDga bog‘lanadi. Kalitni zaxiralang: yo‘qotish yoki
+almashtirish oldingi cloud yozuvlarini ochishni to‘xtatadi.
+Auth IP uchun 15 daqiqada 20 urinish; function domain/IP uchun daqiqasiga 120 request.
+Pool har function instance uchun 3 connection; uzoq bazalarda sertifikat tekshiriladi.
+Loglar parol, cookie, payload yoki database URLni chiqarmaydi.
 
-Async scrypt parol hash, 7 kunlik opaque hashed sessiyalar,
-HttpOnly/SameSite=Strict/Secure cookie, mutationlarda aniq Origin tekshiruvi,
-SQL parametrlar, account ID tekshiruvi, 2 MB payload chegarasi va schema whitelist.
-Progress AES-256-GCM orqali foydalanuvchi ID bilan bog‘lab shifrlanadi.
-Shifrlash kalitini xavfsiz zaxiralang; yo‘qotish yoki almashtirish oldingi cloud
-yozuvlarini ochishni to‘xtatadi. Database rollback bilan birga kalit mosligini saqlang.
-
-Auth urinishlari PostgreSQLda IP uchun 15 daqiqada 20 ta bilan cheklanadi.
-Netlify function yo‘liga domain/IP uchun daqiqasiga 120 request limiti qo‘yilgan.
-Loglar request body, parol, cookie yoki database URLni chiqarmaydi.
+Parol almashtirish barcha sessiyalarni bekor qiladi. Hisobni o‘chirish joriy parolni
+talab qiladi; cloud progress va sessiyalarni o‘chiradi, lokal nusxa qoladi.
+Email/OAuth/password recovery hozir mavjud emas.
 
 ## Tekshirish
 
-```powershell
-npm run build
-npm run test:production
-npm run test:e2e -- frontend-outcomes.spec.ts reliability.spec.ts learning-flow.spec.ts practice-notebook.spec.ts --workers=2
-```
+    npm run build
+    npm run test:production
+    npm run test:e2e -- frontend-outcomes.spec.ts reliability.spec.ts learning-flow.spec.ts practice-notebook.spec.ts --workers=2
 
-Full-stack sinovi faqat alohida lokal `skillmap_test` bazasida ishlaydi:
+Full-stack sinovi faqat alohida lokal skillmap_test bazasida ishlaydi:
 
-```powershell
-docker run --detach --rm --name skillmap-fullstack-tests -e POSTGRES_USER=skillmap -e POSTGRES_PASSWORD=skillmap_test -e POSTGRES_DB=skillmap_test -p 127.0.0.1:54328:5432 postgres:17-alpine
-$env:SKILLMAP_TEST_DATABASE_URL='postgres://skillmap:skillmap_test@127.0.0.1:54328/skillmap_test'
-npm run test:fullstack
-docker stop skillmap-fullstack-tests
-```
+    docker run --detach --rm --name skillmap-fullstack-tests -e POSTGRES_USER=skillmap -e POSTGRES_PASSWORD=skillmap_test -e POSTGRES_DB=skillmap_test -p 127.0.0.1:54328:5432 postgres:17-alpine
+    $env:SKILLMAP_TEST_DATABASE_URL='postgres://skillmap:skillmap_test@127.0.0.1:54328/skillmap_test'
+    npm run test:fullstack
+    docker stop skillmap-fullstack-tests
 
-Lokal demo API 8788 portda ishlab turgan bo‘lsa, testdan oldin uni to‘xtating.
-Test script avval test jadvalini qayta yaratadi, keyin shu database bilan API va
-Vite ishga tushiradi. Production database manzillari rad etiladi. CI aynan shu
-scriptni PostgreSQL service bilan bajaradi.
+Demo API 8788 portda ishlasa, testdan oldin uni to‘xtating. Script test jadvallarini
+qayta yaratadi, keyin shu baza bilan API va Vite ishga tushiradi. Production
+database manzillari test scriptda rad etiladi. GitHub CI ham shu tekshiruvni bajaradi.
+GeoPulse FastAPI/PostGIS laboratoriyasi alohida loyiha bo‘lib qoladi.
 
-## Tarif va cheklovlar
-
-Netlify credit-based Free tarifida sarflanadigan compute, bandwidth va deploy
-resurslari mavjud. Database ham usage sarflaydi; bepul doimiy cheksiz hosting
-kafolatlanmaydi. Database idle sleepdan foydalana olishi uchun ilova bekor turganda
-so‘rov yubormaydi. Joriy hisob limiti va sarfini Netlify Billing’dan kuzating.
-GeoPulse FastAPI/PostGIS laboratoriyasi SkillMap Functions ichida deploy qilinmaydi.
-
-Rasmiy manbalar: [Functions routing](https://docs.netlify.com/build/functions/configuration/),
-[Database setup](https://docs.netlify.com/build/data-and-storage/netlify-database/getting-started/),
-[migrations](https://docs.netlify.com/build/data-and-storage/netlify-database/migrations/),
-[rate limits](https://docs.netlify.com/manage/security/secure-access-to-sites/rate-limiting/),
-[pricing](https://www.netlify.com/pricing/).
+Rasmiy manbalar: [Functions](https://docs.netlify.com/build/functions/configuration/),
+[Netlify Database plan talabi](https://docs.netlify.com/build/data-and-storage/netlify-database/),
+[Neon Free](https://neon.com/blog/new-usage-based-pricing),
+[Neon TLS](https://neon.com/blog/avoid-mitm-attacks-with-psql-postgres-16).
