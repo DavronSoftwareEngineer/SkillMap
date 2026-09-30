@@ -13,6 +13,7 @@ import { Reference } from "./components/Reference";
 import { Search } from "./components/Search";
 import { Playground } from "./components/Playground";
 import { Books } from "./components/Books";
+import { CloudAccount } from "./components/CloudAccount";
 
 type View = number | ViewName;
 
@@ -178,6 +179,7 @@ export default function App() {
       <Topo />
       <div className="wrap">
         <TopBar coord={coord} overall={overall} onDash={() => goView("dash")} onMenu={() => setMenuOpen((o) => !o)} />
+        <CloudAccount />
         <div className="shell">
           <Sidebar
             open={menuOpen}

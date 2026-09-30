@@ -1,0 +1,57 @@
+{
+  "version": "parallel-forms-v1",
+  "tasks": {
+    "webgis": [
+      "Point [69.24,41.31] va [0.1,0.3,-9999,0.5] uchun CRS/axis tartibini izohlang, nodata bilan mean va coverage hisoblang. Nodata-only holatini tekshiring.",
+      "Point [69.28,41.35] va [0.2,-9999,0.6,0.4] uchun CRS/axis tartibini izohlang, nodata bilan mean va coverage hisoblang. Nodata-only holatini tekshiring."
+    ],
+    "frontend": [
+      "Stable IDli uch task uchun accessible edit forma quring. Reorderdan keyin draft egasini va API 500da draft saqlanishini testlang.",
+      "Stable IDli uch mahsulot uchun accessible edit forma quring. Reorderdan keyin draft egasini va API 503da draft saqlanishini testlang."
+    ],
+    "backend": [
+      "Stock=1 uchun ikki parallel order va operation key bilan retryni yozing. Boshqa user orderiga ruxsat va commit oldidagi xatoni testlang.",
+      "Seats=1 uchun ikki parallel booking va operation key bilan retryni yozing. Boshqa user bookingiga ruxsat va commit oldidagi xatoni testlang."
+    ],
+    "git": [
+      "Vaqtinchalik repoda commit, staged va unstaged farqlar yarating. Nima commitga kirishini tushuntiring; ikki branch conflictini yechib, dalil saqlang.",
+      "Boshqa vaqtinchalik repoda commit, staged va unstaged farqlar yarating. Nima commitga kirishini tushuntiring; ikki branch conflictini yechib, dalil saqlang."
+    ],
+    "telegram": [
+      "Bir xil update_id=42 ikki marta kelganda bitta job yaratilsin. Boshqa user callbackini rad etish va restartdan keyingi retryni fixture bilan tekshiring.",
+      "Bir xil update_id=73 ikki marta kelganda bitta order yaratilsin. Boshqa user callbackini rad etish va restartdan keyingi retryni fixture bilan tekshiring."
+    ],
+    "cybersecurity": [
+      "Sun’iy ikki tenantli API uchun test yozing: o‘z obyektini o‘qish mumkin, boshqa tenant IDsi rad etiladi. Sensitive log misolini tozalang.",
+      "Sun’iy ikki userli download API uchun test yozing: o‘z faylini olish mumkin, boshqa user IDsi rad etiladi. Sensitive log misolini tozalang."
+    ],
+    "english": [
+      "Source CRS unknown bo‘lgani uchun raster import to‘xtadi. 3 jumlalik English status va 60 soniyalik audio bilan sabab, noma’lum fakt va keyingi harakatni tushuntiring.",
+      "Missing permission bo‘lgani uchun raster import to‘xtadi. 3 jumlalik English status va 60 soniyalik audio bilan sabab, noma’lum fakt va keyingi harakatni tushuntiring."
+    ],
+    "finance": [
+      "Daromad 5 mln, doimiy xarajat 3 mln, bir martalik xarajat 1 mln. Cash-flow hisoblang, keyingi oy daromad 20% tushsa reja tuzing va taxminlarni yozing.",
+      "Daromad 6 mln, doimiy xarajat 4 mln, bir martalik xarajat 1 mln. Cash-flow hisoblang, keyingi oy daromad 20% tushsa reja tuzing va taxminlarni yozing."
+    ],
+    "russian": [
+      "Rus tilida ish kuni haqida 6 jumla va uchta savol yozing. Fe’l zamoni va kelishik tanlovini izohlang; 60 soniyalik audio yozing.",
+      "Rus tilida dam olish kuni haqida 6 jumla va uchta savol yozing. Fe’l zamoni va kelishik tanlovini izohlang; 60 soniyalik audio yozing."
+    ],
+    "arabic": [
+      "Qisqa harakatli arabcha jumlada ism/fe’l/harfni ajrating, o‘zak va i’robni izohlang, tarjima hamda manba havolasini bering.",
+      "Boshqa qisqa harakatli arabcha jumlada ism/fe’l/harfni ajrating, o‘zak va i’robni izohlang, tarjima hamda manba havolasini bering."
+    ],
+    "prompting": [
+      "Uch faktli sun’iy statusdan JSON chiqaradigan prompt yozing. Yo‘q faktni to‘qimaslik va zararli instructionni bajarmaslikni fixture bilan testlang.",
+      "Uch faktli sun’iy incidentdan JSON chiqaradigan prompt yozing. Yo‘q faktni to‘qimaslik va zararli instructionni bajarmaslikni fixture bilan testlang."
+    ],
+    "systemdesign": [
+      "Ikki kassir oxirgi chiptani sotayotgan tizim uchun transaction, idempotency, outbox va recovery qarorini diagramma va executable test bilan tushuntiring.",
+      "Ikki operator oxirgi mahsulotni ajratayotgan tizim uchun transaction, idempotency, outbox va recovery qarorini diagramma va executable test bilan tushuntiring."
+    ],
+    "founder": [
+      "Sun’iy GIS mijoz muammosi uchun interview savollari, faraz, pilot acceptance va unit economics yozing. Fakt va taxminni ajrating.",
+      "Sun’iy field-operations muammosi uchun interview savollari, faraz, pilot acceptance va unit economics yozing. Fakt va taxminni ajrating."
+    ]
+  }
+}

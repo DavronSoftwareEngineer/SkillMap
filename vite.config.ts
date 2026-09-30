@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react()],
   // host: true - localhost'dan tashqari tarmoq IP'sida ham ochiladi
   // (telefon / boshqa qurilmalar bir Wi-Fi'da turib kira oladi).
-  server: { host: true, port: 5173 },
+  server: { host: true, port: 5173, proxy: { '/sync': { target: 'http://127.0.0.1:8788', changeOrigin: false } } },
   preview: { host: true, port: 4173 },
   // Testlar: sof mantiq node'da, komponentlar jsdom'da ishlaydi.
   test: {
@@ -22,6 +22,7 @@ export default defineConfig({
       "**/.agents/**",
       "**/.git/**",
       "**/e2e/**",
+      "**/server/**",
     ],
   },
 });

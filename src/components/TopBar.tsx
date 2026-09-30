@@ -58,7 +58,7 @@ export function TopBar({
             </svg>
           )}
         </button>
-        <button className="progress-pill" onClick={onDash} aria-label="Tayyorlik paneli">
+        <button className="progress-pill" onClick={onDash} aria-label="Tayyorlik paneli" title="Topshiriqlar bajarilishi; malaka bahosi alohida">
           <div className="bar">
             <i style={{ width: overall + "%" }} />
           </div>

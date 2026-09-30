@@ -32,6 +32,16 @@ beforeEach(() => {
 });
 
 describe("backup", () => {
+  it("transfers local outcome drafts and rejects a malformed record before changing progress", () => {
+    localStorage.setItem('english_progress', JSON.stringify({ kept: true }));
+    localStorage.setItem('english_outcomes', JSON.stringify({ baseline: { attempt: 'Local draft', score_correctness: '2' } }));
+    const backup = JSON.stringify(buildBackup(new Date(2026, 8, 30)));
+    localStorage.clear();
+    applyBackup(backup);
+    expect(JSON.parse(localStorage.getItem('english_outcomes')!).baseline.attempt).toBe('Local draft');
+    expect(() => applyBackup(JSON.stringify({ app: 'SkillMap', version: 1, data: { english_progress: { lost: true }, english_outcomes: { baseline: { attempt: 42 } } } }))).toThrow();
+    expect(JSON.parse(localStorage.getItem('english_progress')!)).toEqual({ kept: true });
+  });
   it("buildBackup mavjud kalitlarni yig'adi", () => {
     localStorage.setItem("webgis_progress", JSON.stringify({ "z0-1": true }));
     localStorage.setItem("active_course", JSON.stringify("english"));

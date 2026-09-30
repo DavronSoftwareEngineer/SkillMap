@@ -295,6 +295,12 @@ function CourseStoreProvider({ children }: { children: ReactNode }) {
     }
   }, [reloadFromStorage, toast]);
 
+  useEffect(() => {
+    const restored = () => reloadFromStorage();
+    window.addEventListener(RESTORED_EVENT, restored);
+    return () => window.removeEventListener(RESTORED_EVENT, restored);
+  }, [reloadFromStorage]);
+
   // Memoizatsiya: faqat haqiqiy holat o'zgarganda iste'molchilar re-render bo'ladi
   // (toast xabari kabi yon holatlar bunga kirmaydi).
   const value = useMemo<StoreValue>(

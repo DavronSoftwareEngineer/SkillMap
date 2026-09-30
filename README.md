@@ -15,6 +15,24 @@ Bitta ilova, aniq ierarxiyadagi **o'n uchta kurs**:
 
 React 18 / TypeScript / Vite. Tashqi UI kutubxonasiz, sof CSS.
 
+## Dashboard va mahalliy o‘quvchi qaydlari — 2026-09-30
+
+Dashboard’dagi foiz o‘zingiz belgilagan **topshiriqlar bajarilishi**ni bildiradi.
+Quiz va amaliy dalillar alohida ko‘rsatiladi; checkboxlardan malaka darajasi chiqarilmaydi.
+13 kurs uchun boshlang‘ich/yakuniy transfer topshirig‘i, reviewer bahosini qo‘lda
+qayd qilish va feedback formasi qo‘shildi. Yozuvlar shu brauzerda saqlanadi, JSON
+zaxiraga kiradi va eksport fayli boshqa qurilmada import qilinadi.
+
+Netlify uchun TypeScript Functions va PostgreSQL asosidagi hisob/cloud backend qo‘shildi.
+“Hisob va cloud” orqali login, ro‘yxatdan o‘tish, parol almashtirish, cloudga saqlash
+va boshqa qurilmada tiklash ishlaydi. Sync tugmalar orqali bajariladi; avtomatik emas.
+Reviewer baholari tahrirlanadigan qaydlardir; reviewer shaxsi yoki kurs samarasi tasdiqlanmaydi.
+GeoPulse laboratoriyasi avvalgi holatida qoldirilgan.
+
+[Full-stack lokal ishga tushirish va Netlify deploy](docs/netlify-fullstack.md),
+[Frontend o‘zgarishlari](docs/improvements-2026-09-30.md),
+[haqiqiy o‘quvchilar bilan pilot](docs/learner-pilot-protocol.md).
+
 ## Bosqichli o‘quv amaliyoti
 
 13 kursning har birining birinchi modulida **kichik misoldan yakuniy loyihagacha**

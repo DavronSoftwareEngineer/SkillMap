@@ -1,27 +1,16 @@
-# SkillMap cloud-sync starter
+# SkillMap cloud sync
 
-This service boundary is intentionally optional: SkillMap remains local-first until a real
-identity provider, database host, retention policy, and privacy terms are selected. It is not
-connected to the browser app yet and must not be described as live cloud sync.
+The implemented service is `server/api.ts`, deployed through
+`netlify/functions/skillmap.ts`. PostgreSQL migrations live in
+`netlify/database/migrations`.
 
-## Target contract
+See [local setup, Netlify deployment and limitations](../../docs/netlify-fullstack.md).
 
-```text
-Browser local state -> authenticated HTTPS API -> PostgreSQL encrypted backup record
-```
+- `/sync/register`, `/sync/login`, `/sync/me`, `/sync/logout`: username/password accounts and cookie sessions.
+- `/sync/progress`: encrypted complete snapshots with revision checks. Concurrent stale writes return 409.
+- `/sync/password`, `/sync/account`: password change, session revocation and account deletion.
+- The browser explicitly uploads/restores data. Local progress continues offline.
+- AI keys and device preferences are excluded. Manually entered reviewer grades remain unverified.
 
-- `PUT /v1/me/progress` accepts a versioned backup payload with an idempotency key.
-- `GET /v1/me/progress` returns only the authenticated user's latest payload.
-- The server validates payload size/schema, records audit metadata, and never logs the payload.
-- Conflict policy is explicit: initial implementation is last-write-wins with server timestamp;
-  per-item merge requires an ADR and tests before enabling it.
-
-## Before implementation/deploy
-
-1. Select OAuth/OIDC provider and define account deletion/export flow.
-2. Add PostgreSQL migration, encrypted-at-rest storage, rate limits, and integration tests.
-3. Add client opt-in UI. Local storage remains the source of truth until a successful sync.
-4. Run a privacy/security review; learning progress is user data.
-
-Secrets, database URL, OAuth keys, and a public host are external deployment inputs and are not
-committed to this repository.
+The production database and stable `SYNC_ENCRYPTION_KEY` are external deployment inputs.
+The code being deployed does not by itself confirm that those inputs are configured.

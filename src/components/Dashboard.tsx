@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import { useStore } from "../store";
 import { dayKey, isAlive } from "../lib/streak";
 import { daysSinceBackup, hasAnyProgress, shouldRemindBackup } from "../lib/backup";
+import { LearningEvidence } from "./LearningEvidence";
 
 export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
   const { progress, quizScores, course, streak, lastBackup, exportBackup, importBackup } = useStore();
@@ -58,24 +59,8 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
     return { mods, totalTasks, doneTasks, overall, quizAvg, fullMods, next, weak, projects };
   }, [progress, quizScores, MODULES]);
 
-  let level: string;
-  let msg: string;
-  if (d.overall < 25) {
-    level = "Boshlang'ich";
-    msg = "Asoslarni qo'yyapsan - davom et.";
-  } else if (d.overall < 55) {
-    level = "Asoslar shakllanmoqda";
-    msg = "Yaxshi ketyapsan, sur'atni saqla.";
-  } else if (d.overall < 80) {
-    level = "O'rta daraja";
-    msg = "Yarmidan oshding - chuqurlash.";
-  } else if (d.overall < 95) {
-    level = "Yuqori daraja";
-    msg = "Deyarli tayyor - amaliyotni kuchaytir.";
-  } else {
-    level = "Tayyor";
-    msg = "Barchasini o'zlashtirding - endi qo'llab mustahkamla.";
-  }
+  const level = d.overall === 100 ? "Topshiriqlar belgilangan" : "Topshiriqlar bajarilishi";
+  const msg = "Bu foiz o'zingiz belgilagan topshiriqlarni hisoblaydi. Malaka darajasi amaliy dalil va alohida baholash orqali tekshiriladi.";
 
   const C = 2 * Math.PI * 52;
 
@@ -87,7 +72,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           <h2 className="mtitle">Bugungi yo'l xaritang</h2>
           <p className="mlede">
             Kursni oddiy ro'yxat emas, bosqichma-bosqich yo'l sifatida kuzat. Keyingi qadam,
-            zaif joylar va umumiy tayyorlik shu yerda jamlangan.
+            bajarilmagan topshiriqlar va o'quv dalillari shu yerda jamlangan.
           </p>
           {d.next && (
             <button className="cc-primary" onClick={() => onGo(d.next!.i)}>
@@ -112,7 +97,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           </svg>
           <div className="pct">
             <b>{d.overall}%</b>
-            <span>tayyorlik</span>
+            <span>topshiriqlar</span>
           </div>
         </div>
       </section>
@@ -132,7 +117,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
             </div>
             <div className="dstat">
               <b>{d.fullMods}/{d.mods.length}</b>
-              <span>tugatilgan modul</span>
+              <span>topshiriqlari belgilangan modul</span>
             </div>
           </div>
         </div>
@@ -148,7 +133,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           </>
         ) : (
           <>
-            <b>Ajoyib!</b> Bu kursdagi barcha topshiriq bajarilgan. Endi o'rganganingni amalda qo'llab
+            <b>Ajoyib!</b> Bu kursdagi barcha topshiriq belgilangan. Endi o'rganganingni amalda qo'llab
             mustahkamla.
           </>
         )}
@@ -199,6 +184,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         </div>
       </div>
 
+      <p className="dnote">Boshqa qurilmada davom etish uchun yuqoridagi “Hisob va cloud” orqali saqlang va tiklang. JSON fayl bilan ko‘chirish ham mumkin: “Zaxira eksport” → ikkinchi qurilmada “Tiklash import”. Mavjud yozuvlarni almashtirishdan oldin zaxira oling.</p>
       <h3 className="dash-h">Learning journey</h3>
       <div className="journey-map">
         {d.mods.map((m, order) => (
@@ -216,6 +202,8 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
           </button>
         ))}
       </div>
+
+      <LearningEvidence />
 
       {d.projects.length > 0 && (
         <>
@@ -259,7 +247,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
 
       {d.weak.length > 0 && (
         <>
-          <h3 className="dash-h">Eng zaif joylar</h3>
+          <h3 className="dash-h">Kamroq bajarilgan modullar</h3>
           <div className="dash-weak">
             {d.weak.map((m) => (
               <button className="weakchip" key={m.zoom} onClick={() => onGo(m.i)}>

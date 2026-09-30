@@ -9,10 +9,12 @@ export function loadJSON<T>(key: string, fallback: T): T {
 
 export const RESTORED_EVENT = "skillmap:restored";
 export const STORAGE_ERROR_EVENT = "skillmap:storage-error";
+export const SAVED_EVENT = "skillmap:saved";
 
 export function saveJSONChecked(key: string, value: unknown): boolean {
   try {
     localStorage.setItem(key, JSON.stringify(value));
+    window.dispatchEvent(new CustomEvent(SAVED_EVENT, { detail: { key } }));
     return true;
   } catch {
     window.dispatchEvent(new CustomEvent(STORAGE_ERROR_EVENT, { detail: { key } }));

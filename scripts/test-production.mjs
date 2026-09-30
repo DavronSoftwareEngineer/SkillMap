@@ -50,9 +50,27 @@ try {
     await popup.close();
   }
   assert.equal(await page.locator('iframe').count(), 0);
+  await page.goto(`http://127.0.0.1:${server.address().port}/#english/dash`);
+  await page.locator('.outcome-panel summary').click();
+  await page.getByLabel('Urinish va izoh').fill('Synthetic local attempt checked under the production CSP.');
+  const outcomeDownload = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Hozirgi yozuvlarni eksport qilish' }).click();
+  const outcome = await outcomeDownload;
+  assert.equal(outcome.suggestedFilename(), 'skillmap-english-outcomes.json');
+  const outcomePayload = JSON.parse(await readFile(await outcome.path(), 'utf8'));
+  assert.equal(outcomePayload.data.english_outcomes.baseline.attempt, 'Synthetic local attempt checked under the production CSP.');
+  assert.equal(outcomePayload.version, 1);
+  await page.evaluate(() => { localStorage.setItem('myacademy_theme', JSON.stringify('light')); });
+  await page.reload();
+  await page.locator('.outcome-panel summary').click();
+  await page.screenshot({ path: 'test-results/frontend-only-desktop.png', animations: 'disabled' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForFunction(() => document.querySelector('.side').getBoundingClientRect().right <= 1);
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: 'test-results/frontend-only-mobile.png', animations: 'disabled' });
   assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
   assert.deepEqual(errors, []);
-  console.log('Production build + Netlify CSP: official/Google links, safe popups, no CSP violations PASS');
+  console.log('Production build + Netlify CSP: safe book links, frontend outcome export, mobile layout, no CSP violations PASS');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

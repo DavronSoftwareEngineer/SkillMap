@@ -1,0 +1,18 @@
+services:
+  database:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: skillmap
+      POSTGRES_PASSWORD: skillmap_local
+      POSTGRES_DB: skillmap_local
+    ports:
+      - "127.0.0.1:54329:5432"
+    volumes:
+      - skillmap_local_database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U skillmap -d skillmap_local"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  skillmap_local_database:
