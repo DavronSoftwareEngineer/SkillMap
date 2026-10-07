@@ -193,7 +193,8 @@ src/
     finance.json       Moliya kursi (12 modul: F0->F11)
     russian.json       Rus tili kursi (12 modul: Алф->Фин)
     arabic.json        Arab tili kursi (16 modul: AR0->AR11 asosiy + AR12->AR15 professional trek; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
-    prompting.json     AI Prompt kursi (10 modul; review finaldan oldin, frontend prompt ustaxonasi)
+    prompting.json     AI Prompt asoslari (10 modul; frontend prompt ustaxonasi)
+    prompting-agents.ts Agent brief, limit/kontekst samaradorligi va multi-agent (3 modul; jami 13)
     courses.ts         kurslar registri (brand + kitoblar + lazy-load)
   types.ts
   lib/router.ts      hash-router (#kurs/modul havolalari)

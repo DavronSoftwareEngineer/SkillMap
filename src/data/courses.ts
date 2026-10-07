@@ -91,6 +91,10 @@ export async function loadBaseCourseModules(id: string): Promise<Module[]> {
   if (PROFESSIONAL_POLISH[id]) {
     return [...modules, ...PROFESSIONAL_POLISH[id]];
   }
+  if (id === 'prompting') {
+    const { PROMPTING_AGENT_MODULES } = await import('./prompting-agents');
+    return modules.flatMap(module => module.zoom === 'P6' ? [...PROMPTING_AGENT_MODULES, module] : [module]);
+  }
   if (id !== "webgis") return modules;
 
   const ordered: Module[] = [];
@@ -444,7 +448,7 @@ export const COURSES: CourseMeta[] = [
     id: "prompting",
     name: "AI Prompt",
     brandTitle: "AI bilan ishlash",
-    brandSub: "Vazifa / Prompt / Fakt tekshiruvi / Eval / Portfolio",
+    brandSub: "Prompt / Agentlar / Samaradorlik / Eval / Portfolio",
     labels: {
       doc: "Dars",
       code: "Promptlar",
