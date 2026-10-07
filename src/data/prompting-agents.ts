@@ -1,11 +1,11 @@
 import type { Module, QuizQuestion, Exercise } from '../types';
 
-const q = (question: string, answers: string[], correct: number, why: string): QuizQuestion =>
+export const q = (question: string, answers: string[], correct: number, why: string): QuizQuestion =>
   ({ q: question, a: answers, c: correct, w: why, level: 'scenario' });
-const choice = (question: string, options: string[], correct: number, why: string): Exercise =>
+export const choice = (question: string, options: string[], correct: number, why: string): Exercise =>
   ({ type: 'choice', q: question, options, correct, why });
-const source = (title: string, url: string) => ({ type: 'doc' as const, title, url, host: 'developers.openai.com', desc: 'Rasmiy manba. Mahsulot imkoniyatlari va hisob limiti ishlatayotgan versiyangizda tekshiriladi.' });
-function lesson(id: string, title: string, lede: string, sections: [string,string][], template: string, tasks: string[], quiz: QuizQuestion[], exercises: Exercise[], sources: Module['resources'], vocabulary: [string,string,string][]): Module {
+export const source = (title: string, url: string) => ({ type: 'doc' as const, title, url, host: 'developers.openai.com', desc: 'Rasmiy manba. Mahsulot imkoniyatlari va hisob limiti ishlatayotgan versiyangizda tekshiriladi.' });
+export function lesson(id: string, title: string, lede: string, sections: [string,string][], template: string, tasks: string[], quiz: QuizQuestion[], exercises: Exercise[], sources: Module['resources'], vocabulary: [string,string,string][]): Module {
   return {
     zoom:id, title, mtitle:title, lede, sub:'Agentlar va samaradorlik', coord:'AI Prompt / '+id, eyebrow:'Amaliy yo‘l / Agentlar',
     doc:'<div class="prose">'+sections.map(([h,p])=>`<h3>${h}</h3><p>${p}</p>`).join('')+'<h3>Mustaqil dalil</h3><p>Shablonni Promptlar bo‘limidan oling. Mashqni tashqi agentda yoki qog‘ozdagi simulyatsiyada bajaring; qaysi biri ekanini yozing. Mustaqil ish daftarida birinchi urinish, xato, tuzatish va yangi vazifaga ko‘chirishni saqlang. Ertasi kuni shablonsiz qaytaring. SkillMap agentni ishga tushirmaydi va hisobingiz limitini o‘qimaydi.</p></div>',

@@ -92,8 +92,12 @@ export async function loadBaseCourseModules(id: string): Promise<Module[]> {
     return [...modules, ...PROFESSIONAL_POLISH[id]];
   }
   if (id === 'prompting') {
-    const { PROMPTING_AGENT_MODULES } = await import('./prompting-agents');
-    return modules.flatMap(module => module.zoom === 'P6' ? [...PROMPTING_AGENT_MODULES, module] : [module]);
+    const [{ PROMPTING_AGENT_MODULES }, { PROMPTING_ADAPTIVE_MODULES }] = await Promise.all([
+      import('./prompting-agents'), import('./prompting-adaptive'),
+    ]);
+    return modules.flatMap(module => module.zoom === 'P6'
+      ? [...PROMPTING_ADAPTIVE_MODULES.slice(0,2), ...PROMPTING_AGENT_MODULES, module]
+      : module.zoom === 'P7' ? [...PROMPTING_ADAPTIVE_MODULES.slice(2), module] : [module]);
   }
   if (id !== "webgis") return modules;
 
@@ -448,7 +452,7 @@ export const COURSES: CourseMeta[] = [
     id: "prompting",
     name: "AI Prompt",
     brandTitle: "AI bilan ishlash",
-    brandSub: "Prompt / Agentlar / Samaradorlik / Eval / Portfolio",
+    brandSub: "AI imkoniyatlari / Agentlar / Dalil / Murakkab loyihalar",
     labels: {
       doc: "Dars",
       code: "Promptlar",

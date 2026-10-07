@@ -14,6 +14,7 @@ import { ModuleWorkshop } from './ModuleWorkshop';
 import { CoursePracticum } from './CoursePracticum';
 import { PracticeNotebook } from './PracticeNotebook';
 const EnglishWorkLab = lazy(() => import("./EnglishWorkLab"));
+const AIProjectLab = lazy(() => import('./AIProjectLab'));
 
 const TECH_COURSES = new Set([
   "webgis",
@@ -92,6 +93,7 @@ export function ModuleView({
   const tabs = [
     { p: "practice", label: "Mustaqil ish", show: !!m.workshop, badge: "" },
     { p: "lab", label: "Amaliy lab", show: courseId === "english" && ["AudioLab", "WriteLab", "WorkLab"].includes(m.zoom), badge: "" },
+    { p: "ai-lab", label: "Loyiha laboratoriyasi", show: courseId === 'prompting' && ['P-Scout','P-Research','P-Delivery'].includes(m.zoom), badge: "" },
     { p: "doc", label: L.doc, show: true, badge: "" },
     { p: "code", label: L.code, show: m.code.length > 0, badge: "" },
     { p: "ex", label: L.ex, show: (m.exercises?.length || 0) > 0, badge: `${m.exercises?.length || 0}` },
@@ -156,6 +158,7 @@ export function ModuleView({
         <div className="panel active" key={tab}>
         {tab === 'practice' && <PracticeNotebook key={courseId+'/'+m.zoom} courseId={courseId} module={m} previous={prev} />}
         {tab === "lab" && <LabBoundary key={m.zoom}><Suspense fallback={<p>Laboratoriya yuklanmoqda...</p>}><EnglishWorkLab key={m.zoom} mode={m.zoom} /></Suspense></LabBoundary>}
+        {tab === 'ai-lab' && <LabBoundary key={m.zoom}><Suspense fallback={<p>Loyiha yuklanmoqda...</p>}><AIProjectLab key={m.zoom} mode={m.zoom}/></Suspense></LabBoundary>}
         {tab === "doc" && (<>
           {index === 0 && <CoursePracticum courseId={courseId} />}
           <LessonReader

@@ -133,6 +133,12 @@ Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence
   nusxalanadi, javob qo‘lda kiritiladi; SkillMap API kalit olmaydi va AI API’ga so‘rov yubormaydi.
   Yozuvlar brauzerda saqlanadi va umumiy JSON zaxira bilan ko‘chiriladi. 12 case o‘quv portfolio;
   50+ caseli professional assessment alohida, kengaytirilgan yo‘l.
+- AI Prompt’da 17 modul bor: yangi imkoniyatlarni tekshirish kundaligi, multimodal vosita tanlash,
+  agent/budjet amaliyoti va ikkita ishlaydigan frontend loyiha laboratoriyasi. `P-Scout`,
+  `P-Research`, `P-Delivery` modullarining **Loyiha laboratoriyasi** tabidan foydalaning.
+  Evidence Desk joriy manba va claimlarni, Delivery Desk esa revision, bosqichlar va budjetni
+  sun’iy fixturelarda tekshiradi. Ular AI’ni ishga tushirmaydi, haqiqiy deploy/reviewer dalilini
+  tasdiqlamaydi. Yozuvlar `prompting_worklabs` zaxirasiga kiradi.
 - GeoPulse public deploy uchun [deployment runbook](labs/geopulse/docs/deployment-runbook.md) bor;
   hosting va secretlar qo'yilmaguncha u live deployment emas.
 
@@ -194,7 +200,8 @@ src/
     russian.json       Rus tili kursi (12 modul: Алф->Фин)
     arabic.json        Arab tili kursi (16 modul: AR0->AR11 asosiy + AR12->AR15 professional trek; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
     prompting.json     AI Prompt asoslari (10 modul; frontend prompt ustaxonasi)
-    prompting-agents.ts Agent brief, limit/kontekst samaradorligi va multi-agent (3 modul; jami 13)
+    prompting-agents.ts Agent brief, limit/kontekst samaradorligi va multi-agent (3 modul)
+    prompting-adaptive.ts Yangi imkoniyatlar, multimodal oqim va 2 loyiha (4 modul; jami 17)
     courses.ts         kurslar registri (brand + kitoblar + lazy-load)
   types.ts
   lib/router.ts      hash-router (#kurs/modul havolalari)

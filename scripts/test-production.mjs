@@ -78,7 +78,16 @@ try {
   await page.screenshot({ path: 'test-results/prompt-production-mobile.png', animations: 'disabled' });
   assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
   assert.deepEqual(errors, []);
-  console.log('Production build + Netlify CSP: safe book links, local outcomes, prompt lab validation/save, mobile layout, no CSP violations PASS');
+  await page.goto(`http://127.0.0.1:${server.address().port}/#prompting/P-Research`);
+  await page.getByRole('button', { name: 'Loyiha laboratoriyasi', exact: true }).click();
+  await page.getByRole('button', { name: 'Xato draft bilan boshlash' }).click();
+  await page.getByText('Dalilga mos claimlar: 1/4', { exact: true }).waitFor();
+  await page.getByRole('button', { name: 'Loyihani saqlash', exact: true }).click();
+  await page.getByText('Loyiha yozuvlari shu brauzerda saqlandi.', { exact: true }).waitFor();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
+  assert.deepEqual(errors, []);
+  console.log('Production build + Netlify CSP: books, outcomes, prompt workshop, project lab, mobile layout, no CSP violations PASS');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

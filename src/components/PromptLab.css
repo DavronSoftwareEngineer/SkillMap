@@ -11,4 +11,9 @@
 .prompt-lab .pg-chip { white-space: normal; }
 .prompt-lab details { margin: 18px 0; }
 .prompt-lab summary { cursor: pointer; font-weight: 600; }
+.ai-project-lab .pg-field { display: block; margin: 18px 0; }
+.project-sources { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,280px),1fr)); gap: 14px; margin: 18px 0; }
+.project-sources article { min-width: 0; padding: 14px; border: 1px solid var(--line); border-radius: 12px; }
+.project-sources h3 { margin: 0 0 8px; }
+.ai-project-lab fieldset:disabled { opacity: .7; }
 @media (max-width: 760px) { .lab-variants { grid-template-columns: 1fr; } }
