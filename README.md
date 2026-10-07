@@ -264,3 +264,38 @@ Yangi kurs qo'shish uchun `src/data/courses.ts` da registrga meta + loader yozas
 ## Reliability and English practical labs
 
 English `WriteLab`, `AudioLab`, and `WorkLab` now include an **Amaliy lab** tab with locally saved writing, listening notes, speaking evidence, manual feedback, and Markdown export. Backup validation/recovery and course-loading error states are documented in [reliability and labs](docs/reliability-english-labs.md). These are self-review tools, not automatic AI assessment or a verified certificate.
+
+## Course project workshops — 2026-10-07
+
+All 13 courses have three direction-specific project stages (39 total) in
+`src/data/learning/project-paths.ts`. The first lesson links to the stages;
+open **Loyiha ustaxonasi** in the corresponding module. Each stage provides
+original synthetic input, a worked explanation, a changed task and acceptance
+criteria. Attempts, corrections and review use the existing local practice
+notebook and full JSON backup; no account or backend is required.
+
+Six bounded teaching calculators cover dated cash flow, a single-payment loan,
+contribution margin, capacity/error budget, NDVI coverage and AI tokens per
+accepted result. Calculator inputs are temporary; export the JSON experiment
+or record the result in the notebook. These calculations are not live financial
+advice, raster processing, a production benchmark or automated proficiency grades.
+
+Russian and English include 30 additional typed-answer/speaking exercises.
+Browser speech recognition does not certify pronunciation. All course quiz,
+choice-exercise and learning-case options are shuffled with the correct answer
+attached to its text. Existing module/task IDs remain stable.
+
+GeoPulse final assessment v2 accepts either GeoAI or 3D specialization alongside
+the common core. Its new assessment ID keeps v1 records in backups without
+treating old scores as approval of the revised rubric. The Telegram lesson
+snippet is executed in regression tests, including canonical signatures,
+tampering, malformed/expired/future dates and duplicate fields. Audit correction:
+the earlier apparent newline failure came from an ES5 test transpilation target;
+the original newline separator was already correct.
+
+Run the isolated two-clone Git exercise with `node labs/git-team/run.mjs`.
+See [the lab guide](labs/git-team/README.md) for boundaries and independent work.
+Run `npm run test:e2e -- e2e/course-studio.spec.ts` for the 39-stage browser checks.
+Project steps involving PostgreSQL, real services, external reviewers and learner
+pilots still require execution outside these frontend teaching simulations; they
+are not reported as completed production deployments or measured learner outcomes.

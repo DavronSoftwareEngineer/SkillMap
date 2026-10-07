@@ -87,7 +87,17 @@ try {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
   assert.deepEqual(errors, []);
-  console.log('Production build + Netlify CSP: books, outcomes, prompt workshop, project lab, mobile layout, no CSP violations PASS');
+  await page.goto(`http://127.0.0.1:${server.address().port}/#finance/F12`);
+  await page.getByRole('button', { name: 'Loyiha ustaxonasi', exact: true }).click();
+  await page.getByLabel('1-kundagi advance', { exact: true }).fill('5');
+  await page.getByLabel('1. Birinchi mustaqil urinish').fill('Synthetic advance5, remaining10, closing14.');
+  await page.reload();
+  await page.getByRole('button', { name: 'Loyiha ustaxonasi', exact: true }).click();
+  assert.equal(await page.getByLabel('1. Birinchi mustaqil urinish').inputValue(), 'Synthetic advance5, remaining10, closing14.');
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
+  assert.deepEqual(errors, []);
+  console.log('Production build + Netlify CSP: books, outcomes, prompt/project/course labs, saved notebook, mobile layout, no CSP violations PASS');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

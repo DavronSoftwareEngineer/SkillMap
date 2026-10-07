@@ -1,4 +1,5 @@
 import { COURSE_PRACTICUMS } from '../data/learning/course-practicums';
+import { PROJECT_PATHS } from '../data/learning/project-paths';
 
 export function CoursePracticum({courseId}:{courseId:string}) {
   const item=COURSE_PRACTICUMS[courseId];
@@ -6,6 +7,7 @@ export function CoursePracticum({courseId}:{courseId:string}) {
   return <section className="learning-case" aria-label="Kursni amalda bajarish yo‘li">
     <h3>Kichik misoldan yakuniy loyihagacha</h3>
     <p>{item.purpose}</p>
+    {PROJECT_PATHS[courseId] && <nav aria-label="Loyiha bosqichlari"><h4>{PROJECT_PATHS[courseId].title}</h4><ol>{PROJECT_PATHS[courseId].stages.map(s=><li key={s.module}><a href={`#${courseId}/${encodeURIComponent(s.module)}`}>{s.title}</a> — moduldagi «Loyiha ustaxonasi»</li>)}</ol></nav>}
     <h4>Tayyorlanish</h4><p>{item.setup}</p>
     <h4>Yechilgan misol</h4><p>{item.example}</p>
     <h4>Nega shunday?</h4><p>{item.explanation}</p>

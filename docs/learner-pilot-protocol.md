@@ -7,8 +7,8 @@ o‘quvchilarga taalluqli sababiy samaradorlik xulosasi chiqarilmaydi.
 1. Qatnashuvchiga nima saqlanishini tushuntiring: ishtirokchi kodi, ish, dalil havolasi,
    yordam, qiyinlik, feedback va tashqi reviewer bahosi/izohi. Ism yoki maxfiy ish
    kerak emas; ruxsatli/sun’iy misol ishlating. Ma’lumot o‘z brauzeri va eksport
-   faylida qoladi. Cloudga saqlash tugmasi bosilsa, qaydlar ham hisobning server
-   nusxasiga kiradi. Fayl kimga berilishini odamning o‘zi hal qiladi.
+   faylida qoladi. SkillMap frontend rejimida ishlaydi; yozuvlar serverga
+   yuborilmaydi. Fayl kimga berilishini odamning o‘zi hal qiladi.
 2. Tashqi malakali reviewer tanlang. Uning shaxsi va tajribasini tashkilotchi alohida
    tekshiradi; sayt buni tekshirmaydi. O‘quvchi o‘ziga mustaqil baho qo‘ymasin.
 3. Dashboard → “O‘quvchi natijasi va feedback” → boshlang‘ich topshiriqni namunasiz

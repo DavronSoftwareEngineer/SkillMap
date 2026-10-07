@@ -56,7 +56,7 @@ export function PracticeNotebook({courseId,module,previous}:{courseId:string;mod
     <h3>{module.title}: mustaqil ish daftari</h3>
     {previous && <p>Tayanch bilimni tekshirish uchun: <a href={`#${courseId}/${encodeURIComponent(previous.zoom)}`}>{previous.title}</a>. Oldingi mavzuni tushuntira olmasangiz, kichik misoliga qayting.</p>}
     <p>{module.workshop?.input}</p>
-    <details><summary>Shu modul uchun yechim eslatmasi</summary><p>{module.workshop?.answer}</p></details>
+    <details><summary>Shu modul uchun yechim eslatmasi</summary>{module.workshop?.answer.split('\n').filter(Boolean).map((text,i)=><p key={i}>{text}</p>)}</details>
     <h4>Mustaqil vazifa</h4><p>{module.workshop?.variation}</p>
     <h4>Qabul mezoni</h4><p>{module.workshop?.acceptance}</p>
     <p>Kurs finaliga yig‘iladigan dalillar: {COURSE_PRACTICUMS[courseId].deliverables.join('; ')}.</p>

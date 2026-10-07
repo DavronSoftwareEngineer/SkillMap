@@ -8,6 +8,7 @@ import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-e
 import { ENGLISH_PRO_WORK_LABS } from "./english-pro-work-labs";
 import { PROFESSIONAL_POLISH } from "./professional-polish";
 import { shuffleModuleChoices } from '../lib/shuffle-choices';
+import { addLanguageProduction } from './language-production';
 
 export interface CourseMeta {
   id: string;
@@ -45,8 +46,8 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
   const [{ applyLearningQuality }, modules] = await Promise.all([
     import('./learning'), loadBaseCourseModules(id),
   ]);
-  const enhanced = applyLearningQuality(COURSE_LOADERS[id] ? id : 'webgis', modules);
-  return id === 'prompting' ? enhanced.map(shuffleModuleChoices) : enhanced;
+  const enhanced = applyLearningQuality(COURSE_LOADERS[id] ? id : 'webgis', addLanguageProduction(id, modules));
+  return enhanced.map(shuffleModuleChoices);
 }
 
 export async function loadBaseCourseModules(id: string): Promise<Module[]> {
@@ -244,7 +245,7 @@ export const COURSES: CourseMeta[] = [
     id: "frontend",
     name: "Frontend",
     brandTitle: "Professional Frontend Academy",
-    brandSub: "0 -> Senior / HTML / CSS / JS / TS / React",
+    brandSub: "HTML / CSS / JS / TS / React / Amaliy portfolio",
     labels: {
       doc: "Dars",
       code: "Kod misollari",
@@ -268,7 +269,7 @@ export const COURSES: CourseMeta[] = [
     id: "backend",
     name: "Backend",
     brandTitle: "Professional Backend Academy",
-    brandSub: "0 -> Senior / Node.js / TypeScript / DB / API / DevOps",
+    brandSub: "Node.js / TypeScript / DB / API / Amaliy portfolio",
     labels: {
       doc: "Dars",
       code: "Kod misollari",
@@ -429,7 +430,7 @@ export const COURSES: CourseMeta[] = [
     id: "arabic",
     name: "Arab tili",
     brandTitle: "Arab tili Akademiyasi",
-    brandSub: "0 -> Professional / Alifbo / Nahv / Sarf / Qur'on matni",
+    brandSub: "Alifbo / Nahv / Sarf / Qur'oniy va klassik matn",
     labels: {
       doc: "Dars",
       code: "Namunalar",

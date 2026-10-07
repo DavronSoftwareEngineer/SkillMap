@@ -26,7 +26,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     <p>GeoJSON, raster/vector farqi, CRS/EPSG, MapLibre layerlar va viewport bo'yicha qidiruvni amalda ishlat. PostGIS spatial query hamda GIST index bilan katta data uchun tezlikni o'lcha. GDAL/Rasterio orqali COG pipeline qur, window read natijasini tekshir. OSM licensing, data quality va location privacy'ni hujjatlashtir.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Interaktiv xarita, spatial qidiruv va real geodata bilan ishlaydigan, tezkor WebGIS interfeysi.</p></div></div>
     <h3>3-oy: production tayyorgarligi</h3>
-    <p>GeoAI use-case uchun PyTorch baseline tayyorla; YOLOni object detection/segmentation varianti sifatida ishlatish mumkin. Spatial split, georeferenced output, per-region metrics, model card, dataset license/provenance va reproducible experiment majburiy. Telegram subscription va notification flow, Redis + Celery queue, retry/idempotency, Docker Compose, Nginx, CI/CD, structured logging, OpenTelemetry tracing, error tracking, rate limiting, secrets management, health check, audit log va amalda sinalgan backup/restore qo'shiladi.</p>
+    <p>Bitta ixtisoslashuv tanla. GeoAI: PyTorch baseline, spatial split, per-region metrics va model card. 3D: source manifest, rekonstruksiya, mustaqil checkpoint RMSE va tiled viewer. Har ikkala yo‘lda litsenziya, CRS, reproduktiv konfiguratsiya va xato tahlili majburiy; ikkinchi yo‘l ixtiyoriy. Telegram subscription va notification flow, Redis + Celery queue, retry/idempotency, Docker Compose, Nginx, CI/CD, structured logging, OpenTelemetry tracing, error tracking, rate limiting, secrets management, health check, audit log va amalda sinalgan backup/restore qo'shiladi.</p>
     <div class="callout"><div><p>Oy yakuni</p><p>Ommaga ko'rsatish mumkin bo'lgan deploy qilingan mahsulot: demo, README, arxitektura sxemasi va testlar bilan.</p></div></div>
     <h3>System design savollari</h3>
     <div class="chips">
@@ -68,7 +68,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
     { id: "fg-9", html: "Docker Compose, health check va Nginx reverse proxy sozladim", crit: "yangi kompyuterda bitta buyruq bilan lokal servislar ko'tariladi" },
     { id: "fg-10", html: "Demo, README va arxitektura sxemasini tayyorladim", crit: "boshqa dasturchi loyihani hujjat orqali ishga tushira oladi" },
     { id: "fg-11", html: "GDAL/Rasterio bilan rasterdan COG yaratish va window read pipeline yozdim", crit: "pipeline qayta ishga tushiriladi; metadata, overview va window read avtomatik tekshiriladi" },
-    { id: "fg-12", html: "GeoAI baseline modelini spatially alohida validation/test to'plamida baholadim", crit: "YOLO detection/segmentation yoki boshqa tanlangan model uchun per-region metric, model card va xato tahlili bor" },
+    { id: "fg-12", html: "Tanlangan GeoAI yoki 3D yo‘lini mustaqil dalil bilan baholadim", crit: "GeoAI uchun spatial split va model card; YOKI 3D uchun checkpoint RMSE va viewer. Tanlov ADRda yozilgan" },
     { id: "fg-13", html: "Prometheus metriclari, structured log va kamida bitta alert qo'shdim", crit: "request latency, error rate va worker holati dashboard yoki query orqali ko'rinadi" },
     { id: "fg-14", html: "Audit log hamda backup/restore runbookini real mashqda tekshirdim", crit: "toza database backupdan tiklanadi va vaqt/natija dalil sifatida saqlanadi" },
   ],
@@ -90,14 +90,14 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
       "React + MapLibre xarita, qidiruv va filtrlar",
       "FastAPI API, auth, role va validation",
       "PostgreSQL + PostGIS spatial query va index",
-      "GDAL/Rasterio COG pipeline va GeoAI evaluation (YOLO variant sifatida)",
+      "GDAL/Rasterio COG pipeline va tanlangan GeoAI yoki 3D ixtisoslashuvi",
       "Telegram subscription va notification",
       "Docker Compose, Nginx, CI/CD va observability",
       "Testlar, audit log, backup/restore va batafsil README",
     ],
     assessment: {
-      id: "geopulse-professional-v1",
-      version: "1.0",
+      id: "geopulse-professional-v2",
+      version: "2.0",
       title: "GeoPulse Professional Final Assessment",
       summary: "Production darajadagi geospatial mahsulotni artefaktlar, tashqi reviewer va jonli himoya orqali tekshiradi. Kurs tasklarini belgilashning o'zi assessmentdan o'tish hisoblanmaydi.",
       passScore: 80,
@@ -157,14 +157,14 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
         },
         {
           id: "processing-ai",
-          title: "Raster/COG va GeoAI evaluation",
-          description: "Qayta ishlatiladigan geoprocessing pipeline hamda model natijasini halol baholash mavjud.",
+          title: "Raster/COG va tanlangan GeoAI yoki 3D yo‘li",
+          description: "Umumiy raster pipeline va bitta tanlangan ixtisoslashuv mustaqil tekshiriladi. GeoAI va 3Dning ikkalasi birga talab qilinmaydi.",
           points: 10,
           minimumPoints: 5,
           indicators: [
             "GDAL/Rasterio pipeline valid COG, overview va metadata hosil qiladi.",
-            "Model train/validation/test spatial split va dataset versiyasi qayd etilgan; YOLO detection/segmentation vositalaridan biri sifatida qoladi.",
-            "Per-region metric, georeferenced output, model card va xato tahlili use-case thresholdiga bog'langan.",
+            "GeoAI: spatial split, per-region metric va model card; YOKI 3D: source manifest, mustaqil checkpoint RMSE va tiled viewer dalili.",
+            "Tanlangan yo‘lda dataset litsenziyasi, koordinata tizimi, reproduktiv konfiguratsiya, xato tahlili va qabul chegarasi qayd etilgan.",
           ],
           evidence: ["repository", "performance-report", "model-report"],
         },
@@ -214,7 +214,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
         { id: "ci-run", label: "CI pipeline natijasi", description: "Lint, typecheck, test, migration va image build o'tgan run.", kind: "url", placeholder: "https://github.com/.../actions/runs/...", required: true },
         { id: "architecture", label: "Arxitektura va ADR", description: "System diagram, data flow, threat boundary va asosiy trade-off qarorlari.", kind: "url", placeholder: "https://github.com/.../docs/architecture.md", required: true },
         { id: "performance-report", label: "Performance hisoboti", description: "PostGIS query plan, load natijasi, COG window read va bottleneck xulosasi.", kind: "url", placeholder: "https://github.com/.../docs/performance.md", required: true },
-        { id: "model-report", label: "YOLO model card", description: "Dataset versiyasi, split, metriclar, threshold, limitation va xato tahlili.", kind: "url", placeholder: "https://github.com/.../docs/model-card.md", required: true },
+        { id: "model-report", label: "GeoAI yoki 3D hisoboti", description: "Bitta yo‘lni tanlang: GeoAI uchun spatial split/model card/per-region metric; 3D uchun source manifest/checkpoint RMSE/tiled viewer. Umumiy provenance va cheklovlar majburiy.", kind: "url", placeholder: "https://github.com/.../docs/specialization.md", required: true },
         { id: "operations-report", label: "Operations runbook", description: "Deploy, monitoring, incident, audit, backup va real restore dalili.", kind: "url", placeholder: "https://github.com/.../docs/runbook.md", required: true },
         { id: "ai-use-log", label: "AI-use log", description: "AI qayerda ishlatilgani, nimalar tekshirilgani va muallifning mustaqil hissasi.", kind: "url", placeholder: "https://github.com/.../docs/ai-use.md", required: true },
         { id: "demo-video", label: "Qisqa demo video", description: "5-8 daqiqada field flow, observability va failure recovery ko'rsatiladi.", kind: "url", placeholder: "https://...", required: false },
@@ -233,7 +233,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
         format: [
           "5 daqiqa: muammo, foydalanuvchi va acceptance criteria.",
           "12 daqiqa: asosiy field flow va degraded/error holatlari demosi.",
-          "10 daqiqa: arxitektura, PostGIS plan, COG va YOLO metriclari.",
+          "10 daqiqa: arxitektura, PostGIS plan, COG va tanlangan GeoAI yoki 3D o‘lchovlari.",
           "8 daqiqa: test, observability, incident va restore dalili.",
           "10 daqiqa: reviewer savollari; keyin alohida tasodifiy change request.",
         ],
@@ -241,7 +241,7 @@ export const WEBGIS_FLAGSHIP_MODULE: Module = {
           "1 million obyektga o'tganda qaysi qatlam birinchi bottleneck bo'ladi va buni qanday o'lchaysiz?",
           "Nega bu query uchun GIST indeks ishladi yoki ishlamadi? EXPLAIN natijasidan ko'rsating.",
           "COG window read oddiy GeoTIFF yuklashdan qayerda va nima uchun ustun?",
-          "YOLO thresholdini oshirsangiz field operator uchun qaysi xato turi o'zgaradi?",
+          "GeoAI yo‘lida threshold o‘zgarsa qaysi xato oshadi? 3D yo‘lida checkpoint RMSE va koordinata xatosini qanday ajratasiz? Tanlagan yo‘lingizni himoya qiling.",
           "Database yoki worker ishlamay qolsa foydalanuvchi, log, metric va recovery oqimi qanday bo'ladi?",
           "Reviewer tanlagan kichik endpoint/layer o'zgarishini test bilan jonli kiriting.",
         ],

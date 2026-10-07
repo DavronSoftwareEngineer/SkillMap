@@ -13,6 +13,8 @@ import { LearningPractice } from './LearningPractice';
 import { ModuleWorkshop } from './ModuleWorkshop';
 import { CoursePracticum } from './CoursePracticum';
 import { PracticeNotebook } from './PracticeNotebook';
+import { PROJECT_PATHS } from '../data/learning/project-paths';
+const CourseStudio = lazy(() => import('./CourseStudio'));
 const EnglishWorkLab = lazy(() => import("./EnglishWorkLab"));
 const AIProjectLab = lazy(() => import('./AIProjectLab'));
 
@@ -91,6 +93,7 @@ export function ModuleView({
   const donePct = m.tasks.length ? Math.round((doneCount / m.tasks.length) * 100) : 0;
 
   const tabs = [
+    { p: 'course-studio', label: 'Loyiha ustaxonasi', show: PROJECT_PATHS[courseId]?.stages.some(s=>s.module===m.zoom), badge: '' },
     { p: "practice", label: "Mustaqil ish", show: !!m.workshop, badge: "" },
     { p: "lab", label: "Amaliy lab", show: courseId === "english" && ["AudioLab", "WriteLab", "WorkLab"].includes(m.zoom), badge: "" },
     { p: "ai-lab", label: "Loyiha laboratoriyasi", show: courseId === 'prompting' && ['P-Scout','P-Research','P-Delivery'].includes(m.zoom), badge: "" },
@@ -156,6 +159,7 @@ export function ModuleView({
         </div>
 
         <div className="panel active" key={tab}>
+        {tab === 'course-studio' && <LabBoundary key={m.zoom}><Suspense fallback={<p>Ustaxona yuklanmoqda...</p>}><CourseStudio key={courseId+'/'+m.zoom} courseId={courseId} module={m}/></Suspense></LabBoundary>}
         {tab === 'practice' && <PracticeNotebook key={courseId+'/'+m.zoom} courseId={courseId} module={m} previous={prev} />}
         {tab === "lab" && <LabBoundary key={m.zoom}><Suspense fallback={<p>Laboratoriya yuklanmoqda...</p>}><EnglishWorkLab key={m.zoom} mode={m.zoom} /></Suspense></LabBoundary>}
         {tab === 'ai-lab' && <LabBoundary key={m.zoom}><Suspense fallback={<p>Loyiha yuklanmoqda...</p>}><AIProjectLab key={m.zoom} mode={m.zoom}/></Suspense></LabBoundary>}

@@ -13,6 +13,10 @@ export function shuffleChoices(options: string[], correct: number, random = Math
 export function shuffleModuleChoices(module: Module): Module {
   return {
     ...module,
+    learningCases: module.learningCases?.map(item => {
+      const shuffled = shuffleChoices(item.check.a, item.check.c);
+      return { ...item, check: { ...item.check, a: shuffled.options, c: shuffled.correct } };
+    }),
     quiz: module.quiz.map(q => {
       const shuffled = shuffleChoices(q.a, q.c);
       return { ...q, a: shuffled.options, c: shuffled.correct };
