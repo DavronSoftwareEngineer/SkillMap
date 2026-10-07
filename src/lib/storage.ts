@@ -24,11 +24,11 @@ export function saveJSONChecked(key: string, value: unknown): boolean {
 
 export function saveJSON(key: string, value: unknown): void { saveJSONChecked(key, value); }
 
-export async function copyText(text: string): Promise<void> {
+export async function copyText(text: string): Promise<boolean> {
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       await navigator.clipboard.writeText(text);
-      return;
+      return true;
     }
   } catch {
     /* fall through to execCommand */
@@ -40,9 +40,10 @@ export async function copyText(text: string): Promise<void> {
   document.body.appendChild(ta);
   ta.select();
   try {
-    document.execCommand("copy");
+    return document.execCommand("copy");
   } catch {
-    /* ignore */
+    return false;
+  } finally {
+    document.body.removeChild(ta);
   }
-  document.body.removeChild(ta);
 }

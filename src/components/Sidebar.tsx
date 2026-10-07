@@ -108,7 +108,7 @@ export function Sidebar({
                 <path d="M13 2L3 14h7l-1 8 11-12h-7l0-8z" />
               </svg>
             </span>
-            <span className="nt"><b>Playground</b><span>Jonli AI</span></span>
+            <span className="nt"><b>Prompt ustaxonasi</b><span>Sinov va taqqoslash</span></span>
           </button>
         )}
         {hasVocab && (

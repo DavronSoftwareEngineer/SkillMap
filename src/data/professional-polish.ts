@@ -63,20 +63,6 @@ export const PROFESSIONAL_POLISH: Record<string, Module[]> = {
     quiz: [{ q: "Security exception uchun nima shart?", a: ["Muddatsiz ignore", "Owner, compensating control va expiry", "Scan natijasini o'chirish", "Faqat chat xabari"], c: 1, w: "Risk vaqtincha qabul qilinsa ham, egalik va expiry kerak.", level: "scenario" }],
     exercises: [{ type: "choice", q: "Scanner high finding chiqarsa nima qilinadi?", options: ["Tekshirmasdan productionga chiqarish", "Reproduce va impactni tekshirib, fix yoki vaqtli exception qarori", "Logni o'chirish", "Parolni commit qilish"], correct: 1, why: "Tool signalini tekshirish va izchil qaror qilish kerak." }],
   })],
-  prompting: [module({
-    zoom: "P8", title: "Human-in-the-Loop AI Delivery", sub: "Integration", coord: "Professional / AI delivery", eyebrow: "08 / Safe automation", mtitle: "AI natijasini xavfsiz ish oqimiga ulang",
-    lede: "Prompt yaxshi bo‘lishi yetmaydi. AI output <strong>schema, review queue, audit trail va fallback</strong> bilan real workflow'ga kirishi kerak.",
-    doc: "<div class='prose'><h3>Human-in-the-loop</h3><p>AI tavsiya beradi, lekin yuqori riskdagi actionni inson tasdiqlaydi. Input/output contract serverda validate qilinadi; prompt/model versiyasi, reviewer qarori va fallback qayd etiladi.</p></div>",
-    tasks: [
-      { id: "p8-1", html: "AI output uchun JSON schema va server-side validation yozdim", crit: "invalid/missing field holati test bilan rad etilgan" },
-      { id: "p8-2", html: "Human review queue va approve/reject qarorini loyihaladim", crit: "AI hech qachon ruxsatsiz irreversible action qilmaydi" },
-      { id: "p8-3", html: "Fallback, audit log va regression case yozdim", crit: "model/prompt xato bersa user-safe behavior aniq" },
-    ],
-    resources: [{ type: "doc", url: "https://www.nist.gov/itl/ai-risk-management-framework", title: "NIST AI RMF", desc: "AI riskini boshqarish bo'yicha rasmiy framework.", host: "nist.gov" }],
-    project: { tag: "Safe AI", title: "Reviewed AI workflow", desc: "AI yordamchisini real, tekshiriladigan va qaytariladigan oqimga ulang.", features: ["output contract", "human approval", "audit trail", "fallback"], rubric: ["Schema serverda tekshiriladi.", "High-impact action odam tasdig'isiz ketmaydi.", "Regression dalili bor." ] },
-    quiz: [{ q: "Human-in-the-loop qachon kerak?", a: ["AI irreversible yoki yuqori risk qaror qilganda", "Faqat rang tanlashda", "Hech qachon", "Faqat prompt uzun bo'lsa"], c: 0, w: "Yuqori ta'sirli qarorlarda inson nazorati muhim.", level: "scenario" }],
-    exercises: [{ type: "gap", q: "The server must ___ the structured output before using it.", answers: ["validate"], why: "Structured output ham ishonchsiz input sifatida serverda validate qilinadi." }],
-  })],
   finance: [module({
     zoom: "F12", title: "Freelancer Cash-Flow System", sub: "Income volatility", coord: "Personal / Freelance finance", eyebrow: "12 / Variable income", mtitle: "O'zgaruvchan daromadni boshqaring",
     lede: "Bu investitsiya tavsiyasi emas. Freelancer yoki contract ishda asosiy ko‘nikma — <strong>cash-flow, soliq zaxirasi va runway</strong>ni ko'rish.",

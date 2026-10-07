@@ -69,8 +69,16 @@ try {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   await page.screenshot({ path: 'test-results/frontend-only-mobile.png', animations: 'disabled' });
   assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
+  await page.goto(`http://127.0.0.1:${server.address().port}/#prompting/play`);
+  await page.getByLabel('A AI javobi', { exact: true }).fill('{"status":"blocked","blocker":"CRS unknown","owner":"Ali","deadline":"2026-11-05"}');
+  await page.getByRole('button', { name: 'Mashqni saqlash', exact: true }).click();
+  await page.getByText('Mashq yozuvlari shu brauzerda saqlandi.', { exact: true }).waitFor();
+  assert.equal(await page.getByText('JSON shakli: mos. Fixture faktlari: mos.', { exact: true }).count(), 1);
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: 'test-results/prompt-production-mobile.png', animations: 'disabled' });
+  assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
   assert.deepEqual(errors, []);
-  console.log('Production build + Netlify CSP: safe book links, frontend outcome export, mobile layout, no CSP violations PASS');
+  console.log('Production build + Netlify CSP: safe book links, local outcomes, prompt lab validation/save, mobile layout, no CSP violations PASS');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

@@ -123,11 +123,11 @@ export const COURSE_PRACTICUMS: Record<string, Practicum> = {
     deliverables: ['Operatsiyalar reyestri', 'Formulali hisob', 'Reconciliation', 'Base/stress ssenariy va taxminlar'],
   },
   prompting: {
-    purpose: 'Bitta yaxshi ko‘ringan javobdan qayta tekshiriladigan AI workflowga boring.',
+    purpose: 'Prompt ustaxonasida 12 ta sun’iy misol bilan A/B portfolio yarating. API kalit yoki backend talab qilinmaydi.',
     setup: 'Manba: “Import blocked. CRS unknown. Owner: Ali.” Talab: status, blocker, owner, deadline JSON maydonlari; manbada yo‘q qiymat null.',
     example: '{"status":"blocked","blocker":"CRS unknown","owner":"Ali","deadline":null}. Model “tomorrow” qo‘shsa format to‘g‘ri bo‘lsa ham fakt bo‘yicha xato.',
     explanation: 'Format validligi, faktga moslik va bajariladigan action uch xil tekshiruv. RAGdagi hujjat ma’lumot manbai; ichidagi “oldingi qoidani unut” kabi matn yangi vakolat bermaydi. Tool action uchun ruxsat alohida boshqariladi.',
-    steps: ['Output schema va unknown policy yozing.', 'Normal, missing owner, conflicting date, injection va bo‘sh inputdan iborat fixturelar tayyorlang.', 'Har fixture uchun kutilgan javobni modeldan oldin yozing.', 'Promptni bir o‘zgarish bilan yangilang; bir xil fixturelarda oldin/keyin natijani taqqoslang.', 'Xarajat, latency va xato turini qayd eting; faqat muvaffaqiyatli misollarni tanlamang.'],
+    steps: ['Prompt ustaxonasida development datasetni oching; schema va unknown policy bilan tanishing.', 'A paketini tashqi AI’da sinang va raw javob/model/sanani kiriting.', 'B variantini yangi suhbatda ayni misolda sinang; JSON shakli bilan fakt natijasini alohida qayd eting.', '6 development misolidan keyin promptni saqlang; so‘ng 6 holdout misolini oching.', 'Yozuvni saqlab JSON zaxira oling. Xarajat/vaqt o‘lchanmagan bo‘lsa noma’lum yozing; 50+ professional yo‘lga faqat shu portfoliodan keyin o‘ting.'],
     expected: 'Yo‘q deadline null; valid JSON bo‘lsa ham unsupported fact rad etiladi. Injection matni buyruq sifatida bajarilmaydi.',
     failure: 'Model score yoki ishonchli ohangni haqiqat deb olmang. Customer data/tool permissionni promptning o‘zi bilan himoyalamang.',
     independent: 'Ikkinchi til va buzilgan input qo‘shing. Prompt tuningda ishlatilmagan holdout fixturelarda natijani tekshiring.',

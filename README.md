@@ -128,9 +128,11 @@ Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence
 - Root GitHub Actions gate TypeScript/unit test/build hamda Playwright E2E oqimlarini tekshiradi.
 - `npm run test:e2e` Vite test serverini o'zi boshqarib, test tugashi bilan yopadi; Windows va CI'da
   orphan process qoldirmaydi.
-- AI Playground **BYOK** modelida ishlaydi: loyiha API kalitni qabul qilmaydi yoki saqlamaydi; kalit
-  faqat browserning joriy sessiyasida turadi va tanlangan provayderga bevosita yuboriladi. Production
-  server secret yoki umumiy loyiha kaliti sifatida ishlatilmaydi.
+- AI Prompt ustaxonasi frontendda ishlaydi: 12 ta sun’iy case (6 development / 6 holdout),
+  A/B prompt paketlari, follow-up konteksti va JSON/fakt tekshiruvi bor. Prompt tashqi AI suhbatiga
+  nusxalanadi, javob qo‘lda kiritiladi; SkillMap API kalit olmaydi va AI API’ga so‘rov yubormaydi.
+  Yozuvlar brauzerda saqlanadi va umumiy JSON zaxira bilan ko‘chiriladi. 12 case o‘quv portfolio;
+  50+ caseli professional assessment alohida, kengaytirilgan yo‘l.
 - GeoPulse public deploy uchun [deployment runbook](labs/geopulse/docs/deployment-runbook.md) bor;
   hosting va secretlar qo'yilmaguncha u live deployment emas.
 
@@ -191,7 +193,7 @@ src/
     finance.json       Moliya kursi (12 modul: F0->F11)
     russian.json       Rus tili kursi (12 modul: Алф->Фин)
     arabic.json        Arab tili kursi (16 modul: AR0->AR11 asosiy + AR12->AR15 professional trek; Qur'on va islomiy adabiyot o'qishga yo'naltirilgan)
-    prompting.json     AI Prompt kursi (9 modul; RAG/tool-calling + Playground bilan)
+    prompting.json     AI Prompt kursi (10 modul; review finaldan oldin, frontend prompt ustaxonasi)
     courses.ts         kurslar registri (brand + kitoblar + lazy-load)
   types.ts
   lib/router.ts      hash-router (#kurs/modul havolalari)

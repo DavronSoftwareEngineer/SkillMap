@@ -1,0 +1,14 @@
+.prompt-lab { max-width: 1120px; }
+.prompt-lab p, .prompt-lab li { line-height: 1.7; }
+.prompt-lab fieldset { border: 0; padding: 0; min-width: 0; }
+.prompt-lab pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: var(--ink); border: 1px solid var(--line); border-radius: 12px; }
+.prompt-lab select { max-width: 100%; padding: 12px; background: var(--ink); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; }
+.lab-variants { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; margin: 24px 0; }
+.lab-variants section { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 14px; }
+.lab-variants .pg-field { margin-bottom: 16px; }
+.lab-error { color: var(--fg); border-left: 3px solid #e59063; padding-left: 12px; }
+.lab-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.prompt-lab .pg-chip { white-space: normal; }
+.prompt-lab details { margin: 18px 0; }
+.prompt-lab summary { cursor: pointer; font-weight: 600; }
+@media (max-width: 760px) { .lab-variants { grid-template-columns: 1fr; } }

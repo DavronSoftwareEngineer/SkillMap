@@ -7,6 +7,7 @@ import { TELEGRAM_ENHANCEMENTS_AFTER } from "./telegram-enhancements";
 import { ENGLISH_PLACEMENT_MODULE, GEOSPATIAL_ENGLISH_MODULE } from "./english-enhancements";
 import { ENGLISH_PRO_WORK_LABS } from "./english-pro-work-labs";
 import { PROFESSIONAL_POLISH } from "./professional-polish";
+import { shuffleModuleChoices } from '../lib/shuffle-choices';
 
 export interface CourseMeta {
   id: string;
@@ -44,7 +45,8 @@ export async function loadCourseModules(id: string): Promise<Module[]> {
   const [{ applyLearningQuality }, modules] = await Promise.all([
     import('./learning'), loadBaseCourseModules(id),
   ]);
-  return applyLearningQuality(COURSE_LOADERS[id] ? id : 'webgis', modules);
+  const enhanced = applyLearningQuality(COURSE_LOADERS[id] ? id : 'webgis', modules);
+  return id === 'prompting' ? enhanced.map(shuffleModuleChoices) : enhanced;
 }
 
 export async function loadBaseCourseModules(id: string): Promise<Module[]> {
@@ -442,7 +444,7 @@ export const COURSES: CourseMeta[] = [
     id: "prompting",
     name: "AI Prompt",
     brandTitle: "AI bilan ishlash",
-    brandSub: "Prompting / Aniqlik / Rol / Few-shot / Xavfsizlik",
+    brandSub: "Vazifa / Prompt / Fakt tekshiruvi / Eval / Portfolio",
     labels: {
       doc: "Dars",
       code: "Promptlar",
