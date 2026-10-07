@@ -145,7 +145,8 @@ export interface Book {
   n: number; // tartib raqami (o'qish ketma-ketligi)
   title: string; // o'zbekcha nom
   author: string; // muallif (+ original nom, ixtiyoriy)
-  isbn?: string; // Open Library muqovasi uchun (yo'q bo'lsa dizayn-karta)
+  isbn?: string; // Kitob havolalari va Open Library muqovasi uchun
+  cover?: "text"; // Tashqi muqova mavjud bo'lmasa nom/muallifli dizayn-karta
   accent: string; // karta urg'u rangi
   note: string; // qisqa izoh - nega/qachon o'qish
 }

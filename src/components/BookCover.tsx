@@ -1,10 +1,10 @@
 import { useState } from "react";
 import type { Book } from "../types";
 
-// Avval haqiqiy muqova, yuklanmasa kurs rangidagi fallback ko'rinadi.
+// Muqovasi mavjud bo'lmagan kitoblar darhol kurs rangidagi kartadan foydalanadi.
 export function BookCover({ book }: { book: Book }) {
   const [failed, setFailed] = useState(false);
-  const src = book.isbn
+  const src = book.isbn && book.cover !== "text"
     ? `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false`
     : null;
 
@@ -27,4 +27,3 @@ export function BookCover({ book }: { book: Book }) {
     </span>
   );
 }
-
