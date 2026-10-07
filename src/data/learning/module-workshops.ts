@@ -2,6 +2,7 @@ import { SOFTWARE_WORKSHOPS } from './workshops-software';
 import { GEOSPATIAL_WORKSHOPS } from './workshops-geospatial';
 import { LANGUAGE_WORKSHOPS } from './workshops-languages';
 import { DECISION_WORKSHOPS } from './workshops-decisions';
+import { FINANCE_INCOME_WORKSHOPS } from '../finance-income';
 import { BUSINESS_TRACKS } from './business';
 import { SYSTEM_DESIGN_TRACK } from './system-design';
 import type { LearningTrack, LearningCase } from './types';
@@ -16,5 +17,6 @@ function fromIndividualCases(track:LearningTrack) {
 export const MODULE_WORKSHOPS:Record<string,Record<string,ModuleWorkshop>>={
   ...SOFTWARE_WORKSHOPS,webgis:GEOSPATIAL_WORKSHOPS,...LANGUAGE_WORKSHOPS,
   ...DECISION_WORKSHOPS,founder:fromIndividualCases(BUSINESS_TRACKS.founder),
+  finance: {...DECISION_WORKSHOPS.finance, ...FINANCE_INCOME_WORKSHOPS},
   systemdesign:fromIndividualCases(SYSTEM_DESIGN_TRACK),
 };

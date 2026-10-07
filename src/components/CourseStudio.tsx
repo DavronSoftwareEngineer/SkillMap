@@ -19,7 +19,7 @@ function Calculator({kind}:{kind:CalculationKind}) {
     <div className="scenario-fields">{spec.fields.map(([key,label])=><label key={key}>{label}<input type="number" step="any" min={kind==='raster'&&key==='sum'?undefined:0} value={values[key]} onChange={e=>setValues({...values,[key]:e.target.value})}/></label>)}</div>
     {report.error?<p role="alert">{report.error}</p>:<dl aria-live="polite">{report.rows.map(row=><div key={row.label}><dt>{row.label}</dt><dd>{typeof row.value==='number'?Number(row.value.toFixed(4)):row.value}</dd></div>)}</dl>}
     <button type="button" onClick={download}>Hisobni eksport qilish</button>
-    <p>{kind==='loan'?'Faqat bir yil oxiridagi bitta to‘lov. Oylik to‘lovlar grafigi yoki bankning rasmiy effective rate hisoblagichi emas.':kind==='cash'?'Qoldiq kun oxiri bo‘yicha; bir kun ichidagi to‘lov tartibini ko‘rsatmaydi.':kind==='margin'?'Bu contribution hisobi; overhead, tax va cash timing kiritilmagan.':kind==='capacity'?'Workload taxmini benchmark emas; haqiqiy yuk sinovi alohida.':kind==='raster'?'Bu agregat sonlar hisobi; raster fayli yoki CRSni o‘zi tekshirmaydi.':'Token sarfi pul qiymati emas; tarif va kritik xatolar alohida tekshiriladi.'}</p>
+    <p>{kind==='income'?'Qoldiq soliqdan oldin; egasining alohida mehnat haqi chiqarilmagan. Buyurtma soni taxmin, to‘lov sanasi cash rejasida tekshiriladi.':kind==='loan'?'Faqat bir yil oxiridagi bitta to‘lov. Oylik to‘lovlar grafigi yoki bankning rasmiy effective rate hisoblagichi emas.':kind==='cash'?'Qoldiq kun oxiri bo‘yicha; bir kun ichidagi to‘lov tartibini ko‘rsatmaydi.':kind==='margin'?'Bu contribution hisobi; overhead, tax va cash timing kiritilmagan.':kind==='capacity'?'Workload taxmini benchmark emas; haqiqiy yuk sinovi alohida.':kind==='raster'?'Bu agregat sonlar hisobi; raster fayli yoki CRSni o‘zi tekshirmaydi.':'Token sarfi pul qiymati emas; tarif va kritik xatolar alohida tekshiriladi.'}</p>
   </section>;
 }
 export default function CourseStudio({courseId,module}:{courseId:string;module:Module}) {
@@ -31,7 +31,7 @@ export default function CourseStudio({courseId,module}:{courseId:string;module:M
       <ol>{path.stages.map(s=><li key={s.module}><a href={`#${courseId}/${encodeURIComponent(s.module)}`} aria-current={s===stage?'step':undefined}>{s.title}</a>{s===stage?' — shu bosqich':''}</li>)}</ol>
       <p>Bosqich havolasidan keyin «Loyiha ustaxonasi»ni oching. Birinchi urinishni yechimni ko‘rmasdan yozing, keyin yangi shartda takrorlang.</p>
     </header>
-    {kinds[courseId]&&<Calculator key={module.zoom} kind={courseId==='finance'&&module.zoom==='F4'?'loan':kinds[courseId]}/>}
+    {kinds[courseId]&&<Calculator key={module.zoom} kind={courseId==='finance' ? (['F14','F15','F17'].includes(module.zoom)?'income':module.zoom==='F4'?'loan':'cash') : kinds[courseId]}/>}
     <PracticeNotebook key={`${courseId}/project-${module.zoom}`} courseId={courseId} module={notebook}/>
   </section>;
 }

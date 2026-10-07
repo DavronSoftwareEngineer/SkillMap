@@ -1,6 +1,7 @@
-export type CalculationKind = 'cash' | 'loan' | 'margin' | 'capacity' | 'raster' | 'ai-cost';
+export type CalculationKind = 'cash' | 'loan' | 'margin' | 'capacity' | 'raster' | 'ai-cost' | 'income';
 export interface Calculation { label:string; value:number|string }
 export const CALCULATORS:Record<CalculationKind,{title:string;fields:[string,string,number][]}> = {
+  income:{title:'Daromad: narx, buyurtma va vaqt',fields:[['price','Bir buyurtma narxi (mln so‘m)',2],['direct','Bir buyurtma xarajati (mln so‘m)',0.3],['orders','Oyda buyurtmalar soni',4],['hours','Bir buyurtmaga jami soat',10],['fixed','Oylik doimiy xarajat (mln so‘m)',0.8],['salesHours','Sotuv va admin soatlari',8],['capacity','Oyda mavjud ish soati',40]]},
   loan:{title:'Bir yillik, bir to‘lovli kredit misoli',fields:[['nominal','Nominal qarz',10],['fee','Boshlang‘ich komissiya',0.2],['repayment','Bir yil oxiridagi jami to‘lov',11]]},
   cash:{title:'Pul oqimi: invoice va advance',fields:[['opening','Boshlang‘ich pul',10],['invoice','Invoice jami',15],['advance','1-kundagi advance',0],['first','5-kundagi xarajat',8],['second','15-kundagi xarajat',3],['paymentDay','Qolgan to‘lov kuni',60]]},
   margin:{title:'Narx va support stressi',fields:[['price','Narx',2],['infra','Infra xarajati',0.2],['support','Support xarajati',0.5],['delivery','Delivery xarajati',0.3],['factor','Support ko‘paytiruvchisi',1]]},
@@ -17,6 +18,17 @@ function calculate(kind:CalculationKind, values:Record<string,number>):Calculati
   for(const [key] of CALCULATORS[kind].fields) if(!Number.isFinite(values[key]) || (values[key]<0 && !(kind==='raster'&&key==='sum'))) throw new Error('Chekli son kiriting; NDVI yig‘indisidan tashqari manfiy qiymat mumkin emas.');
   const v=values;const result=(label:string,value:number|string)=>({label,value});
   const integer=(...keys:string[])=>{if(keys.some(k=>!Number.isSafeInteger(v[k])))throw new Error('Sanoq va kun maydonlari butun son bo‘lsin.');};
+  if(kind==='income') {
+    integer('orders');
+    if(v.price<=0||v.hours<=0)throw new Error('Narx va bir buyurtma uchun soat 0 dan katta bo‘lsin.');
+    const revenue=v.price*v.orders, contribution=v.price-v.direct;
+    const remaining=contribution*v.orders-v.fixed, time=v.hours*v.orders+v.salesHours;
+    return [result('Oylik tushum (mln)',revenue),result('Xarajatlardan keyingi qoldiq (mln)',remaining),
+      result('Jami ish soati',time),result('Bir soatga qoldiq (mln)',time?remaining/time:'Hisoblanmaydi: ish soati yo‘q'),
+      result('Quvvatdan ortiq soat',Math.max(0,time-v.capacity)),
+      result('Vaqtga sig‘adigan buyurtmalar',Math.floor(Math.max(0,v.capacity-v.salesHours)/v.hours)),
+      result('Xarajatni qoplash uchun buyurtmalar',contribution>0?Math.ceil(v.fixed/contribution):'Narx bevosita xarajatni qoplamaydi')];
+  }
   if(kind==='loan') {const received=v.nominal-v.fee;if(received<=0)throw new Error('Komissiyadan keyin olingan pul 0 dan katta bo‘lsin.');return[result('Amalda olingan pul',received),result('Jami ortiqcha to‘lov',v.repayment-received),result('Bir yillik xarajat (%)',(v.repayment/received-1)*100)];}
   if(kind==='cash') {
     integer('paymentDay');

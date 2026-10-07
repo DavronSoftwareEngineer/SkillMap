@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {PROJECT_PATHS} from '../src/data/learning/project-paths';
 import {readFile} from 'node:fs/promises';
-test('all 39 project stages render their own task and preserve notebook entries',async({page},info)=>{
+test('all course project stages render their own task and preserve notebook entries',async({page},info)=>{
   test.setTimeout(120000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   for(const [id,path] of Object.entries(PROJECT_PATHS))for(const stage of path.stages){
     await page.goto('/#'+id+'/'+encodeURIComponent(stage.module));

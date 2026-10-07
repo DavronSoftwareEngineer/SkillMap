@@ -295,7 +295,27 @@ the original newline separator was already correct.
 
 Run the isolated two-clone Git exercise with `node labs/git-team/run.mjs`.
 See [the lab guide](labs/git-team/README.md) for boundaries and independent work.
-Run `npm run test:e2e -- e2e/course-studio.spec.ts` for the 39-stage browser checks.
+Run `npm run test:e2e -- e2e/course-studio.spec.ts` for all 42 project-stage browser checks.
 Project steps involving PostgreSQL, real services, external reviewers and learner
 pilots still require execution outside these frontend teaching simulations; they
 are not reported as completed production deployments or measured learner outcomes.
+
+
+### Finance: income growth first (2026-10-07)
+
+Finance now has 18 modules. F13–F16 follow the introduction: marketable skills
+and salary negotiation, service scope/pricing, customer acquisition and paid
+pilots, repeat work and productivity. F17 closes the course with a 90-day income
+experiment. Existing F1–F12 lessons and saved task IDs remain available.
+The introduction and first practicum now lead with earning capacity; budgeting,
+reserves and risk management support that work.
+
+The finance project path has six stages, including three new income stages.
+Its frontend calculator compares revenue, cash costs, pre-tax remainder, total
+work time and capacity. Remainder includes the owner's compensation; it is not
+net profit or take-home pay. The examples are synthetic, with no claimed client
+results or guaranteed income. Calculator inputs remain temporary; notebooks
+retain their existing browser storage and backup support.
+
+Validation: `npm run build`, `npm run test:e2e -- e2e/finance-income.spec.ts e2e/course-studio.spec.ts`,
+and `npm run test:production`.

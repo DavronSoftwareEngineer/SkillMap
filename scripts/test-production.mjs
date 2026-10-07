@@ -97,6 +97,13 @@ try {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
   assert.deepEqual(errors, []);
+  await page.goto(`http://127.0.0.1:${server.address().port}/#finance/F14`);
+  await page.getByRole('button', { name: 'Loyiha ustaxonasi', exact: true }).click();
+  await page.getByLabel('Bir buyurtma narxi (mln so‘m)', { exact: true }).fill('2.5');
+  await page.getByLabel('Oyda buyurtmalar soni', { exact: true }).fill('3');
+  assert.ok((await page.getByRole('region', { name: 'Ssenariy hisoblagichi' }).innerText()).includes('0.1526'));
+  assert.deepEqual(await page.evaluate(() => window.__cspViolations), []);
+  assert.deepEqual(errors, []);
   console.log('Production build + Netlify CSP: books, outcomes, prompt/project/course labs, saved notebook, mobile layout, no CSP violations PASS');
 } finally {
   await browser?.close();

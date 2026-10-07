@@ -54,6 +54,10 @@ export async function loadBaseCourseModules(id: string): Promise<Module[]> {
   const loader = COURSE_LOADERS[id] || COURSE_LOADERS.webgis;
   const data = await loader();
   const modules = data.default as Module[];
+  if (id === 'finance') {
+    const { FINANCE_INCOME_MODULES } = await import('./finance-income');
+    return [modules[0], ...FINANCE_INCOME_MODULES.slice(0, 4), ...modules.slice(1), ...(PROFESSIONAL_POLISH[id] || []), FINANCE_INCOME_MODULES[4]];
+  }
   if (id === "backend") {
     const ordered: Module[] = [];
     modules.forEach((module) => {
@@ -385,7 +389,7 @@ export const COURSES: CourseMeta[] = [
     id: "finance",
     name: "Moliya",
     brandTitle: "Moliyaviy Savodxonlik",
-    brandSub: "Byudjet / Jamg'arma / Qarz / Xavfsizlik / Investitsiya",
+    brandSub: "Daromad o‘sishi / Ko‘nikma / Narxlash / Mijozlar / Pul boshqaruvi",
     labels: {
       doc: "Dars",
       code: "Misollar",

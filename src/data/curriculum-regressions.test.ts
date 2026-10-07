@@ -33,7 +33,7 @@ describe('the actual Telegram lesson snippet',()=>{
 describe('course-specific project paths',()=>{
   for(const course of COURSES)it(`${course.id}: all stages resolve, shuffled answers retain meaning`,async()=>{
     const modules=await loadCourseModules(course.id);const original=await loadBaseCourseModules(course.id);
-    expect(PROJECT_PATHS[course.id].stages).toHaveLength(3);
+    expect(PROJECT_PATHS[course.id].stages).toHaveLength(course.id==='finance'?6:3);
     for(const stage of PROJECT_PATHS[course.id].stages)expect(modules.some(m=>m.zoom===stage.module),stage.module).toBe(true);
     for(const [index,module] of modules.entries())for(const [q,question] of module.quiz.entries())expect(question.a[question.c]).toBe(original[index].quiz[q].a[original[index].quiz[q].c]);
   });
