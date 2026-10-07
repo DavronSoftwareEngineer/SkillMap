@@ -23,13 +23,13 @@ Quiz va amaliy dalillar alohida ko‘rsatiladi; checkboxlardan malaka darajasi c
 qayd qilish va feedback formasi qo‘shildi. Yozuvlar shu brauzerda saqlanadi, JSON
 zaxiraga kiradi va eksport fayli boshqa qurilmada import qilinadi.
 
-Netlify uchun TypeScript Functions va Netlify Database/PostgreSQL asosidagi hisob/cloud backend qo‘shildi.
-“Hisob va cloud” orqali login, ro‘yxatdan o‘tish, parol almashtirish, cloudga saqlash
-va boshqa qurilmada tiklash ishlaydi. Sync tugmalar orqali bajariladi; avtomatik emas.
+SkillMap faqat frontend sifatida ishlaydi. Progress va o‘quvchi qaydlari brauzerda
+saqlanadi. Boshqa qurilmaga ko‘chirish uchun dashboard’dagi “Zaxira eksport” bilan
+JSON faylni oling va ikkinchi qurilmada “Tiklash import” orqali oching.
 Reviewer baholari tahrirlanadigan qaydlardir; reviewer shaxsi yoki kurs samarasi tasdiqlanmaydi.
 GeoPulse laboratoriyasi avvalgi holatida qoldirilgan.
 
-[Full-stack lokal ishga tushirish va Netlify deploy](docs/netlify-fullstack.md),
+[Frontend ishga tushirish va Netlify deploy](docs/netlify-frontend.md),
 [Frontend o‘zgarishlari](docs/improvements-2026-09-30.md),
 [haqiqiy o‘quvchilar bilan pilot](docs/learner-pilot-protocol.md).
 
@@ -79,7 +79,7 @@ rolga qarab tanlanadi; hammasi har bir vakansiya uchun majburiy emas.
 
 ## Ishga tushirish
 
-Node.js (LTS) va Python 3 kerak.
+Frontend uchun Node.js (LTS) kerak. Python 3 faqat alohida o‘quv laboratoriyalari uchun kerak.
 
 ```bash
 npm install
@@ -123,7 +123,7 @@ duplicate update idempotency va Mini App invalid-session contractlarini testlayd
 GitHub Actions quality gate ham bor. grammY handler, persistent database/queue va haqiqiy
 Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence milestone'laridir.
 
-## Quality, sync va deploy preparation
+## Quality va deploy preparation
 
 - Root GitHub Actions gate TypeScript/unit test/build hamda Playwright E2E oqimlarini tekshiradi.
 - `npm run test:e2e` Vite test serverini o'zi boshqarib, test tugashi bilan yopadi; Windows va CI'da
@@ -131,8 +131,6 @@ Mini App HMAC verification starterda tayyor deb ko'rsatilmaydi — ular evidence
 - AI Playground **BYOK** modelida ishlaydi: loyiha API kalitni qabul qilmaydi yoki saqlamaydi; kalit
   faqat browserning joriy sessiyasida turadi va tanlangan provayderga bevosita yuboriladi. Production
   server secret yoki umumiy loyiha kaliti sifatida ishlatilmaydi.
-- `services/skillmap-sync/` local-first progress uchun optional cloud-sync contractini hujjatlashtiradi;
-  real identity provider, database va privacy qarorisiz u yoqilmaydi.
 - GeoPulse public deploy uchun [deployment runbook](labs/geopulse/docs/deployment-runbook.md) bor;
   hosting va secretlar qo'yilmaguncha u live deployment emas.
 
@@ -148,7 +146,7 @@ Node.js/TypeScript portfolio dalili; GeoPulse esa FastAPI/PostGIS geospatial fla
 
 Loyiha statik SPA - `dist/` ni istalgan statik hostga qo'yish mumkin.
 
-- **Netlify:** hisob/cloud uchun Git repositoryni ulang: Functions va Database migrations ham deploy qilinadi. `SYNC_ENCRYPTION_KEY`ni sozlang ([qo‘llanma](docs/netlify-fullstack.md)). Faqat `dist/` drag-drop frontendni joylaydi. SPA redirect avtomatik.
+- **Netlify:** Git repositoryni ulang, build buyrug‘i `npm run build`, publish papkasi `dist`. `dist/` papkasini drag-drop bilan ham joylash mumkin. SPA redirect avtomatik ([qo‘llanma](docs/netlify-frontend.md)).
 - **Vercel:** `vercel.json` tayyor. Repo'ni import qiling - build buyrug'i va chiqish papkasi o'qiladi.
 
 `vite.config.ts` da `base: "./"` - ildizda ham, subkatalogda (masalan GitHub Pages) ham ishlaydi.

@@ -1,7 +1,7 @@
 # SkillMap frontend yaxshilanishlari — 2026-09-30
 
-Dashboard va o‘quvchi qaydlari frontendda ishlaydi. Hisob va cloud saqlash uchun
-Netlify Functions/PostgreSQL qo‘shilgan; [joriy full-stack qo‘llanma](netlify-fullstack.md)
+Dashboard va o‘quvchi qaydlari frontendda ishlaydi. Backend va cloud qismlari
+2026-10-07 da olib tashlandi; [joriy frontend qo‘llanma](netlify-frontend.md)
 ishga tushirish, deployment va tekshirishni tushuntiradi. GeoPulse laboratoriyasi
 alohida loyiha bo‘lib qoladi.
 
@@ -27,9 +27,8 @@ Import mavjud qaydni almashtiradi va avvalgi holat uchun recovery saqlaydi.
 
 ## Netlify
 
-GitHub repo, build npm run build, publish dist. Hisob va cloud uchun tashqi
-Netlify Database avtomatik ulanadi; SYNC_ENCRYPTION_KEY sozlanadi. Cloudga tugma orqali saqlanmagan
-mahalliy yozuvlar brauzer o‘chirilganda faqat JSON zaxira bilan tiklanadi.
+GitHub repo, build npm run build, publish dist. Server, hisob yoki baza kerak emas.
+Mahalliy yozuvlar brauzer ma’lumotlari o‘chirilganda faqat JSON zaxira bilan tiklanadi.
 
 ## Dalil chegaralari
 

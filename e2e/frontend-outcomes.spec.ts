@@ -11,6 +11,8 @@ test('local reviews persist and move between browsers via JSON without an accoun
   const requests: string[] = [];
   page.on('request', req => { if (new URL(req.url()).pathname.startsWith('/sync')) requests.push(req.url()); });
   await page.goto('/#english/dash');
+  await expect(page.locator('.cloud-account')).toHaveCount(0);
+  await expect(page.getByText('Progress shu brauzerda saqlanadi.', { exact: false })).toBeVisible();
   const notes = await openNotes(page);
   for (const [phase, score] of [['Boshlang‘ich ish', '2'], ['Yakuniy transfer', '3']]) {
     await notes.getByRole('button', { name: phase, exact: true }).click();

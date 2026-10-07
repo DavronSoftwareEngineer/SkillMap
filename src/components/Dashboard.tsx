@@ -184,7 +184,7 @@ export function Dashboard({ onGo }: { onGo: (i: number) => void }) {
         </div>
       </div>
 
-      <p className="dnote">Boshqa qurilmada davom etish uchun yuqoridagi “Hisob va cloud” orqali saqlang va tiklang. JSON fayl bilan ko‘chirish ham mumkin: “Zaxira eksport” → ikkinchi qurilmada “Tiklash import”. Mavjud yozuvlarni almashtirishdan oldin zaxira oling.</p>
+      <p className="dnote">Progress shu brauzerda saqlanadi. Boshqa qurilmada davom etish uchun “Zaxira eksport” tugmasi bilan JSON faylni yuklab oling va ikkinchi qurilmada “Tiklash import” orqali oching. Brauzer ma’lumotlarini tozalashdan yoki mavjud yozuvlarni almashtirishdan oldin zaxira oling.</p>
       <h3 className="dash-h">Learning journey</h3>
       <div className="journey-map">
         {d.mods.map((m, order) => (
